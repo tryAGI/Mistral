@@ -1,8 +1,8 @@
 dotnet tool install --global autosdk.cli --prerelease
 
 autosdk init \
-  SolutionName \
-  SomeClient \
-  https://raw.githubusercontent.com/api/openapi.json \
-  CompanyName \
+  Mistral \
+  MistralClient \
+  https://docs.mistral.ai/redocusaurus/plugin-redoc-0.yaml \
+  tryAGI \
   --output .
