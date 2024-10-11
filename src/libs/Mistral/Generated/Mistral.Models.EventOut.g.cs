@@ -20,7 +20,7 @@ namespace Mistral
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
-        public global::Mistral.EventOutData? Data { get; set; }
+        public object? Data { get; set; }
 
         /// <summary>
         /// The name of the event.
