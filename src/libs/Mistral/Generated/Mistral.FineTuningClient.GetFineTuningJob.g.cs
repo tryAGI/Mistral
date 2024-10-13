@@ -103,7 +103,7 @@ namespace Mistral
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::Mistral.DetailedJobOut), JsonSerializerContext) as global::Mistral.DetailedJobOut ??
+                global::Mistral.DetailedJobOut.FromJson(__content, JsonSerializerContext) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

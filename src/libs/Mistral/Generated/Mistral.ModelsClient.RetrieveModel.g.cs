@@ -103,7 +103,7 @@ namespace Mistral
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::Mistral.OneOf<global::Mistral.BaseModelCard, global::Mistral.FTModelCard>?), JsonSerializerContext) as global::Mistral.OneOf<global::Mistral.BaseModelCard, global::Mistral.FTModelCard>? ??
+                global::Mistral.OneOf<global::Mistral.BaseModelCard, global::Mistral.FTModelCard>.FromJson(__content, JsonSerializerContext) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }
