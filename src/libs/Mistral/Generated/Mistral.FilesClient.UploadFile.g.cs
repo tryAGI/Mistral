@@ -125,7 +125,7 @@ namespace Mistral
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::Mistral.UploadFileOut), JsonSerializerContext) as global::Mistral.UploadFileOut ??
+                global::Mistral.UploadFileOut.FromJson(__content, JsonSerializerContext) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 

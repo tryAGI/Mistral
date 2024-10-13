@@ -103,7 +103,7 @@ namespace Mistral
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::Mistral.ArchiveFTModelOut), JsonSerializerContext) as global::Mistral.ArchiveFTModelOut ??
+                global::Mistral.ArchiveFTModelOut.FromJson(__content, JsonSerializerContext) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }
