@@ -28,7 +28,7 @@ namespace Mistral
         /// <param name="modelId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Mistral.OneOf<global::Mistral.BaseModelCard, global::Mistral.FTModelCard>> RetrieveModelAsync(
+        public async global::System.Threading.Tasks.Task<global::Mistral.RetrieveModelV1ModelsModelIdGetResponse> RetrieveModelAsync(
             string modelId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -103,7 +103,7 @@ namespace Mistral
             }
 
             return
-                global::Mistral.OneOf<global::Mistral.BaseModelCard, global::Mistral.FTModelCard>.FromJson(__content, JsonSerializerContext) ??
+                global::Mistral.RetrieveModelV1ModelsModelIdGetResponse.FromJson(__content, JsonSerializerContext) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

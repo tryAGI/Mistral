@@ -1,6 +1,4 @@
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace Mistral
@@ -61,7 +59,7 @@ namespace Mistral
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("integrations")]
-        public global::System.Collections.Generic.IList<global::Mistral.OneOf<global::Mistral.WandbIntegrationOut>>? Integrations { get; set; }
+        public global::System.Collections.Generic.IList<global::Mistral.IntegrationsItem>? Integrations { get; set; }
 
         /// <summary>
         /// 
@@ -102,7 +100,7 @@ namespace Mistral
         /// Default Value: []
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repositories")]
-        public global::System.Collections.Generic.IList<global::Mistral.OneOf<global::Mistral.GithubRepositoryOut>>? Repositories { get; set; }
+        public global::System.Collections.Generic.IList<global::Mistral.RepositoriesItem>? Repositories { get; set; }
 
         /// <summary>
         /// 

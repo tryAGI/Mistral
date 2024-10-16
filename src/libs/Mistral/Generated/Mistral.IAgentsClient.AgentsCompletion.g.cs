@@ -49,7 +49,7 @@ namespace Mistral
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Mistral.ChatCompletionResponse> AgentsCompletionAsync(
             string agentId,
-            global::System.Collections.Generic.IList<global::Mistral.OneOf<global::Mistral.UserMessage, global::Mistral.AssistantMessage, global::Mistral.ToolMessage>> messages,
+            global::System.Collections.Generic.IList<global::Mistral.MessagesItem> messages,
             int? maxTokens = default,
             int? minTokens = default,
             int? randomSeed = default,

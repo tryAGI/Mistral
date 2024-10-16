@@ -1,4 +1,5 @@
 using System.Linq;
+#pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
 
@@ -7,96 +8,96 @@ namespace Mistral
     /// <summary>
     /// 
     /// </summary>
-    public readonly partial struct OneOf<T1, T2> : global::System.IEquatable<OneOf<T1, T2>>
+    public readonly partial struct RetrieveModelV1ModelsModelIdGetResponse : global::System.IEquatable<RetrieveModelV1ModelsModelIdGetResponse>
     {
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public T1? Value1 { get; init; }
+        public global::Mistral.BaseModelCard? BaseCard { get; init; }
 #else
-        public T1? Value1 { get; }
+        public global::Mistral.BaseModelCard? BaseCard { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BaseCard))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsBaseCard => BaseCard != null;
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator OneOf<T1, T2>(T1 value) => new OneOf<T1, T2>(value);
+        public static implicit operator RetrieveModelV1ModelsModelIdGetResponse(global::Mistral.BaseModelCard value) => new RetrieveModelV1ModelsModelIdGetResponse(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator T1?(OneOf<T1, T2> @this) => @this.Value1;
+        public static implicit operator global::Mistral.BaseModelCard?(RetrieveModelV1ModelsModelIdGetResponse @this) => @this.BaseCard;
 
         /// <summary>
         /// 
         /// </summary>
-        public OneOf(T1? value)
+        public RetrieveModelV1ModelsModelIdGetResponse(global::Mistral.BaseModelCard? value)
         {
-            Value1 = value;
+            BaseCard = value;
+        }
+
+        /// <summary>
+        /// Extra fields for fine-tuned models.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Mistral.FTModelCard? FTCard { get; init; }
+#else
+        public global::Mistral.FTModelCard? FTCard { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FTCard))]
+#endif
+        public bool IsFTCard => FTCard != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator RetrieveModelV1ModelsModelIdGetResponse(global::Mistral.FTModelCard value) => new RetrieveModelV1ModelsModelIdGetResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Mistral.FTModelCard?(RetrieveModelV1ModelsModelIdGetResponse @this) => @this.FTCard;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public RetrieveModelV1ModelsModelIdGetResponse(global::Mistral.FTModelCard? value)
+        {
+            FTCard = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        public T2? Value2 { get; init; }
-#else
-        public T2? Value2 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
-#endif
-        public bool IsValue2 => Value2 != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator OneOf<T1, T2>(T2 value) => new OneOf<T1, T2>(value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator T2?(OneOf<T1, T2> @this) => @this.Value2;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public OneOf(T2? value)
-        {
-            Value2 = value;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public OneOf(
-            T1? value1,
-            T2? value2
+        public RetrieveModelV1ModelsModelIdGetResponse(
+            global::Mistral.BaseModelCard? baseCard,
+            global::Mistral.FTModelCard? fTCard
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            BaseCard = baseCard;
+            FTCard = fTCard;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            FTCard as object ??
+            BaseCard as object 
             ;
 
         /// <summary>
@@ -104,15 +105,15 @@ namespace Mistral
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsValue2 || !IsValue1 && IsValue2;
+            return IsBaseCard && !IsFTCard || !IsBaseCard && IsFTCard;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<T1, TResult>? value1 = null,
-            global::System.Func<T2, TResult>? value2 = null,
+            global::System.Func<global::Mistral.BaseModelCard?, TResult>? baseCard = null,
+            global::System.Func<global::Mistral.FTModelCard?, TResult>? fTCard = null,
             bool validate = true)
         {
             if (validate)
@@ -120,13 +121,13 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsBaseCard && baseCard != null)
             {
-                return value1(Value1!);
+                return baseCard(BaseCard!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsFTCard && fTCard != null)
             {
-                return value2(Value2!);
+                return fTCard(FTCard!);
             }
 
             return default(TResult);
@@ -136,8 +137,8 @@ namespace Mistral
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<T1>? value1 = null,
-            global::System.Action<T2>? value2 = null,
+            global::System.Action<global::Mistral.BaseModelCard?>? baseCard = null,
+            global::System.Action<global::Mistral.FTModelCard?>? fTCard = null,
             bool validate = true)
         {
             if (validate)
@@ -145,13 +146,13 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsBaseCard)
             {
-                value1?.Invoke(Value1!);
+                baseCard?.Invoke(BaseCard!);
             }
-            else if (IsValue2)
+            else if (IsFTCard)
             {
-                value2?.Invoke(Value2!);
+                fTCard?.Invoke(FTCard!);
             }
         }
 
@@ -162,10 +163,10 @@ namespace Mistral
         {
             var fields = new object?[]
             {
-                Value1,
-                typeof(T1),
-                Value2,
-                typeof(T2),
+                BaseCard,
+                typeof(global::Mistral.BaseModelCard),
+                FTCard,
+                typeof(global::Mistral.FTModelCard),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -178,26 +179,26 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        public bool Equals(OneOf<T1, T2> other)
+        public bool Equals(RetrieveModelV1ModelsModelIdGetResponse other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<T1?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<T2?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::Mistral.BaseModelCard?>.Default.Equals(BaseCard, other.BaseCard) &&
+                global::System.Collections.Generic.EqualityComparer<global::Mistral.FTModelCard?>.Default.Equals(FTCard, other.FTCard) 
                 ;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static bool operator ==(OneOf<T1, T2> obj1, OneOf<T1, T2> obj2)
+        public static bool operator ==(RetrieveModelV1ModelsModelIdGetResponse obj1, RetrieveModelV1ModelsModelIdGetResponse obj2)
         {
-            return global::System.Collections.Generic.EqualityComparer<OneOf<T1, T2>>.Default.Equals(obj1, obj2);
+            return global::System.Collections.Generic.EqualityComparer<RetrieveModelV1ModelsModelIdGetResponse>.Default.Equals(obj1, obj2);
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static bool operator !=(OneOf<T1, T2> obj1, OneOf<T1, T2> obj2)
+        public static bool operator !=(RetrieveModelV1ModelsModelIdGetResponse obj1, RetrieveModelV1ModelsModelIdGetResponse obj2)
         {
             return !(obj1 == obj2);
         }
@@ -207,7 +208,7 @@ namespace Mistral
         /// </summary>
         public override bool Equals(object? obj)
         {
-            return obj is OneOf<T1, T2> o && Equals(o);
+            return obj is RetrieveModelV1ModelsModelIdGetResponse o && Equals(o);
         }
 
 
@@ -241,14 +242,14 @@ namespace Mistral
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerContext.
         /// </summary>
-        public static global::Mistral.OneOf<T1, T2>? FromJson(
+        public static global::Mistral.RetrieveModelV1ModelsModelIdGetResponse? FromJson(
             string json,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::Mistral.OneOf<T1, T2>),
-                jsonSerializerContext) as global::Mistral.OneOf<T1, T2>?;
+                typeof(global::Mistral.RetrieveModelV1ModelsModelIdGetResponse),
+                jsonSerializerContext) as global::Mistral.RetrieveModelV1ModelsModelIdGetResponse?;
         }
 
         /// <summary>
@@ -258,11 +259,11 @@ namespace Mistral
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::Mistral.OneOf<T1, T2>? FromJson(
+        public static global::Mistral.RetrieveModelV1ModelsModelIdGetResponse? FromJson(
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.OneOf<T1, T2>>(
+            return global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.RetrieveModelV1ModelsModelIdGetResponse>(
                 json,
                 jsonSerializerOptions);
         }

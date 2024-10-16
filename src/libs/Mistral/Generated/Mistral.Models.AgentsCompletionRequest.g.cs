@@ -29,7 +29,7 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("messages")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::Mistral.OneOf<global::Mistral.UserMessage, global::Mistral.AssistantMessage, global::Mistral.ToolMessage>> Messages { get; set; }
+        public required global::System.Collections.Generic.IList<global::Mistral.MessagesItem> Messages { get; set; }
 
         /// <summary>
         /// The minimum number of tokens to generate in the completion.

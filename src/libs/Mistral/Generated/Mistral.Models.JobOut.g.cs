@@ -1,6 +1,4 @@
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace Mistral
@@ -49,7 +47,7 @@ namespace Mistral
         /// A list of integrations enabled for your fine-tuning job.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("integrations")]
-        public global::System.Collections.Generic.IList<global::Mistral.OneOf<global::Mistral.WandbIntegrationOut>>? Integrations { get; set; }
+        public global::System.Collections.Generic.IList<global::Mistral.IntegrationsItem3>? Integrations { get; set; }
 
         /// <summary>
         /// The type of job (`FT` for fine-tuning).
@@ -92,7 +90,7 @@ namespace Mistral
         /// Default Value: []
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repositories")]
-        public global::System.Collections.Generic.IList<global::Mistral.OneOf<global::Mistral.GithubRepositoryOut>>? Repositories { get; set; }
+        public global::System.Collections.Generic.IList<global::Mistral.RepositoriesItem3>? Repositories { get; set; }
 
         /// <summary>
         /// The current status of the fine-tuning job.

@@ -1,4 +1,5 @@
 using System.Linq;
+#pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
 
@@ -7,48 +8,48 @@ namespace Mistral
     /// <summary>
     /// 
     /// </summary>
-    public readonly partial struct OneOf<T1> : global::System.IEquatable<OneOf<T1>>
+    public readonly partial struct RepositoriesItem : global::System.IEquatable<RepositoriesItem>
     {
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public T1? Value1 { get; init; }
+        public global::Mistral.GithubRepositoryOut? GithubRepositoryOut { get; init; }
 #else
-        public T1? Value1 { get; }
+        public global::Mistral.GithubRepositoryOut? GithubRepositoryOut { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(GithubRepositoryOut))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsGithubRepositoryOut => GithubRepositoryOut != null;
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator OneOf<T1>(T1 value) => new OneOf<T1>(value);
+        public static implicit operator RepositoriesItem(global::Mistral.GithubRepositoryOut value) => new RepositoriesItem(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator T1?(OneOf<T1> @this) => @this.Value1;
+        public static implicit operator global::Mistral.GithubRepositoryOut?(RepositoriesItem @this) => @this.GithubRepositoryOut;
 
         /// <summary>
         /// 
         /// </summary>
-        public OneOf(T1? value)
+        public RepositoriesItem(global::Mistral.GithubRepositoryOut? value)
         {
-            Value1 = value;
+            GithubRepositoryOut = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value1 as object 
+            GithubRepositoryOut as object 
             ;
 
         /// <summary>
@@ -56,14 +57,14 @@ namespace Mistral
         /// </summary>
         public bool Validate()
         {
-            return IsValue1;
+            return IsGithubRepositoryOut;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<T1, TResult>? value1 = null,
+            global::System.Func<global::Mistral.GithubRepositoryOut?, TResult>? githubRepositoryOut = null,
             bool validate = true)
         {
             if (validate)
@@ -71,9 +72,9 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsGithubRepositoryOut && githubRepositoryOut != null)
             {
-                return value1(Value1!);
+                return githubRepositoryOut(GithubRepositoryOut!);
             }
 
             return default(TResult);
@@ -83,7 +84,7 @@ namespace Mistral
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<T1>? value1 = null,
+            global::System.Action<global::Mistral.GithubRepositoryOut?>? githubRepositoryOut = null,
             bool validate = true)
         {
             if (validate)
@@ -91,9 +92,9 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsGithubRepositoryOut)
             {
-                value1?.Invoke(Value1!);
+                githubRepositoryOut?.Invoke(GithubRepositoryOut!);
             }
         }
 
@@ -104,8 +105,8 @@ namespace Mistral
         {
             var fields = new object?[]
             {
-                Value1,
-                typeof(T1),
+                GithubRepositoryOut,
+                typeof(global::Mistral.GithubRepositoryOut),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -118,25 +119,25 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        public bool Equals(OneOf<T1> other)
+        public bool Equals(RepositoriesItem other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<T1?>.Default.Equals(Value1, other.Value1) 
+                global::System.Collections.Generic.EqualityComparer<global::Mistral.GithubRepositoryOut?>.Default.Equals(GithubRepositoryOut, other.GithubRepositoryOut) 
                 ;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static bool operator ==(OneOf<T1> obj1, OneOf<T1> obj2)
+        public static bool operator ==(RepositoriesItem obj1, RepositoriesItem obj2)
         {
-            return global::System.Collections.Generic.EqualityComparer<OneOf<T1>>.Default.Equals(obj1, obj2);
+            return global::System.Collections.Generic.EqualityComparer<RepositoriesItem>.Default.Equals(obj1, obj2);
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static bool operator !=(OneOf<T1> obj1, OneOf<T1> obj2)
+        public static bool operator !=(RepositoriesItem obj1, RepositoriesItem obj2)
         {
             return !(obj1 == obj2);
         }
@@ -146,7 +147,7 @@ namespace Mistral
         /// </summary>
         public override bool Equals(object? obj)
         {
-            return obj is OneOf<T1> o && Equals(o);
+            return obj is RepositoriesItem o && Equals(o);
         }
 
 
@@ -180,14 +181,14 @@ namespace Mistral
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerContext.
         /// </summary>
-        public static global::Mistral.OneOf<T1>? FromJson(
+        public static global::Mistral.RepositoriesItem? FromJson(
             string json,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::Mistral.OneOf<T1>),
-                jsonSerializerContext) as global::Mistral.OneOf<T1>?;
+                typeof(global::Mistral.RepositoriesItem),
+                jsonSerializerContext) as global::Mistral.RepositoriesItem?;
         }
 
         /// <summary>
@@ -197,11 +198,11 @@ namespace Mistral
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::Mistral.OneOf<T1>? FromJson(
+        public static global::Mistral.RepositoriesItem? FromJson(
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.OneOf<T1>>(
+            return global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.RepositoriesItem>(
                 json,
                 jsonSerializerOptions);
         }
