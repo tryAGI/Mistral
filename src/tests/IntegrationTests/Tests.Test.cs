@@ -9,7 +9,7 @@ public partial class Tests
 
         ChatCompletionResponse response = await client.Agents.AgentsCompletionAsync(
             agentId: "Test",
-            messages: new List<OneOf<UserMessage, AssistantMessage, ToolMessage>>
+            messages: new List<MessagesItem>
             {
                 new UserMessage
                 {
