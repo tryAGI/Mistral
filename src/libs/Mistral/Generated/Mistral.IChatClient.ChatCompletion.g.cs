@@ -61,7 +61,7 @@ namespace Mistral
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Mistral.ChatCompletionResponse> ChatCompletionAsync(
-            global::System.Collections.Generic.IList<global::Mistral.OneOf<global::Mistral.SystemMessage, global::Mistral.UserMessage, global::Mistral.AssistantMessage, global::Mistral.ToolMessage>> messages,
+            global::System.Collections.Generic.IList<global::Mistral.MessagesItem2> messages,
             string? model,
             int? maxTokens = default,
             int? minTokens = default,

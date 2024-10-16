@@ -1,4 +1,5 @@
 using System.Linq;
+#pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
 
@@ -7,134 +8,134 @@ namespace Mistral
     /// <summary>
     /// 
     /// </summary>
-    public readonly partial struct OneOf<T1, T2, T3> : global::System.IEquatable<OneOf<T1, T2, T3>>
+    public readonly partial struct MessagesItem : global::System.IEquatable<MessagesItem>
     {
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public T1? Value1 { get; init; }
+        public global::Mistral.UserMessage? UserMessage { get; init; }
 #else
-        public T1? Value1 { get; }
+        public global::Mistral.UserMessage? UserMessage { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(UserMessage))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsUserMessage => UserMessage != null;
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator OneOf<T1, T2, T3>(T1 value) => new OneOf<T1, T2, T3>(value);
+        public static implicit operator MessagesItem(global::Mistral.UserMessage value) => new MessagesItem(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator T1?(OneOf<T1, T2, T3> @this) => @this.Value1;
+        public static implicit operator global::Mistral.UserMessage?(MessagesItem @this) => @this.UserMessage;
 
         /// <summary>
         /// 
         /// </summary>
-        public OneOf(T1? value)
+        public MessagesItem(global::Mistral.UserMessage? value)
         {
-            Value1 = value;
+            UserMessage = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public T2? Value2 { get; init; }
+        public global::Mistral.AssistantMessage? AssistantMessage { get; init; }
 #else
-        public T2? Value2 { get; }
+        public global::Mistral.AssistantMessage? AssistantMessage { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AssistantMessage))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsAssistantMessage => AssistantMessage != null;
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator OneOf<T1, T2, T3>(T2 value) => new OneOf<T1, T2, T3>(value);
+        public static implicit operator MessagesItem(global::Mistral.AssistantMessage value) => new MessagesItem(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator T2?(OneOf<T1, T2, T3> @this) => @this.Value2;
+        public static implicit operator global::Mistral.AssistantMessage?(MessagesItem @this) => @this.AssistantMessage;
 
         /// <summary>
         /// 
         /// </summary>
-        public OneOf(T2? value)
+        public MessagesItem(global::Mistral.AssistantMessage? value)
         {
-            Value2 = value;
+            AssistantMessage = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public T3? Value3 { get; init; }
+        public global::Mistral.ToolMessage? ToolMessage { get; init; }
 #else
-        public T3? Value3 { get; }
+        public global::Mistral.ToolMessage? ToolMessage { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolMessage))]
 #endif
-        public bool IsValue3 => Value3 != null;
+        public bool IsToolMessage => ToolMessage != null;
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator OneOf<T1, T2, T3>(T3 value) => new OneOf<T1, T2, T3>(value);
+        public static implicit operator MessagesItem(global::Mistral.ToolMessage value) => new MessagesItem(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator T3?(OneOf<T1, T2, T3> @this) => @this.Value3;
+        public static implicit operator global::Mistral.ToolMessage?(MessagesItem @this) => @this.ToolMessage;
 
         /// <summary>
         /// 
         /// </summary>
-        public OneOf(T3? value)
+        public MessagesItem(global::Mistral.ToolMessage? value)
         {
-            Value3 = value;
+            ToolMessage = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public OneOf(
-            T1? value1,
-            T2? value2,
-            T3? value3
+        public MessagesItem(
+            global::Mistral.UserMessage? userMessage,
+            global::Mistral.AssistantMessage? assistantMessage,
+            global::Mistral.ToolMessage? toolMessage
             )
         {
-            Value1 = value1;
-            Value2 = value2;
-            Value3 = value3;
+            UserMessage = userMessage;
+            AssistantMessage = assistantMessage;
+            ToolMessage = toolMessage;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value3 as object ??
-            Value2 as object ??
-            Value1 as object 
+            ToolMessage as object ??
+            AssistantMessage as object ??
+            UserMessage as object 
             ;
 
         /// <summary>
@@ -142,16 +143,16 @@ namespace Mistral
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsValue2 && !IsValue3 || !IsValue1 && IsValue2 && !IsValue3 || !IsValue1 && !IsValue2 && IsValue3;
+            return IsUserMessage && !IsAssistantMessage && !IsToolMessage || !IsUserMessage && IsAssistantMessage && !IsToolMessage || !IsUserMessage && !IsAssistantMessage && IsToolMessage;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<T1, TResult>? value1 = null,
-            global::System.Func<T2, TResult>? value2 = null,
-            global::System.Func<T3, TResult>? value3 = null,
+            global::System.Func<global::Mistral.UserMessage?, TResult>? userMessage = null,
+            global::System.Func<global::Mistral.AssistantMessage?, TResult>? assistantMessage = null,
+            global::System.Func<global::Mistral.ToolMessage?, TResult>? toolMessage = null,
             bool validate = true)
         {
             if (validate)
@@ -159,17 +160,17 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsUserMessage && userMessage != null)
             {
-                return value1(Value1!);
+                return userMessage(UserMessage!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsAssistantMessage && assistantMessage != null)
             {
-                return value2(Value2!);
+                return assistantMessage(AssistantMessage!);
             }
-            else if (IsValue3 && value3 != null)
+            else if (IsToolMessage && toolMessage != null)
             {
-                return value3(Value3!);
+                return toolMessage(ToolMessage!);
             }
 
             return default(TResult);
@@ -179,9 +180,9 @@ namespace Mistral
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<T1>? value1 = null,
-            global::System.Action<T2>? value2 = null,
-            global::System.Action<T3>? value3 = null,
+            global::System.Action<global::Mistral.UserMessage?>? userMessage = null,
+            global::System.Action<global::Mistral.AssistantMessage?>? assistantMessage = null,
+            global::System.Action<global::Mistral.ToolMessage?>? toolMessage = null,
             bool validate = true)
         {
             if (validate)
@@ -189,17 +190,17 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsUserMessage)
             {
-                value1?.Invoke(Value1!);
+                userMessage?.Invoke(UserMessage!);
             }
-            else if (IsValue2)
+            else if (IsAssistantMessage)
             {
-                value2?.Invoke(Value2!);
+                assistantMessage?.Invoke(AssistantMessage!);
             }
-            else if (IsValue3)
+            else if (IsToolMessage)
             {
-                value3?.Invoke(Value3!);
+                toolMessage?.Invoke(ToolMessage!);
             }
         }
 
@@ -210,12 +211,12 @@ namespace Mistral
         {
             var fields = new object?[]
             {
-                Value1,
-                typeof(T1),
-                Value2,
-                typeof(T2),
-                Value3,
-                typeof(T3),
+                UserMessage,
+                typeof(global::Mistral.UserMessage),
+                AssistantMessage,
+                typeof(global::Mistral.AssistantMessage),
+                ToolMessage,
+                typeof(global::Mistral.ToolMessage),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -228,27 +229,27 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        public bool Equals(OneOf<T1, T2, T3> other)
+        public bool Equals(MessagesItem other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<T1?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<T2?>.Default.Equals(Value2, other.Value2) &&
-                global::System.Collections.Generic.EqualityComparer<T3?>.Default.Equals(Value3, other.Value3) 
+                global::System.Collections.Generic.EqualityComparer<global::Mistral.UserMessage?>.Default.Equals(UserMessage, other.UserMessage) &&
+                global::System.Collections.Generic.EqualityComparer<global::Mistral.AssistantMessage?>.Default.Equals(AssistantMessage, other.AssistantMessage) &&
+                global::System.Collections.Generic.EqualityComparer<global::Mistral.ToolMessage?>.Default.Equals(ToolMessage, other.ToolMessage) 
                 ;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static bool operator ==(OneOf<T1, T2, T3> obj1, OneOf<T1, T2, T3> obj2)
+        public static bool operator ==(MessagesItem obj1, MessagesItem obj2)
         {
-            return global::System.Collections.Generic.EqualityComparer<OneOf<T1, T2, T3>>.Default.Equals(obj1, obj2);
+            return global::System.Collections.Generic.EqualityComparer<MessagesItem>.Default.Equals(obj1, obj2);
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static bool operator !=(OneOf<T1, T2, T3> obj1, OneOf<T1, T2, T3> obj2)
+        public static bool operator !=(MessagesItem obj1, MessagesItem obj2)
         {
             return !(obj1 == obj2);
         }
@@ -258,7 +259,7 @@ namespace Mistral
         /// </summary>
         public override bool Equals(object? obj)
         {
-            return obj is OneOf<T1, T2, T3> o && Equals(o);
+            return obj is MessagesItem o && Equals(o);
         }
 
 
@@ -292,14 +293,14 @@ namespace Mistral
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerContext.
         /// </summary>
-        public static global::Mistral.OneOf<T1, T2, T3>? FromJson(
+        public static global::Mistral.MessagesItem? FromJson(
             string json,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::Mistral.OneOf<T1, T2, T3>),
-                jsonSerializerContext) as global::Mistral.OneOf<T1, T2, T3>?;
+                typeof(global::Mistral.MessagesItem),
+                jsonSerializerContext) as global::Mistral.MessagesItem?;
         }
 
         /// <summary>
@@ -309,11 +310,11 @@ namespace Mistral
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::Mistral.OneOf<T1, T2, T3>? FromJson(
+        public static global::Mistral.MessagesItem? FromJson(
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.OneOf<T1, T2, T3>>(
+            return global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.MessagesItem>(
                 json,
                 jsonSerializerOptions);
         }

@@ -1,6 +1,4 @@
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace Mistral
@@ -14,7 +12,7 @@ namespace Mistral
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
-        public global::System.Collections.Generic.IList<global::Mistral.OneOf<global::Mistral.BaseModelCard, global::Mistral.FTModelCard>>? Data { get; set; }
+        public global::System.Collections.Generic.IList<global::Mistral.DataItem>? Data { get; set; }
 
         /// <summary>
         /// Default Value: list
