@@ -13,6 +13,11 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public global::Mistral.RetrieveModelV1ModelsModelIdGetResponseDiscriminatorType? Type { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.BaseModelCard? BaseCard { get; init; }
 #else
@@ -84,10 +89,13 @@ namespace Mistral
         /// 
         /// </summary>
         public RetrieveModelV1ModelsModelIdGetResponse(
+            global::Mistral.RetrieveModelV1ModelsModelIdGetResponseDiscriminatorType? type,
             global::Mistral.BaseModelCard? baseCard,
             global::Mistral.FTModelCard? fTCard
             )
         {
+            Type = type;
+
             BaseCard = baseCard;
             FTCard = fTCard;
         }

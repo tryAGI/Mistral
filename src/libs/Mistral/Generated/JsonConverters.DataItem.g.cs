@@ -16,11 +16,10 @@ namespace Mistral.JsonConverters
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
 
-            global::Mistral.ModelListDataItemDiscriminator? discriminator = default;
             var readerCopy = reader;
             var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.ModelListDataItemDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.ModelListDataItemDiscriminator> ??
                             throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.ModelListDataItemDiscriminator)}");
-            discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::Mistral.BaseModelCard? baseModelCard = default;
             if (discriminator?.Type == global::Mistral.ModelListDataItemDiscriminatorType.Base)
@@ -38,6 +37,7 @@ namespace Mistral.JsonConverters
             }
 
             var result = new global::Mistral.DataItem(
+                discriminator?.Type,
                 baseModelCard,
                 fTModelCard
                 );

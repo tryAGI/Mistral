@@ -13,6 +13,11 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public global::Mistral.ContentChunkDiscriminatorType? Type { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.TextChunk? Text { get; init; }
 #else
@@ -84,10 +89,13 @@ namespace Mistral
         /// 
         /// </summary>
         public ContentChunk(
+            global::Mistral.ContentChunkDiscriminatorType? type,
             global::Mistral.TextChunk? text,
             global::Mistral.ImageURLChunk? imageURL
             )
         {
+            Type = type;
+
             Text = text;
             ImageURL = imageURL;
         }

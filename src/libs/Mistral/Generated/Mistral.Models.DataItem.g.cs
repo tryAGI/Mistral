@@ -13,6 +13,11 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public global::Mistral.ModelListDataItemDiscriminatorType? Type { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.BaseModelCard? BaseModelCard { get; init; }
 #else
@@ -84,10 +89,13 @@ namespace Mistral
         /// 
         /// </summary>
         public DataItem(
+            global::Mistral.ModelListDataItemDiscriminatorType? type,
             global::Mistral.BaseModelCard? baseModelCard,
             global::Mistral.FTModelCard? fTModelCard
             )
         {
+            Type = type;
+
             BaseModelCard = baseModelCard;
             FTModelCard = fTModelCard;
         }
