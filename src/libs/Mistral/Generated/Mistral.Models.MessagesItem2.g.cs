@@ -13,6 +13,11 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public global::Mistral.ChatCompletionRequestMessageDiscriminatorRole? Role { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.SystemMessage? SystemMessage { get; init; }
 #else
@@ -154,12 +159,15 @@ namespace Mistral
         /// 
         /// </summary>
         public MessagesItem2(
+            global::Mistral.ChatCompletionRequestMessageDiscriminatorRole? role,
             global::Mistral.SystemMessage? systemMessage,
             global::Mistral.UserMessage? userMessage,
             global::Mistral.AssistantMessage? assistantMessage,
             global::Mistral.ToolMessage? toolMessage
             )
         {
+            Role = role;
+
             SystemMessage = systemMessage;
             UserMessage = userMessage;
             AssistantMessage = assistantMessage;

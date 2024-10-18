@@ -16,11 +16,10 @@ namespace Mistral.JsonConverters
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
 
-            global::Mistral.ContentChunkDiscriminator? discriminator = default;
             var readerCopy = reader;
             var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.ContentChunkDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.ContentChunkDiscriminator> ??
                             throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.ContentChunkDiscriminator)}");
-            discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::Mistral.TextChunk? text = default;
             if (discriminator?.Type == global::Mistral.ContentChunkDiscriminatorType.Text)
@@ -38,6 +37,7 @@ namespace Mistral.JsonConverters
             }
 
             var result = new global::Mistral.ContentChunk(
+                discriminator?.Type,
                 text,
                 imageURL
                 );

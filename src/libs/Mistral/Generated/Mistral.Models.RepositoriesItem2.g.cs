@@ -13,6 +13,11 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public global::Mistral.JobInRepositorieDiscriminatorType? Type { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.GithubRepositoryIn? GithubRepositoryIn { get; init; }
 #else
@@ -43,6 +48,19 @@ namespace Mistral
         public RepositoriesItem2(global::Mistral.GithubRepositoryIn? value)
         {
             GithubRepositoryIn = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public RepositoriesItem2(
+            global::Mistral.JobInRepositorieDiscriminatorType? type,
+            global::Mistral.GithubRepositoryIn? githubRepositoryIn
+            )
+        {
+            Type = type;
+
+            GithubRepositoryIn = githubRepositoryIn;
         }
 
         /// <summary>

@@ -13,6 +13,11 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public global::Mistral.JobInIntegrationDiscriminatorType? Type { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.WandbIntegration? WandbIntegration { get; init; }
 #else
@@ -43,6 +48,19 @@ namespace Mistral
         public IntegrationsItem2(global::Mistral.WandbIntegration? value)
         {
             WandbIntegration = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public IntegrationsItem2(
+            global::Mistral.JobInIntegrationDiscriminatorType? type,
+            global::Mistral.WandbIntegration? wandbIntegration
+            )
+        {
+            Type = type;
+
+            WandbIntegration = wandbIntegration;
         }
 
         /// <summary>

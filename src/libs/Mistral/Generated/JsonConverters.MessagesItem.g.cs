@@ -16,11 +16,10 @@ namespace Mistral.JsonConverters
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
 
-            global::Mistral.AgentsCompletionRequestMessageDiscriminator? discriminator = default;
             var readerCopy = reader;
             var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.AgentsCompletionRequestMessageDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.AgentsCompletionRequestMessageDiscriminator> ??
                             throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.AgentsCompletionRequestMessageDiscriminator)}");
-            discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::Mistral.UserMessage? userMessage = default;
             if (discriminator?.Role == global::Mistral.AgentsCompletionRequestMessageDiscriminatorRole.User)
@@ -45,6 +44,7 @@ namespace Mistral.JsonConverters
             }
 
             var result = new global::Mistral.MessagesItem(
+                discriminator?.Role,
                 userMessage,
                 assistantMessage,
                 toolMessage

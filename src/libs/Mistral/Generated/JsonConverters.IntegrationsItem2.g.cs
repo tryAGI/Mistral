@@ -16,11 +16,10 @@ namespace Mistral.JsonConverters
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
 
-            global::Mistral.JobInIntegrationDiscriminator? discriminator = default;
             var readerCopy = reader;
             var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.JobInIntegrationDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.JobInIntegrationDiscriminator> ??
                             throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.JobInIntegrationDiscriminator)}");
-            discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::Mistral.WandbIntegration? wandbIntegration = default;
             if (discriminator?.Type == global::Mistral.JobInIntegrationDiscriminatorType.Wandb)
@@ -31,6 +30,7 @@ namespace Mistral.JsonConverters
             }
 
             var result = new global::Mistral.IntegrationsItem2(
+                discriminator?.Type,
                 wandbIntegration
                 );
 
