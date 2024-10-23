@@ -13,10 +13,18 @@ namespace Mistral
         /// <summary>
         /// Production server
         /// </summary>
-        public const string BaseUrl = "https://api.mistral.ai";
+        public const string DefaultBaseUrl = "https://api.mistral.ai";
 
-        private readonly global::System.Net.Http.HttpClient _httpClient;
-        private global::System.Collections.Generic.List<global::Mistral.EndPointAuthorization> _authorizations;
+        private bool _disposeHttpClient = true;
+
+        /// <inheritdoc/>
+        public global::System.Net.Http.HttpClient HttpClient { get; }
+
+        /// <inheritdoc/>
+        public System.Uri? BaseUri => HttpClient.BaseAddress;
+
+        /// <inheritdoc/>
+        public global::System.Collections.Generic.List<global::Mistral.EndPointAuthorization> Authorizations { get; }
 
         /// <summary>
         /// 
@@ -27,7 +35,7 @@ namespace Mistral
         /// <summary>
         /// Chat Completion API.
         /// </summary>
-        public ChatClient Chat => new ChatClient(_httpClient, authorizations: _authorizations)
+        public ChatClient Chat => new ChatClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -35,7 +43,7 @@ namespace Mistral
         /// <summary>
         /// Fill-in-the-middle API.
         /// </summary>
-        public FimClient Fim => new FimClient(_httpClient, authorizations: _authorizations)
+        public FimClient Fim => new FimClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -43,7 +51,7 @@ namespace Mistral
         /// <summary>
         /// Agents API.
         /// </summary>
-        public AgentsClient Agents => new AgentsClient(_httpClient, authorizations: _authorizations)
+        public AgentsClient Agents => new AgentsClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -51,7 +59,7 @@ namespace Mistral
         /// <summary>
         /// Embeddings API.
         /// </summary>
-        public EmbeddingsClient Embeddings => new EmbeddingsClient(_httpClient, authorizations: _authorizations)
+        public EmbeddingsClient Embeddings => new EmbeddingsClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -59,7 +67,7 @@ namespace Mistral
         /// <summary>
         /// Files API
         /// </summary>
-        public FilesClient Files => new FilesClient(_httpClient, authorizations: _authorizations)
+        public FilesClient Files => new FilesClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -67,7 +75,7 @@ namespace Mistral
         /// <summary>
         /// Fine-tuning API
         /// </summary>
-        public FineTuningClient FineTuning => new FineTuningClient(_httpClient, authorizations: _authorizations)
+        public FineTuningClient FineTuning => new FineTuningClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -75,7 +83,7 @@ namespace Mistral
         /// <summary>
         /// Model Management API
         /// </summary>
-        public ModelsClient Models => new ModelsClient(_httpClient, authorizations: _authorizations)
+        public ModelsClient Models => new ModelsClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -85,25 +93,31 @@ namespace Mistral
         /// If no httpClient is provided, a new one will be created.
         /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
         /// </summary>
-        /// <param name="httpClient"></param>
-        /// <param name="baseUri"></param>
-        /// <param name="authorizations"></param>
+        /// <param name="httpClient">The HttpClient instance. If not provided, a new one will be created.</param>
+        /// <param name="baseUri">The base URL for the API. If not provided, the default baseUri from OpenAPI spec will be used.</param>
+        /// <param name="authorizations">The authorizations to use for the requests.</param>
+        /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
         public MistralClient(
             global::System.Net.Http.HttpClient? httpClient = null,
             global::System.Uri? baseUri = null,
-            global::System.Collections.Generic.List<global::Mistral.EndPointAuthorization>? authorizations = null)
+            global::System.Collections.Generic.List<global::Mistral.EndPointAuthorization>? authorizations = null,
+            bool disposeHttpClient = true)
         {
-            _httpClient = httpClient ?? new global::System.Net.Http.HttpClient();
-            _httpClient.BaseAddress ??= baseUri ?? new global::System.Uri(BaseUrl);
-            _authorizations = authorizations ?? new global::System.Collections.Generic.List<global::Mistral.EndPointAuthorization>();
+            HttpClient = httpClient ?? new global::System.Net.Http.HttpClient();
+            HttpClient.BaseAddress ??= baseUri ?? new global::System.Uri(DefaultBaseUrl);
+            Authorizations = authorizations ?? new global::System.Collections.Generic.List<global::Mistral.EndPointAuthorization>();
+            _disposeHttpClient = disposeHttpClient;
 
-            Initialized(_httpClient);
+            Initialized(HttpClient);
         }
 
         /// <inheritdoc/>
         public void Dispose()
         {
-            _httpClient.Dispose();
+            if (_disposeHttpClient)
+            {
+                HttpClient.Dispose();
+            }
         }
 
         partial void Initialized(
