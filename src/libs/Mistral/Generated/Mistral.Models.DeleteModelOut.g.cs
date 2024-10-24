@@ -14,7 +14,7 @@ namespace Mistral
         /// Example: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("deleted")]
-        public bool? Deleted { get; set; } = true;
+        public bool? Deleted { get; set; }
 
         /// <summary>
         /// The ID of the deleted model.<br/>
@@ -29,7 +29,7 @@ namespace Mistral
         /// Default Value: model
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        public string? Object { get; set; } = "model";
+        public string? Object { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

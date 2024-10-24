@@ -43,7 +43,7 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("purpose")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.FilesApiRoutesUploadFileRequestPurposeJsonConverter))]
-        public global::Mistral.FilesApiRoutesUploadFileRequestPurpose? Purpose { get; set; } = global::Mistral.FilesApiRoutesUploadFileRequestPurpose.FineTune;
+        public global::Mistral.FilesApiRoutesUploadFileRequestPurpose? Purpose { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

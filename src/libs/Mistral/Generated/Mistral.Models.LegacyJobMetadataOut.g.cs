@@ -33,7 +33,7 @@ namespace Mistral
         /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("deprecated")]
-        public bool? Deprecated { get; set; } = true;
+        public bool? Deprecated { get; set; }
 
         /// <summary>
         /// 
@@ -67,7 +67,7 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.LegacyJobMetadataOutObjectJsonConverter))]
-        public global::Mistral.LegacyJobMetadataOutObject? Object { get; set; } = global::Mistral.LegacyJobMetadataOutObject.JobMetadata;
+        public global::Mistral.LegacyJobMetadataOutObject? Object { get; set; }
 
         /// <summary>
         /// The total number of tokens used during the fine-tuning process.<br/>

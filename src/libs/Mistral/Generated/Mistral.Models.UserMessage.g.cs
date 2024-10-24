@@ -23,7 +23,7 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.UserMessageRoleJsonConverter))]
-        public global::Mistral.UserMessageRole? Role { get; set; } = global::Mistral.UserMessageRole.User;
+        public global::Mistral.UserMessageRole? Role { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

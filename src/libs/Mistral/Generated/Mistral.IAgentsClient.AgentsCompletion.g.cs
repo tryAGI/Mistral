@@ -55,7 +55,7 @@ namespace Mistral
             int? randomSeed = default,
             global::Mistral.ResponseFormat? responseFormat = default,
             global::Mistral.AnyOf<string, global::System.Collections.Generic.IList<string>>? stop = default,
-            bool? stream = false,
+            bool? stream = default,
             global::Mistral.AnyOf<global::Mistral.ToolChoice3, global::Mistral.ToolChoiceEnum?>? toolChoice = default,
             global::System.Collections.Generic.IList<global::Mistral.Tool>? tools = default,
             global::System.Threading.CancellationToken cancellationToken = default);

@@ -59,11 +59,11 @@ namespace Mistral
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::Mistral.JobsOut> GetFineTuningJobsAsync(
-            int? page = 0,
-            int? pageSize = 100,
+            int? page = default,
+            int? pageSize = default,
             string? model = default,
             global::System.DateTime? createdAfter = default,
-            bool? createdByMe = false,
+            bool? createdByMe = default,
             global::Mistral.JobsApiRoutesFineTuningGetFineTuningJobsStatus? status = default,
             string? wandbProject = default,
             string? wandbName = default,

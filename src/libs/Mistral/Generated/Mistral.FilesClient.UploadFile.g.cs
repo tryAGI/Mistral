@@ -76,7 +76,7 @@ namespace Mistral
                 },
                 name: "file",
                 fileName: request.Filename ?? string.Empty);
-            if (request.Purpose != global::Mistral.FilesApiRoutesUploadFileRequestPurpose.FineTune)
+            if (request.Purpose != default)
             {
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.Purpose?.ToValueString()}"),
@@ -165,7 +165,7 @@ namespace Mistral
         public async global::System.Threading.Tasks.Task<global::Mistral.UploadFileOut> UploadFileAsync(
             byte[] file,
             string filename,
-            global::Mistral.FilesApiRoutesUploadFileRequestPurpose? purpose = global::Mistral.FilesApiRoutesUploadFileRequestPurpose.FineTune,
+            global::Mistral.FilesApiRoutesUploadFileRequestPurpose? purpose = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::Mistral.FilesApiRoutesUploadFileRequest

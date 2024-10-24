@@ -40,13 +40,13 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.GithubRepositoryInTypeJsonConverter))]
-        public global::Mistral.GithubRepositoryInType? Type { get; set; } = global::Mistral.GithubRepositoryInType.Github;
+        public global::Mistral.GithubRepositoryInType? Type { get; set; }
 
         /// <summary>
         /// Default Value: 1
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("weight")]
-        public double? Weight { get; set; } = 1;
+        public double? Weight { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

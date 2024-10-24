@@ -84,7 +84,7 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.JobOutObjectJsonConverter))]
-        public global::Mistral.JobOutObject? Object { get; set; } = global::Mistral.JobOutObject.Job;
+        public global::Mistral.JobOutObject? Object { get; set; }
 
         /// <summary>
         /// Default Value: []

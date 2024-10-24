@@ -23,7 +23,7 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.ImageURLChunkTypeJsonConverter))]
-        public global::Mistral.ImageURLChunkType? Type { get; set; } = global::Mistral.ImageURLChunkType.ImageUrl;
+        public global::Mistral.ImageURLChunkType? Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

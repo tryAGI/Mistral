@@ -167,13 +167,13 @@ namespace Mistral
             int? minTokens = default,
             int? randomSeed = default,
             global::Mistral.ResponseFormat? responseFormat = default,
-            bool? safePrompt = false,
+            bool? safePrompt = default,
             global::Mistral.AnyOf<string, global::System.Collections.Generic.IList<string>>? stop = default,
-            bool? stream = false,
-            double? temperature = 0.7,
+            bool? stream = default,
+            double? temperature = default,
             global::Mistral.AnyOf<global::Mistral.ToolChoice3, global::Mistral.ToolChoiceEnum?>? toolChoice = default,
             global::System.Collections.Generic.IList<global::Mistral.Tool>? tools = default,
-            double? topP = 1,
+            double? topP = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::Mistral.ChatCompletionRequest

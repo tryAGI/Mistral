@@ -19,14 +19,14 @@ namespace Mistral
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prefix")]
-        public bool? Prefix { get; set; } = false;
+        public bool? Prefix { get; set; }
 
         /// <summary>
         /// Default Value: assistant
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.AssistantMessageRoleJsonConverter))]
-        public global::Mistral.AssistantMessageRole? Role { get; set; } = global::Mistral.AssistantMessageRole.Assistant;
+        public global::Mistral.AssistantMessageRole? Role { get; set; }
 
         /// <summary>
         /// 

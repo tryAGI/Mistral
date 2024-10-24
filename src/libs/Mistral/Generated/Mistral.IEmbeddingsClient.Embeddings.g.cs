@@ -34,7 +34,7 @@ namespace Mistral
         global::System.Threading.Tasks.Task<global::Mistral.EmbeddingResponse> EmbeddingsAsync(
             global::Mistral.AnyOf<string, global::System.Collections.Generic.IList<string>> input,
             string model,
-            string? encodingFormat = "float",
+            string? encodingFormat = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -15,7 +15,7 @@ namespace Mistral
         /// Default Value: float
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("encoding_format")]
-        public string? EncodingFormat { get; set; } = "float";
+        public string? EncodingFormat { get; set; }
 
         /// <summary>
         /// Text to embed.
