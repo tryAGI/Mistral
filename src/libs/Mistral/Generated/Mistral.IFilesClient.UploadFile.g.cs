@@ -53,7 +53,7 @@ namespace Mistral
         global::System.Threading.Tasks.Task<global::Mistral.UploadFileOut> UploadFileAsync(
             byte[] file,
             string filename,
-            global::Mistral.FilesApiRoutesUploadFileRequestPurpose? purpose = global::Mistral.FilesApiRoutesUploadFileRequestPurpose.FineTune,
+            global::Mistral.FilesApiRoutesUploadFileRequestPurpose? purpose = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

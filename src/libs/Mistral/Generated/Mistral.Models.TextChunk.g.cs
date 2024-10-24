@@ -20,7 +20,7 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.TextChunkTypeJsonConverter))]
-        public global::Mistral.TextChunkType? Type { get; set; } = global::Mistral.TextChunkType.Text;
+        public global::Mistral.TextChunkType? Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -12,7 +12,7 @@ namespace Mistral
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("archived")]
-        public bool? Archived { get; set; } = false;
+        public bool? Archived { get; set; }
 
         /// <summary>
         /// 
@@ -26,7 +26,7 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.UnarchiveFTModelOutObjectJsonConverter))]
-        public global::Mistral.UnarchiveFTModelOutObject? Object { get; set; } = global::Mistral.UnarchiveFTModelOutObject.Model;
+        public global::Mistral.UnarchiveFTModelOutObject? Object { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

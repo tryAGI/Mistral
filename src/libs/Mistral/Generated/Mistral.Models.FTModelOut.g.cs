@@ -59,7 +59,7 @@ namespace Mistral
         /// Default Value: 32768
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_context_length")]
-        public int? MaxContextLength { get; set; } = 32768;
+        public int? MaxContextLength { get; set; }
 
         /// <summary>
         /// 
@@ -72,7 +72,7 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.FTModelOutObjectJsonConverter))]
-        public global::Mistral.FTModelOutObject? Object { get; set; } = global::Mistral.FTModelOutObject.Model;
+        public global::Mistral.FTModelOutObject? Object { get; set; }
 
         /// <summary>
         /// 

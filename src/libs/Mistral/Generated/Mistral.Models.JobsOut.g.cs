@@ -19,7 +19,7 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.JobsOutObjectJsonConverter))]
-        public global::Mistral.JobsOutObject? Object { get; set; } = global::Mistral.JobsOutObject.List;
+        public global::Mistral.JobsOutObject? Object { get; set; }
 
         /// <summary>
         /// 

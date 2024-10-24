@@ -18,7 +18,7 @@ namespace Mistral
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("archived")]
-        public bool? Archived { get; set; } = false;
+        public bool? Archived { get; set; }
 
         /// <summary>
         /// 
@@ -63,7 +63,7 @@ namespace Mistral
         /// Default Value: 32768
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_context_length")]
-        public int? MaxContextLength { get; set; } = 32768;
+        public int? MaxContextLength { get; set; }
 
         /// <summary>
         /// 
@@ -75,13 +75,13 @@ namespace Mistral
         /// Default Value: model
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        public string? Object { get; set; } = "model";
+        public string? Object { get; set; }
 
         /// <summary>
         /// Default Value: mistralai
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("owned_by")]
-        public string? OwnedBy { get; set; } = "mistralai";
+        public string? OwnedBy { get; set; }
 
         /// <summary>
         /// 
@@ -95,7 +95,7 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.FTModelCardTypeJsonConverter))]
-        public global::Mistral.FTModelCardType? Type { get; set; } = global::Mistral.FTModelCardType.FineTuned;
+        public global::Mistral.FTModelCardType? Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

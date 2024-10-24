@@ -26,7 +26,7 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.ToolMessageRoleJsonConverter))]
-        public global::Mistral.ToolMessageRole? Role { get; set; } = global::Mistral.ToolMessageRole.Tool;
+        public global::Mistral.ToolMessageRole? Role { get; set; }
 
         /// <summary>
         /// 

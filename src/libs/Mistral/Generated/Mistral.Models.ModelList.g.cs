@@ -18,7 +18,7 @@ namespace Mistral
         /// Default Value: list
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        public string? Object { get; set; } = "list";
+        public string? Object { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -39,7 +39,7 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.WandbIntegrationTypeJsonConverter))]
-        public global::Mistral.WandbIntegrationType? Type { get; set; } = global::Mistral.WandbIntegrationType.Wandb;
+        public global::Mistral.WandbIntegrationType? Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
