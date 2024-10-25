@@ -127,9 +127,6 @@ namespace Mistral
         /// The prompt(s) to generate completions for, encoded as a list of dict with role and content.<br/>
         /// Example: []
         /// </param>
-        /// <param name="minTokens">
-        /// The minimum number of tokens to generate in the completion.
-        /// </param>
         /// <param name="randomSeed">
         /// The seed to use for random sampling. If set, different calls will generate deterministic results.
         /// </param>
@@ -151,7 +148,6 @@ namespace Mistral
             string agentId,
             global::System.Collections.Generic.IList<global::Mistral.MessagesItem> messages,
             int? maxTokens = default,
-            int? minTokens = default,
             int? randomSeed = default,
             global::Mistral.ResponseFormat? responseFormat = default,
             global::Mistral.AnyOf<string, global::System.Collections.Generic.IList<string>>? stop = default,
@@ -165,7 +161,6 @@ namespace Mistral
                 AgentId = agentId,
                 MaxTokens = maxTokens,
                 Messages = messages,
-                MinTokens = minTokens,
                 RandomSeed = randomSeed,
                 ResponseFormat = responseFormat,
                 Stop = stop,

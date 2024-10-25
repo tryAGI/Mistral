@@ -24,9 +24,6 @@ namespace Mistral
         /// The prompt(s) to generate completions for, encoded as a list of dict with role and content.<br/>
         /// Example: []
         /// </param>
-        /// <param name="minTokens">
-        /// The minimum number of tokens to generate in the completion.
-        /// </param>
         /// <param name="model">
         /// ID of the model to use. You can use the [List Available Models](/api/#tag/models/operation/list_models_v1_models_get) API to see all of your available models, or see our [Model overview](/models) for model descriptions.<br/>
         /// Example: mistral-small-latest
@@ -47,8 +44,8 @@ namespace Mistral
         /// Default Value: false
         /// </param>
         /// <param name="temperature">
-        /// What sampling temperature to use, between 0.0 and 1.0. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic. We generally recommend altering this or `top_p` but not both.<br/>
-        /// Default Value: 0.7
+        /// What sampling temperature to use, we recommend between 0.0 and 1.0. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic. We generally recommend altering this or `top_p` but not both.<br/>
+        /// Default Value: 0.3
         /// </param>
         /// <param name="toolChoice">
         /// Default Value: auto
@@ -64,7 +61,6 @@ namespace Mistral
             global::System.Collections.Generic.IList<global::Mistral.MessagesItem2> messages,
             string? model,
             int? maxTokens = default,
-            int? minTokens = default,
             int? randomSeed = default,
             global::Mistral.ResponseFormat? responseFormat = default,
             bool? safePrompt = default,

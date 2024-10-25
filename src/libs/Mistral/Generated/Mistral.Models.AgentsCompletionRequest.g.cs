@@ -32,12 +32,6 @@ namespace Mistral
         public required global::System.Collections.Generic.IList<global::Mistral.MessagesItem> Messages { get; set; }
 
         /// <summary>
-        /// The minimum number of tokens to generate in the completion.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("min_tokens")]
-        public int? MinTokens { get; set; }
-
-        /// <summary>
         /// The seed to use for random sampling. If set, different calls will generate deterministic results.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("random_seed")]
