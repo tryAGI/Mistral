@@ -25,12 +25,6 @@ namespace Mistral
         public required global::System.Collections.Generic.IList<global::Mistral.MessagesItem2> Messages { get; set; }
 
         /// <summary>
-        /// The minimum number of tokens to generate in the completion.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("min_tokens")]
-        public int? MinTokens { get; set; }
-
-        /// <summary>
         /// ID of the model to use. You can use the [List Available Models](/api/#tag/models/operation/list_models_v1_models_get) API to see all of your available models, or see our [Model overview](/models) for model descriptions.<br/>
         /// Example: mistral-small-latest
         /// </summary>
@@ -72,8 +66,8 @@ namespace Mistral
         public bool? Stream { get; set; }
 
         /// <summary>
-        /// What sampling temperature to use, between 0.0 and 1.0. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic. We generally recommend altering this or `top_p` but not both.<br/>
-        /// Default Value: 0.7
+        /// What sampling temperature to use, we recommend between 0.0 and 1.0. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic. We generally recommend altering this or `top_p` but not both.<br/>
+        /// Default Value: 0.3
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("temperature")]
         public double? Temperature { get; set; }
