@@ -19,18 +19,18 @@ namespace Mistral
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Mistral.BaseModelCard? BaseModelCard { get; init; }
+        public global::Mistral.BaseModelCard? Base { get; init; }
 #else
-        public global::Mistral.BaseModelCard? BaseModelCard { get; }
+        public global::Mistral.BaseModelCard? Base { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BaseModelCard))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Base))]
 #endif
-        public bool IsBaseModelCard => BaseModelCard != null;
+        public bool IsBase => Base != null;
 
         /// <summary>
         /// 
@@ -40,32 +40,32 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Mistral.BaseModelCard?(DataItem @this) => @this.BaseModelCard;
+        public static implicit operator global::Mistral.BaseModelCard?(DataItem @this) => @this.Base;
 
         /// <summary>
         /// 
         /// </summary>
         public DataItem(global::Mistral.BaseModelCard? value)
         {
-            BaseModelCard = value;
+            Base = value;
         }
 
         /// <summary>
         /// Extra fields for fine-tuned models.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Mistral.FTModelCard? FTModelCard { get; init; }
+        public global::Mistral.FTModelCard? FineTuned { get; init; }
 #else
-        public global::Mistral.FTModelCard? FTModelCard { get; }
+        public global::Mistral.FTModelCard? FineTuned { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FTModelCard))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FineTuned))]
 #endif
-        public bool IsFTModelCard => FTModelCard != null;
+        public bool IsFineTuned => FineTuned != null;
 
         /// <summary>
         /// 
@@ -75,14 +75,14 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Mistral.FTModelCard?(DataItem @this) => @this.FTModelCard;
+        public static implicit operator global::Mistral.FTModelCard?(DataItem @this) => @this.FineTuned;
 
         /// <summary>
         /// 
         /// </summary>
         public DataItem(global::Mistral.FTModelCard? value)
         {
-            FTModelCard = value;
+            FineTuned = value;
         }
 
         /// <summary>
@@ -90,22 +90,22 @@ namespace Mistral
         /// </summary>
         public DataItem(
             global::Mistral.ModelListDataItemDiscriminatorType? type,
-            global::Mistral.BaseModelCard? baseModelCard,
-            global::Mistral.FTModelCard? fTModelCard
+            global::Mistral.BaseModelCard? @base,
+            global::Mistral.FTModelCard? fineTuned
             )
         {
             Type = type;
 
-            BaseModelCard = baseModelCard;
-            FTModelCard = fTModelCard;
+            Base = @base;
+            FineTuned = fineTuned;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            FTModelCard as object ??
-            BaseModelCard as object 
+            FineTuned as object ??
+            Base as object 
             ;
 
         /// <summary>
@@ -113,15 +113,15 @@ namespace Mistral
         /// </summary>
         public bool Validate()
         {
-            return IsBaseModelCard && !IsFTModelCard || !IsBaseModelCard && IsFTModelCard;
+            return IsBase && !IsFineTuned || !IsBase && IsFineTuned;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Mistral.BaseModelCard?, TResult>? baseModelCard = null,
-            global::System.Func<global::Mistral.FTModelCard?, TResult>? fTModelCard = null,
+            global::System.Func<global::Mistral.BaseModelCard?, TResult>? @base = null,
+            global::System.Func<global::Mistral.FTModelCard?, TResult>? fineTuned = null,
             bool validate = true)
         {
             if (validate)
@@ -129,13 +129,13 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsBaseModelCard && baseModelCard != null)
+            if (IsBase && @base != null)
             {
-                return baseModelCard(BaseModelCard!);
+                return @base(Base!);
             }
-            else if (IsFTModelCard && fTModelCard != null)
+            else if (IsFineTuned && fineTuned != null)
             {
-                return fTModelCard(FTModelCard!);
+                return fineTuned(FineTuned!);
             }
 
             return default(TResult);
@@ -145,8 +145,8 @@ namespace Mistral
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Mistral.BaseModelCard?>? baseModelCard = null,
-            global::System.Action<global::Mistral.FTModelCard?>? fTModelCard = null,
+            global::System.Action<global::Mistral.BaseModelCard?>? @base = null,
+            global::System.Action<global::Mistral.FTModelCard?>? fineTuned = null,
             bool validate = true)
         {
             if (validate)
@@ -154,13 +154,13 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsBaseModelCard)
+            if (IsBase)
             {
-                baseModelCard?.Invoke(BaseModelCard!);
+                @base?.Invoke(Base!);
             }
-            else if (IsFTModelCard)
+            else if (IsFineTuned)
             {
-                fTModelCard?.Invoke(FTModelCard!);
+                fineTuned?.Invoke(FineTuned!);
             }
         }
 
@@ -171,9 +171,9 @@ namespace Mistral
         {
             var fields = new object?[]
             {
-                BaseModelCard,
+                Base,
                 typeof(global::Mistral.BaseModelCard),
-                FTModelCard,
+                FineTuned,
                 typeof(global::Mistral.FTModelCard),
             };
             const int offset = unchecked((int)2166136261);
@@ -190,8 +190,8 @@ namespace Mistral
         public bool Equals(DataItem other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Mistral.BaseModelCard?>.Default.Equals(BaseModelCard, other.BaseModelCard) &&
-                global::System.Collections.Generic.EqualityComparer<global::Mistral.FTModelCard?>.Default.Equals(FTModelCard, other.FTModelCard) 
+                global::System.Collections.Generic.EqualityComparer<global::Mistral.BaseModelCard?>.Default.Equals(Base, other.Base) &&
+                global::System.Collections.Generic.EqualityComparer<global::Mistral.FTModelCard?>.Default.Equals(FineTuned, other.FineTuned) 
                 ;
         }
 

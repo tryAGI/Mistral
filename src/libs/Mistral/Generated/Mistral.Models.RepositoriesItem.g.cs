@@ -19,18 +19,18 @@ namespace Mistral
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Mistral.GithubRepositoryOut? GithubRepositoryOut { get; init; }
+        public global::Mistral.GithubRepositoryOut? Github { get; init; }
 #else
-        public global::Mistral.GithubRepositoryOut? GithubRepositoryOut { get; }
+        public global::Mistral.GithubRepositoryOut? Github { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(GithubRepositoryOut))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Github))]
 #endif
-        public bool IsGithubRepositoryOut => GithubRepositoryOut != null;
+        public bool IsGithub => Github != null;
 
         /// <summary>
         /// 
@@ -40,14 +40,14 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Mistral.GithubRepositoryOut?(RepositoriesItem @this) => @this.GithubRepositoryOut;
+        public static implicit operator global::Mistral.GithubRepositoryOut?(RepositoriesItem @this) => @this.Github;
 
         /// <summary>
         /// 
         /// </summary>
         public RepositoriesItem(global::Mistral.GithubRepositoryOut? value)
         {
-            GithubRepositoryOut = value;
+            Github = value;
         }
 
         /// <summary>
@@ -55,19 +55,19 @@ namespace Mistral
         /// </summary>
         public RepositoriesItem(
             global::Mistral.DetailedJobOutRepositorieDiscriminatorType? type,
-            global::Mistral.GithubRepositoryOut? githubRepositoryOut
+            global::Mistral.GithubRepositoryOut? github
             )
         {
             Type = type;
 
-            GithubRepositoryOut = githubRepositoryOut;
+            Github = github;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            GithubRepositoryOut as object 
+            Github as object 
             ;
 
         /// <summary>
@@ -75,14 +75,14 @@ namespace Mistral
         /// </summary>
         public bool Validate()
         {
-            return IsGithubRepositoryOut;
+            return IsGithub;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Mistral.GithubRepositoryOut?, TResult>? githubRepositoryOut = null,
+            global::System.Func<global::Mistral.GithubRepositoryOut?, TResult>? github = null,
             bool validate = true)
         {
             if (validate)
@@ -90,9 +90,9 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsGithubRepositoryOut && githubRepositoryOut != null)
+            if (IsGithub && github != null)
             {
-                return githubRepositoryOut(GithubRepositoryOut!);
+                return github(Github!);
             }
 
             return default(TResult);
@@ -102,7 +102,7 @@ namespace Mistral
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Mistral.GithubRepositoryOut?>? githubRepositoryOut = null,
+            global::System.Action<global::Mistral.GithubRepositoryOut?>? github = null,
             bool validate = true)
         {
             if (validate)
@@ -110,9 +110,9 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsGithubRepositoryOut)
+            if (IsGithub)
             {
-                githubRepositoryOut?.Invoke(GithubRepositoryOut!);
+                github?.Invoke(Github!);
             }
         }
 
@@ -123,7 +123,7 @@ namespace Mistral
         {
             var fields = new object?[]
             {
-                GithubRepositoryOut,
+                Github,
                 typeof(global::Mistral.GithubRepositoryOut),
             };
             const int offset = unchecked((int)2166136261);
@@ -140,7 +140,7 @@ namespace Mistral
         public bool Equals(RepositoriesItem other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Mistral.GithubRepositoryOut?>.Default.Equals(GithubRepositoryOut, other.GithubRepositoryOut) 
+                global::System.Collections.Generic.EqualityComparer<global::Mistral.GithubRepositoryOut?>.Default.Equals(Github, other.Github) 
                 ;
         }
 

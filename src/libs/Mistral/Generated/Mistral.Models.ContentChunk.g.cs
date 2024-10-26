@@ -54,18 +54,18 @@ namespace Mistral
         /// {"type":"image_url","image_url":{"url":"data:image/png;base64,iVBORw0
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Mistral.ImageURLChunk? ImageURL { get; init; }
+        public global::Mistral.ImageURLChunk? ImageUrl { get; init; }
 #else
-        public global::Mistral.ImageURLChunk? ImageURL { get; }
+        public global::Mistral.ImageURLChunk? ImageUrl { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageURL))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageUrl))]
 #endif
-        public bool IsImageURL => ImageURL != null;
+        public bool IsImageUrl => ImageUrl != null;
 
         /// <summary>
         /// 
@@ -75,14 +75,14 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Mistral.ImageURLChunk?(ContentChunk @this) => @this.ImageURL;
+        public static implicit operator global::Mistral.ImageURLChunk?(ContentChunk @this) => @this.ImageUrl;
 
         /// <summary>
         /// 
         /// </summary>
         public ContentChunk(global::Mistral.ImageURLChunk? value)
         {
-            ImageURL = value;
+            ImageUrl = value;
         }
 
         /// <summary>
@@ -91,20 +91,20 @@ namespace Mistral
         public ContentChunk(
             global::Mistral.ContentChunkDiscriminatorType? type,
             global::Mistral.TextChunk? text,
-            global::Mistral.ImageURLChunk? imageURL
+            global::Mistral.ImageURLChunk? imageUrl
             )
         {
             Type = type;
 
             Text = text;
-            ImageURL = imageURL;
+            ImageUrl = imageUrl;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            ImageURL as object ??
+            ImageUrl as object ??
             Text as object 
             ;
 
@@ -113,7 +113,7 @@ namespace Mistral
         /// </summary>
         public bool Validate()
         {
-            return IsText && !IsImageURL || !IsText && IsImageURL;
+            return IsText && !IsImageUrl || !IsText && IsImageUrl;
         }
 
         /// <summary>
@@ -121,7 +121,7 @@ namespace Mistral
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Mistral.TextChunk?, TResult>? text = null,
-            global::System.Func<global::Mistral.ImageURLChunk?, TResult>? imageURL = null,
+            global::System.Func<global::Mistral.ImageURLChunk?, TResult>? imageUrl = null,
             bool validate = true)
         {
             if (validate)
@@ -133,9 +133,9 @@ namespace Mistral
             {
                 return text(Text!);
             }
-            else if (IsImageURL && imageURL != null)
+            else if (IsImageUrl && imageUrl != null)
             {
-                return imageURL(ImageURL!);
+                return imageUrl(ImageUrl!);
             }
 
             return default(TResult);
@@ -146,7 +146,7 @@ namespace Mistral
         /// </summary>
         public void Match(
             global::System.Action<global::Mistral.TextChunk?>? text = null,
-            global::System.Action<global::Mistral.ImageURLChunk?>? imageURL = null,
+            global::System.Action<global::Mistral.ImageURLChunk?>? imageUrl = null,
             bool validate = true)
         {
             if (validate)
@@ -158,9 +158,9 @@ namespace Mistral
             {
                 text?.Invoke(Text!);
             }
-            else if (IsImageURL)
+            else if (IsImageUrl)
             {
-                imageURL?.Invoke(ImageURL!);
+                imageUrl?.Invoke(ImageUrl!);
             }
         }
 
@@ -173,7 +173,7 @@ namespace Mistral
             {
                 Text,
                 typeof(global::Mistral.TextChunk),
-                ImageURL,
+                ImageUrl,
                 typeof(global::Mistral.ImageURLChunk),
             };
             const int offset = unchecked((int)2166136261);
@@ -191,7 +191,7 @@ namespace Mistral
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Mistral.TextChunk?>.Default.Equals(Text, other.Text) &&
-                global::System.Collections.Generic.EqualityComparer<global::Mistral.ImageURLChunk?>.Default.Equals(ImageURL, other.ImageURL) 
+                global::System.Collections.Generic.EqualityComparer<global::Mistral.ImageURLChunk?>.Default.Equals(ImageUrl, other.ImageUrl) 
                 ;
         }
 

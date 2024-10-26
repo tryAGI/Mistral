@@ -21,17 +21,17 @@ namespace Mistral.JsonConverters
                             throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.JobInIntegrationDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
-            global::Mistral.WandbIntegration? wandbIntegration = default;
+            global::Mistral.WandbIntegration? wandb = default;
             if (discriminator?.Type == global::Mistral.JobInIntegrationDiscriminatorType.Wandb)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.WandbIntegration), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.WandbIntegration> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.WandbIntegration)}");
-                wandbIntegration = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                wandb = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var result = new global::Mistral.IntegrationsItem2(
                 discriminator?.Type,
-                wandbIntegration
+                wandb
                 );
 
             return result;
@@ -46,11 +46,11 @@ namespace Mistral.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsWandbIntegration)
+            if (value.IsWandb)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.WandbIntegration), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.WandbIntegration?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.WandbIntegration).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.WandbIntegration, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Wandb, typeInfo);
             }
         }
     }
