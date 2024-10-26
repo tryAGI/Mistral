@@ -19,18 +19,18 @@ namespace Mistral
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Mistral.UserMessage? UserMessage { get; init; }
+        public global::Mistral.UserMessage? User { get; init; }
 #else
-        public global::Mistral.UserMessage? UserMessage { get; }
+        public global::Mistral.UserMessage? User { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(UserMessage))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(User))]
 #endif
-        public bool IsUserMessage => UserMessage != null;
+        public bool IsUser => User != null;
 
         /// <summary>
         /// 
@@ -40,32 +40,32 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Mistral.UserMessage?(MessagesItem @this) => @this.UserMessage;
+        public static implicit operator global::Mistral.UserMessage?(MessagesItem @this) => @this.User;
 
         /// <summary>
         /// 
         /// </summary>
         public MessagesItem(global::Mistral.UserMessage? value)
         {
-            UserMessage = value;
+            User = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Mistral.AssistantMessage? AssistantMessage { get; init; }
+        public global::Mistral.AssistantMessage? Assistant { get; init; }
 #else
-        public global::Mistral.AssistantMessage? AssistantMessage { get; }
+        public global::Mistral.AssistantMessage? Assistant { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AssistantMessage))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Assistant))]
 #endif
-        public bool IsAssistantMessage => AssistantMessage != null;
+        public bool IsAssistant => Assistant != null;
 
         /// <summary>
         /// 
@@ -75,32 +75,32 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Mistral.AssistantMessage?(MessagesItem @this) => @this.AssistantMessage;
+        public static implicit operator global::Mistral.AssistantMessage?(MessagesItem @this) => @this.Assistant;
 
         /// <summary>
         /// 
         /// </summary>
         public MessagesItem(global::Mistral.AssistantMessage? value)
         {
-            AssistantMessage = value;
+            Assistant = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Mistral.ToolMessage? ToolMessage { get; init; }
+        public global::Mistral.ToolMessage? Tool { get; init; }
 #else
-        public global::Mistral.ToolMessage? ToolMessage { get; }
+        public global::Mistral.ToolMessage? Tool { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolMessage))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Tool))]
 #endif
-        public bool IsToolMessage => ToolMessage != null;
+        public bool IsTool => Tool != null;
 
         /// <summary>
         /// 
@@ -110,14 +110,14 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Mistral.ToolMessage?(MessagesItem @this) => @this.ToolMessage;
+        public static implicit operator global::Mistral.ToolMessage?(MessagesItem @this) => @this.Tool;
 
         /// <summary>
         /// 
         /// </summary>
         public MessagesItem(global::Mistral.ToolMessage? value)
         {
-            ToolMessage = value;
+            Tool = value;
         }
 
         /// <summary>
@@ -125,25 +125,25 @@ namespace Mistral
         /// </summary>
         public MessagesItem(
             global::Mistral.AgentsCompletionRequestMessageDiscriminatorRole? role,
-            global::Mistral.UserMessage? userMessage,
-            global::Mistral.AssistantMessage? assistantMessage,
-            global::Mistral.ToolMessage? toolMessage
+            global::Mistral.UserMessage? user,
+            global::Mistral.AssistantMessage? assistant,
+            global::Mistral.ToolMessage? tool
             )
         {
             Role = role;
 
-            UserMessage = userMessage;
-            AssistantMessage = assistantMessage;
-            ToolMessage = toolMessage;
+            User = user;
+            Assistant = assistant;
+            Tool = tool;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            ToolMessage as object ??
-            AssistantMessage as object ??
-            UserMessage as object 
+            Tool as object ??
+            Assistant as object ??
+            User as object 
             ;
 
         /// <summary>
@@ -151,16 +151,16 @@ namespace Mistral
         /// </summary>
         public bool Validate()
         {
-            return IsUserMessage && !IsAssistantMessage && !IsToolMessage || !IsUserMessage && IsAssistantMessage && !IsToolMessage || !IsUserMessage && !IsAssistantMessage && IsToolMessage;
+            return IsUser && !IsAssistant && !IsTool || !IsUser && IsAssistant && !IsTool || !IsUser && !IsAssistant && IsTool;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Mistral.UserMessage?, TResult>? userMessage = null,
-            global::System.Func<global::Mistral.AssistantMessage?, TResult>? assistantMessage = null,
-            global::System.Func<global::Mistral.ToolMessage?, TResult>? toolMessage = null,
+            global::System.Func<global::Mistral.UserMessage?, TResult>? user = null,
+            global::System.Func<global::Mistral.AssistantMessage?, TResult>? assistant = null,
+            global::System.Func<global::Mistral.ToolMessage?, TResult>? tool = null,
             bool validate = true)
         {
             if (validate)
@@ -168,17 +168,17 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsUserMessage && userMessage != null)
+            if (IsUser && user != null)
             {
-                return userMessage(UserMessage!);
+                return user(User!);
             }
-            else if (IsAssistantMessage && assistantMessage != null)
+            else if (IsAssistant && assistant != null)
             {
-                return assistantMessage(AssistantMessage!);
+                return assistant(Assistant!);
             }
-            else if (IsToolMessage && toolMessage != null)
+            else if (IsTool && tool != null)
             {
-                return toolMessage(ToolMessage!);
+                return tool(Tool!);
             }
 
             return default(TResult);
@@ -188,9 +188,9 @@ namespace Mistral
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Mistral.UserMessage?>? userMessage = null,
-            global::System.Action<global::Mistral.AssistantMessage?>? assistantMessage = null,
-            global::System.Action<global::Mistral.ToolMessage?>? toolMessage = null,
+            global::System.Action<global::Mistral.UserMessage?>? user = null,
+            global::System.Action<global::Mistral.AssistantMessage?>? assistant = null,
+            global::System.Action<global::Mistral.ToolMessage?>? tool = null,
             bool validate = true)
         {
             if (validate)
@@ -198,17 +198,17 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsUserMessage)
+            if (IsUser)
             {
-                userMessage?.Invoke(UserMessage!);
+                user?.Invoke(User!);
             }
-            else if (IsAssistantMessage)
+            else if (IsAssistant)
             {
-                assistantMessage?.Invoke(AssistantMessage!);
+                assistant?.Invoke(Assistant!);
             }
-            else if (IsToolMessage)
+            else if (IsTool)
             {
-                toolMessage?.Invoke(ToolMessage!);
+                tool?.Invoke(Tool!);
             }
         }
 
@@ -219,11 +219,11 @@ namespace Mistral
         {
             var fields = new object?[]
             {
-                UserMessage,
+                User,
                 typeof(global::Mistral.UserMessage),
-                AssistantMessage,
+                Assistant,
                 typeof(global::Mistral.AssistantMessage),
-                ToolMessage,
+                Tool,
                 typeof(global::Mistral.ToolMessage),
             };
             const int offset = unchecked((int)2166136261);
@@ -240,9 +240,9 @@ namespace Mistral
         public bool Equals(MessagesItem other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Mistral.UserMessage?>.Default.Equals(UserMessage, other.UserMessage) &&
-                global::System.Collections.Generic.EqualityComparer<global::Mistral.AssistantMessage?>.Default.Equals(AssistantMessage, other.AssistantMessage) &&
-                global::System.Collections.Generic.EqualityComparer<global::Mistral.ToolMessage?>.Default.Equals(ToolMessage, other.ToolMessage) 
+                global::System.Collections.Generic.EqualityComparer<global::Mistral.UserMessage?>.Default.Equals(User, other.User) &&
+                global::System.Collections.Generic.EqualityComparer<global::Mistral.AssistantMessage?>.Default.Equals(Assistant, other.Assistant) &&
+                global::System.Collections.Generic.EqualityComparer<global::Mistral.ToolMessage?>.Default.Equals(Tool, other.Tool) 
                 ;
         }
 

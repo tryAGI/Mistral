@@ -19,18 +19,18 @@ namespace Mistral
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Mistral.WandbIntegration? WandbIntegration { get; init; }
+        public global::Mistral.WandbIntegration? Wandb { get; init; }
 #else
-        public global::Mistral.WandbIntegration? WandbIntegration { get; }
+        public global::Mistral.WandbIntegration? Wandb { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WandbIntegration))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Wandb))]
 #endif
-        public bool IsWandbIntegration => WandbIntegration != null;
+        public bool IsWandb => Wandb != null;
 
         /// <summary>
         /// 
@@ -40,14 +40,14 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Mistral.WandbIntegration?(IntegrationsItem2 @this) => @this.WandbIntegration;
+        public static implicit operator global::Mistral.WandbIntegration?(IntegrationsItem2 @this) => @this.Wandb;
 
         /// <summary>
         /// 
         /// </summary>
         public IntegrationsItem2(global::Mistral.WandbIntegration? value)
         {
-            WandbIntegration = value;
+            Wandb = value;
         }
 
         /// <summary>
@@ -55,19 +55,19 @@ namespace Mistral
         /// </summary>
         public IntegrationsItem2(
             global::Mistral.JobInIntegrationDiscriminatorType? type,
-            global::Mistral.WandbIntegration? wandbIntegration
+            global::Mistral.WandbIntegration? wandb
             )
         {
             Type = type;
 
-            WandbIntegration = wandbIntegration;
+            Wandb = wandb;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            WandbIntegration as object 
+            Wandb as object 
             ;
 
         /// <summary>
@@ -75,14 +75,14 @@ namespace Mistral
         /// </summary>
         public bool Validate()
         {
-            return IsWandbIntegration;
+            return IsWandb;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Mistral.WandbIntegration?, TResult>? wandbIntegration = null,
+            global::System.Func<global::Mistral.WandbIntegration?, TResult>? wandb = null,
             bool validate = true)
         {
             if (validate)
@@ -90,9 +90,9 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsWandbIntegration && wandbIntegration != null)
+            if (IsWandb && wandb != null)
             {
-                return wandbIntegration(WandbIntegration!);
+                return wandb(Wandb!);
             }
 
             return default(TResult);
@@ -102,7 +102,7 @@ namespace Mistral
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Mistral.WandbIntegration?>? wandbIntegration = null,
+            global::System.Action<global::Mistral.WandbIntegration?>? wandb = null,
             bool validate = true)
         {
             if (validate)
@@ -110,9 +110,9 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsWandbIntegration)
+            if (IsWandb)
             {
-                wandbIntegration?.Invoke(WandbIntegration!);
+                wandb?.Invoke(Wandb!);
             }
         }
 
@@ -123,7 +123,7 @@ namespace Mistral
         {
             var fields = new object?[]
             {
-                WandbIntegration,
+                Wandb,
                 typeof(global::Mistral.WandbIntegration),
             };
             const int offset = unchecked((int)2166136261);
@@ -140,7 +140,7 @@ namespace Mistral
         public bool Equals(IntegrationsItem2 other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Mistral.WandbIntegration?>.Default.Equals(WandbIntegration, other.WandbIntegration) 
+                global::System.Collections.Generic.EqualityComparer<global::Mistral.WandbIntegration?>.Default.Equals(Wandb, other.Wandb) 
                 ;
         }
 

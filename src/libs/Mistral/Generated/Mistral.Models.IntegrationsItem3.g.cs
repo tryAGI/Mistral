@@ -19,18 +19,18 @@ namespace Mistral
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Mistral.WandbIntegrationOut? WandbIntegrationOut { get; init; }
+        public global::Mistral.WandbIntegrationOut? Wandb { get; init; }
 #else
-        public global::Mistral.WandbIntegrationOut? WandbIntegrationOut { get; }
+        public global::Mistral.WandbIntegrationOut? Wandb { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WandbIntegrationOut))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Wandb))]
 #endif
-        public bool IsWandbIntegrationOut => WandbIntegrationOut != null;
+        public bool IsWandb => Wandb != null;
 
         /// <summary>
         /// 
@@ -40,14 +40,14 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Mistral.WandbIntegrationOut?(IntegrationsItem3 @this) => @this.WandbIntegrationOut;
+        public static implicit operator global::Mistral.WandbIntegrationOut?(IntegrationsItem3 @this) => @this.Wandb;
 
         /// <summary>
         /// 
         /// </summary>
         public IntegrationsItem3(global::Mistral.WandbIntegrationOut? value)
         {
-            WandbIntegrationOut = value;
+            Wandb = value;
         }
 
         /// <summary>
@@ -55,19 +55,19 @@ namespace Mistral
         /// </summary>
         public IntegrationsItem3(
             global::Mistral.JobOutIntegrationDiscriminatorType? type,
-            global::Mistral.WandbIntegrationOut? wandbIntegrationOut
+            global::Mistral.WandbIntegrationOut? wandb
             )
         {
             Type = type;
 
-            WandbIntegrationOut = wandbIntegrationOut;
+            Wandb = wandb;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            WandbIntegrationOut as object 
+            Wandb as object 
             ;
 
         /// <summary>
@@ -75,14 +75,14 @@ namespace Mistral
         /// </summary>
         public bool Validate()
         {
-            return IsWandbIntegrationOut;
+            return IsWandb;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Mistral.WandbIntegrationOut?, TResult>? wandbIntegrationOut = null,
+            global::System.Func<global::Mistral.WandbIntegrationOut?, TResult>? wandb = null,
             bool validate = true)
         {
             if (validate)
@@ -90,9 +90,9 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsWandbIntegrationOut && wandbIntegrationOut != null)
+            if (IsWandb && wandb != null)
             {
-                return wandbIntegrationOut(WandbIntegrationOut!);
+                return wandb(Wandb!);
             }
 
             return default(TResult);
@@ -102,7 +102,7 @@ namespace Mistral
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Mistral.WandbIntegrationOut?>? wandbIntegrationOut = null,
+            global::System.Action<global::Mistral.WandbIntegrationOut?>? wandb = null,
             bool validate = true)
         {
             if (validate)
@@ -110,9 +110,9 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsWandbIntegrationOut)
+            if (IsWandb)
             {
-                wandbIntegrationOut?.Invoke(WandbIntegrationOut!);
+                wandb?.Invoke(Wandb!);
             }
         }
 
@@ -123,7 +123,7 @@ namespace Mistral
         {
             var fields = new object?[]
             {
-                WandbIntegrationOut,
+                Wandb,
                 typeof(global::Mistral.WandbIntegrationOut),
             };
             const int offset = unchecked((int)2166136261);
@@ -140,7 +140,7 @@ namespace Mistral
         public bool Equals(IntegrationsItem3 other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Mistral.WandbIntegrationOut?>.Default.Equals(WandbIntegrationOut, other.WandbIntegrationOut) 
+                global::System.Collections.Generic.EqualityComparer<global::Mistral.WandbIntegrationOut?>.Default.Equals(Wandb, other.Wandb) 
                 ;
         }
 

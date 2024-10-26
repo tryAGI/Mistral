@@ -21,25 +21,25 @@ namespace Mistral.JsonConverters
                             throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.ModelListDataItemDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
-            global::Mistral.BaseModelCard? baseModelCard = default;
+            global::Mistral.BaseModelCard? @base = default;
             if (discriminator?.Type == global::Mistral.ModelListDataItemDiscriminatorType.Base)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.BaseModelCard), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.BaseModelCard> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.BaseModelCard)}");
-                baseModelCard = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                @base = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::Mistral.FTModelCard? fTModelCard = default;
+            global::Mistral.FTModelCard? fineTuned = default;
             if (discriminator?.Type == global::Mistral.ModelListDataItemDiscriminatorType.FineTuned)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.FTModelCard), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.FTModelCard> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.FTModelCard)}");
-                fTModelCard = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                fineTuned = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var result = new global::Mistral.DataItem(
                 discriminator?.Type,
-                baseModelCard,
-                fTModelCard
+                @base,
+                fineTuned
                 );
 
             return result;
@@ -54,17 +54,17 @@ namespace Mistral.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsBaseModelCard)
+            if (value.IsBase)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.BaseModelCard), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.BaseModelCard?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.BaseModelCard).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BaseModelCard, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Base, typeInfo);
             }
-            else if (value.IsFTModelCard)
+            else if (value.IsFineTuned)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.FTModelCard), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.FTModelCard?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.FTModelCard).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FTModelCard, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FineTuned, typeInfo);
             }
         }
     }
