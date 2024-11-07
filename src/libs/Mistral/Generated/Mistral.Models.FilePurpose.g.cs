@@ -4,41 +4,46 @@
 namespace Mistral
 {
     /// <summary>
-    /// The intended purpose of the uploaded file. Only accepts fine-tuning (`fine-tune`) for now.<br/>
-    /// Example: fine-tune
+    /// 
     /// </summary>
-    public enum RetrieveFileOutPurpose
+    public enum FilePurpose
     {
         /// <summary>
         /// 
         /// </summary>
         FineTune,
+        /// <summary>
+        /// 
+        /// </summary>
+        Batch,
     }
 
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
     /// </summary>
-    public static class RetrieveFileOutPurposeExtensions
+    public static class FilePurposeExtensions
     {
         /// <summary>
         /// Converts an enum to a string.
         /// </summary>
-        public static string ToValueString(this RetrieveFileOutPurpose value)
+        public static string ToValueString(this FilePurpose value)
         {
             return value switch
             {
-                RetrieveFileOutPurpose.FineTune => "fine-tune",
+                FilePurpose.FineTune => "fine-tune",
+                FilePurpose.Batch => "batch",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static RetrieveFileOutPurpose? ToEnum(string value)
+        public static FilePurpose? ToEnum(string value)
         {
             return value switch
             {
-                "fine-tune" => RetrieveFileOutPurpose.FineTune,
+                "fine-tune" => FilePurpose.FineTune,
+                "batch" => FilePurpose.Batch,
                 _ => null,
             };
         }

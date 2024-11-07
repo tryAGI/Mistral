@@ -3,10 +3,10 @@
 namespace Mistral.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class UploadFileOutPurposeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Mistral.UploadFileOutPurpose>
+    public sealed class FilePurposeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Mistral.FilePurpose>
     {
         /// <inheritdoc />
-        public override global::Mistral.UploadFileOutPurpose Read(
+        public override global::Mistral.FilePurpose Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,7 +18,7 @@ namespace Mistral.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::Mistral.UploadFileOutPurposeExtensions.ToEnum(stringValue) ?? default;
+                        return global::Mistral.FilePurposeExtensions.ToEnum(stringValue) ?? default;
                     }
                     
                     break;
@@ -26,7 +26,7 @@ namespace Mistral.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::Mistral.UploadFileOutPurpose)numValue;
+                    return (global::Mistral.FilePurpose)numValue;
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -38,12 +38,12 @@ namespace Mistral.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::Mistral.UploadFileOutPurpose value,
+            global::Mistral.FilePurpose value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
 
-            writer.WriteStringValue(global::Mistral.UploadFileOutPurposeExtensions.ToValueString(value));
+            writer.WriteStringValue(global::Mistral.FilePurposeExtensions.ToValueString(value));
         }
     }
 }

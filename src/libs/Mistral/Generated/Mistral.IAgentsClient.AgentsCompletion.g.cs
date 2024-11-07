@@ -20,12 +20,23 @@ namespace Mistral
         /// <param name="agentId">
         /// The ID of the agent to use for this completion.
         /// </param>
+        /// <param name="frequencyPenalty">
+        /// frequency_penalty penalizes the repetition of words based on their frequency in the generated text. A higher frequency penalty discourages the model from repeating words that have already appeared frequently in the output, promoting diversity and reducing repetition.<br/>
+        /// Default Value: 0
+        /// </param>
         /// <param name="maxTokens">
         /// The maximum number of tokens to generate in the completion. The token count of your prompt plus `max_tokens` cannot exceed the model's context length.
         /// </param>
         /// <param name="messages">
         /// The prompt(s) to generate completions for, encoded as a list of dict with role and content.<br/>
         /// Example: []
+        /// </param>
+        /// <param name="n">
+        /// Number of completions to return for each request, input tokens are only billed once.
+        /// </param>
+        /// <param name="presencePenalty">
+        /// presence_penalty determines how much the model penalizes the repetition of words or phrases. A higher presence penalty encourages the model to use a wider variety of words and phrases, making the output more diverse and creative.<br/>
+        /// Default Value: 0
         /// </param>
         /// <param name="randomSeed">
         /// The seed to use for random sampling. If set, different calls will generate deterministic results.
@@ -47,7 +58,10 @@ namespace Mistral
         global::System.Threading.Tasks.Task<global::Mistral.ChatCompletionResponse> AgentsCompletionAsync(
             string agentId,
             global::System.Collections.Generic.IList<global::Mistral.MessagesItem> messages,
+            double? frequencyPenalty = default,
             int? maxTokens = default,
+            int? n = default,
+            double? presencePenalty = default,
             int? randomSeed = default,
             global::Mistral.ResponseFormat? responseFormat = default,
             global::Mistral.AnyOf<string, global::System.Collections.Generic.IList<string>>? stop = default,

@@ -11,6 +11,13 @@ namespace Mistral
     public sealed partial class ChatCompletionRequest
     {
         /// <summary>
+        /// frequency_penalty penalizes the repetition of words based on their frequency in the generated text. A higher frequency penalty discourages the model from repeating words that have already appeared frequently in the output, promoting diversity and reducing repetition.<br/>
+        /// Default Value: 0
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("frequency_penalty")]
+        public double? FrequencyPenalty { get; set; }
+
+        /// <summary>
         /// The maximum number of tokens to generate in the completion. The token count of your prompt plus `max_tokens` cannot exceed the model's context length.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_tokens")]
@@ -31,6 +38,19 @@ namespace Mistral
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string? Model { get; set; }
+
+        /// <summary>
+        /// Number of completions to return for each request, input tokens are only billed once.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("n")]
+        public int? N { get; set; }
+
+        /// <summary>
+        /// presence_penalty determines how much the model penalizes the repetition of words or phrases. A higher presence penalty encourages the model to use a wider variety of words and phrases, making the output more diverse and creative.<br/>
+        /// Default Value: 0
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("presence_penalty")]
+        public double? PresencePenalty { get; set; }
 
         /// <summary>
         /// The seed to use for random sampling. If set, different calls will generate deterministic results.
@@ -66,8 +86,7 @@ namespace Mistral
         public bool? Stream { get; set; }
 
         /// <summary>
-        /// What sampling temperature to use, we recommend between 0.0 and 1.0. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic. We generally recommend altering this or `top_p` but not both.<br/>
-        /// Default Value: 0.3
+        /// What sampling temperature to use, we recommend between 0.0 and 0.7. Higher values like 0.7 will make the output more random, while lower values like 0.2 will make it more focused and deterministic. We generally recommend altering this or `top_p` but not both. The default value varies depending on the model you are targeting. Call the `/models` endpoint to retrieve the appropriate value.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("temperature")]
         public double? Temperature { get; set; }

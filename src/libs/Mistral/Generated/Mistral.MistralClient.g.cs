@@ -65,6 +65,14 @@ namespace Mistral
         };
 
         /// <summary>
+        /// Classifiers API.
+        /// </summary>
+        public ClassifiersClient Classifiers => new ClassifiersClient(HttpClient, authorizations: Authorizations)
+        {
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
         /// Files API
         /// </summary>
         public FilesClient Files => new FilesClient(HttpClient, authorizations: Authorizations)
@@ -84,6 +92,14 @@ namespace Mistral
         /// Model Management API
         /// </summary>
         public ModelsClient Models => new ModelsClient(HttpClient, authorizations: Authorizations)
+        {
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// Batch API
+        /// </summary>
+        public BatchClient Batch => new BatchClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerContext = JsonSerializerContext,
         };

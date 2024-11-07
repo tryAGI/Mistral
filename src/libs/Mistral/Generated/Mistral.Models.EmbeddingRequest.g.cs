@@ -18,7 +18,8 @@ namespace Mistral
         public string? EncodingFormat { get; set; }
 
         /// <summary>
-        /// Text to embed.
+        /// Text to embed.<br/>
+        /// Example: Embed this sentence.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.AnyOfJsonConverterFactory2))]
@@ -26,11 +27,12 @@ namespace Mistral
         public required global::Mistral.AnyOf<string, global::System.Collections.Generic.IList<string>> Input { get; set; }
 
         /// <summary>
-        /// ID of the model to use.
+        /// ID of the model to use.<br/>
+        /// Default Value: mistral-embed
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Model { get; set; }
+        public required string Model { get; set; } = "mistral-embed";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

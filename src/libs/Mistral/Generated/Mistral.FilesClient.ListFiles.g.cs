@@ -6,10 +6,22 @@ namespace Mistral
     public partial class FilesClient
     {
         partial void PrepareListFilesArguments(
-            global::System.Net.Http.HttpClient httpClient);
+            global::System.Net.Http.HttpClient httpClient,
+            ref int? page,
+            ref int? pageSize,
+            global::System.Collections.Generic.IList<global::Mistral.SampleType>? sampleType,
+            global::System.Collections.Generic.IList<global::Mistral.Source>? source,
+            ref string? search,
+            object? purpose);
         partial void PrepareListFilesRequest(
             global::System.Net.Http.HttpClient httpClient,
-            global::System.Net.Http.HttpRequestMessage httpRequestMessage);
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            int? page,
+            int? pageSize,
+            global::System.Collections.Generic.IList<global::Mistral.SampleType>? sampleType,
+            global::System.Collections.Generic.IList<global::Mistral.Source>? source,
+            string? search,
+            object? purpose);
         partial void ProcessListFilesResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -23,19 +35,47 @@ namespace Mistral
         /// List Files<br/>
         /// Returns a list of files that belong to the user's organization.
         /// </summary>
+        /// <param name="page">
+        /// Default Value: 0
+        /// </param>
+        /// <param name="pageSize">
+        /// Default Value: 100
+        /// </param>
+        /// <param name="sampleType"></param>
+        /// <param name="source"></param>
+        /// <param name="search"></param>
+        /// <param name="purpose"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::Mistral.ListFilesOut> ListFilesAsync(
+            int? page = default,
+            int? pageSize = default,
+            global::System.Collections.Generic.IList<global::Mistral.SampleType>? sampleType = default,
+            global::System.Collections.Generic.IList<global::Mistral.Source>? source = default,
+            string? search = default,
+            object? purpose = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
             PrepareListFilesArguments(
-                httpClient: HttpClient);
+                httpClient: HttpClient,
+                page: ref page,
+                pageSize: ref pageSize,
+                sampleType: sampleType,
+                source: source,
+                search: ref search,
+                purpose: purpose);
 
             var __pathBuilder = new PathBuilder(
                 path: "/v1/files",
                 baseUri: HttpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("page", page?.ToString()) 
+                .AddOptionalParameter("page_size", pageSize?.ToString()) 
+                .AddOptionalParameter("search", search) 
+                .AddOptionalParameter("purpose", purpose?.ToString()) 
+                ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -62,7 +102,13 @@ namespace Mistral
                 request: __httpRequest);
             PrepareListFilesRequest(
                 httpClient: HttpClient,
-                httpRequestMessage: __httpRequest);
+                httpRequestMessage: __httpRequest,
+                page: page,
+                pageSize: pageSize,
+                sampleType: sampleType,
+                source: source,
+                search: search,
+                purpose: purpose);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,

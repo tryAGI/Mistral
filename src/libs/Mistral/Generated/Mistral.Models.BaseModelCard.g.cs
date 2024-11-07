@@ -30,6 +30,12 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("default_model_temperature")]
+        public double? DefaultModelTemperature { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("deprecation")]
         public global::System.DateTime? Deprecation { get; set; }
 

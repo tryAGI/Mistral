@@ -23,6 +23,13 @@ namespace Mistral
         public required string Object { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("total")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int Total { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]

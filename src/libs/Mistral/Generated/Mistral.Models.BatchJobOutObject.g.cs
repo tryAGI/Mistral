@@ -4,41 +4,40 @@
 namespace Mistral
 {
     /// <summary>
-    /// The intended purpose of the uploaded file. Only accepts fine-tuning (`fine-tune`) for now.<br/>
-    /// Example: fine-tune
+    /// Default Value: batch
     /// </summary>
-    public enum UploadFileOutPurpose
+    public enum BatchJobOutObject
     {
         /// <summary>
         /// 
         /// </summary>
-        FineTune,
+        Batch,
     }
 
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
     /// </summary>
-    public static class UploadFileOutPurposeExtensions
+    public static class BatchJobOutObjectExtensions
     {
         /// <summary>
         /// Converts an enum to a string.
         /// </summary>
-        public static string ToValueString(this UploadFileOutPurpose value)
+        public static string ToValueString(this BatchJobOutObject value)
         {
             return value switch
             {
-                UploadFileOutPurpose.FineTune => "fine-tune",
+                BatchJobOutObject.Batch => "batch",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static UploadFileOutPurpose? ToEnum(string value)
+        public static BatchJobOutObject? ToEnum(string value)
         {
             return value switch
             {
-                "fine-tune" => UploadFileOutPurpose.FineTune,
+                "batch" => BatchJobOutObject.Batch,
                 _ => null,
             };
         }
