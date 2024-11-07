@@ -26,6 +26,13 @@ namespace Mistral
         public required global::System.DateTimeOffset CreatedAt { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("deleted")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required bool Deleted { get; set; }
+
+        /// <summary>
         /// The name of the uploaded file.<br/>
         /// Example: files_upload.jsonl
         /// </summary>
@@ -56,12 +63,12 @@ namespace Mistral
         public required string Object { get; set; }
 
         /// <summary>
-        /// The intended purpose of the uploaded file. Only accepts fine-tuning (`fine-tune`) for now.<br/>
-        /// Example: fine-tune
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("purpose")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.RetrieveFileOutPurposeJsonConverter))]
-        public global::Mistral.RetrieveFileOutPurpose Purpose { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.FilePurposeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::Mistral.FilePurpose Purpose { get; set; }
 
         /// <summary>
         /// 

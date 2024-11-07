@@ -15,6 +15,10 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        System,
+        /// <summary>
+        /// 
+        /// </summary>
         Tool,
         /// <summary>
         /// 
@@ -35,6 +39,7 @@ namespace Mistral
             return value switch
             {
                 AgentsCompletionRequestMessageDiscriminatorRole.Assistant => "assistant",
+                AgentsCompletionRequestMessageDiscriminatorRole.System => "system",
                 AgentsCompletionRequestMessageDiscriminatorRole.Tool => "tool",
                 AgentsCompletionRequestMessageDiscriminatorRole.User => "user",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -48,6 +53,7 @@ namespace Mistral
             return value switch
             {
                 "assistant" => AgentsCompletionRequestMessageDiscriminatorRole.Assistant,
+                "system" => AgentsCompletionRequestMessageDiscriminatorRole.System,
                 "tool" => AgentsCompletionRequestMessageDiscriminatorRole.Tool,
                 "user" => AgentsCompletionRequestMessageDiscriminatorRole.User,
                 _ => null,

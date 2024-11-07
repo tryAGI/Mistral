@@ -16,6 +16,18 @@ namespace Mistral
         /// 
         /// </summary>
         Instruct,
+        /// <summary>
+        /// 
+        /// </summary>
+        BatchRequest,
+        /// <summary>
+        /// 
+        /// </summary>
+        BatchResult,
+        /// <summary>
+        /// 
+        /// </summary>
+        BatchError,
     }
 
     /// <summary>
@@ -32,6 +44,9 @@ namespace Mistral
             {
                 SampleType.Pretrain => "pretrain",
                 SampleType.Instruct => "instruct",
+                SampleType.BatchRequest => "batch_request",
+                SampleType.BatchResult => "batch_result",
+                SampleType.BatchError => "batch_error",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -44,6 +59,9 @@ namespace Mistral
             {
                 "pretrain" => SampleType.Pretrain,
                 "instruct" => SampleType.Instruct,
+                "batch_request" => SampleType.BatchRequest,
+                "batch_result" => SampleType.BatchResult,
+                "batch_error" => SampleType.BatchError,
                 _ => null,
             };
         }

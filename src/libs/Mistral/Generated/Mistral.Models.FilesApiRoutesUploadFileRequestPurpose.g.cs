@@ -4,7 +4,7 @@
 namespace Mistral
 {
     /// <summary>
-    /// Default Value: fine-tune
+    /// 
     /// </summary>
     public enum FilesApiRoutesUploadFileRequestPurpose
     {
@@ -12,6 +12,10 @@ namespace Mistral
         /// 
         /// </summary>
         FineTune,
+        /// <summary>
+        /// 
+        /// </summary>
+        Batch,
     }
 
     /// <summary>
@@ -27,6 +31,7 @@ namespace Mistral
             return value switch
             {
                 FilesApiRoutesUploadFileRequestPurpose.FineTune => "fine-tune",
+                FilesApiRoutesUploadFileRequestPurpose.Batch => "batch",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -38,6 +43,7 @@ namespace Mistral
             return value switch
             {
                 "fine-tune" => FilesApiRoutesUploadFileRequestPurpose.FineTune,
+                "batch" => FilesApiRoutesUploadFileRequestPurpose.Batch,
                 _ => null,
             };
         }

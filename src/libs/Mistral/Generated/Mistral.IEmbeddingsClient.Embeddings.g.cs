@@ -24,10 +24,12 @@ namespace Mistral
         /// Default Value: float
         /// </param>
         /// <param name="input">
-        /// Text to embed.
+        /// Text to embed.<br/>
+        /// Example: Embed this sentence.
         /// </param>
         /// <param name="model">
-        /// ID of the model to use.
+        /// ID of the model to use.<br/>
+        /// Default Value: mistral-embed
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>

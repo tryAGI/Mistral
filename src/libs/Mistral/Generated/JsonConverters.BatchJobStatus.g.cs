@@ -3,10 +3,10 @@
 namespace Mistral.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class UploadFileOutPurposeNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Mistral.UploadFileOutPurpose?>
+    public sealed class BatchJobStatusJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Mistral.BatchJobStatus>
     {
         /// <inheritdoc />
-        public override global::Mistral.UploadFileOutPurpose? Read(
+        public override global::Mistral.BatchJobStatus Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,7 +18,7 @@ namespace Mistral.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::Mistral.UploadFileOutPurposeExtensions.ToEnum(stringValue);
+                        return global::Mistral.BatchJobStatusExtensions.ToEnum(stringValue) ?? default;
                     }
                     
                     break;
@@ -26,7 +26,7 @@ namespace Mistral.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::Mistral.UploadFileOutPurpose)numValue;
+                    return (global::Mistral.BatchJobStatus)numValue;
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -38,19 +38,12 @@ namespace Mistral.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::Mistral.UploadFileOutPurpose? value,
+            global::Mistral.BatchJobStatus value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
 
-            if (value == null)
-            {
-                writer.WriteNullValue();
-            }
-            else
-            {
-                writer.WriteStringValue(global::Mistral.UploadFileOutPurposeExtensions.ToValueString(value.Value));
-            }
+            writer.WriteStringValue(global::Mistral.BatchJobStatusExtensions.ToValueString(value));
         }
     }
 }

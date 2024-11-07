@@ -28,6 +28,12 @@ namespace Mistral
         public double? LearningRate { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("seq_len")]
+        public int? SeqLen { get; set; }
+
+        /// <summary>
         /// The number of training steps to perform. A training step refers to a single update of the model weights during the fine-tuning process. This update is typically calculated using a batch of samples from the training dataset.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("training_steps")]

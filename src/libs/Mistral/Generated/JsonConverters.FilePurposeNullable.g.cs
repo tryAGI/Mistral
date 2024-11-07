@@ -3,10 +3,10 @@
 namespace Mistral.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class RetrieveFileOutPurposeNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Mistral.RetrieveFileOutPurpose?>
+    public sealed class FilePurposeNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Mistral.FilePurpose?>
     {
         /// <inheritdoc />
-        public override global::Mistral.RetrieveFileOutPurpose? Read(
+        public override global::Mistral.FilePurpose? Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,7 +18,7 @@ namespace Mistral.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::Mistral.RetrieveFileOutPurposeExtensions.ToEnum(stringValue);
+                        return global::Mistral.FilePurposeExtensions.ToEnum(stringValue);
                     }
                     
                     break;
@@ -26,7 +26,7 @@ namespace Mistral.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::Mistral.RetrieveFileOutPurpose)numValue;
+                    return (global::Mistral.FilePurpose)numValue;
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -38,7 +38,7 @@ namespace Mistral.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::Mistral.RetrieveFileOutPurpose? value,
+            global::Mistral.FilePurpose? value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
@@ -49,7 +49,7 @@ namespace Mistral.JsonConverters
             }
             else
             {
-                writer.WriteStringValue(global::Mistral.RetrieveFileOutPurposeExtensions.ToValueString(value.Value));
+                writer.WriteStringValue(global::Mistral.FilePurposeExtensions.ToValueString(value.Value));
             }
         }
     }

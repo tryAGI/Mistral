@@ -29,6 +29,12 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("seq_len")]
+        public int? SeqLen { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("training_steps")]
         public int? TrainingSteps { get; set; }
 

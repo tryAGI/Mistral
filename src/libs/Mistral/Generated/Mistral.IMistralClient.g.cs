@@ -52,6 +52,11 @@ namespace Mistral
         public EmbeddingsClient Embeddings { get; }
 
         /// <summary>
+        /// Classifiers API.
+        /// </summary>
+        public ClassifiersClient Classifiers { get; }
+
+        /// <summary>
         /// Files API
         /// </summary>
         public FilesClient Files { get; }
@@ -65,6 +70,11 @@ namespace Mistral
         /// Model Management API
         /// </summary>
         public ModelsClient Models { get; }
+
+        /// <summary>
+        /// Batch API
+        /// </summary>
+        public BatchClient Batch { get; }
 
     }
 }

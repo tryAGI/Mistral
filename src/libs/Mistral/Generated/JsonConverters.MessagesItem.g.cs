@@ -21,6 +21,13 @@ namespace Mistral.JsonConverters
                             throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.AgentsCompletionRequestMessageDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
+            global::Mistral.SystemMessage? system = default;
+            if (discriminator?.Role == global::Mistral.AgentsCompletionRequestMessageDiscriminatorRole.System)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.SystemMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.SystemMessage> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.SystemMessage)}");
+                system = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
             global::Mistral.UserMessage? user = default;
             if (discriminator?.Role == global::Mistral.AgentsCompletionRequestMessageDiscriminatorRole.User)
             {
@@ -45,6 +52,7 @@ namespace Mistral.JsonConverters
 
             var result = new global::Mistral.MessagesItem(
                 discriminator?.Role,
+                system,
                 user,
                 assistant,
                 tool
@@ -62,7 +70,13 @@ namespace Mistral.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsUser)
+            if (value.IsSystem)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.SystemMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.SystemMessage?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.SystemMessage).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.System, typeInfo);
+            }
+            else if (value.IsUser)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.UserMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.UserMessage?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.UserMessage).Name}");
