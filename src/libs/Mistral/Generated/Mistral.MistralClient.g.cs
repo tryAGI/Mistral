@@ -26,6 +26,11 @@ namespace Mistral
         /// <inheritdoc/>
         public global::System.Collections.Generic.List<global::Mistral.EndPointAuthorization> Authorizations { get; }
 
+        /// <inheritdoc/>
+        public bool ReadResponseAsString { get; set; }
+#if DEBUG
+            = true;
+#endif
         /// <summary>
         /// 
         /// </summary>
@@ -37,6 +42,7 @@ namespace Mistral
         /// </summary>
         public ChatClient Chat => new ChatClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
         };
 
@@ -45,6 +51,7 @@ namespace Mistral
         /// </summary>
         public FimClient Fim => new FimClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
         };
 
@@ -53,6 +60,7 @@ namespace Mistral
         /// </summary>
         public AgentsClient Agents => new AgentsClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
         };
 
@@ -61,6 +69,7 @@ namespace Mistral
         /// </summary>
         public EmbeddingsClient Embeddings => new EmbeddingsClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
         };
 
@@ -69,6 +78,7 @@ namespace Mistral
         /// </summary>
         public ClassifiersClient Classifiers => new ClassifiersClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
         };
 
@@ -77,6 +87,7 @@ namespace Mistral
         /// </summary>
         public FilesClient Files => new FilesClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
         };
 
@@ -85,6 +96,7 @@ namespace Mistral
         /// </summary>
         public FineTuningClient FineTuning => new FineTuningClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
         };
 
@@ -93,6 +105,7 @@ namespace Mistral
         /// </summary>
         public ModelsClient Models => new ModelsClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
         };
 
@@ -101,6 +114,7 @@ namespace Mistral
         /// </summary>
         public BatchClient Batch => new BatchClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
         };
 

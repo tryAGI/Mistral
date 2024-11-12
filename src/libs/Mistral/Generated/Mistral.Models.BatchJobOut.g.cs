@@ -129,91 +129,72 @@ namespace Mistral
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
-
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
+        /// Initializes a new instance of the <see cref="BatchJobOut" /> class.
         /// </summary>
-        public string ToJson(
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
+        /// <param name="completedAt"></param>
+        /// <param name="completedRequests"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="endpoint"></param>
+        /// <param name="errorFile"></param>
+        /// <param name="errors"></param>
+        /// <param name="failedRequests"></param>
+        /// <param name="id"></param>
+        /// <param name="inputFiles"></param>
+        /// <param name="metadata"></param>
+        /// <param name="model"></param>
+        /// <param name="object">
+        /// Default Value: batch
+        /// </param>
+        /// <param name="outputFile"></param>
+        /// <param name="startedAt"></param>
+        /// <param name="status"></param>
+        /// <param name="succeededRequests"></param>
+        /// <param name="totalRequests"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public BatchJobOut(
+            int completedRequests,
+            int createdAt,
+            string endpoint,
+            global::System.Collections.Generic.IList<global::Mistral.BatchError> errors,
+            int failedRequests,
+            string id,
+            global::System.Collections.Generic.IList<global::System.Guid> inputFiles,
+            string model,
+            global::Mistral.BatchJobStatus status,
+            int succeededRequests,
+            int totalRequests,
+            int? completedAt,
+            global::System.Guid? errorFile,
+            object? metadata,
+            global::Mistral.BatchJobOutObject? @object,
+            global::System.Guid? outputFile,
+            int? startedAt)
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                this.GetType(),
-                jsonSerializerContext);
+            this.CompletedRequests = completedRequests;
+            this.CreatedAt = createdAt;
+            this.Endpoint = endpoint ?? throw new global::System.ArgumentNullException(nameof(endpoint));
+            this.Errors = errors ?? throw new global::System.ArgumentNullException(nameof(errors));
+            this.FailedRequests = failedRequests;
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.InputFiles = inputFiles ?? throw new global::System.ArgumentNullException(nameof(inputFiles));
+            this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
+            this.Status = status;
+            this.SucceededRequests = succeededRequests;
+            this.TotalRequests = totalRequests;
+            this.CompletedAt = completedAt;
+            this.ErrorFile = errorFile;
+            this.Metadata = metadata;
+            this.Object = @object;
+            this.OutputFile = outputFile;
+            this.StartedAt = startedAt;
         }
 
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.
+        /// Initializes a new instance of the <see cref="BatchJobOut" /> class.
         /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public string ToJson(
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
+        public BatchJobOut()
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                jsonSerializerOptions);
         }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerContext.
-        /// </summary>
-        public static global::Mistral.BatchJobOut? FromJson(
-            string json,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize(
-                json,
-                typeof(global::Mistral.BatchJobOut),
-                jsonSerializerContext) as global::Mistral.BatchJobOut;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::Mistral.BatchJobOut? FromJson(
-            string json,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.BatchJobOut>(
-                json,
-                jsonSerializerOptions);
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerContext.
-        /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::Mistral.BatchJobOut?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
-                jsonStream,
-                typeof(global::Mistral.BatchJobOut),
-                jsonSerializerContext).ConfigureAwait(false)) as global::Mistral.BatchJobOut;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::System.Threading.Tasks.ValueTask<global::Mistral.BatchJobOut?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::Mistral.BatchJobOut?>(
-                jsonStream,
-                jsonSerializerOptions);
-        }
-
     }
 }

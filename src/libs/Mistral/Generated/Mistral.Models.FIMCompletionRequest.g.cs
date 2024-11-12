@@ -29,6 +29,7 @@ namespace Mistral
         /// Default Value: codestral-2405<br/>
         /// Example: codestral-2405
         /// </summary>
+        /// <example>codestral-2405</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string? Model { get; set; }
@@ -37,6 +38,7 @@ namespace Mistral
         /// The text/code to complete.<br/>
         /// Example: def
         /// </summary>
+        /// <example>def</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Prompt { get; set; }
@@ -65,6 +67,7 @@ namespace Mistral
         /// Optional text/code that adds more context for the model. When given a `prompt` and a `suffix` the model will fill what is between them. When `suffix` is not provided, the model will simply execute completion starting with `prompt`.<br/>
         /// Example: return a+b
         /// </summary>
+        /// <example>return a+b</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("suffix")]
         public string? Suffix { get; set; }
 
@@ -87,91 +90,77 @@ namespace Mistral
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
-
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
+        /// Initializes a new instance of the <see cref="FIMCompletionRequest" /> class.
         /// </summary>
-        public string ToJson(
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
+        /// <param name="maxTokens">
+        /// The maximum number of tokens to generate in the completion. The token count of your prompt plus `max_tokens` cannot exceed the model's context length.
+        /// </param>
+        /// <param name="minTokens">
+        /// The minimum number of tokens to generate in the completion.
+        /// </param>
+        /// <param name="model">
+        /// ID of the model to use. Only compatible for now with:<br/>
+        ///   - `codestral-2405`<br/>
+        ///   - `codestral-latest`<br/>
+        /// Default Value: codestral-2405<br/>
+        /// Example: codestral-2405
+        /// </param>
+        /// <param name="prompt">
+        /// The text/code to complete.<br/>
+        /// Example: def
+        /// </param>
+        /// <param name="randomSeed">
+        /// The seed to use for random sampling. If set, different calls will generate deterministic results.
+        /// </param>
+        /// <param name="stop">
+        /// Stop generation if this token is detected. Or if one of these tokens is detected when providing an array
+        /// </param>
+        /// <param name="stream">
+        /// Whether to stream back partial progress. If set, tokens will be sent as data-only server-side events as they become available, with the stream terminated by a data: [DONE] message. Otherwise, the server will hold the request open until the timeout or until completion, with the response containing the full result as JSON.<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="suffix">
+        /// Optional text/code that adds more context for the model. When given a `prompt` and a `suffix` the model will fill what is between them. When `suffix` is not provided, the model will simply execute completion starting with `prompt`.<br/>
+        /// Example: return a+b
+        /// </param>
+        /// <param name="temperature">
+        /// What sampling temperature to use, we recommend between 0.0 and 0.7. Higher values like 0.7 will make the output more random, while lower values like 0.2 will make it more focused and deterministic. We generally recommend altering this or `top_p` but not both. The default value varies depending on the model you are targeting. Call the `/models` endpoint to retrieve the appropriate value.
+        /// </param>
+        /// <param name="topP">
+        /// Nucleus sampling, where the model considers the results of the tokens with `top_p` probability mass. So 0.1 means only the tokens comprising the top 10% probability mass are considered. We generally recommend altering this or `temperature` but not both.<br/>
+        /// Default Value: 1
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public FIMCompletionRequest(
+            string? model,
+            string prompt,
+            int? maxTokens,
+            int? minTokens,
+            int? randomSeed,
+            global::Mistral.AnyOf<string, global::System.Collections.Generic.IList<string>>? stop,
+            bool? stream,
+            string? suffix,
+            double? temperature,
+            double? topP)
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                this.GetType(),
-                jsonSerializerContext);
+            this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
+            this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
+            this.MaxTokens = maxTokens;
+            this.MinTokens = minTokens;
+            this.RandomSeed = randomSeed;
+            this.Stop = stop;
+            this.Stream = stream;
+            this.Suffix = suffix;
+            this.Temperature = temperature;
+            this.TopP = topP;
         }
 
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.
+        /// Initializes a new instance of the <see cref="FIMCompletionRequest" /> class.
         /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public string ToJson(
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
+        public FIMCompletionRequest()
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                jsonSerializerOptions);
         }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerContext.
-        /// </summary>
-        public static global::Mistral.FIMCompletionRequest? FromJson(
-            string json,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize(
-                json,
-                typeof(global::Mistral.FIMCompletionRequest),
-                jsonSerializerContext) as global::Mistral.FIMCompletionRequest;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::Mistral.FIMCompletionRequest? FromJson(
-            string json,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.FIMCompletionRequest>(
-                json,
-                jsonSerializerOptions);
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerContext.
-        /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::Mistral.FIMCompletionRequest?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
-                jsonStream,
-                typeof(global::Mistral.FIMCompletionRequest),
-                jsonSerializerContext).ConfigureAwait(false)) as global::Mistral.FIMCompletionRequest;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::System.Threading.Tasks.ValueTask<global::Mistral.FIMCompletionRequest?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::Mistral.FIMCompletionRequest?>(
-                jsonStream,
-                jsonSerializerOptions);
-        }
-
     }
 }

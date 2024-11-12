@@ -109,91 +109,76 @@ namespace Mistral
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
-
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
+        /// Initializes a new instance of the <see cref="FTModelCard" /> class.
         /// </summary>
-        public string ToJson(
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
+        /// <param name="aliases">
+        /// Default Value: []
+        /// </param>
+        /// <param name="archived">
+        /// Default Value: false
+        /// </param>
+        /// <param name="capabilities"></param>
+        /// <param name="created"></param>
+        /// <param name="defaultModelTemperature"></param>
+        /// <param name="deprecation"></param>
+        /// <param name="description"></param>
+        /// <param name="id"></param>
+        /// <param name="job"></param>
+        /// <param name="maxContextLength">
+        /// Default Value: 32768
+        /// </param>
+        /// <param name="name"></param>
+        /// <param name="object">
+        /// Default Value: model
+        /// </param>
+        /// <param name="ownedBy">
+        /// Default Value: mistralai
+        /// </param>
+        /// <param name="root"></param>
+        /// <param name="type">
+        /// Default Value: fine-tuned
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public FTModelCard(
+            global::Mistral.ModelCapabilities capabilities,
+            string id,
+            string job,
+            string root,
+            global::System.Collections.Generic.IList<string>? aliases,
+            bool? archived,
+            int? created,
+            double? defaultModelTemperature,
+            global::System.DateTime? deprecation,
+            string? description,
+            int? maxContextLength,
+            string? name,
+            string? @object,
+            string? ownedBy,
+            global::Mistral.FTModelCardType? type)
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                this.GetType(),
-                jsonSerializerContext);
+            this.Capabilities = capabilities ?? throw new global::System.ArgumentNullException(nameof(capabilities));
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Job = job ?? throw new global::System.ArgumentNullException(nameof(job));
+            this.Root = root ?? throw new global::System.ArgumentNullException(nameof(root));
+            this.Aliases = aliases;
+            this.Archived = archived;
+            this.Created = created;
+            this.DefaultModelTemperature = defaultModelTemperature;
+            this.Deprecation = deprecation;
+            this.Description = description;
+            this.MaxContextLength = maxContextLength;
+            this.Name = name;
+            this.Object = @object;
+            this.OwnedBy = ownedBy;
+            this.Type = type;
         }
 
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.
+        /// Initializes a new instance of the <see cref="FTModelCard" /> class.
         /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public string ToJson(
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
+        public FTModelCard()
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                jsonSerializerOptions);
         }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerContext.
-        /// </summary>
-        public static global::Mistral.FTModelCard? FromJson(
-            string json,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize(
-                json,
-                typeof(global::Mistral.FTModelCard),
-                jsonSerializerContext) as global::Mistral.FTModelCard;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::Mistral.FTModelCard? FromJson(
-            string json,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.FTModelCard>(
-                json,
-                jsonSerializerOptions);
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerContext.
-        /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::Mistral.FTModelCard?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
-                jsonStream,
-                typeof(global::Mistral.FTModelCard),
-                jsonSerializerContext).ConfigureAwait(false)) as global::Mistral.FTModelCard;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::System.Threading.Tasks.ValueTask<global::Mistral.FTModelCard?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::Mistral.FTModelCard?>(
-                jsonStream,
-                jsonSerializerOptions);
-        }
-
     }
 }
