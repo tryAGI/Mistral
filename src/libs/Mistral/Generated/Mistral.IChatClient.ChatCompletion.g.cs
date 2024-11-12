@@ -9,7 +9,7 @@ namespace Mistral
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::Mistral.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Mistral.ChatCompletionResponse> ChatCompletionAsync(
             global::Mistral.ChatCompletionRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);

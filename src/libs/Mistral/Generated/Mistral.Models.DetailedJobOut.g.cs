@@ -141,91 +141,89 @@ namespace Mistral
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
-
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
+        /// Initializes a new instance of the <see cref="DetailedJobOut" /> class.
         /// </summary>
-        public string ToJson(
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
+        /// <param name="autoStart"></param>
+        /// <param name="checkpoints">
+        /// Default Value: []
+        /// </param>
+        /// <param name="createdAt"></param>
+        /// <param name="events">
+        /// Event items are created every time the status of a fine-tuning job changes. The timestamped list of all events is accessible here.<br/>
+        /// Default Value: []
+        /// </param>
+        /// <param name="fineTunedModel"></param>
+        /// <param name="hyperparameters"></param>
+        /// <param name="id"></param>
+        /// <param name="integrations"></param>
+        /// <param name="jobType"></param>
+        /// <param name="metadata"></param>
+        /// <param name="model">
+        /// The name of the model to fine-tune.
+        /// </param>
+        /// <param name="modifiedAt"></param>
+        /// <param name="object">
+        /// Default Value: job
+        /// </param>
+        /// <param name="repositories">
+        /// Default Value: []
+        /// </param>
+        /// <param name="status"></param>
+        /// <param name="suffix"></param>
+        /// <param name="trainedTokens"></param>
+        /// <param name="trainingFiles"></param>
+        /// <param name="validationFiles">
+        /// Default Value: []
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public DetailedJobOut(
+            bool autoStart,
+            int createdAt,
+            global::Mistral.TrainingParameters hyperparameters,
+            global::System.Guid id,
+            string jobType,
+            global::Mistral.FineTuneableModel model,
+            int modifiedAt,
+            global::Mistral.DetailedJobOutStatus status,
+            global::System.Collections.Generic.IList<global::System.Guid> trainingFiles,
+            global::System.Collections.Generic.IList<global::Mistral.CheckpointOut>? checkpoints,
+            global::System.Collections.Generic.IList<global::Mistral.EventOut>? events,
+            string? fineTunedModel,
+            global::System.Collections.Generic.IList<global::Mistral.IntegrationsItem>? integrations,
+            object? metadata,
+            global::Mistral.DetailedJobOutObject? @object,
+            global::System.Collections.Generic.IList<global::Mistral.RepositoriesItem>? repositories,
+            string? suffix,
+            int? trainedTokens,
+            global::System.Collections.Generic.IList<global::System.Guid>? validationFiles)
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                this.GetType(),
-                jsonSerializerContext);
+            this.AutoStart = autoStart;
+            this.CreatedAt = createdAt;
+            this.Hyperparameters = hyperparameters ?? throw new global::System.ArgumentNullException(nameof(hyperparameters));
+            this.Id = id;
+            this.JobType = jobType ?? throw new global::System.ArgumentNullException(nameof(jobType));
+            this.Model = model;
+            this.ModifiedAt = modifiedAt;
+            this.Status = status;
+            this.TrainingFiles = trainingFiles ?? throw new global::System.ArgumentNullException(nameof(trainingFiles));
+            this.Checkpoints = checkpoints;
+            this.Events = events;
+            this.FineTunedModel = fineTunedModel;
+            this.Integrations = integrations;
+            this.Metadata = metadata;
+            this.Object = @object;
+            this.Repositories = repositories;
+            this.Suffix = suffix;
+            this.TrainedTokens = trainedTokens;
+            this.ValidationFiles = validationFiles;
         }
 
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.
+        /// Initializes a new instance of the <see cref="DetailedJobOut" /> class.
         /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public string ToJson(
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
+        public DetailedJobOut()
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                jsonSerializerOptions);
         }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerContext.
-        /// </summary>
-        public static global::Mistral.DetailedJobOut? FromJson(
-            string json,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize(
-                json,
-                typeof(global::Mistral.DetailedJobOut),
-                jsonSerializerContext) as global::Mistral.DetailedJobOut;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::Mistral.DetailedJobOut? FromJson(
-            string json,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.DetailedJobOut>(
-                json,
-                jsonSerializerOptions);
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerContext.
-        /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::Mistral.DetailedJobOut?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
-                jsonStream,
-                typeof(global::Mistral.DetailedJobOut),
-                jsonSerializerContext).ConfigureAwait(false)) as global::Mistral.DetailedJobOut;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::System.Threading.Tasks.ValueTask<global::Mistral.DetailedJobOut?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::Mistral.DetailedJobOut?>(
-                jsonStream,
-                jsonSerializerOptions);
-        }
-
     }
 }
