@@ -14,7 +14,7 @@ namespace Mistral
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.AnyOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Mistral.TextChunk>>))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::Mistral.AnyOf<string, global::System.Collections.Generic.IList<global::Mistral.TextChunk>> Content { get; set; }
 

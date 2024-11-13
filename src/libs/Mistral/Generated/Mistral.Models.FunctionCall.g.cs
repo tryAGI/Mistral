@@ -14,7 +14,7 @@ namespace Mistral
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("arguments")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.AnyOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<object, string>))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::Mistral.AnyOf<object, string> Arguments { get; set; }
 
