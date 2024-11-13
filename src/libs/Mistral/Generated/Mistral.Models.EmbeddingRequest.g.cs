@@ -23,7 +23,7 @@ namespace Mistral
         /// </summary>
         /// <example>Embed this sentence.</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("input")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.AnyOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>>))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::Mistral.AnyOf<string, global::System.Collections.Generic.IList<string>> Input { get; set; }
 
