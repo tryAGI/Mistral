@@ -1,4 +1,6 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace Mistral
@@ -12,8 +14,9 @@ namespace Mistral
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<string, object, global::System.Collections.Generic.IList<global::Mistral.ContentChunk>>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Content { get; set; }
+        public required global::Mistral.AnyOf<string, object, global::System.Collections.Generic.IList<global::Mistral.ContentChunk>> Content { get; set; }
 
         /// <summary>
         /// 
@@ -51,12 +54,12 @@ namespace Mistral
         /// <param name="toolCallId"></param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public ToolMessage(
-            string content,
+            global::Mistral.AnyOf<string, object, global::System.Collections.Generic.IList<global::Mistral.ContentChunk>> content,
             string? name,
             global::Mistral.ToolMessageRole? role,
             string? toolCallId)
         {
-            this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
+            this.Content = content;
             this.Name = name;
             this.Role = role;
             this.ToolCallId = toolCallId;

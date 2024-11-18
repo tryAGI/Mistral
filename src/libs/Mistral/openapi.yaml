@@ -2507,6 +2507,7 @@ components:
           title: Content
           anyOf:
             - type: string
+            - type: 'null'
             - items:
                 $ref: '#/components/schemas/ContentChunk'
               type: array
@@ -2881,6 +2882,25 @@ components:
         - image_url
       title: ImageURLChunk
       description: '{"type":"image_url","image_url":{"url":"data:image/png;base64,iVBORw0'
+    ReferenceChunk:
+      properties:
+        type:
+          type: string
+          enum:
+            - reference
+          const: reference
+          title: Type
+          default: reference
+        reference_ids:
+          items:
+            type: integer
+          type: array
+          title: Reference Ids
+      additionalProperties: false
+      type: object
+      required:
+        - reference_ids
+      title: ReferenceChunk
     ResponseFormat:
       properties:
         type:
@@ -2989,8 +3009,13 @@ components:
     ToolMessage:
       properties:
         content:
-          type: string
           title: Content
+          anyOf:
+            - type: string
+            - type: 'null'
+            - items:
+                $ref: '#/components/schemas/ContentChunk'
+              type: array
         tool_call_id:
           anyOf:
             - type: string
@@ -3023,6 +3048,7 @@ components:
           title: Content
           anyOf:
             - type: string
+            - type: 'null'
             - items:
                 $ref: '#/components/schemas/ContentChunk'
               type: array
@@ -3307,7 +3333,7 @@ components:
           type: integer
           example: 0
         message:
-          $ref: '#/components/schemas/DeltaMessage'
+          $ref: '#/components/schemas/AssistantMessage'
         finish_reason:
           type: string
           enum:

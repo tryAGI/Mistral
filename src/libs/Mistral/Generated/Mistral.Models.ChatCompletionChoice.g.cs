@@ -30,7 +30,7 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("message")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Mistral.DeltaMessage Message { get; set; }
+        public required global::Mistral.AssistantMessage Message { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -52,7 +52,7 @@ namespace Mistral
         public ChatCompletionChoice(
             global::Mistral.ChatCompletionChoiceFinishReason finishReason,
             int index,
-            global::Mistral.DeltaMessage message)
+            global::Mistral.AssistantMessage message)
         {
             this.FinishReason = finishReason;
             this.Index = index;
