@@ -14,9 +14,9 @@ namespace Mistral
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Mistral.ContentChunk>>))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<string, object, global::System.Collections.Generic.IList<global::Mistral.ContentChunk>>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Mistral.AnyOf<string, global::System.Collections.Generic.IList<global::Mistral.ContentChunk>> Content { get; set; }
+        public required global::Mistral.AnyOf<string, object, global::System.Collections.Generic.IList<global::Mistral.ContentChunk>> Content { get; set; }
 
         /// <summary>
         /// Default Value: user
@@ -40,7 +40,7 @@ namespace Mistral
         /// </param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public UserMessage(
-            global::Mistral.AnyOf<string, global::System.Collections.Generic.IList<global::Mistral.ContentChunk>> content,
+            global::Mistral.AnyOf<string, object, global::System.Collections.Generic.IList<global::Mistral.ContentChunk>> content,
             global::Mistral.UserMessageRole? role)
         {
             this.Content = content;
