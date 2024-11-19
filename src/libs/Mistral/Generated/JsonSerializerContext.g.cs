@@ -147,6 +147,7 @@ namespace Mistral
             typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>>),
             typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<string, int?>),
             typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<global::Mistral.JobOut, global::Mistral.LegacyJobMetadataOut>),
+            typeof(global::Mistral.JsonConverters.UnixTimestampJsonConverter),
         })]
 
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.JsonSerializerContextTypes))]
