@@ -29,6 +29,12 @@ namespace Mistral
         public required object Parameters { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("strict")]
+        public bool? Strict { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -40,15 +46,20 @@ namespace Mistral
         /// <param name="description"></param>
         /// <param name="name"></param>
         /// <param name="parameters"></param>
+        /// <param name="strict">
+        /// Default Value: false
+        /// </param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public Function(
             string name,
             object parameters,
-            string? description)
+            string? description,
+            bool? strict)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Parameters = parameters ?? throw new global::System.ArgumentNullException(nameof(parameters));
             this.Description = description;
+            this.Strict = strict;
         }
 
         /// <summary>

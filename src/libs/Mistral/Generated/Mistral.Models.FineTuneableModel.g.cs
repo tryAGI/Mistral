@@ -28,6 +28,10 @@ namespace Mistral
         /// 
         /// </summary>
         OpenMistralNemo,
+        /// <summary>
+        /// 
+        /// </summary>
+        Ministral3bLatest,
     }
 
     /// <summary>
@@ -47,6 +51,7 @@ namespace Mistral
                 FineTuneableModel.CodestralLatest => "codestral-latest",
                 FineTuneableModel.MistralLargeLatest => "mistral-large-latest",
                 FineTuneableModel.OpenMistralNemo => "open-mistral-nemo",
+                FineTuneableModel.Ministral3bLatest => "ministral-3b-latest",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -62,6 +67,7 @@ namespace Mistral
                 "codestral-latest" => FineTuneableModel.CodestralLatest,
                 "mistral-large-latest" => FineTuneableModel.MistralLargeLatest,
                 "open-mistral-nemo" => FineTuneableModel.OpenMistralNemo,
+                "ministral-3b-latest" => FineTuneableModel.Ministral3bLatest,
                 _ => null,
             };
         }

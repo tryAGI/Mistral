@@ -87,22 +87,60 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Mistral.ReferenceChunk? Reference { get; init; }
+#else
+        public global::Mistral.ReferenceChunk? Reference { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Reference))]
+#endif
+        public bool IsReference => Reference != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ContentChunk(global::Mistral.ReferenceChunk value) => new ContentChunk(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Mistral.ReferenceChunk?(ContentChunk @this) => @this.Reference;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ContentChunk(global::Mistral.ReferenceChunk? value)
+        {
+            Reference = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ContentChunk(
             global::Mistral.ContentChunkDiscriminatorType? type,
             global::Mistral.TextChunk? text,
-            global::Mistral.ImageURLChunk? imageUrl
+            global::Mistral.ImageURLChunk? imageUrl,
+            global::Mistral.ReferenceChunk? reference
             )
         {
             Type = type;
 
             Text = text;
             ImageUrl = imageUrl;
+            Reference = reference;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
+            Reference as object ??
             ImageUrl as object ??
             Text as object 
             ;
@@ -112,7 +150,7 @@ namespace Mistral
         /// </summary>
         public bool Validate()
         {
-            return IsText && !IsImageUrl || !IsText && IsImageUrl;
+            return IsText && !IsImageUrl && !IsReference || !IsText && IsImageUrl && !IsReference || !IsText && !IsImageUrl && IsReference;
         }
 
         /// <summary>
@@ -121,6 +159,7 @@ namespace Mistral
         public TResult? Match<TResult>(
             global::System.Func<global::Mistral.TextChunk?, TResult>? text = null,
             global::System.Func<global::Mistral.ImageURLChunk?, TResult>? imageUrl = null,
+            global::System.Func<global::Mistral.ReferenceChunk?, TResult>? reference = null,
             bool validate = true)
         {
             if (validate)
@@ -136,6 +175,10 @@ namespace Mistral
             {
                 return imageUrl(ImageUrl!);
             }
+            else if (IsReference && reference != null)
+            {
+                return reference(Reference!);
+            }
 
             return default(TResult);
         }
@@ -146,6 +189,7 @@ namespace Mistral
         public void Match(
             global::System.Action<global::Mistral.TextChunk?>? text = null,
             global::System.Action<global::Mistral.ImageURLChunk?>? imageUrl = null,
+            global::System.Action<global::Mistral.ReferenceChunk?>? reference = null,
             bool validate = true)
         {
             if (validate)
@@ -161,6 +205,10 @@ namespace Mistral
             {
                 imageUrl?.Invoke(ImageUrl!);
             }
+            else if (IsReference)
+            {
+                reference?.Invoke(Reference!);
+            }
         }
 
         /// <summary>
@@ -174,6 +222,8 @@ namespace Mistral
                 typeof(global::Mistral.TextChunk),
                 ImageUrl,
                 typeof(global::Mistral.ImageURLChunk),
+                Reference,
+                typeof(global::Mistral.ReferenceChunk),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -191,7 +241,8 @@ namespace Mistral
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Mistral.TextChunk?>.Default.Equals(Text, other.Text) &&
-                global::System.Collections.Generic.EqualityComparer<global::Mistral.ImageURLChunk?>.Default.Equals(ImageUrl, other.ImageUrl) 
+                global::System.Collections.Generic.EqualityComparer<global::Mistral.ImageURLChunk?>.Default.Equals(ImageUrl, other.ImageUrl) &&
+                global::System.Collections.Generic.EqualityComparer<global::Mistral.ReferenceChunk?>.Default.Equals(Reference, other.Reference) 
                 ;
         }
 

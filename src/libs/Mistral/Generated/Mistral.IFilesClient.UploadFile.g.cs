@@ -45,15 +45,13 @@ namespace Mistral
         ///  file=@path/to/your/file.jsonl<br/>
         ///  ```
         /// </param>
-        /// <param name="purpose">
-        /// Default Value: fine-tune
-        /// </param>
+        /// <param name="purpose"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Mistral.UploadFileOut> UploadFileAsync(
             byte[] file,
             string filename,
-            global::Mistral.FilesApiRoutesUploadFileRequestPurpose? purpose = default,
+            global::Mistral.FilePurpose? purpose = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

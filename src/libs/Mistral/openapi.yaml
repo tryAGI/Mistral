@@ -119,14 +119,6 @@ paths:
               title: MultiPartBodyParams
               type: object
               properties:
-                purpose:
-                  allOf:
-                    - enum:
-                        - fine-tune
-                        - batch
-                      title: FilePurpose
-                      type: string
-                  default: fine-tune
                 file:
                   format: binary
                   title: File
@@ -141,6 +133,8 @@ paths:
                      ```bash
                      file=@path/to/your/file.jsonl
                      ```
+                purpose:
+                  $ref: '#/components/schemas/FilePurpose'
               required:
                 - file
         required: true
@@ -270,6 +264,35 @@ paths:
                 type: string
                 format: binary
       description: Download a file
+      tags:
+        - files
+  /v1/files/{file_id}/url:
+    get:
+      operationId: files_api_routes_get_signed_url
+      summary: Get Signed Url
+      parameters:
+        - in: path
+          name: file_id
+          schema:
+            title: File Id
+            type: string
+          required: true
+        - in: query
+          name: expiry
+          schema:
+            default: 24
+            description: Number of hours before the url becomes invalid. Defaults to 24h
+            title: Expiry
+            type: integer
+          required: false
+          description: Number of hours before the url becomes invalid. Defaults to 24h
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FileSignedURL'
       tags:
         - files
   /v1/fine_tuning/jobs:
@@ -1097,20 +1120,20 @@ components:
         - type
       title: ValidationError
     FilePurpose:
+      title: FilePurpose
+      type: string
       enum:
         - fine-tune
         - batch
-      title: FilePurpose
-      type: string
     SampleType:
+      title: SampleType
+      type: string
       enum:
         - pretrain
         - instruct
         - batch_request
         - batch_result
         - batch_error
-      title: SampleType
-      type: string
     Source:
       enum:
         - upload
@@ -1348,6 +1371,15 @@ components:
         - deleted
       title: DeleteFileOut
       type: object
+    FileSignedURL:
+      properties:
+        url:
+          title: Url
+          type: string
+      required:
+        - url
+      title: FileSignedURL
+      type: object
     FineTuneableModel:
       enum:
         - open-mistral-7b
@@ -1355,6 +1387,7 @@ components:
         - codestral-latest
         - mistral-large-latest
         - open-mistral-nemo
+        - ministral-3b-latest
       title: FineTuneableModel
       type: string
       description: The name of the model to fine-tune.
@@ -1553,7 +1586,6 @@ components:
               propertyName: type
             oneOf:
               - $ref: '#/components/schemas/GithubRepositoryOut'
-          maxItems: 20
           title: Repositories
           type: array
         metadata:
@@ -1864,6 +1896,7 @@ components:
               propertyName: type
             oneOf:
               - $ref: '#/components/schemas/GithubRepositoryIn'
+          maxItems: 50
           title: Repositories
           type: array
         auto_start:
@@ -2115,7 +2148,6 @@ components:
               propertyName: type
             oneOf:
               - $ref: '#/components/schemas/GithubRepositoryOut'
-          maxItems: 20
           title: Repositories
           type: array
         metadata:
@@ -2462,13 +2494,14 @@ components:
       title: BatchJobsOut
       type: object
     ApiEndpoint:
+      title: ApiEndpoint
+      type: string
       enum:
         - /v1/chat/completions
         - /v1/embeddings
         - /v1/fim/completions
         - /v1/moderations
-      title: ApiEndpoint
-      type: string
+        - /v1/chat/moderations
     BatchJobIn:
       properties:
         input_files:
@@ -2678,6 +2711,17 @@ components:
           description: >-
             Number of completions to return for each request, input tokens are
             only billed once.
+        prediction:
+          $ref: '#/components/schemas/Prediction'
+          default:
+            type: content
+            content: ''
+          description: >-
+            Enable users to specify expected results, optimizing response times
+            by leveraging known or predictable content. This approach is
+            especially effective for updating text documents or code files with
+            minimal changes, reducing latency while maintaining high-quality
+            results.
         safe_prompt:
           type: boolean
           description: Whether to inject a safety prompt before all conversations.
@@ -2807,6 +2851,10 @@ components:
           type: string
           title: Description
           default: ''
+        strict:
+          type: boolean
+          title: Strict
+          default: false
         parameters:
           type: object
           title: Parameters
@@ -2864,38 +2912,52 @@ components:
       title: ImageURL
     ImageURLChunk:
       properties:
-        type:
-          type: string
-          enum:
-            - image_url
-          const: image_url
-          title: Type
-          default: image_url
         image_url:
           anyOf:
             - $ref: '#/components/schemas/ImageURL'
             - type: string
           title: Image Url
+        type:
+          type: string
+          enum:
+            - image_url
+          title: Type
+          default: image_url
       additionalProperties: false
       type: object
       required:
         - image_url
       title: ImageURLChunk
       description: '{"type":"image_url","image_url":{"url":"data:image/png;base64,iVBORw0'
-    ReferenceChunk:
+    Prediction:
       properties:
         type:
           type: string
           enum:
-            - reference
-          const: reference
+            - content
+          const: content
           title: Type
-          default: reference
+          default: content
+        content:
+          type: string
+          title: Content
+          default: ''
+      additionalProperties: false
+      type: object
+      title: Prediction
+    ReferenceChunk:
+      properties:
         reference_ids:
           items:
             type: integer
           type: array
           title: Reference Ids
+        type:
+          type: string
+          enum:
+            - reference
+          title: Type
+          default: reference
       additionalProperties: false
       type: object
       required:
@@ -2911,9 +2973,6 @@ components:
       title: ResponseFormat
     ResponseFormats:
       type: string
-      enum:
-        - text
-        - json_object
       title: ResponseFormats
       description: >-
         An object specifying the format that the model must output. Setting to
@@ -2921,6 +2980,9 @@ components:
         message the model generates is in JSON. When using JSON mode you MUST
         also instruct the model to produce JSON yourself with a system or a user
         message.
+      enum:
+        - text
+        - json_object
     SystemMessage:
       properties:
         content:
@@ -2942,16 +3004,15 @@ components:
       title: SystemMessage
     TextChunk:
       properties:
+        text:
+          type: string
+          title: Text
         type:
           type: string
           enum:
             - text
-          const: text
           title: Type
           default: text
-        text:
-          type: string
-          title: Text
       additionalProperties: false
       type: object
       required:
@@ -2980,6 +3041,10 @@ components:
           default: function
         function:
           $ref: '#/components/schemas/FunctionCall'
+        index:
+          type: integer
+          title: Index
+          default: 0
       additionalProperties: false
       type: object
       required:
@@ -3172,6 +3237,17 @@ components:
           description: >-
             Number of completions to return for each request, input tokens are
             only billed once.
+        prediction:
+          $ref: '#/components/schemas/Prediction'
+          default:
+            type: content
+            content: ''
+          description: >-
+            Enable users to specify expected results, optimizing response times
+            by leveraging known or predictable content. This approach is
+            especially effective for updating text documents or code files with
+            minimal changes, reducing latency while maintaining high-quality
+            results.
         agent_id:
           type: string
           description: The ID of the agent to use for this completion.
@@ -3185,11 +3261,13 @@ components:
       oneOf:
         - $ref: '#/components/schemas/TextChunk'
         - $ref: '#/components/schemas/ImageURLChunk'
+        - $ref: '#/components/schemas/ReferenceChunk'
       discriminator:
         propertyName: type
         mapping:
           image_url: '#/components/schemas/ImageURLChunk'
           text: '#/components/schemas/TextChunk'
+          reference: '#/components/schemas/ReferenceChunk'
       title: ContentChunk
     EmbeddingRequest:
       properties:
@@ -3415,7 +3493,7 @@ components:
         index:
           type: integer
           example: 0
-      example:
+      examples:
         - object: embedding
           embedding:
             - 0.1
