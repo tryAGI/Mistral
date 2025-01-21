@@ -24,6 +24,10 @@ namespace Mistral
         /// 
         /// </summary>
         V1Moderations,
+        /// <summary>
+        /// 
+        /// </summary>
+        V1ChatModerations,
     }
 
     /// <summary>
@@ -42,6 +46,7 @@ namespace Mistral
                 ApiEndpoint.V1Embeddings => "/v1/embeddings",
                 ApiEndpoint.V1FimCompletions => "/v1/fim/completions",
                 ApiEndpoint.V1Moderations => "/v1/moderations",
+                ApiEndpoint.V1ChatModerations => "/v1/chat/moderations",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -56,6 +61,7 @@ namespace Mistral
                 "/v1/embeddings" => ApiEndpoint.V1Embeddings,
                 "/v1/fim/completions" => ApiEndpoint.V1FimCompletions,
                 "/v1/moderations" => ApiEndpoint.V1Moderations,
+                "/v1/chat/moderations" => ApiEndpoint.V1ChatModerations,
                 _ => null,
             };
         }

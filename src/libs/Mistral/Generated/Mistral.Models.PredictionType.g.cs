@@ -4,46 +4,40 @@
 namespace Mistral
 {
     /// <summary>
-    /// 
+    /// Default Value: content
     /// </summary>
-    public enum FilesApiRoutesUploadFileRequestPurpose
+    public enum PredictionType
     {
         /// <summary>
         /// 
         /// </summary>
-        FineTune,
-        /// <summary>
-        /// 
-        /// </summary>
-        Batch,
+        Content,
     }
 
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
     /// </summary>
-    public static class FilesApiRoutesUploadFileRequestPurposeExtensions
+    public static class PredictionTypeExtensions
     {
         /// <summary>
         /// Converts an enum to a string.
         /// </summary>
-        public static string ToValueString(this FilesApiRoutesUploadFileRequestPurpose value)
+        public static string ToValueString(this PredictionType value)
         {
             return value switch
             {
-                FilesApiRoutesUploadFileRequestPurpose.FineTune => "fine-tune",
-                FilesApiRoutesUploadFileRequestPurpose.Batch => "batch",
+                PredictionType.Content => "content",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static FilesApiRoutesUploadFileRequestPurpose? ToEnum(string value)
+        public static PredictionType? ToEnum(string value)
         {
             return value switch
             {
-                "fine-tune" => FilesApiRoutesUploadFileRequestPurpose.FineTune,
-                "batch" => FilesApiRoutesUploadFileRequestPurpose.Batch,
+                "content" => PredictionType.Content,
                 _ => null,
             };
         }

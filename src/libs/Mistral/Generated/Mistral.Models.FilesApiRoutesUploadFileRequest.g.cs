@@ -39,11 +39,11 @@ namespace Mistral
         public required string Filename { get; set; }
 
         /// <summary>
-        /// Default Value: fine-tune
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("purpose")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.FilesApiRoutesUploadFileRequestPurposeJsonConverter))]
-        public global::Mistral.FilesApiRoutesUploadFileRequestPurpose? Purpose { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.FilePurposeJsonConverter))]
+        public global::Mistral.FilePurpose? Purpose { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -76,14 +76,12 @@ namespace Mistral
         ///  file=@path/to/your/file.jsonl<br/>
         ///  ```
         /// </param>
-        /// <param name="purpose">
-        /// Default Value: fine-tune
-        /// </param>
+        /// <param name="purpose"></param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public FilesApiRoutesUploadFileRequest(
             byte[] file,
             string filename,
-            global::Mistral.FilesApiRoutesUploadFileRequestPurpose? purpose)
+            global::Mistral.FilePurpose? purpose)
         {
             this.File = file ?? throw new global::System.ArgumentNullException(nameof(file));
             this.Filename = filename ?? throw new global::System.ArgumentNullException(nameof(filename));

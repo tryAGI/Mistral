@@ -15,6 +15,10 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        Reference,
+        /// <summary>
+        /// 
+        /// </summary>
         Text,
     }
 
@@ -31,6 +35,7 @@ namespace Mistral
             return value switch
             {
                 ContentChunkDiscriminatorType.ImageUrl => "image_url",
+                ContentChunkDiscriminatorType.Reference => "reference",
                 ContentChunkDiscriminatorType.Text => "text",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -43,6 +48,7 @@ namespace Mistral
             return value switch
             {
                 "image_url" => ContentChunkDiscriminatorType.ImageUrl,
+                "reference" => ContentChunkDiscriminatorType.Reference,
                 "text" => ContentChunkDiscriminatorType.Text,
                 _ => null,
             };

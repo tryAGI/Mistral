@@ -35,11 +35,19 @@ namespace Mistral.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.ImageURLChunk)}");
                 imageUrl = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::Mistral.ReferenceChunk? reference = default;
+            if (discriminator?.Type == global::Mistral.ContentChunkDiscriminatorType.Reference)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.ReferenceChunk), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.ReferenceChunk> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.ReferenceChunk)}");
+                reference = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
 
             var result = new global::Mistral.ContentChunk(
                 discriminator?.Type,
                 text,
-                imageUrl
+                imageUrl,
+                reference
                 );
 
             return result;
@@ -65,6 +73,12 @@ namespace Mistral.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.ImageURLChunk), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.ImageURLChunk?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.ImageURLChunk).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.ImageUrl, typeInfo);
+            }
+            else if (value.IsReference)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.ReferenceChunk), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.ReferenceChunk?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.ReferenceChunk).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Reference, typeInfo);
             }
         }
     }

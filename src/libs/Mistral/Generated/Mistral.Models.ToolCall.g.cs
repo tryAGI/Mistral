@@ -22,6 +22,12 @@ namespace Mistral
         public string? Id { get; set; }
 
         /// <summary>
+        /// Default Value: 0
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("index")]
+        public int? Index { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
@@ -39,15 +45,20 @@ namespace Mistral
         /// </summary>
         /// <param name="function"></param>
         /// <param name="id"></param>
+        /// <param name="index">
+        /// Default Value: 0
+        /// </param>
         /// <param name="type"></param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public ToolCall(
             global::Mistral.FunctionCall function,
             string? id,
+            int? index,
             global::Mistral.ToolTypes? type)
         {
             this.Function = function ?? throw new global::System.ArgumentNullException(nameof(function));
             this.Id = id;
+            this.Index = index;
             this.Type = type;
         }
 
