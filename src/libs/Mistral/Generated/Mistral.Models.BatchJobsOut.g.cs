@@ -44,7 +44,9 @@ namespace Mistral
         /// Default Value: list
         /// </param>
         /// <param name="total"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BatchJobsOut(
             int total,
             global::System.Collections.Generic.IList<global::Mistral.BatchJobOut>? data,

@@ -77,7 +77,9 @@ namespace Mistral
         ///  ```
         /// </param>
         /// <param name="purpose"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public FilesApiRoutesUploadFileRequest(
             byte[] file,
             string filename,

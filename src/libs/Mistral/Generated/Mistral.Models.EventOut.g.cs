@@ -45,7 +45,9 @@ namespace Mistral
         /// <param name="name">
         /// The name of the event.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public EventOut(
             global::System.DateTimeOffset createdAt,
             string name,

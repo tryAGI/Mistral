@@ -50,7 +50,9 @@ namespace Mistral
         /// <param name="totalTokens">
         /// Example: 50
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UsageInfo(
             int completionTokens,
             int promptTokens,

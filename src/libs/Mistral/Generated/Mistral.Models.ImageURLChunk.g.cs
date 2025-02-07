@@ -38,7 +38,9 @@ namespace Mistral
         /// <param name="type">
         /// Default Value: image_url
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ImageURLChunk(
             global::Mistral.AnyOf<global::Mistral.ImageURL, string> imageUrl,
             global::Mistral.ImageURLChunkType? type)

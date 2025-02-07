@@ -143,7 +143,9 @@ namespace Mistral
         /// Default Value: auto
         /// </param>
         /// <param name="tools"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AgentsCompletionRequest(
             string agentId,
             global::System.Collections.Generic.IList<global::Mistral.MessagesItem> messages,

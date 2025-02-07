@@ -114,7 +114,9 @@ namespace Mistral
         /// <param name="type">
         /// Default Value: base
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BaseModelCard(
             global::Mistral.ModelCapabilities capabilities,
             string id,

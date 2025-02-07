@@ -38,7 +38,9 @@ namespace Mistral
         /// <param name="role">
         /// Default Value: system
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public SystemMessage(
             global::Mistral.AnyOf<string, global::System.Collections.Generic.IList<global::Mistral.TextChunk>> content,
             global::Mistral.SystemMessageRole? role)

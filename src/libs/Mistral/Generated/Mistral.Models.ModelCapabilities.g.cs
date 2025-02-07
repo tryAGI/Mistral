@@ -62,7 +62,9 @@ namespace Mistral
         /// <param name="vision">
         /// Default Value: false
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ModelCapabilities(
             bool? completionChat,
             bool? completionFim,

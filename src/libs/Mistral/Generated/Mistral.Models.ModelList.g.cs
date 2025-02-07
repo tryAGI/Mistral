@@ -33,7 +33,9 @@ namespace Mistral
         /// <param name="object">
         /// Default Value: list
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ModelList(
             global::System.Collections.Generic.IList<global::Mistral.DataItem>? data,
             string? @object)

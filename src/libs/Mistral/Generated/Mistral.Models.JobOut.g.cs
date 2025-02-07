@@ -182,7 +182,9 @@ namespace Mistral
         /// A list containing the IDs of uploaded files that contain validation data.<br/>
         /// Default Value: []
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public JobOut(
             bool autoStart,
             global::System.DateTimeOffset createdAt,

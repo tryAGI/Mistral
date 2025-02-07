@@ -151,7 +151,9 @@ namespace Mistral
         /// <param name="status"></param>
         /// <param name="succeededRequests"></param>
         /// <param name="totalRequests"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BatchJobOut(
             int completedRequests,
             int createdAt,

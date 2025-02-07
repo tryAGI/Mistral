@@ -25,7 +25,9 @@ namespace Mistral
         /// Initializes a new instance of the <see cref="ChatClassificationRequestInputVariant2ItemItemDiscriminator" /> class.
         /// </summary>
         /// <param name="role"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ChatClassificationRequestInputVariant2ItemItemDiscriminator(
             global::Mistral.ChatClassificationRequestInputVariant2ItemItemDiscriminatorRole? role)
         {

@@ -34,7 +34,9 @@ namespace Mistral
         /// <param name="type">
         /// Default Value: content
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Prediction(
             string? content,
             global::Mistral.PredictionType? type)

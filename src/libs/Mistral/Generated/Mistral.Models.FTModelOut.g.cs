@@ -115,7 +115,9 @@ namespace Mistral
         /// </param>
         /// <param name="ownedBy"></param>
         /// <param name="root"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public FTModelOut(
             bool archived,
             global::Mistral.FTModelCapabilitiesOut capabilities,

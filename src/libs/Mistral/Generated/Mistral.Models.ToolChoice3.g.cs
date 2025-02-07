@@ -35,7 +35,9 @@ namespace Mistral
         /// this restriction of `Function` is used to select a specific function to call
         /// </param>
         /// <param name="type"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ToolChoice3(
             global::Mistral.FunctionName function,
             global::Mistral.ToolTypes? type)
