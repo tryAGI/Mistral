@@ -47,7 +47,9 @@ namespace Mistral
         /// <param name="object">
         /// Example: embedding
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public EmbeddingResponseData(
             global::System.Collections.Generic.IList<double>? embedding,
             int? index,

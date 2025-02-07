@@ -41,7 +41,9 @@ namespace Mistral
         /// <param name="data"></param>
         /// <param name="object"></param>
         /// <param name="total"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ListFilesOut(
             global::System.Collections.Generic.IList<global::Mistral.FileSchema> data,
             string @object,

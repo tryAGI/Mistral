@@ -25,7 +25,9 @@ namespace Mistral
         /// Initializes a new instance of the <see cref="FileSignedURL" /> class.
         /// </summary>
         /// <param name="url"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public FileSignedURL(
             string url)
         {

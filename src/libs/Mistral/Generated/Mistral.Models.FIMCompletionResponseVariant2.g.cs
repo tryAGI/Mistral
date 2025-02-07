@@ -27,7 +27,9 @@ namespace Mistral
         /// <param name="model">
         /// Example: codestral-latest
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public FIMCompletionResponseVariant2(
             string? model)
         {

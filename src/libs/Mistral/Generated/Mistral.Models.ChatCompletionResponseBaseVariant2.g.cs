@@ -27,7 +27,9 @@ namespace Mistral
         /// <param name="created">
         /// Example: 1702256327
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ChatCompletionResponseBaseVariant2(
             int? created)
         {

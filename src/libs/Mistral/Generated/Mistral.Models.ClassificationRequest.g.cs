@@ -37,7 +37,9 @@ namespace Mistral
         /// Text to classify.
         /// </param>
         /// <param name="model"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ClassificationRequest(
             global::Mistral.AnyOf<string, global::System.Collections.Generic.IList<string>> input,
             string? model)

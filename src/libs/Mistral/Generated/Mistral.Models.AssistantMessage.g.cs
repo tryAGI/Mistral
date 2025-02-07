@@ -53,7 +53,9 @@ namespace Mistral
         /// Default Value: assistant
         /// </param>
         /// <param name="toolCalls"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AssistantMessage(
             global::Mistral.AnyOf<string, object, global::System.Collections.Generic.IList<global::Mistral.ContentChunk>>? content,
             bool? prefix,

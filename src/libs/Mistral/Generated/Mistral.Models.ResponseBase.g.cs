@@ -54,7 +54,9 @@ namespace Mistral
         /// Example: chat.completion
         /// </param>
         /// <param name="usage"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ResponseBase(
             string? id,
             string? model,

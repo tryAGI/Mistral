@@ -52,7 +52,9 @@ namespace Mistral
         /// Default Value: tool
         /// </param>
         /// <param name="toolCallId"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ToolMessage(
             global::Mistral.AnyOf<string, object, global::System.Collections.Generic.IList<global::Mistral.ContentChunk>> content,
             string? name,

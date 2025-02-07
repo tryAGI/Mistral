@@ -117,7 +117,9 @@ namespace Mistral
         /// <param name="purpose"></param>
         /// <param name="sampleType"></param>
         /// <param name="source"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UploadFileOut(
             int bytes,
             global::System.DateTimeOffset createdAt,

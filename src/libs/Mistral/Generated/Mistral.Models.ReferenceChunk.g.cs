@@ -35,7 +35,9 @@ namespace Mistral
         /// <param name="type">
         /// Default Value: reference
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ReferenceChunk(
             global::System.Collections.Generic.IList<int> referenceIds,
             global::Mistral.ReferenceChunkType? type)

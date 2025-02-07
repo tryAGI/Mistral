@@ -43,7 +43,9 @@ namespace Mistral
         /// <param name="loc"></param>
         /// <param name="msg"></param>
         /// <param name="type"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ValidationError(
             global::System.Collections.Generic.IList<global::Mistral.AnyOf<string, int?>> loc,
             string msg,

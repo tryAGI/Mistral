@@ -49,7 +49,9 @@ namespace Mistral
         /// Default Value: 0
         /// </param>
         /// <param name="type"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ToolCall(
             global::Mistral.FunctionCall function,
             string? id,

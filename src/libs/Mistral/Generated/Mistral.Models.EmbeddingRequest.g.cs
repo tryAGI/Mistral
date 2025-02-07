@@ -57,7 +57,9 @@ namespace Mistral
         /// ID of the model to use.<br/>
         /// Default Value: mistral-embed
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public EmbeddingRequest(
             global::Mistral.AnyOf<string, global::System.Collections.Generic.IList<string>> input,
             string model,
