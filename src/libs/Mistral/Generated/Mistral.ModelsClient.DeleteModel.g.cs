@@ -102,7 +102,7 @@ namespace Mistral
                 }
 
                 throw new global::Mistral.ApiException<global::Mistral.HTTPValidationError>(
-                    message: __response.ReasonPhrase ?? string.Empty,
+                    message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_422,
