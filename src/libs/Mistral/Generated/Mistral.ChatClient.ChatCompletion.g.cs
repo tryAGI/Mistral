@@ -249,7 +249,7 @@ namespace Mistral
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::Mistral.ChatCompletionResponse> ChatCompletionAsync(
             global::System.Collections.Generic.IList<global::Mistral.MessagesItem2> messages,
-            string? model,
+            string model,
             double? frequencyPenalty = default,
             int? maxTokens = default,
             int? n = default,

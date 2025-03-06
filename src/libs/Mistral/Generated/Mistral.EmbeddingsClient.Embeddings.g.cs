@@ -198,10 +198,6 @@ namespace Mistral
         /// Embeddings<br/>
         /// Embeddings
         /// </summary>
-        /// <param name="encodingFormat">
-        /// The format to return the embeddings in.<br/>
-        /// Default Value: float
-        /// </param>
         /// <param name="input">
         /// Text to embed.<br/>
         /// Example: Embed this sentence.
@@ -215,12 +211,10 @@ namespace Mistral
         public async global::System.Threading.Tasks.Task<global::Mistral.EmbeddingResponse> EmbeddingsAsync(
             global::Mistral.AnyOf<string, global::System.Collections.Generic.IList<string>> input,
             string model,
-            string? encodingFormat = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::Mistral.EmbeddingRequest
             {
-                EncodingFormat = encodingFormat,
                 Input = input,
                 Model = model,
             };

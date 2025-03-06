@@ -82,5 +82,10 @@ namespace Mistral
         /// </summary>
         public BatchClient Batch { get; }
 
+        /// <summary>
+        /// OCR API
+        /// </summary>
+        public OcrClient Ocr { get; }
+
     }
 }

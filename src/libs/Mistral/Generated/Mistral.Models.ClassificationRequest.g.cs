@@ -19,10 +19,11 @@ namespace Mistral
         public required global::Mistral.AnyOf<string, global::System.Collections.Generic.IList<string>> Input { get; set; }
 
         /// <summary>
-        /// 
+        /// ID of the model to use.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
-        public string? Model { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Model { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -36,16 +37,18 @@ namespace Mistral
         /// <param name="input">
         /// Text to classify.
         /// </param>
-        /// <param name="model"></param>
+        /// <param name="model">
+        /// ID of the model to use.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ClassificationRequest(
             global::Mistral.AnyOf<string, global::System.Collections.Generic.IList<string>> input,
-            string? model)
+            string model)
         {
             this.Input = input;
-            this.Model = model;
+            this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
         }
 
         /// <summary>

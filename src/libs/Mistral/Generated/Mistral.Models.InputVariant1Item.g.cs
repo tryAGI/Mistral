@@ -12,7 +12,7 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.ChatClassificationRequestInputVariant1ItemDiscriminatorRole? Role { get; }
+        public global::Mistral.ChatModerationRequestInputVariant1ItemDiscriminatorRole? Role { get; }
 
         /// <summary>
         /// 
@@ -158,7 +158,7 @@ namespace Mistral
         /// 
         /// </summary>
         public InputVariant1Item(
-            global::Mistral.ChatClassificationRequestInputVariant1ItemDiscriminatorRole? role,
+            global::Mistral.ChatModerationRequestInputVariant1ItemDiscriminatorRole? role,
             global::Mistral.SystemMessage? system,
             global::Mistral.UserMessage? user,
             global::Mistral.AssistantMessage? assistant,
