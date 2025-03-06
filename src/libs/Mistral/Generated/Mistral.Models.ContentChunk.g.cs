@@ -88,6 +88,41 @@ namespace Mistral
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
+        public global::Mistral.DocumentURLChunk? DocumentUrl { get; init; }
+#else
+        public global::Mistral.DocumentURLChunk? DocumentUrl { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DocumentUrl))]
+#endif
+        public bool IsDocumentUrl => DocumentUrl != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ContentChunk(global::Mistral.DocumentURLChunk value) => new ContentChunk(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Mistral.DocumentURLChunk?(ContentChunk @this) => @this.DocumentUrl;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ContentChunk(global::Mistral.DocumentURLChunk? value)
+        {
+            DocumentUrl = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
         public global::Mistral.ReferenceChunk? Reference { get; init; }
 #else
         public global::Mistral.ReferenceChunk? Reference { get; }
@@ -126,6 +161,7 @@ namespace Mistral
             global::Mistral.ContentChunkDiscriminatorType? type,
             global::Mistral.TextChunk? text,
             global::Mistral.ImageURLChunk? imageUrl,
+            global::Mistral.DocumentURLChunk? documentUrl,
             global::Mistral.ReferenceChunk? reference
             )
         {
@@ -133,6 +169,7 @@ namespace Mistral
 
             Text = text;
             ImageUrl = imageUrl;
+            DocumentUrl = documentUrl;
             Reference = reference;
         }
 
@@ -141,6 +178,7 @@ namespace Mistral
         /// </summary>
         public object? Object =>
             Reference as object ??
+            DocumentUrl as object ??
             ImageUrl as object ??
             Text as object 
             ;
@@ -150,7 +188,7 @@ namespace Mistral
         /// </summary>
         public bool Validate()
         {
-            return IsText && !IsImageUrl && !IsReference || !IsText && IsImageUrl && !IsReference || !IsText && !IsImageUrl && IsReference;
+            return IsText && !IsImageUrl && !IsDocumentUrl && !IsReference || !IsText && IsImageUrl && !IsDocumentUrl && !IsReference || !IsText && !IsImageUrl && IsDocumentUrl && !IsReference || !IsText && !IsImageUrl && !IsDocumentUrl && IsReference;
         }
 
         /// <summary>
@@ -159,6 +197,7 @@ namespace Mistral
         public TResult? Match<TResult>(
             global::System.Func<global::Mistral.TextChunk?, TResult>? text = null,
             global::System.Func<global::Mistral.ImageURLChunk?, TResult>? imageUrl = null,
+            global::System.Func<global::Mistral.DocumentURLChunk?, TResult>? documentUrl = null,
             global::System.Func<global::Mistral.ReferenceChunk?, TResult>? reference = null,
             bool validate = true)
         {
@@ -175,6 +214,10 @@ namespace Mistral
             {
                 return imageUrl(ImageUrl!);
             }
+            else if (IsDocumentUrl && documentUrl != null)
+            {
+                return documentUrl(DocumentUrl!);
+            }
             else if (IsReference && reference != null)
             {
                 return reference(Reference!);
@@ -189,6 +232,7 @@ namespace Mistral
         public void Match(
             global::System.Action<global::Mistral.TextChunk?>? text = null,
             global::System.Action<global::Mistral.ImageURLChunk?>? imageUrl = null,
+            global::System.Action<global::Mistral.DocumentURLChunk?>? documentUrl = null,
             global::System.Action<global::Mistral.ReferenceChunk?>? reference = null,
             bool validate = true)
         {
@@ -204,6 +248,10 @@ namespace Mistral
             else if (IsImageUrl)
             {
                 imageUrl?.Invoke(ImageUrl!);
+            }
+            else if (IsDocumentUrl)
+            {
+                documentUrl?.Invoke(DocumentUrl!);
             }
             else if (IsReference)
             {
@@ -222,6 +270,8 @@ namespace Mistral
                 typeof(global::Mistral.TextChunk),
                 ImageUrl,
                 typeof(global::Mistral.ImageURLChunk),
+                DocumentUrl,
+                typeof(global::Mistral.DocumentURLChunk),
                 Reference,
                 typeof(global::Mistral.ReferenceChunk),
             };
@@ -242,6 +292,7 @@ namespace Mistral
             return
                 global::System.Collections.Generic.EqualityComparer<global::Mistral.TextChunk?>.Default.Equals(Text, other.Text) &&
                 global::System.Collections.Generic.EqualityComparer<global::Mistral.ImageURLChunk?>.Default.Equals(ImageUrl, other.ImageUrl) &&
+                global::System.Collections.Generic.EqualityComparer<global::Mistral.DocumentURLChunk?>.Default.Equals(DocumentUrl, other.DocumentUrl) &&
                 global::System.Collections.Generic.EqualityComparer<global::Mistral.ReferenceChunk?>.Default.Equals(Reference, other.Reference) 
                 ;
         }

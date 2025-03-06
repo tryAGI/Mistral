@@ -35,6 +35,13 @@ namespace Mistral.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.ImageURLChunk)}");
                 imageUrl = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::Mistral.DocumentURLChunk? documentUrl = default;
+            if (discriminator?.Type == global::Mistral.ContentChunkDiscriminatorType.DocumentUrl)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.DocumentURLChunk), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.DocumentURLChunk> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.DocumentURLChunk)}");
+                documentUrl = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
             global::Mistral.ReferenceChunk? reference = default;
             if (discriminator?.Type == global::Mistral.ContentChunkDiscriminatorType.Reference)
             {
@@ -47,6 +54,7 @@ namespace Mistral.JsonConverters
                 discriminator?.Type,
                 text,
                 imageUrl,
+                documentUrl,
                 reference
                 );
 
@@ -73,6 +81,12 @@ namespace Mistral.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.ImageURLChunk), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.ImageURLChunk?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.ImageURLChunk).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.ImageUrl, typeInfo);
+            }
+            else if (value.IsDocumentUrl)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.DocumentURLChunk), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.DocumentURLChunk?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.DocumentURLChunk).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DocumentUrl, typeInfo);
             }
             else if (value.IsReference)
             {

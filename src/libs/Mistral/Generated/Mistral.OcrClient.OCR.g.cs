@@ -3,45 +3,44 @@
 
 namespace Mistral
 {
-    public partial class FimClient
+    public partial class OcrClient
     {
-        partial void PrepareFimCompletionArguments(
+        partial void PrepareOCRArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::Mistral.FIMCompletionRequest request);
-        partial void PrepareFimCompletionRequest(
+            global::Mistral.OCRRequest request);
+        partial void PrepareOCRRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::Mistral.FIMCompletionRequest request);
-        partial void ProcessFimCompletionResponse(
+            global::Mistral.OCRRequest request);
+        partial void ProcessOCRResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessFimCompletionResponseContent(
+        partial void ProcessOCRResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Fim Completion<br/>
-        /// FIM completion.
+        /// OCR
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Mistral.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Mistral.FIMCompletionResponse> FimCompletionAsync(
-            global::Mistral.FIMCompletionRequest request,
+        public async global::System.Threading.Tasks.Task<global::Mistral.OCRResponse> OCRAsync(
+            global::Mistral.OCRRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
             PrepareArguments(
                 client: HttpClient);
-            PrepareFimCompletionArguments(
+            PrepareOCRArguments(
                 httpClient: HttpClient,
                 request: request);
 
             var __pathBuilder = new PathBuilder(
-                path: "/v1/fim/completions",
+                path: "/v1/ocr",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -77,7 +76,7 @@ namespace Mistral
             PrepareRequest(
                 client: HttpClient,
                 request: __httpRequest);
-            PrepareFimCompletionRequest(
+            PrepareOCRRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
                 request: request);
@@ -90,7 +89,7 @@ namespace Mistral
             ProcessResponse(
                 client: HttpClient,
                 response: __response);
-            ProcessFimCompletionResponse(
+            ProcessOCRResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
             // Validation Error
@@ -134,7 +133,7 @@ namespace Mistral
                     client: HttpClient,
                     response: __response,
                     content: ref __content);
-                ProcessFimCompletionResponseContent(
+                ProcessOCRResponseContent(
                     httpClient: HttpClient,
                     httpResponseMessage: __response,
                     content: ref __content);
@@ -159,7 +158,7 @@ namespace Mistral
                 }
 
                 return
-                    global::Mistral.FIMCompletionResponse.FromJson(__content, JsonSerializerContext) ??
+                    global::Mistral.OCRResponse.FromJson(__content, JsonSerializerContext) ??
                     throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
             }
             else
@@ -189,83 +188,55 @@ namespace Mistral
                 ).ConfigureAwait(false);
 
                 return
-                    await global::Mistral.FIMCompletionResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                    await global::Mistral.OCRResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                     throw new global::System.InvalidOperationException("Response deserialization failed.");
             }
         }
 
         /// <summary>
-        /// Fim Completion<br/>
-        /// FIM completion.
+        /// OCR
         /// </summary>
-        /// <param name="maxTokens">
-        /// The maximum number of tokens to generate in the completion. The token count of your prompt plus `max_tokens` cannot exceed the model's context length.
+        /// <param name="document">
+        /// Document to run OCR on
         /// </param>
-        /// <param name="minTokens">
-        /// The minimum number of tokens to generate in the completion.
+        /// <param name="id"></param>
+        /// <param name="imageLimit">
+        /// Max images to extract
         /// </param>
-        /// <param name="model">
-        /// ID of the model to use. Only compatible for now with:<br/>
-        ///   - `codestral-2405`<br/>
-        ///   - `codestral-latest`<br/>
-        /// Default Value: codestral-2405<br/>
-        /// Example: codestral-2405
+        /// <param name="imageMinSize">
+        /// Minimum height and width of image to extract
         /// </param>
-        /// <param name="prompt">
-        /// The text/code to complete.<br/>
-        /// Example: def
+        /// <param name="includeImageBase64">
+        /// Include image URLs in response
         /// </param>
-        /// <param name="randomSeed">
-        /// The seed to use for random sampling. If set, different calls will generate deterministic results.
-        /// </param>
-        /// <param name="stop">
-        /// Stop generation if this token is detected. Or if one of these tokens is detected when providing an array
-        /// </param>
-        /// <param name="stream">
-        /// Whether to stream back partial progress. If set, tokens will be sent as data-only server-side events as they become available, with the stream terminated by a data: [DONE] message. Otherwise, the server will hold the request open until the timeout or until completion, with the response containing the full result as JSON.<br/>
-        /// Default Value: false
-        /// </param>
-        /// <param name="suffix">
-        /// Optional text/code that adds more context for the model. When given a `prompt` and a `suffix` the model will fill what is between them. When `suffix` is not provided, the model will simply execute completion starting with `prompt`.<br/>
-        /// Example: return a+b
-        /// </param>
-        /// <param name="temperature">
-        /// What sampling temperature to use, we recommend between 0.0 and 0.7. Higher values like 0.7 will make the output more random, while lower values like 0.2 will make it more focused and deterministic. We generally recommend altering this or `top_p` but not both. The default value varies depending on the model you are targeting. Call the `/models` endpoint to retrieve the appropriate value.
-        /// </param>
-        /// <param name="topP">
-        /// Nucleus sampling, where the model considers the results of the tokens with `top_p` probability mass. So 0.1 means only the tokens comprising the top 10% probability mass are considered. We generally recommend altering this or `temperature` but not both.<br/>
-        /// Default Value: 1
+        /// <param name="model"></param>
+        /// <param name="pages">
+        /// Specific pages user wants to process in various formats: single number, range, or list of both. Starts from 0
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Mistral.FIMCompletionResponse> FimCompletionAsync(
-            string model,
-            string prompt,
-            int? maxTokens = default,
-            int? minTokens = default,
-            int? randomSeed = default,
-            global::Mistral.AnyOf<string, global::System.Collections.Generic.IList<string>>? stop = default,
-            bool? stream = default,
-            string? suffix = default,
-            double? temperature = default,
-            double? topP = default,
+        public async global::System.Threading.Tasks.Task<global::Mistral.OCRResponse> OCRAsync(
+            global::Mistral.AnyOf<global::Mistral.DocumentURLChunk, global::Mistral.ImageURLChunk> document,
+            string? model,
+            string? id = default,
+            int? imageLimit = default,
+            int? imageMinSize = default,
+            bool? includeImageBase64 = default,
+            global::System.Collections.Generic.IList<int>? pages = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::Mistral.FIMCompletionRequest
+            var __request = new global::Mistral.OCRRequest
             {
-                MaxTokens = maxTokens,
-                MinTokens = minTokens,
+                Document = document,
+                Id = id,
+                ImageLimit = imageLimit,
+                ImageMinSize = imageMinSize,
+                IncludeImageBase64 = includeImageBase64,
                 Model = model,
-                Prompt = prompt,
-                RandomSeed = randomSeed,
-                Stop = stop,
-                Stream = stream,
-                Suffix = suffix,
-                Temperature = temperature,
-                TopP = topP,
+                Pages = pages,
             };
 
-            return await FimCompletionAsync(
+            return await OCRAsync(
                 request: __request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }

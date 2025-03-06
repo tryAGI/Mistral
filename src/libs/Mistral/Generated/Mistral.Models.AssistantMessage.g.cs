@@ -18,6 +18,7 @@ namespace Mistral
         public global::Mistral.AnyOf<string, object, global::System.Collections.Generic.IList<global::Mistral.ContentChunk>>? Content { get; set; }
 
         /// <summary>
+        /// Set this to `true` when adding an assistant message as prefix to condition the model response. The role of the prefix message is to force the model to start its answer by the content of the message.<br/>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prefix")]
@@ -47,6 +48,7 @@ namespace Mistral
         /// </summary>
         /// <param name="content"></param>
         /// <param name="prefix">
+        /// Set this to `true` when adding an assistant message as prefix to condition the model response. The role of the prefix message is to force the model to start its answer by the content of the message.<br/>
         /// Default Value: false
         /// </param>
         /// <param name="role">

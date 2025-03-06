@@ -3,10 +3,10 @@
 namespace Mistral.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class ChatClassificationRequestInputVariant2ItemItemDiscriminatorRoleNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Mistral.ChatClassificationRequestInputVariant2ItemItemDiscriminatorRole?>
+    public sealed class DocumentURLChunkTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Mistral.DocumentURLChunkType>
     {
         /// <inheritdoc />
-        public override global::Mistral.ChatClassificationRequestInputVariant2ItemItemDiscriminatorRole? Read(
+        public override global::Mistral.DocumentURLChunkType Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,7 +18,7 @@ namespace Mistral.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::Mistral.ChatClassificationRequestInputVariant2ItemItemDiscriminatorRoleExtensions.ToEnum(stringValue);
+                        return global::Mistral.DocumentURLChunkTypeExtensions.ToEnum(stringValue) ?? default;
                     }
                     
                     break;
@@ -26,7 +26,7 @@ namespace Mistral.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::Mistral.ChatClassificationRequestInputVariant2ItemItemDiscriminatorRole)numValue;
+                    return (global::Mistral.DocumentURLChunkType)numValue;
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -38,19 +38,12 @@ namespace Mistral.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::Mistral.ChatClassificationRequestInputVariant2ItemItemDiscriminatorRole? value,
+            global::Mistral.DocumentURLChunkType value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
 
-            if (value == null)
-            {
-                writer.WriteNullValue();
-            }
-            else
-            {
-                writer.WriteStringValue(global::Mistral.ChatClassificationRequestInputVariant2ItemItemDiscriminatorRoleExtensions.ToValueString(value.Value));
-            }
+            writer.WriteStringValue(global::Mistral.DocumentURLChunkTypeExtensions.ToValueString(value));
         }
     }
 }

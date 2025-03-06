@@ -29,10 +29,11 @@ namespace Mistral
         /// Default Value: codestral-2405<br/>
         /// Example: codestral-2405
         /// </summary>
+        /// <default>"codestral-2405"</default>
         /// <example>codestral-2405</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Model { get; set; }
+        public required string Model { get; set; } = "codestral-2405";
 
         /// <summary>
         /// The text/code to complete.<br/>
@@ -135,7 +136,7 @@ namespace Mistral
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public FIMCompletionRequest(
-            string? model,
+            string model,
             string prompt,
             int? maxTokens,
             int? minTokens,

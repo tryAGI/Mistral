@@ -60,7 +60,7 @@ namespace Mistral
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Mistral.FIMCompletionResponse> FimCompletionAsync(
-            string? model,
+            string model,
             string prompt,
             int? maxTokens = default,
             int? minTokens = default,

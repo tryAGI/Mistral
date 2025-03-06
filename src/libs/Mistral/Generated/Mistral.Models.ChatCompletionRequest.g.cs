@@ -39,7 +39,7 @@ namespace Mistral
         /// <example>mistral-small-latest</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Model { get; set; }
+        public required string Model { get; set; }
 
         /// <summary>
         /// Number of completions to return for each request, input tokens are only billed once.
@@ -182,7 +182,7 @@ namespace Mistral
 #endif
         public ChatCompletionRequest(
             global::System.Collections.Generic.IList<global::Mistral.MessagesItem2> messages,
-            string? model,
+            string model,
             double? frequencyPenalty,
             int? maxTokens,
             int? n,

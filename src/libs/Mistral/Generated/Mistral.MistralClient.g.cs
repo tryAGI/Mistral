@@ -119,6 +119,15 @@ namespace Mistral
         };
 
         /// <summary>
+        /// OCR API
+        /// </summary>
+        public OcrClient Ocr => new OcrClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
         /// Creates a new instance of the MistralClient.
         /// If no httpClient is provided, a new one will be created.
         /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.

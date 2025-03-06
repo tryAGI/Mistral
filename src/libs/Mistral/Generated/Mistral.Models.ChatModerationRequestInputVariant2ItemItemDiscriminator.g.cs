@@ -6,14 +6,14 @@ namespace Mistral
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class ChatClassificationRequestInputVariant1ItemDiscriminator
+    public sealed partial class ChatModerationRequestInputVariant2ItemItemDiscriminator
     {
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.ChatClassificationRequestInputVariant1ItemDiscriminatorRoleJsonConverter))]
-        public global::Mistral.ChatClassificationRequestInputVariant1ItemDiscriminatorRole? Role { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.ChatModerationRequestInputVariant2ItemItemDiscriminatorRoleJsonConverter))]
+        public global::Mistral.ChatModerationRequestInputVariant2ItemItemDiscriminatorRole? Role { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -22,22 +22,22 @@ namespace Mistral
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ChatClassificationRequestInputVariant1ItemDiscriminator" /> class.
+        /// Initializes a new instance of the <see cref="ChatModerationRequestInputVariant2ItemItemDiscriminator" /> class.
         /// </summary>
         /// <param name="role"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public ChatClassificationRequestInputVariant1ItemDiscriminator(
-            global::Mistral.ChatClassificationRequestInputVariant1ItemDiscriminatorRole? role)
+        public ChatModerationRequestInputVariant2ItemItemDiscriminator(
+            global::Mistral.ChatModerationRequestInputVariant2ItemItemDiscriminatorRole? role)
         {
             this.Role = role;
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ChatClassificationRequestInputVariant1ItemDiscriminator" /> class.
+        /// Initializes a new instance of the <see cref="ChatModerationRequestInputVariant2ItemItemDiscriminator" /> class.
         /// </summary>
-        public ChatClassificationRequestInputVariant1ItemDiscriminator()
+        public ChatModerationRequestInputVariant2ItemItemDiscriminator()
         {
         }
     }

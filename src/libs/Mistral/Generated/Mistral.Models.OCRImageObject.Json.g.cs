@@ -2,7 +2,7 @@
 
 namespace Mistral
 {
-    public sealed partial class ChatClassificationRequest
+    public sealed partial class OCRImageObject
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -34,14 +34,14 @@ namespace Mistral
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerContext.
         /// </summary>
-        public static global::Mistral.ChatClassificationRequest? FromJson(
+        public static global::Mistral.OCRImageObject? FromJson(
             string json,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::Mistral.ChatClassificationRequest),
-                jsonSerializerContext) as global::Mistral.ChatClassificationRequest;
+                typeof(global::Mistral.OCRImageObject),
+                jsonSerializerContext) as global::Mistral.OCRImageObject;
         }
 
         /// <summary>
@@ -51,11 +51,11 @@ namespace Mistral
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::Mistral.ChatClassificationRequest? FromJson(
+        public static global::Mistral.OCRImageObject? FromJson(
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.ChatClassificationRequest>(
+            return global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.OCRImageObject>(
                 json,
                 jsonSerializerOptions);
         }
@@ -63,14 +63,14 @@ namespace Mistral
         /// <summary>
         /// Deserializes a JSON stream using the provided JsonSerializerContext.
         /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::Mistral.ChatClassificationRequest?> FromJsonStreamAsync(
+        public static async global::System.Threading.Tasks.ValueTask<global::Mistral.OCRImageObject?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
-                typeof(global::Mistral.ChatClassificationRequest),
-                jsonSerializerContext).ConfigureAwait(false)) as global::Mistral.ChatClassificationRequest;
+                typeof(global::Mistral.OCRImageObject),
+                jsonSerializerContext).ConfigureAwait(false)) as global::Mistral.OCRImageObject;
         }
 
         /// <summary>
@@ -80,11 +80,11 @@ namespace Mistral
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::System.Threading.Tasks.ValueTask<global::Mistral.ChatClassificationRequest?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::Mistral.OCRImageObject?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::Mistral.ChatClassificationRequest?>(
+            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::Mistral.OCRImageObject?>(
                 jsonStream,
                 jsonSerializerOptions);
         }

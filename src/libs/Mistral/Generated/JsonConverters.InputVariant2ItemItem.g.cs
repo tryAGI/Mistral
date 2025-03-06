@@ -17,33 +17,33 @@ namespace Mistral.JsonConverters
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.ChatClassificationRequestInputVariant2ItemItemDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.ChatClassificationRequestInputVariant2ItemItemDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.ChatClassificationRequestInputVariant2ItemItemDiscriminator)}");
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.ChatModerationRequestInputVariant2ItemItemDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.ChatModerationRequestInputVariant2ItemItemDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.ChatModerationRequestInputVariant2ItemItemDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::Mistral.SystemMessage? system = default;
-            if (discriminator?.Role == global::Mistral.ChatClassificationRequestInputVariant2ItemItemDiscriminatorRole.System)
+            if (discriminator?.Role == global::Mistral.ChatModerationRequestInputVariant2ItemItemDiscriminatorRole.System)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.SystemMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.SystemMessage> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.SystemMessage)}");
                 system = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::Mistral.UserMessage? user = default;
-            if (discriminator?.Role == global::Mistral.ChatClassificationRequestInputVariant2ItemItemDiscriminatorRole.User)
+            if (discriminator?.Role == global::Mistral.ChatModerationRequestInputVariant2ItemItemDiscriminatorRole.User)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.UserMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.UserMessage> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.UserMessage)}");
                 user = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::Mistral.AssistantMessage? assistant = default;
-            if (discriminator?.Role == global::Mistral.ChatClassificationRequestInputVariant2ItemItemDiscriminatorRole.Assistant)
+            if (discriminator?.Role == global::Mistral.ChatModerationRequestInputVariant2ItemItemDiscriminatorRole.Assistant)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.AssistantMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.AssistantMessage> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.AssistantMessage)}");
                 assistant = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::Mistral.ToolMessage? tool = default;
-            if (discriminator?.Role == global::Mistral.ChatClassificationRequestInputVariant2ItemItemDiscriminatorRole.Tool)
+            if (discriminator?.Role == global::Mistral.ChatModerationRequestInputVariant2ItemItemDiscriminatorRole.Tool)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.ToolMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.ToolMessage> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.ToolMessage)}");

@@ -7,11 +7,11 @@ namespace Mistral
     {
         partial void PrepareModerationsChatArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::Mistral.ChatClassificationRequest request);
+            global::Mistral.ChatModerationRequest request);
         partial void PrepareModerationsChatRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::Mistral.ChatClassificationRequest request);
+            global::Mistral.ChatModerationRequest request);
         partial void ProcessModerationsChatResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -28,7 +28,7 @@ namespace Mistral
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Mistral.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Mistral.ClassificationResponse> ModerationsChatAsync(
-            global::Mistral.ChatClassificationRequest request,
+            global::Mistral.ChatModerationRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -200,17 +200,22 @@ namespace Mistral
         /// Chat to classify
         /// </param>
         /// <param name="model"></param>
+        /// <param name="truncateForContextLength">
+        /// Default Value: false
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::Mistral.ClassificationResponse> ModerationsChatAsync(
             global::Mistral.AnyOf<global::System.Collections.Generic.IList<global::Mistral.InputVariant1Item>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::Mistral.InputVariant2ItemItem>>> input,
-            string? model,
+            string model,
+            bool? truncateForContextLength = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::Mistral.ChatClassificationRequest
+            var __request = new global::Mistral.ChatModerationRequest
             {
                 Input = input,
                 Model = model,
+                TruncateForContextLength = truncateForContextLength,
             };
 
             return await ModerationsChatAsync(

@@ -731,11 +731,11 @@ paths:
       summary: Chat Completion
       operationId: chat_completion_v1_chat_completions_post
       requestBody:
-        required: true
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/ChatCompletionRequest'
+        required: true
       responses:
         '200':
           description: Successful Response
@@ -757,14 +757,13 @@ paths:
   /v1/fim/completions:
     post:
       summary: Fim Completion
-      description: FIM completion.
       operationId: fim_completion_v1_fim_completions_post
       requestBody:
-        required: true
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/FIMCompletionRequest'
+        required: true
       responses:
         '200':
           description: Successful Response
@@ -781,25 +780,26 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/HTTPValidationError'
+      description: FIM completion.
       tags:
         - fim
-  /v1/agents/completions:
+  /v1/ocr:
     post:
-      summary: Agents Completion
-      operationId: agents_completion_v1_agents_completions_post
+      summary: OCR
+      operationId: ocr_v1_ocr_post
       requestBody:
-        required: true
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/AgentsCompletionRequest'
+              $ref: '#/components/schemas/OCRRequest'
+        required: true
       responses:
         '200':
           description: Successful Response
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ChatCompletionResponse'
+                $ref: '#/components/schemas/OCRResponse'
         '422':
           description: Validation Error
           content:
@@ -807,43 +807,17 @@ paths:
               schema:
                 $ref: '#/components/schemas/HTTPValidationError'
       tags:
-        - agents
-  /v1/embeddings:
-    post:
-      summary: Embeddings
-      description: Embeddings
-      operationId: embeddings_v1_embeddings_post
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/EmbeddingRequest'
-      responses:
-        '200':
-          description: Successful Response
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/EmbeddingResponse'
-        '422':
-          description: Validation Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/HTTPValidationError'
-      tags:
-        - embeddings
+        - ocr
   /v1/moderations:
     post:
       summary: Moderations
       operationId: moderations_v1_moderations_post
       requestBody:
-        required: true
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/ClassificationRequest'
+        required: true
       responses:
         '200':
           description: Successful Response
@@ -864,11 +838,11 @@ paths:
       summary: Moderations Chat
       operationId: moderations_chat_v1_chat_moderations_post
       requestBody:
-        required: true
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/ChatClassificationRequest'
+              $ref: '#/components/schemas/ChatModerationRequest'
+        required: true
       responses:
         '200':
           description: Successful Response
@@ -884,6 +858,57 @@ paths:
                 $ref: '#/components/schemas/HTTPValidationError'
       tags:
         - classifiers
+  /v1/embeddings:
+    post:
+      summary: Embeddings
+      description: Embeddings
+      operationId: embeddings_v1_embeddings_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EmbeddingRequest'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmbeddingResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      tags:
+        - embeddings
+  /v1/agents/completions:
+    post:
+      summary: Agents Completion
+      operationId: agents_completion_v1_agents_completions_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AgentsCompletionRequest'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChatCompletionResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      tags:
+        - agents
 components:
   schemas:
     BaseModelCard:
@@ -2555,6 +2580,10 @@ components:
           type: boolean
           title: Prefix
           default: false
+          description: >-
+            Set this to `true` when adding an assistant message as prefix to
+            condition the model response. The role of the prefix message is to
+            force the model to start its answer by the content of the message.
         role:
           type: string
           default: assistant
@@ -2567,10 +2596,8 @@ components:
     ChatCompletionRequest:
       properties:
         model:
-          anyOf:
-            - type: string
-            - type: 'null'
           title: Model
+          type: string
           description: >-
             ID of the model to use. You can use the [List Available
             Models](/api/#tag/models/operation/list_models_v1_models_get) API to
@@ -2732,14 +2759,126 @@ components:
         - messages
         - model
       title: ChatCompletionRequest
-    FIMCompletionRequest:
+    ChatModerationRequest:
       properties:
         model:
+          title: Model
+          type: string
+        input:
+          anyOf:
+            - items:
+                oneOf:
+                  - $ref: '#/components/schemas/SystemMessage'
+                  - $ref: '#/components/schemas/UserMessage'
+                  - $ref: '#/components/schemas/AssistantMessage'
+                  - $ref: '#/components/schemas/ToolMessage'
+                discriminator:
+                  propertyName: role
+                  mapping:
+                    assistant: '#/components/schemas/AssistantMessage'
+                    system: '#/components/schemas/SystemMessage'
+                    tool: '#/components/schemas/ToolMessage'
+                    user: '#/components/schemas/UserMessage'
+              type: array
+            - items:
+                items:
+                  oneOf:
+                    - $ref: '#/components/schemas/SystemMessage'
+                    - $ref: '#/components/schemas/UserMessage'
+                    - $ref: '#/components/schemas/AssistantMessage'
+                    - $ref: '#/components/schemas/ToolMessage'
+                  discriminator:
+                    propertyName: role
+                    mapping:
+                      assistant: '#/components/schemas/AssistantMessage'
+                      system: '#/components/schemas/SystemMessage'
+                      tool: '#/components/schemas/ToolMessage'
+                      user: '#/components/schemas/UserMessage'
+                type: array
+              type: array
+          title: Input
+          description: Chat to classify
+        truncate_for_context_length:
+          type: boolean
+          title: Truncate For Context Length
+          default: false
+      additionalProperties: false
+      type: object
+      required:
+        - input
+        - model
+      title: ChatModerationRequest
+    ClassificationRequest:
+      properties:
+        model:
+          title: Model
+          description: ID of the model to use.
+          type: string
+        input:
+          anyOf:
+            - type: string
+            - items:
+                type: string
+              type: array
+          title: Input
+          description: Text to classify.
+      additionalProperties: false
+      type: object
+      required:
+        - input
+        - model
+      title: ClassificationRequest
+    DocumentURLChunk:
+      properties:
+        type:
+          type: string
+          const: document_url
+          title: Type
+          default: document_url
+        document_url:
+          type: string
+          title: Document Url
+        document_name:
           anyOf:
             - type: string
             - type: 'null'
+          title: Document Name
+          description: The filename of the document
+      additionalProperties: false
+      type: object
+      required:
+        - document_url
+      title: DocumentURLChunk
+    EmbeddingRequest:
+      properties:
+        model:
+          title: Model
+          type: string
+          default: mistral-embed
+          description: ID of the model to use.
+        input:
+          anyOf:
+            - type: string
+            - items:
+                type: string
+              type: array
+          title: Input
+          example:
+            - Embed this sentence.
+            - As well as this one.
+          description: Text to embed.
+      additionalProperties: false
+      type: object
+      required:
+        - input
+        - model
+      title: EmbeddingRequest
+    FIMCompletionRequest:
+      properties:
+        model:
           title: Model
           default: codestral-2405
+          type: string
           description: |-
             ID of the model to use. Only compatible for now with:
               - `codestral-2405`
@@ -2929,12 +3068,228 @@ components:
         - image_url
       title: ImageURLChunk
       description: '{"type":"image_url","image_url":{"url":"data:image/png;base64,iVBORw0'
+    JsonSchema:
+      properties:
+        name:
+          type: string
+          title: Name
+        description:
+          anyOf:
+            - type: string
+            - type: 'null'
+          title: Description
+        schema:
+          type: object
+          title: Schema
+          additionalProperties: true
+          x-speakeasy-name-override: schema_definition
+        strict:
+          type: boolean
+          title: Strict
+          default: false
+      additionalProperties: false
+      type: object
+      required:
+        - name
+        - schema
+      title: JsonSchema
+    OCRImageObject:
+      properties:
+        id:
+          type: string
+          title: Id
+          description: Image ID for extracted image in a page
+        top_left_x:
+          anyOf:
+            - type: integer
+              minimum: 0
+            - type: 'null'
+          title: Top Left X
+          description: X coordinate of top-left corner of the extracted image
+        top_left_y:
+          anyOf:
+            - type: integer
+              minimum: 0
+            - type: 'null'
+          title: Top Left Y
+          description: Y coordinate of top-left corner of the extracted image
+        bottom_right_x:
+          anyOf:
+            - type: integer
+              minimum: 0
+            - type: 'null'
+          title: Bottom Right X
+          description: X coordinate of bottom-right corner of the extracted image
+        bottom_right_y:
+          anyOf:
+            - type: integer
+              minimum: 0
+            - type: 'null'
+          title: Bottom Right Y
+          description: Y coordinate of bottom-right corner of the extracted image
+        image_base64:
+          anyOf:
+            - type: string
+            - type: 'null'
+          title: Image Base64
+          description: Base64 string of the extracted image
+      additionalProperties: false
+      type: object
+      required:
+        - id
+        - top_left_x
+        - top_left_y
+        - bottom_right_x
+        - bottom_right_y
+      title: OCRImageObject
+    OCRPageDimensions:
+      properties:
+        dpi:
+          type: integer
+          minimum: 0
+          title: Dpi
+          description: Dots per inch of the page-image
+        height:
+          type: integer
+          minimum: 0
+          title: Height
+          description: Height of the image in pixels
+        width:
+          type: integer
+          minimum: 0
+          title: Width
+          description: Width of the image in pixels
+      additionalProperties: false
+      type: object
+      required:
+        - dpi
+        - height
+        - width
+      title: OCRPageDimensions
+    OCRPageObject:
+      properties:
+        index:
+          type: integer
+          minimum: 0
+          title: Index
+          description: The page index in a pdf document starting from 0
+        markdown:
+          type: string
+          title: Markdown
+          description: The markdown string response of the page
+        images:
+          items:
+            $ref: '#/components/schemas/OCRImageObject'
+          type: array
+          title: Images
+          description: List of all extracted images in the page
+        dimensions:
+          anyOf:
+            - $ref: '#/components/schemas/OCRPageDimensions'
+            - type: 'null'
+          description: The dimensions of the PDF Page's screenshot image
+      additionalProperties: false
+      type: object
+      required:
+        - index
+        - markdown
+        - images
+        - dimensions
+      title: OCRPageObject
+    OCRRequest:
+      properties:
+        model:
+          anyOf:
+            - type: string
+            - type: 'null'
+          title: Model
+        id:
+          type: string
+          title: Id
+        document:
+          anyOf:
+            - $ref: '#/components/schemas/DocumentURLChunk'
+            - $ref: '#/components/schemas/ImageURLChunk'
+          title: Document
+          description: Document to run OCR on
+        pages:
+          anyOf:
+            - items:
+                type: integer
+              type: array
+            - type: 'null'
+          title: Pages
+          description: >-
+            Specific pages user wants to process in various formats: single
+            number, range, or list of both. Starts from 0
+        include_image_base64:
+          anyOf:
+            - type: boolean
+            - type: 'null'
+          title: Include Image Base64
+          description: Include image URLs in response
+        image_limit:
+          anyOf:
+            - type: integer
+            - type: 'null'
+          title: Image Limit
+          description: Max images to extract
+        image_min_size:
+          anyOf:
+            - type: integer
+            - type: 'null'
+          title: Image Min Size
+          description: Minimum height and width of image to extract
+      additionalProperties: false
+      type: object
+      required:
+        - document
+        - model
+      title: OCRRequest
+    OCRResponse:
+      properties:
+        pages:
+          items:
+            $ref: '#/components/schemas/OCRPageObject'
+          type: array
+          title: Pages
+          description: List of OCR info for pages.
+        model:
+          type: string
+          title: Model
+          description: The model used to generate the OCR.
+        usage_info:
+          $ref: '#/components/schemas/OCRUsageInfo'
+          description: Usage info for the OCR request.
+      additionalProperties: false
+      type: object
+      required:
+        - pages
+        - model
+        - usage_info
+      title: OCRResponse
+    OCRUsageInfo:
+      properties:
+        pages_processed:
+          type: integer
+          minimum: 0
+          title: Pages Processed
+          description: Number of pages processed
+        doc_size_bytes:
+          anyOf:
+            - type: integer
+            - type: 'null'
+          title: Doc Size Bytes
+          description: Document size in bytes
+      additionalProperties: false
+      type: object
+      required:
+        - pages_processed
+      title: OCRUsageInfo
     Prediction:
       properties:
         type:
           type: string
-          enum:
-            - content
           const: content
           title: Type
           default: content
@@ -2968,11 +3323,19 @@ components:
         type:
           $ref: '#/components/schemas/ResponseFormats'
           default: text
+        json_schema:
+          anyOf:
+            - $ref: '#/components/schemas/JsonSchema'
+            - type: 'null'
       additionalProperties: false
       type: object
       title: ResponseFormat
     ResponseFormats:
       type: string
+      enum:
+        - text
+        - json_object
+        - json_schema
       title: ResponseFormats
       description: >-
         An object specifying the format that the model must output. Setting to
@@ -2980,9 +3343,6 @@ components:
         message the model generates is in JSON. When using JSON mode you MUST
         also instruct the model to produce JSON yourself with a system or a user
         message.
-      enum:
-        - text
-        - json_object
     SystemMessage:
       properties:
         content:
@@ -3105,7 +3465,6 @@ components:
       type: string
       enum:
         - function
-      const: function
       title: ToolTypes
     UserMessage:
       properties:
@@ -3261,112 +3620,16 @@ components:
       oneOf:
         - $ref: '#/components/schemas/TextChunk'
         - $ref: '#/components/schemas/ImageURLChunk'
+        - $ref: '#/components/schemas/DocumentURLChunk'
         - $ref: '#/components/schemas/ReferenceChunk'
       discriminator:
         propertyName: type
         mapping:
           image_url: '#/components/schemas/ImageURLChunk'
+          document_url: '#/components/schemas/DocumentURLChunk'
           text: '#/components/schemas/TextChunk'
           reference: '#/components/schemas/ReferenceChunk'
       title: ContentChunk
-    EmbeddingRequest:
-      properties:
-        input:
-          anyOf:
-            - type: string
-            - items:
-                type: string
-              type: array
-          title: Input
-          description: Text to embed.
-          example:
-            - Embed this sentence.
-            - As well as this one.
-        model:
-          type: string
-          title: Model
-          description: ID of the model to use.
-          default: mistral-embed
-        encoding_format:
-          anyOf:
-            - type: string
-            - type: 'null'
-          title: Encoding Format
-          description: The format to return the embeddings in.
-          default: float
-      additionalProperties: false
-      type: object
-      required:
-        - input
-        - model
-      title: EmbeddingRequest
-    ChatClassificationRequest:
-      properties:
-        input:
-          anyOf:
-            - items:
-                oneOf:
-                  - $ref: '#/components/schemas/SystemMessage'
-                  - $ref: '#/components/schemas/UserMessage'
-                  - $ref: '#/components/schemas/AssistantMessage'
-                  - $ref: '#/components/schemas/ToolMessage'
-                discriminator:
-                  propertyName: role
-                  mapping:
-                    assistant: '#/components/schemas/AssistantMessage'
-                    system: '#/components/schemas/SystemMessage'
-                    tool: '#/components/schemas/ToolMessage'
-                    user: '#/components/schemas/UserMessage'
-              type: array
-            - items:
-                items:
-                  oneOf:
-                    - $ref: '#/components/schemas/SystemMessage'
-                    - $ref: '#/components/schemas/UserMessage'
-                    - $ref: '#/components/schemas/AssistantMessage'
-                    - $ref: '#/components/schemas/ToolMessage'
-                  discriminator:
-                    propertyName: role
-                    mapping:
-                      assistant: '#/components/schemas/AssistantMessage'
-                      system: '#/components/schemas/SystemMessage'
-                      tool: '#/components/schemas/ToolMessage'
-                      user: '#/components/schemas/UserMessage'
-                type: array
-              type: array
-          title: Input
-          description: Chat to classify
-        model:
-          anyOf:
-            - type: string
-            - type: 'null'
-          title: Model
-      additionalProperties: false
-      type: object
-      required:
-        - input
-        - model
-      title: ChatClassificationRequest
-    ClassificationRequest:
-      properties:
-        input:
-          anyOf:
-            - type: string
-            - items:
-                type: string
-              type: array
-          title: Input
-          description: Text to classify.
-        model:
-          anyOf:
-            - type: string
-            - type: 'null'
-          title: Model
-      additionalProperties: false
-      type: object
-      required:
-        - input
-      title: ClassificationRequest
     UsageInfo:
       title: UsageInfo
       type: object
@@ -3632,6 +3895,9 @@ tags:
   - name: batch
     x-displayName: Batch
     description: Batch API
+  - name: ocr
+    x-displayName: OCR API
+    description: OCR API
 security:
   - ApiKey: []
 servers:
