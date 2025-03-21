@@ -214,6 +214,9 @@ namespace Mistral
         /// <param name="n">
         /// Number of completions to return for each request, input tokens are only billed once.
         /// </param>
+        /// <param name="parallelToolCalls">
+        /// Default Value: true
+        /// </param>
         /// <param name="prediction"></param>
         /// <param name="presencePenalty">
         /// presence_penalty determines how much the model penalizes the repetition of words or phrases. A higher presence penalty encourages the model to use a wider variety of words and phrases, making the output more diverse and creative.<br/>
@@ -253,6 +256,7 @@ namespace Mistral
             double? frequencyPenalty = default,
             int? maxTokens = default,
             int? n = default,
+            bool? parallelToolCalls = default,
             global::Mistral.Prediction? prediction = default,
             double? presencePenalty = default,
             int? randomSeed = default,
@@ -273,6 +277,7 @@ namespace Mistral
                 Messages = messages,
                 Model = model,
                 N = n,
+                ParallelToolCalls = parallelToolCalls,
                 Prediction = prediction,
                 PresencePenalty = presencePenalty,
                 RandomSeed = randomSeed,

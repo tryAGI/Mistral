@@ -5,17 +5,17 @@ namespace Mistral
     public partial interface IClassifiersClient
     {
         /// <summary>
-        /// Moderations Chat
+        /// Chat Moderations
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Mistral.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::Mistral.ClassificationResponse> ModerationsChatAsync(
+        global::System.Threading.Tasks.Task<global::Mistral.ClassificationResponse> ChatModerationsAsync(
             global::Mistral.ChatModerationRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Moderations Chat
+        /// Chat Moderations
         /// </summary>
         /// <param name="input">
         /// Chat to classify
@@ -26,7 +26,7 @@ namespace Mistral
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::Mistral.ClassificationResponse> ModerationsChatAsync(
+        global::System.Threading.Tasks.Task<global::Mistral.ClassificationResponse> ChatModerationsAsync(
             global::Mistral.AnyOf<global::System.Collections.Generic.IList<global::Mistral.InputVariant1Item>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::Mistral.InputVariant2ItemItem>>> input,
             string model,
             bool? truncateForContextLength = default,
