@@ -16,6 +16,10 @@ namespace Mistral
         /// 
         /// </summary>
         Batch,
+        /// <summary>
+        /// 
+        /// </summary>
+        Ocr,
     }
 
     /// <summary>
@@ -32,6 +36,7 @@ namespace Mistral
             {
                 FilePurpose.FineTune => "fine-tune",
                 FilePurpose.Batch => "batch",
+                FilePurpose.Ocr => "ocr",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -44,6 +49,7 @@ namespace Mistral
             {
                 "fine-tune" => FilePurpose.FineTune,
                 "batch" => FilePurpose.Batch,
+                "ocr" => FilePurpose.Ocr,
                 _ => null,
             };
         }

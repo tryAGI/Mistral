@@ -25,7 +25,7 @@ namespace Mistral
         /// </param>
         /// <param name="model">
         /// ID of the model to use.<br/>
-        /// Default Value: mistral-embed
+        /// Example: mistral-embed
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>

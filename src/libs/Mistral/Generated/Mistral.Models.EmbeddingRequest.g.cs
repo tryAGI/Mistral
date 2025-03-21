@@ -22,12 +22,12 @@ namespace Mistral
 
         /// <summary>
         /// ID of the model to use.<br/>
-        /// Default Value: mistral-embed
+        /// Example: mistral-embed
         /// </summary>
-        /// <default>"mistral-embed"</default>
+        /// <example>mistral-embed</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Model { get; set; } = "mistral-embed";
+        public required string Model { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -44,7 +44,7 @@ namespace Mistral
         /// </param>
         /// <param name="model">
         /// ID of the model to use.<br/>
-        /// Default Value: mistral-embed
+        /// Example: mistral-embed
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

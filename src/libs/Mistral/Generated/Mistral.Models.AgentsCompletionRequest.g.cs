@@ -46,6 +46,12 @@ namespace Mistral
         public int? N { get; set; }
 
         /// <summary>
+        /// Default Value: true
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("parallel_tool_calls")]
+        public bool? ParallelToolCalls { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prediction")]
@@ -123,6 +129,9 @@ namespace Mistral
         /// <param name="n">
         /// Number of completions to return for each request, input tokens are only billed once.
         /// </param>
+        /// <param name="parallelToolCalls">
+        /// Default Value: true
+        /// </param>
         /// <param name="prediction"></param>
         /// <param name="presencePenalty">
         /// presence_penalty determines how much the model penalizes the repetition of words or phrases. A higher presence penalty encourages the model to use a wider variety of words and phrases, making the output more diverse and creative.<br/>
@@ -152,6 +161,7 @@ namespace Mistral
             double? frequencyPenalty,
             int? maxTokens,
             int? n,
+            bool? parallelToolCalls,
             global::Mistral.Prediction? prediction,
             double? presencePenalty,
             int? randomSeed,
@@ -166,6 +176,7 @@ namespace Mistral
             this.FrequencyPenalty = frequencyPenalty;
             this.MaxTokens = maxTokens;
             this.N = n;
+            this.ParallelToolCalls = parallelToolCalls;
             this.Prediction = prediction;
             this.PresencePenalty = presencePenalty;
             this.RandomSeed = randomSeed;
