@@ -72,6 +72,13 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public override string? ToString() =>
+            Wandb?.ToString() 
+            ;
+
+        /// <summary>
+        /// 
+        /// </summary>
         public bool Validate()
         {
             return IsWandb;

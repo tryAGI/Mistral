@@ -186,6 +186,16 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public override string? ToString() =>
+            Text?.ToString() ??
+            ImageUrl?.ToString() ??
+            DocumentUrl?.ToString() ??
+            Reference?.ToString() 
+            ;
+
+        /// <summary>
+        /// 
+        /// </summary>
         public bool Validate()
         {
             return IsText && !IsImageUrl && !IsDocumentUrl && !IsReference || !IsText && IsImageUrl && !IsDocumentUrl && !IsReference || !IsText && !IsImageUrl && IsDocumentUrl && !IsReference || !IsText && !IsImageUrl && !IsDocumentUrl && IsReference;
