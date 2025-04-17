@@ -12,7 +12,7 @@ namespace Mistral
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
-        public global::System.Collections.Generic.IList<global::Mistral.DataItem>? Data { get; set; }
+        public global::System.Collections.Generic.IList<global::Mistral.DataItem2>? Data { get; set; }
 
         /// <summary>
         /// Default Value: list
@@ -37,7 +37,7 @@ namespace Mistral
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ModelList(
-            global::System.Collections.Generic.IList<global::Mistral.DataItem>? data,
+            global::System.Collections.Generic.IList<global::Mistral.DataItem2>? data,
             string? @object)
         {
             this.Data = data;

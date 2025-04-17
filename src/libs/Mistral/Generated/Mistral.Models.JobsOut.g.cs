@@ -12,7 +12,7 @@ namespace Mistral
         /// Default Value: []
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
-        public global::System.Collections.Generic.IList<global::Mistral.JobOut>? Data { get; set; }
+        public global::System.Collections.Generic.IList<global::Mistral.DataItem>? Data { get; set; }
 
         /// <summary>
         /// Default Value: list
@@ -49,7 +49,7 @@ namespace Mistral
 #endif
         public JobsOut(
             int total,
-            global::System.Collections.Generic.IList<global::Mistral.JobOut>? data,
+            global::System.Collections.Generic.IList<global::Mistral.DataItem>? data,
             global::Mistral.JobsOutObject? @object)
         {
             this.Total = total;

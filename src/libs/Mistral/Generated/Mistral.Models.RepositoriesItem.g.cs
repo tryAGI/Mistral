@@ -12,7 +12,7 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.DetailedJobOutRepositorieDiscriminatorType? Type { get; }
+        public global::Mistral.CompletionDetailedJobOutRepositorieDiscriminatorType? Type { get; }
 
         /// <summary>
         /// 
@@ -53,7 +53,7 @@ namespace Mistral
         /// 
         /// </summary>
         public RepositoriesItem(
-            global::Mistral.DetailedJobOutRepositorieDiscriminatorType? type,
+            global::Mistral.CompletionDetailedJobOutRepositorieDiscriminatorType? type,
             global::Mistral.GithubRepositoryOut? github
             )
         {

@@ -12,7 +12,7 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.DetailedJobOutIntegrationDiscriminatorType? Type { get; }
+        public global::Mistral.ClassifierDetailedJobOutIntegrationDiscriminatorType? Type { get; }
 
         /// <summary>
         /// 
@@ -53,7 +53,7 @@ namespace Mistral
         /// 
         /// </summary>
         public IntegrationsItem(
-            global::Mistral.DetailedJobOutIntegrationDiscriminatorType? type,
+            global::Mistral.ClassifierDetailedJobOutIntegrationDiscriminatorType? type,
             global::Mistral.WandbIntegrationOut? wandb
             )
         {

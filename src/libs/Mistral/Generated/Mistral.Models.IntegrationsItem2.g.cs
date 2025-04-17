@@ -12,15 +12,15 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.JobInIntegrationDiscriminatorType? Type { get; }
+        public global::Mistral.ClassifierJobOutIntegrationDiscriminatorType? Type { get; }
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Mistral.WandbIntegration? Wandb { get; init; }
+        public global::Mistral.WandbIntegrationOut? Wandb { get; init; }
 #else
-        public global::Mistral.WandbIntegration? Wandb { get; }
+        public global::Mistral.WandbIntegrationOut? Wandb { get; }
 #endif
 
         /// <summary>
@@ -34,17 +34,17 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator IntegrationsItem2(global::Mistral.WandbIntegration value) => new IntegrationsItem2(value);
+        public static implicit operator IntegrationsItem2(global::Mistral.WandbIntegrationOut value) => new IntegrationsItem2(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Mistral.WandbIntegration?(IntegrationsItem2 @this) => @this.Wandb;
+        public static implicit operator global::Mistral.WandbIntegrationOut?(IntegrationsItem2 @this) => @this.Wandb;
 
         /// <summary>
         /// 
         /// </summary>
-        public IntegrationsItem2(global::Mistral.WandbIntegration? value)
+        public IntegrationsItem2(global::Mistral.WandbIntegrationOut? value)
         {
             Wandb = value;
         }
@@ -53,8 +53,8 @@ namespace Mistral
         /// 
         /// </summary>
         public IntegrationsItem2(
-            global::Mistral.JobInIntegrationDiscriminatorType? type,
-            global::Mistral.WandbIntegration? wandb
+            global::Mistral.ClassifierJobOutIntegrationDiscriminatorType? type,
+            global::Mistral.WandbIntegrationOut? wandb
             )
         {
             Type = type;
@@ -88,7 +88,7 @@ namespace Mistral
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Mistral.WandbIntegration?, TResult>? wandb = null,
+            global::System.Func<global::Mistral.WandbIntegrationOut?, TResult>? wandb = null,
             bool validate = true)
         {
             if (validate)
@@ -108,7 +108,7 @@ namespace Mistral
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Mistral.WandbIntegration?>? wandb = null,
+            global::System.Action<global::Mistral.WandbIntegrationOut?>? wandb = null,
             bool validate = true)
         {
             if (validate)
@@ -130,7 +130,7 @@ namespace Mistral
             var fields = new object?[]
             {
                 Wandb,
-                typeof(global::Mistral.WandbIntegration),
+                typeof(global::Mistral.WandbIntegrationOut),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -147,7 +147,7 @@ namespace Mistral
         public bool Equals(IntegrationsItem2 other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Mistral.WandbIntegration?>.Default.Equals(Wandb, other.Wandb) 
+                global::System.Collections.Generic.EqualityComparer<global::Mistral.WandbIntegrationOut?>.Default.Equals(Wandb, other.Wandb) 
                 ;
         }
 

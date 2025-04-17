@@ -12,15 +12,15 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.JobOutRepositorieDiscriminatorType? Type { get; }
+        public global::Mistral.JobInRepositorieDiscriminatorType? Type { get; }
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Mistral.GithubRepositoryOut? Github { get; init; }
+        public global::Mistral.GithubRepositoryIn? Github { get; init; }
 #else
-        public global::Mistral.GithubRepositoryOut? Github { get; }
+        public global::Mistral.GithubRepositoryIn? Github { get; }
 #endif
 
         /// <summary>
@@ -34,17 +34,17 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RepositoriesItem3(global::Mistral.GithubRepositoryOut value) => new RepositoriesItem3(value);
+        public static implicit operator RepositoriesItem3(global::Mistral.GithubRepositoryIn value) => new RepositoriesItem3(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Mistral.GithubRepositoryOut?(RepositoriesItem3 @this) => @this.Github;
+        public static implicit operator global::Mistral.GithubRepositoryIn?(RepositoriesItem3 @this) => @this.Github;
 
         /// <summary>
         /// 
         /// </summary>
-        public RepositoriesItem3(global::Mistral.GithubRepositoryOut? value)
+        public RepositoriesItem3(global::Mistral.GithubRepositoryIn? value)
         {
             Github = value;
         }
@@ -53,8 +53,8 @@ namespace Mistral
         /// 
         /// </summary>
         public RepositoriesItem3(
-            global::Mistral.JobOutRepositorieDiscriminatorType? type,
-            global::Mistral.GithubRepositoryOut? github
+            global::Mistral.JobInRepositorieDiscriminatorType? type,
+            global::Mistral.GithubRepositoryIn? github
             )
         {
             Type = type;
@@ -88,7 +88,7 @@ namespace Mistral
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Mistral.GithubRepositoryOut?, TResult>? github = null,
+            global::System.Func<global::Mistral.GithubRepositoryIn?, TResult>? github = null,
             bool validate = true)
         {
             if (validate)
@@ -108,7 +108,7 @@ namespace Mistral
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Mistral.GithubRepositoryOut?>? github = null,
+            global::System.Action<global::Mistral.GithubRepositoryIn?>? github = null,
             bool validate = true)
         {
             if (validate)
@@ -130,7 +130,7 @@ namespace Mistral
             var fields = new object?[]
             {
                 Github,
-                typeof(global::Mistral.GithubRepositoryOut),
+                typeof(global::Mistral.GithubRepositoryIn),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -147,7 +147,7 @@ namespace Mistral
         public bool Equals(RepositoriesItem3 other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Mistral.GithubRepositoryOut?>.Default.Equals(Github, other.Github) 
+                global::System.Collections.Generic.EqualityComparer<global::Mistral.GithubRepositoryIn?>.Default.Equals(Github, other.Github) 
                 ;
         }
 

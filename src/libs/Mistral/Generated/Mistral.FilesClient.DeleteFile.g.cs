@@ -7,11 +7,11 @@ namespace Mistral
     {
         partial void PrepareDeleteFileArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string fileId);
+            ref global::System.Guid fileId);
         partial void PrepareDeleteFileRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string fileId);
+            global::System.Guid fileId);
         partial void ProcessDeleteFileResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -29,7 +29,7 @@ namespace Mistral
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Mistral.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Mistral.DeleteFileOut> DeleteFileAsync(
-            string fileId,
+            global::System.Guid fileId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

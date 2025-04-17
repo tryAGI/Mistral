@@ -10,7 +10,7 @@ namespace Mistral
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Mistral.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::Mistral.ClassificationResponse> ChatModerationsAsync(
+        global::System.Threading.Tasks.Task<global::Mistral.ModerationResponse> ChatModerationsAsync(
             global::Mistral.ChatModerationRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 
@@ -21,15 +21,11 @@ namespace Mistral
         /// Chat to classify
         /// </param>
         /// <param name="model"></param>
-        /// <param name="truncateForContextLength">
-        /// Default Value: false
-        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::Mistral.ClassificationResponse> ChatModerationsAsync(
+        global::System.Threading.Tasks.Task<global::Mistral.ModerationResponse> ChatModerationsAsync(
             global::Mistral.AnyOf<global::System.Collections.Generic.IList<global::Mistral.InputVariant1Item>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::Mistral.InputVariant2ItemItem>>> input,
             string model,
-            bool? truncateForContextLength = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

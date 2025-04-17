@@ -35,6 +35,12 @@ namespace Mistral
         public global::Mistral.WandbIntegrationOutType? Type { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("url")]
+        public string? Url { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -53,6 +59,7 @@ namespace Mistral
         /// <param name="type">
         /// Default Value: wandb
         /// </param>
+        /// <param name="url"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -60,12 +67,14 @@ namespace Mistral
             string project,
             string? name,
             string? runName,
-            global::Mistral.WandbIntegrationOutType? type)
+            global::Mistral.WandbIntegrationOutType? type,
+            string? url)
         {
             this.Project = project ?? throw new global::System.ArgumentNullException(nameof(project));
             this.Name = name;
             this.RunName = runName;
             this.Type = type;
+            this.Url = url;
         }
 
         /// <summary>
