@@ -7,12 +7,12 @@ namespace Mistral
     {
         partial void PrepareGetSignedUrlArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string fileId,
+            ref global::System.Guid fileId,
             ref int? expiry);
         partial void PrepareGetSignedUrlRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string fileId,
+            global::System.Guid fileId,
             int? expiry);
         partial void ProcessGetSignedUrlResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -34,7 +34,7 @@ namespace Mistral
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Mistral.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Mistral.FileSignedURL> GetSignedUrlAsync(
-            string fileId,
+            global::System.Guid fileId,
             int? expiry = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

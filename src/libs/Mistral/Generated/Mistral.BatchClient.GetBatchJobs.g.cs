@@ -13,7 +13,7 @@ namespace Mistral
             object? metadata,
             ref global::System.DateTime? createdAfter,
             ref bool? createdByMe,
-            object? status);
+            global::System.Collections.Generic.IList<global::Mistral.BatchJobStatus>? status);
         partial void PrepareGetBatchJobsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -23,7 +23,7 @@ namespace Mistral
             object? metadata,
             global::System.DateTime? createdAfter,
             bool? createdByMe,
-            object? status);
+            global::System.Collections.Generic.IList<global::Mistral.BatchJobStatus>? status);
         partial void ProcessGetBatchJobsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -59,7 +59,7 @@ namespace Mistral
             object? metadata = default,
             global::System.DateTime? createdAfter = default,
             bool? createdByMe = default,
-            object? status = default,
+            global::System.Collections.Generic.IList<global::Mistral.BatchJobStatus>? status = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -84,7 +84,6 @@ namespace Mistral
                 .AddOptionalParameter("metadata", metadata?.ToString()) 
                 .AddOptionalParameter("created_after", createdAfter?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
                 .AddOptionalParameter("created_by_me", createdByMe?.ToString()) 
-                .AddOptionalParameter("status", status?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(

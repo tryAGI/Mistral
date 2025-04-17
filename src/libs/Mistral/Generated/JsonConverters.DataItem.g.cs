@@ -17,29 +17,29 @@ namespace Mistral.JsonConverters
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.ModelListDataItemDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.ModelListDataItemDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.ModelListDataItemDiscriminator)}");
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.JobsOutDataItemDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.JobsOutDataItemDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.JobsOutDataItemDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
-            global::Mistral.BaseModelCard? @base = default;
-            if (discriminator?.Type == global::Mistral.ModelListDataItemDiscriminatorType.Base)
+            global::Mistral.CompletionJobOut? completion = default;
+            if (discriminator?.JobType == global::Mistral.JobsOutDataItemDiscriminatorJobType.Completion)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.BaseModelCard), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.BaseModelCard> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.BaseModelCard)}");
-                @base = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.CompletionJobOut), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.CompletionJobOut> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.CompletionJobOut)}");
+                completion = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::Mistral.FTModelCard? fineTuned = default;
-            if (discriminator?.Type == global::Mistral.ModelListDataItemDiscriminatorType.FineTuned)
+            global::Mistral.ClassifierJobOut? classifier = default;
+            if (discriminator?.JobType == global::Mistral.JobsOutDataItemDiscriminatorJobType.Classifier)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.FTModelCard), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.FTModelCard> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.FTModelCard)}");
-                fineTuned = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.ClassifierJobOut), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.ClassifierJobOut> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.ClassifierJobOut)}");
+                classifier = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var result = new global::Mistral.DataItem(
-                discriminator?.Type,
-                @base,
-                fineTuned
+                discriminator?.JobType,
+                completion,
+                classifier
                 );
 
             return result;
@@ -54,17 +54,17 @@ namespace Mistral.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsBase)
+            if (value.IsCompletion)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.BaseModelCard), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.BaseModelCard?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.BaseModelCard).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Base, typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.CompletionJobOut), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.CompletionJobOut?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.CompletionJobOut).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Completion, typeInfo);
             }
-            else if (value.IsFineTuned)
+            else if (value.IsClassifier)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.FTModelCard), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.FTModelCard?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.FTModelCard).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FineTuned, typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.ClassifierJobOut), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.ClassifierJobOut?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.ClassifierJobOut).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Classifier, typeInfo);
             }
         }
     }

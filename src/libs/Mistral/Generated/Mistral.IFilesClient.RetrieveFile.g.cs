@@ -12,7 +12,7 @@ namespace Mistral
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Mistral.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Mistral.RetrieveFileOut> RetrieveFileAsync(
-            string fileId,
+            global::System.Guid fileId,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

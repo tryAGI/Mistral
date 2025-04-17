@@ -26,12 +26,6 @@ namespace Mistral
         public required string Model { get; set; }
 
         /// <summary>
-        /// Default Value: false
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("truncate_for_context_length")]
-        public bool? TruncateForContextLength { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -44,20 +38,15 @@ namespace Mistral
         /// Chat to classify
         /// </param>
         /// <param name="model"></param>
-        /// <param name="truncateForContextLength">
-        /// Default Value: false
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ChatModerationRequest(
             global::Mistral.AnyOf<global::System.Collections.Generic.IList<global::Mistral.InputVariant1Item>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::Mistral.InputVariant2ItemItem>>> input,
-            string model,
-            bool? truncateForContextLength)
+            string model)
         {
             this.Input = input;
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
-            this.TruncateForContextLength = truncateForContextLength;
         }
 
         /// <summary>

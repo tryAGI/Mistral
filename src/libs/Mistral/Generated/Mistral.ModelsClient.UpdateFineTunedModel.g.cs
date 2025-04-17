@@ -31,7 +31,7 @@ namespace Mistral
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Mistral.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Mistral.FTModelOut> UpdateFineTunedModelAsync(
+        public async global::System.Threading.Tasks.Task<global::Mistral.JobsApiRoutesFineTuningUpdateFineTunedModelResponse> UpdateFineTunedModelAsync(
             string modelId,
             global::Mistral.UpdateFTModelIn request,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -137,7 +137,7 @@ namespace Mistral
                 }
 
                 return
-                    global::Mistral.FTModelOut.FromJson(__content, JsonSerializerContext) ??
+                    global::Mistral.JobsApiRoutesFineTuningUpdateFineTunedModelResponse.FromJson(__content, JsonSerializerContext) ??
                     throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
             }
             else
@@ -167,7 +167,7 @@ namespace Mistral
                 ).ConfigureAwait(false);
 
                 return
-                    await global::Mistral.FTModelOut.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                    await global::Mistral.JobsApiRoutesFineTuningUpdateFineTunedModelResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                     throw new global::System.InvalidOperationException("Response deserialization failed.");
             }
         }
@@ -181,7 +181,7 @@ namespace Mistral
         /// <param name="name"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Mistral.FTModelOut> UpdateFineTunedModelAsync(
+        public async global::System.Threading.Tasks.Task<global::Mistral.JobsApiRoutesFineTuningUpdateFineTunedModelResponse> UpdateFineTunedModelAsync(
             string modelId,
             string? description = default,
             string? name = default,

@@ -30,7 +30,7 @@ namespace Mistral
             object? metadata = default,
             global::System.DateTime? createdAfter = default,
             bool? createdByMe = default,
-            object? status = default,
+            global::System.Collections.Generic.IList<global::Mistral.BatchJobStatus>? status = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

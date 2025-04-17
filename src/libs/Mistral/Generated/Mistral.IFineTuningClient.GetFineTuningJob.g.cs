@@ -11,7 +11,7 @@ namespace Mistral
         /// <param name="jobId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Mistral.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::Mistral.DetailedJobOut> GetFineTuningJobAsync(
+        global::System.Threading.Tasks.Task<global::Mistral.JobsApiRoutesFineTuningGetFineTuningJobResponse> GetFineTuningJobAsync(
             global::System.Guid jobId,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

@@ -13,19 +13,22 @@ namespace Mistral
         /// </summary>
         /// <example>mod-e5cc70bb28c444948073e77776eb30ef</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        public string? Id { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
-        public string? Model { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Model { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("results")]
-        public global::System.Collections.Generic.IList<global::Mistral.ClassificationObject>? Results { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Collections.Generic.IList<global::System.Collections.Generic.Dictionary<string, global::Mistral.ClassificationTargetResult>> Results { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -45,13 +48,13 @@ namespace Mistral
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ClassificationResponse(
-            string? id,
-            string? model,
-            global::System.Collections.Generic.IList<global::Mistral.ClassificationObject>? results)
+            string id,
+            string model,
+            global::System.Collections.Generic.IList<global::System.Collections.Generic.Dictionary<string, global::Mistral.ClassificationTargetResult>> results)
         {
-            this.Id = id;
-            this.Model = model;
-            this.Results = results;
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
+            this.Results = results ?? throw new global::System.ArgumentNullException(nameof(results));
         }
 
         /// <summary>

@@ -12,107 +12,107 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.ModelListDataItemDiscriminatorType? Type { get; }
+        public global::Mistral.JobsOutDataItemDiscriminatorJobType? JobType { get; }
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Mistral.BaseModelCard? Base { get; init; }
+        public global::Mistral.CompletionJobOut? Completion { get; init; }
 #else
-        public global::Mistral.BaseModelCard? Base { get; }
+        public global::Mistral.CompletionJobOut? Completion { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Base))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Completion))]
 #endif
-        public bool IsBase => Base != null;
+        public bool IsCompletion => Completion != null;
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator DataItem(global::Mistral.BaseModelCard value) => new DataItem(value);
+        public static implicit operator DataItem(global::Mistral.CompletionJobOut value) => new DataItem(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Mistral.BaseModelCard?(DataItem @this) => @this.Base;
+        public static implicit operator global::Mistral.CompletionJobOut?(DataItem @this) => @this.Completion;
 
         /// <summary>
         /// 
         /// </summary>
-        public DataItem(global::Mistral.BaseModelCard? value)
+        public DataItem(global::Mistral.CompletionJobOut? value)
         {
-            Base = value;
+            Completion = value;
         }
 
         /// <summary>
-        /// Extra fields for fine-tuned models.
+        /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Mistral.FTModelCard? FineTuned { get; init; }
+        public global::Mistral.ClassifierJobOut? Classifier { get; init; }
 #else
-        public global::Mistral.FTModelCard? FineTuned { get; }
+        public global::Mistral.ClassifierJobOut? Classifier { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FineTuned))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Classifier))]
 #endif
-        public bool IsFineTuned => FineTuned != null;
+        public bool IsClassifier => Classifier != null;
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator DataItem(global::Mistral.FTModelCard value) => new DataItem(value);
+        public static implicit operator DataItem(global::Mistral.ClassifierJobOut value) => new DataItem(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Mistral.FTModelCard?(DataItem @this) => @this.FineTuned;
+        public static implicit operator global::Mistral.ClassifierJobOut?(DataItem @this) => @this.Classifier;
 
         /// <summary>
         /// 
         /// </summary>
-        public DataItem(global::Mistral.FTModelCard? value)
+        public DataItem(global::Mistral.ClassifierJobOut? value)
         {
-            FineTuned = value;
+            Classifier = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public DataItem(
-            global::Mistral.ModelListDataItemDiscriminatorType? type,
-            global::Mistral.BaseModelCard? @base,
-            global::Mistral.FTModelCard? fineTuned
+            global::Mistral.JobsOutDataItemDiscriminatorJobType? jobType,
+            global::Mistral.CompletionJobOut? completion,
+            global::Mistral.ClassifierJobOut? classifier
             )
         {
-            Type = type;
+            JobType = jobType;
 
-            Base = @base;
-            FineTuned = fineTuned;
+            Completion = completion;
+            Classifier = classifier;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            FineTuned as object ??
-            Base as object 
+            Classifier as object ??
+            Completion as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Base?.ToString() ??
-            FineTuned?.ToString() 
+            Completion?.ToString() ??
+            Classifier?.ToString() 
             ;
 
         /// <summary>
@@ -120,15 +120,15 @@ namespace Mistral
         /// </summary>
         public bool Validate()
         {
-            return IsBase && !IsFineTuned || !IsBase && IsFineTuned;
+            return IsCompletion && !IsClassifier || !IsCompletion && IsClassifier;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Mistral.BaseModelCard?, TResult>? @base = null,
-            global::System.Func<global::Mistral.FTModelCard?, TResult>? fineTuned = null,
+            global::System.Func<global::Mistral.CompletionJobOut?, TResult>? completion = null,
+            global::System.Func<global::Mistral.ClassifierJobOut?, TResult>? classifier = null,
             bool validate = true)
         {
             if (validate)
@@ -136,13 +136,13 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsBase && @base != null)
+            if (IsCompletion && completion != null)
             {
-                return @base(Base!);
+                return completion(Completion!);
             }
-            else if (IsFineTuned && fineTuned != null)
+            else if (IsClassifier && classifier != null)
             {
-                return fineTuned(FineTuned!);
+                return classifier(Classifier!);
             }
 
             return default(TResult);
@@ -152,8 +152,8 @@ namespace Mistral
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Mistral.BaseModelCard?>? @base = null,
-            global::System.Action<global::Mistral.FTModelCard?>? fineTuned = null,
+            global::System.Action<global::Mistral.CompletionJobOut?>? completion = null,
+            global::System.Action<global::Mistral.ClassifierJobOut?>? classifier = null,
             bool validate = true)
         {
             if (validate)
@@ -161,13 +161,13 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsBase)
+            if (IsCompletion)
             {
-                @base?.Invoke(Base!);
+                completion?.Invoke(Completion!);
             }
-            else if (IsFineTuned)
+            else if (IsClassifier)
             {
-                fineTuned?.Invoke(FineTuned!);
+                classifier?.Invoke(Classifier!);
             }
         }
 
@@ -178,10 +178,10 @@ namespace Mistral
         {
             var fields = new object?[]
             {
-                Base,
-                typeof(global::Mistral.BaseModelCard),
-                FineTuned,
-                typeof(global::Mistral.FTModelCard),
+                Completion,
+                typeof(global::Mistral.CompletionJobOut),
+                Classifier,
+                typeof(global::Mistral.ClassifierJobOut),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -198,8 +198,8 @@ namespace Mistral
         public bool Equals(DataItem other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Mistral.BaseModelCard?>.Default.Equals(Base, other.Base) &&
-                global::System.Collections.Generic.EqualityComparer<global::Mistral.FTModelCard?>.Default.Equals(FineTuned, other.FineTuned) 
+                global::System.Collections.Generic.EqualityComparer<global::Mistral.CompletionJobOut?>.Default.Equals(Completion, other.Completion) &&
+                global::System.Collections.Generic.EqualityComparer<global::Mistral.ClassifierJobOut?>.Default.Equals(Classifier, other.Classifier) 
                 ;
         }
 
