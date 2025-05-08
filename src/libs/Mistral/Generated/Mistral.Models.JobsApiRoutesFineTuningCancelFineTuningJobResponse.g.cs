@@ -34,7 +34,7 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator JobsApiRoutesFineTuningCancelFineTuningJobResponse(global::Mistral.CompletionDetailedJobOut value) => new JobsApiRoutesFineTuningCancelFineTuningJobResponse(value);
+        public static implicit operator JobsApiRoutesFineTuningCancelFineTuningJobResponse(global::Mistral.CompletionDetailedJobOut value) => new JobsApiRoutesFineTuningCancelFineTuningJobResponse((global::Mistral.CompletionDetailedJobOut?)value);
 
         /// <summary>
         /// 
@@ -69,7 +69,7 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator JobsApiRoutesFineTuningCancelFineTuningJobResponse(global::Mistral.ClassifierDetailedJobOut value) => new JobsApiRoutesFineTuningCancelFineTuningJobResponse(value);
+        public static implicit operator JobsApiRoutesFineTuningCancelFineTuningJobResponse(global::Mistral.ClassifierDetailedJobOut value) => new JobsApiRoutesFineTuningCancelFineTuningJobResponse((global::Mistral.ClassifierDetailedJobOut?)value);
 
         /// <summary>
         /// 

@@ -34,7 +34,7 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RepositoriesItem(global::Mistral.GithubRepositoryOut value) => new RepositoriesItem(value);
+        public static implicit operator RepositoriesItem(global::Mistral.GithubRepositoryOut value) => new RepositoriesItem((global::Mistral.GithubRepositoryOut?)value);
 
         /// <summary>
         /// 

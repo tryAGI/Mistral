@@ -34,7 +34,7 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ContentChunk(global::Mistral.TextChunk value) => new ContentChunk(value);
+        public static implicit operator ContentChunk(global::Mistral.TextChunk value) => new ContentChunk((global::Mistral.TextChunk?)value);
 
         /// <summary>
         /// 
@@ -69,7 +69,7 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ContentChunk(global::Mistral.ImageURLChunk value) => new ContentChunk(value);
+        public static implicit operator ContentChunk(global::Mistral.ImageURLChunk value) => new ContentChunk((global::Mistral.ImageURLChunk?)value);
 
         /// <summary>
         /// 
@@ -104,7 +104,7 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ContentChunk(global::Mistral.DocumentURLChunk value) => new ContentChunk(value);
+        public static implicit operator ContentChunk(global::Mistral.DocumentURLChunk value) => new ContentChunk((global::Mistral.DocumentURLChunk?)value);
 
         /// <summary>
         /// 
@@ -139,7 +139,7 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ContentChunk(global::Mistral.ReferenceChunk value) => new ContentChunk(value);
+        public static implicit operator ContentChunk(global::Mistral.ReferenceChunk value) => new ContentChunk((global::Mistral.ReferenceChunk?)value);
 
         /// <summary>
         /// 

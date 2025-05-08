@@ -34,7 +34,7 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator IntegrationsItem3(global::Mistral.WandbIntegrationOut value) => new IntegrationsItem3(value);
+        public static implicit operator IntegrationsItem3(global::Mistral.WandbIntegrationOut value) => new IntegrationsItem3((global::Mistral.WandbIntegrationOut?)value);
 
         /// <summary>
         /// 

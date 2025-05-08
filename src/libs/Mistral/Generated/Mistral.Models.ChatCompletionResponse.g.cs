@@ -29,7 +29,7 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatCompletionResponse(global::Mistral.ChatCompletionResponseBase value) => new ChatCompletionResponse(value);
+        public static implicit operator ChatCompletionResponse(global::Mistral.ChatCompletionResponseBase value) => new ChatCompletionResponse((global::Mistral.ChatCompletionResponseBase?)value);
 
         /// <summary>
         /// 
@@ -64,7 +64,7 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatCompletionResponse(global::Mistral.ChatCompletionResponseVariant2 value) => new ChatCompletionResponse(value);
+        public static implicit operator ChatCompletionResponse(global::Mistral.ChatCompletionResponseVariant2 value) => new ChatCompletionResponse((global::Mistral.ChatCompletionResponseVariant2?)value);
 
         /// <summary>
         /// 

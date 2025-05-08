@@ -29,7 +29,7 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatClassificationRequestInputs(global::Mistral.InstructRequest value) => new ChatClassificationRequestInputs(value);
+        public static implicit operator ChatClassificationRequestInputs(global::Mistral.InstructRequest value) => new ChatClassificationRequestInputs((global::Mistral.InstructRequest?)value);
 
         /// <summary>
         /// 

@@ -34,7 +34,7 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator DataItem2(global::Mistral.BaseModelCard value) => new DataItem2(value);
+        public static implicit operator DataItem2(global::Mistral.BaseModelCard value) => new DataItem2((global::Mistral.BaseModelCard?)value);
 
         /// <summary>
         /// 
@@ -69,7 +69,7 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator DataItem2(global::Mistral.FTModelCard value) => new DataItem2(value);
+        public static implicit operator DataItem2(global::Mistral.FTModelCard value) => new DataItem2((global::Mistral.FTModelCard?)value);
 
         /// <summary>
         /// 
