@@ -29,7 +29,7 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator EmbeddingResponse(global::Mistral.ResponseBase value) => new EmbeddingResponse(value);
+        public static implicit operator EmbeddingResponse(global::Mistral.ResponseBase value) => new EmbeddingResponse((global::Mistral.ResponseBase?)value);
 
         /// <summary>
         /// 
@@ -64,7 +64,7 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator EmbeddingResponse(global::Mistral.EmbeddingResponseVariant2 value) => new EmbeddingResponse(value);
+        public static implicit operator EmbeddingResponse(global::Mistral.EmbeddingResponseVariant2 value) => new EmbeddingResponse((global::Mistral.EmbeddingResponseVariant2?)value);
 
         /// <summary>
         /// 

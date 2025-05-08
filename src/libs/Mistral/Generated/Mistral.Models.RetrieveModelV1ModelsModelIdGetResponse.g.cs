@@ -34,7 +34,7 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RetrieveModelV1ModelsModelIdGetResponse(global::Mistral.BaseModelCard value) => new RetrieveModelV1ModelsModelIdGetResponse(value);
+        public static implicit operator RetrieveModelV1ModelsModelIdGetResponse(global::Mistral.BaseModelCard value) => new RetrieveModelV1ModelsModelIdGetResponse((global::Mistral.BaseModelCard?)value);
 
         /// <summary>
         /// 
@@ -69,7 +69,7 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RetrieveModelV1ModelsModelIdGetResponse(global::Mistral.FTModelCard value) => new RetrieveModelV1ModelsModelIdGetResponse(value);
+        public static implicit operator RetrieveModelV1ModelsModelIdGetResponse(global::Mistral.FTModelCard value) => new RetrieveModelV1ModelsModelIdGetResponse((global::Mistral.FTModelCard?)value);
 
         /// <summary>
         /// 

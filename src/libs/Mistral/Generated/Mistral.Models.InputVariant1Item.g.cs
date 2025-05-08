@@ -34,7 +34,7 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator InputVariant1Item(global::Mistral.SystemMessage value) => new InputVariant1Item(value);
+        public static implicit operator InputVariant1Item(global::Mistral.SystemMessage value) => new InputVariant1Item((global::Mistral.SystemMessage?)value);
 
         /// <summary>
         /// 
@@ -69,7 +69,7 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator InputVariant1Item(global::Mistral.UserMessage value) => new InputVariant1Item(value);
+        public static implicit operator InputVariant1Item(global::Mistral.UserMessage value) => new InputVariant1Item((global::Mistral.UserMessage?)value);
 
         /// <summary>
         /// 
@@ -104,7 +104,7 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator InputVariant1Item(global::Mistral.AssistantMessage value) => new InputVariant1Item(value);
+        public static implicit operator InputVariant1Item(global::Mistral.AssistantMessage value) => new InputVariant1Item((global::Mistral.AssistantMessage?)value);
 
         /// <summary>
         /// 
@@ -139,7 +139,7 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator InputVariant1Item(global::Mistral.ToolMessage value) => new InputVariant1Item(value);
+        public static implicit operator InputVariant1Item(global::Mistral.ToolMessage value) => new InputVariant1Item((global::Mistral.ToolMessage?)value);
 
         /// <summary>
         /// 

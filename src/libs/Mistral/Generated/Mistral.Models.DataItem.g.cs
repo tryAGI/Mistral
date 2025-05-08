@@ -34,7 +34,7 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator DataItem(global::Mistral.CompletionJobOut value) => new DataItem(value);
+        public static implicit operator DataItem(global::Mistral.CompletionJobOut value) => new DataItem((global::Mistral.CompletionJobOut?)value);
 
         /// <summary>
         /// 
@@ -69,7 +69,7 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator DataItem(global::Mistral.ClassifierJobOut value) => new DataItem(value);
+        public static implicit operator DataItem(global::Mistral.ClassifierJobOut value) => new DataItem((global::Mistral.ClassifierJobOut?)value);
 
         /// <summary>
         /// 

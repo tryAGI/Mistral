@@ -34,7 +34,7 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator MessagesItem(global::Mistral.SystemMessage value) => new MessagesItem(value);
+        public static implicit operator MessagesItem(global::Mistral.SystemMessage value) => new MessagesItem((global::Mistral.SystemMessage?)value);
 
         /// <summary>
         /// 
@@ -69,7 +69,7 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator MessagesItem(global::Mistral.UserMessage value) => new MessagesItem(value);
+        public static implicit operator MessagesItem(global::Mistral.UserMessage value) => new MessagesItem((global::Mistral.UserMessage?)value);
 
         /// <summary>
         /// 
@@ -104,7 +104,7 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator MessagesItem(global::Mistral.AssistantMessage value) => new MessagesItem(value);
+        public static implicit operator MessagesItem(global::Mistral.AssistantMessage value) => new MessagesItem((global::Mistral.AssistantMessage?)value);
 
         /// <summary>
         /// 
@@ -139,7 +139,7 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator MessagesItem(global::Mistral.ToolMessage value) => new MessagesItem(value);
+        public static implicit operator MessagesItem(global::Mistral.ToolMessage value) => new MessagesItem((global::Mistral.ToolMessage?)value);
 
         /// <summary>
         /// 
