@@ -28,6 +28,10 @@ namespace Mistral.JsonConverters
                     var numValue = reader.GetInt32();
                     return (global::Mistral.CompletionDetailedJobOutStatus)numValue;
                 }
+                case global::System.Text.Json.JsonTokenType.Null:
+                {
+                    return default(global::Mistral.CompletionDetailedJobOutStatus);
+                }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
             }
