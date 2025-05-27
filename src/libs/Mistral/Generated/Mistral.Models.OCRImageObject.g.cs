@@ -30,6 +30,12 @@ namespace Mistral
         public required string Id { get; set; }
 
         /// <summary>
+        /// Annotation of the extracted image in json str
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("image_annotation")]
+        public string? ImageAnnotation { get; set; }
+
+        /// <summary>
         /// Base64 string of the extracted image
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("image_base64")]
@@ -67,6 +73,9 @@ namespace Mistral
         /// <param name="id">
         /// Image ID for extracted image in a page
         /// </param>
+        /// <param name="imageAnnotation">
+        /// Annotation of the extracted image in json str
+        /// </param>
         /// <param name="imageBase64">
         /// Base64 string of the extracted image
         /// </param>
@@ -85,6 +94,7 @@ namespace Mistral
             string id,
             int? topLeftX,
             int? topLeftY,
+            string? imageAnnotation,
             string? imageBase64)
         {
             this.BottomRightX = bottomRightX;
@@ -92,6 +102,7 @@ namespace Mistral
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.TopLeftX = topLeftX;
             this.TopLeftY = topLeftY;
+            this.ImageAnnotation = imageAnnotation;
             this.ImageBase64 = imageBase64;
         }
 

@@ -9,6 +9,12 @@ namespace Mistral
     public sealed partial class OCRResponse
     {
         /// <summary>
+        /// Formatted response in the request_format if provided in json str
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("document_annotation")]
+        public string? DocumentAnnotation { get; set; }
+
+        /// <summary>
         /// The model used to generate the OCR.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
@@ -38,6 +44,9 @@ namespace Mistral
         /// <summary>
         /// Initializes a new instance of the <see cref="OCRResponse" /> class.
         /// </summary>
+        /// <param name="documentAnnotation">
+        /// Formatted response in the request_format if provided in json str
+        /// </param>
         /// <param name="model">
         /// The model used to generate the OCR.
         /// </param>
@@ -51,11 +60,13 @@ namespace Mistral
         public OCRResponse(
             string model,
             global::System.Collections.Generic.IList<global::Mistral.OCRPageObject> pages,
-            global::Mistral.OCRUsageInfo usageInfo)
+            global::Mistral.OCRUsageInfo usageInfo,
+            string? documentAnnotation)
         {
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
             this.Pages = pages ?? throw new global::System.ArgumentNullException(nameof(pages));
             this.UsageInfo = usageInfo ?? throw new global::System.ArgumentNullException(nameof(usageInfo));
+            this.DocumentAnnotation = documentAnnotation;
         }
 
         /// <summary>

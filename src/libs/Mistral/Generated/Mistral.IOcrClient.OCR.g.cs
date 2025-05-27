@@ -17,8 +17,14 @@ namespace Mistral
         /// <summary>
         /// OCR
         /// </summary>
+        /// <param name="bboxAnnotationFormat">
+        /// Structured output class for extracting useful information from each extracted bounding box / image from document. Only json_schema is valid for this field
+        /// </param>
         /// <param name="document">
         /// Document to run OCR on
+        /// </param>
+        /// <param name="documentAnnotationFormat">
+        /// Structured output class for extracting useful information from the entire document. Only json_schema is valid for this field
         /// </param>
         /// <param name="id"></param>
         /// <param name="imageLimit">
@@ -39,6 +45,8 @@ namespace Mistral
         global::System.Threading.Tasks.Task<global::Mistral.OCRResponse> OCRAsync(
             global::Mistral.AnyOf<global::Mistral.DocumentURLChunk, global::Mistral.ImageURLChunk> document,
             string? model,
+            object? bboxAnnotationFormat = default,
+            object? documentAnnotationFormat = default,
             string? id = default,
             int? imageLimit = default,
             int? imageMinSize = default,
