@@ -128,6 +128,24 @@ namespace Mistral
         };
 
         /// <summary>
+        /// (beta) Agents API
+        /// </summary>
+        public BetaAgentsClient BetaAgents => new BetaAgentsClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// (beta) Converstations API
+        /// </summary>
+        public BetaConversationsClient BetaConversations => new BetaConversationsClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
         /// Creates a new instance of the MistralClient.
         /// If no httpClient is provided, a new one will be created.
         /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.

@@ -120,6 +120,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/HTTPValidationError'
+      tags:
+        - beta.conversations
     get:
       summary: List all created conversations.
       description: Retrieve a list of conversation entities sorted by creation time.
@@ -157,6 +159,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/HTTPValidationError'
+      tags:
+        - beta.conversations
   /v1/conversations/{conversation_id}:
     get:
       summary: Retrieve a conversation information.
@@ -187,6 +191,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/HTTPValidationError'
+      tags:
+        - beta.conversations
     post:
       summary: Append new entries to an existing conversation.
       description: >-
@@ -221,6 +227,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/HTTPValidationError'
+      tags:
+        - beta.conversations
   /v1/conversations/{conversation_id}/history:
     get:
       summary: Retrieve all entries in a conversation.
@@ -249,6 +257,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/HTTPValidationError'
+      tags:
+        - beta.conversations
   /v1/conversations/{conversation_id}/messages:
     get:
       summary: Retrieve all messages in a conversation.
@@ -277,6 +287,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/HTTPValidationError'
+      tags:
+        - beta.conversations
   /v1/conversations/{conversation_id}/restart:
     post:
       summary: Restart a conversation starting from a given entry.
@@ -311,6 +323,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/HTTPValidationError'
+      tags:
+        - beta.conversations
   /v1/agents:
     post:
       summary: Create a agent that can be used within a conversation.
@@ -338,6 +352,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/HTTPValidationError'
+      tags:
+        - beta.agents
     get:
       summary: List agent entities.
       description: Retrieve a list of agent entities sorted by creation time.
@@ -373,6 +389,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/HTTPValidationError'
+      tags:
+        - beta.agents
   /v1/agents/{agent_id}:
     get:
       summary: Retrieve an agent entity.
@@ -398,6 +416,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/HTTPValidationError'
+      tags:
+        - beta.agents
     patch:
       summary: Update an agent entity.
       description: Update an agent attributes and create a new version.
@@ -428,6 +448,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/HTTPValidationError'
+      tags:
+        - beta.agents
   /v1/agents/{agent_id}/version:
     patch:
       summary: Update an agent version.
@@ -459,6 +481,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/HTTPValidationError'
+      tags:
+        - beta.agents
   /v1/conversations#stream:
     post:
       summary: Create a conversation and append entries to it.
@@ -487,6 +511,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/HTTPValidationError'
+      tags:
+        - beta.conversations
   /v1/conversations/{conversation_id}#stream:
     post:
       summary: Append new entries to an existing conversation.
@@ -522,6 +548,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/HTTPValidationError'
+      tags:
+        - beta.conversations
   /v1/conversations/{conversation_id}/restart#stream:
     post:
       summary: Restart a conversation starting from a given entry.
@@ -556,6 +584,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/HTTPValidationError'
+      tags:
+        - beta.conversations
   /v1/files:
     post:
       operationId: files_api_routes_upload_file
@@ -6528,6 +6558,8 @@ components:
             - data
             - model
             - usage
+            - created
+            - choices
     FIMCompletionResponse:
       allOf:
         - $ref: '#/components/schemas/ChatCompletionResponse'
@@ -6617,6 +6649,12 @@ tags:
   - name: ocr
     x-displayName: OCR API
     description: OCR API
+  - name: beta.agents
+    x-displayName: (beta) Agents API
+    description: (beta) Agents API
+  - name: beta.conversations
+    x-displayName: (beta) Converstations API
+    description: (beta) Converstations API
 security:
   - ApiKey: []
 servers:
