@@ -87,5 +87,15 @@ namespace Mistral
         /// </summary>
         public OcrClient Ocr { get; }
 
+        /// <summary>
+        /// (beta) Agents API
+        /// </summary>
+        public BetaAgentsClient BetaAgents { get; }
+
+        /// <summary>
+        /// (beta) Converstations API
+        /// </summary>
+        public BetaConversationsClient BetaConversations { get; }
+
     }
 }

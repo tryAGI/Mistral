@@ -12,7 +12,8 @@ namespace Mistral
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("choices")]
-        public global::System.Collections.Generic.IList<global::Mistral.ChatCompletionChoice>? Choices { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Collections.Generic.IList<global::Mistral.ChatCompletionChoice> Choices { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -28,9 +29,9 @@ namespace Mistral
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ChatCompletionResponseVariant2(
-            global::System.Collections.Generic.IList<global::Mistral.ChatCompletionChoice>? choices)
+            global::System.Collections.Generic.IList<global::Mistral.ChatCompletionChoice> choices)
         {
-            this.Choices = choices;
+            this.Choices = choices ?? throw new global::System.ArgumentNullException(nameof(choices));
         }
 
         /// <summary>
