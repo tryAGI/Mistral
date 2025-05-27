@@ -11,12 +11,24 @@ namespace Mistral
     public sealed partial class OCRRequest
     {
         /// <summary>
+        /// Structured output class for extracting useful information from each extracted bounding box / image from document. Only json_schema is valid for this field
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("bbox_annotation_format")]
+        public object? BboxAnnotationFormat { get; set; }
+
+        /// <summary>
         /// Document to run OCR on
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("document")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<global::Mistral.DocumentURLChunk, global::Mistral.ImageURLChunk>))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::Mistral.AnyOf<global::Mistral.DocumentURLChunk, global::Mistral.ImageURLChunk> Document { get; set; }
+
+        /// <summary>
+        /// Structured output class for extracting useful information from the entire document. Only json_schema is valid for this field
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("document_annotation_format")]
+        public object? DocumentAnnotationFormat { get; set; }
 
         /// <summary>
         /// 
@@ -64,8 +76,14 @@ namespace Mistral
         /// <summary>
         /// Initializes a new instance of the <see cref="OCRRequest" /> class.
         /// </summary>
+        /// <param name="bboxAnnotationFormat">
+        /// Structured output class for extracting useful information from each extracted bounding box / image from document. Only json_schema is valid for this field
+        /// </param>
         /// <param name="document">
         /// Document to run OCR on
+        /// </param>
+        /// <param name="documentAnnotationFormat">
+        /// Structured output class for extracting useful information from the entire document. Only json_schema is valid for this field
         /// </param>
         /// <param name="id"></param>
         /// <param name="imageLimit">
@@ -87,6 +105,8 @@ namespace Mistral
         public OCRRequest(
             global::Mistral.AnyOf<global::Mistral.DocumentURLChunk, global::Mistral.ImageURLChunk> document,
             string? model,
+            object? bboxAnnotationFormat,
+            object? documentAnnotationFormat,
             string? id,
             int? imageLimit,
             int? imageMinSize,
@@ -95,6 +115,8 @@ namespace Mistral
         {
             this.Document = document;
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
+            this.BboxAnnotationFormat = bboxAnnotationFormat;
+            this.DocumentAnnotationFormat = documentAnnotationFormat;
             this.Id = id;
             this.ImageLimit = imageLimit;
             this.ImageMinSize = imageMinSize;
