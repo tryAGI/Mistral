@@ -30,6 +30,19 @@ namespace Mistral
         public required string Model { get; set; }
 
         /// <summary>
+        /// The dimension of the output embeddings.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("output_dimension")]
+        public int? OutputDimension { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("output_dtype")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.EmbeddingDtypeJsonConverter))]
+        public global::Mistral.EmbeddingDtype? OutputDtype { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -46,15 +59,23 @@ namespace Mistral
         /// ID of the model to use.<br/>
         /// Example: mistral-embed
         /// </param>
+        /// <param name="outputDimension">
+        /// The dimension of the output embeddings.
+        /// </param>
+        /// <param name="outputDtype"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public EmbeddingRequest(
             global::Mistral.AnyOf<string, global::System.Collections.Generic.IList<string>> input,
-            string model)
+            string model,
+            int? outputDimension,
+            global::Mistral.EmbeddingDtype? outputDtype)
         {
             this.Input = input;
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
+            this.OutputDimension = outputDimension;
+            this.OutputDtype = outputDtype;
         }
 
         /// <summary>
