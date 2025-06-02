@@ -211,6 +211,8 @@ namespace Mistral
             typeof(global::Mistral.JsonConverters.ConversationResponseObjectNullableJsonConverter),
             typeof(global::Mistral.JsonConverters.ConversationRestartRequestBaseHandoffExecutionJsonConverter),
             typeof(global::Mistral.JsonConverters.ConversationRestartRequestBaseHandoffExecutionNullableJsonConverter),
+            typeof(global::Mistral.JsonConverters.EmbeddingDtypeJsonConverter),
+            typeof(global::Mistral.JsonConverters.EmbeddingDtypeNullableJsonConverter),
             typeof(global::Mistral.JsonConverters.FTModelCardTypeJsonConverter),
             typeof(global::Mistral.JsonConverters.FTModelCardTypeNullableJsonConverter),
             typeof(global::Mistral.JsonConverters.FilePurposeJsonConverter),

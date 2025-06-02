@@ -93,7 +93,7 @@ namespace Mistral
         public BetaAgentsClient BetaAgents { get; }
 
         /// <summary>
-        /// (beta) Converstations API
+        /// (beta) Conversations API
         /// </summary>
         public BetaConversationsClient BetaConversations { get; }
 

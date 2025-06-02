@@ -137,7 +137,7 @@ namespace Mistral
         };
 
         /// <summary>
-        /// (beta) Converstations API
+        /// (beta) Conversations API
         /// </summary>
         public BetaConversationsClient BetaConversations => new BetaConversationsClient(HttpClient, authorizations: Authorizations)
         {
