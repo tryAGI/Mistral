@@ -45,7 +45,7 @@ namespace Mistral
                 fileId: ref fileId,
                 expiry: ref expiry);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::Mistral.PathBuilder(
                 path: $"/v1/files/{fileId}/url",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

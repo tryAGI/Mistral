@@ -45,7 +45,7 @@ namespace Mistral
                 dryRun: ref dryRun,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::Mistral.PathBuilder(
                 path: "/v1/fine_tuning/jobs",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

@@ -33,7 +33,7 @@ namespace Mistral
             PrepareListModelsArguments(
                 httpClient: HttpClient);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::Mistral.PathBuilder(
                 path: "/v1/models",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

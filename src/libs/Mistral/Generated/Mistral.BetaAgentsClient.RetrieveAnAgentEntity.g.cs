@@ -38,7 +38,7 @@ namespace Mistral
                 httpClient: HttpClient,
                 agentId: ref agentId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::Mistral.PathBuilder(
                 path: $"/v1/agents/{agentId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

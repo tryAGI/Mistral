@@ -45,7 +45,7 @@ namespace Mistral
                 conversationId: ref conversationId,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::Mistral.PathBuilder(
                 path: $"/v1/conversations/{conversationId}#stream",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();
