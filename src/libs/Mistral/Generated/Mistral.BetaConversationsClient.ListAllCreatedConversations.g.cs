@@ -47,7 +47,7 @@ namespace Mistral
                 page: ref page,
                 pageSize: ref pageSize);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::Mistral.PathBuilder(
                 path: "/v1/conversations",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

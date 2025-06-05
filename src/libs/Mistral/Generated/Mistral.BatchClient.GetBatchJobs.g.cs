@@ -74,7 +74,7 @@ namespace Mistral
                 createdByMe: ref createdByMe,
                 status: status);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::Mistral.PathBuilder(
                 path: "/v1/batch/jobs",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
