@@ -43,6 +43,9 @@ namespace Mistral
         /// presence_penalty determines how much the model penalizes the repetition of words or phrases. A higher presence penalty encourages the model to use a wider variety of words and phrases, making the output more diverse and creative.<br/>
         /// Default Value: 0
         /// </param>
+        /// <param name="promptMode">
+        /// Allows toggling between the reasoning mode and no system prompt. When set to `reasoning` the system prompt for reasoning models will be used.
+        /// </param>
         /// <param name="randomSeed">
         /// The seed to use for random sampling. If set, different calls will generate deterministic results.
         /// </param>
@@ -80,6 +83,7 @@ namespace Mistral
             bool? parallelToolCalls = default,
             global::Mistral.Prediction? prediction = default,
             double? presencePenalty = default,
+            object? promptMode = default,
             int? randomSeed = default,
             global::Mistral.ResponseFormat? responseFormat = default,
             bool? safePrompt = default,

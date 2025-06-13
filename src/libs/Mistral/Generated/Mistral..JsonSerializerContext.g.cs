@@ -237,6 +237,8 @@ namespace Mistral
             typeof(global::Mistral.JsonConverters.JobsOutObjectNullableJsonConverter),
             typeof(global::Mistral.JsonConverters.LegacyJobMetadataOutObjectJsonConverter),
             typeof(global::Mistral.JsonConverters.LegacyJobMetadataOutObjectNullableJsonConverter),
+            typeof(global::Mistral.JsonConverters.MistralPromptModeJsonConverter),
+            typeof(global::Mistral.JsonConverters.MistralPromptModeNullableJsonConverter),
             typeof(global::Mistral.JsonConverters.ModelConversationObjectJsonConverter),
             typeof(global::Mistral.JsonConverters.ModelConversationObjectNullableJsonConverter),
             typeof(global::Mistral.JsonConverters.ModelConversationToolDiscriminatorTypeJsonConverter),
