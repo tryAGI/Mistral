@@ -65,6 +65,12 @@ namespace Mistral
         public double? PresencePenalty { get; set; }
 
         /// <summary>
+        /// Allows toggling between the reasoning mode and no system prompt. When set to `reasoning` the system prompt for reasoning models will be used.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompt_mode")]
+        public object? PromptMode { get; set; }
+
+        /// <summary>
         /// The seed to use for random sampling. If set, different calls will generate deterministic results.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("random_seed")]
@@ -137,6 +143,9 @@ namespace Mistral
         /// presence_penalty determines how much the model penalizes the repetition of words or phrases. A higher presence penalty encourages the model to use a wider variety of words and phrases, making the output more diverse and creative.<br/>
         /// Default Value: 0
         /// </param>
+        /// <param name="promptMode">
+        /// Allows toggling between the reasoning mode and no system prompt. When set to `reasoning` the system prompt for reasoning models will be used.
+        /// </param>
         /// <param name="randomSeed">
         /// The seed to use for random sampling. If set, different calls will generate deterministic results.
         /// </param>
@@ -164,6 +173,7 @@ namespace Mistral
             bool? parallelToolCalls,
             global::Mistral.Prediction? prediction,
             double? presencePenalty,
+            object? promptMode,
             int? randomSeed,
             global::Mistral.ResponseFormat? responseFormat,
             global::Mistral.AnyOf<string, global::System.Collections.Generic.IList<string>>? stop,
@@ -179,6 +189,7 @@ namespace Mistral
             this.ParallelToolCalls = parallelToolCalls;
             this.Prediction = prediction;
             this.PresencePenalty = presencePenalty;
+            this.PromptMode = promptMode;
             this.RandomSeed = randomSeed;
             this.ResponseFormat = responseFormat;
             this.Stop = stop;

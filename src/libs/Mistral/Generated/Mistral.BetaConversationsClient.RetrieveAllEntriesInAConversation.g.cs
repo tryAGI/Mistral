@@ -25,7 +25,9 @@ namespace Mistral
         /// Retrieve all entries in a conversation.<br/>
         /// Given a conversation_id retrieve all the entries belonging to that conversation. The entries are sorted in the order they were appended, those can be messages, connectors or function_call.
         /// </summary>
-        /// <param name="conversationId"></param>
+        /// <param name="conversationId">
+        /// ID of the conversation from which we are fetching entries.
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Mistral.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Mistral.ConversationHistory> RetrieveAllEntriesInAConversationAsync(
