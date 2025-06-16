@@ -83,7 +83,7 @@ namespace Mistral
         public BatchClient Batch { get; }
 
         /// <summary>
-        /// OCR API
+        /// Our Document AI stack, with OCR and Annotations features.
         /// </summary>
         public OcrClient Ocr { get; }
 
