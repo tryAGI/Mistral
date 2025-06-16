@@ -119,7 +119,7 @@ namespace Mistral
         };
 
         /// <summary>
-        /// OCR API
+        /// Our Document AI stack, with OCR and Annotations features.
         /// </summary>
         public OcrClient Ocr => new OcrClient(HttpClient, authorizations: Authorizations)
         {
