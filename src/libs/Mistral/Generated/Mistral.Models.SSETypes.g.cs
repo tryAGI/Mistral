@@ -31,6 +31,10 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        ToolExecutionDelta,
+        /// <summary>
+        /// 
+        /// </summary>
         ToolExecutionDone,
         /// <summary>
         /// 
@@ -63,6 +67,7 @@ namespace Mistral
                 SSETypes.ConversationResponseError => "conversation.response.error",
                 SSETypes.MessageOutputDelta => "message.output.delta",
                 SSETypes.ToolExecutionStarted => "tool.execution.started",
+                SSETypes.ToolExecutionDelta => "tool.execution.delta",
                 SSETypes.ToolExecutionDone => "tool.execution.done",
                 SSETypes.AgentHandoffStarted => "agent.handoff.started",
                 SSETypes.AgentHandoffDone => "agent.handoff.done",
@@ -82,6 +87,7 @@ namespace Mistral
                 "conversation.response.error" => SSETypes.ConversationResponseError,
                 "message.output.delta" => SSETypes.MessageOutputDelta,
                 "tool.execution.started" => SSETypes.ToolExecutionStarted,
+                "tool.execution.delta" => SSETypes.ToolExecutionDelta,
                 "tool.execution.done" => SSETypes.ToolExecutionDone,
                 "agent.handoff.started" => SSETypes.AgentHandoffStarted,
                 "agent.handoff.done" => SSETypes.AgentHandoffDone,

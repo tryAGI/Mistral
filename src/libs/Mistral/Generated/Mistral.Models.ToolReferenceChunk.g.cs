@@ -11,8 +11,14 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("source")]
-        public string? Source { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("description")]
+        public string? Description { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("favicon")]
+        public string? Favicon { get; set; }
 
         /// <summary>
         /// 
@@ -51,7 +57,8 @@ namespace Mistral
         /// <summary>
         /// Initializes a new instance of the <see cref="ToolReferenceChunk" /> class.
         /// </summary>
-        /// <param name="source"></param>
+        /// <param name="description"></param>
+        /// <param name="favicon"></param>
         /// <param name="title"></param>
         /// <param name="tool"></param>
         /// <param name="type">
@@ -64,13 +71,15 @@ namespace Mistral
         public ToolReferenceChunk(
             string title,
             global::Mistral.BuiltInConnectors tool,
-            string? source,
+            string? description,
+            string? favicon,
             global::Mistral.ToolReferenceChunkType? type,
             string? url)
         {
             this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
             this.Tool = tool;
-            this.Source = source;
+            this.Description = description;
+            this.Favicon = favicon;
             this.Type = type;
             this.Url = url;
         }

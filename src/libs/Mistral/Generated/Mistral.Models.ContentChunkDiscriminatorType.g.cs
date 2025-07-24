@@ -15,6 +15,10 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        File,
+        /// <summary>
+        /// 
+        /// </summary>
         ImageUrl,
         /// <summary>
         /// 
@@ -39,6 +43,7 @@ namespace Mistral
             return value switch
             {
                 ContentChunkDiscriminatorType.DocumentUrl => "document_url",
+                ContentChunkDiscriminatorType.File => "file",
                 ContentChunkDiscriminatorType.ImageUrl => "image_url",
                 ContentChunkDiscriminatorType.Reference => "reference",
                 ContentChunkDiscriminatorType.Text => "text",
@@ -53,6 +58,7 @@ namespace Mistral
             return value switch
             {
                 "document_url" => ContentChunkDiscriminatorType.DocumentUrl,
+                "file" => ContentChunkDiscriminatorType.File,
                 "image_url" => ContentChunkDiscriminatorType.ImageUrl,
                 "reference" => ContentChunkDiscriminatorType.Reference,
                 "text" => ContentChunkDiscriminatorType.Text,

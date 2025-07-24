@@ -158,6 +158,41 @@ namespace Mistral
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
+        public global::Mistral.ToolExecutionDeltaEvent? ToolExecutionDelta { get; init; }
+#else
+        public global::Mistral.ToolExecutionDeltaEvent? ToolExecutionDelta { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolExecutionDelta))]
+#endif
+        public bool IsToolExecutionDelta => ToolExecutionDelta != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator Data(global::Mistral.ToolExecutionDeltaEvent value) => new Data((global::Mistral.ToolExecutionDeltaEvent?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Mistral.ToolExecutionDeltaEvent?(Data @this) => @this.ToolExecutionDelta;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Data(global::Mistral.ToolExecutionDeltaEvent? value)
+        {
+            ToolExecutionDelta = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
         public global::Mistral.ToolExecutionDoneEvent? ToolExecutionDone { get; init; }
 #else
         public global::Mistral.ToolExecutionDoneEvent? ToolExecutionDone { get; }
@@ -338,6 +373,7 @@ namespace Mistral
             global::Mistral.ResponseDoneEvent? conversationResponseDone,
             global::Mistral.ResponseErrorEvent? conversationResponseError,
             global::Mistral.ToolExecutionStartedEvent? toolExecutionStarted,
+            global::Mistral.ToolExecutionDeltaEvent? toolExecutionDelta,
             global::Mistral.ToolExecutionDoneEvent? toolExecutionDone,
             global::Mistral.MessageOutputEvent? messageOutputDelta,
             global::Mistral.FunctionCallEvent? functionCallDelta,
@@ -351,6 +387,7 @@ namespace Mistral
             ConversationResponseDone = conversationResponseDone;
             ConversationResponseError = conversationResponseError;
             ToolExecutionStarted = toolExecutionStarted;
+            ToolExecutionDelta = toolExecutionDelta;
             ToolExecutionDone = toolExecutionDone;
             MessageOutputDelta = messageOutputDelta;
             FunctionCallDelta = functionCallDelta;
@@ -367,6 +404,7 @@ namespace Mistral
             FunctionCallDelta as object ??
             MessageOutputDelta as object ??
             ToolExecutionDone as object ??
+            ToolExecutionDelta as object ??
             ToolExecutionStarted as object ??
             ConversationResponseError as object ??
             ConversationResponseDone as object ??
@@ -381,6 +419,7 @@ namespace Mistral
             ConversationResponseDone?.ToString() ??
             ConversationResponseError?.ToString() ??
             ToolExecutionStarted?.ToString() ??
+            ToolExecutionDelta?.ToString() ??
             ToolExecutionDone?.ToString() ??
             MessageOutputDelta?.ToString() ??
             FunctionCallDelta?.ToString() ??
@@ -393,7 +432,7 @@ namespace Mistral
         /// </summary>
         public bool Validate()
         {
-            return IsConversationResponseStarted && !IsConversationResponseDone && !IsConversationResponseError && !IsToolExecutionStarted && !IsToolExecutionDone && !IsMessageOutputDelta && !IsFunctionCallDelta && !IsAgentHandoffStarted && !IsAgentHandoffDone || !IsConversationResponseStarted && IsConversationResponseDone && !IsConversationResponseError && !IsToolExecutionStarted && !IsToolExecutionDone && !IsMessageOutputDelta && !IsFunctionCallDelta && !IsAgentHandoffStarted && !IsAgentHandoffDone || !IsConversationResponseStarted && !IsConversationResponseDone && IsConversationResponseError && !IsToolExecutionStarted && !IsToolExecutionDone && !IsMessageOutputDelta && !IsFunctionCallDelta && !IsAgentHandoffStarted && !IsAgentHandoffDone || !IsConversationResponseStarted && !IsConversationResponseDone && !IsConversationResponseError && IsToolExecutionStarted && !IsToolExecutionDone && !IsMessageOutputDelta && !IsFunctionCallDelta && !IsAgentHandoffStarted && !IsAgentHandoffDone || !IsConversationResponseStarted && !IsConversationResponseDone && !IsConversationResponseError && !IsToolExecutionStarted && IsToolExecutionDone && !IsMessageOutputDelta && !IsFunctionCallDelta && !IsAgentHandoffStarted && !IsAgentHandoffDone || !IsConversationResponseStarted && !IsConversationResponseDone && !IsConversationResponseError && !IsToolExecutionStarted && !IsToolExecutionDone && IsMessageOutputDelta && !IsFunctionCallDelta && !IsAgentHandoffStarted && !IsAgentHandoffDone || !IsConversationResponseStarted && !IsConversationResponseDone && !IsConversationResponseError && !IsToolExecutionStarted && !IsToolExecutionDone && !IsMessageOutputDelta && IsFunctionCallDelta && !IsAgentHandoffStarted && !IsAgentHandoffDone || !IsConversationResponseStarted && !IsConversationResponseDone && !IsConversationResponseError && !IsToolExecutionStarted && !IsToolExecutionDone && !IsMessageOutputDelta && !IsFunctionCallDelta && IsAgentHandoffStarted && !IsAgentHandoffDone || !IsConversationResponseStarted && !IsConversationResponseDone && !IsConversationResponseError && !IsToolExecutionStarted && !IsToolExecutionDone && !IsMessageOutputDelta && !IsFunctionCallDelta && !IsAgentHandoffStarted && IsAgentHandoffDone;
+            return IsConversationResponseStarted && !IsConversationResponseDone && !IsConversationResponseError && !IsToolExecutionStarted && !IsToolExecutionDelta && !IsToolExecutionDone && !IsMessageOutputDelta && !IsFunctionCallDelta && !IsAgentHandoffStarted && !IsAgentHandoffDone || !IsConversationResponseStarted && IsConversationResponseDone && !IsConversationResponseError && !IsToolExecutionStarted && !IsToolExecutionDelta && !IsToolExecutionDone && !IsMessageOutputDelta && !IsFunctionCallDelta && !IsAgentHandoffStarted && !IsAgentHandoffDone || !IsConversationResponseStarted && !IsConversationResponseDone && IsConversationResponseError && !IsToolExecutionStarted && !IsToolExecutionDelta && !IsToolExecutionDone && !IsMessageOutputDelta && !IsFunctionCallDelta && !IsAgentHandoffStarted && !IsAgentHandoffDone || !IsConversationResponseStarted && !IsConversationResponseDone && !IsConversationResponseError && IsToolExecutionStarted && !IsToolExecutionDelta && !IsToolExecutionDone && !IsMessageOutputDelta && !IsFunctionCallDelta && !IsAgentHandoffStarted && !IsAgentHandoffDone || !IsConversationResponseStarted && !IsConversationResponseDone && !IsConversationResponseError && !IsToolExecutionStarted && IsToolExecutionDelta && !IsToolExecutionDone && !IsMessageOutputDelta && !IsFunctionCallDelta && !IsAgentHandoffStarted && !IsAgentHandoffDone || !IsConversationResponseStarted && !IsConversationResponseDone && !IsConversationResponseError && !IsToolExecutionStarted && !IsToolExecutionDelta && IsToolExecutionDone && !IsMessageOutputDelta && !IsFunctionCallDelta && !IsAgentHandoffStarted && !IsAgentHandoffDone || !IsConversationResponseStarted && !IsConversationResponseDone && !IsConversationResponseError && !IsToolExecutionStarted && !IsToolExecutionDelta && !IsToolExecutionDone && IsMessageOutputDelta && !IsFunctionCallDelta && !IsAgentHandoffStarted && !IsAgentHandoffDone || !IsConversationResponseStarted && !IsConversationResponseDone && !IsConversationResponseError && !IsToolExecutionStarted && !IsToolExecutionDelta && !IsToolExecutionDone && !IsMessageOutputDelta && IsFunctionCallDelta && !IsAgentHandoffStarted && !IsAgentHandoffDone || !IsConversationResponseStarted && !IsConversationResponseDone && !IsConversationResponseError && !IsToolExecutionStarted && !IsToolExecutionDelta && !IsToolExecutionDone && !IsMessageOutputDelta && !IsFunctionCallDelta && IsAgentHandoffStarted && !IsAgentHandoffDone || !IsConversationResponseStarted && !IsConversationResponseDone && !IsConversationResponseError && !IsToolExecutionStarted && !IsToolExecutionDelta && !IsToolExecutionDone && !IsMessageOutputDelta && !IsFunctionCallDelta && !IsAgentHandoffStarted && IsAgentHandoffDone;
         }
 
         /// <summary>
@@ -404,6 +443,7 @@ namespace Mistral
             global::System.Func<global::Mistral.ResponseDoneEvent?, TResult>? conversationResponseDone = null,
             global::System.Func<global::Mistral.ResponseErrorEvent?, TResult>? conversationResponseError = null,
             global::System.Func<global::Mistral.ToolExecutionStartedEvent?, TResult>? toolExecutionStarted = null,
+            global::System.Func<global::Mistral.ToolExecutionDeltaEvent?, TResult>? toolExecutionDelta = null,
             global::System.Func<global::Mistral.ToolExecutionDoneEvent?, TResult>? toolExecutionDone = null,
             global::System.Func<global::Mistral.MessageOutputEvent?, TResult>? messageOutputDelta = null,
             global::System.Func<global::Mistral.FunctionCallEvent?, TResult>? functionCallDelta = null,
@@ -431,6 +471,10 @@ namespace Mistral
             else if (IsToolExecutionStarted && toolExecutionStarted != null)
             {
                 return toolExecutionStarted(ToolExecutionStarted!);
+            }
+            else if (IsToolExecutionDelta && toolExecutionDelta != null)
+            {
+                return toolExecutionDelta(ToolExecutionDelta!);
             }
             else if (IsToolExecutionDone && toolExecutionDone != null)
             {
@@ -464,6 +508,7 @@ namespace Mistral
             global::System.Action<global::Mistral.ResponseDoneEvent?>? conversationResponseDone = null,
             global::System.Action<global::Mistral.ResponseErrorEvent?>? conversationResponseError = null,
             global::System.Action<global::Mistral.ToolExecutionStartedEvent?>? toolExecutionStarted = null,
+            global::System.Action<global::Mistral.ToolExecutionDeltaEvent?>? toolExecutionDelta = null,
             global::System.Action<global::Mistral.ToolExecutionDoneEvent?>? toolExecutionDone = null,
             global::System.Action<global::Mistral.MessageOutputEvent?>? messageOutputDelta = null,
             global::System.Action<global::Mistral.FunctionCallEvent?>? functionCallDelta = null,
@@ -491,6 +536,10 @@ namespace Mistral
             else if (IsToolExecutionStarted)
             {
                 toolExecutionStarted?.Invoke(ToolExecutionStarted!);
+            }
+            else if (IsToolExecutionDelta)
+            {
+                toolExecutionDelta?.Invoke(ToolExecutionDelta!);
             }
             else if (IsToolExecutionDone)
             {
@@ -529,6 +578,8 @@ namespace Mistral
                 typeof(global::Mistral.ResponseErrorEvent),
                 ToolExecutionStarted,
                 typeof(global::Mistral.ToolExecutionStartedEvent),
+                ToolExecutionDelta,
+                typeof(global::Mistral.ToolExecutionDeltaEvent),
                 ToolExecutionDone,
                 typeof(global::Mistral.ToolExecutionDoneEvent),
                 MessageOutputDelta,
@@ -559,6 +610,7 @@ namespace Mistral
                 global::System.Collections.Generic.EqualityComparer<global::Mistral.ResponseDoneEvent?>.Default.Equals(ConversationResponseDone, other.ConversationResponseDone) &&
                 global::System.Collections.Generic.EqualityComparer<global::Mistral.ResponseErrorEvent?>.Default.Equals(ConversationResponseError, other.ConversationResponseError) &&
                 global::System.Collections.Generic.EqualityComparer<global::Mistral.ToolExecutionStartedEvent?>.Default.Equals(ToolExecutionStarted, other.ToolExecutionStarted) &&
+                global::System.Collections.Generic.EqualityComparer<global::Mistral.ToolExecutionDeltaEvent?>.Default.Equals(ToolExecutionDelta, other.ToolExecutionDelta) &&
                 global::System.Collections.Generic.EqualityComparer<global::Mistral.ToolExecutionDoneEvent?>.Default.Equals(ToolExecutionDone, other.ToolExecutionDone) &&
                 global::System.Collections.Generic.EqualityComparer<global::Mistral.MessageOutputEvent?>.Default.Equals(MessageOutputDelta, other.MessageOutputDelta) &&
                 global::System.Collections.Generic.EqualityComparer<global::Mistral.FunctionCallEvent?>.Default.Equals(FunctionCallDelta, other.FunctionCallDelta) &&

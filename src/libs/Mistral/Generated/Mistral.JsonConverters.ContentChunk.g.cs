@@ -49,13 +49,21 @@ namespace Mistral.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.ReferenceChunk)}");
                 reference = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::Mistral.FileChunk? file = default;
+            if (discriminator?.Type == global::Mistral.ContentChunkDiscriminatorType.File)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.FileChunk), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.FileChunk> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.FileChunk)}");
+                file = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
 
             var result = new global::Mistral.ContentChunk(
                 discriminator?.Type,
                 text,
                 imageUrl,
                 documentUrl,
-                reference
+                reference,
+                file
                 );
 
             return result;
@@ -93,6 +101,12 @@ namespace Mistral.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.ReferenceChunk), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.ReferenceChunk?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.ReferenceChunk).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Reference, typeInfo);
+            }
+            else if (value.IsFile)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.FileChunk), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.FileChunk?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.FileChunk).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.File, typeInfo);
             }
         }
     }

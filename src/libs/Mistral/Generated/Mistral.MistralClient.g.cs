@@ -119,7 +119,7 @@ namespace Mistral
         };
 
         /// <summary>
-        /// Our Document AI stack, with OCR and Annotations features.
+        /// OCR API
         /// </summary>
         public OcrClient Ocr => new OcrClient(HttpClient, authorizations: Authorizations)
         {
@@ -140,6 +140,33 @@ namespace Mistral
         /// (beta) Conversations API
         /// </summary>
         public BetaConversationsClient BetaConversations => new BetaConversationsClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// (beta) Libraries API to create and manage libraries - index your documents to enhance agent capabilities.
+        /// </summary>
+        public BetaLibrariesClient BetaLibraries => new BetaLibrariesClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// (beta) Libraries API - manage documents in a library.
+        /// </summary>
+        public BetaLibrariesDocumentsClient BetaLibrariesDocuments => new BetaLibrariesDocumentsClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// (beta) Libraries API - manage access to a library.
+        /// </summary>
+        public BetaLibrariesAccessesClient BetaLibrariesAccesses => new BetaLibrariesAccessesClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,

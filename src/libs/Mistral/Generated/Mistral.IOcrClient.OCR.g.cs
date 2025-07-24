@@ -43,7 +43,7 @@ namespace Mistral
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Mistral.OCRResponse> OCRAsync(
-            global::Mistral.AnyOf<global::Mistral.DocumentURLChunk, global::Mistral.ImageURLChunk> document,
+            global::Mistral.AnyOf<global::Mistral.FileChunk, global::Mistral.DocumentURLChunk, global::Mistral.ImageURLChunk> document,
             string? model,
             object? bboxAnnotationFormat = default,
             object? documentAnnotationFormat = default,

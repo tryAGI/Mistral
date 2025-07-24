@@ -11,6 +11,13 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("arguments")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Arguments { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         public global::System.DateTime? CreatedAt { get; set; }
 
@@ -51,6 +58,7 @@ namespace Mistral
         /// <summary>
         /// Initializes a new instance of the <see cref="ToolExecutionStartedEvent" /> class.
         /// </summary>
+        /// <param name="arguments"></param>
         /// <param name="createdAt"></param>
         /// <param name="id"></param>
         /// <param name="name"></param>
@@ -64,12 +72,14 @@ namespace Mistral
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ToolExecutionStartedEvent(
+            string arguments,
             string id,
             global::Mistral.BuiltInConnectors name,
             global::System.DateTime? createdAt,
             int? outputIndex,
             global::Mistral.ToolExecutionStartedEventType? type)
         {
+            this.Arguments = arguments ?? throw new global::System.ArgumentNullException(nameof(arguments));
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Name = name;
             this.CreatedAt = createdAt;

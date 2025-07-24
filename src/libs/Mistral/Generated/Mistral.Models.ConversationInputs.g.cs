@@ -48,9 +48,9 @@ namespace Mistral
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::System.Collections.Generic.IList<global::Mistral.AnyOf<global::Mistral.MessageInputEntry, global::Mistral.FunctionResultEntry>>? Value2 { get; init; }
+        public global::System.Collections.Generic.IList<global::Mistral.AnyOf<global::Mistral.MessageInputEntry, global::Mistral.MessageOutputEntry, global::Mistral.FunctionResultEntry, global::Mistral.FunctionCallEntry, global::Mistral.ToolExecutionEntry, global::Mistral.AgentHandoffEntry>>? Value2 { get; init; }
 #else
-        public global::System.Collections.Generic.IList<global::Mistral.AnyOf<global::Mistral.MessageInputEntry, global::Mistral.FunctionResultEntry>>? Value2 { get; }
+        public global::System.Collections.Generic.IList<global::Mistral.AnyOf<global::Mistral.MessageInputEntry, global::Mistral.MessageOutputEntry, global::Mistral.FunctionResultEntry, global::Mistral.FunctionCallEntry, global::Mistral.ToolExecutionEntry, global::Mistral.AgentHandoffEntry>>? Value2 { get; }
 #endif
 
         /// <summary>
@@ -64,7 +64,7 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        public ConversationInputs(global::System.Collections.Generic.IList<global::Mistral.AnyOf<global::Mistral.MessageInputEntry, global::Mistral.FunctionResultEntry>>? value)
+        public ConversationInputs(global::System.Collections.Generic.IList<global::Mistral.AnyOf<global::Mistral.MessageInputEntry, global::Mistral.MessageOutputEntry, global::Mistral.FunctionResultEntry, global::Mistral.FunctionCallEntry, global::Mistral.ToolExecutionEntry, global::Mistral.AgentHandoffEntry>>? value)
         {
             Value2 = value;
         }
@@ -74,7 +74,7 @@ namespace Mistral
         /// </summary>
         public ConversationInputs(
             string? value1,
-            global::System.Collections.Generic.IList<global::Mistral.AnyOf<global::Mistral.MessageInputEntry, global::Mistral.FunctionResultEntry>>? value2
+            global::System.Collections.Generic.IList<global::Mistral.AnyOf<global::Mistral.MessageInputEntry, global::Mistral.MessageOutputEntry, global::Mistral.FunctionResultEntry, global::Mistral.FunctionCallEntry, global::Mistral.ToolExecutionEntry, global::Mistral.AgentHandoffEntry>>? value2
             )
         {
             Value1 = value1;
@@ -110,7 +110,7 @@ namespace Mistral
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<string?, TResult>? value1 = null,
-            global::System.Func<global::System.Collections.Generic.IList<global::Mistral.AnyOf<global::Mistral.MessageInputEntry, global::Mistral.FunctionResultEntry>>?, TResult>? value2 = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::Mistral.AnyOf<global::Mistral.MessageInputEntry, global::Mistral.MessageOutputEntry, global::Mistral.FunctionResultEntry, global::Mistral.FunctionCallEntry, global::Mistral.ToolExecutionEntry, global::Mistral.AgentHandoffEntry>>?, TResult>? value2 = null,
             bool validate = true)
         {
             if (validate)
@@ -135,7 +135,7 @@ namespace Mistral
         /// </summary>
         public void Match(
             global::System.Action<string?>? value1 = null,
-            global::System.Action<global::System.Collections.Generic.IList<global::Mistral.AnyOf<global::Mistral.MessageInputEntry, global::Mistral.FunctionResultEntry>>?>? value2 = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::Mistral.AnyOf<global::Mistral.MessageInputEntry, global::Mistral.MessageOutputEntry, global::Mistral.FunctionResultEntry, global::Mistral.FunctionCallEntry, global::Mistral.ToolExecutionEntry, global::Mistral.AgentHandoffEntry>>?>? value2 = null,
             bool validate = true)
         {
             if (validate)
@@ -163,7 +163,7 @@ namespace Mistral
                 Value1,
                 typeof(string),
                 Value2,
-                typeof(global::System.Collections.Generic.IList<global::Mistral.AnyOf<global::Mistral.MessageInputEntry, global::Mistral.FunctionResultEntry>>),
+                typeof(global::System.Collections.Generic.IList<global::Mistral.AnyOf<global::Mistral.MessageInputEntry, global::Mistral.MessageOutputEntry, global::Mistral.FunctionResultEntry, global::Mistral.FunctionCallEntry, global::Mistral.ToolExecutionEntry, global::Mistral.AgentHandoffEntry>>),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -181,7 +181,7 @@ namespace Mistral
         {
             return
                 global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::Mistral.AnyOf<global::Mistral.MessageInputEntry, global::Mistral.FunctionResultEntry>>?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::Mistral.AnyOf<global::Mistral.MessageInputEntry, global::Mistral.MessageOutputEntry, global::Mistral.FunctionResultEntry, global::Mistral.FunctionCallEntry, global::Mistral.ToolExecutionEntry, global::Mistral.AgentHandoffEntry>>?>.Default.Equals(Value2, other.Value2) 
                 ;
         }
 

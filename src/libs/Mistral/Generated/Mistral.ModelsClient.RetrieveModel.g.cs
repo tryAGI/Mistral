@@ -23,7 +23,7 @@ namespace Mistral
 
         /// <summary>
         /// Retrieve Model<br/>
-        /// Retrieve a model information.
+        /// Retrieve information about a model.
         /// </summary>
         /// <param name="modelId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

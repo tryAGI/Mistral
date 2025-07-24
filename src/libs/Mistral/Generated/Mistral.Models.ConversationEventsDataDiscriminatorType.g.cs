@@ -39,6 +39,10 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        ToolExecutionDelta,
+        /// <summary>
+        /// 
+        /// </summary>
         ToolExecutionDone,
         /// <summary>
         /// 
@@ -65,6 +69,7 @@ namespace Mistral
                 ConversationEventsDataDiscriminatorType.ConversationResponseStarted => "conversation.response.started",
                 ConversationEventsDataDiscriminatorType.FunctionCallDelta => "function.call.delta",
                 ConversationEventsDataDiscriminatorType.MessageOutputDelta => "message.output.delta",
+                ConversationEventsDataDiscriminatorType.ToolExecutionDelta => "tool.execution.delta",
                 ConversationEventsDataDiscriminatorType.ToolExecutionDone => "tool.execution.done",
                 ConversationEventsDataDiscriminatorType.ToolExecutionStarted => "tool.execution.started",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -84,6 +89,7 @@ namespace Mistral
                 "conversation.response.started" => ConversationEventsDataDiscriminatorType.ConversationResponseStarted,
                 "function.call.delta" => ConversationEventsDataDiscriminatorType.FunctionCallDelta,
                 "message.output.delta" => ConversationEventsDataDiscriminatorType.MessageOutputDelta,
+                "tool.execution.delta" => ConversationEventsDataDiscriminatorType.ToolExecutionDelta,
                 "tool.execution.done" => ConversationEventsDataDiscriminatorType.ToolExecutionDone,
                 "tool.execution.started" => ConversationEventsDataDiscriminatorType.ToolExecutionStarted,
                 _ => null,

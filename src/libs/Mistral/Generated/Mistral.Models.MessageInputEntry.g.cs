@@ -44,6 +44,12 @@ namespace Mistral
         public global::Mistral.MessageInputEntryObject? Object { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prefix")]
+        public bool? Prefix { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
@@ -74,6 +80,9 @@ namespace Mistral
         /// <param name="object">
         /// Default Value: entry
         /// </param>
+        /// <param name="prefix">
+        /// Default Value: false
+        /// </param>
         /// <param name="role"></param>
         /// <param name="type">
         /// Default Value: message.input
@@ -88,6 +97,7 @@ namespace Mistral
             global::System.DateTime? createdAt,
             string? id,
             global::Mistral.MessageInputEntryObject? @object,
+            bool? prefix,
             global::Mistral.MessageInputEntryType? type)
         {
             this.Content = content;
@@ -96,6 +106,7 @@ namespace Mistral
             this.CreatedAt = createdAt;
             this.Id = id;
             this.Object = @object;
+            this.Prefix = prefix;
             this.Type = type;
         }
 
