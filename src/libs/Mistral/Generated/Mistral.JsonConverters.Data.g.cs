@@ -49,6 +49,13 @@ namespace Mistral.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.ToolExecutionStartedEvent)}");
                 toolExecutionStarted = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::Mistral.ToolExecutionDeltaEvent? toolExecutionDelta = default;
+            if (discriminator?.Type == global::Mistral.ConversationEventsDataDiscriminatorType.ToolExecutionDelta)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.ToolExecutionDeltaEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.ToolExecutionDeltaEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.ToolExecutionDeltaEvent)}");
+                toolExecutionDelta = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
             global::Mistral.ToolExecutionDoneEvent? toolExecutionDone = default;
             if (discriminator?.Type == global::Mistral.ConversationEventsDataDiscriminatorType.ToolExecutionDone)
             {
@@ -91,6 +98,7 @@ namespace Mistral.JsonConverters
                 conversationResponseDone,
                 conversationResponseError,
                 toolExecutionStarted,
+                toolExecutionDelta,
                 toolExecutionDone,
                 messageOutputDelta,
                 functionCallDelta,
@@ -133,6 +141,12 @@ namespace Mistral.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.ToolExecutionStartedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.ToolExecutionStartedEvent?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.ToolExecutionStartedEvent).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.ToolExecutionStarted, typeInfo);
+            }
+            else if (value.IsToolExecutionDelta)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.ToolExecutionDeltaEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.ToolExecutionDeltaEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.ToolExecutionDeltaEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ToolExecutionDelta, typeInfo);
             }
             else if (value.IsToolExecutionDone)
             {

@@ -20,9 +20,9 @@ namespace Mistral
         /// Document to run OCR on
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("document")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<global::Mistral.DocumentURLChunk, global::Mistral.ImageURLChunk>))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<global::Mistral.FileChunk, global::Mistral.DocumentURLChunk, global::Mistral.ImageURLChunk>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Mistral.AnyOf<global::Mistral.DocumentURLChunk, global::Mistral.ImageURLChunk> Document { get; set; }
+        public required global::Mistral.AnyOf<global::Mistral.FileChunk, global::Mistral.DocumentURLChunk, global::Mistral.ImageURLChunk> Document { get; set; }
 
         /// <summary>
         /// Structured output class for extracting useful information from the entire document. Only json_schema is valid for this field
@@ -103,7 +103,7 @@ namespace Mistral
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OCRRequest(
-            global::Mistral.AnyOf<global::Mistral.DocumentURLChunk, global::Mistral.ImageURLChunk> document,
+            global::Mistral.AnyOf<global::Mistral.FileChunk, global::Mistral.DocumentURLChunk, global::Mistral.ImageURLChunk> document,
             string? model,
             object? bboxAnnotationFormat,
             object? documentAnnotationFormat,

@@ -42,6 +42,12 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("deprecation_replacement_model")]
+        public string? DeprecationReplacementModel { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         public string? Description { get; set; }
 
@@ -99,6 +105,7 @@ namespace Mistral
         /// <param name="created"></param>
         /// <param name="defaultModelTemperature"></param>
         /// <param name="deprecation"></param>
+        /// <param name="deprecationReplacementModel"></param>
         /// <param name="description"></param>
         /// <param name="id"></param>
         /// <param name="maxContextLength">
@@ -124,6 +131,7 @@ namespace Mistral
             int? created,
             double? defaultModelTemperature,
             global::System.DateTime? deprecation,
+            string? deprecationReplacementModel,
             string? description,
             int? maxContextLength,
             string? name,
@@ -137,6 +145,7 @@ namespace Mistral
             this.Created = created;
             this.DefaultModelTemperature = defaultModelTemperature;
             this.Deprecation = deprecation;
+            this.DeprecationReplacementModel = deprecationReplacementModel;
             this.Description = description;
             this.MaxContextLength = maxContextLength;
             this.Name = name;

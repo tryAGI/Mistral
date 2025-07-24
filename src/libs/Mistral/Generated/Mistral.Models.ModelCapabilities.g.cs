@@ -9,6 +9,12 @@ namespace Mistral
     public sealed partial class ModelCapabilities
     {
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("classification")]
+        public bool? Classification { get; set; }
+
+        /// <summary>
         /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("completion_chat")]
@@ -47,6 +53,9 @@ namespace Mistral
         /// <summary>
         /// Initializes a new instance of the <see cref="ModelCapabilities" /> class.
         /// </summary>
+        /// <param name="classification">
+        /// Default Value: false
+        /// </param>
         /// <param name="completionChat">
         /// Default Value: true
         /// </param>
@@ -66,12 +75,14 @@ namespace Mistral
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ModelCapabilities(
+            bool? classification,
             bool? completionChat,
             bool? completionFim,
             bool? fineTuning,
             bool? functionCalling,
             bool? vision)
         {
+            this.Classification = classification;
             this.CompletionChat = completionChat;
             this.CompletionFim = completionFim;
             this.FineTuning = fineTuning;

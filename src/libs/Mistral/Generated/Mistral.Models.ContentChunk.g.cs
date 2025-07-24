@@ -157,12 +157,48 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Mistral.FileChunk? File { get; init; }
+#else
+        public global::Mistral.FileChunk? File { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(File))]
+#endif
+        public bool IsFile => File != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ContentChunk(global::Mistral.FileChunk value) => new ContentChunk((global::Mistral.FileChunk?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Mistral.FileChunk?(ContentChunk @this) => @this.File;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ContentChunk(global::Mistral.FileChunk? value)
+        {
+            File = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ContentChunk(
             global::Mistral.ContentChunkDiscriminatorType? type,
             global::Mistral.TextChunk? text,
             global::Mistral.ImageURLChunk? imageUrl,
             global::Mistral.DocumentURLChunk? documentUrl,
-            global::Mistral.ReferenceChunk? reference
+            global::Mistral.ReferenceChunk? reference,
+            global::Mistral.FileChunk? file
             )
         {
             Type = type;
@@ -171,12 +207,14 @@ namespace Mistral
             ImageUrl = imageUrl;
             DocumentUrl = documentUrl;
             Reference = reference;
+            File = file;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
+            File as object ??
             Reference as object ??
             DocumentUrl as object ??
             ImageUrl as object ??
@@ -190,7 +228,8 @@ namespace Mistral
             Text?.ToString() ??
             ImageUrl?.ToString() ??
             DocumentUrl?.ToString() ??
-            Reference?.ToString() 
+            Reference?.ToString() ??
+            File?.ToString() 
             ;
 
         /// <summary>
@@ -198,7 +237,7 @@ namespace Mistral
         /// </summary>
         public bool Validate()
         {
-            return IsText && !IsImageUrl && !IsDocumentUrl && !IsReference || !IsText && IsImageUrl && !IsDocumentUrl && !IsReference || !IsText && !IsImageUrl && IsDocumentUrl && !IsReference || !IsText && !IsImageUrl && !IsDocumentUrl && IsReference;
+            return IsText && !IsImageUrl && !IsDocumentUrl && !IsReference && !IsFile || !IsText && IsImageUrl && !IsDocumentUrl && !IsReference && !IsFile || !IsText && !IsImageUrl && IsDocumentUrl && !IsReference && !IsFile || !IsText && !IsImageUrl && !IsDocumentUrl && IsReference && !IsFile || !IsText && !IsImageUrl && !IsDocumentUrl && !IsReference && IsFile;
         }
 
         /// <summary>
@@ -209,6 +248,7 @@ namespace Mistral
             global::System.Func<global::Mistral.ImageURLChunk?, TResult>? imageUrl = null,
             global::System.Func<global::Mistral.DocumentURLChunk?, TResult>? documentUrl = null,
             global::System.Func<global::Mistral.ReferenceChunk?, TResult>? reference = null,
+            global::System.Func<global::Mistral.FileChunk?, TResult>? file = null,
             bool validate = true)
         {
             if (validate)
@@ -232,6 +272,10 @@ namespace Mistral
             {
                 return reference(Reference!);
             }
+            else if (IsFile && file != null)
+            {
+                return file(File!);
+            }
 
             return default(TResult);
         }
@@ -244,6 +288,7 @@ namespace Mistral
             global::System.Action<global::Mistral.ImageURLChunk?>? imageUrl = null,
             global::System.Action<global::Mistral.DocumentURLChunk?>? documentUrl = null,
             global::System.Action<global::Mistral.ReferenceChunk?>? reference = null,
+            global::System.Action<global::Mistral.FileChunk?>? file = null,
             bool validate = true)
         {
             if (validate)
@@ -267,6 +312,10 @@ namespace Mistral
             {
                 reference?.Invoke(Reference!);
             }
+            else if (IsFile)
+            {
+                file?.Invoke(File!);
+            }
         }
 
         /// <summary>
@@ -284,6 +333,8 @@ namespace Mistral
                 typeof(global::Mistral.DocumentURLChunk),
                 Reference,
                 typeof(global::Mistral.ReferenceChunk),
+                File,
+                typeof(global::Mistral.FileChunk),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -303,7 +354,8 @@ namespace Mistral
                 global::System.Collections.Generic.EqualityComparer<global::Mistral.TextChunk?>.Default.Equals(Text, other.Text) &&
                 global::System.Collections.Generic.EqualityComparer<global::Mistral.ImageURLChunk?>.Default.Equals(ImageUrl, other.ImageUrl) &&
                 global::System.Collections.Generic.EqualityComparer<global::Mistral.DocumentURLChunk?>.Default.Equals(DocumentUrl, other.DocumentUrl) &&
-                global::System.Collections.Generic.EqualityComparer<global::Mistral.ReferenceChunk?>.Default.Equals(Reference, other.Reference) 
+                global::System.Collections.Generic.EqualityComparer<global::Mistral.ReferenceChunk?>.Default.Equals(Reference, other.Reference) &&
+                global::System.Collections.Generic.EqualityComparer<global::Mistral.FileChunk?>.Default.Equals(File, other.File) 
                 ;
         }
 

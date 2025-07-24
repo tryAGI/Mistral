@@ -83,7 +83,7 @@ namespace Mistral
         public BatchClient Batch { get; }
 
         /// <summary>
-        /// Our Document AI stack, with OCR and Annotations features.
+        /// OCR API
         /// </summary>
         public OcrClient Ocr { get; }
 
@@ -96,6 +96,21 @@ namespace Mistral
         /// (beta) Conversations API
         /// </summary>
         public BetaConversationsClient BetaConversations { get; }
+
+        /// <summary>
+        /// (beta) Libraries API to create and manage libraries - index your documents to enhance agent capabilities.
+        /// </summary>
+        public BetaLibrariesClient BetaLibraries { get; }
+
+        /// <summary>
+        /// (beta) Libraries API - manage documents in a library.
+        /// </summary>
+        public BetaLibrariesDocumentsClient BetaLibrariesDocuments { get; }
+
+        /// <summary>
+        /// (beta) Libraries API - manage access to a library.
+        /// </summary>
+        public BetaLibrariesAccessesClient BetaLibrariesAccesses { get; }
 
     }
 }
