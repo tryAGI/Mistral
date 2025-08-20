@@ -23,11 +23,19 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        InputAudio,
+        /// <summary>
+        /// 
+        /// </summary>
         Reference,
         /// <summary>
         /// 
         /// </summary>
         Text,
+        /// <summary>
+        /// 
+        /// </summary>
+        Thinking,
     }
 
     /// <summary>
@@ -45,8 +53,10 @@ namespace Mistral
                 ContentChunkDiscriminatorType.DocumentUrl => "document_url",
                 ContentChunkDiscriminatorType.File => "file",
                 ContentChunkDiscriminatorType.ImageUrl => "image_url",
+                ContentChunkDiscriminatorType.InputAudio => "input_audio",
                 ContentChunkDiscriminatorType.Reference => "reference",
                 ContentChunkDiscriminatorType.Text => "text",
+                ContentChunkDiscriminatorType.Thinking => "thinking",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -60,8 +70,10 @@ namespace Mistral
                 "document_url" => ContentChunkDiscriminatorType.DocumentUrl,
                 "file" => ContentChunkDiscriminatorType.File,
                 "image_url" => ContentChunkDiscriminatorType.ImageUrl,
+                "input_audio" => ContentChunkDiscriminatorType.InputAudio,
                 "reference" => ContentChunkDiscriminatorType.Reference,
                 "text" => ContentChunkDiscriminatorType.Text,
+                "thinking" => ContentChunkDiscriminatorType.Thinking,
                 _ => null,
             };
         }

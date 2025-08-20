@@ -11,6 +11,12 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("agent_id")]
+        public string? AgentId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("completed_at")]
         public int? CompletedAt { get; set; }
 
@@ -79,8 +85,7 @@ namespace Mistral
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Model { get; set; }
+        public string? Model { get; set; }
 
         /// <summary>
         /// Default Value: batch
@@ -132,6 +137,7 @@ namespace Mistral
         /// <summary>
         /// Initializes a new instance of the <see cref="BatchJobOut" /> class.
         /// </summary>
+        /// <param name="agentId"></param>
         /// <param name="completedAt"></param>
         /// <param name="completedRequests"></param>
         /// <param name="createdAt"></param>
@@ -162,13 +168,14 @@ namespace Mistral
             int failedRequests,
             string id,
             global::System.Collections.Generic.IList<global::System.Guid> inputFiles,
-            string model,
             global::Mistral.BatchJobStatus status,
             int succeededRequests,
             int totalRequests,
+            string? agentId,
             int? completedAt,
             global::System.Guid? errorFile,
             object? metadata,
+            string? model,
             global::Mistral.BatchJobOutObject? @object,
             global::System.Guid? outputFile,
             int? startedAt)
@@ -180,13 +187,14 @@ namespace Mistral
             this.FailedRequests = failedRequests;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.InputFiles = inputFiles ?? throw new global::System.ArgumentNullException(nameof(inputFiles));
-            this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
             this.Status = status;
             this.SucceededRequests = succeededRequests;
             this.TotalRequests = totalRequests;
+            this.AgentId = agentId;
             this.CompletedAt = completedAt;
             this.ErrorFile = errorFile;
             this.Metadata = metadata;
+            this.Model = model;
             this.Object = @object;
             this.OutputFile = outputFile;
             this.StartedAt = startedAt;

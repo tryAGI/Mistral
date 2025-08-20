@@ -55,6 +55,12 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("mimetype")]
+        public string? Mimetype { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("num_lines")]
         public int? NumLines { get; set; }
 
@@ -82,6 +88,12 @@ namespace Mistral
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.SampleTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::Mistral.SampleType SampleType { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("signature")]
+        public string? Signature { get; set; }
 
         /// <summary>
         /// 
@@ -117,6 +129,7 @@ namespace Mistral
         /// The unique identifier of the file.<br/>
         /// Example: 497f6eca-6276-4993-bfeb-53cbbbba6f09
         /// </param>
+        /// <param name="mimetype"></param>
         /// <param name="numLines"></param>
         /// <param name="object">
         /// The object type, which is always "file".<br/>
@@ -124,6 +137,7 @@ namespace Mistral
         /// </param>
         /// <param name="purpose"></param>
         /// <param name="sampleType"></param>
+        /// <param name="signature"></param>
         /// <param name="source"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -138,7 +152,9 @@ namespace Mistral
             global::Mistral.FilePurpose purpose,
             global::Mistral.SampleType sampleType,
             global::Mistral.Source source,
-            int? numLines)
+            string? mimetype,
+            int? numLines,
+            string? signature)
         {
             this.Bytes = bytes;
             this.CreatedAt = createdAt;
@@ -149,7 +165,9 @@ namespace Mistral
             this.Purpose = purpose;
             this.SampleType = sampleType;
             this.Source = source;
+            this.Mimetype = mimetype;
             this.NumLines = numLines;
+            this.Signature = signature;
         }
 
         /// <summary>

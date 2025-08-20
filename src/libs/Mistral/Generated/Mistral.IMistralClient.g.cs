@@ -88,6 +88,11 @@ namespace Mistral
         public OcrClient Ocr { get; }
 
         /// <summary>
+        /// API for audio transcription.
+        /// </summary>
+        public AudioTranscriptionsClient AudioTranscriptions { get; }
+
+        /// <summary>
         /// (beta) Agents API
         /// </summary>
         public BetaAgentsClient BetaAgents { get; }

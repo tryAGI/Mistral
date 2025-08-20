@@ -11,6 +11,12 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("agent_id")]
+        public string? AgentId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("endpoint")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.ApiEndpointJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -33,8 +39,7 @@ namespace Mistral
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Model { get; set; }
+        public string? Model { get; set; }
 
         /// <summary>
         /// Default Value: 24
@@ -51,6 +56,7 @@ namespace Mistral
         /// <summary>
         /// Initializes a new instance of the <see cref="BatchJobIn" /> class.
         /// </summary>
+        /// <param name="agentId"></param>
         /// <param name="endpoint"></param>
         /// <param name="inputFiles"></param>
         /// <param name="metadata"></param>
@@ -64,14 +70,16 @@ namespace Mistral
         public BatchJobIn(
             global::Mistral.ApiEndpoint endpoint,
             global::System.Collections.Generic.IList<global::System.Guid> inputFiles,
-            string model,
+            string? agentId,
             global::System.Collections.Generic.Dictionary<string, string>? metadata,
+            string? model,
             int? timeoutHours)
         {
             this.Endpoint = endpoint;
             this.InputFiles = inputFiles ?? throw new global::System.ArgumentNullException(nameof(inputFiles));
-            this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
+            this.AgentId = agentId;
             this.Metadata = metadata;
+            this.Model = model;
             this.TimeoutHours = timeoutHours;
         }
 

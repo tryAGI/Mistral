@@ -15,6 +15,7 @@ namespace Mistral
         /// Default Value: 100
         /// </param>
         /// <param name="model"></param>
+        /// <param name="agentId"></param>
         /// <param name="metadata"></param>
         /// <param name="createdAfter"></param>
         /// <param name="createdByMe">
@@ -27,6 +28,7 @@ namespace Mistral
             int? page = default,
             int? pageSize = default,
             string? model = default,
+            string? agentId = default,
             object? metadata = default,
             global::System.DateTime? createdAfter = default,
             bool? createdByMe = default,
