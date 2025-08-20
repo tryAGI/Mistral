@@ -103,6 +103,20 @@ namespace Mistral
         public required string Root { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("root_version")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string RootVersion { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("workspace_id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string WorkspaceId { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -133,6 +147,8 @@ namespace Mistral
         /// </param>
         /// <param name="ownedBy"></param>
         /// <param name="root"></param>
+        /// <param name="rootVersion"></param>
+        /// <param name="workspaceId"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -145,6 +161,8 @@ namespace Mistral
             global::System.Guid job,
             string ownedBy,
             string root,
+            string rootVersion,
+            string workspaceId,
             global::System.Collections.Generic.IList<string>? aliases,
             string? description,
             int? maxContextLength,
@@ -160,6 +178,8 @@ namespace Mistral
             this.Job = job;
             this.OwnedBy = ownedBy ?? throw new global::System.ArgumentNullException(nameof(ownedBy));
             this.Root = root ?? throw new global::System.ArgumentNullException(nameof(root));
+            this.RootVersion = rootVersion ?? throw new global::System.ArgumentNullException(nameof(rootVersion));
+            this.WorkspaceId = workspaceId ?? throw new global::System.ArgumentNullException(nameof(workspaceId));
             this.Aliases = aliases;
             this.Description = description;
             this.MaxContextLength = maxContextLength;

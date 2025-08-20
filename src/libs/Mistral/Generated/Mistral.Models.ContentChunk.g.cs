@@ -192,13 +192,85 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Mistral.ThinkChunk? Thinking { get; init; }
+#else
+        public global::Mistral.ThinkChunk? Thinking { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Thinking))]
+#endif
+        public bool IsThinking => Thinking != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ContentChunk(global::Mistral.ThinkChunk value) => new ContentChunk((global::Mistral.ThinkChunk?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Mistral.ThinkChunk?(ContentChunk @this) => @this.Thinking;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ContentChunk(global::Mistral.ThinkChunk? value)
+        {
+            Thinking = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Mistral.AudioChunk? InputAudio { get; init; }
+#else
+        public global::Mistral.AudioChunk? InputAudio { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputAudio))]
+#endif
+        public bool IsInputAudio => InputAudio != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ContentChunk(global::Mistral.AudioChunk value) => new ContentChunk((global::Mistral.AudioChunk?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Mistral.AudioChunk?(ContentChunk @this) => @this.InputAudio;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ContentChunk(global::Mistral.AudioChunk? value)
+        {
+            InputAudio = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ContentChunk(
             global::Mistral.ContentChunkDiscriminatorType? type,
             global::Mistral.TextChunk? text,
             global::Mistral.ImageURLChunk? imageUrl,
             global::Mistral.DocumentURLChunk? documentUrl,
             global::Mistral.ReferenceChunk? reference,
-            global::Mistral.FileChunk? file
+            global::Mistral.FileChunk? file,
+            global::Mistral.ThinkChunk? thinking,
+            global::Mistral.AudioChunk? inputAudio
             )
         {
             Type = type;
@@ -208,12 +280,16 @@ namespace Mistral
             DocumentUrl = documentUrl;
             Reference = reference;
             File = file;
+            Thinking = thinking;
+            InputAudio = inputAudio;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
+            InputAudio as object ??
+            Thinking as object ??
             File as object ??
             Reference as object ??
             DocumentUrl as object ??
@@ -229,7 +305,9 @@ namespace Mistral
             ImageUrl?.ToString() ??
             DocumentUrl?.ToString() ??
             Reference?.ToString() ??
-            File?.ToString() 
+            File?.ToString() ??
+            Thinking?.ToString() ??
+            InputAudio?.ToString() 
             ;
 
         /// <summary>
@@ -237,7 +315,7 @@ namespace Mistral
         /// </summary>
         public bool Validate()
         {
-            return IsText && !IsImageUrl && !IsDocumentUrl && !IsReference && !IsFile || !IsText && IsImageUrl && !IsDocumentUrl && !IsReference && !IsFile || !IsText && !IsImageUrl && IsDocumentUrl && !IsReference && !IsFile || !IsText && !IsImageUrl && !IsDocumentUrl && IsReference && !IsFile || !IsText && !IsImageUrl && !IsDocumentUrl && !IsReference && IsFile;
+            return IsText && !IsImageUrl && !IsDocumentUrl && !IsReference && !IsFile && !IsThinking && !IsInputAudio || !IsText && IsImageUrl && !IsDocumentUrl && !IsReference && !IsFile && !IsThinking && !IsInputAudio || !IsText && !IsImageUrl && IsDocumentUrl && !IsReference && !IsFile && !IsThinking && !IsInputAudio || !IsText && !IsImageUrl && !IsDocumentUrl && IsReference && !IsFile && !IsThinking && !IsInputAudio || !IsText && !IsImageUrl && !IsDocumentUrl && !IsReference && IsFile && !IsThinking && !IsInputAudio || !IsText && !IsImageUrl && !IsDocumentUrl && !IsReference && !IsFile && IsThinking && !IsInputAudio || !IsText && !IsImageUrl && !IsDocumentUrl && !IsReference && !IsFile && !IsThinking && IsInputAudio;
         }
 
         /// <summary>
@@ -249,6 +327,8 @@ namespace Mistral
             global::System.Func<global::Mistral.DocumentURLChunk?, TResult>? documentUrl = null,
             global::System.Func<global::Mistral.ReferenceChunk?, TResult>? reference = null,
             global::System.Func<global::Mistral.FileChunk?, TResult>? file = null,
+            global::System.Func<global::Mistral.ThinkChunk?, TResult>? thinking = null,
+            global::System.Func<global::Mistral.AudioChunk?, TResult>? inputAudio = null,
             bool validate = true)
         {
             if (validate)
@@ -276,6 +356,14 @@ namespace Mistral
             {
                 return file(File!);
             }
+            else if (IsThinking && thinking != null)
+            {
+                return thinking(Thinking!);
+            }
+            else if (IsInputAudio && inputAudio != null)
+            {
+                return inputAudio(InputAudio!);
+            }
 
             return default(TResult);
         }
@@ -289,6 +377,8 @@ namespace Mistral
             global::System.Action<global::Mistral.DocumentURLChunk?>? documentUrl = null,
             global::System.Action<global::Mistral.ReferenceChunk?>? reference = null,
             global::System.Action<global::Mistral.FileChunk?>? file = null,
+            global::System.Action<global::Mistral.ThinkChunk?>? thinking = null,
+            global::System.Action<global::Mistral.AudioChunk?>? inputAudio = null,
             bool validate = true)
         {
             if (validate)
@@ -316,6 +406,14 @@ namespace Mistral
             {
                 file?.Invoke(File!);
             }
+            else if (IsThinking)
+            {
+                thinking?.Invoke(Thinking!);
+            }
+            else if (IsInputAudio)
+            {
+                inputAudio?.Invoke(InputAudio!);
+            }
         }
 
         /// <summary>
@@ -335,6 +433,10 @@ namespace Mistral
                 typeof(global::Mistral.ReferenceChunk),
                 File,
                 typeof(global::Mistral.FileChunk),
+                Thinking,
+                typeof(global::Mistral.ThinkChunk),
+                InputAudio,
+                typeof(global::Mistral.AudioChunk),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -355,7 +457,9 @@ namespace Mistral
                 global::System.Collections.Generic.EqualityComparer<global::Mistral.ImageURLChunk?>.Default.Equals(ImageUrl, other.ImageUrl) &&
                 global::System.Collections.Generic.EqualityComparer<global::Mistral.DocumentURLChunk?>.Default.Equals(DocumentUrl, other.DocumentUrl) &&
                 global::System.Collections.Generic.EqualityComparer<global::Mistral.ReferenceChunk?>.Default.Equals(Reference, other.Reference) &&
-                global::System.Collections.Generic.EqualityComparer<global::Mistral.FileChunk?>.Default.Equals(File, other.File) 
+                global::System.Collections.Generic.EqualityComparer<global::Mistral.FileChunk?>.Default.Equals(File, other.File) &&
+                global::System.Collections.Generic.EqualityComparer<global::Mistral.ThinkChunk?>.Default.Equals(Thinking, other.Thinking) &&
+                global::System.Collections.Generic.EqualityComparer<global::Mistral.AudioChunk?>.Default.Equals(InputAudio, other.InputAudio) 
                 ;
         }
 

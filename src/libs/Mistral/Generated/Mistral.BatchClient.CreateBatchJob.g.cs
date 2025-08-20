@@ -170,6 +170,7 @@ namespace Mistral
         /// Create Batch Job<br/>
         /// Create a new batch job, it will be queued for processing.
         /// </summary>
+        /// <param name="agentId"></param>
         /// <param name="endpoint"></param>
         /// <param name="inputFiles"></param>
         /// <param name="metadata"></param>
@@ -182,13 +183,15 @@ namespace Mistral
         public async global::System.Threading.Tasks.Task<global::Mistral.BatchJobOut> CreateBatchJobAsync(
             global::Mistral.ApiEndpoint endpoint,
             global::System.Collections.Generic.IList<global::System.Guid> inputFiles,
-            string model,
+            string? agentId = default,
             global::System.Collections.Generic.Dictionary<string, string>? metadata = default,
+            string? model = default,
             int? timeoutHours = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::Mistral.BatchJobIn
             {
+                AgentId = agentId,
                 Endpoint = endpoint,
                 InputFiles = inputFiles,
                 Metadata = metadata,

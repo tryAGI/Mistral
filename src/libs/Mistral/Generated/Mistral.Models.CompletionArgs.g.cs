@@ -52,7 +52,7 @@ namespace Mistral
         public global::Mistral.CompletionArgsStop? Stop { get; set; }
 
         /// <summary>
-        /// Default Value: 0.3
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("temperature")]
         public double? Temperature { get; set; }
@@ -86,9 +86,7 @@ namespace Mistral
         /// <param name="randomSeed"></param>
         /// <param name="responseFormat"></param>
         /// <param name="stop"></param>
-        /// <param name="temperature">
-        /// Default Value: 0.3
-        /// </param>
+        /// <param name="temperature"></param>
         /// <param name="toolChoice"></param>
         /// <param name="topP"></param>
 #if NET7_0_OR_GREATER

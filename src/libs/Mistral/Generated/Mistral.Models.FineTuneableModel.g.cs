@@ -11,19 +11,15 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        Ministral3bLatest,
+        /// <summary>
+        /// 
+        /// </summary>
+        Ministral8bLatest,
+        /// <summary>
+        /// 
+        /// </summary>
         OpenMistral7b,
-        /// <summary>
-        /// 
-        /// </summary>
-        MistralSmallLatest,
-        /// <summary>
-        /// 
-        /// </summary>
-        CodestralLatest,
-        /// <summary>
-        /// 
-        /// </summary>
-        MistralLargeLatest,
         /// <summary>
         /// 
         /// </summary>
@@ -31,11 +27,23 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        Ministral3bLatest,
+        MistralSmallLatest,
         /// <summary>
         /// 
         /// </summary>
-        Ministral8bLatest,
+        MistralMediumLatest,
+        /// <summary>
+        /// 
+        /// </summary>
+        MistralLargeLatest,
+        /// <summary>
+        /// 
+        /// </summary>
+        Pixtral12bLatest,
+        /// <summary>
+        /// 
+        /// </summary>
+        CodestralLatest,
     }
 
     /// <summary>
@@ -50,13 +58,15 @@ namespace Mistral
         {
             return value switch
             {
-                FineTuneableModel.OpenMistral7b => "open-mistral-7b",
-                FineTuneableModel.MistralSmallLatest => "mistral-small-latest",
-                FineTuneableModel.CodestralLatest => "codestral-latest",
-                FineTuneableModel.MistralLargeLatest => "mistral-large-latest",
-                FineTuneableModel.OpenMistralNemo => "open-mistral-nemo",
                 FineTuneableModel.Ministral3bLatest => "ministral-3b-latest",
                 FineTuneableModel.Ministral8bLatest => "ministral-8b-latest",
+                FineTuneableModel.OpenMistral7b => "open-mistral-7b",
+                FineTuneableModel.OpenMistralNemo => "open-mistral-nemo",
+                FineTuneableModel.MistralSmallLatest => "mistral-small-latest",
+                FineTuneableModel.MistralMediumLatest => "mistral-medium-latest",
+                FineTuneableModel.MistralLargeLatest => "mistral-large-latest",
+                FineTuneableModel.Pixtral12bLatest => "pixtral-12b-latest",
+                FineTuneableModel.CodestralLatest => "codestral-latest",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -67,13 +77,15 @@ namespace Mistral
         {
             return value switch
             {
-                "open-mistral-7b" => FineTuneableModel.OpenMistral7b,
-                "mistral-small-latest" => FineTuneableModel.MistralSmallLatest,
-                "codestral-latest" => FineTuneableModel.CodestralLatest,
-                "mistral-large-latest" => FineTuneableModel.MistralLargeLatest,
-                "open-mistral-nemo" => FineTuneableModel.OpenMistralNemo,
                 "ministral-3b-latest" => FineTuneableModel.Ministral3bLatest,
                 "ministral-8b-latest" => FineTuneableModel.Ministral8bLatest,
+                "open-mistral-7b" => FineTuneableModel.OpenMistral7b,
+                "open-mistral-nemo" => FineTuneableModel.OpenMistralNemo,
+                "mistral-small-latest" => FineTuneableModel.MistralSmallLatest,
+                "mistral-medium-latest" => FineTuneableModel.MistralMediumLatest,
+                "mistral-large-latest" => FineTuneableModel.MistralLargeLatest,
+                "pixtral-12b-latest" => FineTuneableModel.Pixtral12bLatest,
+                "codestral-latest" => FineTuneableModel.CodestralLatest,
                 _ => null,
             };
         }

@@ -10,6 +10,7 @@ namespace Mistral
             ref int? page,
             ref int? pageSize,
             ref string? model,
+            ref string? agentId,
             object? metadata,
             ref global::System.DateTime? createdAfter,
             ref bool? createdByMe,
@@ -20,6 +21,7 @@ namespace Mistral
             int? page,
             int? pageSize,
             string? model,
+            string? agentId,
             object? metadata,
             global::System.DateTime? createdAfter,
             bool? createdByMe,
@@ -44,6 +46,7 @@ namespace Mistral
         /// Default Value: 100
         /// </param>
         /// <param name="model"></param>
+        /// <param name="agentId"></param>
         /// <param name="metadata"></param>
         /// <param name="createdAfter"></param>
         /// <param name="createdByMe">
@@ -56,6 +59,7 @@ namespace Mistral
             int? page = default,
             int? pageSize = default,
             string? model = default,
+            string? agentId = default,
             object? metadata = default,
             global::System.DateTime? createdAfter = default,
             bool? createdByMe = default,
@@ -69,6 +73,7 @@ namespace Mistral
                 page: ref page,
                 pageSize: ref pageSize,
                 model: ref model,
+                agentId: ref agentId,
                 metadata: metadata,
                 createdAfter: ref createdAfter,
                 createdByMe: ref createdByMe,
@@ -81,6 +86,7 @@ namespace Mistral
                 .AddOptionalParameter("page", page?.ToString()) 
                 .AddOptionalParameter("page_size", pageSize?.ToString()) 
                 .AddOptionalParameter("model", model) 
+                .AddOptionalParameter("agent_id", agentId) 
                 .AddOptionalParameter("metadata", metadata?.ToString()) 
                 .AddOptionalParameter("created_after", createdAfter?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
                 .AddOptionalParameter("created_by_me", createdByMe?.ToString()) 
@@ -120,6 +126,7 @@ namespace Mistral
                 page: page,
                 pageSize: pageSize,
                 model: model,
+                agentId: agentId,
                 metadata: metadata,
                 createdAfter: createdAfter,
                 createdByMe: createdByMe,

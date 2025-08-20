@@ -128,6 +128,15 @@ namespace Mistral
         };
 
         /// <summary>
+        /// API for audio transcription.
+        /// </summary>
+        public AudioTranscriptionsClient AudioTranscriptions => new AudioTranscriptionsClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
         /// (beta) Agents API
         /// </summary>
         public BetaAgentsClient BetaAgents => new BetaAgentsClient(HttpClient, authorizations: Authorizations)
