@@ -10,10 +10,10 @@ C# SDK for the [Mistral AI](https://mistral.ai/) platform, auto-generated from t
 
 ```bash
 # Build the solution
-dotnet build Mistral.sln
+dotnet build Mistral.slnx
 
 # Build for release (also produces NuGet package)
-dotnet build Mistral.sln -c Release
+dotnet build Mistral.slnx -c Release
 
 # Run integration tests (requires MISTRAL_API_KEY env var)
 dotnet test src/tests/IntegrationTests/Mistral.IntegrationTests.csproj
