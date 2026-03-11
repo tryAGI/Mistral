@@ -15,7 +15,7 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Model { get; set; } = default!;
+        public required string Model { get; set; }
 
         /// <summary>
         /// Default Value: []
@@ -65,7 +65,7 @@ namespace Mistral
         [global::System.Text.Json.Serialization.JsonPropertyName("hyperparameters")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<global::Mistral.CompletionTrainingParametersIn, global::Mistral.ClassifierTrainingParametersIn>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::Mistral.AnyOf<global::Mistral.CompletionTrainingParametersIn, global::Mistral.ClassifierTrainingParametersIn> Hyperparameters { get; set; } = default!;
+        public required global::Mistral.AnyOf<global::Mistral.CompletionTrainingParametersIn, global::Mistral.ClassifierTrainingParametersIn> Hyperparameters { get; set; }
 
         /// <summary>
         /// 

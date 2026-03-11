@@ -19,7 +19,7 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("session")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::Mistral.RealtimeTranscriptionSessionUpdatePayload Session { get; set; } = default!;
+        public required global::Mistral.RealtimeTranscriptionSessionUpdatePayload Session { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

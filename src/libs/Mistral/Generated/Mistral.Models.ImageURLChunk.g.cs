@@ -22,7 +22,7 @@ namespace Mistral
         [global::System.Text.Json.Serialization.JsonPropertyName("image_url")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<global::Mistral.ImageURL, string>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::Mistral.AnyOf<global::Mistral.ImageURL, string> ImageUrl { get; set; } = default!;
+        public required global::Mistral.AnyOf<global::Mistral.ImageURL, string> ImageUrl { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

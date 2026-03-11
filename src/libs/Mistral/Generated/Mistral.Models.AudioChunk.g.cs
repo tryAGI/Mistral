@@ -22,7 +22,7 @@ namespace Mistral
         [global::System.Text.Json.Serialization.JsonPropertyName("input_audio")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<string, byte[]>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::Mistral.AnyOf<string, byte[]> InputAudio { get; set; } = default!;
+        public required global::Mistral.AnyOf<string, byte[]> InputAudio { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

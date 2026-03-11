@@ -55,14 +55,14 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_call_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string ToolCallId { get; set; } = default!;
+        public required string ToolCallId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Name { get; set; } = default!;
+        public required string Name { get; set; }
 
         /// <summary>
         /// 
@@ -70,7 +70,7 @@ namespace Mistral
         [global::System.Text.Json.Serialization.JsonPropertyName("arguments")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.FunctionCallEntryArgumentsJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::Mistral.FunctionCallEntryArguments Arguments { get; set; } = default!;
+        public required global::Mistral.FunctionCallEntryArguments Arguments { get; set; }
 
         /// <summary>
         /// 

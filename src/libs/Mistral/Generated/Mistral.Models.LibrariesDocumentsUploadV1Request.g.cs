@@ -21,7 +21,7 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public byte[] File { get; set; } = default!;
+        public required byte[] File { get; set; }
 
         /// <summary>
         /// The File object (not file name) to be uploaded.<br/>
@@ -36,7 +36,7 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("filename")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Filename { get; set; } = default!;
+        public required string Filename { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

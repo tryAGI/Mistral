@@ -37,14 +37,14 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Model { get; set; } = default!;
+        public required string Model { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Name { get; set; } = default!;
+        public required string Name { get; set; }
 
         /// <summary>
         /// 
@@ -75,49 +75,49 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Id { get; set; } = default!;
+        public required string Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("version")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int Version { get; set; } = default!;
+        public required int Version { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("versions")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Collections.Generic.IList<int> Versions { get; set; } = default!;
+        public required global::System.Collections.Generic.IList<int> Versions { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.DateTime CreatedAt { get; set; } = default!;
+        public required global::System.DateTime CreatedAt { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.DateTime UpdatedAt { get; set; } = default!;
+        public required global::System.DateTime UpdatedAt { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("deployment_chat")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public bool DeploymentChat { get; set; } = default!;
+        public required bool DeploymentChat { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("source")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Source { get; set; } = default!;
+        public required string Source { get; set; }
 
         /// <summary>
         /// 

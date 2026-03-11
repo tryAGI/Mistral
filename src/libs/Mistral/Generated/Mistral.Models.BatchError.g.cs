@@ -13,7 +13,7 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("message")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Message { get; set; } = default!;
+        public required string Message { get; set; }
 
         /// <summary>
         /// Default Value: 1

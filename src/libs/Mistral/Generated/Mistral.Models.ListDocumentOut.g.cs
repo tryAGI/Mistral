@@ -13,14 +13,14 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pagination")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::Mistral.PaginationInfo Pagination { get; set; } = default!;
+        public required global::Mistral.PaginationInfo Pagination { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Collections.Generic.IList<global::Mistral.DocumentOut> Data { get; set; } = default!;
+        public required global::System.Collections.Generic.IList<global::Mistral.DocumentOut> Data { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

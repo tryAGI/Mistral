@@ -47,7 +47,7 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("messages")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Collections.Generic.IList<global::Mistral.MessagesItem3> Messages { get; set; } = default!;
+        public required global::System.Collections.Generic.IList<global::Mistral.MessagesItem3> Messages { get; set; }
 
         /// <summary>
         /// Specify the format that the model must output. By default it will use `{ "type": "text" }`. Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the message the model generates is in JSON. When using JSON mode you MUST also instruct the model to produce JSON yourself with a system or a user message. Setting to `{ "type": "json_schema" }` enables JSON schema mode, which guarantees the message the model generates is in JSON and follows the schema you provide.
@@ -112,7 +112,7 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("agent_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string AgentId { get; set; } = default!;
+        public required string AgentId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

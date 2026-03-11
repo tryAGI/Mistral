@@ -13,14 +13,14 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Collections.Generic.IList<global::Mistral.FileSchema> Data { get; set; } = default!;
+        public required global::System.Collections.Generic.IList<global::Mistral.FileSchema> Data { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Object { get; set; } = default!;
+        public required string Object { get; set; }
 
         /// <summary>
         /// 

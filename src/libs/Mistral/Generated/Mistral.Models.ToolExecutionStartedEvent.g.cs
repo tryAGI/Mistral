@@ -33,7 +33,7 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Id { get; set; } = default!;
+        public required string Id { get; set; }
 
         /// <summary>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
@@ -53,14 +53,14 @@ namespace Mistral
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<global::Mistral.BuiltInConnectors?, string>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::Mistral.AnyOf<global::Mistral.BuiltInConnectors?, string> Name { get; set; } = default!;
+        public required global::Mistral.AnyOf<global::Mistral.BuiltInConnectors?, string> Name { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("arguments")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Arguments { get; set; } = default!;
+        public required string Arguments { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

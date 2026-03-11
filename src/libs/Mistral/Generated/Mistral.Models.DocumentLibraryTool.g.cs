@@ -26,7 +26,7 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("library_ids")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Collections.Generic.IList<string> LibraryIds { get; set; } = default!;
+        public required global::System.Collections.Generic.IList<string> LibraryIds { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

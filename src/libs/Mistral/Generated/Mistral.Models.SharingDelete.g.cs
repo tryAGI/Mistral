@@ -19,7 +19,7 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("share_with_uuid")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Guid ShareWithUuid { get; set; } = default!;
+        public required global::System.Guid ShareWithUuid { get; set; }
 
         /// <summary>
         /// The type of entity, used to share a library.
@@ -27,7 +27,7 @@ namespace Mistral
         [global::System.Text.Json.Serialization.JsonPropertyName("share_with_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.EntityTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::Mistral.EntityType ShareWithType { get; set; } = default!;
+        public required global::Mistral.EntityType ShareWithType { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

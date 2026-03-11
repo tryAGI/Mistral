@@ -13,7 +13,7 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("scores")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Collections.Generic.Dictionary<string, double> Scores { get; set; } = default!;
+        public required global::System.Collections.Generic.Dictionary<string, double> Scores { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

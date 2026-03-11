@@ -43,14 +43,14 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_call_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string ToolCallId { get; set; } = default!;
+        public required string ToolCallId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("result")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Result { get; set; } = default!;
+        public required string Result { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

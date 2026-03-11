@@ -13,7 +13,7 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Guid FileId { get; set; } = default!;
+        public required global::System.Guid FileId { get; set; }
 
         /// <summary>
         /// Default Value: 1.0

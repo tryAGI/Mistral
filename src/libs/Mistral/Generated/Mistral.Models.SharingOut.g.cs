@@ -13,7 +13,7 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("library_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Guid LibraryId { get; set; } = default!;
+        public required global::System.Guid LibraryId { get; set; }
 
         /// <summary>
         /// 
@@ -26,21 +26,21 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("org_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Guid OrgId { get; set; } = default!;
+        public required global::System.Guid OrgId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Role { get; set; } = default!;
+        public required string Role { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("share_with_type")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string ShareWithType { get; set; } = default!;
+        public required string ShareWithType { get; set; }
 
         /// <summary>
         /// 

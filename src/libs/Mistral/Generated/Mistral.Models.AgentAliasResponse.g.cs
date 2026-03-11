@@ -13,28 +13,28 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("alias")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Alias { get; set; } = default!;
+        public required string Alias { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("version")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int Version { get; set; } = default!;
+        public required int Version { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.DateTime CreatedAt { get; set; } = default!;
+        public required global::System.DateTime CreatedAt { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.DateTime UpdatedAt { get; set; } = default!;
+        public required global::System.DateTime UpdatedAt { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -13,7 +13,7 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Id { get; set; } = default!;
+        public required string Id { get; set; }
 
         /// <summary>
         /// 
@@ -32,7 +32,7 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Model { get; set; } = default!;
+        public required string Model { get; set; }
 
         /// <summary>
         /// 
@@ -45,7 +45,7 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("choices")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Collections.Generic.IList<global::Mistral.CompletionResponseStreamChoice> Choices { get; set; } = default!;
+        public required global::System.Collections.Generic.IList<global::Mistral.CompletionResponseStreamChoice> Choices { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

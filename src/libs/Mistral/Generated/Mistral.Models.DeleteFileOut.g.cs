@@ -13,21 +13,21 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Guid Id { get; set; } = default!;
+        public required global::System.Guid Id { get; set; }
 
         /// <summary>
         /// The object type that was deleted
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Object { get; set; } = default!;
+        public required string Object { get; set; }
 
         /// <summary>
         /// The deletion status.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("deleted")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public bool Deleted { get; set; } = default!;
+        public required bool Deleted { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

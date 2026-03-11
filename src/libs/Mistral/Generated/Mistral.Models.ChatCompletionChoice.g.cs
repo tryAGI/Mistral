@@ -14,14 +14,14 @@ namespace Mistral
         /// <example>0</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("index")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int Index { get; set; } = default!;
+        public required int Index { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("message")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::Mistral.AssistantMessage Message { get; set; } = default!;
+        public required global::Mistral.AssistantMessage Message { get; set; }
 
         /// <summary>
         /// Example: stop
@@ -30,7 +30,7 @@ namespace Mistral
         [global::System.Text.Json.Serialization.JsonPropertyName("finish_reason")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.ChatCompletionChoiceFinishReasonJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::Mistral.ChatCompletionChoiceFinishReason FinishReason { get; set; } = default!;
+        public required global::Mistral.ChatCompletionChoiceFinishReason FinishReason { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

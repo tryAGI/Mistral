@@ -13,21 +13,21 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Guid Id { get; set; } = default!;
+        public required global::System.Guid Id { get; set; }
 
         /// <summary>
         /// The object type, which is always "file".
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Object { get; set; } = default!;
+        public required string Object { get; set; }
 
         /// <summary>
         /// The size of the file, in bytes.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("bytes")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int Bytes { get; set; } = default!;
+        public required int Bytes { get; set; }
 
         /// <summary>
         /// The UNIX timestamp (in seconds) of the event.
@@ -35,14 +35,14 @@ namespace Mistral
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.DateTimeOffset CreatedAt { get; set; } = default!;
+        public required global::System.DateTimeOffset CreatedAt { get; set; }
 
         /// <summary>
         /// The name of the uploaded file.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("filename")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Filename { get; set; } = default!;
+        public required string Filename { get; set; }
 
         /// <summary>
         /// The intended purpose of the uploaded file, currently supports fine-tuning (`fine-tune`), OCR (`ocr`), Audio/Transcription (`audio`) and batch inference (`batch`).
@@ -50,7 +50,7 @@ namespace Mistral
         [global::System.Text.Json.Serialization.JsonPropertyName("purpose")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.FilePurposeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::Mistral.FilePurpose Purpose { get; set; } = default!;
+        public required global::Mistral.FilePurpose Purpose { get; set; }
 
         /// <summary>
         /// 
@@ -58,7 +58,7 @@ namespace Mistral
         [global::System.Text.Json.Serialization.JsonPropertyName("sample_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.SampleTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::Mistral.SampleType SampleType { get; set; } = default!;
+        public required global::Mistral.SampleType SampleType { get; set; }
 
         /// <summary>
         /// 
@@ -78,7 +78,7 @@ namespace Mistral
         [global::System.Text.Json.Serialization.JsonPropertyName("source")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.SourceJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::Mistral.Source Source { get; set; } = default!;
+        public required global::Mistral.Source Source { get; set; }
 
         /// <summary>
         /// 

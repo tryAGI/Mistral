@@ -13,14 +13,14 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Id { get; set; } = default!;
+        public required string Id { get; set; }
 
         /// <summary>
         /// Content of the table in the given format
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Content { get; set; } = default!;
+        public required string Content { get; set; }
 
         /// <summary>
         /// Format of the table
@@ -28,7 +28,7 @@ namespace Mistral
         [global::System.Text.Json.Serialization.JsonPropertyName("format")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.OCRTableObjectFormatJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::Mistral.OCRTableObjectFormat Format { get; set; } = default!;
+        public required global::Mistral.OCRTableObjectFormat Format { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

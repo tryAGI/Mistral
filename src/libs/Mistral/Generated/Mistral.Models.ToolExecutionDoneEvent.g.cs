@@ -33,7 +33,7 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Id { get; set; } = default!;
+        public required string Id { get; set; }
 
         /// <summary>
         /// 
@@ -41,7 +41,7 @@ namespace Mistral
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<global::Mistral.BuiltInConnectors?, string>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::Mistral.AnyOf<global::Mistral.BuiltInConnectors?, string> Name { get; set; } = default!;
+        public required global::Mistral.AnyOf<global::Mistral.BuiltInConnectors?, string> Name { get; set; }
 
         /// <summary>
         /// 

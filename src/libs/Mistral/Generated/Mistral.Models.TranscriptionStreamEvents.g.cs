@@ -14,7 +14,7 @@ namespace Mistral
         [global::System.Text.Json.Serialization.JsonPropertyName("event")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.TranscriptionStreamEventTypesJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::Mistral.TranscriptionStreamEventTypes Event { get; set; } = default!;
+        public required global::Mistral.TranscriptionStreamEventTypes Event { get; set; }
 
         /// <summary>
         /// 
@@ -22,7 +22,7 @@ namespace Mistral
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.Data2JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::Mistral.Data2 Data { get; set; } = default!;
+        public required global::Mistral.Data2 Data { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -25,7 +25,7 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("usage")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::Mistral.ConversationUsageInfo Usage { get; set; } = default!;
+        public required global::Mistral.ConversationUsageInfo Usage { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

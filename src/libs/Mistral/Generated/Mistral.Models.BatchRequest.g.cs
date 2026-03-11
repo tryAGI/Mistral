@@ -19,7 +19,7 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("body")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public object Body { get; set; } = default!;
+        public required object Body { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

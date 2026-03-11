@@ -13,7 +13,7 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Id { get; set; } = default!;
+        public required string Id { get; set; }
 
         /// <summary>
         /// Default Value: model
@@ -38,7 +38,7 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("capabilities")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::Mistral.ModelCapabilities Capabilities { get; set; } = default!;
+        public required global::Mistral.ModelCapabilities Capabilities { get; set; }
 
         /// <summary>
         /// 
@@ -93,14 +93,14 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("job")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Job { get; set; } = default!;
+        public required string Job { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("root")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Root { get; set; } = default!;
+        public required string Root { get; set; }
 
         /// <summary>
         /// Default Value: false

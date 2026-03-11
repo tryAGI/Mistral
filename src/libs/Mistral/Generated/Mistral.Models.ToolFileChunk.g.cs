@@ -22,14 +22,14 @@ namespace Mistral
         [global::System.Text.Json.Serialization.JsonPropertyName("tool")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<global::Mistral.BuiltInConnectors?, string>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::Mistral.AnyOf<global::Mistral.BuiltInConnectors?, string> Tool { get; set; } = default!;
+        public required global::Mistral.AnyOf<global::Mistral.BuiltInConnectors?, string> Tool { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string FileId { get; set; } = default!;
+        public required string FileId { get; set; }
 
         /// <summary>
         /// 

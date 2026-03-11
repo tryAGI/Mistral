@@ -61,7 +61,7 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("details")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Details { get; set; } = default!;
+        public required string Details { get; set; }
 
         /// <summary>
         /// The number of complete passes through the entire training dataset.

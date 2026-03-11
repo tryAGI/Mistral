@@ -13,21 +13,21 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dpi")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int Dpi { get; set; } = default!;
+        public required int Dpi { get; set; }
 
         /// <summary>
         /// Height of the image in pixels
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("height")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int Height { get; set; } = default!;
+        public required int Height { get; set; }
 
         /// <summary>
         /// Width of the image in pixels
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("width")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int Width { get; set; } = default!;
+        public required int Width { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

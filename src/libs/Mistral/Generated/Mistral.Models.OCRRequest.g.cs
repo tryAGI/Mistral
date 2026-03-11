@@ -28,7 +28,7 @@ namespace Mistral
         [global::System.Text.Json.Serialization.JsonPropertyName("document")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<global::Mistral.FileChunk, global::Mistral.DocumentURLChunk, global::Mistral.ImageURLChunk>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::Mistral.AnyOf<global::Mistral.FileChunk, global::Mistral.DocumentURLChunk, global::Mistral.ImageURLChunk> Document { get; set; } = default!;
+        public required global::Mistral.AnyOf<global::Mistral.FileChunk, global::Mistral.DocumentURLChunk, global::Mistral.ImageURLChunk> Document { get; set; }
 
         /// <summary>
         /// Specific pages user wants to process in various formats: single number, range, or list of both. Starts from 0

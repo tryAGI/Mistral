@@ -13,14 +13,14 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Model { get; set; } = default!;
+        public required string Model { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("text")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Text { get; set; } = default!;
+        public required string Text { get; set; }
 
         /// <summary>
         /// 
@@ -39,7 +39,7 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("usage")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::Mistral.UsageInfo Usage { get; set; } = default!;
+        public required global::Mistral.UsageInfo Usage { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

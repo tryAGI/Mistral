@@ -61,7 +61,7 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("from_entry_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string FromEntryId { get; set; } = default!;
+        public required string FromEntryId { get; set; }
 
         /// <summary>
         /// Specific version of the agent to use when restarting. If not provided, uses the current version.

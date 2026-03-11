@@ -20,7 +20,7 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("function")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::Mistral.Function Function { get; set; } = default!;
+        public required global::Mistral.Function Function { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

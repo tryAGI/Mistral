@@ -43,28 +43,28 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("previous_agent_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string PreviousAgentId { get; set; } = default!;
+        public required string PreviousAgentId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("previous_agent_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string PreviousAgentName { get; set; } = default!;
+        public required string PreviousAgentName { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("next_agent_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string NextAgentId { get; set; } = default!;
+        public required string NextAgentId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("next_agent_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string NextAgentName { get; set; } = default!;
+        public required string NextAgentName { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

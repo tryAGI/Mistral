@@ -13,7 +13,7 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::Mistral.CompletionChunk Data { get; set; } = default!;
+        public required global::Mistral.CompletionChunk Data { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

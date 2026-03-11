@@ -13,14 +13,14 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Guid Id { get; set; } = default!;
+        public required global::System.Guid Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("library_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Guid LibraryId { get; set; } = default!;
+        public required global::System.Guid LibraryId { get; set; }
 
         /// <summary>
         /// 
@@ -51,7 +51,7 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Name { get; set; } = default!;
+        public required string Name { get; set; }
 
         /// <summary>
         /// 
@@ -64,7 +64,7 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.DateTime CreatedAt { get; set; } = default!;
+        public required global::System.DateTime CreatedAt { get; set; }
 
         /// <summary>
         /// 
@@ -84,7 +84,7 @@ namespace Mistral
         [global::System.Text.Json.Serialization.JsonPropertyName("process_status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.ProcessStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::Mistral.ProcessStatus ProcessStatus { get; set; } = default!;
+        public required global::Mistral.ProcessStatus ProcessStatus { get; set; }
 
         /// <summary>
         /// 
@@ -97,7 +97,7 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("uploaded_by_type")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string UploadedByType { get; set; } = default!;
+        public required string UploadedByType { get; set; }
 
         /// <summary>
         /// 

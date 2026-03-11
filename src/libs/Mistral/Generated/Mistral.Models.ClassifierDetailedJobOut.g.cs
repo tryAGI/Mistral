@@ -13,21 +13,21 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Guid Id { get; set; } = default!;
+        public required global::System.Guid Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("auto_start")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public bool AutoStart { get; set; } = default!;
+        public required bool AutoStart { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Model { get; set; } = default!;
+        public required string Model { get; set; }
 
         /// <summary>
         /// 
@@ -35,28 +35,28 @@ namespace Mistral
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.ClassifierDetailedJobOutStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::Mistral.ClassifierDetailedJobOutStatus Status { get; set; } = default!;
+        public required global::Mistral.ClassifierDetailedJobOutStatus Status { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int CreatedAt { get; set; } = default!;
+        public required int CreatedAt { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("modified_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int ModifiedAt { get; set; } = default!;
+        public required int ModifiedAt { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("training_files")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Collections.Generic.IList<global::System.Guid> TrainingFiles { get; set; } = default!;
+        public required global::System.Collections.Generic.IList<global::System.Guid> TrainingFiles { get; set; }
 
         /// <summary>
         /// Default Value: []
@@ -111,7 +111,7 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("hyperparameters")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::Mistral.ClassifierTrainingParameters Hyperparameters { get; set; } = default!;
+        public required global::Mistral.ClassifierTrainingParameters Hyperparameters { get; set; }
 
         /// <summary>
         /// Event items are created every time the status of a fine-tuning job changes. The timestamped list of all events is accessible here.<br/>
@@ -131,7 +131,7 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("classifier_targets")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Collections.Generic.IList<global::Mistral.ClassifierTargetOut> ClassifierTargets { get; set; } = default!;
+        public required global::System.Collections.Generic.IList<global::Mistral.ClassifierTargetOut> ClassifierTargets { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

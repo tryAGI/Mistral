@@ -33,7 +33,7 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Id { get; set; } = default!;
+        public required string Id { get; set; }
 
         /// <summary>
         /// Default Value: 0
@@ -65,7 +65,7 @@ namespace Mistral
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<string, global::Mistral.OutputContentChunks?>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::Mistral.AnyOf<string, global::Mistral.OutputContentChunks?> Content { get; set; } = default!;
+        public required global::Mistral.AnyOf<string, global::Mistral.OutputContentChunks?> Content { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

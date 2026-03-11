@@ -31,21 +31,21 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Id { get; set; } = default!;
+        public required string Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("next_agent_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string NextAgentId { get; set; } = default!;
+        public required string NextAgentId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("next_agent_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string NextAgentName { get; set; } = default!;
+        public required string NextAgentName { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

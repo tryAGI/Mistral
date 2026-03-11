@@ -13,14 +13,14 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metrics")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::Mistral.MetricOut Metrics { get; set; } = default!;
+        public required global::Mistral.MetricOut Metrics { get; set; }
 
         /// <summary>
         /// The step number that the checkpoint was created at.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("step_number")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int StepNumber { get; set; } = default!;
+        public required int StepNumber { get; set; }
 
         /// <summary>
         /// The UNIX timestamp (in seconds) for when the checkpoint was created.
@@ -28,7 +28,7 @@ namespace Mistral
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.DateTimeOffset CreatedAt { get; set; } = default!;
+        public required global::System.DateTimeOffset CreatedAt { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

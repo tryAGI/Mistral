@@ -19,14 +19,14 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Name { get; set; } = default!;
+        public required string Name { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("owner")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Owner { get; set; } = default!;
+        public required string Owner { get; set; }
 
         /// <summary>
         /// 
@@ -45,7 +45,7 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("token")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Token { get; set; } = default!;
+        public required string Token { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

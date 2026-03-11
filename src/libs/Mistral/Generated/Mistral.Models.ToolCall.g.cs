@@ -26,7 +26,7 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("function")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::Mistral.FunctionCall Function { get; set; } = default!;
+        public required global::Mistral.FunctionCall Function { get; set; }
 
         /// <summary>
         /// Default Value: 0

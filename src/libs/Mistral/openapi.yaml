@@ -7035,10 +7035,9 @@ components:
                 minLength: 1
                 type: string
               unrecognizedKeywords:
-                unrecognizedKeywords:
-                  propertyNames:
-                    maxLength: 32
-                    minLength: 1
+                propertyNames:
+                  maxLength: 32
+                  minLength: 1
             - type: 'null'
           description: The metadata of your choice to be associated with the batch inference job.
         timeout_hours:

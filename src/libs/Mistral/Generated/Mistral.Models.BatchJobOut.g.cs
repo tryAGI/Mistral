@@ -13,7 +13,7 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Id { get; set; } = default!;
+        public required string Id { get; set; }
 
         /// <summary>
         /// Default Value: batch
@@ -26,7 +26,7 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_files")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Collections.Generic.IList<global::System.Guid> InputFiles { get; set; } = default!;
+        public required global::System.Collections.Generic.IList<global::System.Guid> InputFiles { get; set; }
 
         /// <summary>
         /// 
@@ -39,7 +39,7 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("endpoint")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Endpoint { get; set; } = default!;
+        public required string Endpoint { get; set; }
 
         /// <summary>
         /// 
@@ -70,7 +70,7 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("errors")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Collections.Generic.IList<global::Mistral.BatchError> Errors { get; set; } = default!;
+        public required global::System.Collections.Generic.IList<global::Mistral.BatchError> Errors { get; set; }
 
         /// <summary>
         /// 
@@ -84,42 +84,42 @@ namespace Mistral
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.BatchJobStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::Mistral.BatchJobStatus Status { get; set; } = default!;
+        public required global::Mistral.BatchJobStatus Status { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int CreatedAt { get; set; } = default!;
+        public required int CreatedAt { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("total_requests")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int TotalRequests { get; set; } = default!;
+        public required int TotalRequests { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("completed_requests")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int CompletedRequests { get; set; } = default!;
+        public required int CompletedRequests { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("succeeded_requests")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int SucceededRequests { get; set; } = default!;
+        public required int SucceededRequests { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("failed_requests")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int FailedRequests { get; set; } = default!;
+        public required int FailedRequests { get; set; }
 
         /// <summary>
         /// 

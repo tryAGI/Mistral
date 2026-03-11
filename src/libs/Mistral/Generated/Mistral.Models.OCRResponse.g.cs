@@ -13,14 +13,14 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pages")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Collections.Generic.IList<global::Mistral.OCRPageObject> Pages { get; set; } = default!;
+        public required global::System.Collections.Generic.IList<global::Mistral.OCRPageObject> Pages { get; set; }
 
         /// <summary>
         /// The model used to generate the OCR.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Model { get; set; } = default!;
+        public required string Model { get; set; }
 
         /// <summary>
         /// Formatted response in the request_format if provided in json str
@@ -33,7 +33,7 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("usage_info")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::Mistral.OCRUsageInfo UsageInfo { get; set; } = default!;
+        public required global::Mistral.OCRUsageInfo UsageInfo { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

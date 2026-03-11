@@ -14,14 +14,14 @@ namespace Mistral
         [global::System.Text.Json.Serialization.JsonPropertyName("encoding")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.AudioEncodingJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::Mistral.AudioEncoding Encoding { get; set; } = default!;
+        public required global::Mistral.AudioEncoding Encoding { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sample_rate")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int SampleRate { get; set; } = default!;
+        public required int SampleRate { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

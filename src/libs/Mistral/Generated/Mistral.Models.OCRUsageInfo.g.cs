@@ -13,7 +13,7 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pages_processed")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int PagesProcessed { get; set; } = default!;
+        public required int PagesProcessed { get; set; }
 
         /// <summary>
         /// Document size in bytes

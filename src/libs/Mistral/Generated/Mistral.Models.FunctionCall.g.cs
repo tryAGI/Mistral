@@ -15,7 +15,7 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Name { get; set; } = default!;
+        public required string Name { get; set; }
 
         /// <summary>
         /// 
@@ -23,7 +23,7 @@ namespace Mistral
         [global::System.Text.Json.Serialization.JsonPropertyName("arguments")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<object, string>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::Mistral.AnyOf<object, string> Arguments { get; set; } = default!;
+        public required global::Mistral.AnyOf<object, string> Arguments { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

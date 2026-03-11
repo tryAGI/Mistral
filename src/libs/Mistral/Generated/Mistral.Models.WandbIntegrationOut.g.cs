@@ -19,7 +19,7 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("project")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Project { get; set; } = default!;
+        public required string Project { get; set; }
 
         /// <summary>
         /// A display name to set for the run. If not set, will use the job ID as the name.

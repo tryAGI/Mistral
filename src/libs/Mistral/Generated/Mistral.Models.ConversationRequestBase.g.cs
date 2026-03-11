@@ -16,7 +16,7 @@ namespace Mistral
         [global::System.Text.Json.Serialization.JsonPropertyName("inputs")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.ConversationInputsJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::Mistral.ConversationInputs Inputs { get; set; } = default!;
+        public required global::Mistral.ConversationInputs Inputs { get; set; }
 
         /// <summary>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464

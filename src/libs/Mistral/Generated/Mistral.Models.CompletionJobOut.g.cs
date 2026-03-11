@@ -13,21 +13,21 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Guid Id { get; set; } = default!;
+        public required global::System.Guid Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("auto_start")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public bool AutoStart { get; set; } = default!;
+        public required bool AutoStart { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Model { get; set; } = default!;
+        public required string Model { get; set; }
 
         /// <summary>
         /// The current status of the fine-tuning job.
@@ -35,7 +35,7 @@ namespace Mistral
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.CompletionJobOutStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::Mistral.CompletionJobOutStatus Status { get; set; } = default!;
+        public required global::Mistral.CompletionJobOutStatus Status { get; set; }
 
         /// <summary>
         /// The UNIX timestamp (in seconds) for when the fine-tuning job was created.
@@ -43,7 +43,7 @@ namespace Mistral
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.DateTimeOffset CreatedAt { get; set; } = default!;
+        public required global::System.DateTimeOffset CreatedAt { get; set; }
 
         /// <summary>
         /// The UNIX timestamp (in seconds) for when the fine-tuning job was last modified.
@@ -51,14 +51,14 @@ namespace Mistral
         [global::System.Text.Json.Serialization.JsonPropertyName("modified_at")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.DateTimeOffset ModifiedAt { get; set; } = default!;
+        public required global::System.DateTimeOffset ModifiedAt { get; set; }
 
         /// <summary>
         /// A list containing the IDs of uploaded files that contain training data.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("training_files")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Collections.Generic.IList<global::System.Guid> TrainingFiles { get; set; } = default!;
+        public required global::System.Collections.Generic.IList<global::System.Guid> TrainingFiles { get; set; }
 
         /// <summary>
         /// A list containing the IDs of uploaded files that contain validation data.<br/>
@@ -116,7 +116,7 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("hyperparameters")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::Mistral.CompletionTrainingParameters Hyperparameters { get; set; } = default!;
+        public required global::Mistral.CompletionTrainingParameters Hyperparameters { get; set; }
 
         /// <summary>
         /// Default Value: []

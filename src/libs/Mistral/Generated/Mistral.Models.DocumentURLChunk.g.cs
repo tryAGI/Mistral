@@ -19,7 +19,7 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("document_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string DocumentUrl { get; set; } = default!;
+        public required string DocumentUrl { get; set; }
 
         /// <summary>
         /// The filename of the document

@@ -26,7 +26,7 @@ namespace Mistral
         [global::System.Text.Json.Serialization.JsonPropertyName("endpoint")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.ApiEndpointJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::Mistral.ApiEndpoint Endpoint { get; set; } = default!;
+        public required global::Mistral.ApiEndpoint Endpoint { get; set; }
 
         /// <summary>
         /// The model to be used for batch inference.

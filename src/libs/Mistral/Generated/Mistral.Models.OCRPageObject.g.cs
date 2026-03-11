@@ -13,21 +13,21 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("index")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int Index { get; set; } = default!;
+        public required int Index { get; set; }
 
         /// <summary>
         /// The markdown string response of the page
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("markdown")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Markdown { get; set; } = default!;
+        public required string Markdown { get; set; }
 
         /// <summary>
         /// List of all extracted images in the page
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("images")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Collections.Generic.IList<global::Mistral.OCRImageObject> Images { get; set; } = default!;
+        public required global::System.Collections.Generic.IList<global::Mistral.OCRImageObject> Images { get; set; }
 
         /// <summary>
         /// List of all extracted tables in the page

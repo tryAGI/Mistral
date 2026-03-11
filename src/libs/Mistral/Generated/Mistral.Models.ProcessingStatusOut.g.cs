@@ -13,7 +13,7 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("document_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Guid DocumentId { get; set; } = default!;
+        public required global::System.Guid DocumentId { get; set; }
 
         /// <summary>
         /// 
@@ -21,7 +21,7 @@ namespace Mistral
         [global::System.Text.Json.Serialization.JsonPropertyName("process_status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.ProcessStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::Mistral.ProcessStatus ProcessStatus { get; set; } = default!;
+        public required global::Mistral.ProcessStatus ProcessStatus { get; set; }
 
         /// <summary>
         /// Included only in responses

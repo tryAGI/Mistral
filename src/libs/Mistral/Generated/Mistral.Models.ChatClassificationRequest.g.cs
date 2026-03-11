@@ -13,7 +13,7 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Model { get; set; } = default!;
+        public required string Model { get; set; }
 
         /// <summary>
         /// Chat to classify
@@ -21,7 +21,7 @@ namespace Mistral
         [global::System.Text.Json.Serialization.JsonPropertyName("input")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.ChatClassificationRequestInputsJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::Mistral.ChatClassificationRequestInputs Input { get; set; } = default!;
+        public required global::Mistral.ChatClassificationRequestInputs Input { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

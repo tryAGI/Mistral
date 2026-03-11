@@ -13,21 +13,21 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Name { get; set; } = default!;
+        public required string Name { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("labels")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Collections.Generic.IList<string> Labels { get; set; } = default!;
+        public required global::System.Collections.Generic.IList<string> Labels { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("weight")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public double Weight { get; set; } = default!;
+        public required double Weight { get; set; }
 
         /// <summary>
         /// 
@@ -35,7 +35,7 @@ namespace Mistral
         [global::System.Text.Json.Serialization.JsonPropertyName("loss_function")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.FTClassifierLossFunctionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::Mistral.FTClassifierLossFunction LossFunction { get; set; } = default!;
+        public required global::Mistral.FTClassifierLossFunction LossFunction { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

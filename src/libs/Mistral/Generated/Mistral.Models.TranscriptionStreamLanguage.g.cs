@@ -19,7 +19,7 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("audio_language")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string AudioLanguage { get; set; } = default!;
+        public required string AudioLanguage { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -13,7 +13,7 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Id { get; set; } = default!;
+        public required string Id { get; set; }
 
         /// <summary>
         /// Default Value: model
@@ -26,42 +26,42 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int Created { get; set; } = default!;
+        public required int Created { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("owned_by")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string OwnedBy { get; set; } = default!;
+        public required string OwnedBy { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("workspace_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string WorkspaceId { get; set; } = default!;
+        public required string WorkspaceId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("root")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Root { get; set; } = default!;
+        public required string Root { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("root_version")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string RootVersion { get; set; } = default!;
+        public required string RootVersion { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("archived")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public bool Archived { get; set; } = default!;
+        public required bool Archived { get; set; }
 
         /// <summary>
         /// 
@@ -80,7 +80,7 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("capabilities")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::Mistral.FTModelCapabilitiesOut Capabilities { get; set; } = default!;
+        public required global::Mistral.FTModelCapabilitiesOut Capabilities { get; set; }
 
         /// <summary>
         /// Default Value: 32768
@@ -99,7 +99,7 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("job")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Guid Job { get; set; } = default!;
+        public required global::System.Guid Job { get; set; }
 
         /// <summary>
         /// Default Value: completion

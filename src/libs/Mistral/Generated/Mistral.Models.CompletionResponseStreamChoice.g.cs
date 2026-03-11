@@ -13,14 +13,14 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("index")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int Index { get; set; } = default!;
+        public required int Index { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("delta")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::Mistral.DeltaMessage Delta { get; set; } = default!;
+        public required global::Mistral.DeltaMessage Delta { get; set; }
 
         /// <summary>
         /// 

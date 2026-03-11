@@ -17,7 +17,7 @@ namespace Mistral
         /// <example>mistral-embed</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Model { get; set; } = default!;
+        public required string Model { get; set; }
 
         /// <summary>
         /// 
@@ -33,7 +33,7 @@ namespace Mistral
         [global::System.Text.Json.Serialization.JsonPropertyName("input")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::Mistral.AnyOf<string, global::System.Collections.Generic.IList<string>> Input { get; set; } = default!;
+        public required global::Mistral.AnyOf<string, global::System.Collections.Generic.IList<string>> Input { get; set; }
 
         /// <summary>
         /// The dimension of the output embeddings when feature available. If not provided, a default output dimension will be used.

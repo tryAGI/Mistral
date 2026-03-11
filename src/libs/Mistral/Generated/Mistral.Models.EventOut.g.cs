@@ -13,7 +13,7 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Name { get; set; } = default!;
+        public required string Name { get; set; }
 
         /// <summary>
         /// 
@@ -27,7 +27,7 @@ namespace Mistral
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.DateTimeOffset CreatedAt { get; set; } = default!;
+        public required global::System.DateTimeOffset CreatedAt { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -13,7 +13,7 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_call_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string ToolCallId { get; set; } = default!;
+        public required string ToolCallId { get; set; }
 
         /// <summary>
         /// 
@@ -21,7 +21,7 @@ namespace Mistral
         [global::System.Text.Json.Serialization.JsonPropertyName("confirmation")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.ToolCallConfirmationConfirmationJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::Mistral.ToolCallConfirmationConfirmation Confirmation { get; set; } = default!;
+        public required global::Mistral.ToolCallConfirmationConfirmation Confirmation { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
