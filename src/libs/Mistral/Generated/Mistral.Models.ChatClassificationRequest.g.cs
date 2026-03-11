@@ -1,0 +1,57 @@
+
+#nullable enable
+
+namespace Mistral
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed partial class ChatClassificationRequest
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("model")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public string Model { get; set; } = default!;
+
+        /// <summary>
+        /// Chat to classify
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("input")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.ChatClassificationRequestInputsJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public global::Mistral.ChatClassificationRequestInputs Input { get; set; } = default!;
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatClassificationRequest" /> class.
+        /// </summary>
+        /// <param name="model"></param>
+        /// <param name="input">
+        /// Chat to classify
+        /// </param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public ChatClassificationRequest(
+            string model,
+            global::Mistral.ChatClassificationRequestInputs input)
+        {
+            this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
+            this.Input = input;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatClassificationRequest" /> class.
+        /// </summary>
+        public ChatClassificationRequest()
+        {
+        }
+    }
+}

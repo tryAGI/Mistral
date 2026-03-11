@@ -1,0 +1,99 @@
+
+#nullable enable
+
+namespace Mistral
+{
+    /// <summary>
+    /// The current status of the fine-tuning job.
+    /// </summary>
+    public enum CompletionJobOutStatus
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        Queued,
+        /// <summary>
+        /// 
+        /// </summary>
+        Started,
+        /// <summary>
+        /// 
+        /// </summary>
+        Validating,
+        /// <summary>
+        /// 
+        /// </summary>
+        Validated,
+        /// <summary>
+        /// 
+        /// </summary>
+        Running,
+        /// <summary>
+        /// 
+        /// </summary>
+        FailedValidation,
+        /// <summary>
+        /// 
+        /// </summary>
+        Failed,
+        /// <summary>
+        /// 
+        /// </summary>
+        Success,
+        /// <summary>
+        /// 
+        /// </summary>
+        Cancelled,
+        /// <summary>
+        /// 
+        /// </summary>
+        CancellationRequested,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class CompletionJobOutStatusExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this CompletionJobOutStatus value)
+        {
+            return value switch
+            {
+                CompletionJobOutStatus.Queued => "QUEUED",
+                CompletionJobOutStatus.Started => "STARTED",
+                CompletionJobOutStatus.Validating => "VALIDATING",
+                CompletionJobOutStatus.Validated => "VALIDATED",
+                CompletionJobOutStatus.Running => "RUNNING",
+                CompletionJobOutStatus.FailedValidation => "FAILED_VALIDATION",
+                CompletionJobOutStatus.Failed => "FAILED",
+                CompletionJobOutStatus.Success => "SUCCESS",
+                CompletionJobOutStatus.Cancelled => "CANCELLED",
+                CompletionJobOutStatus.CancellationRequested => "CANCELLATION_REQUESTED",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static CompletionJobOutStatus? ToEnum(string value)
+        {
+            return value switch
+            {
+                "QUEUED" => CompletionJobOutStatus.Queued,
+                "STARTED" => CompletionJobOutStatus.Started,
+                "VALIDATING" => CompletionJobOutStatus.Validating,
+                "VALIDATED" => CompletionJobOutStatus.Validated,
+                "RUNNING" => CompletionJobOutStatus.Running,
+                "FAILED_VALIDATION" => CompletionJobOutStatus.FailedValidation,
+                "FAILED" => CompletionJobOutStatus.Failed,
+                "SUCCESS" => CompletionJobOutStatus.Success,
+                "CANCELLED" => CompletionJobOutStatus.Cancelled,
+                "CANCELLATION_REQUESTED" => CompletionJobOutStatus.CancellationRequested,
+                _ => null,
+            };
+        }
+    }
+}

@@ -1,0 +1,18 @@
+
+#nullable enable
+
+namespace Mistral
+{
+    /// <summary>
+    /// Specific pages user wants to process in various formats: single number, range, or list of both. Starts from 0
+    /// </summary>
+    public sealed partial class OCRRequestPages
+    {
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+    }
+}

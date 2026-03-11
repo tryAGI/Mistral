@@ -1,0 +1,18 @@
+#nullable enable
+
+namespace Mistral
+{
+    public partial interface IBetaLibrariesClient
+    {
+        /// <summary>
+        /// Delete a library and all of its document.<br/>
+        /// Given a library id, deletes it together with all documents that have been uploaded to that library.
+        /// </summary>
+        /// <param name="libraryId"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Mistral.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Mistral.LibraryOut> DeleteALibraryAndAllOfItsDocumentAsync(
+            global::System.Guid libraryId,
+            global::System.Threading.CancellationToken cancellationToken = default);
+    }
+}

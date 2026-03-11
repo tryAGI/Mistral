@@ -1,0 +1,74 @@
+
+#nullable enable
+
+namespace Mistral
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed partial class ClassifierTargetIn
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public string Name { get; set; } = default!;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("labels")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public global::System.Collections.Generic.IList<string> Labels { get; set; } = default!;
+
+        /// <summary>
+        /// Default Value: 1.0
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("weight")]
+        public double? Weight { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("loss_function")]
+        public global::Mistral.FTClassifierLossFunction? LossFunction { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ClassifierTargetIn" /> class.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="labels"></param>
+        /// <param name="weight">
+        /// Default Value: 1.0
+        /// </param>
+        /// <param name="lossFunction"></param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public ClassifierTargetIn(
+            string name,
+            global::System.Collections.Generic.IList<string> labels,
+            double? weight,
+            global::Mistral.FTClassifierLossFunction? lossFunction)
+        {
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Labels = labels ?? throw new global::System.ArgumentNullException(nameof(labels));
+            this.Weight = weight;
+            this.LossFunction = lossFunction;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ClassifierTargetIn" /> class.
+        /// </summary>
+        public ClassifierTargetIn()
+        {
+        }
+    }
+}

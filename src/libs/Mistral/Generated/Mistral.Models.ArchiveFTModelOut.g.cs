@@ -1,0 +1,66 @@
+
+#nullable enable
+
+namespace Mistral
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed partial class ArchiveFTModelOut
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public string Id { get; set; } = default!;
+
+        /// <summary>
+        /// Default Value: model
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
+        public string? Object { get; set; }
+
+        /// <summary>
+        /// Default Value: true
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("archived")]
+        public bool? Archived { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ArchiveFTModelOut" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="object">
+        /// Default Value: model
+        /// </param>
+        /// <param name="archived">
+        /// Default Value: true
+        /// </param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public ArchiveFTModelOut(
+            string id,
+            string? @object,
+            bool? archived)
+        {
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Object = @object;
+            this.Archived = archived;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ArchiveFTModelOut" /> class.
+        /// </summary>
+        public ArchiveFTModelOut()
+        {
+        }
+    }
+}

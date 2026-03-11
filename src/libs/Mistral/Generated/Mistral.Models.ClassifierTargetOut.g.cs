@@ -1,0 +1,75 @@
+
+#nullable enable
+
+namespace Mistral
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed partial class ClassifierTargetOut
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public string Name { get; set; } = default!;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("labels")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public global::System.Collections.Generic.IList<string> Labels { get; set; } = default!;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("weight")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public double Weight { get; set; } = default!;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("loss_function")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.FTClassifierLossFunctionJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public global::Mistral.FTClassifierLossFunction LossFunction { get; set; } = default!;
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ClassifierTargetOut" /> class.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="labels"></param>
+        /// <param name="weight"></param>
+        /// <param name="lossFunction"></param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public ClassifierTargetOut(
+            string name,
+            global::System.Collections.Generic.IList<string> labels,
+            double weight,
+            global::Mistral.FTClassifierLossFunction lossFunction)
+        {
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Labels = labels ?? throw new global::System.ArgumentNullException(nameof(labels));
+            this.Weight = weight;
+            this.LossFunction = lossFunction;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ClassifierTargetOut" /> class.
+        /// </summary>
+        public ClassifierTargetOut()
+        {
+        }
+    }
+}

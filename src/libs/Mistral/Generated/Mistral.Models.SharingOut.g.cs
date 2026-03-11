@@ -1,0 +1,92 @@
+
+#nullable enable
+
+namespace Mistral
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed partial class SharingOut
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("library_id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public global::System.Guid LibraryId { get; set; } = default!;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("user_id")]
+        public global::System.Guid? UserId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("org_id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public global::System.Guid OrgId { get; set; } = default!;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("role")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public string Role { get; set; } = default!;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("share_with_type")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public string ShareWithType { get; set; } = default!;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("share_with_uuid")]
+        public global::System.Guid? ShareWithUuid { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SharingOut" /> class.
+        /// </summary>
+        /// <param name="libraryId"></param>
+        /// <param name="userId"></param>
+        /// <param name="orgId"></param>
+        /// <param name="role"></param>
+        /// <param name="shareWithType"></param>
+        /// <param name="shareWithUuid"></param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public SharingOut(
+            global::System.Guid libraryId,
+            global::System.Guid orgId,
+            string role,
+            string shareWithType,
+            global::System.Guid? userId,
+            global::System.Guid? shareWithUuid)
+        {
+            this.LibraryId = libraryId;
+            this.OrgId = orgId;
+            this.Role = role ?? throw new global::System.ArgumentNullException(nameof(role));
+            this.ShareWithType = shareWithType ?? throw new global::System.ArgumentNullException(nameof(shareWithType));
+            this.UserId = userId;
+            this.ShareWithUuid = shareWithUuid;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SharingOut" /> class.
+        /// </summary>
+        public SharingOut()
+        {
+        }
+    }
+}
