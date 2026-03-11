@@ -2708,7 +2708,7 @@ paths:
       tags:
         - beta.libraries.accesses
       summary: Delete an access level.
-      description: 'Given a library id, you can delete the access level of an entity. An owner cannot delete it''s own access. You have to be the owner of the library to delete an acces other than yours.'
+      description: 'Given a library id, you can delete the access level of an entity. An owner cannot delete its own access. You have to be the owner of the library to delete an acces other than yours.'
       operationId: libraries_share_delete_v1
       parameters:
         - name: library_id
