@@ -5,16 +5,16 @@ namespace Mistral
 {
     public partial class BetaConversationsClient
     {
-        partial void PrepareRestartAConversationStartingFromAGivenEntry2AsStreamArguments(
+        partial void PrepareRestartAConversationStartingFromAGivenEntry2Arguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string conversationId,
             global::Mistral.ConversationRestartStreamRequest request);
-        partial void PrepareRestartAConversationStartingFromAGivenEntry2AsStreamRequest(
+        partial void PrepareRestartAConversationStartingFromAGivenEntry2Request(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string conversationId,
             global::Mistral.ConversationRestartStreamRequest request);
-        partial void ProcessRestartAConversationStartingFromAGivenEntry2AsStreamResponse(
+        partial void ProcessRestartAConversationStartingFromAGivenEntry2Response(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
@@ -28,7 +28,7 @@ namespace Mistral
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Mistral.ApiException"></exception>
-        public async global::System.Collections.Generic.IAsyncEnumerable<global::Mistral.ConversationEvents> RestartAConversationStartingFromAGivenEntry2AsStreamAsync(
+        public async global::System.Collections.Generic.IAsyncEnumerable<global::Mistral.ConversationEvents> RestartAConversationStartingFromAGivenEntry2Async(
             string conversationId,
 
             global::Mistral.ConversationRestartStreamRequest request,
@@ -36,7 +36,7 @@ namespace Mistral
         {
             PrepareArguments(
                 client: HttpClient);
-            PrepareRestartAConversationStartingFromAGivenEntry2AsStreamArguments(
+            PrepareRestartAConversationStartingFromAGivenEntry2Arguments(
                 httpClient: HttpClient,
                 conversationId: ref conversationId,
                 request: request);
@@ -78,7 +78,7 @@ namespace Mistral
             PrepareRequest(
                 client: HttpClient,
                 request: __httpRequest);
-            PrepareRestartAConversationStartingFromAGivenEntry2AsStreamRequest(
+            PrepareRestartAConversationStartingFromAGivenEntry2Request(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
                 conversationId: conversationId,
@@ -92,7 +92,7 @@ namespace Mistral
             ProcessResponse(
                 client: HttpClient,
                 response: __response);
-            ProcessRestartAConversationStartingFromAGivenEntry2AsStreamResponse(
+            ProcessRestartAConversationStartingFromAGivenEntry2Response(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
 
@@ -145,7 +145,7 @@ namespace Mistral
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Collections.Generic.IAsyncEnumerable<global::Mistral.ConversationEvents> RestartAConversationStartingFromAGivenEntry2AsStreamAsync(
+        public async global::System.Collections.Generic.IAsyncEnumerable<global::Mistral.ConversationEvents> RestartAConversationStartingFromAGivenEntry2Async(
             string conversationId,
             [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -153,7 +153,7 @@ namespace Mistral
             {
             };
 
-            var __enumerable = RestartAConversationStartingFromAGivenEntry2AsStreamAsync(
+            var __enumerable = RestartAConversationStartingFromAGivenEntry2Async(
                 conversationId: conversationId,
                 request: __request,
                 cancellationToken: cancellationToken);
