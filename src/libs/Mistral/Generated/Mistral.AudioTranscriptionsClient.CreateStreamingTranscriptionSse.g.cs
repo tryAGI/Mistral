@@ -5,14 +5,14 @@ namespace Mistral
 {
     public partial class AudioTranscriptionsClient
     {
-        partial void PrepareCreateStreamingTranscriptionSseAsStreamArguments(
+        partial void PrepareCreateStreamingTranscriptionSseArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::Mistral.AudioTranscriptionRequestStream request);
-        partial void PrepareCreateStreamingTranscriptionSseAsStreamRequest(
+        partial void PrepareCreateStreamingTranscriptionSseRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::Mistral.AudioTranscriptionRequestStream request);
-        partial void ProcessCreateStreamingTranscriptionSseAsStreamResponse(
+        partial void ProcessCreateStreamingTranscriptionSseResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
@@ -22,7 +22,7 @@ namespace Mistral
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Mistral.ApiException"></exception>
-        public async global::System.Collections.Generic.IAsyncEnumerable<global::Mistral.TranscriptionStreamEvents> CreateStreamingTranscriptionSseAsStreamAsync(
+        public async global::System.Collections.Generic.IAsyncEnumerable<global::Mistral.TranscriptionStreamEvents> CreateStreamingTranscriptionSseAsync(
 
             global::Mistral.AudioTranscriptionRequestStream request,
             [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)
@@ -31,7 +31,7 @@ namespace Mistral
 
             PrepareArguments(
                 client: HttpClient);
-            PrepareCreateStreamingTranscriptionSseAsStreamArguments(
+            PrepareCreateStreamingTranscriptionSseArguments(
                 httpClient: HttpClient,
                 request: request);
 
@@ -140,7 +140,7 @@ namespace Mistral
             PrepareRequest(
                 client: HttpClient,
                 request: __httpRequest);
-            PrepareCreateStreamingTranscriptionSseAsStreamRequest(
+            PrepareCreateStreamingTranscriptionSseRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
                 request: request);
@@ -153,7 +153,7 @@ namespace Mistral
             ProcessResponse(
                 client: HttpClient,
                 response: __response);
-            ProcessCreateStreamingTranscriptionSseAsStreamResponse(
+            ProcessCreateStreamingTranscriptionSseResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
 
@@ -236,7 +236,7 @@ namespace Mistral
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Collections.Generic.IAsyncEnumerable<global::Mistral.TranscriptionStreamEvents> CreateStreamingTranscriptionSseAsStreamAsync(
+        public async global::System.Collections.Generic.IAsyncEnumerable<global::Mistral.TranscriptionStreamEvents> CreateStreamingTranscriptionSseAsync(
             string model,
             byte[]? file = default,
             string? filename = default,
@@ -265,7 +265,7 @@ namespace Mistral
                 TimestampGranularities = timestampGranularities,
             };
 
-            var __enumerable = CreateStreamingTranscriptionSseAsStreamAsync(
+            var __enumerable = CreateStreamingTranscriptionSseAsync(
                 request: __request,
                 cancellationToken: cancellationToken);
 

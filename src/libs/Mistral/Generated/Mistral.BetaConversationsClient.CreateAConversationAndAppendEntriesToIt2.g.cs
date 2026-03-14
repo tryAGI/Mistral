@@ -5,44 +5,37 @@ namespace Mistral
 {
     public partial class BetaConversationsClient
     {
-        partial void PrepareAppendNewEntriesToAnExistingConversation2AsStreamArguments(
+        partial void PrepareCreateAConversationAndAppendEntriesToIt2Arguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string conversationId,
-            global::Mistral.ConversationAppendStreamRequest request);
-        partial void PrepareAppendNewEntriesToAnExistingConversation2AsStreamRequest(
+            global::Mistral.ConversationStreamRequest request);
+        partial void PrepareCreateAConversationAndAppendEntriesToIt2Request(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string conversationId,
-            global::Mistral.ConversationAppendStreamRequest request);
-        partial void ProcessAppendNewEntriesToAnExistingConversation2AsStreamResponse(
+            global::Mistral.ConversationStreamRequest request);
+        partial void ProcessCreateAConversationAndAppendEntriesToIt2Response(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
         /// <summary>
-        /// Append new entries to an existing conversation.<br/>
-        /// Run completion on the history of the conversation and the user entries. Return the new created entries.
+        /// Create a conversation and append entries to it.<br/>
+        /// Create a new conversation, using a base model or an agent and append entries. Completion and tool executions are run and the response is appended to the conversation.Use the returned conversation_id to continue the conversation.
         /// </summary>
-        /// <param name="conversationId">
-        /// ID of the conversation to which we append entries.
-        /// </param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Mistral.ApiException"></exception>
-        public async global::System.Collections.Generic.IAsyncEnumerable<global::Mistral.ConversationEvents> AppendNewEntriesToAnExistingConversation2AsStreamAsync(
-            string conversationId,
+        public async global::System.Collections.Generic.IAsyncEnumerable<global::Mistral.ConversationEvents> CreateAConversationAndAppendEntriesToIt2Async(
 
-            global::Mistral.ConversationAppendStreamRequest request,
+            global::Mistral.ConversationStreamRequest request,
             [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
-            PrepareAppendNewEntriesToAnExistingConversation2AsStreamArguments(
+            PrepareCreateAConversationAndAppendEntriesToIt2Arguments(
                 httpClient: HttpClient,
-                conversationId: ref conversationId,
                 request: request);
 
             var __pathBuilder = new global::Mistral.PathBuilder(
-                path: $"/v1/conversations/{conversationId}#stream",
+                path: "/v1/conversations#stream",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -78,10 +71,9 @@ namespace Mistral
             PrepareRequest(
                 client: HttpClient,
                 request: __httpRequest);
-            PrepareAppendNewEntriesToAnExistingConversation2AsStreamRequest(
+            PrepareCreateAConversationAndAppendEntriesToIt2Request(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
-                conversationId: conversationId,
                 request: request);
 
             using var __response = await HttpClient.SendAsync(
@@ -92,7 +84,7 @@ namespace Mistral
             ProcessResponse(
                 client: HttpClient,
                 response: __response);
-            ProcessAppendNewEntriesToAnExistingConversation2AsStreamResponse(
+            ProcessCreateAConversationAndAppendEntriesToIt2Response(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
 
@@ -137,24 +129,19 @@ namespace Mistral
         }
 
         /// <summary>
-        /// Append new entries to an existing conversation.<br/>
-        /// Run completion on the history of the conversation and the user entries. Return the new created entries.
+        /// Create a conversation and append entries to it.<br/>
+        /// Create a new conversation, using a base model or an agent and append entries. Completion and tool executions are run and the response is appended to the conversation.Use the returned conversation_id to continue the conversation.
         /// </summary>
-        /// <param name="conversationId">
-        /// ID of the conversation to which we append entries.
-        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Collections.Generic.IAsyncEnumerable<global::Mistral.ConversationEvents> AppendNewEntriesToAnExistingConversation2AsStreamAsync(
-            string conversationId,
+        public async global::System.Collections.Generic.IAsyncEnumerable<global::Mistral.ConversationEvents> CreateAConversationAndAppendEntriesToIt2Async(
             [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::Mistral.ConversationAppendStreamRequest
+            var __request = new global::Mistral.ConversationStreamRequest
             {
             };
 
-            var __enumerable = AppendNewEntriesToAnExistingConversation2AsStreamAsync(
-                conversationId: conversationId,
+            var __enumerable = CreateAConversationAndAppendEntriesToIt2Async(
                 request: __request,
                 cancellationToken: cancellationToken);
 

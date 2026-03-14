@@ -10,7 +10,7 @@ namespace Mistral
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Mistral.ApiException"></exception>
-        global::System.Collections.Generic.IAsyncEnumerable<global::Mistral.TranscriptionStreamEvents> CreateStreamingTranscriptionSseAsStreamAsync(
+        global::System.Collections.Generic.IAsyncEnumerable<global::Mistral.TranscriptionStreamEvents> CreateStreamingTranscriptionSseAsync(
 
             global::Mistral.AudioTranscriptionRequestStream request,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -54,7 +54,7 @@ namespace Mistral
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Collections.Generic.IAsyncEnumerable<global::Mistral.TranscriptionStreamEvents> CreateStreamingTranscriptionSseAsStreamAsync(
+        global::System.Collections.Generic.IAsyncEnumerable<global::Mistral.TranscriptionStreamEvents> CreateStreamingTranscriptionSseAsync(
             string model,
             byte[]? file = default,
             string? filename = default,

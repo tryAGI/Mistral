@@ -11,7 +11,7 @@ namespace Mistral
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Mistral.ApiException"></exception>
-        global::System.Collections.Generic.IAsyncEnumerable<global::Mistral.ConversationEvents> CreateAConversationAndAppendEntriesToIt2AsStreamAsync(
+        global::System.Collections.Generic.IAsyncEnumerable<global::Mistral.ConversationEvents> CreateAConversationAndAppendEntriesToIt2Async(
 
             global::Mistral.ConversationStreamRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -22,7 +22,7 @@ namespace Mistral
         /// </summary>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Collections.Generic.IAsyncEnumerable<global::Mistral.ConversationEvents> CreateAConversationAndAppendEntriesToIt2AsStreamAsync(
+        global::System.Collections.Generic.IAsyncEnumerable<global::Mistral.ConversationEvents> CreateAConversationAndAppendEntriesToIt2Async(
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }
