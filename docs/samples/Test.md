@@ -1,0 +1,13 @@
+```csharp
+using var client = new MistralClient(apiKey);
+
+ChatCompletionResponse response = await client.Agents.AgentsCompletionAsync(
+    agentId: "Test",
+    messages: new List<MessagesItem3>
+    {
+        new UserMessage
+        {
+            Content = "Hello",
+        },
+    });
+```

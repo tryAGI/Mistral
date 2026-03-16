@@ -1,7 +1,10 @@
 site_name: Mistral .NET Documentation
 nav:
 - Overview: index.md
-# EXAMPLES #
+# EXAMPLES:START
+- Examples:
+  - Test: samples/Test.md
+# EXAMPLES:END
         
 theme:
   name: material
