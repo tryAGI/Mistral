@@ -672,1151 +672,1155 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        public global::System.DateTimeOffset? Type161 { get; set; }
+        public long? Type161 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.FileSchema? Type162 { get; set; }
+        public global::System.DateTimeOffset? Type162 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.ListFilesOut? Type163 { get; set; }
+        public global::Mistral.FileSchema? Type163 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Mistral.FileSchema>? Type164 { get; set; }
+        public global::Mistral.ListFilesOut? Type164 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.RetrieveFileOut? Type165 { get; set; }
+        public global::System.Collections.Generic.IList<global::Mistral.FileSchema>? Type165 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.DeleteFileOut? Type166 { get; set; }
+        public global::Mistral.RetrieveFileOut? Type166 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.FileSignedURL? Type167 { get; set; }
+        public global::Mistral.DeleteFileOut? Type167 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.FineTuneableModelType? Type168 { get; set; }
+        public global::Mistral.FileSignedURL? Type168 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.ClassifierJobOut? Type169 { get; set; }
+        public global::Mistral.FineTuneableModelType? Type169 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.ClassifierJobOutStatus? Type170 { get; set; }
+        public global::Mistral.ClassifierJobOut? Type170 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::System.Guid>? Type171 { get; set; }
+        public global::Mistral.ClassifierJobOutStatus? Type171 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Mistral.IntegrationsVariant1Item>? Type172 { get; set; }
+        public global::System.Collections.Generic.IList<global::System.Guid>? Type172 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.IntegrationsVariant1Item? Type173 { get; set; }
+        public global::System.Collections.Generic.IList<global::Mistral.IntegrationsVariant1Item>? Type173 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.WandbIntegrationOut? Type174 { get; set; }
+        public global::Mistral.IntegrationsVariant1Item? Type174 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.ClassifierJobOutIntegrationsVariant1ItemDiscriminator? Type175 { get; set; }
+        public global::Mistral.WandbIntegrationOut? Type175 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.ClassifierJobOutIntegrationsVariant1ItemDiscriminatorType? Type176 { get; set; }
+        public global::Mistral.ClassifierJobOutIntegrationsVariant1ItemDiscriminator? Type176 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.JobMetadataOut? Type177 { get; set; }
+        public global::Mistral.ClassifierJobOutIntegrationsVariant1ItemDiscriminatorType? Type177 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.ClassifierTrainingParameters? Type178 { get; set; }
+        public global::Mistral.JobMetadataOut? Type178 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.CompletionJobOut? Type179 { get; set; }
+        public global::Mistral.ClassifierTrainingParameters? Type179 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.CompletionJobOutStatus? Type180 { get; set; }
+        public global::Mistral.CompletionJobOut? Type180 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Mistral.IntegrationsVariant1Item2>? Type181 { get; set; }
+        public global::Mistral.CompletionJobOutStatus? Type181 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.IntegrationsVariant1Item2? Type182 { get; set; }
+        public global::System.Collections.Generic.IList<global::Mistral.IntegrationsVariant1Item2>? Type182 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.CompletionJobOutIntegrationsVariant1ItemDiscriminator? Type183 { get; set; }
+        public global::Mistral.IntegrationsVariant1Item2? Type183 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.CompletionJobOutIntegrationsVariant1ItemDiscriminatorType? Type184 { get; set; }
+        public global::Mistral.CompletionJobOutIntegrationsVariant1ItemDiscriminator? Type184 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.CompletionTrainingParameters? Type185 { get; set; }
+        public global::Mistral.CompletionJobOutIntegrationsVariant1ItemDiscriminatorType? Type185 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Mistral.RepositoriesItem>? Type186 { get; set; }
+        public global::Mistral.CompletionTrainingParameters? Type186 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.RepositoriesItem? Type187 { get; set; }
+        public global::System.Collections.Generic.IList<global::Mistral.RepositoriesItem>? Type187 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.GithubRepositoryOut? Type188 { get; set; }
+        public global::Mistral.RepositoriesItem? Type188 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.CompletionJobOutRepositorieDiscriminator? Type189 { get; set; }
+        public global::Mistral.GithubRepositoryOut? Type189 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.CompletionJobOutRepositorieDiscriminatorType? Type190 { get; set; }
+        public global::Mistral.CompletionJobOutRepositorieDiscriminator? Type190 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.JobsOut? Type191 { get; set; }
+        public global::Mistral.CompletionJobOutRepositorieDiscriminatorType? Type191 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Mistral.DataItem2>? Type192 { get; set; }
+        public global::Mistral.JobsOut? Type192 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.DataItem2? Type193 { get; set; }
+        public global::System.Collections.Generic.IList<global::Mistral.DataItem2>? Type193 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.JobsOutDataItemDiscriminator? Type194 { get; set; }
+        public global::Mistral.DataItem2? Type194 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.JobsOutDataItemDiscriminatorJobType? Type195 { get; set; }
+        public global::Mistral.JobsOutDataItemDiscriminator? Type195 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.LegacyJobMetadataOut? Type196 { get; set; }
+        public global::Mistral.JobsOutDataItemDiscriminatorJobType? Type196 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.ClassifierTargetIn? Type197 { get; set; }
+        public global::Mistral.LegacyJobMetadataOut? Type197 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.FTClassifierLossFunction? Type198 { get; set; }
+        public global::Mistral.ClassifierTargetIn? Type198 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.ClassifierTrainingParametersIn? Type199 { get; set; }
+        public global::Mistral.FTClassifierLossFunction? Type199 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.CompletionTrainingParametersIn? Type200 { get; set; }
+        public global::Mistral.ClassifierTrainingParametersIn? Type200 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.GithubRepositoryIn? Type201 { get; set; }
+        public global::Mistral.CompletionTrainingParametersIn? Type201 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.JobIn? Type202 { get; set; }
+        public global::Mistral.GithubRepositoryIn? Type202 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Mistral.TrainingFile>? Type203 { get; set; }
+        public global::Mistral.JobIn? Type203 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.TrainingFile? Type204 { get; set; }
+        public global::System.Collections.Generic.IList<global::Mistral.TrainingFile>? Type204 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Mistral.IntegrationsVariant1Item3>? Type205 { get; set; }
+        public global::Mistral.TrainingFile? Type205 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.IntegrationsVariant1Item3? Type206 { get; set; }
+        public global::System.Collections.Generic.IList<global::Mistral.IntegrationsVariant1Item3>? Type206 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.WandbIntegration? Type207 { get; set; }
+        public global::Mistral.IntegrationsVariant1Item3? Type207 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.JobInIntegrationsVariant1ItemDiscriminator? Type208 { get; set; }
+        public global::Mistral.WandbIntegration? Type208 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.JobInIntegrationsVariant1ItemDiscriminatorType? Type209 { get; set; }
+        public global::Mistral.JobInIntegrationsVariant1ItemDiscriminator? Type209 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.AnyOf<global::Mistral.CompletionTrainingParametersIn, global::Mistral.ClassifierTrainingParametersIn>? Type210 { get; set; }
+        public global::Mistral.JobInIntegrationsVariant1ItemDiscriminatorType? Type210 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Mistral.RepositoriesVariant1Item>? Type211 { get; set; }
+        public global::Mistral.AnyOf<global::Mistral.CompletionTrainingParametersIn, global::Mistral.ClassifierTrainingParametersIn>? Type211 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.RepositoriesVariant1Item? Type212 { get; set; }
+        public global::System.Collections.Generic.IList<global::Mistral.RepositoriesVariant1Item>? Type212 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.JobInRepositoriesVariant1ItemDiscriminator? Type213 { get; set; }
+        public global::Mistral.RepositoriesVariant1Item? Type213 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.JobInRepositoriesVariant1ItemDiscriminatorType? Type214 { get; set; }
+        public global::Mistral.JobInRepositoriesVariant1ItemDiscriminator? Type214 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Mistral.ClassifierTargetIn>? Type215 { get; set; }
+        public global::Mistral.JobInRepositoriesVariant1ItemDiscriminatorType? Type215 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.CheckpointOut? Type216 { get; set; }
+        public global::System.Collections.Generic.IList<global::Mistral.ClassifierTargetIn>? Type216 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.MetricOut? Type217 { get; set; }
+        public global::Mistral.CheckpointOut? Type217 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.ClassifierDetailedJobOut? Type218 { get; set; }
+        public global::Mistral.MetricOut? Type218 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.ClassifierDetailedJobOutStatus? Type219 { get; set; }
+        public global::Mistral.ClassifierDetailedJobOut? Type219 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Mistral.IntegrationsVariant1Item4>? Type220 { get; set; }
+        public global::Mistral.ClassifierDetailedJobOutStatus? Type220 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.IntegrationsVariant1Item4? Type221 { get; set; }
+        public global::System.Collections.Generic.IList<global::Mistral.IntegrationsVariant1Item4>? Type221 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.ClassifierDetailedJobOutIntegrationsVariant1ItemDiscriminator? Type222 { get; set; }
+        public global::Mistral.IntegrationsVariant1Item4? Type222 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.ClassifierDetailedJobOutIntegrationsVariant1ItemDiscriminatorType? Type223 { get; set; }
+        public global::Mistral.ClassifierDetailedJobOutIntegrationsVariant1ItemDiscriminator? Type223 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Mistral.EventOut>? Type224 { get; set; }
+        public global::Mistral.ClassifierDetailedJobOutIntegrationsVariant1ItemDiscriminatorType? Type224 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.EventOut? Type225 { get; set; }
+        public global::System.Collections.Generic.IList<global::Mistral.EventOut>? Type225 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Mistral.CheckpointOut>? Type226 { get; set; }
+        public global::Mistral.EventOut? Type226 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Mistral.ClassifierTargetOut>? Type227 { get; set; }
+        public global::System.Collections.Generic.IList<global::Mistral.CheckpointOut>? Type227 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.ClassifierTargetOut? Type228 { get; set; }
+        public global::System.Collections.Generic.IList<global::Mistral.ClassifierTargetOut>? Type228 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.CompletionDetailedJobOut? Type229 { get; set; }
+        public global::Mistral.ClassifierTargetOut? Type229 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.CompletionDetailedJobOutStatus? Type230 { get; set; }
+        public global::Mistral.CompletionDetailedJobOut? Type230 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Mistral.IntegrationsVariant1Item5>? Type231 { get; set; }
+        public global::Mistral.CompletionDetailedJobOutStatus? Type231 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.IntegrationsVariant1Item5? Type232 { get; set; }
+        public global::System.Collections.Generic.IList<global::Mistral.IntegrationsVariant1Item5>? Type232 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.CompletionDetailedJobOutIntegrationsVariant1ItemDiscriminator? Type233 { get; set; }
+        public global::Mistral.IntegrationsVariant1Item5? Type233 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.CompletionDetailedJobOutIntegrationsVariant1ItemDiscriminatorType? Type234 { get; set; }
+        public global::Mistral.CompletionDetailedJobOutIntegrationsVariant1ItemDiscriminator? Type234 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Mistral.RepositoriesItem2>? Type235 { get; set; }
+        public global::Mistral.CompletionDetailedJobOutIntegrationsVariant1ItemDiscriminatorType? Type235 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.RepositoriesItem2? Type236 { get; set; }
+        public global::System.Collections.Generic.IList<global::Mistral.RepositoriesItem2>? Type236 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.CompletionDetailedJobOutRepositorieDiscriminator? Type237 { get; set; }
+        public global::Mistral.RepositoriesItem2? Type237 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.CompletionDetailedJobOutRepositorieDiscriminatorType? Type238 { get; set; }
+        public global::Mistral.CompletionDetailedJobOutRepositorieDiscriminator? Type238 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.ClassifierFTModelOut? Type239 { get; set; }
+        public global::Mistral.CompletionDetailedJobOutRepositorieDiscriminatorType? Type239 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.FTModelCapabilitiesOut? Type240 { get; set; }
+        public global::Mistral.ClassifierFTModelOut? Type240 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.CompletionFTModelOut? Type241 { get; set; }
+        public global::Mistral.FTModelCapabilitiesOut? Type241 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.UpdateFTModelIn? Type242 { get; set; }
+        public global::Mistral.CompletionFTModelOut? Type242 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.ArchiveFTModelOut? Type243 { get; set; }
+        public global::Mistral.UpdateFTModelIn? Type243 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.UnarchiveFTModelOut? Type244 { get; set; }
+        public global::Mistral.ArchiveFTModelOut? Type244 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.BatchJobStatus? Type245 { get; set; }
+        public global::Mistral.UnarchiveFTModelOut? Type245 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.BatchError? Type246 { get; set; }
+        public global::Mistral.BatchJobStatus? Type246 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.BatchJobOut? Type247 { get; set; }
+        public global::Mistral.BatchError? Type247 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Mistral.BatchError>? Type248 { get; set; }
+        public global::Mistral.BatchJobOut? Type248 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.BatchJobsOut? Type249 { get; set; }
+        public global::System.Collections.Generic.IList<global::Mistral.BatchError>? Type249 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Mistral.BatchJobOut>? Type250 { get; set; }
+        public global::Mistral.BatchJobsOut? Type250 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.ApiEndpoint? Type251 { get; set; }
+        public global::System.Collections.Generic.IList<global::Mistral.BatchJobOut>? Type251 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.BatchJobIn? Type252 { get; set; }
+        public global::Mistral.ApiEndpoint? Type252 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Mistral.BatchRequest>? Type253 { get; set; }
+        public global::Mistral.BatchJobIn? Type253 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.BatchRequest? Type254 { get; set; }
+        public global::System.Collections.Generic.IList<global::Mistral.BatchRequest>? Type254 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.Dictionary<string, string>? Type255 { get; set; }
+        public global::Mistral.BatchRequest? Type255 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.AssistantMessage? Type256 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, string>? Type256 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.AnyOf<string, object, global::System.Collections.Generic.IList<global::Mistral.ContentChunk>>? Type257 { get; set; }
+        public global::Mistral.AssistantMessage? Type257 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Mistral.ContentChunk>? Type258 { get; set; }
+        public global::Mistral.AnyOf<string, object, global::System.Collections.Generic.IList<global::Mistral.ContentChunk>>? Type258 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.ContentChunk? Type259 { get; set; }
+        public global::System.Collections.Generic.IList<global::Mistral.ContentChunk>? Type259 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.ReferenceChunk? Type260 { get; set; }
+        public global::Mistral.ContentChunk? Type260 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.FileChunk? Type261 { get; set; }
+        public global::Mistral.ReferenceChunk? Type261 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.ThinkChunk? Type262 { get; set; }
+        public global::Mistral.FileChunk? Type262 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Mistral.AnyOf<global::Mistral.ReferenceChunk, global::Mistral.TextChunk>>? Type263 { get; set; }
+        public global::Mistral.ThinkChunk? Type263 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.AnyOf<global::Mistral.ReferenceChunk, global::Mistral.TextChunk>? Type264 { get; set; }
+        public global::System.Collections.Generic.IList<global::Mistral.AnyOf<global::Mistral.ReferenceChunk, global::Mistral.TextChunk>>? Type264 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.AudioChunk? Type265 { get; set; }
+        public global::Mistral.AnyOf<global::Mistral.ReferenceChunk, global::Mistral.TextChunk>? Type265 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.AnyOf<string, byte[]>? Type266 { get; set; }
+        public global::Mistral.AudioChunk? Type266 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public byte[]? Type267 { get; set; }
+        public global::Mistral.AnyOf<string, byte[]>? Type267 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.ContentChunkDiscriminator? Type268 { get; set; }
+        public byte[]? Type268 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.ContentChunkDiscriminatorType? Type269 { get; set; }
+        public global::Mistral.ContentChunkDiscriminator? Type269 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Mistral.ToolCall>? Type270 { get; set; }
+        public global::Mistral.ContentChunkDiscriminatorType? Type270 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.ToolCall? Type271 { get; set; }
+        public global::System.Collections.Generic.IList<global::Mistral.ToolCall>? Type271 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.ToolTypes? Type272 { get; set; }
+        public global::Mistral.ToolCall? Type272 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.FunctionCall? Type273 { get; set; }
+        public global::Mistral.ToolTypes? Type273 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.AnyOf<object, string>? Type274 { get; set; }
+        public global::Mistral.FunctionCall? Type274 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.ChatCompletionRequest? Type275 { get; set; }
+        public global::Mistral.AnyOf<object, string>? Type275 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.AnyOf<string, global::System.Collections.Generic.IList<string>>? Type276 { get; set; }
+        public global::Mistral.ChatCompletionRequest? Type276 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Mistral.MessagesItem>? Type277 { get; set; }
+        public global::Mistral.AnyOf<string, global::System.Collections.Generic.IList<string>>? Type277 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.MessagesItem? Type278 { get; set; }
+        public global::System.Collections.Generic.IList<global::Mistral.MessagesItem>? Type278 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.SystemMessage? Type279 { get; set; }
+        public global::Mistral.MessagesItem? Type279 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.AnyOf<string, global::System.Collections.Generic.IList<global::Mistral.SystemMessageContentChunks>>? Type280 { get; set; }
+        public global::Mistral.SystemMessage? Type280 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Mistral.SystemMessageContentChunks>? Type281 { get; set; }
+        public global::Mistral.AnyOf<string, global::System.Collections.Generic.IList<global::Mistral.SystemMessageContentChunks>>? Type281 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.SystemMessageContentChunks? Type282 { get; set; }
+        public global::System.Collections.Generic.IList<global::Mistral.SystemMessageContentChunks>? Type282 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.SystemMessageContentChunksDiscriminator? Type283 { get; set; }
+        public global::Mistral.SystemMessageContentChunks? Type283 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.SystemMessageContentChunksDiscriminatorType? Type284 { get; set; }
+        public global::Mistral.SystemMessageContentChunksDiscriminator? Type284 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.UserMessage? Type285 { get; set; }
+        public global::Mistral.SystemMessageContentChunksDiscriminatorType? Type285 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.ToolMessage? Type286 { get; set; }
+        public global::Mistral.UserMessage? Type286 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.ChatCompletionRequestMessageDiscriminator? Type287 { get; set; }
+        public global::Mistral.ToolMessage? Type287 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.ChatCompletionRequestMessageDiscriminatorRole? Type288 { get; set; }
+        public global::Mistral.ChatCompletionRequestMessageDiscriminator? Type288 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Mistral.Tool3>? Type289 { get; set; }
+        public global::Mistral.ChatCompletionRequestMessageDiscriminatorRole? Type289 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.Tool3? Type290 { get; set; }
+        public global::System.Collections.Generic.IList<global::Mistral.Tool3>? Type290 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.AnyOf<global::Mistral.ToolChoice2, global::Mistral.ToolChoiceEnum?>? Type291 { get; set; }
+        public global::Mistral.Tool3? Type291 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.ToolChoice2? Type292 { get; set; }
+        public global::Mistral.AnyOf<global::Mistral.ToolChoice2, global::Mistral.ToolChoiceEnum?>? Type292 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.FunctionName? Type293 { get; set; }
+        public global::Mistral.ToolChoice2? Type293 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.MistralPromptMode? Type294 { get; set; }
+        public global::Mistral.FunctionName? Type294 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.ChatModerationRequest? Type295 { get; set; }
+        public global::Mistral.MistralPromptMode? Type295 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.AnyOf<global::System.Collections.Generic.IList<global::Mistral.InputVariant1Item>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::Mistral.InputVariant2ItemItem>>>? Type296 { get; set; }
+        public global::Mistral.ChatModerationRequest? Type296 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Mistral.InputVariant1Item>? Type297 { get; set; }
+        public global::Mistral.AnyOf<global::System.Collections.Generic.IList<global::Mistral.InputVariant1Item>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::Mistral.InputVariant2ItemItem>>>? Type297 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.InputVariant1Item? Type298 { get; set; }
+        public global::System.Collections.Generic.IList<global::Mistral.InputVariant1Item>? Type298 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.ChatModerationRequestInputVariant1ItemDiscriminator? Type299 { get; set; }
+        public global::Mistral.InputVariant1Item? Type299 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.ChatModerationRequestInputVariant1ItemDiscriminatorRole? Type300 { get; set; }
+        public global::Mistral.ChatModerationRequestInputVariant1ItemDiscriminator? Type300 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::Mistral.InputVariant2ItemItem>>? Type301 { get; set; }
+        public global::Mistral.ChatModerationRequestInputVariant1ItemDiscriminatorRole? Type301 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Mistral.InputVariant2ItemItem>? Type302 { get; set; }
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::Mistral.InputVariant2ItemItem>>? Type302 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.InputVariant2ItemItem? Type303 { get; set; }
+        public global::System.Collections.Generic.IList<global::Mistral.InputVariant2ItemItem>? Type303 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.ChatModerationRequestInputVariant2ItemItemDiscriminator? Type304 { get; set; }
+        public global::Mistral.InputVariant2ItemItem? Type304 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.ChatModerationRequestInputVariant2ItemItemDiscriminatorRole? Type305 { get; set; }
+        public global::Mistral.ChatModerationRequestInputVariant2ItemItemDiscriminator? Type305 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.ClassificationRequest? Type306 { get; set; }
+        public global::Mistral.ChatModerationRequestInputVariant2ItemItemDiscriminatorRole? Type306 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.EmbeddingDtype? Type307 { get; set; }
+        public global::Mistral.ClassificationRequest? Type307 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.EmbeddingRequest? Type308 { get; set; }
+        public global::Mistral.EmbeddingDtype? Type308 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.EncodingFormat? Type309 { get; set; }
+        public global::Mistral.EmbeddingRequest? Type309 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.FIMCompletionRequest? Type310 { get; set; }
+        public global::Mistral.EncodingFormat? Type310 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.InstructRequest? Type311 { get; set; }
+        public global::Mistral.FIMCompletionRequest? Type311 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Mistral.MessagesItem2>? Type312 { get; set; }
+        public global::Mistral.InstructRequest? Type312 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.MessagesItem2? Type313 { get; set; }
+        public global::System.Collections.Generic.IList<global::Mistral.MessagesItem2>? Type313 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.InstructRequestMessageDiscriminator? Type314 { get; set; }
+        public global::Mistral.MessagesItem2? Type314 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.InstructRequestMessageDiscriminatorRole? Type315 { get; set; }
+        public global::Mistral.InstructRequestMessageDiscriminator? Type315 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.OCRImageObject? Type316 { get; set; }
+        public global::Mistral.InstructRequestMessageDiscriminatorRole? Type316 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.OCRPageDimensions? Type317 { get; set; }
+        public global::Mistral.OCRImageObject? Type317 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.OCRPageObject? Type318 { get; set; }
+        public global::Mistral.OCRPageDimensions? Type318 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Mistral.OCRImageObject>? Type319 { get; set; }
+        public global::Mistral.OCRPageObject? Type319 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Mistral.OCRTableObject>? Type320 { get; set; }
+        public global::System.Collections.Generic.IList<global::Mistral.OCRImageObject>? Type320 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.OCRTableObject? Type321 { get; set; }
+        public global::System.Collections.Generic.IList<global::Mistral.OCRTableObject>? Type321 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.OCRTableObjectFormat? Type322 { get; set; }
+        public global::Mistral.OCRTableObject? Type322 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.OCRRequest? Type323 { get; set; }
+        public global::Mistral.OCRTableObjectFormat? Type323 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.AnyOf<global::Mistral.FileChunk, global::Mistral.DocumentURLChunk, global::Mistral.ImageURLChunk>? Type324 { get; set; }
+        public global::Mistral.OCRRequest? Type324 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.OCRRequestTableFormat2? Type325 { get; set; }
+        public global::Mistral.AnyOf<global::Mistral.FileChunk, global::Mistral.DocumentURLChunk, global::Mistral.ImageURLChunk>? Type325 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.OCRResponse? Type326 { get; set; }
+        public global::Mistral.OCRRequestTableFormat2? Type326 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Mistral.OCRPageObject>? Type327 { get; set; }
+        public global::Mistral.OCRResponse? Type327 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.OCRUsageInfo? Type328 { get; set; }
+        public global::System.Collections.Generic.IList<global::Mistral.OCRPageObject>? Type328 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.TranscriptionResponse? Type329 { get; set; }
+        public global::Mistral.OCRUsageInfo? Type329 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Mistral.TranscriptionSegmentChunk>? Type330 { get; set; }
+        public global::Mistral.TranscriptionResponse? Type330 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.TranscriptionSegmentChunk? Type331 { get; set; }
+        public global::System.Collections.Generic.IList<global::Mistral.TranscriptionSegmentChunk>? Type331 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.UsageInfo? Type332 { get; set; }
+        public global::Mistral.TranscriptionSegmentChunk? Type332 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.TimestampGranularity? Type333 { get; set; }
+        public global::Mistral.UsageInfo? Type333 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.AudioTranscriptionRequest? Type334 { get; set; }
+        public global::Mistral.TimestampGranularity? Type334 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Mistral.TimestampGranularity>? Type335 { get; set; }
+        public global::Mistral.AudioTranscriptionRequest? Type335 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.AudioTranscriptionRequestStream? Type336 { get; set; }
+        public global::System.Collections.Generic.IList<global::Mistral.TimestampGranularity>? Type336 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.TranscriptionStreamLanguage? Type337 { get; set; }
+        public global::Mistral.AudioTranscriptionRequestStream? Type337 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.TranscriptionStreamSegmentDelta? Type338 { get; set; }
+        public global::Mistral.TranscriptionStreamLanguage? Type338 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.TranscriptionStreamTextDelta? Type339 { get; set; }
+        public global::Mistral.TranscriptionStreamSegmentDelta? Type339 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.TranscriptionStreamDone? Type340 { get; set; }
+        public global::Mistral.TranscriptionStreamTextDelta? Type340 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.TranscriptionStreamEvents? Type341 { get; set; }
+        public global::Mistral.TranscriptionStreamDone? Type341 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.TranscriptionStreamEventTypes? Type342 { get; set; }
+        public global::Mistral.TranscriptionStreamEvents? Type342 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.Data2? Type343 { get; set; }
+        public global::Mistral.TranscriptionStreamEventTypes? Type343 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.TranscriptionStreamEventsDataDiscriminator? Type344 { get; set; }
+        public global::Mistral.Data2? Type344 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.TranscriptionStreamEventsDataDiscriminatorType? Type345 { get; set; }
+        public global::Mistral.TranscriptionStreamEventsDataDiscriminator? Type345 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.RealtimeTranscriptionClientMessage? Type346 { get; set; }
+        public global::Mistral.TranscriptionStreamEventsDataDiscriminatorType? Type346 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.RealtimeTranscriptionSessionUpdateMessage? Type347 { get; set; }
+        public global::Mistral.RealtimeTranscriptionClientMessage? Type347 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.RealtimeTranscriptionSessionUpdatePayload? Type348 { get; set; }
+        public global::Mistral.RealtimeTranscriptionSessionUpdateMessage? Type348 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.AudioFormat? Type349 { get; set; }
+        public global::Mistral.RealtimeTranscriptionSessionUpdatePayload? Type349 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.AudioEncoding? Type350 { get; set; }
+        public global::Mistral.AudioFormat? Type350 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.RealtimeTranscriptionInputAudioAppend? Type351 { get; set; }
+        public global::Mistral.AudioEncoding? Type351 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.RealtimeTranscriptionInputAudioFlush? Type352 { get; set; }
+        public global::Mistral.RealtimeTranscriptionInputAudioAppend? Type352 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.RealtimeTranscriptionInputAudioEnd? Type353 { get; set; }
+        public global::Mistral.RealtimeTranscriptionInputAudioFlush? Type353 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.RealtimeTranscriptionClientMessageDiscriminator? Type354 { get; set; }
+        public global::Mistral.RealtimeTranscriptionInputAudioEnd? Type354 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.RealtimeTranscriptionClientMessageDiscriminatorType? Type355 { get; set; }
+        public global::Mistral.RealtimeTranscriptionClientMessageDiscriminator? Type355 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.AgentsCompletionRequest? Type356 { get; set; }
+        public global::Mistral.RealtimeTranscriptionClientMessageDiscriminatorType? Type356 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Mistral.MessagesItem3>? Type357 { get; set; }
+        public global::Mistral.AgentsCompletionRequest? Type357 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.MessagesItem3? Type358 { get; set; }
+        public global::System.Collections.Generic.IList<global::Mistral.MessagesItem3>? Type358 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.AgentsCompletionRequestMessageDiscriminator? Type359 { get; set; }
+        public global::Mistral.MessagesItem3? Type359 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.AgentsCompletionRequestMessageDiscriminatorRole? Type360 { get; set; }
+        public global::Mistral.AgentsCompletionRequestMessageDiscriminator? Type360 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.ChatClassificationRequest? Type361 { get; set; }
+        public global::Mistral.AgentsCompletionRequestMessageDiscriminatorRole? Type361 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.ChatClassificationRequestInputs? Type362 { get; set; }
+        public global::Mistral.ChatClassificationRequest? Type362 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Mistral.InstructRequest>? Type363 { get; set; }
+        public global::Mistral.ChatClassificationRequestInputs? Type363 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.ClassificationResponse? Type364 { get; set; }
+        public global::System.Collections.Generic.IList<global::Mistral.InstructRequest>? Type364 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::System.Collections.Generic.Dictionary<string, global::Mistral.ClassificationTargetResult>>? Type365 { get; set; }
+        public global::Mistral.ClassificationResponse? Type365 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.Dictionary<string, global::Mistral.ClassificationTargetResult>? Type366 { get; set; }
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.Dictionary<string, global::Mistral.ClassificationTargetResult>>? Type366 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.ClassificationTargetResult? Type367 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::Mistral.ClassificationTargetResult>? Type367 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.Dictionary<string, double>? Type368 { get; set; }
+        public global::Mistral.ClassificationTargetResult? Type368 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.ModerationResponse? Type369 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, double>? Type369 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Mistral.ModerationObject>? Type370 { get; set; }
+        public global::Mistral.ModerationResponse? Type370 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.ModerationObject? Type371 { get; set; }
+        public global::System.Collections.Generic.IList<global::Mistral.ModerationObject>? Type371 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.Dictionary<string, bool>? Type372 { get; set; }
+        public global::Mistral.ModerationObject? Type372 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.DocumentOut? Type373 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, bool>? Type373 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.ProcessStatus? Type374 { get; set; }
+        public global::Mistral.DocumentOut? Type374 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.DocumentTextContent? Type375 { get; set; }
+        public global::Mistral.ProcessStatus? Type375 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.DocumentUpdateIn? Type376 { get; set; }
+        public global::Mistral.DocumentTextContent? Type376 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.AnyOf<bool?, string, int?, double?, global::System.DateTime?, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<int>, global::System.Collections.Generic.IList<double>, global::System.Collections.Generic.IList<bool>>? Type377 { get; set; }
+        public global::Mistral.DocumentUpdateIn? Type377 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<double>? Type378 { get; set; }
+        public global::Mistral.AnyOf<bool?, string, int?, double?, global::System.DateTime?, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<int>, global::System.Collections.Generic.IList<double>, global::System.Collections.Generic.IList<bool>>? Type378 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<bool>? Type379 { get; set; }
+        public global::System.Collections.Generic.IList<double>? Type379 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.LibraryIn? Type380 { get; set; }
+        public global::System.Collections.Generic.IList<bool>? Type380 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.LibraryInUpdate? Type381 { get; set; }
+        public global::Mistral.LibraryIn? Type381 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.LibraryOut? Type382 { get; set; }
+        public global::Mistral.LibraryInUpdate? Type382 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.ListDocumentOut? Type383 { get; set; }
+        public global::Mistral.LibraryOut? Type383 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.PaginationInfo? Type384 { get; set; }
+        public global::Mistral.ListDocumentOut? Type384 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Mistral.DocumentOut>? Type385 { get; set; }
+        public global::Mistral.PaginationInfo? Type385 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.ListLibraryOut? Type386 { get; set; }
+        public global::System.Collections.Generic.IList<global::Mistral.DocumentOut>? Type386 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Mistral.LibraryOut>? Type387 { get; set; }
+        public global::Mistral.ListLibraryOut? Type387 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.ListSharingOut? Type388 { get; set; }
+        public global::System.Collections.Generic.IList<global::Mistral.LibraryOut>? Type388 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Mistral.SharingOut>? Type389 { get; set; }
+        public global::Mistral.ListSharingOut? Type389 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.SharingOut? Type390 { get; set; }
+        public global::System.Collections.Generic.IList<global::Mistral.SharingOut>? Type390 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.ProcessingStatusOut? Type391 { get; set; }
+        public global::Mistral.SharingOut? Type391 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.ShareEnum? Type392 { get; set; }
+        public global::Mistral.ProcessingStatusOut? Type392 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.SharingDelete? Type393 { get; set; }
+        public global::Mistral.ShareEnum? Type393 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.EntityType? Type394 { get; set; }
+        public global::Mistral.SharingDelete? Type394 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.SharingIn? Type395 { get; set; }
+        public global::Mistral.EntityType? Type395 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.CompletionEvent? Type396 { get; set; }
+        public global::Mistral.SharingIn? Type396 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.CompletionChunk? Type397 { get; set; }
+        public global::Mistral.CompletionEvent? Type397 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Mistral.CompletionResponseStreamChoice>? Type398 { get; set; }
+        public global::Mistral.CompletionChunk? Type398 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.CompletionResponseStreamChoice? Type399 { get; set; }
+        public global::System.Collections.Generic.IList<global::Mistral.CompletionResponseStreamChoice>? Type399 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.DeltaMessage? Type400 { get; set; }
+        public global::Mistral.CompletionResponseStreamChoice? Type400 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.CompletionResponseStreamChoiceFinishReason? Type401 { get; set; }
+        public global::Mistral.DeltaMessage? Type401 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.ResponseBase? Type402 { get; set; }
+        public global::Mistral.CompletionResponseStreamChoiceFinishReason? Type402 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.ChatCompletionChoice? Type403 { get; set; }
+        public global::Mistral.ResponseBase? Type403 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.ChatCompletionChoiceFinishReason? Type404 { get; set; }
+        public global::Mistral.ChatCompletionChoice? Type404 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.ChatCompletionResponseBase? Type405 { get; set; }
+        public global::Mistral.ChatCompletionChoiceFinishReason? Type405 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.ChatCompletionResponseBaseChatCompletionResponseBase1? Type406 { get; set; }
+        public global::Mistral.ChatCompletionResponseBase? Type406 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.ChatCompletionResponse? Type407 { get; set; }
+        public global::Mistral.ChatCompletionResponseBaseChatCompletionResponseBase1? Type407 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.ChatCompletionResponseChatCompletionResponse1? Type408 { get; set; }
+        public global::Mistral.ChatCompletionResponse? Type408 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Mistral.ChatCompletionChoice>? Type409 { get; set; }
+        public global::Mistral.ChatCompletionResponseChatCompletionResponse1? Type409 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.FIMCompletionResponse? Type410 { get; set; }
+        public global::System.Collections.Generic.IList<global::Mistral.ChatCompletionChoice>? Type410 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.FIMCompletionResponseVariant2? Type411 { get; set; }
+        public global::Mistral.FIMCompletionResponse? Type411 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.EmbeddingResponseData? Type412 { get; set; }
+        public global::Mistral.FIMCompletionResponseVariant2? Type412 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.EmbeddingResponse? Type413 { get; set; }
+        public global::Mistral.EmbeddingResponseData? Type413 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.EmbeddingResponseVariant2? Type414 { get; set; }
+        public global::Mistral.EmbeddingResponse? Type414 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Mistral.EmbeddingResponseData>? Type415 { get; set; }
+        public global::Mistral.EmbeddingResponseVariant2? Type415 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.FilesApiRoutesUploadFileRequest? Type416 { get; set; }
+        public global::System.Collections.Generic.IList<global::Mistral.EmbeddingResponseData>? Type416 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.LibrariesDocumentsUploadV1Request? Type417 { get; set; }
+        public global::Mistral.FilesApiRoutesUploadFileRequest? Type417 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Mistral.RequestSource>? Type418 { get; set; }
+        public global::Mistral.LibrariesDocumentsUploadV1Request? Type418 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.AnyOf<int?, string, object>? Type419 { get; set; }
+        public global::System.Collections.Generic.IList<global::Mistral.RequestSource>? Type419 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Mistral.SampleType>? Type420 { get; set; }
+        public global::Mistral.AnyOf<int?, string, object>? Type420 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Mistral.Source>? Type421 { get; set; }
+        public global::System.Collections.Generic.IList<global::Mistral.SampleType>? Type421 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.JobsApiRoutesFineTuningGetFineTuningJobsStatus2? Type422 { get; set; }
+        public global::System.Collections.Generic.IList<global::Mistral.Source>? Type422 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Mistral.BatchJobStatus>? Type423 { get; set; }
+        public global::Mistral.JobsApiRoutesFineTuningGetFineTuningJobsStatus2? Type423 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.JobsApiRoutesBatchGetBatchJobsOrderBy? Type424 { get; set; }
+        public global::System.Collections.Generic.IList<global::Mistral.BatchJobStatus>? Type424 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.RetrieveModelV1ModelsModelIdGetResponse? Type425 { get; set; }
+        public global::Mistral.JobsApiRoutesBatchGetBatchJobsOrderBy? Type425 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.RetrieveModelV1ModelsModelIdGetResponseDiscriminator? Type426 { get; set; }
+        public global::Mistral.RetrieveModelV1ModelsModelIdGetResponse? Type426 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.RetrieveModelV1ModelsModelIdGetResponseDiscriminatorType? Type427 { get; set; }
+        public global::Mistral.RetrieveModelV1ModelsModelIdGetResponseDiscriminator? Type427 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Mistral.AnyOf<global::Mistral.ModelConversation, global::Mistral.AgentConversation>>? Type428 { get; set; }
+        public global::Mistral.RetrieveModelV1ModelsModelIdGetResponseDiscriminatorType? Type428 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.AnyOf<global::Mistral.ModelConversation, global::Mistral.AgentConversation>? Type429 { get; set; }
+        public global::System.Collections.Generic.IList<global::Mistral.AnyOf<global::Mistral.ModelConversation, global::Mistral.AgentConversation>>? Type429 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Mistral.Agent>? Type430 { get; set; }
+        public global::Mistral.AnyOf<global::Mistral.ModelConversation, global::Mistral.AgentConversation>? Type430 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Mistral.AgentAliasResponse>? Type431 { get; set; }
+        public global::System.Collections.Generic.IList<global::Mistral.Agent>? Type431 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.AnyOf<global::Mistral.JobsApiRoutesFineTuningCreateFineTuningJobResponseVariant1?, global::Mistral.LegacyJobMetadataOut>? Type432 { get; set; }
+        public global::System.Collections.Generic.IList<global::Mistral.AgentAliasResponse>? Type432 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.JobsApiRoutesFineTuningCreateFineTuningJobResponseVariant1? Type433 { get; set; }
+        public global::Mistral.AnyOf<global::Mistral.JobsApiRoutesFineTuningCreateFineTuningJobResponseVariant1?, global::Mistral.LegacyJobMetadataOut>? Type433 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.JobsApiRoutesFineTuningCreateFineTuningJobResponseVariant1Discriminator? Type434 { get; set; }
+        public global::Mistral.JobsApiRoutesFineTuningCreateFineTuningJobResponseVariant1? Type434 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.JobsApiRoutesFineTuningCreateFineTuningJobResponseVariant1DiscriminatorJobType? Type435 { get; set; }
+        public global::Mistral.JobsApiRoutesFineTuningCreateFineTuningJobResponseVariant1Discriminator? Type435 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.JobsApiRoutesFineTuningGetFineTuningJobResponse? Type436 { get; set; }
+        public global::Mistral.JobsApiRoutesFineTuningCreateFineTuningJobResponseVariant1DiscriminatorJobType? Type436 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.JobsApiRoutesFineTuningGetFineTuningJobResponseDiscriminator? Type437 { get; set; }
+        public global::Mistral.JobsApiRoutesFineTuningGetFineTuningJobResponse? Type437 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.JobsApiRoutesFineTuningGetFineTuningJobResponseDiscriminatorJobType? Type438 { get; set; }
+        public global::Mistral.JobsApiRoutesFineTuningGetFineTuningJobResponseDiscriminator? Type438 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.JobsApiRoutesFineTuningCancelFineTuningJobResponse? Type439 { get; set; }
+        public global::Mistral.JobsApiRoutesFineTuningGetFineTuningJobResponseDiscriminatorJobType? Type439 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.JobsApiRoutesFineTuningCancelFineTuningJobResponseDiscriminator? Type440 { get; set; }
+        public global::Mistral.JobsApiRoutesFineTuningCancelFineTuningJobResponse? Type440 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.JobsApiRoutesFineTuningCancelFineTuningJobResponseDiscriminatorJobType? Type441 { get; set; }
+        public global::Mistral.JobsApiRoutesFineTuningCancelFineTuningJobResponseDiscriminator? Type441 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.JobsApiRoutesFineTuningStartFineTuningJobResponse? Type442 { get; set; }
+        public global::Mistral.JobsApiRoutesFineTuningCancelFineTuningJobResponseDiscriminatorJobType? Type442 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.JobsApiRoutesFineTuningStartFineTuningJobResponseDiscriminator? Type443 { get; set; }
+        public global::Mistral.JobsApiRoutesFineTuningStartFineTuningJobResponse? Type443 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.JobsApiRoutesFineTuningStartFineTuningJobResponseDiscriminatorJobType? Type444 { get; set; }
+        public global::Mistral.JobsApiRoutesFineTuningStartFineTuningJobResponseDiscriminator? Type444 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.JobsApiRoutesFineTuningUpdateFineTunedModelResponse? Type445 { get; set; }
+        public global::Mistral.JobsApiRoutesFineTuningStartFineTuningJobResponseDiscriminatorJobType? Type445 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.JobsApiRoutesFineTuningUpdateFineTunedModelResponseDiscriminator? Type446 { get; set; }
+        public global::Mistral.JobsApiRoutesFineTuningUpdateFineTunedModelResponse? Type446 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.JobsApiRoutesFineTuningUpdateFineTunedModelResponseDiscriminatorModelType? Type447 { get; set; }
+        public global::Mistral.JobsApiRoutesFineTuningUpdateFineTunedModelResponseDiscriminator? Type447 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Mistral.JobsApiRoutesFineTuningUpdateFineTunedModelResponseDiscriminatorModelType? Type448 { get; set; }
 
         /// <summary>
         /// 
