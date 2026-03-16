@@ -22,7 +22,7 @@ namespace Mistral
             ref string content);
 
         /// <summary>
-        /// Delete a library and all of its document.<br/>
+        /// Delete a library and all of it's document.<br/>
         /// Given a library id, deletes it together with all documents that have been uploaded to that library.
         /// </summary>
         /// <param name="libraryId"></param>
