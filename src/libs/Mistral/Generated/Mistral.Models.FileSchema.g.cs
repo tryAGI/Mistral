@@ -87,6 +87,18 @@ namespace Mistral
         public string? Signature { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("expires_at")]
+        public int? ExpiresAt { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("visibility")]
+        public global::Mistral.FileVisibility? Visibility { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -118,6 +130,8 @@ namespace Mistral
         /// <param name="mimetype"></param>
         /// <param name="source"></param>
         /// <param name="signature"></param>
+        /// <param name="expiresAt"></param>
+        /// <param name="visibility"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -132,7 +146,9 @@ namespace Mistral
             global::Mistral.Source source,
             int? numLines,
             string? mimetype,
-            string? signature)
+            string? signature,
+            int? expiresAt,
+            global::Mistral.FileVisibility? visibility)
         {
             this.Id = id;
             this.Object = @object ?? throw new global::System.ArgumentNullException(nameof(@object));
@@ -145,6 +161,8 @@ namespace Mistral
             this.NumLines = numLines;
             this.Mimetype = mimetype;
             this.Signature = signature;
+            this.ExpiresAt = expiresAt;
+            this.Visibility = visibility;
         }
 
         /// <summary>

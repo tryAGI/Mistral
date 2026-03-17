@@ -81,18 +81,18 @@ namespace Mistral
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Mistral.ConversationThinkChunk? ConversationThinkChunk { get; init; }
+        public global::Mistral.ThinkChunk? ThinkChunk { get; init; }
 #else
-        public global::Mistral.ConversationThinkChunk? ConversationThinkChunk { get; }
+        public global::Mistral.ThinkChunk? ThinkChunk { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ConversationThinkChunk))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ThinkChunk))]
 #endif
-        public bool IsConversationThinkChunk => ConversationThinkChunk != null;
+        public bool IsThinkChunk => ThinkChunk != null;
 
         /// <summary>
         /// 
@@ -185,19 +185,19 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator OutputContentChunks(global::Mistral.ConversationThinkChunk value) => new OutputContentChunks((global::Mistral.ConversationThinkChunk?)value);
+        public static implicit operator OutputContentChunks(global::Mistral.ThinkChunk value) => new OutputContentChunks((global::Mistral.ThinkChunk?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Mistral.ConversationThinkChunk?(OutputContentChunks @this) => @this.ConversationThinkChunk;
+        public static implicit operator global::Mistral.ThinkChunk?(OutputContentChunks @this) => @this.ThinkChunk;
 
         /// <summary>
         /// 
         /// </summary>
-        public OutputContentChunks(global::Mistral.ConversationThinkChunk? value)
+        public OutputContentChunks(global::Mistral.ThinkChunk? value)
         {
-            ConversationThinkChunk = value;
+            ThinkChunk = value;
         }
 
         /// <summary>
@@ -226,7 +226,7 @@ namespace Mistral
             global::Mistral.ImageURLChunk? imageURLChunk,
             global::Mistral.ToolFileChunk? toolFileChunk,
             global::Mistral.DocumentURLChunk? documentURLChunk,
-            global::Mistral.ConversationThinkChunk? conversationThinkChunk,
+            global::Mistral.ThinkChunk? thinkChunk,
             global::Mistral.ToolReferenceChunk? toolReferenceChunk
             )
         {
@@ -234,7 +234,7 @@ namespace Mistral
             ImageURLChunk = imageURLChunk;
             ToolFileChunk = toolFileChunk;
             DocumentURLChunk = documentURLChunk;
-            ConversationThinkChunk = conversationThinkChunk;
+            ThinkChunk = thinkChunk;
             ToolReferenceChunk = toolReferenceChunk;
         }
 
@@ -243,7 +243,7 @@ namespace Mistral
         /// </summary>
         public object? Object =>
             ToolReferenceChunk as object ??
-            ConversationThinkChunk as object ??
+            ThinkChunk as object ??
             DocumentURLChunk as object ??
             ToolFileChunk as object ??
             ImageURLChunk as object ??
@@ -258,7 +258,7 @@ namespace Mistral
             ImageURLChunk?.ToString() ??
             ToolFileChunk?.ToString() ??
             DocumentURLChunk?.ToString() ??
-            ConversationThinkChunk?.ToString() ??
+            ThinkChunk?.ToString() ??
             ToolReferenceChunk?.ToString() 
             ;
 
@@ -267,7 +267,7 @@ namespace Mistral
         /// </summary>
         public bool Validate()
         {
-            return IsTextChunk || IsImageURLChunk || IsToolFileChunk || IsDocumentURLChunk || IsConversationThinkChunk || IsToolReferenceChunk;
+            return IsTextChunk || IsImageURLChunk || IsToolFileChunk || IsDocumentURLChunk || IsThinkChunk || IsToolReferenceChunk;
         }
 
         /// <summary>
@@ -278,7 +278,7 @@ namespace Mistral
             global::System.Func<global::Mistral.ImageURLChunk?, TResult>? imageURLChunk = null,
             global::System.Func<global::Mistral.ToolFileChunk?, TResult>? toolFileChunk = null,
             global::System.Func<global::Mistral.DocumentURLChunk?, TResult>? documentURLChunk = null,
-            global::System.Func<global::Mistral.ConversationThinkChunk?, TResult>? conversationThinkChunk = null,
+            global::System.Func<global::Mistral.ThinkChunk?, TResult>? thinkChunk = null,
             global::System.Func<global::Mistral.ToolReferenceChunk?, TResult>? toolReferenceChunk = null,
             bool validate = true)
         {
@@ -303,9 +303,9 @@ namespace Mistral
             {
                 return documentURLChunk(DocumentURLChunk!);
             }
-            else if (IsConversationThinkChunk && conversationThinkChunk != null)
+            else if (IsThinkChunk && thinkChunk != null)
             {
-                return conversationThinkChunk(ConversationThinkChunk!);
+                return thinkChunk(ThinkChunk!);
             }
             else if (IsToolReferenceChunk && toolReferenceChunk != null)
             {
@@ -323,7 +323,7 @@ namespace Mistral
             global::System.Action<global::Mistral.ImageURLChunk?>? imageURLChunk = null,
             global::System.Action<global::Mistral.ToolFileChunk?>? toolFileChunk = null,
             global::System.Action<global::Mistral.DocumentURLChunk?>? documentURLChunk = null,
-            global::System.Action<global::Mistral.ConversationThinkChunk?>? conversationThinkChunk = null,
+            global::System.Action<global::Mistral.ThinkChunk?>? thinkChunk = null,
             global::System.Action<global::Mistral.ToolReferenceChunk?>? toolReferenceChunk = null,
             bool validate = true)
         {
@@ -348,9 +348,9 @@ namespace Mistral
             {
                 documentURLChunk?.Invoke(DocumentURLChunk!);
             }
-            else if (IsConversationThinkChunk)
+            else if (IsThinkChunk)
             {
-                conversationThinkChunk?.Invoke(ConversationThinkChunk!);
+                thinkChunk?.Invoke(ThinkChunk!);
             }
             else if (IsToolReferenceChunk)
             {
@@ -373,8 +373,8 @@ namespace Mistral
                 typeof(global::Mistral.ToolFileChunk),
                 DocumentURLChunk,
                 typeof(global::Mistral.DocumentURLChunk),
-                ConversationThinkChunk,
-                typeof(global::Mistral.ConversationThinkChunk),
+                ThinkChunk,
+                typeof(global::Mistral.ThinkChunk),
                 ToolReferenceChunk,
                 typeof(global::Mistral.ToolReferenceChunk),
             };
@@ -397,7 +397,7 @@ namespace Mistral
                 global::System.Collections.Generic.EqualityComparer<global::Mistral.ImageURLChunk?>.Default.Equals(ImageURLChunk, other.ImageURLChunk) &&
                 global::System.Collections.Generic.EqualityComparer<global::Mistral.ToolFileChunk?>.Default.Equals(ToolFileChunk, other.ToolFileChunk) &&
                 global::System.Collections.Generic.EqualityComparer<global::Mistral.DocumentURLChunk?>.Default.Equals(DocumentURLChunk, other.DocumentURLChunk) &&
-                global::System.Collections.Generic.EqualityComparer<global::Mistral.ConversationThinkChunk?>.Default.Equals(ConversationThinkChunk, other.ConversationThinkChunk) &&
+                global::System.Collections.Generic.EqualityComparer<global::Mistral.ThinkChunk?>.Default.Equals(ThinkChunk, other.ThinkChunk) &&
                 global::System.Collections.Generic.EqualityComparer<global::Mistral.ToolReferenceChunk?>.Default.Equals(ToolReferenceChunk, other.ToolReferenceChunk) 
                 ;
         }

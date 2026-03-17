@@ -71,6 +71,20 @@ namespace Mistral
                 }
             }
             using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
+            if (request.Expiry != default)
+            {
+
+                __httpRequestContent.Add(
+                    content: new global::System.Net.Http.StringContent($"{request.Expiry}"),
+                    name: "\"expiry\"");
+            } 
+            if (request.Visibility != default)
+            {
+
+                __httpRequestContent.Add(
+                    content: new global::System.Net.Http.StringContent($"{request.Visibility?.ToValueString()}"),
+                    name: "\"visibility\"");
+            } 
             if (request.Purpose != default)
             {
 
@@ -187,6 +201,10 @@ namespace Mistral
         /// The size of individual files can be a maximum of 512 MB. The Fine-tuning API only supports .jsonl files.<br/>
         /// Please contact us if you need to increase these storage limits.
         /// </summary>
+        /// <param name="expiry"></param>
+        /// <param name="visibility">
+        /// Default Value: workspace
+        /// </param>
         /// <param name="purpose"></param>
         /// <param name="file">
         /// The File object (not file name) to be uploaded.<br/>
@@ -215,11 +233,15 @@ namespace Mistral
         public async global::System.Threading.Tasks.Task<global::Mistral.UploadFileOut> UploadFileAsync(
             byte[] file,
             string filename,
+            int? expiry = default,
+            global::Mistral.FilesApiRoutesUploadFileRequestVisibility? visibility = default,
             global::Mistral.FilePurpose? purpose = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::Mistral.FilesApiRoutesUploadFileRequest
             {
+                Expiry = expiry,
+                Visibility = visibility,
                 Purpose = purpose,
                 File = file,
                 Filename = filename,

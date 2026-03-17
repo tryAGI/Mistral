@@ -1,0 +1,489 @@
+#pragma warning disable CS0618 // Type or member is obsolete
+
+#nullable enable
+
+namespace Mistral
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public readonly partial struct ToolsVariant1Item : global::System.IEquatable<ToolsVariant1Item>
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Mistral.ConversationRequestBaseToolsVariant1ItemDiscriminatorType? Type { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Mistral.FunctionTool? Function { get; init; }
+#else
+        public global::Mistral.FunctionTool? Function { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Function))]
+#endif
+        public bool IsFunction => Function != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Mistral.WebSearchTool? WebSearch { get; init; }
+#else
+        public global::Mistral.WebSearchTool? WebSearch { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebSearch))]
+#endif
+        public bool IsWebSearch => WebSearch != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Mistral.WebSearchPremiumTool? WebSearchPremium { get; init; }
+#else
+        public global::Mistral.WebSearchPremiumTool? WebSearchPremium { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebSearchPremium))]
+#endif
+        public bool IsWebSearchPremium => WebSearchPremium != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Mistral.CodeInterpreterTool? CodeInterpreter { get; init; }
+#else
+        public global::Mistral.CodeInterpreterTool? CodeInterpreter { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CodeInterpreter))]
+#endif
+        public bool IsCodeInterpreter => CodeInterpreter != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Mistral.ImageGenerationTool? ImageGeneration { get; init; }
+#else
+        public global::Mistral.ImageGenerationTool? ImageGeneration { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageGeneration))]
+#endif
+        public bool IsImageGeneration => ImageGeneration != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Mistral.DocumentLibraryTool? DocumentLibrary { get; init; }
+#else
+        public global::Mistral.DocumentLibraryTool? DocumentLibrary { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DocumentLibrary))]
+#endif
+        public bool IsDocumentLibrary => DocumentLibrary != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Mistral.CustomConnector? Connector { get; init; }
+#else
+        public global::Mistral.CustomConnector? Connector { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Connector))]
+#endif
+        public bool IsConnector => Connector != null;
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ToolsVariant1Item(global::Mistral.FunctionTool value) => new ToolsVariant1Item((global::Mistral.FunctionTool?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Mistral.FunctionTool?(ToolsVariant1Item @this) => @this.Function;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ToolsVariant1Item(global::Mistral.FunctionTool? value)
+        {
+            Function = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ToolsVariant1Item(global::Mistral.WebSearchTool value) => new ToolsVariant1Item((global::Mistral.WebSearchTool?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Mistral.WebSearchTool?(ToolsVariant1Item @this) => @this.WebSearch;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ToolsVariant1Item(global::Mistral.WebSearchTool? value)
+        {
+            WebSearch = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ToolsVariant1Item(global::Mistral.WebSearchPremiumTool value) => new ToolsVariant1Item((global::Mistral.WebSearchPremiumTool?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Mistral.WebSearchPremiumTool?(ToolsVariant1Item @this) => @this.WebSearchPremium;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ToolsVariant1Item(global::Mistral.WebSearchPremiumTool? value)
+        {
+            WebSearchPremium = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ToolsVariant1Item(global::Mistral.CodeInterpreterTool value) => new ToolsVariant1Item((global::Mistral.CodeInterpreterTool?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Mistral.CodeInterpreterTool?(ToolsVariant1Item @this) => @this.CodeInterpreter;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ToolsVariant1Item(global::Mistral.CodeInterpreterTool? value)
+        {
+            CodeInterpreter = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ToolsVariant1Item(global::Mistral.ImageGenerationTool value) => new ToolsVariant1Item((global::Mistral.ImageGenerationTool?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Mistral.ImageGenerationTool?(ToolsVariant1Item @this) => @this.ImageGeneration;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ToolsVariant1Item(global::Mistral.ImageGenerationTool? value)
+        {
+            ImageGeneration = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ToolsVariant1Item(global::Mistral.DocumentLibraryTool value) => new ToolsVariant1Item((global::Mistral.DocumentLibraryTool?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Mistral.DocumentLibraryTool?(ToolsVariant1Item @this) => @this.DocumentLibrary;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ToolsVariant1Item(global::Mistral.DocumentLibraryTool? value)
+        {
+            DocumentLibrary = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ToolsVariant1Item(global::Mistral.CustomConnector value) => new ToolsVariant1Item((global::Mistral.CustomConnector?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Mistral.CustomConnector?(ToolsVariant1Item @this) => @this.Connector;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ToolsVariant1Item(global::Mistral.CustomConnector? value)
+        {
+            Connector = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ToolsVariant1Item(
+            global::Mistral.ConversationRequestBaseToolsVariant1ItemDiscriminatorType? type,
+            global::Mistral.FunctionTool? function,
+            global::Mistral.WebSearchTool? webSearch,
+            global::Mistral.WebSearchPremiumTool? webSearchPremium,
+            global::Mistral.CodeInterpreterTool? codeInterpreter,
+            global::Mistral.ImageGenerationTool? imageGeneration,
+            global::Mistral.DocumentLibraryTool? documentLibrary,
+            global::Mistral.CustomConnector? connector
+            )
+        {
+            Type = type;
+
+            Function = function;
+            WebSearch = webSearch;
+            WebSearchPremium = webSearchPremium;
+            CodeInterpreter = codeInterpreter;
+            ImageGeneration = imageGeneration;
+            DocumentLibrary = documentLibrary;
+            Connector = connector;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public object? Object =>
+            Connector as object ??
+            DocumentLibrary as object ??
+            ImageGeneration as object ??
+            CodeInterpreter as object ??
+            WebSearchPremium as object ??
+            WebSearch as object ??
+            Function as object 
+            ;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public override string? ToString() =>
+            Function?.ToString() ??
+            WebSearch?.ToString() ??
+            WebSearchPremium?.ToString() ??
+            CodeInterpreter?.ToString() ??
+            ImageGeneration?.ToString() ??
+            DocumentLibrary?.ToString() ??
+            Connector?.ToString() 
+            ;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool Validate()
+        {
+            return IsFunction && !IsWebSearch && !IsWebSearchPremium && !IsCodeInterpreter && !IsImageGeneration && !IsDocumentLibrary && !IsConnector || !IsFunction && IsWebSearch && !IsWebSearchPremium && !IsCodeInterpreter && !IsImageGeneration && !IsDocumentLibrary && !IsConnector || !IsFunction && !IsWebSearch && IsWebSearchPremium && !IsCodeInterpreter && !IsImageGeneration && !IsDocumentLibrary && !IsConnector || !IsFunction && !IsWebSearch && !IsWebSearchPremium && IsCodeInterpreter && !IsImageGeneration && !IsDocumentLibrary && !IsConnector || !IsFunction && !IsWebSearch && !IsWebSearchPremium && !IsCodeInterpreter && IsImageGeneration && !IsDocumentLibrary && !IsConnector || !IsFunction && !IsWebSearch && !IsWebSearchPremium && !IsCodeInterpreter && !IsImageGeneration && IsDocumentLibrary && !IsConnector || !IsFunction && !IsWebSearch && !IsWebSearchPremium && !IsCodeInterpreter && !IsImageGeneration && !IsDocumentLibrary && IsConnector;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public TResult? Match<TResult>(
+            global::System.Func<global::Mistral.FunctionTool?, TResult>? function = null,
+            global::System.Func<global::Mistral.WebSearchTool?, TResult>? webSearch = null,
+            global::System.Func<global::Mistral.WebSearchPremiumTool?, TResult>? webSearchPremium = null,
+            global::System.Func<global::Mistral.CodeInterpreterTool?, TResult>? codeInterpreter = null,
+            global::System.Func<global::Mistral.ImageGenerationTool?, TResult>? imageGeneration = null,
+            global::System.Func<global::Mistral.DocumentLibraryTool?, TResult>? documentLibrary = null,
+            global::System.Func<global::Mistral.CustomConnector?, TResult>? connector = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsFunction && function != null)
+            {
+                return function(Function!);
+            }
+            else if (IsWebSearch && webSearch != null)
+            {
+                return webSearch(WebSearch!);
+            }
+            else if (IsWebSearchPremium && webSearchPremium != null)
+            {
+                return webSearchPremium(WebSearchPremium!);
+            }
+            else if (IsCodeInterpreter && codeInterpreter != null)
+            {
+                return codeInterpreter(CodeInterpreter!);
+            }
+            else if (IsImageGeneration && imageGeneration != null)
+            {
+                return imageGeneration(ImageGeneration!);
+            }
+            else if (IsDocumentLibrary && documentLibrary != null)
+            {
+                return documentLibrary(DocumentLibrary!);
+            }
+            else if (IsConnector && connector != null)
+            {
+                return connector(Connector!);
+            }
+
+            return default(TResult);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Match(
+            global::System.Action<global::Mistral.FunctionTool?>? function = null,
+            global::System.Action<global::Mistral.WebSearchTool?>? webSearch = null,
+            global::System.Action<global::Mistral.WebSearchPremiumTool?>? webSearchPremium = null,
+            global::System.Action<global::Mistral.CodeInterpreterTool?>? codeInterpreter = null,
+            global::System.Action<global::Mistral.ImageGenerationTool?>? imageGeneration = null,
+            global::System.Action<global::Mistral.DocumentLibraryTool?>? documentLibrary = null,
+            global::System.Action<global::Mistral.CustomConnector?>? connector = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsFunction)
+            {
+                function?.Invoke(Function!);
+            }
+            else if (IsWebSearch)
+            {
+                webSearch?.Invoke(WebSearch!);
+            }
+            else if (IsWebSearchPremium)
+            {
+                webSearchPremium?.Invoke(WebSearchPremium!);
+            }
+            else if (IsCodeInterpreter)
+            {
+                codeInterpreter?.Invoke(CodeInterpreter!);
+            }
+            else if (IsImageGeneration)
+            {
+                imageGeneration?.Invoke(ImageGeneration!);
+            }
+            else if (IsDocumentLibrary)
+            {
+                documentLibrary?.Invoke(DocumentLibrary!);
+            }
+            else if (IsConnector)
+            {
+                connector?.Invoke(Connector!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public override int GetHashCode()
+        {
+            var fields = new object?[]
+            {
+                Function,
+                typeof(global::Mistral.FunctionTool),
+                WebSearch,
+                typeof(global::Mistral.WebSearchTool),
+                WebSearchPremium,
+                typeof(global::Mistral.WebSearchPremiumTool),
+                CodeInterpreter,
+                typeof(global::Mistral.CodeInterpreterTool),
+                ImageGeneration,
+                typeof(global::Mistral.ImageGenerationTool),
+                DocumentLibrary,
+                typeof(global::Mistral.DocumentLibraryTool),
+                Connector,
+                typeof(global::Mistral.CustomConnector),
+            };
+            const int offset = unchecked((int)2166136261);
+            const int prime = 16777619;
+            static int HashCodeAggregator(int hashCode, object? value) => value == null
+                ? (hashCode ^ 0) * prime
+                : (hashCode ^ value.GetHashCode()) * prime;
+
+            return global::System.Linq.Enumerable.Aggregate(fields, offset, HashCodeAggregator);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool Equals(ToolsVariant1Item other)
+        {
+            return
+                global::System.Collections.Generic.EqualityComparer<global::Mistral.FunctionTool?>.Default.Equals(Function, other.Function) &&
+                global::System.Collections.Generic.EqualityComparer<global::Mistral.WebSearchTool?>.Default.Equals(WebSearch, other.WebSearch) &&
+                global::System.Collections.Generic.EqualityComparer<global::Mistral.WebSearchPremiumTool?>.Default.Equals(WebSearchPremium, other.WebSearchPremium) &&
+                global::System.Collections.Generic.EqualityComparer<global::Mistral.CodeInterpreterTool?>.Default.Equals(CodeInterpreter, other.CodeInterpreter) &&
+                global::System.Collections.Generic.EqualityComparer<global::Mistral.ImageGenerationTool?>.Default.Equals(ImageGeneration, other.ImageGeneration) &&
+                global::System.Collections.Generic.EqualityComparer<global::Mistral.DocumentLibraryTool?>.Default.Equals(DocumentLibrary, other.DocumentLibrary) &&
+                global::System.Collections.Generic.EqualityComparer<global::Mistral.CustomConnector?>.Default.Equals(Connector, other.Connector) 
+                ;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static bool operator ==(ToolsVariant1Item obj1, ToolsVariant1Item obj2)
+        {
+            return global::System.Collections.Generic.EqualityComparer<ToolsVariant1Item>.Default.Equals(obj1, obj2);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static bool operator !=(ToolsVariant1Item obj1, ToolsVariant1Item obj2)
+        {
+            return !(obj1 == obj2);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public override bool Equals(object? obj)
+        {
+            return obj is ToolsVariant1Item o && Equals(o);
+        }
+    }
+}

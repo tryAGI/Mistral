@@ -65,12 +65,12 @@ namespace Mistral.JsonConverters
             }
 
             readerCopy = reader;
-            global::Mistral.ConversationThinkChunk? conversationThinkChunk = default;
+            global::Mistral.ThinkChunk? thinkChunk = default;
             try
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.ConversationThinkChunk), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.ConversationThinkChunk> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.ConversationThinkChunk).Name}");
-                conversationThinkChunk = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.ThinkChunk), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.ThinkChunk> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.ThinkChunk).Name}");
+                thinkChunk = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
             }
             catch (global::System.Text.Json.JsonException)
             {
@@ -97,7 +97,7 @@ namespace Mistral.JsonConverters
 
                 documentURLChunk,
 
-                conversationThinkChunk,
+                thinkChunk,
 
                 toolReferenceChunk
                 );
@@ -126,10 +126,10 @@ namespace Mistral.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.DocumentURLChunk).Name}");
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            else if (conversationThinkChunk != null)
+            else if (thinkChunk != null)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.ConversationThinkChunk), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.ConversationThinkChunk> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.ConversationThinkChunk).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.ThinkChunk), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.ThinkChunk> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.ThinkChunk).Name}");
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             else if (toolReferenceChunk != null)
@@ -175,11 +175,11 @@ namespace Mistral.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.DocumentURLChunk).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.DocumentURLChunk, typeInfo);
             }
-            else if (value.IsConversationThinkChunk)
+            else if (value.IsThinkChunk)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.ConversationThinkChunk), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.ConversationThinkChunk?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.ConversationThinkChunk).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ConversationThinkChunk, typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.ThinkChunk), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.ThinkChunk?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.ThinkChunk).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ThinkChunk, typeInfo);
             }
             else if (value.IsToolReferenceChunk)
             {

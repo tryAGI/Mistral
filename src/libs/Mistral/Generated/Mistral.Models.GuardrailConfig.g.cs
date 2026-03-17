@@ -22,6 +22,12 @@ namespace Mistral
         public global::Mistral.ModerationLLMV1Config? ModerationLlmV1 { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("moderation_llm_v2")]
+        public global::Mistral.ModerationLLMV2Config? ModerationLlmV2 { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -35,15 +41,18 @@ namespace Mistral
         /// Default Value: false
         /// </param>
         /// <param name="moderationLlmV1"></param>
+        /// <param name="moderationLlmV2"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public GuardrailConfig(
             bool? blockOnError,
-            global::Mistral.ModerationLLMV1Config? moderationLlmV1)
+            global::Mistral.ModerationLLMV1Config? moderationLlmV1,
+            global::Mistral.ModerationLLMV2Config? moderationLlmV2)
         {
             this.BlockOnError = blockOnError;
             this.ModerationLlmV1 = moderationLlmV1;
+            this.ModerationLlmV2 = moderationLlmV2;
         }
 
         /// <summary>
