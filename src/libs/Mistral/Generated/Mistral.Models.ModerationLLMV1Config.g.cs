@@ -16,7 +16,7 @@ namespace Mistral
         public string? ModelName { get; set; }
 
         /// <summary>
-        /// Override default thresholds for specific categories.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("custom_category_thresholds")]
         public global::Mistral.ModerationLLMV1CategoryThresholds? CustomCategoryThresholds { get; set; }
@@ -33,8 +33,8 @@ namespace Mistral
         /// Default Value: none
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("action")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.ModerationLLMV1ActionJsonConverter))]
-        public global::Mistral.ModerationLLMV1Action? Action { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.ModerationLLMActionJsonConverter))]
+        public global::Mistral.ModerationLLMAction? Action { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -49,9 +49,7 @@ namespace Mistral
         /// Override model name. Should be omitted in general.<br/>
         /// Default Value: mistral-moderation-2411
         /// </param>
-        /// <param name="customCategoryThresholds">
-        /// Override default thresholds for specific categories.
-        /// </param>
+        /// <param name="customCategoryThresholds"></param>
         /// <param name="ignoreOtherCategories">
         /// If true, only evaluate categories in custom_category_thresholds; others are ignored.<br/>
         /// Default Value: false
@@ -67,7 +65,7 @@ namespace Mistral
             string? modelName,
             global::Mistral.ModerationLLMV1CategoryThresholds? customCategoryThresholds,
             bool? ignoreOtherCategories,
-            global::Mistral.ModerationLLMV1Action? action)
+            global::Mistral.ModerationLLMAction? action)
         {
             this.ModelName = modelName;
             this.CustomCategoryThresholds = customCategoryThresholds;

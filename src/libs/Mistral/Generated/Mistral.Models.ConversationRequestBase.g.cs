@@ -43,10 +43,10 @@ namespace Mistral
         public string? Instructions { get; set; }
 
         /// <summary>
-        /// List of tools which are available to the model during the conversation.
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tools")]
-        public global::System.Collections.Generic.IList<global::Mistral.ToolsItem5>? Tools { get; set; }
+        public global::System.Collections.Generic.IList<global::Mistral.ToolsVariant1Item>? Tools { get; set; }
 
         /// <summary>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
@@ -120,7 +120,7 @@ namespace Mistral
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="tools">
-        /// List of tools which are available to the model during the conversation.
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="completionArgs">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
@@ -155,7 +155,7 @@ namespace Mistral
             bool? store,
             global::Mistral.ConversationRequestBaseHandoffExecution2? handoffExecution,
             string? instructions,
-            global::System.Collections.Generic.IList<global::Mistral.ToolsItem5>? tools,
+            global::System.Collections.Generic.IList<global::Mistral.ToolsVariant1Item>? tools,
             global::Mistral.CompletionArgs? completionArgs,
             global::System.Collections.Generic.IList<global::Mistral.GuardrailConfig>? guardrails,
             string? name,

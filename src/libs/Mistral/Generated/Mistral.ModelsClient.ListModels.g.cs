@@ -6,10 +6,14 @@ namespace Mistral
     public partial class ModelsClient
     {
         partial void PrepareListModelsArguments(
-            global::System.Net.Http.HttpClient httpClient);
+            global::System.Net.Http.HttpClient httpClient,
+            ref string? provider,
+            ref string? model);
         partial void PrepareListModelsRequest(
             global::System.Net.Http.HttpClient httpClient,
-            global::System.Net.Http.HttpRequestMessage httpRequestMessage);
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string? provider,
+            string? model);
         partial void ProcessListModelsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -23,19 +27,29 @@ namespace Mistral
         /// List Models<br/>
         /// List all models available to the user.
         /// </summary>
+        /// <param name="provider"></param>
+        /// <param name="model"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Mistral.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Mistral.ModelList> ListModelsAsync(
+            string? provider = default,
+            string? model = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
             PrepareListModelsArguments(
-                httpClient: HttpClient);
+                httpClient: HttpClient,
+                provider: ref provider,
+                model: ref model);
 
             var __pathBuilder = new global::Mistral.PathBuilder(
                 path: "/v1/models",
                 baseUri: HttpClient.BaseAddress); 
+            __pathBuilder
+                .AddOptionalParameter("provider", provider)
+                .AddOptionalParameter("model", model) 
+                ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -66,7 +80,9 @@ namespace Mistral
                 request: __httpRequest);
             PrepareListModelsRequest(
                 httpClient: HttpClient,
-                httpRequestMessage: __httpRequest);
+                httpRequestMessage: __httpRequest,
+                provider: provider,
+                model: model);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,
@@ -79,6 +95,43 @@ namespace Mistral
             ProcessListModelsResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
+            // Validation Error
+            if ((int)__response.StatusCode == 422)
+            {
+                string? __content_422 = null;
+                global::System.Exception? __exception_422 = null;
+                global::Mistral.HTTPValidationError? __value_422 = null;
+                try
+                {
+                    if (ReadResponseAsString)
+                    {
+                        __content_422 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                        __value_422 = global::Mistral.HTTPValidationError.FromJson(__content_422, JsonSerializerContext);
+                    }
+                    else
+                    {
+                        var __contentStream_422 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                        __value_422 = await global::Mistral.HTTPValidationError.FromJsonStreamAsync(__contentStream_422, JsonSerializerContext).ConfigureAwait(false);
+                    }
+                }
+                catch (global::System.Exception __ex)
+                {
+                    __exception_422 = __ex;
+                }
+
+                throw new global::Mistral.ApiException<global::Mistral.HTTPValidationError>(
+                    message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __exception_422,
+                    statusCode: __response.StatusCode)
+                {
+                    ResponseBody = __content_422,
+                    ResponseObject = __value_422,
+                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                        __response.Headers,
+                        h => h.Key,
+                        h => h.Value),
+                };
+            }
 
             if (ReadResponseAsString)
             {

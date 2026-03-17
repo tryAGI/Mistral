@@ -4,7 +4,7 @@
 namespace Mistral
 {
     /// <summary>
-    /// Override default thresholds for specific categories.
+    /// 
     /// </summary>
     public sealed partial class ModerationLLMV1ConfigCustomCategoryThresholds
     {

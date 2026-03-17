@@ -15,6 +15,10 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        Connector,
+        /// <summary>
+        /// 
+        /// </summary>
         DocumentLibrary,
         /// <summary>
         /// 
@@ -47,6 +51,7 @@ namespace Mistral
             return value switch
             {
                 AgentToolDiscriminatorType.CodeInterpreter => "code_interpreter",
+                AgentToolDiscriminatorType.Connector => "connector",
                 AgentToolDiscriminatorType.DocumentLibrary => "document_library",
                 AgentToolDiscriminatorType.Function => "function",
                 AgentToolDiscriminatorType.ImageGeneration => "image_generation",
@@ -63,6 +68,7 @@ namespace Mistral
             return value switch
             {
                 "code_interpreter" => AgentToolDiscriminatorType.CodeInterpreter,
+                "connector" => AgentToolDiscriminatorType.Connector,
                 "document_library" => AgentToolDiscriminatorType.DocumentLibrary,
                 "function" => AgentToolDiscriminatorType.Function,
                 "image_generation" => AgentToolDiscriminatorType.ImageGeneration,

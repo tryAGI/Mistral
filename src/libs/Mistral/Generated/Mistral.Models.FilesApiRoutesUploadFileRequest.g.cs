@@ -11,6 +11,19 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("expiry")]
+        public int? Expiry { get; set; }
+
+        /// <summary>
+        /// Default Value: workspace
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("visibility")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.FilesApiRoutesUploadFileRequestVisibilityJsonConverter))]
+        public global::Mistral.FilesApiRoutesUploadFileRequestVisibility? Visibility { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("purpose")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.FilePurposeJsonConverter))]
         public global::Mistral.FilePurpose? Purpose { get; set; }
@@ -54,6 +67,10 @@ namespace Mistral
         /// <summary>
         /// Initializes a new instance of the <see cref="FilesApiRoutesUploadFileRequest" /> class.
         /// </summary>
+        /// <param name="expiry"></param>
+        /// <param name="visibility">
+        /// Default Value: workspace
+        /// </param>
         /// <param name="purpose"></param>
         /// <param name="file">
         /// The File object (not file name) to be uploaded.<br/>
@@ -83,10 +100,14 @@ namespace Mistral
         public FilesApiRoutesUploadFileRequest(
             byte[] file,
             string filename,
+            int? expiry,
+            global::Mistral.FilesApiRoutesUploadFileRequestVisibility? visibility,
             global::Mistral.FilePurpose? purpose)
         {
             this.File = file ?? throw new global::System.ArgumentNullException(nameof(file));
             this.Filename = filename ?? throw new global::System.ArgumentNullException(nameof(filename));
+            this.Expiry = expiry;
+            this.Visibility = visibility;
             this.Purpose = purpose;
         }
 

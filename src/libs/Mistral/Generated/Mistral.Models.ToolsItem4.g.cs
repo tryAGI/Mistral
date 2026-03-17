@@ -115,6 +115,23 @@ namespace Mistral
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DocumentLibrary))]
 #endif
         public bool IsDocumentLibrary => DocumentLibrary != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Mistral.CustomConnector? Connector { get; init; }
+#else
+        public global::Mistral.CustomConnector? Connector { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Connector))]
+#endif
+        public bool IsConnector => Connector != null;
         /// <summary>
         /// 
         /// </summary>
@@ -226,6 +243,24 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public static implicit operator ToolsItem4(global::Mistral.CustomConnector value) => new ToolsItem4((global::Mistral.CustomConnector?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Mistral.CustomConnector?(ToolsItem4 @this) => @this.Connector;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ToolsItem4(global::Mistral.CustomConnector? value)
+        {
+            Connector = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ToolsItem4(
             global::Mistral.ModelConversationToolDiscriminatorType? type,
             global::Mistral.FunctionTool? function,
@@ -233,7 +268,8 @@ namespace Mistral
             global::Mistral.WebSearchPremiumTool? webSearchPremium,
             global::Mistral.CodeInterpreterTool? codeInterpreter,
             global::Mistral.ImageGenerationTool? imageGeneration,
-            global::Mistral.DocumentLibraryTool? documentLibrary
+            global::Mistral.DocumentLibraryTool? documentLibrary,
+            global::Mistral.CustomConnector? connector
             )
         {
             Type = type;
@@ -244,12 +280,14 @@ namespace Mistral
             CodeInterpreter = codeInterpreter;
             ImageGeneration = imageGeneration;
             DocumentLibrary = documentLibrary;
+            Connector = connector;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
+            Connector as object ??
             DocumentLibrary as object ??
             ImageGeneration as object ??
             CodeInterpreter as object ??
@@ -267,7 +305,8 @@ namespace Mistral
             WebSearchPremium?.ToString() ??
             CodeInterpreter?.ToString() ??
             ImageGeneration?.ToString() ??
-            DocumentLibrary?.ToString() 
+            DocumentLibrary?.ToString() ??
+            Connector?.ToString() 
             ;
 
         /// <summary>
@@ -275,7 +314,7 @@ namespace Mistral
         /// </summary>
         public bool Validate()
         {
-            return IsFunction && !IsWebSearch && !IsWebSearchPremium && !IsCodeInterpreter && !IsImageGeneration && !IsDocumentLibrary || !IsFunction && IsWebSearch && !IsWebSearchPremium && !IsCodeInterpreter && !IsImageGeneration && !IsDocumentLibrary || !IsFunction && !IsWebSearch && IsWebSearchPremium && !IsCodeInterpreter && !IsImageGeneration && !IsDocumentLibrary || !IsFunction && !IsWebSearch && !IsWebSearchPremium && IsCodeInterpreter && !IsImageGeneration && !IsDocumentLibrary || !IsFunction && !IsWebSearch && !IsWebSearchPremium && !IsCodeInterpreter && IsImageGeneration && !IsDocumentLibrary || !IsFunction && !IsWebSearch && !IsWebSearchPremium && !IsCodeInterpreter && !IsImageGeneration && IsDocumentLibrary;
+            return IsFunction && !IsWebSearch && !IsWebSearchPremium && !IsCodeInterpreter && !IsImageGeneration && !IsDocumentLibrary && !IsConnector || !IsFunction && IsWebSearch && !IsWebSearchPremium && !IsCodeInterpreter && !IsImageGeneration && !IsDocumentLibrary && !IsConnector || !IsFunction && !IsWebSearch && IsWebSearchPremium && !IsCodeInterpreter && !IsImageGeneration && !IsDocumentLibrary && !IsConnector || !IsFunction && !IsWebSearch && !IsWebSearchPremium && IsCodeInterpreter && !IsImageGeneration && !IsDocumentLibrary && !IsConnector || !IsFunction && !IsWebSearch && !IsWebSearchPremium && !IsCodeInterpreter && IsImageGeneration && !IsDocumentLibrary && !IsConnector || !IsFunction && !IsWebSearch && !IsWebSearchPremium && !IsCodeInterpreter && !IsImageGeneration && IsDocumentLibrary && !IsConnector || !IsFunction && !IsWebSearch && !IsWebSearchPremium && !IsCodeInterpreter && !IsImageGeneration && !IsDocumentLibrary && IsConnector;
         }
 
         /// <summary>
@@ -288,6 +327,7 @@ namespace Mistral
             global::System.Func<global::Mistral.CodeInterpreterTool?, TResult>? codeInterpreter = null,
             global::System.Func<global::Mistral.ImageGenerationTool?, TResult>? imageGeneration = null,
             global::System.Func<global::Mistral.DocumentLibraryTool?, TResult>? documentLibrary = null,
+            global::System.Func<global::Mistral.CustomConnector?, TResult>? connector = null,
             bool validate = true)
         {
             if (validate)
@@ -319,6 +359,10 @@ namespace Mistral
             {
                 return documentLibrary(DocumentLibrary!);
             }
+            else if (IsConnector && connector != null)
+            {
+                return connector(Connector!);
+            }
 
             return default(TResult);
         }
@@ -333,6 +377,7 @@ namespace Mistral
             global::System.Action<global::Mistral.CodeInterpreterTool?>? codeInterpreter = null,
             global::System.Action<global::Mistral.ImageGenerationTool?>? imageGeneration = null,
             global::System.Action<global::Mistral.DocumentLibraryTool?>? documentLibrary = null,
+            global::System.Action<global::Mistral.CustomConnector?>? connector = null,
             bool validate = true)
         {
             if (validate)
@@ -364,6 +409,10 @@ namespace Mistral
             {
                 documentLibrary?.Invoke(DocumentLibrary!);
             }
+            else if (IsConnector)
+            {
+                connector?.Invoke(Connector!);
+            }
         }
 
         /// <summary>
@@ -385,6 +434,8 @@ namespace Mistral
                 typeof(global::Mistral.ImageGenerationTool),
                 DocumentLibrary,
                 typeof(global::Mistral.DocumentLibraryTool),
+                Connector,
+                typeof(global::Mistral.CustomConnector),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -406,7 +457,8 @@ namespace Mistral
                 global::System.Collections.Generic.EqualityComparer<global::Mistral.WebSearchPremiumTool?>.Default.Equals(WebSearchPremium, other.WebSearchPremium) &&
                 global::System.Collections.Generic.EqualityComparer<global::Mistral.CodeInterpreterTool?>.Default.Equals(CodeInterpreter, other.CodeInterpreter) &&
                 global::System.Collections.Generic.EqualityComparer<global::Mistral.ImageGenerationTool?>.Default.Equals(ImageGeneration, other.ImageGeneration) &&
-                global::System.Collections.Generic.EqualityComparer<global::Mistral.DocumentLibraryTool?>.Default.Equals(DocumentLibrary, other.DocumentLibrary) 
+                global::System.Collections.Generic.EqualityComparer<global::Mistral.DocumentLibraryTool?>.Default.Equals(DocumentLibrary, other.DocumentLibrary) &&
+                global::System.Collections.Generic.EqualityComparer<global::Mistral.CustomConnector?>.Default.Equals(Connector, other.Connector) 
                 ;
         }
 

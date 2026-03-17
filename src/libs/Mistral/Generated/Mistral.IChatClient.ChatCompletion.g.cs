@@ -73,6 +73,10 @@ namespace Mistral
         /// <param name="promptMode">
         /// Allows toggling between the reasoning mode and no system prompt. When set to `reasoning` the system prompt for reasoning models will be used.
         /// </param>
+        /// <param name="guardrails">
+        /// A list of guardrail configurations to apply to this request. Each guardrail specifies a moderation type, categories with thresholds to evaluate, and an action to take on violation.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
         /// <param name="safePrompt">
         /// Whether to inject a safety prompt before all conversations.<br/>
         /// Default Value: false
@@ -97,6 +101,7 @@ namespace Mistral
             global::Mistral.Prediction? prediction = default,
             bool? parallelToolCalls = default,
             global::Mistral.MistralPromptMode? promptMode = default,
+            global::System.Collections.Generic.IList<global::Mistral.GuardrailConfig>? guardrails = default,
             bool? safePrompt = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
