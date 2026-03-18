@@ -29,7 +29,6 @@ cd src/libs/Mistral && ./generate.sh
 The SDK code is **entirely auto-generated** -- do not manually edit files in `src/libs/Mistral/Generated/`.
 
 1. `src/libs/Mistral/openapi.yaml` -- the Mistral OpenAPI spec (fetched from `https://docs.mistral.ai/redocusaurus/plugin-redoc-0.yaml`)
-2. `src/helpers/FixOpenApiSpec/` -- converts OpenAPI 3.1 to 3.0 format for compatibility
 3. `src/libs/Mistral/generate.sh` -- orchestrates: download spec, fix spec, run AutoSDK CLI, output to `Generated/`
 4. CI auto-updates the spec and creates PRs if changes are detected
 
@@ -39,8 +38,6 @@ The SDK code is **entirely auto-generated** -- do not manually edit files in `sr
 |---------|---------|
 | `src/libs/Mistral/` | Main SDK library (`MistralClient`) |
 | `src/tests/IntegrationTests/` | Integration tests against real Mistral API |
-| `src/helpers/FixOpenApiSpec/` | OpenAPI spec fixer tool |
-| `src/helpers/GenerateDocs/` | Documentation generator from integration tests |
 
 ### Build Configuration
 
