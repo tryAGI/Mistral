@@ -13,4 +13,9 @@ public partial class Tests
         
         return client;
     }
+
+    private static MistralClient CreateTestClient()
+    {
+        return new MistralClient(apiKey: "test-key");
+    }
 }
