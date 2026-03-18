@@ -29,6 +29,24 @@ ChatCompletionResponse response = await client.Agents.AgentsCompletionAsync(
     });
 ```
 
+### Microsoft.Extensions.AI
+
+The SDK implements [`IChatClient`](https://learn.microsoft.com/en-us/dotnet/api/microsoft.extensions.ai.ichatclient) for seamless integration with the .NET AI ecosystem:
+```csharp
+using Mistral;
+using Meai = Microsoft.Extensions.AI;
+
+Meai.IChatClient chatClient = new MistralClient(apiKey);
+
+var response = await chatClient.GetResponseAsync(
+    [new Meai.ChatMessage(Meai.ChatRole.User, "Hello!")],
+    new Meai.ChatOptions { ModelId = "mistral-large-latest" });
+
+Console.WriteLine(response.Text);
+```
+
+> **Note:** Use the `Meai` alias because the Mistral SDK has its own generated `IChatClient` interface.
+
 ## Support
 
 Priority place for bugs: https://github.com/tryAGI/Mistral/issues  
