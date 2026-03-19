@@ -1,3 +1,9 @@
+/*
+order: 90
+title: Test
+slug: test
+*/
+
 namespace Mistral.IntegrationTests;
 
 public partial class Tests

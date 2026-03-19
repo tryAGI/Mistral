@@ -5,7 +5,15 @@ nav:
   - Microsoft.Extensions.AI: guides/meai.md
 # EXAMPLES:START
 - Examples:
-  - Test: samples/Test.md
+  - Chat Client Five Random Words Streaming: examples/chat-client-five-random-words-streaming.md
+  - Chat Client Five Random Words: examples/chat-client-five-random-words.md
+  - Chat Client Get Service Returns Chat Client Metadata: examples/chat-client-get-service-returns-chat-client-metadata.md
+  - Chat Client Get Service Returns Null For Unknown Key: examples/chat-client-get-service-returns-null-for-unknown-key.md
+  - Chat Client Get Service Returns Self: examples/chat-client-get-service-returns-self.md
+  - Chat Client Tool Calling Multi Turn: examples/chat-client-tool-calling-multi-turn.md
+  - Chat Client Tool Calling Single Turn: examples/chat-client-tool-calling-single-turn.md
+  - Chat Client Tool Calling Streaming: examples/chat-client-tool-calling-streaming.md
+  - Test: examples/test.md
 # EXAMPLES:END
         
 theme:
