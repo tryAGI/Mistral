@@ -27,6 +27,9 @@ namespace Mistral.JsonConverters
             catch (global::System.Text.Json.JsonException)
             {
             }
+            catch (global::System.InvalidOperationException)
+            {
+            }
 
             readerCopy = reader;
             string? value2 = default;
@@ -37,6 +40,9 @@ namespace Mistral.JsonConverters
                 value2 = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
             }
             catch (global::System.Text.Json.JsonException)
+            {
+            }
+            catch (global::System.InvalidOperationException)
             {
             }
 

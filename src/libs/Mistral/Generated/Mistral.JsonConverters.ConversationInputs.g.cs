@@ -27,6 +27,9 @@ namespace Mistral.JsonConverters
             catch (global::System.Text.Json.JsonException)
             {
             }
+            catch (global::System.InvalidOperationException)
+            {
+            }
 
             readerCopy = reader;
             global::System.Collections.Generic.IList<global::Mistral.AnyOf<global::Mistral.MessageInputEntry, global::Mistral.MessageOutputEntry, global::Mistral.FunctionResultEntry, global::Mistral.FunctionCallEntry, global::Mistral.ToolExecutionEntry, global::Mistral.AgentHandoffEntry>>? inputEntries = default;
@@ -37,6 +40,9 @@ namespace Mistral.JsonConverters
                 inputEntries = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
             }
             catch (global::System.Text.Json.JsonException)
+            {
+            }
+            catch (global::System.InvalidOperationException)
             {
             }
 

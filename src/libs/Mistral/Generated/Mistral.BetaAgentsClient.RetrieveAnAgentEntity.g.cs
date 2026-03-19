@@ -47,7 +47,7 @@ namespace Mistral
                 path: $"/v1/agents/{agentId}",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
-                .AddOptionalParameter("agent_version", agentVersion?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("agent_version", agentVersion?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
