@@ -1,5 +1,8 @@
 # Microsoft.Extensions.AI Integration
 
+!!! tip "Cross-SDK comparison"
+    See the [centralized MEAI documentation](https://tryagi.github.io/docs/meai/) for feature matrices and comparisons across all tryAGI SDKs.
+
 The `tryAGI.Mistral` SDK implements the `IChatClient` interface from `Microsoft.Extensions.AI`, enabling you to use Mistral models through a standardized .NET AI abstraction.
 
 !!! warning "Namespace Conflict"
