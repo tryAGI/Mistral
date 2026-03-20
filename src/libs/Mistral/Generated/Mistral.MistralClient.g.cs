@@ -92,6 +92,15 @@ namespace Mistral
         };
 
         /// <summary>
+        /// (deprecated) Agents completion API
+        /// </summary>
+        public DeprecatedAgentsClient DeprecatedAgents => new DeprecatedAgentsClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
         /// (deprecated) Fine-tuning API
         /// </summary>
         public DeprecatedFineTuningClient DeprecatedFineTuning => new DeprecatedFineTuningClient(HttpClient, authorizations: Authorizations)

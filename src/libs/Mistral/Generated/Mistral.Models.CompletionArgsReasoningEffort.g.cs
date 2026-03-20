@@ -4,9 +4,9 @@
 namespace Mistral
 {
     /// <summary>
-    /// Allows toggling between the reasoning mode and no system prompt. When set to `reasoning` the system prompt for reasoning models will be used. **Deprecated for reasoning models - use `reasoning_effort` parameter instead.**
+    /// Controls the reasoning effort level for reasoning models. "high" enables comprehensive reasoning traces, "none" disables reasoning effort.
     /// </summary>
-    public sealed partial class ChatCompletionRequestPromptMode
+    public sealed partial class CompletionArgsReasoningEffort
     {
 
         /// <summary>

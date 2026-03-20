@@ -41,6 +41,10 @@ namespace Mistral
 
             typeof(global::Mistral.JsonConverters.CodeInterpreterToolTypeNullableJsonConverter),
 
+            typeof(global::Mistral.JsonConverters.CompletionArgsReasoningEffort2JsonConverter),
+
+            typeof(global::Mistral.JsonConverters.CompletionArgsReasoningEffort2NullableJsonConverter),
+
             typeof(global::Mistral.JsonConverters.CustomConnectorTypeJsonConverter),
 
             typeof(global::Mistral.JsonConverters.CustomConnectorTypeNullableJsonConverter),
@@ -225,6 +229,10 @@ namespace Mistral
 
             typeof(global::Mistral.JsonConverters.ChatCompletionRequestMessageDiscriminatorRoleNullableJsonConverter),
 
+            typeof(global::Mistral.JsonConverters.ChatCompletionRequestReasoningEffortJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ChatCompletionRequestReasoningEffortNullableJsonConverter),
+
             typeof(global::Mistral.JsonConverters.ChatModerationRequestInputVariant1ItemDiscriminatorRoleJsonConverter),
 
             typeof(global::Mistral.JsonConverters.ChatModerationRequestInputVariant1ItemDiscriminatorRoleNullableJsonConverter),
@@ -284,6 +292,10 @@ namespace Mistral
             typeof(global::Mistral.JsonConverters.AgentsCompletionRequestMessageDiscriminatorRoleJsonConverter),
 
             typeof(global::Mistral.JsonConverters.AgentsCompletionRequestMessageDiscriminatorRoleNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.AgentsCompletionRequestReasoningEffortJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.AgentsCompletionRequestReasoningEffortNullableJsonConverter),
 
             typeof(global::Mistral.JsonConverters.ContentChunkDiscriminatorTypeJsonConverter),
 
@@ -664,6 +676,7 @@ namespace Mistral
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.Prediction))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ResponseFormat))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ToolChoiceEnum))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.CompletionArgsReasoningEffort2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ConversationAppendRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ConversationAppendRequestBase))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ConversationAppendRequestVariant2))]
@@ -897,6 +910,7 @@ namespace Mistral
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AnyOf<global::Mistral.ToolChoice2, global::Mistral.ToolChoiceEnum?>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ToolChoice2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.MistralPromptMode))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ChatCompletionRequestReasoningEffort))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ChatModerationRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AnyOf<global::System.Collections.Generic.IList<global::Mistral.InputVariant1Item>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::Mistral.InputVariant2ItemItem>>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Mistral.InputVariant1Item>))]
@@ -971,6 +985,7 @@ namespace Mistral
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.MessagesItem3))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AgentsCompletionRequestMessageDiscriminator))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AgentsCompletionRequestMessageDiscriminatorRole))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AgentsCompletionRequestReasoningEffort))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ChatClassificationRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ChatClassificationRequestInputs))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Mistral.InstructRequest>))]

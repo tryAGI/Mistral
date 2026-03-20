@@ -50,6 +50,7 @@ namespace Mistral
                 Prediction = request.Prediction,
                 ParallelToolCalls = request.ParallelToolCalls,
                 PromptMode = request.PromptMode,
+                ReasoningEffort = request.ReasoningEffort,
                 Guardrails = request.Guardrails,
                 SafePrompt = request.SafePrompt,
             };
@@ -232,7 +233,10 @@ namespace Mistral
         /// Default Value: true
         /// </param>
         /// <param name="promptMode">
-        /// Allows toggling between the reasoning mode and no system prompt. When set to `reasoning` the system prompt for reasoning models will be used.
+        /// Allows toggling between the reasoning mode and no system prompt. When set to `reasoning` the system prompt for reasoning models will be used. **Deprecated for reasoning models - use `reasoning_effort` parameter instead.**
+        /// </param>
+        /// <param name="reasoningEffort">
+        /// Controls the reasoning effort level for reasoning models. "high" enables comprehensive reasoning traces, "none" disables reasoning effort.
         /// </param>
         /// <param name="guardrails">
         /// A list of guardrail configurations to apply to this request. Each guardrail specifies a moderation type, categories with thresholds to evaluate, and an action to take on violation.<br/>
@@ -262,6 +266,7 @@ namespace Mistral
             global::Mistral.Prediction? prediction = default,
             bool? parallelToolCalls = default,
             global::Mistral.MistralPromptMode? promptMode = default,
+            global::Mistral.ChatCompletionRequestReasoningEffort? reasoningEffort = default,
             global::System.Collections.Generic.IList<global::Mistral.GuardrailConfig>? guardrails = default,
             bool? safePrompt = default,
             [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)
@@ -286,6 +291,7 @@ namespace Mistral
                 Prediction = prediction,
                 ParallelToolCalls = parallelToolCalls,
                 PromptMode = promptMode,
+                ReasoningEffort = reasoningEffort,
                 Guardrails = guardrails,
                 SafePrompt = safePrompt,
             };

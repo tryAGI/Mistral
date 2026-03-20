@@ -71,6 +71,11 @@ namespace Mistral
         public FilesClient Files { get; }
 
         /// <summary>
+        /// (deprecated) Agents completion API
+        /// </summary>
+        public DeprecatedAgentsClient DeprecatedAgents { get; }
+
+        /// <summary>
         /// (deprecated) Fine-tuning API
         /// </summary>
         public DeprecatedFineTuningClient DeprecatedFineTuning { get; }
