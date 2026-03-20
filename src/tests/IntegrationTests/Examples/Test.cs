@@ -13,9 +13,9 @@ public partial class Tests
     {
         using var client = GetAuthenticatedClient();
 
-        ChatCompletionResponse response = await client.Agents.AgentsCompletionAsync(
-            agentId: "Test",
-            messages: new List<MessagesItem3>
+        ChatCompletionResponse response = await client.Chat.ChatCompletionAsync(
+            model: "mistral-small-latest",
+            messages: new List<MessagesItem>
             {
                 new UserMessage
                 {
