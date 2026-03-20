@@ -4,7 +4,6 @@ namespace Mistral
 {
     public partial interface IModelsClient
     {
-
         /// <summary>
         /// Retrieve Model<br/>
         /// Retrieve information about a model.

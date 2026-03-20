@@ -4,7 +4,6 @@ namespace Mistral
 {
     public partial interface IBetaConversationsClient
     {
-
         /// <summary>
         /// List all created conversations.<br/>
         /// Retrieve a list of conversation entities sorted by creation time.

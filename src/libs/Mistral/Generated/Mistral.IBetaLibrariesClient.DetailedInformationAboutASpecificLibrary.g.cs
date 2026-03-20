@@ -4,7 +4,6 @@ namespace Mistral
 {
     public partial interface IBetaLibrariesClient
     {
-
         /// <summary>
         /// Detailed information about a specific Library.<br/>
         /// Given a library id, details information about that Library.

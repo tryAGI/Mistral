@@ -4,7 +4,6 @@ namespace Mistral
 {
     public partial interface IModelsClient
     {
-
         /// <summary>
         /// Delete Model<br/>
         /// Delete a fine-tuned model.

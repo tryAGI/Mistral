@@ -4,7 +4,6 @@ namespace Mistral
 {
     public partial interface IFilesClient
     {
-
         /// <summary>
         /// Get Signed Url
         /// </summary>

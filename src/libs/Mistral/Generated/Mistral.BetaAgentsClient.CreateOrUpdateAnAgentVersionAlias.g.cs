@@ -25,7 +25,6 @@ namespace Mistral
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Create or update an agent version alias.<br/>
         /// Create a new alias or update an existing alias to point to a specific version. Aliases are unique per agent and can be reassigned to different versions.

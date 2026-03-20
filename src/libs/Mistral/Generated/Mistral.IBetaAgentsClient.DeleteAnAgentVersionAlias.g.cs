@@ -4,7 +4,6 @@ namespace Mistral
 {
     public partial interface IBetaAgentsClient
     {
-
         /// <summary>
         /// Delete an agent version alias.<br/>
         /// Delete an existing alias for an agent.

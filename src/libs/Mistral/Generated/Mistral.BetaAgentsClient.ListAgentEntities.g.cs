@@ -35,7 +35,6 @@ namespace Mistral
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List agent entities.<br/>
         /// Retrieve a list of agent entities sorted by creation time.

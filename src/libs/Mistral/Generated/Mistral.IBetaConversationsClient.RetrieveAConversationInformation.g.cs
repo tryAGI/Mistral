@@ -4,7 +4,6 @@ namespace Mistral
 {
     public partial interface IBetaConversationsClient
     {
-
         /// <summary>
         /// Retrieve a conversation information.<br/>
         /// Given a conversation_id retrieve a conversation entity with its attributes.

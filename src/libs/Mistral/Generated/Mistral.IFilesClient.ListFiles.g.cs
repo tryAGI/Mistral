@@ -4,7 +4,6 @@ namespace Mistral
 {
     public partial interface IFilesClient
     {
-
         /// <summary>
         /// List Files<br/>
         /// Returns a list of files that belong to the user's organization.

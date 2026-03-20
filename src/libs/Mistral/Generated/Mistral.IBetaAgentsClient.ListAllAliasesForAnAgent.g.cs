@@ -4,7 +4,6 @@ namespace Mistral
 {
     public partial interface IBetaAgentsClient
     {
-
         /// <summary>
         /// List all aliases for an agent.<br/>
         /// Retrieve all version aliases for a specific agent.
