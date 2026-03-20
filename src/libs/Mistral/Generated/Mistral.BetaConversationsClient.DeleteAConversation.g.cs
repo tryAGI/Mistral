@@ -16,7 +16,6 @@ namespace Mistral
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-
         /// <summary>
         /// Delete a conversation.<br/>
         /// Delete a conversation given a conversation_id.

@@ -4,7 +4,6 @@ namespace Mistral
 {
     public partial interface IBetaAgentsClient
     {
-
         /// <summary>
         /// List all versions of an agent.<br/>
         /// Retrieve all versions for a specific agent with full agent context. Supports pagination.

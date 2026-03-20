@@ -4,13 +4,11 @@ namespace Mistral
 {
     public partial interface IBetaLibrariesClient
     {
-
         /// <summary>
         /// Update a library.<br/>
         /// Given a library id, you can update the name and description.
         /// </summary>
         /// <param name="libraryId"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Mistral.ApiException"></exception>
@@ -19,7 +17,6 @@ namespace Mistral
 
             global::Mistral.LibraryInUpdate request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Update a library.<br/>
         /// Given a library id, you can update the name and description.

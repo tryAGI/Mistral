@@ -4,7 +4,6 @@ namespace Mistral
 {
     public partial interface IBetaAgentsClient
     {
-
         /// <summary>
         /// Delete an agent entity.
         /// </summary>

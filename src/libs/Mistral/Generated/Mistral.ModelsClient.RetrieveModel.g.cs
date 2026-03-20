@@ -21,7 +21,6 @@ namespace Mistral
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Retrieve Model<br/>
         /// Retrieve information about a model.

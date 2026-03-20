@@ -4,7 +4,6 @@ namespace Mistral
 {
     public partial interface IBetaLibrariesAccessesClient
     {
-
         /// <summary>
         /// List all of the access to this library.<br/>
         /// Given a library, list all of the Entity that have access and to what level.

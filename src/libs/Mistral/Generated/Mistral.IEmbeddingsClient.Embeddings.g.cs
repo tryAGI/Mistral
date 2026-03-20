@@ -4,12 +4,10 @@ namespace Mistral
 {
     public partial interface IEmbeddingsClient
     {
-
         /// <summary>
         /// Embeddings<br/>
         /// Embeddings
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Mistral.ApiException"></exception>
@@ -17,7 +15,6 @@ namespace Mistral
 
             global::Mistral.EmbeddingRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Embeddings<br/>
         /// Embeddings

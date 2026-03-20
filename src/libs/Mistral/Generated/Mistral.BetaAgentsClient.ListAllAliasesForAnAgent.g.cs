@@ -21,7 +21,6 @@ namespace Mistral
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List all aliases for an agent.<br/>
         /// Retrieve all version aliases for a specific agent.

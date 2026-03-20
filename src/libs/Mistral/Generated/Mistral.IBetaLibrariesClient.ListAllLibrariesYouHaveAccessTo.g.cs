@@ -4,7 +4,6 @@ namespace Mistral
 {
     public partial interface IBetaLibrariesClient
     {
-
         /// <summary>
         /// List all libraries you have access to.<br/>
         /// List all libraries that you have created or have been shared with you.

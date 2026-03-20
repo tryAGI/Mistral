@@ -4,7 +4,6 @@ namespace Mistral
 {
     public partial interface IBetaAgentsClient
     {
-
         /// <summary>
         /// List agent entities.<br/>
         /// Retrieve a list of agent entities sorted by creation time.

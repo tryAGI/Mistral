@@ -23,13 +23,11 @@ namespace Mistral
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Create Fine Tuning Job<br/>
         /// Create a new fine-tuning job, it will be queued for processing.
         /// </summary>
         /// <param name="dryRun"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Mistral.ApiException"></exception>
@@ -191,7 +189,6 @@ namespace Mistral
                 }
             }
         }
-
         /// <summary>
         /// Create Fine Tuning Job<br/>
         /// Create a new fine-tuning job, it will be queued for processing.

@@ -4,11 +4,9 @@ namespace Mistral
 {
     public partial interface IAudioTranscriptionsClient
     {
-
         /// <summary>
         /// Create Streaming Transcription (SSE)
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Mistral.ApiException"></exception>
@@ -16,7 +14,6 @@ namespace Mistral
 
             global::Mistral.AudioTranscriptionRequestStream request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create Streaming Transcription (SSE)
         /// </summary>

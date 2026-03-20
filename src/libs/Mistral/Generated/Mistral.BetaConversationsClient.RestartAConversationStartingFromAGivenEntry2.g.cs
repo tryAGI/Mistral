@@ -18,7 +18,6 @@ namespace Mistral
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-
         /// <summary>
         /// Restart a conversation starting from a given entry.<br/>
         /// Given a conversation_id and an id, recreate a conversation from this point and run completion. A new conversation is returned with the new entries returned.
@@ -26,7 +25,6 @@ namespace Mistral
         /// <param name="conversationId">
         /// ID of the original conversation which is being restarted.
         /// </param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Mistral.ApiException"></exception>
@@ -160,7 +158,6 @@ namespace Mistral
                 yield return __streamedResponse;
             }
         }
-
         /// <summary>
         /// Restart a conversation starting from a given entry.<br/>
         /// Given a conversation_id and an id, recreate a conversation from this point and run completion. A new conversation is returned with the new entries returned.

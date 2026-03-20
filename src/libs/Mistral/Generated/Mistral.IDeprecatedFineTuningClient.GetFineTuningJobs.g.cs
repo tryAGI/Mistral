@@ -4,7 +4,6 @@ namespace Mistral
 {
     public partial interface IDeprecatedFineTuningClient
     {
-
         /// <summary>
         /// Get Fine Tuning Jobs<br/>
         /// Get a list of fine-tuning jobs for your organization and user.

@@ -25,7 +25,6 @@ namespace Mistral
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List all created conversations.<br/>
         /// Retrieve a list of conversation entities sorted by creation time.

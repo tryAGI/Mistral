@@ -4,7 +4,6 @@ namespace Mistral
 {
     public partial interface IBetaAgentsClient
     {
-
         /// <summary>
         /// Retrieve a specific version of an agent.<br/>
         /// Get a specific agent version by version number.

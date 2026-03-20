@@ -4,11 +4,9 @@ namespace Mistral
 {
     public partial interface IClassifiersClient
     {
-
         /// <summary>
         /// Chat Classifications
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Mistral.ApiException"></exception>
@@ -16,7 +14,6 @@ namespace Mistral
 
             global::Mistral.ChatClassificationRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Chat Classifications
         /// </summary>

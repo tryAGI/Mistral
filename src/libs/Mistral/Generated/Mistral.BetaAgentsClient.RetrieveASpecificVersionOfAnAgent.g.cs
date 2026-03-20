@@ -23,7 +23,6 @@ namespace Mistral
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Retrieve a specific version of an agent.<br/>
         /// Get a specific agent version by version number.

@@ -4,7 +4,6 @@ namespace Mistral
 {
     public partial interface IBetaLibrariesDocumentsClient
     {
-
         /// <summary>
         /// List documents in a given library.<br/>
         /// Given a library, lists the document that have been uploaded to that library.

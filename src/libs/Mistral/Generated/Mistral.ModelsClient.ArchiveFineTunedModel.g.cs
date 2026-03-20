@@ -21,7 +21,6 @@ namespace Mistral
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Archive Fine Tuned Model<br/>
         /// Archive a fine-tuned model.

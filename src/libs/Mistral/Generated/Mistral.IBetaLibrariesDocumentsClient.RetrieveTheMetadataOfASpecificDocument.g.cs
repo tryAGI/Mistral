@@ -4,7 +4,6 @@ namespace Mistral
 {
     public partial interface IBetaLibrariesDocumentsClient
     {
-
         /// <summary>
         /// Retrieve the metadata of a specific document.<br/>
         /// Given a library and a document in this library, you can retrieve the metadata of that document.
