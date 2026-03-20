@@ -4,6 +4,7 @@ namespace Mistral
 {
     public partial interface IBetaConversationsClient
     {
+
         /// <summary>
         /// Retrieve all entries in a conversation.<br/>
         /// Given a conversation_id retrieve all the entries belonging to that conversation. The entries are sorted in the order they were appended, those can be messages, connectors or function_call.

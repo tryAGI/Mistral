@@ -23,6 +23,7 @@ namespace Mistral
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Update an agent version.<br/>
         /// Switch the version of an agent.

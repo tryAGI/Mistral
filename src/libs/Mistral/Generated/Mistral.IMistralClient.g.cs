@@ -41,52 +41,52 @@ namespace Mistral
 
 
         /// <summary>
-        /// Chat Completion API.
+        /// Chat
         /// </summary>
         public ChatClient Chat { get; }
 
         /// <summary>
-        /// Fill-in-the-middle API.
+        /// FIM
         /// </summary>
         public FimClient Fim { get; }
 
         /// <summary>
-        /// Agents API.
+        /// Agents
         /// </summary>
         public AgentsClient Agents { get; }
 
         /// <summary>
-        /// Embeddings API.
+        /// Embeddings
         /// </summary>
         public EmbeddingsClient Embeddings { get; }
 
         /// <summary>
-        /// Classifiers API.
+        /// Classifiers
         /// </summary>
         public ClassifiersClient Classifiers { get; }
 
         /// <summary>
-        /// Files API
+        /// Files
         /// </summary>
         public FilesClient Files { get; }
 
         /// <summary>
-        /// (deprecated) Agents completion API
+        /// (deprecated) Agents
         /// </summary>
         public DeprecatedAgentsClient DeprecatedAgents { get; }
 
         /// <summary>
-        /// (deprecated) Fine-tuning API
+        /// (deprecated) Fine Tuning
         /// </summary>
         public DeprecatedFineTuningClient DeprecatedFineTuning { get; }
 
         /// <summary>
-        /// Model Management API
+        /// Models
         /// </summary>
         public ModelsClient Models { get; }
 
         /// <summary>
-        /// Batch API
+        /// Batch
         /// </summary>
         public BatchClient Batch { get; }
 
@@ -96,7 +96,7 @@ namespace Mistral
         public OcrClient Ocr { get; }
 
         /// <summary>
-        /// API for audio transcription.
+        /// Transcriptions API
         /// </summary>
         public AudioTranscriptionsClient AudioTranscriptions { get; }
 
@@ -111,17 +111,17 @@ namespace Mistral
         public BetaConversationsClient BetaConversations { get; }
 
         /// <summary>
-        /// (beta) Libraries API to create and manage libraries - index your documents to enhance agent capabilities.
+        /// (beta) Libraries  API - Main
         /// </summary>
         public BetaLibrariesClient BetaLibraries { get; }
 
         /// <summary>
-        /// (beta) Libraries API - manage documents in a library.
+        /// (beta) Libraries  API - Documents
         /// </summary>
         public BetaLibrariesDocumentsClient BetaLibrariesDocuments { get; }
 
         /// <summary>
-        /// (beta) Libraries API - manage access to a library.
+        /// (beta) Libraries  API - Access
         /// </summary>
         public BetaLibrariesAccessesClient BetaLibrariesAccesses { get; }
 

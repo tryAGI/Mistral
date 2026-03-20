@@ -4,6 +4,7 @@ namespace Mistral
 {
     public partial interface IDeprecatedFineTuningClient
     {
+
         /// <summary>
         /// Cancel Fine Tuning Job<br/>
         /// Request the cancellation of a fine tuning job.

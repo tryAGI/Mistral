@@ -4,6 +4,7 @@ namespace Mistral
 {
     public partial interface IFilesClient
     {
+
         /// <summary>
         /// Retrieve File<br/>
         /// Returns information about a specific file.

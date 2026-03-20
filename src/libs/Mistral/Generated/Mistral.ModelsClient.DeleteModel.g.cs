@@ -21,6 +21,7 @@ namespace Mistral
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Delete Model<br/>
         /// Delete a fine-tuned model.

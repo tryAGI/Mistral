@@ -21,6 +21,7 @@ namespace Mistral
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref byte[] content);
 
+
         /// <summary>
         /// Download File<br/>
         /// Download a file

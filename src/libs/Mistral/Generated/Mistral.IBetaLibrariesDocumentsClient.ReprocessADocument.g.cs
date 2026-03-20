@@ -4,6 +4,7 @@ namespace Mistral
 {
     public partial interface IBetaLibrariesDocumentsClient
     {
+
         /// <summary>
         /// Reprocess a document.<br/>
         /// Given a library and a document in that library, reprocess that document, it will be billed again.

@@ -4,6 +4,7 @@ namespace Mistral
 {
     public partial interface IBatchClient
     {
+
         /// <summary>
         /// Get Batch Job<br/>
         /// Get a batch job details by its UUID.<br/>

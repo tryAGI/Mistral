@@ -4,6 +4,7 @@ namespace Mistral
 {
     public partial interface IDeprecatedFineTuningClient
     {
+
         /// <summary>
         /// Get Fine Tuning Job<br/>
         /// Get a fine-tuned job details by its UUID.

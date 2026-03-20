@@ -4,6 +4,7 @@ namespace Mistral
 {
     public partial interface IBetaLibrariesDocumentsClient
     {
+
         /// <summary>
         /// Retrieve the signed URL of text extracted from a given document.<br/>
         /// Given a library and a document in that library, retrieve the signed URL of text extracted. For documents that are sent to the OCR this returns the result of the OCR queries.
