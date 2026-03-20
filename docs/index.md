@@ -50,8 +50,6 @@ Console.WriteLine(response.Text);
 
 <!-- EXAMPLES:START -->
 ### Chat Client Five Random Words Streaming
-
-
 ```csharp
 using var client = new MistralClient(apiKey);
 
@@ -76,8 +74,6 @@ await foreach (var update in updates)
 ```
 
 ### Chat Client Five Random Words
-
-
 ```csharp
 using var client = new MistralClient(apiKey);
 
@@ -93,8 +89,6 @@ var response = await chatClient.GetResponseAsync(
 ```
 
 ### Chat Client Get Service Returns Chat Client Metadata
-
-
 ```csharp
 using var client = CreateTestClient();
 Meai.IChatClient chatClient = client;
@@ -103,8 +97,6 @@ var metadata = Meai.ChatClientExtensions.GetService<Meai.ChatClientMetadata>(cha
 ```
 
 ### Chat Client Get Service Returns Null For Unknown Key
-
-
 ```csharp
 using var client = CreateTestClient();
 Meai.IChatClient chatClient = client;
@@ -113,8 +105,6 @@ var result = Meai.ChatClientExtensions.GetService<Meai.ChatClientMetadata>(chatC
 ```
 
 ### Chat Client Get Service Returns Self
-
-
 ```csharp
 using var client = CreateTestClient();
 Meai.IChatClient chatClient = client;
@@ -123,8 +113,6 @@ var self = Meai.ChatClientExtensions.GetService<MistralClient>(chatClient);
 ```
 
 ### Chat Client Tool Calling Multi Turn
-
-
 ```csharp
 using var client = new MistralClient(apiKey);
 
@@ -173,8 +161,6 @@ var finalResponse = await chatClient.GetResponseAsync(
 ```
 
 ### Chat Client Tool Calling Single Turn
-
-
 ```csharp
 using var client = new MistralClient(apiKey);
 
@@ -201,8 +187,6 @@ var functionCall = response.Messages
 ```
 
 ### Chat Client Tool Calling Streaming
-
-
 ```csharp
 using var client = new MistralClient(apiKey);
 
@@ -230,8 +214,6 @@ await foreach (var update in updates)
 ```
 
 ### Test
-
-
 ```csharp
 using var client = new MistralClient(apiKey);
 
@@ -258,7 +240,3 @@ Discord: https://discord.gg/Ca2xhfBf3v
 ![JetBrains logo](https://resources.jetbrains.com/storage/products/company/brand/logos/jetbrains.png)
 
 This project is supported by JetBrains through the [Open Source Support Program](https://jb.gg/OpenSourceSupport).
-
-![CodeRabbit logo](https://opengraph.githubassets.com/1c51002d7d0bbe0c4fd72ff8f2e58192702f73a7037102f77e4dbb98ac00ea8f/marketplace/coderabbitai)
-
-This project is supported by CodeRabbit through the [Open Source Support Program](https://github.com/marketplace/coderabbitai).
