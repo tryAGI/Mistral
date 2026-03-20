@@ -1,4 +1,5 @@
 using System.Runtime.CompilerServices;
+using System.Text;
 using System.Text.Json;
 using Meai = Microsoft.Extensions.AI;
 
@@ -42,6 +43,8 @@ public partial class MistralClient : Meai.IChatClient
         var request = CreateRequest(messages, options);
         request.Stream = true;
 
+        var toolCallBuilders = new Dictionary<int, (string Id, string Name, StringBuilder Args)>();
+
         await foreach (var completionEvent in Chat.ChatCompletionAsStreamAsync(request, cancellationToken).ConfigureAwait(false))
         {
             var chunk = completionEvent.Data;
@@ -57,8 +60,64 @@ public partial class MistralClient : Meai.IChatClient
 
             if (choice is not null)
             {
-                AddDeltaContents(update.Contents, choice.Delta);
+                // Text content
+                var textContent = ExtractText(choice.Delta.Content);
+                if (!string.IsNullOrEmpty(textContent))
+                {
+                    update.Contents.Add(new Meai.TextContent(textContent)
+                    {
+                        RawRepresentation = choice.Delta,
+                    });
+                }
+
+                // Tool call chunks - accumulate by index
+                if (choice.Delta.ToolCalls is { Count: > 0 } deltaToolCalls)
+                {
+                    foreach (var tc in deltaToolCalls)
+                    {
+                        var index = tc.Index ?? 0;
+                        if (!toolCallBuilders.TryGetValue(index, out var builder))
+                        {
+                            builder = (
+                                Id: tc.Id ?? string.Empty,
+                                Name: tc.Function.Name ?? string.Empty,
+                                Args: new StringBuilder());
+                            toolCallBuilders[index] = builder;
+                        }
+                        else
+                        {
+                            if (!string.IsNullOrEmpty(tc.Id))
+                                builder.Id = tc.Id!;
+                            if (!string.IsNullOrEmpty(tc.Function.Name))
+                                builder.Name = tc.Function.Name;
+                            toolCallBuilders[index] = builder;
+                        }
+
+                        // Extract argument string from AnyOf
+                        string? argFragment = null;
+                        if (tc.Function.Arguments.IsValue2)
+                            argFragment = tc.Function.Arguments.Value2;
+
+                        if (!string.IsNullOrEmpty(argFragment))
+                        {
+                            toolCallBuilders[index].Args.Append(argFragment);
+                        }
+                    }
+                }
+
+                // Finish reason - emit accumulated tool calls
                 update.FinishReason = ToFinishReason(choice.FinishReason);
+                if (choice.FinishReason is not null && toolCallBuilders.Count > 0)
+                {
+                    foreach (var (_, accumulated) in toolCallBuilders)
+                    {
+                        var argsStr = accumulated.Args.ToString();
+                        update.Contents.Add(new Meai.FunctionCallContent(
+                            accumulated.Id, accumulated.Name,
+                            !string.IsNullOrEmpty(argsStr) ? ParseArguments(new AnyOf<object, string>(argsStr)) : null));
+                    }
+                    toolCallBuilders.Clear();
+                }
             }
 
             if (chunk.Usage is { } usage)
