@@ -51,11 +51,6 @@ namespace Mistral
         public FimClient Fim { get; }
 
         /// <summary>
-        /// Agents
-        /// </summary>
-        public AgentsClient Agents { get; }
-
-        /// <summary>
         /// Embeddings
         /// </summary>
         public EmbeddingsClient Embeddings { get; }
@@ -69,11 +64,6 @@ namespace Mistral
         /// Files
         /// </summary>
         public FilesClient Files { get; }
-
-        /// <summary>
-        /// (deprecated) Agents
-        /// </summary>
-        public DeprecatedAgentsClient DeprecatedAgents { get; }
 
         /// <summary>
         /// (deprecated) Fine Tuning
