@@ -4,7 +4,7 @@
 namespace Mistral
 {
     /// <summary>
-    /// Allows toggling between the reasoning mode and no system prompt. When set to `reasoning` the system prompt for reasoning models will be used.
+    /// Allows toggling between the reasoning mode and no system prompt. When set to `reasoning` the system prompt for reasoning models will be used. **Deprecated for reasoning models - use `reasoning_effort` parameter instead.**
     /// </summary>
     public sealed partial class AgentsCompletionRequestPromptMode
     {

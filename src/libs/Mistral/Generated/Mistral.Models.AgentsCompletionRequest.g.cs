@@ -102,10 +102,17 @@ namespace Mistral
         public bool? ParallelToolCalls { get; set; }
 
         /// <summary>
-        /// Allows toggling between the reasoning mode and no system prompt. When set to `reasoning` the system prompt for reasoning models will be used.
+        /// Allows toggling between the reasoning mode and no system prompt. When set to `reasoning` the system prompt for reasoning models will be used. **Deprecated for reasoning models - use `reasoning_effort` parameter instead.**
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_mode")]
         public global::Mistral.MistralPromptMode? PromptMode { get; set; }
+
+        /// <summary>
+        /// Controls the reasoning effort level for reasoning models. "high" enables comprehensive reasoning traces, "none" disables reasoning effort.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("reasoning_effort")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.AgentsCompletionRequestReasoningEffortJsonConverter))]
+        public global::Mistral.AgentsCompletionRequestReasoningEffort? ReasoningEffort { get; set; }
 
         /// <summary>
         /// The ID of the agent to use for this completion.
@@ -166,7 +173,10 @@ namespace Mistral
         /// Default Value: true
         /// </param>
         /// <param name="promptMode">
-        /// Allows toggling between the reasoning mode and no system prompt. When set to `reasoning` the system prompt for reasoning models will be used.
+        /// Allows toggling between the reasoning mode and no system prompt. When set to `reasoning` the system prompt for reasoning models will be used. **Deprecated for reasoning models - use `reasoning_effort` parameter instead.**
+        /// </param>
+        /// <param name="reasoningEffort">
+        /// Controls the reasoning effort level for reasoning models. "high" enables comprehensive reasoning traces, "none" disables reasoning effort.
         /// </param>
         /// <param name="agentId">
         /// The ID of the agent to use for this completion.
@@ -190,7 +200,8 @@ namespace Mistral
             int? n,
             global::Mistral.Prediction? prediction,
             bool? parallelToolCalls,
-            global::Mistral.MistralPromptMode? promptMode)
+            global::Mistral.MistralPromptMode? promptMode,
+            global::Mistral.AgentsCompletionRequestReasoningEffort? reasoningEffort)
         {
             this.Messages = messages ?? throw new global::System.ArgumentNullException(nameof(messages));
             this.AgentId = agentId ?? throw new global::System.ArgumentNullException(nameof(agentId));
@@ -208,6 +219,7 @@ namespace Mistral
             this.Prediction = prediction;
             this.ParallelToolCalls = parallelToolCalls;
             this.PromptMode = promptMode;
+            this.ReasoningEffort = reasoningEffort;
         }
 
         /// <summary>

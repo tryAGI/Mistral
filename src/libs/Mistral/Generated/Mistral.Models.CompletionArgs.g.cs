@@ -71,6 +71,12 @@ namespace Mistral
         public global::Mistral.ToolChoiceEnum? ToolChoice { get; set; }
 
         /// <summary>
+        /// Controls the reasoning effort level for reasoning models. "high" enables comprehensive reasoning traces, "none" disables reasoning effort.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("reasoning_effort")]
+        public global::Mistral.CompletionArgsReasoningEffort2? ReasoningEffort { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -91,6 +97,9 @@ namespace Mistral
         /// <param name="toolChoice">
         /// Default Value: auto
         /// </param>
+        /// <param name="reasoningEffort">
+        /// Controls the reasoning effort level for reasoning models. "high" enables comprehensive reasoning traces, "none" disables reasoning effort.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -104,7 +113,8 @@ namespace Mistral
             int? randomSeed,
             global::Mistral.Prediction? prediction,
             global::Mistral.ResponseFormat? responseFormat,
-            global::Mistral.ToolChoiceEnum? toolChoice)
+            global::Mistral.ToolChoiceEnum? toolChoice,
+            global::Mistral.CompletionArgsReasoningEffort2? reasoningEffort)
         {
             this.Stop = stop;
             this.PresencePenalty = presencePenalty;
@@ -116,6 +126,7 @@ namespace Mistral
             this.Prediction = prediction;
             this.ResponseFormat = responseFormat;
             this.ToolChoice = toolChoice;
+            this.ReasoningEffort = reasoningEffort;
         }
 
         /// <summary>

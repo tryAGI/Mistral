@@ -124,10 +124,17 @@ namespace Mistral
         public bool? ParallelToolCalls { get; set; }
 
         /// <summary>
-        /// Allows toggling between the reasoning mode and no system prompt. When set to `reasoning` the system prompt for reasoning models will be used.
+        /// Allows toggling between the reasoning mode and no system prompt. When set to `reasoning` the system prompt for reasoning models will be used. **Deprecated for reasoning models - use `reasoning_effort` parameter instead.**
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_mode")]
         public global::Mistral.MistralPromptMode? PromptMode { get; set; }
+
+        /// <summary>
+        /// Controls the reasoning effort level for reasoning models. "high" enables comprehensive reasoning traces, "none" disables reasoning effort.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("reasoning_effort")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.ChatCompletionRequestReasoningEffortJsonConverter))]
+        public global::Mistral.ChatCompletionRequestReasoningEffort? ReasoningEffort { get; set; }
 
         /// <summary>
         /// A list of guardrail configurations to apply to this request. Each guardrail specifies a moderation type, categories with thresholds to evaluate, and an action to take on violation.<br/>
@@ -209,7 +216,10 @@ namespace Mistral
         /// Default Value: true
         /// </param>
         /// <param name="promptMode">
-        /// Allows toggling between the reasoning mode and no system prompt. When set to `reasoning` the system prompt for reasoning models will be used.
+        /// Allows toggling between the reasoning mode and no system prompt. When set to `reasoning` the system prompt for reasoning models will be used. **Deprecated for reasoning models - use `reasoning_effort` parameter instead.**
+        /// </param>
+        /// <param name="reasoningEffort">
+        /// Controls the reasoning effort level for reasoning models. "high" enables comprehensive reasoning traces, "none" disables reasoning effort.
         /// </param>
         /// <param name="guardrails">
         /// A list of guardrail configurations to apply to this request. Each guardrail specifies a moderation type, categories with thresholds to evaluate, and an action to take on violation.<br/>
@@ -241,6 +251,7 @@ namespace Mistral
             global::Mistral.Prediction? prediction,
             bool? parallelToolCalls,
             global::Mistral.MistralPromptMode? promptMode,
+            global::Mistral.ChatCompletionRequestReasoningEffort? reasoningEffort,
             global::System.Collections.Generic.IList<global::Mistral.GuardrailConfig>? guardrails,
             bool? safePrompt)
         {
@@ -262,6 +273,7 @@ namespace Mistral
             this.Prediction = prediction;
             this.ParallelToolCalls = parallelToolCalls;
             this.PromptMode = promptMode;
+            this.ReasoningEffort = reasoningEffort;
             this.Guardrails = guardrails;
             this.SafePrompt = safePrompt;
         }
