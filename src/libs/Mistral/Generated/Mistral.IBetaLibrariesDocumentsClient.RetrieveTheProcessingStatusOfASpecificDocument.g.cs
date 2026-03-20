@@ -4,6 +4,7 @@ namespace Mistral
 {
     public partial interface IBetaLibrariesDocumentsClient
     {
+
         /// <summary>
         /// Retrieve the processing status of a specific document.<br/>
         /// Given a library and a document in that library, retrieve the processing status of that document.

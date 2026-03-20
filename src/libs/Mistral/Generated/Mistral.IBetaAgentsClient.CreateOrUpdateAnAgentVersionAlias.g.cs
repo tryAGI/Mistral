@@ -4,6 +4,7 @@ namespace Mistral
 {
     public partial interface IBetaAgentsClient
     {
+
         /// <summary>
         /// Create or update an agent version alias.<br/>
         /// Create a new alias or update an existing alias to point to a specific version. Aliases are unique per agent and can be reassigned to different versions.

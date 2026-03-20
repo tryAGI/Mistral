@@ -23,6 +23,7 @@ namespace Mistral
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Retrieve the signed URL of a specific document.<br/>
         /// Given a library and a document in that library, retrieve the signed URL of a specific document.The url will expire after 30 minutes and can be accessed by anyone with the link.

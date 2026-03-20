@@ -19,6 +19,7 @@ namespace Mistral
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// List all libraries you have access to.<br/>
         /// List all libraries that you have created or have been shared with you.

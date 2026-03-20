@@ -35,6 +35,7 @@ namespace Mistral
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// List Files<br/>
         /// Returns a list of files that belong to the user's organization.

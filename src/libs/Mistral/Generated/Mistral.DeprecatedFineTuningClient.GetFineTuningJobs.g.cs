@@ -39,6 +39,7 @@ namespace Mistral
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Get Fine Tuning Jobs<br/>
         /// Get a list of fine-tuning jobs for your organization and user.

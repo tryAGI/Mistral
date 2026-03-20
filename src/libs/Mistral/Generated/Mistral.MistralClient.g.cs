@@ -38,7 +38,7 @@ namespace Mistral
 
 
         /// <summary>
-        /// Chat Completion API.
+        /// Chat
         /// </summary>
         public ChatClient Chat => new ChatClient(HttpClient, authorizations: Authorizations)
         {
@@ -47,7 +47,7 @@ namespace Mistral
         };
 
         /// <summary>
-        /// Fill-in-the-middle API.
+        /// FIM
         /// </summary>
         public FimClient Fim => new FimClient(HttpClient, authorizations: Authorizations)
         {
@@ -56,7 +56,7 @@ namespace Mistral
         };
 
         /// <summary>
-        /// Agents API.
+        /// Agents
         /// </summary>
         public AgentsClient Agents => new AgentsClient(HttpClient, authorizations: Authorizations)
         {
@@ -65,7 +65,7 @@ namespace Mistral
         };
 
         /// <summary>
-        /// Embeddings API.
+        /// Embeddings
         /// </summary>
         public EmbeddingsClient Embeddings => new EmbeddingsClient(HttpClient, authorizations: Authorizations)
         {
@@ -74,7 +74,7 @@ namespace Mistral
         };
 
         /// <summary>
-        /// Classifiers API.
+        /// Classifiers
         /// </summary>
         public ClassifiersClient Classifiers => new ClassifiersClient(HttpClient, authorizations: Authorizations)
         {
@@ -83,7 +83,7 @@ namespace Mistral
         };
 
         /// <summary>
-        /// Files API
+        /// Files
         /// </summary>
         public FilesClient Files => new FilesClient(HttpClient, authorizations: Authorizations)
         {
@@ -92,7 +92,7 @@ namespace Mistral
         };
 
         /// <summary>
-        /// (deprecated) Agents completion API
+        /// (deprecated) Agents
         /// </summary>
         public DeprecatedAgentsClient DeprecatedAgents => new DeprecatedAgentsClient(HttpClient, authorizations: Authorizations)
         {
@@ -101,7 +101,7 @@ namespace Mistral
         };
 
         /// <summary>
-        /// (deprecated) Fine-tuning API
+        /// (deprecated) Fine Tuning
         /// </summary>
         public DeprecatedFineTuningClient DeprecatedFineTuning => new DeprecatedFineTuningClient(HttpClient, authorizations: Authorizations)
         {
@@ -110,7 +110,7 @@ namespace Mistral
         };
 
         /// <summary>
-        /// Model Management API
+        /// Models
         /// </summary>
         public ModelsClient Models => new ModelsClient(HttpClient, authorizations: Authorizations)
         {
@@ -119,7 +119,7 @@ namespace Mistral
         };
 
         /// <summary>
-        /// Batch API
+        /// Batch
         /// </summary>
         public BatchClient Batch => new BatchClient(HttpClient, authorizations: Authorizations)
         {
@@ -137,7 +137,7 @@ namespace Mistral
         };
 
         /// <summary>
-        /// API for audio transcription.
+        /// Transcriptions API
         /// </summary>
         public AudioTranscriptionsClient AudioTranscriptions => new AudioTranscriptionsClient(HttpClient, authorizations: Authorizations)
         {
@@ -164,7 +164,7 @@ namespace Mistral
         };
 
         /// <summary>
-        /// (beta) Libraries API to create and manage libraries - index your documents to enhance agent capabilities.
+        /// (beta) Libraries  API - Main
         /// </summary>
         public BetaLibrariesClient BetaLibraries => new BetaLibrariesClient(HttpClient, authorizations: Authorizations)
         {
@@ -173,7 +173,7 @@ namespace Mistral
         };
 
         /// <summary>
-        /// (beta) Libraries API - manage documents in a library.
+        /// (beta) Libraries  API - Documents
         /// </summary>
         public BetaLibrariesDocumentsClient BetaLibrariesDocuments => new BetaLibrariesDocumentsClient(HttpClient, authorizations: Authorizations)
         {
@@ -182,7 +182,7 @@ namespace Mistral
         };
 
         /// <summary>
-        /// (beta) Libraries API - manage access to a library.
+        /// (beta) Libraries  API - Access
         /// </summary>
         public BetaLibrariesAccessesClient BetaLibrariesAccesses => new BetaLibrariesAccessesClient(HttpClient, authorizations: Authorizations)
         {

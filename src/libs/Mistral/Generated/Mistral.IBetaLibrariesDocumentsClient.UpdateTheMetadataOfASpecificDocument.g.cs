@@ -4,12 +4,14 @@ namespace Mistral
 {
     public partial interface IBetaLibrariesDocumentsClient
     {
+
         /// <summary>
         /// Update the metadata of a specific document.<br/>
         /// Given a library and a document in that library, update the name of that document.
         /// </summary>
         /// <param name="libraryId"></param>
         /// <param name="documentId"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Mistral.ApiException"></exception>

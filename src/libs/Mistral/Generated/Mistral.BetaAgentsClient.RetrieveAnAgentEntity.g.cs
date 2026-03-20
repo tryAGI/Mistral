@@ -23,6 +23,7 @@ namespace Mistral
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Retrieve an agent entity.<br/>
         /// Given an agent, retrieve an agent entity with its attributes. The agent_version parameter can be an integer version number or a string alias.

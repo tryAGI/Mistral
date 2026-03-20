@@ -4,6 +4,7 @@ namespace Mistral
 {
     public partial interface IBetaLibrariesDocumentsClient
     {
+
         /// <summary>
         /// Delete a document.<br/>
         /// Given a library and a document in that library, delete that document. The document will be deleted from the library and the search index.

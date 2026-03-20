@@ -23,6 +23,7 @@ namespace Mistral
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// List Models<br/>
         /// List all models available to the user.

@@ -4,6 +4,7 @@ namespace Mistral
 {
     public partial interface IFilesClient
     {
+
         /// <summary>
         /// Delete File<br/>
         /// Delete a file.

@@ -21,6 +21,7 @@ namespace Mistral
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Retrieve a conversation information.<br/>
         /// Given a conversation_id retrieve a conversation entity with its attributes.

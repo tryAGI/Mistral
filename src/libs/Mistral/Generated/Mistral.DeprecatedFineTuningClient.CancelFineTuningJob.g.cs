@@ -21,6 +21,7 @@ namespace Mistral
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Cancel Fine Tuning Job<br/>
         /// Request the cancellation of a fine tuning job.

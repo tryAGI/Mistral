@@ -4,6 +4,7 @@ namespace Mistral
 {
     public partial interface IModelsClient
     {
+
         /// <summary>
         /// List Models<br/>
         /// List all models available to the user.

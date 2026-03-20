@@ -23,6 +23,7 @@ namespace Mistral
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Retrieve the metadata of a specific document.<br/>
         /// Given a library and a document in this library, you can retrieve the metadata of that document.

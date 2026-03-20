@@ -4,6 +4,7 @@ namespace Mistral
 {
     public partial interface IFilesClient
     {
+
         /// <summary>
         /// Download File<br/>
         /// Download a file

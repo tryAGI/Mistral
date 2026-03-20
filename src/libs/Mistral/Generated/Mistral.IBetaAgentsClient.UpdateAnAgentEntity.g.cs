@@ -4,11 +4,13 @@ namespace Mistral
 {
     public partial interface IBetaAgentsClient
     {
+
         /// <summary>
         /// Update an agent entity.<br/>
         /// Update an agent attributes and create a new version.
         /// </summary>
         /// <param name="agentId"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Mistral.ApiException"></exception>

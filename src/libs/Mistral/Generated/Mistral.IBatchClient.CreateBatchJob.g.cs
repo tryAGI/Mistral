@@ -4,10 +4,12 @@ namespace Mistral
 {
     public partial interface IBatchClient
     {
+
         /// <summary>
         /// Create Batch Job<br/>
         /// Create a new batch job, it will be queued for processing.
         /// </summary>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Mistral.ApiException"></exception>

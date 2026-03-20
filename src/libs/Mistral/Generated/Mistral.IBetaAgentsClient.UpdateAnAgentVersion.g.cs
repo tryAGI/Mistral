@@ -4,6 +4,7 @@ namespace Mistral
 {
     public partial interface IBetaAgentsClient
     {
+
         /// <summary>
         /// Update an agent version.<br/>
         /// Switch the version of an agent.

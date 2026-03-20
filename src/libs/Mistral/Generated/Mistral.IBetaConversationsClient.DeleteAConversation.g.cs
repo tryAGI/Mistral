@@ -4,6 +4,7 @@ namespace Mistral
 {
     public partial interface IBetaConversationsClient
     {
+
         /// <summary>
         /// Delete a conversation.<br/>
         /// Delete a conversation given a conversation_id.

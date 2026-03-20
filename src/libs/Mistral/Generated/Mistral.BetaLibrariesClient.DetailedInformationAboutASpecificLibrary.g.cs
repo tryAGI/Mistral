@@ -21,6 +21,7 @@ namespace Mistral
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Detailed information about a specific Library.<br/>
         /// Given a library id, details information about that Library.

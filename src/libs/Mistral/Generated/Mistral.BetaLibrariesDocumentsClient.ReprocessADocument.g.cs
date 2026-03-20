@@ -18,6 +18,7 @@ namespace Mistral
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
+
         /// <summary>
         /// Reprocess a document.<br/>
         /// Given a library and a document in that library, reprocess that document, it will be billed again.

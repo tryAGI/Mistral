@@ -4,10 +4,12 @@ namespace Mistral
 {
     public partial interface IBetaAgentsClient
     {
+
         /// <summary>
         /// Create a agent that can be used within a conversation.<br/>
         /// Create a new agent giving it instructions, tools, description. The agent is then available to be used as a regular assistant in a conversation or as part of an agent pool from which it can be used.
         /// </summary>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Mistral.ApiException"></exception>
