@@ -421,32 +421,6 @@ public partial class MistralClient : Meai.IChatClient
         }
     }
 
-    private static void AddDeltaContents(IList<Meai.AIContent> contents, DeltaMessage delta)
-    {
-        var textContent = ExtractText(delta.Content);
-        if (!string.IsNullOrEmpty(textContent))
-        {
-            contents.Add(new Meai.TextContent(textContent)
-            {
-                RawRepresentation = delta,
-            });
-        }
-
-        if (delta.ToolCalls is { Count: > 0 } toolCalls)
-        {
-            foreach (var toolCall in toolCalls)
-            {
-                contents.Add(new Meai.FunctionCallContent(
-                    callId: toolCall.Id ?? string.Empty,
-                    name: toolCall.Function.Name,
-                    arguments: ParseArguments(toolCall.Function.Arguments))
-                {
-                    RawRepresentation = toolCall,
-                });
-            }
-        }
-    }
-
     private static string? ExtractText(AnyOf<string, object, IList<ContentChunk>>? content)
     {
         if (content is null)
