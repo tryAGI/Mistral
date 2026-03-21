@@ -50,7 +50,7 @@ namespace Mistral
                 path: "/v1/fine_tuning/jobs",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
-                .AddOptionalParameter("dry_run", dryRun?.ToString()) 
+                .AddOptionalParameter("dry_run", dryRun?.ToString().ToLowerInvariant()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(

@@ -89,7 +89,7 @@ namespace Mistral
             __pathBuilder
                 .AddOptionalParameter("page", page?.ToString())
                 .AddOptionalParameter("page_size", pageSize?.ToString())
-                .AddOptionalParameter("deployment_chat", deploymentChat?.ToString())
+                .AddOptionalParameter("deployment_chat", deploymentChat?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("sources", sources?.ToString())
                 .AddOptionalParameter("name", name)
                 .AddOptionalParameter("search", search)

@@ -85,7 +85,7 @@ namespace Mistral
             __pathBuilder
                 .AddOptionalParameter("page", page?.ToString())
                 .AddOptionalParameter("page_size", pageSize?.ToString())
-                .AddOptionalParameter("include_total", includeTotal?.ToString())
+                .AddOptionalParameter("include_total", includeTotal?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("sample_type", sampleType?.ToString())
                 .AddOptionalParameter("source", source?.ToString())
                 .AddOptionalParameter("search", search)

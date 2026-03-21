@@ -96,7 +96,7 @@ namespace Mistral
                 .AddOptionalParameter("agent_id", agentId)
                 .AddOptionalParameter("metadata", metadata?.ToString())
                 .AddOptionalParameter("created_after", createdAfter?.ToString())
-                .AddOptionalParameter("created_by_me", createdByMe?.ToString())
+                .AddOptionalParameter("created_by_me", createdByMe?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("status", status?.ToString())
                 .AddOptionalParameter("order_by", orderBy?.ToValueString()) 
                 ; 
