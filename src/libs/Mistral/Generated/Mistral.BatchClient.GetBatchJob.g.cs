@@ -49,7 +49,7 @@ namespace Mistral
                 path: $"/v1/batch/jobs/{jobId}",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
-                .AddOptionalParameter("inline", inline?.ToString()) 
+                .AddOptionalParameter("inline", inline?.ToString().ToLowerInvariant()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
