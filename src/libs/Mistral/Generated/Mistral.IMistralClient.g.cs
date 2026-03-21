@@ -41,54 +41,14 @@ namespace Mistral
 
 
         /// <summary>
-        /// Chat
+        /// Transcriptions API
         /// </summary>
-        public ChatClient Chat { get; }
-
-        /// <summary>
-        /// FIM
-        /// </summary>
-        public FimClient Fim { get; }
-
-        /// <summary>
-        /// Embeddings
-        /// </summary>
-        public EmbeddingsClient Embeddings { get; }
-
-        /// <summary>
-        /// Classifiers
-        /// </summary>
-        public ClassifiersClient Classifiers { get; }
-
-        /// <summary>
-        /// Files
-        /// </summary>
-        public FilesClient Files { get; }
-
-        /// <summary>
-        /// (deprecated) Fine Tuning
-        /// </summary>
-        public DeprecatedFineTuningClient DeprecatedFineTuning { get; }
-
-        /// <summary>
-        /// Models
-        /// </summary>
-        public ModelsClient Models { get; }
+        public AudioTranscriptionsClient AudioTranscriptions { get; }
 
         /// <summary>
         /// Batch
         /// </summary>
         public BatchClient Batch { get; }
-
-        /// <summary>
-        /// OCR API
-        /// </summary>
-        public OcrClient Ocr { get; }
-
-        /// <summary>
-        /// Transcriptions API
-        /// </summary>
-        public AudioTranscriptionsClient AudioTranscriptions { get; }
 
         /// <summary>
         /// (beta) Agents API
@@ -106,14 +66,54 @@ namespace Mistral
         public BetaLibrariesClient BetaLibraries { get; }
 
         /// <summary>
+        /// (beta) Libraries  API - Access
+        /// </summary>
+        public BetaLibrariesAccessesClient BetaLibrariesAccesses { get; }
+
+        /// <summary>
         /// (beta) Libraries  API - Documents
         /// </summary>
         public BetaLibrariesDocumentsClient BetaLibrariesDocuments { get; }
 
         /// <summary>
-        /// (beta) Libraries  API - Access
+        /// Chat
         /// </summary>
-        public BetaLibrariesAccessesClient BetaLibrariesAccesses { get; }
+        public ChatClient Chat { get; }
+
+        /// <summary>
+        /// Classifiers
+        /// </summary>
+        public ClassifiersClient Classifiers { get; }
+
+        /// <summary>
+        /// (deprecated) Fine Tuning
+        /// </summary>
+        public DeprecatedFineTuningClient DeprecatedFineTuning { get; }
+
+        /// <summary>
+        /// Embeddings
+        /// </summary>
+        public EmbeddingsClient Embeddings { get; }
+
+        /// <summary>
+        /// Files
+        /// </summary>
+        public FilesClient Files { get; }
+
+        /// <summary>
+        /// FIM
+        /// </summary>
+        public FimClient Fim { get; }
+
+        /// <summary>
+        /// Models
+        /// </summary>
+        public ModelsClient Models { get; }
+
+        /// <summary>
+        /// OCR API
+        /// </summary>
+        public OcrClient Ocr { get; }
 
     }
 }
