@@ -11,15 +11,15 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        AgentBuilderV1,
+        /// <summary>
+        /// 
+        /// </summary>
         Api,
         /// <summary>
         /// 
         /// </summary>
         Playground,
-        /// <summary>
-        /// 
-        /// </summary>
-        AgentBuilderV1,
     }
 
     /// <summary>
@@ -34,9 +34,9 @@ namespace Mistral
         {
             return value switch
             {
+                RequestSource.AgentBuilderV1 => "agent_builder_v1",
                 RequestSource.Api => "api",
                 RequestSource.Playground => "playground",
-                RequestSource.AgentBuilderV1 => "agent_builder_v1",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -47,9 +47,9 @@ namespace Mistral
         {
             return value switch
             {
+                "agent_builder_v1" => RequestSource.AgentBuilderV1,
                 "api" => RequestSource.Api,
                 "playground" => RequestSource.Playground,
-                "agent_builder_v1" => RequestSource.AgentBuilderV1,
                 _ => null,
             };
         }

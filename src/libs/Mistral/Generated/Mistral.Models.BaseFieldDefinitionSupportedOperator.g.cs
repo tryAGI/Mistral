@@ -11,11 +11,19 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        Lt,
+        Contains,
         /// <summary>
         /// 
         /// </summary>
-        Lte,
+        Endswith,
+        /// <summary>
+        /// 
+        /// </summary>
+        Eq,
+        /// <summary>
+        /// 
+        /// </summary>
+        Excludes,
         /// <summary>
         /// 
         /// </summary>
@@ -27,15 +35,7 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        Startswith,
-        /// <summary>
-        /// 
-        /// </summary>
-        Istartswith,
-        /// <summary>
-        /// 
-        /// </summary>
-        Endswith,
+        Icontains,
         /// <summary>
         /// 
         /// </summary>
@@ -43,19 +43,7 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        Contains,
-        /// <summary>
-        /// 
-        /// </summary>
-        Icontains,
-        /// <summary>
-        /// 
-        /// </summary>
-        Matches,
-        /// <summary>
-        /// 
-        /// </summary>
-        Notcontains,
+        Includes,
         /// <summary>
         /// 
         /// </summary>
@@ -63,7 +51,27 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        Eq,
+        Isnull,
+        /// <summary>
+        /// 
+        /// </summary>
+        Istartswith,
+        /// <summary>
+        /// 
+        /// </summary>
+        LenEq,
+        /// <summary>
+        /// 
+        /// </summary>
+        Lt,
+        /// <summary>
+        /// 
+        /// </summary>
+        Lte,
+        /// <summary>
+        /// 
+        /// </summary>
+        Matches,
         /// <summary>
         /// 
         /// </summary>
@@ -71,19 +79,11 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        Isnull,
+        Notcontains,
         /// <summary>
         /// 
         /// </summary>
-        Includes,
-        /// <summary>
-        /// 
-        /// </summary>
-        Excludes,
-        /// <summary>
-        /// 
-        /// </summary>
-        LenEq,
+        Startswith,
     }
 
     /// <summary>
@@ -98,25 +98,25 @@ namespace Mistral
         {
             return value switch
             {
-                BaseFieldDefinitionSupportedOperator.Lt => "lt",
-                BaseFieldDefinitionSupportedOperator.Lte => "lte",
+                BaseFieldDefinitionSupportedOperator.Contains => "contains",
+                BaseFieldDefinitionSupportedOperator.Endswith => "endswith",
+                BaseFieldDefinitionSupportedOperator.Eq => "eq",
+                BaseFieldDefinitionSupportedOperator.Excludes => "excludes",
                 BaseFieldDefinitionSupportedOperator.Gt => "gt",
                 BaseFieldDefinitionSupportedOperator.Gte => "gte",
-                BaseFieldDefinitionSupportedOperator.Startswith => "startswith",
-                BaseFieldDefinitionSupportedOperator.Istartswith => "istartswith",
-                BaseFieldDefinitionSupportedOperator.Endswith => "endswith",
-                BaseFieldDefinitionSupportedOperator.Iendswith => "iendswith",
-                BaseFieldDefinitionSupportedOperator.Contains => "contains",
                 BaseFieldDefinitionSupportedOperator.Icontains => "icontains",
-                BaseFieldDefinitionSupportedOperator.Matches => "matches",
-                BaseFieldDefinitionSupportedOperator.Notcontains => "notcontains",
-                BaseFieldDefinitionSupportedOperator.Inotcontains => "inotcontains",
-                BaseFieldDefinitionSupportedOperator.Eq => "eq",
-                BaseFieldDefinitionSupportedOperator.Neq => "neq",
-                BaseFieldDefinitionSupportedOperator.Isnull => "isnull",
+                BaseFieldDefinitionSupportedOperator.Iendswith => "iendswith",
                 BaseFieldDefinitionSupportedOperator.Includes => "includes",
-                BaseFieldDefinitionSupportedOperator.Excludes => "excludes",
+                BaseFieldDefinitionSupportedOperator.Inotcontains => "inotcontains",
+                BaseFieldDefinitionSupportedOperator.Isnull => "isnull",
+                BaseFieldDefinitionSupportedOperator.Istartswith => "istartswith",
                 BaseFieldDefinitionSupportedOperator.LenEq => "len_eq",
+                BaseFieldDefinitionSupportedOperator.Lt => "lt",
+                BaseFieldDefinitionSupportedOperator.Lte => "lte",
+                BaseFieldDefinitionSupportedOperator.Matches => "matches",
+                BaseFieldDefinitionSupportedOperator.Neq => "neq",
+                BaseFieldDefinitionSupportedOperator.Notcontains => "notcontains",
+                BaseFieldDefinitionSupportedOperator.Startswith => "startswith",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -127,25 +127,25 @@ namespace Mistral
         {
             return value switch
             {
-                "lt" => BaseFieldDefinitionSupportedOperator.Lt,
-                "lte" => BaseFieldDefinitionSupportedOperator.Lte,
+                "contains" => BaseFieldDefinitionSupportedOperator.Contains,
+                "endswith" => BaseFieldDefinitionSupportedOperator.Endswith,
+                "eq" => BaseFieldDefinitionSupportedOperator.Eq,
+                "excludes" => BaseFieldDefinitionSupportedOperator.Excludes,
                 "gt" => BaseFieldDefinitionSupportedOperator.Gt,
                 "gte" => BaseFieldDefinitionSupportedOperator.Gte,
-                "startswith" => BaseFieldDefinitionSupportedOperator.Startswith,
-                "istartswith" => BaseFieldDefinitionSupportedOperator.Istartswith,
-                "endswith" => BaseFieldDefinitionSupportedOperator.Endswith,
-                "iendswith" => BaseFieldDefinitionSupportedOperator.Iendswith,
-                "contains" => BaseFieldDefinitionSupportedOperator.Contains,
                 "icontains" => BaseFieldDefinitionSupportedOperator.Icontains,
-                "matches" => BaseFieldDefinitionSupportedOperator.Matches,
-                "notcontains" => BaseFieldDefinitionSupportedOperator.Notcontains,
-                "inotcontains" => BaseFieldDefinitionSupportedOperator.Inotcontains,
-                "eq" => BaseFieldDefinitionSupportedOperator.Eq,
-                "neq" => BaseFieldDefinitionSupportedOperator.Neq,
-                "isnull" => BaseFieldDefinitionSupportedOperator.Isnull,
+                "iendswith" => BaseFieldDefinitionSupportedOperator.Iendswith,
                 "includes" => BaseFieldDefinitionSupportedOperator.Includes,
-                "excludes" => BaseFieldDefinitionSupportedOperator.Excludes,
+                "inotcontains" => BaseFieldDefinitionSupportedOperator.Inotcontains,
+                "isnull" => BaseFieldDefinitionSupportedOperator.Isnull,
+                "istartswith" => BaseFieldDefinitionSupportedOperator.Istartswith,
                 "len_eq" => BaseFieldDefinitionSupportedOperator.LenEq,
+                "lt" => BaseFieldDefinitionSupportedOperator.Lt,
+                "lte" => BaseFieldDefinitionSupportedOperator.Lte,
+                "matches" => BaseFieldDefinitionSupportedOperator.Matches,
+                "neq" => BaseFieldDefinitionSupportedOperator.Neq,
+                "notcontains" => BaseFieldDefinitionSupportedOperator.Notcontains,
+                "startswith" => BaseFieldDefinitionSupportedOperator.Startswith,
                 _ => null,
             };
         }

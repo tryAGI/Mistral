@@ -11,11 +11,11 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        User,
+        Assistant,
         /// <summary>
         /// 
         /// </summary>
-        Assistant,
+        User,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace Mistral
         {
             return value switch
             {
-                AnnotationsAudienceVariant1Item.User => "user",
                 AnnotationsAudienceVariant1Item.Assistant => "assistant",
+                AnnotationsAudienceVariant1Item.User => "user",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace Mistral
         {
             return value switch
             {
-                "user" => AnnotationsAudienceVariant1Item.User,
                 "assistant" => AnnotationsAudienceVariant1Item.Assistant,
+                "user" => AnnotationsAudienceVariant1Item.User,
                 _ => null,
             };
         }

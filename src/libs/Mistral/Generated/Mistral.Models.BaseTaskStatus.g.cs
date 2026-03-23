@@ -11,7 +11,7 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        Running,
+        Canceled,
         /// <summary>
         /// 
         /// </summary>
@@ -19,19 +19,19 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        ContinuedAsNew,
+        /// <summary>
+        /// 
+        /// </summary>
         Failed,
         /// <summary>
         /// 
         /// </summary>
-        Canceled,
+        Running,
         /// <summary>
         /// 
         /// </summary>
         Terminated,
-        /// <summary>
-        /// 
-        /// </summary>
-        ContinuedAsNew,
         /// <summary>
         /// 
         /// </summary>
@@ -54,12 +54,12 @@ namespace Mistral
         {
             return value switch
             {
-                BaseTaskStatus.Running => "RUNNING",
-                BaseTaskStatus.Completed => "COMPLETED",
-                BaseTaskStatus.Failed => "FAILED",
                 BaseTaskStatus.Canceled => "CANCELED",
-                BaseTaskStatus.Terminated => "TERMINATED",
+                BaseTaskStatus.Completed => "COMPLETED",
                 BaseTaskStatus.ContinuedAsNew => "CONTINUED_AS_NEW",
+                BaseTaskStatus.Failed => "FAILED",
+                BaseTaskStatus.Running => "RUNNING",
+                BaseTaskStatus.Terminated => "TERMINATED",
                 BaseTaskStatus.TimedOut => "TIMED_OUT",
                 BaseTaskStatus.Unknown => "UNKNOWN",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -72,12 +72,12 @@ namespace Mistral
         {
             return value switch
             {
-                "RUNNING" => BaseTaskStatus.Running,
-                "COMPLETED" => BaseTaskStatus.Completed,
-                "FAILED" => BaseTaskStatus.Failed,
                 "CANCELED" => BaseTaskStatus.Canceled,
-                "TERMINATED" => BaseTaskStatus.Terminated,
+                "COMPLETED" => BaseTaskStatus.Completed,
                 "CONTINUED_AS_NEW" => BaseTaskStatus.ContinuedAsNew,
+                "FAILED" => BaseTaskStatus.Failed,
+                "RUNNING" => BaseTaskStatus.Running,
+                "TERMINATED" => BaseTaskStatus.Terminated,
                 "TIMED_OUT" => BaseTaskStatus.TimedOut,
                 "UNKNOWN" => BaseTaskStatus.Unknown,
                 _ => null,

@@ -11,6 +11,10 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        Binary,
+        /// <summary>
+        /// 
+        /// </summary>
         Float,
         /// <summary>
         /// 
@@ -19,15 +23,11 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        Uint8,
-        /// <summary>
-        /// 
-        /// </summary>
-        Binary,
-        /// <summary>
-        /// 
-        /// </summary>
         Ubinary,
+        /// <summary>
+        /// 
+        /// </summary>
+        Uint8,
     }
 
     /// <summary>
@@ -42,11 +42,11 @@ namespace Mistral
         {
             return value switch
             {
+                EmbeddingDtype.Binary => "binary",
                 EmbeddingDtype.Float => "float",
                 EmbeddingDtype.Int8 => "int8",
-                EmbeddingDtype.Uint8 => "uint8",
-                EmbeddingDtype.Binary => "binary",
                 EmbeddingDtype.Ubinary => "ubinary",
+                EmbeddingDtype.Uint8 => "uint8",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -57,11 +57,11 @@ namespace Mistral
         {
             return value switch
             {
+                "binary" => EmbeddingDtype.Binary,
                 "float" => EmbeddingDtype.Float,
                 "int8" => EmbeddingDtype.Int8,
-                "uint8" => EmbeddingDtype.Uint8,
-                "binary" => EmbeddingDtype.Binary,
                 "ubinary" => EmbeddingDtype.Ubinary,
+                "uint8" => EmbeddingDtype.Uint8,
                 _ => null,
             };
         }

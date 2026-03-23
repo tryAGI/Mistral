@@ -11,15 +11,15 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        Org,
+        /// <summary>
+        /// 
+        /// </summary>
         User,
         /// <summary>
         /// 
         /// </summary>
         Workspace,
-        /// <summary>
-        /// 
-        /// </summary>
-        Org,
     }
 
     /// <summary>
@@ -34,9 +34,9 @@ namespace Mistral
         {
             return value switch
             {
+                EntityType.Org => "Org",
                 EntityType.User => "User",
                 EntityType.Workspace => "Workspace",
-                EntityType.Org => "Org",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -47,9 +47,9 @@ namespace Mistral
         {
             return value switch
             {
+                "Org" => EntityType.Org,
                 "User" => EntityType.User,
                 "Workspace" => EntityType.Workspace,
-                "Org" => EntityType.Org,
                 _ => null,
             };
         }

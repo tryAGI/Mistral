@@ -11,11 +11,11 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        Completion,
+        Classifier,
         /// <summary>
         /// 
         /// </summary>
-        Classifier,
+        Completion,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace Mistral
         {
             return value switch
             {
-                FineTuneableModelType.Completion => "completion",
                 FineTuneableModelType.Classifier => "classifier",
+                FineTuneableModelType.Completion => "completion",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace Mistral
         {
             return value switch
             {
-                "completion" => FineTuneableModelType.Completion,
                 "classifier" => FineTuneableModelType.Classifier,
+                "completion" => FineTuneableModelType.Completion,
                 _ => null,
             };
         }

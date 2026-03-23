@@ -11,7 +11,11 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        ConversationResponseStarted,
+        AgentHandoffDone,
+        /// <summary>
+        /// 
+        /// </summary>
+        AgentHandoffStarted,
         /// <summary>
         /// 
         /// </summary>
@@ -23,11 +27,15 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        MessageOutputDelta,
+        ConversationResponseStarted,
         /// <summary>
         /// 
         /// </summary>
-        ToolExecutionStarted,
+        FunctionCallDelta,
+        /// <summary>
+        /// 
+        /// </summary>
+        MessageOutputDelta,
         /// <summary>
         /// 
         /// </summary>
@@ -39,15 +47,7 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        AgentHandoffStarted,
-        /// <summary>
-        /// 
-        /// </summary>
-        AgentHandoffDone,
-        /// <summary>
-        /// 
-        /// </summary>
-        FunctionCallDelta,
+        ToolExecutionStarted,
     }
 
     /// <summary>
@@ -62,16 +62,16 @@ namespace Mistral
         {
             return value switch
             {
-                SSETypes.ConversationResponseStarted => "conversation.response.started",
+                SSETypes.AgentHandoffDone => "agent.handoff.done",
+                SSETypes.AgentHandoffStarted => "agent.handoff.started",
                 SSETypes.ConversationResponseDone => "conversation.response.done",
                 SSETypes.ConversationResponseError => "conversation.response.error",
+                SSETypes.ConversationResponseStarted => "conversation.response.started",
+                SSETypes.FunctionCallDelta => "function.call.delta",
                 SSETypes.MessageOutputDelta => "message.output.delta",
-                SSETypes.ToolExecutionStarted => "tool.execution.started",
                 SSETypes.ToolExecutionDelta => "tool.execution.delta",
                 SSETypes.ToolExecutionDone => "tool.execution.done",
-                SSETypes.AgentHandoffStarted => "agent.handoff.started",
-                SSETypes.AgentHandoffDone => "agent.handoff.done",
-                SSETypes.FunctionCallDelta => "function.call.delta",
+                SSETypes.ToolExecutionStarted => "tool.execution.started",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -82,16 +82,16 @@ namespace Mistral
         {
             return value switch
             {
-                "conversation.response.started" => SSETypes.ConversationResponseStarted,
+                "agent.handoff.done" => SSETypes.AgentHandoffDone,
+                "agent.handoff.started" => SSETypes.AgentHandoffStarted,
                 "conversation.response.done" => SSETypes.ConversationResponseDone,
                 "conversation.response.error" => SSETypes.ConversationResponseError,
+                "conversation.response.started" => SSETypes.ConversationResponseStarted,
+                "function.call.delta" => SSETypes.FunctionCallDelta,
                 "message.output.delta" => SSETypes.MessageOutputDelta,
-                "tool.execution.started" => SSETypes.ToolExecutionStarted,
                 "tool.execution.delta" => SSETypes.ToolExecutionDelta,
                 "tool.execution.done" => SSETypes.ToolExecutionDone,
-                "agent.handoff.started" => SSETypes.AgentHandoffStarted,
-                "agent.handoff.done" => SSETypes.AgentHandoffDone,
-                "function.call.delta" => SSETypes.FunctionCallDelta,
+                "tool.execution.started" => SSETypes.ToolExecutionStarted,
                 _ => null,
             };
         }

@@ -11,11 +11,11 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        Viewer,
+        Editor,
         /// <summary>
         /// 
         /// </summary>
-        Editor,
+        Viewer,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace Mistral
         {
             return value switch
             {
-                ShareEnum.Viewer => "Viewer",
                 ShareEnum.Editor => "Editor",
+                ShareEnum.Viewer => "Viewer",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace Mistral
         {
             return value switch
             {
-                "Viewer" => ShareEnum.Viewer,
                 "Editor" => ShareEnum.Editor,
+                "Viewer" => ShareEnum.Viewer,
                 _ => null,
             };
         }

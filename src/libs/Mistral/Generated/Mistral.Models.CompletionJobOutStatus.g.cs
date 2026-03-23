@@ -11,35 +11,7 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        Queued,
-        /// <summary>
-        /// 
-        /// </summary>
-        Started,
-        /// <summary>
-        /// 
-        /// </summary>
-        Validating,
-        /// <summary>
-        /// 
-        /// </summary>
-        Validated,
-        /// <summary>
-        /// 
-        /// </summary>
-        Running,
-        /// <summary>
-        /// 
-        /// </summary>
-        FailedValidation,
-        /// <summary>
-        /// 
-        /// </summary>
-        Failed,
-        /// <summary>
-        /// 
-        /// </summary>
-        Success,
+        CancellationRequested,
         /// <summary>
         /// 
         /// </summary>
@@ -47,7 +19,35 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        CancellationRequested,
+        Failed,
+        /// <summary>
+        /// 
+        /// </summary>
+        FailedValidation,
+        /// <summary>
+        /// 
+        /// </summary>
+        Queued,
+        /// <summary>
+        /// 
+        /// </summary>
+        Running,
+        /// <summary>
+        /// 
+        /// </summary>
+        Started,
+        /// <summary>
+        /// 
+        /// </summary>
+        Success,
+        /// <summary>
+        /// 
+        /// </summary>
+        Validated,
+        /// <summary>
+        /// 
+        /// </summary>
+        Validating,
     }
 
     /// <summary>
@@ -62,16 +62,16 @@ namespace Mistral
         {
             return value switch
             {
-                CompletionJobOutStatus.Queued => "QUEUED",
-                CompletionJobOutStatus.Started => "STARTED",
-                CompletionJobOutStatus.Validating => "VALIDATING",
-                CompletionJobOutStatus.Validated => "VALIDATED",
-                CompletionJobOutStatus.Running => "RUNNING",
-                CompletionJobOutStatus.FailedValidation => "FAILED_VALIDATION",
-                CompletionJobOutStatus.Failed => "FAILED",
-                CompletionJobOutStatus.Success => "SUCCESS",
-                CompletionJobOutStatus.Cancelled => "CANCELLED",
                 CompletionJobOutStatus.CancellationRequested => "CANCELLATION_REQUESTED",
+                CompletionJobOutStatus.Cancelled => "CANCELLED",
+                CompletionJobOutStatus.Failed => "FAILED",
+                CompletionJobOutStatus.FailedValidation => "FAILED_VALIDATION",
+                CompletionJobOutStatus.Queued => "QUEUED",
+                CompletionJobOutStatus.Running => "RUNNING",
+                CompletionJobOutStatus.Started => "STARTED",
+                CompletionJobOutStatus.Success => "SUCCESS",
+                CompletionJobOutStatus.Validated => "VALIDATED",
+                CompletionJobOutStatus.Validating => "VALIDATING",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -82,16 +82,16 @@ namespace Mistral
         {
             return value switch
             {
-                "QUEUED" => CompletionJobOutStatus.Queued,
-                "STARTED" => CompletionJobOutStatus.Started,
-                "VALIDATING" => CompletionJobOutStatus.Validating,
-                "VALIDATED" => CompletionJobOutStatus.Validated,
-                "RUNNING" => CompletionJobOutStatus.Running,
-                "FAILED_VALIDATION" => CompletionJobOutStatus.FailedValidation,
-                "FAILED" => CompletionJobOutStatus.Failed,
-                "SUCCESS" => CompletionJobOutStatus.Success,
-                "CANCELLED" => CompletionJobOutStatus.Cancelled,
                 "CANCELLATION_REQUESTED" => CompletionJobOutStatus.CancellationRequested,
+                "CANCELLED" => CompletionJobOutStatus.Cancelled,
+                "FAILED" => CompletionJobOutStatus.Failed,
+                "FAILED_VALIDATION" => CompletionJobOutStatus.FailedValidation,
+                "QUEUED" => CompletionJobOutStatus.Queued,
+                "RUNNING" => CompletionJobOutStatus.Running,
+                "STARTED" => CompletionJobOutStatus.Started,
+                "SUCCESS" => CompletionJobOutStatus.Success,
+                "VALIDATED" => CompletionJobOutStatus.Validated,
+                "VALIDATING" => CompletionJobOutStatus.Validating,
                 _ => null,
             };
         }

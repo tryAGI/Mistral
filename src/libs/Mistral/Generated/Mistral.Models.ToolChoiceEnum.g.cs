@@ -11,15 +11,15 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        Any,
+        /// <summary>
+        /// 
+        /// </summary>
         Auto,
         /// <summary>
         /// 
         /// </summary>
         None,
-        /// <summary>
-        /// 
-        /// </summary>
-        Any,
         /// <summary>
         /// 
         /// </summary>
@@ -38,9 +38,9 @@ namespace Mistral
         {
             return value switch
             {
+                ToolChoiceEnum.Any => "any",
                 ToolChoiceEnum.Auto => "auto",
                 ToolChoiceEnum.None => "none",
-                ToolChoiceEnum.Any => "any",
                 ToolChoiceEnum.Required => "required",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -52,9 +52,9 @@ namespace Mistral
         {
             return value switch
             {
+                "any" => ToolChoiceEnum.Any,
                 "auto" => ToolChoiceEnum.Auto,
                 "none" => ToolChoiceEnum.None,
-                "any" => ToolChoiceEnum.Any,
                 "required" => ToolChoiceEnum.Required,
                 _ => null,
             };

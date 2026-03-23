@@ -11,7 +11,7 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        Stop,
+        Error,
         /// <summary>
         /// 
         /// </summary>
@@ -23,7 +23,7 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        Error,
+        Stop,
         /// <summary>
         /// 
         /// </summary>
@@ -42,10 +42,10 @@ namespace Mistral
         {
             return value switch
             {
-                ChatCompletionChoiceFinishReason.Stop => "stop",
+                ChatCompletionChoiceFinishReason.Error => "error",
                 ChatCompletionChoiceFinishReason.Length => "length",
                 ChatCompletionChoiceFinishReason.ModelLength => "model_length",
-                ChatCompletionChoiceFinishReason.Error => "error",
+                ChatCompletionChoiceFinishReason.Stop => "stop",
                 ChatCompletionChoiceFinishReason.ToolCalls => "tool_calls",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -57,10 +57,10 @@ namespace Mistral
         {
             return value switch
             {
-                "stop" => ChatCompletionChoiceFinishReason.Stop,
+                "error" => ChatCompletionChoiceFinishReason.Error,
                 "length" => ChatCompletionChoiceFinishReason.Length,
                 "model_length" => ChatCompletionChoiceFinishReason.ModelLength,
-                "error" => ChatCompletionChoiceFinishReason.Error,
+                "stop" => ChatCompletionChoiceFinishReason.Stop,
                 "tool_calls" => ChatCompletionChoiceFinishReason.ToolCalls,
                 _ => null,
             };

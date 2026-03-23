@@ -11,6 +11,10 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        Private,
+        /// <summary>
+        /// 
+        /// </summary>
         SharedGlobal,
         /// <summary>
         /// 
@@ -20,10 +24,6 @@ namespace Mistral
         /// 
         /// </summary>
         SharedWorkspace,
-        /// <summary>
-        /// 
-        /// </summary>
-        Private,
     }
 
     /// <summary>
@@ -38,10 +38,10 @@ namespace Mistral
         {
             return value switch
             {
+                ResourceVisibility.Private => "private",
                 ResourceVisibility.SharedGlobal => "shared_global",
                 ResourceVisibility.SharedOrg => "shared_org",
                 ResourceVisibility.SharedWorkspace => "shared_workspace",
-                ResourceVisibility.Private => "private",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,10 +52,10 @@ namespace Mistral
         {
             return value switch
             {
+                "private" => ResourceVisibility.Private,
                 "shared_global" => ResourceVisibility.SharedGlobal,
                 "shared_org" => ResourceVisibility.SharedOrg,
                 "shared_workspace" => ResourceVisibility.SharedWorkspace,
-                "private" => ResourceVisibility.Private,
                 _ => null,
             };
         }

@@ -27,11 +27,11 @@ namespace Mistral.JsonConverters
             }
 
             var __score0 = 0;
-            if (__jsonProps.Contains("inputs")) __score0++;
-            if (__jsonProps.Contains("stream")) __score0++;
-            if (__jsonProps.Contains("store")) __score0++;
-            if (__jsonProps.Contains("handoff_execution")) __score0++;
             if (__jsonProps.Contains("completion_args")) __score0++;
+            if (__jsonProps.Contains("handoff_execution")) __score0++;
+            if (__jsonProps.Contains("inputs")) __score0++;
+            if (__jsonProps.Contains("store")) __score0++;
+            if (__jsonProps.Contains("stream")) __score0++;
             if (__jsonProps.Contains("tool_confirmations")) __score0++;
             var __score1 = 0;
             if (__jsonProps.Contains("stream")) __score1++;

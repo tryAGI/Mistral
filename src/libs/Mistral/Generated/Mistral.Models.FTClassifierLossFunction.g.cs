@@ -11,11 +11,11 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        SingleClass,
+        MultiClass,
         /// <summary>
         /// 
         /// </summary>
-        MultiClass,
+        SingleClass,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace Mistral
         {
             return value switch
             {
-                FTClassifierLossFunction.SingleClass => "single_class",
                 FTClassifierLossFunction.MultiClass => "multi_class",
+                FTClassifierLossFunction.SingleClass => "single_class",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace Mistral
         {
             return value switch
             {
-                "single_class" => FTClassifierLossFunction.SingleClass,
                 "multi_class" => FTClassifierLossFunction.MultiClass,
+                "single_class" => FTClassifierLossFunction.SingleClass,
                 _ => null,
             };
         }

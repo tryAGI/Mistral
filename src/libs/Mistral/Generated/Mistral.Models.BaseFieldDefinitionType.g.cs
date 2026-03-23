@@ -11,19 +11,7 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        Enum,
-        /// <summary>
-        /// 
-        /// </summary>
-        Text,
-        /// <summary>
-        /// 
-        /// </summary>
-        Int,
-        /// <summary>
-        /// 
-        /// </summary>
-        Float,
+        Array,
         /// <summary>
         /// 
         /// </summary>
@@ -31,11 +19,23 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        Timestamp,
+        Enum,
         /// <summary>
         /// 
         /// </summary>
-        Array,
+        Float,
+        /// <summary>
+        /// 
+        /// </summary>
+        Int,
+        /// <summary>
+        /// 
+        /// </summary>
+        Text,
+        /// <summary>
+        /// 
+        /// </summary>
+        Timestamp,
     }
 
     /// <summary>
@@ -50,13 +50,13 @@ namespace Mistral
         {
             return value switch
             {
-                BaseFieldDefinitionType.Enum => "ENUM",
-                BaseFieldDefinitionType.Text => "TEXT",
-                BaseFieldDefinitionType.Int => "INT",
-                BaseFieldDefinitionType.Float => "FLOAT",
-                BaseFieldDefinitionType.Bool => "BOOL",
-                BaseFieldDefinitionType.Timestamp => "TIMESTAMP",
                 BaseFieldDefinitionType.Array => "ARRAY",
+                BaseFieldDefinitionType.Bool => "BOOL",
+                BaseFieldDefinitionType.Enum => "ENUM",
+                BaseFieldDefinitionType.Float => "FLOAT",
+                BaseFieldDefinitionType.Int => "INT",
+                BaseFieldDefinitionType.Text => "TEXT",
+                BaseFieldDefinitionType.Timestamp => "TIMESTAMP",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -67,13 +67,13 @@ namespace Mistral
         {
             return value switch
             {
-                "ENUM" => BaseFieldDefinitionType.Enum,
-                "TEXT" => BaseFieldDefinitionType.Text,
-                "INT" => BaseFieldDefinitionType.Int,
-                "FLOAT" => BaseFieldDefinitionType.Float,
-                "BOOL" => BaseFieldDefinitionType.Bool,
-                "TIMESTAMP" => BaseFieldDefinitionType.Timestamp,
                 "ARRAY" => BaseFieldDefinitionType.Array,
+                "BOOL" => BaseFieldDefinitionType.Bool,
+                "ENUM" => BaseFieldDefinitionType.Enum,
+                "FLOAT" => BaseFieldDefinitionType.Float,
+                "INT" => BaseFieldDefinitionType.Int,
+                "TEXT" => BaseFieldDefinitionType.Text,
+                "TIMESTAMP" => BaseFieldDefinitionType.Timestamp,
                 _ => null,
             };
         }

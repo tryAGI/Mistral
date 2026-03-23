@@ -11,11 +11,11 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        Created,
+        Minuscreated,
         /// <summary>
         /// 
         /// </summary>
-        Minuscreated,
+        Created,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace Mistral
         {
             return value switch
             {
-                JobsApiRoutesBatchGetBatchJobsOrderBy.Created => "created",
                 JobsApiRoutesBatchGetBatchJobsOrderBy.Minuscreated => "-created",
+                JobsApiRoutesBatchGetBatchJobsOrderBy.Created => "created",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace Mistral
         {
             return value switch
             {
-                "created" => JobsApiRoutesBatchGetBatchJobsOrderBy.Created,
                 "-created" => JobsApiRoutesBatchGetBatchJobsOrderBy.Minuscreated,
+                "created" => JobsApiRoutesBatchGetBatchJobsOrderBy.Created,
                 _ => null,
             };
         }

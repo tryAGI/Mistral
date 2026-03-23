@@ -11,11 +11,7 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        PcmS16le,
-        /// <summary>
-        /// 
-        /// </summary>
-        PcmS32le,
+        PcmAlaw,
         /// <summary>
         /// 
         /// </summary>
@@ -31,7 +27,11 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        PcmAlaw,
+        PcmS16le,
+        /// <summary>
+        /// 
+        /// </summary>
+        PcmS32le,
     }
 
     /// <summary>
@@ -46,12 +46,12 @@ namespace Mistral
         {
             return value switch
             {
-                AudioEncoding.PcmS16le => "pcm_s16le",
-                AudioEncoding.PcmS32le => "pcm_s32le",
+                AudioEncoding.PcmAlaw => "pcm_alaw",
                 AudioEncoding.PcmF16le => "pcm_f16le",
                 AudioEncoding.PcmF32le => "pcm_f32le",
                 AudioEncoding.PcmMulaw => "pcm_mulaw",
-                AudioEncoding.PcmAlaw => "pcm_alaw",
+                AudioEncoding.PcmS16le => "pcm_s16le",
+                AudioEncoding.PcmS32le => "pcm_s32le",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -62,12 +62,12 @@ namespace Mistral
         {
             return value switch
             {
-                "pcm_s16le" => AudioEncoding.PcmS16le,
-                "pcm_s32le" => AudioEncoding.PcmS32le,
+                "pcm_alaw" => AudioEncoding.PcmAlaw,
                 "pcm_f16le" => AudioEncoding.PcmF16le,
                 "pcm_f32le" => AudioEncoding.PcmF32le,
                 "pcm_mulaw" => AudioEncoding.PcmMulaw,
-                "pcm_alaw" => AudioEncoding.PcmAlaw,
+                "pcm_s16le" => AudioEncoding.PcmS16le,
+                "pcm_s32le" => AudioEncoding.PcmS32le,
                 _ => null,
             };
         }

@@ -11,19 +11,7 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        ImageUrl,
-        /// <summary>
-        /// 
-        /// </summary>
         DocumentUrl,
-        /// <summary>
-        /// 
-        /// </summary>
-        Text,
-        /// <summary>
-        /// 
-        /// </summary>
-        Reference,
         /// <summary>
         /// 
         /// </summary>
@@ -31,11 +19,23 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        Thinking,
+        ImageUrl,
         /// <summary>
         /// 
         /// </summary>
         InputAudio,
+        /// <summary>
+        /// 
+        /// </summary>
+        Reference,
+        /// <summary>
+        /// 
+        /// </summary>
+        Text,
+        /// <summary>
+        /// 
+        /// </summary>
+        Thinking,
     }
 
     /// <summary>
@@ -50,13 +50,13 @@ namespace Mistral
         {
             return value switch
             {
-                ContentChunkDiscriminatorType.ImageUrl => "image_url",
                 ContentChunkDiscriminatorType.DocumentUrl => "document_url",
-                ContentChunkDiscriminatorType.Text => "text",
-                ContentChunkDiscriminatorType.Reference => "reference",
                 ContentChunkDiscriminatorType.File => "file",
-                ContentChunkDiscriminatorType.Thinking => "thinking",
+                ContentChunkDiscriminatorType.ImageUrl => "image_url",
                 ContentChunkDiscriminatorType.InputAudio => "input_audio",
+                ContentChunkDiscriminatorType.Reference => "reference",
+                ContentChunkDiscriminatorType.Text => "text",
+                ContentChunkDiscriminatorType.Thinking => "thinking",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -67,13 +67,13 @@ namespace Mistral
         {
             return value switch
             {
-                "image_url" => ContentChunkDiscriminatorType.ImageUrl,
                 "document_url" => ContentChunkDiscriminatorType.DocumentUrl,
-                "text" => ContentChunkDiscriminatorType.Text,
-                "reference" => ContentChunkDiscriminatorType.Reference,
                 "file" => ContentChunkDiscriminatorType.File,
-                "thinking" => ContentChunkDiscriminatorType.Thinking,
+                "image_url" => ContentChunkDiscriminatorType.ImageUrl,
                 "input_audio" => ContentChunkDiscriminatorType.InputAudio,
+                "reference" => ContentChunkDiscriminatorType.Reference,
+                "text" => ContentChunkDiscriminatorType.Text,
+                "thinking" => ContentChunkDiscriminatorType.Thinking,
                 _ => null,
             };
         }

@@ -27,32 +27,32 @@ namespace Mistral.JsonConverters
             }
 
             var __score0 = 0;
-            if (__jsonProps.Contains("type")) __score0++;
             if (__jsonProps.Contains("text")) __score0++;
+            if (__jsonProps.Contains("type")) __score0++;
             var __score1 = 0;
-            if (__jsonProps.Contains("type")) __score1++;
             if (__jsonProps.Contains("image_url")) __score1++;
+            if (__jsonProps.Contains("type")) __score1++;
             var __score2 = 0;
-            if (__jsonProps.Contains("type")) __score2++;
-            if (__jsonProps.Contains("tool")) __score2++;
             if (__jsonProps.Contains("file_id")) __score2++;
             if (__jsonProps.Contains("file_name")) __score2++;
             if (__jsonProps.Contains("file_type")) __score2++;
+            if (__jsonProps.Contains("tool")) __score2++;
+            if (__jsonProps.Contains("type")) __score2++;
             var __score3 = 0;
-            if (__jsonProps.Contains("type")) __score3++;
-            if (__jsonProps.Contains("document_url")) __score3++;
             if (__jsonProps.Contains("document_name")) __score3++;
+            if (__jsonProps.Contains("document_url")) __score3++;
+            if (__jsonProps.Contains("type")) __score3++;
             var __score4 = 0;
-            if (__jsonProps.Contains("type")) __score4++;
-            if (__jsonProps.Contains("thinking")) __score4++;
             if (__jsonProps.Contains("closed")) __score4++;
+            if (__jsonProps.Contains("thinking")) __score4++;
+            if (__jsonProps.Contains("type")) __score4++;
             var __score5 = 0;
-            if (__jsonProps.Contains("type")) __score5++;
-            if (__jsonProps.Contains("tool")) __score5++;
-            if (__jsonProps.Contains("title")) __score5++;
-            if (__jsonProps.Contains("url")) __score5++;
-            if (__jsonProps.Contains("favicon")) __score5++;
             if (__jsonProps.Contains("description")) __score5++;
+            if (__jsonProps.Contains("favicon")) __score5++;
+            if (__jsonProps.Contains("title")) __score5++;
+            if (__jsonProps.Contains("tool")) __score5++;
+            if (__jsonProps.Contains("type")) __score5++;
+            if (__jsonProps.Contains("url")) __score5++;
             var __bestScore = 0;
             var __bestIndex = -1;
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }

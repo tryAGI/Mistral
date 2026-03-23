@@ -11,11 +11,11 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        Workspace,
+        User,
         /// <summary>
         /// 
         /// </summary>
-        User,
+        Workspace,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace Mistral
         {
             return value switch
             {
-                FileVisibility.Workspace => "workspace",
                 FileVisibility.User => "user",
+                FileVisibility.Workspace => "workspace",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace Mistral
         {
             return value switch
             {
-                "workspace" => FileVisibility.Workspace,
                 "user" => FileVisibility.User,
+                "workspace" => FileVisibility.Workspace,
                 _ => null,
             };
         }

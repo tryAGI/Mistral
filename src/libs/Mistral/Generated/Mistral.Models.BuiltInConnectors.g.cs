@@ -11,15 +11,11 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        WebSearch,
-        /// <summary>
-        /// 
-        /// </summary>
-        WebSearchPremium,
-        /// <summary>
-        /// 
-        /// </summary>
         CodeInterpreter,
+        /// <summary>
+        /// 
+        /// </summary>
+        DocumentLibrary,
         /// <summary>
         /// 
         /// </summary>
@@ -27,7 +23,11 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        DocumentLibrary,
+        WebSearch,
+        /// <summary>
+        /// 
+        /// </summary>
+        WebSearchPremium,
     }
 
     /// <summary>
@@ -42,11 +42,11 @@ namespace Mistral
         {
             return value switch
             {
+                BuiltInConnectors.CodeInterpreter => "code_interpreter",
+                BuiltInConnectors.DocumentLibrary => "document_library",
+                BuiltInConnectors.ImageGeneration => "image_generation",
                 BuiltInConnectors.WebSearch => "web_search",
                 BuiltInConnectors.WebSearchPremium => "web_search_premium",
-                BuiltInConnectors.CodeInterpreter => "code_interpreter",
-                BuiltInConnectors.ImageGeneration => "image_generation",
-                BuiltInConnectors.DocumentLibrary => "document_library",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -57,11 +57,11 @@ namespace Mistral
         {
             return value switch
             {
+                "code_interpreter" => BuiltInConnectors.CodeInterpreter,
+                "document_library" => BuiltInConnectors.DocumentLibrary,
+                "image_generation" => BuiltInConnectors.ImageGeneration,
                 "web_search" => BuiltInConnectors.WebSearch,
                 "web_search_premium" => BuiltInConnectors.WebSearchPremium,
-                "code_interpreter" => BuiltInConnectors.CodeInterpreter,
-                "image_generation" => BuiltInConnectors.ImageGeneration,
-                "document_library" => BuiltInConnectors.DocumentLibrary,
                 _ => null,
             };
         }
