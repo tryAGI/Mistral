@@ -11,7 +11,15 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        SelfManaged,
+        Done,
+        /// <summary>
+        /// 
+        /// </summary>
+        Error,
+        /// <summary>
+        /// 
+        /// </summary>
+        InProgress,
         /// <summary>
         /// 
         /// </summary>
@@ -23,19 +31,11 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        Done,
+        SelfManaged,
         /// <summary>
         /// 
         /// </summary>
         Todo,
-        /// <summary>
-        /// 
-        /// </summary>
-        InProgress,
-        /// <summary>
-        /// 
-        /// </summary>
-        Error,
         /// <summary>
         /// 
         /// </summary>
@@ -54,13 +54,13 @@ namespace Mistral
         {
             return value switch
             {
-                ProcessStatus.SelfManaged => "self_managed",
+                ProcessStatus.Done => "done",
+                ProcessStatus.Error => "error",
+                ProcessStatus.InProgress => "in_progress",
                 ProcessStatus.MissingContent => "missing_content",
                 ProcessStatus.Noop => "noop",
-                ProcessStatus.Done => "done",
+                ProcessStatus.SelfManaged => "self_managed",
                 ProcessStatus.Todo => "todo",
-                ProcessStatus.InProgress => "in_progress",
-                ProcessStatus.Error => "error",
                 ProcessStatus.WaitingForCapacity => "waiting_for_capacity",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -72,13 +72,13 @@ namespace Mistral
         {
             return value switch
             {
-                "self_managed" => ProcessStatus.SelfManaged,
+                "done" => ProcessStatus.Done,
+                "error" => ProcessStatus.Error,
+                "in_progress" => ProcessStatus.InProgress,
                 "missing_content" => ProcessStatus.MissingContent,
                 "noop" => ProcessStatus.Noop,
-                "done" => ProcessStatus.Done,
+                "self_managed" => ProcessStatus.SelfManaged,
                 "todo" => ProcessStatus.Todo,
-                "in_progress" => ProcessStatus.InProgress,
-                "error" => ProcessStatus.Error,
                 "waiting_for_capacity" => ProcessStatus.WaitingForCapacity,
                 _ => null,
             };

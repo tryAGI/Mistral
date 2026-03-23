@@ -11,19 +11,7 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        En,
-        /// <summary>
-        /// 
-        /// </summary>
-        Fr,
-        /// <summary>
-        /// 
-        /// </summary>
         Ar,
-        /// <summary>
-        /// 
-        /// </summary>
-        Es,
         /// <summary>
         /// 
         /// </summary>
@@ -31,11 +19,15 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        Pl,
+        En,
         /// <summary>
         /// 
         /// </summary>
-        PtBr,
+        Es,
+        /// <summary>
+        /// 
+        /// </summary>
+        Fr,
         /// <summary>
         /// 
         /// </summary>
@@ -44,6 +36,14 @@ namespace Mistral
         /// 
         /// </summary>
         Nl,
+        /// <summary>
+        /// 
+        /// </summary>
+        Pl,
+        /// <summary>
+        /// 
+        /// </summary>
+        PtBr,
     }
 
     /// <summary>
@@ -58,15 +58,15 @@ namespace Mistral
         {
             return value switch
             {
-                ConnectorSupportedLanguage.En => "en",
-                ConnectorSupportedLanguage.Fr => "fr",
                 ConnectorSupportedLanguage.Ar => "ar",
-                ConnectorSupportedLanguage.Es => "es",
                 ConnectorSupportedLanguage.De => "de",
-                ConnectorSupportedLanguage.Pl => "pl",
-                ConnectorSupportedLanguage.PtBr => "pt-BR",
+                ConnectorSupportedLanguage.En => "en",
+                ConnectorSupportedLanguage.Es => "es",
+                ConnectorSupportedLanguage.Fr => "fr",
                 ConnectorSupportedLanguage.It => "it",
                 ConnectorSupportedLanguage.Nl => "nl",
+                ConnectorSupportedLanguage.Pl => "pl",
+                ConnectorSupportedLanguage.PtBr => "pt-BR",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -77,15 +77,15 @@ namespace Mistral
         {
             return value switch
             {
-                "en" => ConnectorSupportedLanguage.En,
-                "fr" => ConnectorSupportedLanguage.Fr,
                 "ar" => ConnectorSupportedLanguage.Ar,
-                "es" => ConnectorSupportedLanguage.Es,
                 "de" => ConnectorSupportedLanguage.De,
-                "pl" => ConnectorSupportedLanguage.Pl,
-                "pt-BR" => ConnectorSupportedLanguage.PtBr,
+                "en" => ConnectorSupportedLanguage.En,
+                "es" => ConnectorSupportedLanguage.Es,
+                "fr" => ConnectorSupportedLanguage.Fr,
                 "it" => ConnectorSupportedLanguage.It,
                 "nl" => ConnectorSupportedLanguage.Nl,
+                "pl" => ConnectorSupportedLanguage.Pl,
+                "pt-BR" => ConnectorSupportedLanguage.PtBr,
                 _ => null,
             };
         }

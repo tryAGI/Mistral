@@ -11,15 +11,15 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        Pending,
-        /// <summary>
-        /// 
-        /// </summary>
         Allowed,
         /// <summary>
         /// 
         /// </summary>
         Denied,
+        /// <summary>
+        /// 
+        /// </summary>
+        Pending,
     }
 
     /// <summary>
@@ -34,9 +34,9 @@ namespace Mistral
         {
             return value switch
             {
-                FunctionCallEventConfirmationStatus2.Pending => "pending",
                 FunctionCallEventConfirmationStatus2.Allowed => "allowed",
                 FunctionCallEventConfirmationStatus2.Denied => "denied",
+                FunctionCallEventConfirmationStatus2.Pending => "pending",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -47,9 +47,9 @@ namespace Mistral
         {
             return value switch
             {
-                "pending" => FunctionCallEventConfirmationStatus2.Pending,
                 "allowed" => FunctionCallEventConfirmationStatus2.Allowed,
                 "denied" => FunctionCallEventConfirmationStatus2.Denied,
+                "pending" => FunctionCallEventConfirmationStatus2.Pending,
                 _ => null,
             };
         }

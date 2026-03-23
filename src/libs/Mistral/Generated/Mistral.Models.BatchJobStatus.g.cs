@@ -11,6 +11,18 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        CancellationRequested,
+        /// <summary>
+        /// 
+        /// </summary>
+        Cancelled,
+        /// <summary>
+        /// 
+        /// </summary>
+        Failed,
+        /// <summary>
+        /// 
+        /// </summary>
         Queued,
         /// <summary>
         /// 
@@ -23,19 +35,7 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        Failed,
-        /// <summary>
-        /// 
-        /// </summary>
         TimeoutExceeded,
-        /// <summary>
-        /// 
-        /// </summary>
-        CancellationRequested,
-        /// <summary>
-        /// 
-        /// </summary>
-        Cancelled,
     }
 
     /// <summary>
@@ -50,13 +50,13 @@ namespace Mistral
         {
             return value switch
             {
+                BatchJobStatus.CancellationRequested => "CANCELLATION_REQUESTED",
+                BatchJobStatus.Cancelled => "CANCELLED",
+                BatchJobStatus.Failed => "FAILED",
                 BatchJobStatus.Queued => "QUEUED",
                 BatchJobStatus.Running => "RUNNING",
                 BatchJobStatus.Success => "SUCCESS",
-                BatchJobStatus.Failed => "FAILED",
                 BatchJobStatus.TimeoutExceeded => "TIMEOUT_EXCEEDED",
-                BatchJobStatus.CancellationRequested => "CANCELLATION_REQUESTED",
-                BatchJobStatus.Cancelled => "CANCELLED",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -67,13 +67,13 @@ namespace Mistral
         {
             return value switch
             {
+                "CANCELLATION_REQUESTED" => BatchJobStatus.CancellationRequested,
+                "CANCELLED" => BatchJobStatus.Cancelled,
+                "FAILED" => BatchJobStatus.Failed,
                 "QUEUED" => BatchJobStatus.Queued,
                 "RUNNING" => BatchJobStatus.Running,
                 "SUCCESS" => BatchJobStatus.Success,
-                "FAILED" => BatchJobStatus.Failed,
                 "TIMEOUT_EXCEEDED" => BatchJobStatus.TimeoutExceeded,
-                "CANCELLATION_REQUESTED" => BatchJobStatus.CancellationRequested,
-                "CANCELLED" => BatchJobStatus.Cancelled,
                 _ => null,
             };
         }

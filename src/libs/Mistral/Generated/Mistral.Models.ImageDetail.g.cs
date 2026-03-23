@@ -11,15 +11,15 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        Low,
-        /// <summary>
-        /// 
-        /// </summary>
         Auto,
         /// <summary>
         /// 
         /// </summary>
         High,
+        /// <summary>
+        /// 
+        /// </summary>
+        Low,
     }
 
     /// <summary>
@@ -34,9 +34,9 @@ namespace Mistral
         {
             return value switch
             {
-                ImageDetail.Low => "low",
                 ImageDetail.Auto => "auto",
                 ImageDetail.High => "high",
+                ImageDetail.Low => "low",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -47,9 +47,9 @@ namespace Mistral
         {
             return value switch
             {
-                "low" => ImageDetail.Low,
                 "auto" => ImageDetail.Auto,
                 "high" => ImageDetail.High,
+                "low" => ImageDetail.Low,
                 _ => null,
             };
         }

@@ -11,19 +11,19 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        Explorer,
-        /// <summary>
-        /// 
-        /// </summary>
-        UploadedFile,
-        /// <summary>
-        /// 
-        /// </summary>
         DirectInput,
         /// <summary>
         /// 
         /// </summary>
+        Explorer,
+        /// <summary>
+        /// 
+        /// </summary>
         Playground,
+        /// <summary>
+        /// 
+        /// </summary>
+        UploadedFile,
     }
 
     /// <summary>
@@ -38,10 +38,10 @@ namespace Mistral
         {
             return value switch
             {
-                ConversationSource.Explorer => "EXPLORER",
-                ConversationSource.UploadedFile => "UPLOADED_FILE",
                 ConversationSource.DirectInput => "DIRECT_INPUT",
+                ConversationSource.Explorer => "EXPLORER",
                 ConversationSource.Playground => "PLAYGROUND",
+                ConversationSource.UploadedFile => "UPLOADED_FILE",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,10 +52,10 @@ namespace Mistral
         {
             return value switch
             {
-                "EXPLORER" => ConversationSource.Explorer,
-                "UPLOADED_FILE" => ConversationSource.UploadedFile,
                 "DIRECT_INPUT" => ConversationSource.DirectInput,
+                "EXPLORER" => ConversationSource.Explorer,
                 "PLAYGROUND" => ConversationSource.Playground,
+                "UPLOADED_FILE" => ConversationSource.UploadedFile,
                 _ => null,
             };
         }

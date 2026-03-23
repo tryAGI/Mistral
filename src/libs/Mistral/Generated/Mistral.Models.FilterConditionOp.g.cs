@@ -11,11 +11,19 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        Lt,
+        Contains,
         /// <summary>
         /// 
         /// </summary>
-        Lte,
+        Endswith,
+        /// <summary>
+        /// 
+        /// </summary>
+        Eq,
+        /// <summary>
+        /// 
+        /// </summary>
+        Excludes,
         /// <summary>
         /// 
         /// </summary>
@@ -27,15 +35,7 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        Startswith,
-        /// <summary>
-        /// 
-        /// </summary>
-        Istartswith,
-        /// <summary>
-        /// 
-        /// </summary>
-        Endswith,
+        Icontains,
         /// <summary>
         /// 
         /// </summary>
@@ -43,19 +43,7 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        Contains,
-        /// <summary>
-        /// 
-        /// </summary>
-        Icontains,
-        /// <summary>
-        /// 
-        /// </summary>
-        Matches,
-        /// <summary>
-        /// 
-        /// </summary>
-        Notcontains,
+        Includes,
         /// <summary>
         /// 
         /// </summary>
@@ -63,7 +51,27 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        Eq,
+        Isnull,
+        /// <summary>
+        /// 
+        /// </summary>
+        Istartswith,
+        /// <summary>
+        /// 
+        /// </summary>
+        LenEq,
+        /// <summary>
+        /// 
+        /// </summary>
+        Lt,
+        /// <summary>
+        /// 
+        /// </summary>
+        Lte,
+        /// <summary>
+        /// 
+        /// </summary>
+        Matches,
         /// <summary>
         /// 
         /// </summary>
@@ -71,19 +79,11 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        Isnull,
+        Notcontains,
         /// <summary>
         /// 
         /// </summary>
-        Includes,
-        /// <summary>
-        /// 
-        /// </summary>
-        Excludes,
-        /// <summary>
-        /// 
-        /// </summary>
-        LenEq,
+        Startswith,
     }
 
     /// <summary>
@@ -98,25 +98,25 @@ namespace Mistral
         {
             return value switch
             {
-                FilterConditionOp.Lt => "lt",
-                FilterConditionOp.Lte => "lte",
+                FilterConditionOp.Contains => "contains",
+                FilterConditionOp.Endswith => "endswith",
+                FilterConditionOp.Eq => "eq",
+                FilterConditionOp.Excludes => "excludes",
                 FilterConditionOp.Gt => "gt",
                 FilterConditionOp.Gte => "gte",
-                FilterConditionOp.Startswith => "startswith",
-                FilterConditionOp.Istartswith => "istartswith",
-                FilterConditionOp.Endswith => "endswith",
-                FilterConditionOp.Iendswith => "iendswith",
-                FilterConditionOp.Contains => "contains",
                 FilterConditionOp.Icontains => "icontains",
-                FilterConditionOp.Matches => "matches",
-                FilterConditionOp.Notcontains => "notcontains",
-                FilterConditionOp.Inotcontains => "inotcontains",
-                FilterConditionOp.Eq => "eq",
-                FilterConditionOp.Neq => "neq",
-                FilterConditionOp.Isnull => "isnull",
+                FilterConditionOp.Iendswith => "iendswith",
                 FilterConditionOp.Includes => "includes",
-                FilterConditionOp.Excludes => "excludes",
+                FilterConditionOp.Inotcontains => "inotcontains",
+                FilterConditionOp.Isnull => "isnull",
+                FilterConditionOp.Istartswith => "istartswith",
                 FilterConditionOp.LenEq => "len_eq",
+                FilterConditionOp.Lt => "lt",
+                FilterConditionOp.Lte => "lte",
+                FilterConditionOp.Matches => "matches",
+                FilterConditionOp.Neq => "neq",
+                FilterConditionOp.Notcontains => "notcontains",
+                FilterConditionOp.Startswith => "startswith",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -127,25 +127,25 @@ namespace Mistral
         {
             return value switch
             {
-                "lt" => FilterConditionOp.Lt,
-                "lte" => FilterConditionOp.Lte,
+                "contains" => FilterConditionOp.Contains,
+                "endswith" => FilterConditionOp.Endswith,
+                "eq" => FilterConditionOp.Eq,
+                "excludes" => FilterConditionOp.Excludes,
                 "gt" => FilterConditionOp.Gt,
                 "gte" => FilterConditionOp.Gte,
-                "startswith" => FilterConditionOp.Startswith,
-                "istartswith" => FilterConditionOp.Istartswith,
-                "endswith" => FilterConditionOp.Endswith,
-                "iendswith" => FilterConditionOp.Iendswith,
-                "contains" => FilterConditionOp.Contains,
                 "icontains" => FilterConditionOp.Icontains,
-                "matches" => FilterConditionOp.Matches,
-                "notcontains" => FilterConditionOp.Notcontains,
-                "inotcontains" => FilterConditionOp.Inotcontains,
-                "eq" => FilterConditionOp.Eq,
-                "neq" => FilterConditionOp.Neq,
-                "isnull" => FilterConditionOp.Isnull,
+                "iendswith" => FilterConditionOp.Iendswith,
                 "includes" => FilterConditionOp.Includes,
-                "excludes" => FilterConditionOp.Excludes,
+                "inotcontains" => FilterConditionOp.Inotcontains,
+                "isnull" => FilterConditionOp.Isnull,
+                "istartswith" => FilterConditionOp.Istartswith,
                 "len_eq" => FilterConditionOp.LenEq,
+                "lt" => FilterConditionOp.Lt,
+                "lte" => FilterConditionOp.Lte,
+                "matches" => FilterConditionOp.Matches,
+                "neq" => FilterConditionOp.Neq,
+                "notcontains" => FilterConditionOp.Notcontains,
+                "startswith" => FilterConditionOp.Startswith,
                 _ => null,
             };
         }

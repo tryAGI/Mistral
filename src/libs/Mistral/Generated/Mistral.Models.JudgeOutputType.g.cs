@@ -11,11 +11,11 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        Regression,
+        Classification,
         /// <summary>
         /// 
         /// </summary>
-        Classification,
+        Regression,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace Mistral
         {
             return value switch
             {
-                JudgeOutputType.Regression => "REGRESSION",
                 JudgeOutputType.Classification => "CLASSIFICATION",
+                JudgeOutputType.Regression => "REGRESSION",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace Mistral
         {
             return value switch
             {
-                "REGRESSION" => JudgeOutputType.Regression,
                 "CLASSIFICATION" => JudgeOutputType.Classification,
+                "REGRESSION" => JudgeOutputType.Regression,
                 _ => null,
             };
         }

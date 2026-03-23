@@ -11,6 +11,10 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        TranscriptionDone,
+        /// <summary>
+        /// 
+        /// </summary>
         TranscriptionLanguage,
         /// <summary>
         /// 
@@ -20,10 +24,6 @@ namespace Mistral
         /// 
         /// </summary>
         TranscriptionTextDelta,
-        /// <summary>
-        /// 
-        /// </summary>
-        TranscriptionDone,
     }
 
     /// <summary>
@@ -38,10 +38,10 @@ namespace Mistral
         {
             return value switch
             {
+                TranscriptionStreamEventTypes.TranscriptionDone => "transcription.done",
                 TranscriptionStreamEventTypes.TranscriptionLanguage => "transcription.language",
                 TranscriptionStreamEventTypes.TranscriptionSegment => "transcription.segment",
                 TranscriptionStreamEventTypes.TranscriptionTextDelta => "transcription.text.delta",
-                TranscriptionStreamEventTypes.TranscriptionDone => "transcription.done",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,10 +52,10 @@ namespace Mistral
         {
             return value switch
             {
+                "transcription.done" => TranscriptionStreamEventTypes.TranscriptionDone,
                 "transcription.language" => TranscriptionStreamEventTypes.TranscriptionLanguage,
                 "transcription.segment" => TranscriptionStreamEventTypes.TranscriptionSegment,
                 "transcription.text.delta" => TranscriptionStreamEventTypes.TranscriptionTextDelta,
-                "transcription.done" => TranscriptionStreamEventTypes.TranscriptionDone,
                 _ => null,
             };
         }

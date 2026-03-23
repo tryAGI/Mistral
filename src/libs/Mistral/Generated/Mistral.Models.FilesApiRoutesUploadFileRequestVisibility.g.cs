@@ -11,11 +11,11 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        Workspace,
+        User,
         /// <summary>
         /// 
         /// </summary>
-        User,
+        Workspace,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace Mistral
         {
             return value switch
             {
-                FilesApiRoutesUploadFileRequestVisibility.Workspace => "workspace",
                 FilesApiRoutesUploadFileRequestVisibility.User => "user",
+                FilesApiRoutesUploadFileRequestVisibility.Workspace => "workspace",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace Mistral
         {
             return value switch
             {
-                "workspace" => FilesApiRoutesUploadFileRequestVisibility.Workspace,
                 "user" => FilesApiRoutesUploadFileRequestVisibility.User,
+                "workspace" => FilesApiRoutesUploadFileRequestVisibility.Workspace,
                 _ => null,
             };
         }

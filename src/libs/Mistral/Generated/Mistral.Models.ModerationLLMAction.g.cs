@@ -11,11 +11,11 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        None,
+        Block,
         /// <summary>
         /// 
         /// </summary>
-        Block,
+        None,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace Mistral
         {
             return value switch
             {
-                ModerationLLMAction.None => "none",
                 ModerationLLMAction.Block => "block",
+                ModerationLLMAction.None => "none",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace Mistral
         {
             return value switch
             {
-                "none" => ModerationLLMAction.None,
                 "block" => ModerationLLMAction.Block,
+                "none" => ModerationLLMAction.None,
                 _ => null,
             };
         }

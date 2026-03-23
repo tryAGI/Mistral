@@ -11,15 +11,15 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        Text,
-        /// <summary>
-        /// 
-        /// </summary>
         JsonObject,
         /// <summary>
         /// 
         /// </summary>
         JsonSchema,
+        /// <summary>
+        /// 
+        /// </summary>
+        Text,
     }
 
     /// <summary>
@@ -34,9 +34,9 @@ namespace Mistral
         {
             return value switch
             {
-                ResponseFormats.Text => "text",
                 ResponseFormats.JsonObject => "json_object",
                 ResponseFormats.JsonSchema => "json_schema",
+                ResponseFormats.Text => "text",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -47,9 +47,9 @@ namespace Mistral
         {
             return value switch
             {
-                "text" => ResponseFormats.Text,
                 "json_object" => ResponseFormats.JsonObject,
                 "json_schema" => ResponseFormats.JsonSchema,
+                "text" => ResponseFormats.Text,
                 _ => null,
             };
         }

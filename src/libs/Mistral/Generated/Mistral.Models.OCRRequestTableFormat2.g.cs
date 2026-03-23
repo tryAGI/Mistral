@@ -11,11 +11,11 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        Markdown,
+        Html,
         /// <summary>
         /// 
         /// </summary>
-        Html,
+        Markdown,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace Mistral
         {
             return value switch
             {
-                OCRRequestTableFormat2.Markdown => "markdown",
                 OCRRequestTableFormat2.Html => "html",
+                OCRRequestTableFormat2.Markdown => "markdown",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace Mistral
         {
             return value switch
             {
-                "markdown" => OCRRequestTableFormat2.Markdown,
                 "html" => OCRRequestTableFormat2.Html,
+                "markdown" => OCRRequestTableFormat2.Markdown,
                 _ => null,
             };
         }

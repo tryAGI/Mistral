@@ -27,15 +27,15 @@ namespace Mistral.JsonConverters
             }
 
             var __score0 = 0;
-            if (__jsonProps.Contains("inputs")) __score0++;
-            if (__jsonProps.Contains("stream")) __score0++;
-            if (__jsonProps.Contains("store")) __score0++;
-            if (__jsonProps.Contains("handoff_execution")) __score0++;
-            if (__jsonProps.Contains("completion_args")) __score0++;
-            if (__jsonProps.Contains("guardrails")) __score0++;
-            if (__jsonProps.Contains("metadata")) __score0++;
-            if (__jsonProps.Contains("from_entry_id")) __score0++;
             if (__jsonProps.Contains("agent_version")) __score0++;
+            if (__jsonProps.Contains("completion_args")) __score0++;
+            if (__jsonProps.Contains("from_entry_id")) __score0++;
+            if (__jsonProps.Contains("guardrails")) __score0++;
+            if (__jsonProps.Contains("handoff_execution")) __score0++;
+            if (__jsonProps.Contains("inputs")) __score0++;
+            if (__jsonProps.Contains("metadata")) __score0++;
+            if (__jsonProps.Contains("store")) __score0++;
+            if (__jsonProps.Contains("stream")) __score0++;
             var __score1 = 0;
             if (__jsonProps.Contains("stream")) __score1++;
             var __bestScore = 0;
