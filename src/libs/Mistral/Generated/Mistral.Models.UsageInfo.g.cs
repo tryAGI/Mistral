@@ -36,6 +36,24 @@ namespace Mistral
         public int? PromptAudioSeconds { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("num_cached_tokens")]
+        public int? NumCachedTokens { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompt_tokens_details")]
+        public global::Mistral.PromptTokensDetails? PromptTokensDetails { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompt_token_details")]
+        public global::Mistral.PromptTokensDetails? PromptTokenDetails { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -54,6 +72,9 @@ namespace Mistral
         /// Default Value: 0
         /// </param>
         /// <param name="promptAudioSeconds"></param>
+        /// <param name="numCachedTokens"></param>
+        /// <param name="promptTokensDetails"></param>
+        /// <param name="promptTokenDetails"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -61,12 +82,18 @@ namespace Mistral
             int promptTokens,
             int completionTokens,
             int totalTokens,
-            int? promptAudioSeconds)
+            int? promptAudioSeconds,
+            int? numCachedTokens,
+            global::Mistral.PromptTokensDetails? promptTokensDetails,
+            global::Mistral.PromptTokensDetails? promptTokenDetails)
         {
             this.PromptTokens = promptTokens;
             this.CompletionTokens = completionTokens;
             this.TotalTokens = totalTokens;
             this.PromptAudioSeconds = promptAudioSeconds;
+            this.NumCachedTokens = numCachedTokens;
+            this.PromptTokensDetails = promptTokensDetails;
+            this.PromptTokenDetails = promptTokenDetails;
         }
 
         /// <summary>
