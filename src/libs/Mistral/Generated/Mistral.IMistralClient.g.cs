@@ -41,9 +41,19 @@ namespace Mistral
 
 
         /// <summary>
+        /// Speech API
+        /// </summary>
+        public AudioSpeechClient AudioSpeech { get; }
+
+        /// <summary>
         /// Transcriptions API
         /// </summary>
         public AudioTranscriptionsClient AudioTranscriptions { get; }
+
+        /// <summary>
+        /// Voices API
+        /// </summary>
+        public AudioVoicesClient AudioVoices { get; }
 
         /// <summary>
         /// Batch

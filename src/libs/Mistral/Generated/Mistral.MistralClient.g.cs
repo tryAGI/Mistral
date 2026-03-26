@@ -38,9 +38,27 @@ namespace Mistral
 
 
         /// <summary>
+        /// Speech API
+        /// </summary>
+        public AudioSpeechClient AudioSpeech => new AudioSpeechClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
         /// Transcriptions API
         /// </summary>
         public AudioTranscriptionsClient AudioTranscriptions => new AudioTranscriptionsClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// Voices API
+        /// </summary>
+        public AudioVoicesClient AudioVoices => new AudioVoicesClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,

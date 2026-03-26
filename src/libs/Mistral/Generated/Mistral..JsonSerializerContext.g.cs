@@ -269,6 +269,18 @@ namespace Mistral
 
             typeof(global::Mistral.JsonConverters.ToolTypesNullableJsonConverter),
 
+            typeof(global::Mistral.JsonConverters.SpeechOutputFormatJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.SpeechOutputFormatNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.SpeechStreamEventsEventJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.SpeechStreamEventsEventNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.SpeechStreamEventsDataDiscriminatorTypeJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.SpeechStreamEventsDataDiscriminatorTypeNullableJsonConverter),
+
             typeof(global::Mistral.JsonConverters.TimestampGranularityJsonConverter),
 
             typeof(global::Mistral.JsonConverters.TimestampGranularityNullableJsonConverter),
@@ -472,6 +484,8 @@ namespace Mistral
             typeof(global::Mistral.JsonConverters.MessagesItem2JsonConverter),
 
             typeof(global::Mistral.JsonConverters.Data2JsonConverter),
+
+            typeof(global::Mistral.JsonConverters.Data3JsonConverter),
 
             typeof(global::Mistral.JsonConverters.RealtimeTranscriptionClientMessageJsonConverter),
 
@@ -957,6 +971,22 @@ namespace Mistral
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Mistral.TranscriptionSegmentChunk>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.TranscriptionSegmentChunk))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.UsageInfo))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.PromptTokensDetails))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.SpeechRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.SpeechOutputFormat))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.SpeechResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.SpeechStreamAudioDelta))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.SpeechStreamDone))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.SpeechStreamEvents))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.SpeechStreamEventsEvent))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.Data2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.SpeechStreamEventsDataDiscriminator))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.SpeechStreamEventsDataDiscriminatorType))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.VoiceCreateRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.VoiceListResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Mistral.VoiceResponse>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.VoiceResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.VoiceUpdateRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.TimestampGranularity))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AudioTranscriptionRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Mistral.TimestampGranularity>))]
@@ -967,7 +997,7 @@ namespace Mistral
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.TranscriptionStreamDone))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.TranscriptionStreamEvents))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.TranscriptionStreamEventTypes))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.Data2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.Data3))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.TranscriptionStreamEventsDataDiscriminator))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.TranscriptionStreamEventsDataDiscriminatorType))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.RealtimeTranscriptionClientMessage))]
@@ -1262,6 +1292,7 @@ namespace Mistral
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AnyOf<string, global::System.Collections.Generic.List<global::Mistral.SystemMessageContentChunks>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Mistral.SystemMessageContentChunks>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Mistral.TranscriptionSegmentChunk>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Mistral.VoiceResponse>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Mistral.TimestampGranularity>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Mistral.MessagesItem3>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Mistral.InstructRequest>))]
