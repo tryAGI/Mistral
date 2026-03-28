@@ -1,6 +1,4 @@
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace Mistral
@@ -47,7 +45,7 @@ namespace Mistral
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("info")]
-        public object? Info { get; set; }
+        public global::Mistral.ToolExecutionInfo? Info { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -77,7 +75,7 @@ namespace Mistral
             string? type,
             global::System.DateTime? createdAt,
             int? outputIndex,
-            object? info)
+            global::Mistral.ToolExecutionInfo? info)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Name = name;

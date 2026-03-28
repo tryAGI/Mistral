@@ -1,6 +1,4 @@
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace Mistral
@@ -26,7 +24,7 @@ namespace Mistral
         /// Custom metadata for the conversation.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
-        public object? Metadata { get; set; }
+        public global::Mistral.MetadataDict? Metadata { get; set; }
 
         /// <summary>
         /// Default Value: conversation
@@ -105,7 +103,7 @@ namespace Mistral
             string agentId,
             string? name,
             string? description,
-            object? metadata,
+            global::Mistral.MetadataDict? metadata,
             string? @object,
             global::Mistral.AnyOf<string, int?, object>? agentVersion)
         {

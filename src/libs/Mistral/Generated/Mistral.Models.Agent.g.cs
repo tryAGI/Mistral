@@ -62,7 +62,7 @@ namespace Mistral
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
-        public object? Metadata { get; set; }
+        public global::Mistral.MetadataDict? Metadata { get; set; }
 
         /// <summary>
         /// Default Value: agent
@@ -179,7 +179,7 @@ namespace Mistral
             global::System.Collections.Generic.IList<global::Mistral.GuardrailConfig>? guardrails,
             string? description,
             global::System.Collections.Generic.IList<string>? handoffs,
-            object? metadata,
+            global::Mistral.MetadataDict? metadata,
             string? @object,
             string? versionMessage)
         {
