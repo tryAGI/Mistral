@@ -1,6 +1,4 @@
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace Mistral
@@ -76,7 +74,7 @@ namespace Mistral
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
-        public object? Metadata { get; set; }
+        public global::Mistral.MetadataDict? Metadata { get; set; }
 
         /// <summary>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
@@ -160,7 +158,7 @@ namespace Mistral
             global::System.Collections.Generic.IList<global::Mistral.GuardrailConfig>? guardrails,
             string? name,
             string? description,
-            object? metadata,
+            global::Mistral.MetadataDict? metadata,
             string? agentId,
             global::Mistral.AnyOf<string, int?, object>? agentVersion,
             string? model)

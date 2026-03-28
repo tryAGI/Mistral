@@ -66,7 +66,7 @@ namespace Mistral
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
-        public object? Metadata { get; set; }
+        public global::Mistral.MetadataDict? Metadata { get; set; }
 
         /// <summary>
         /// 
@@ -113,7 +113,7 @@ namespace Mistral
             string? description,
             global::System.Collections.Generic.IList<string>? handoffs,
             bool? deploymentChat,
-            object? metadata,
+            global::Mistral.MetadataDict? metadata,
             string? versionMessage)
         {
             this.Instructions = instructions;

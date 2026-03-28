@@ -48,7 +48,7 @@ namespace Mistral
         /// Custom metadata for the conversation.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
-        public object? Metadata { get; set; }
+        public global::Mistral.MetadataDict? Metadata { get; set; }
 
         /// <summary>
         /// Default Value: conversation
@@ -133,7 +133,7 @@ namespace Mistral
             global::System.Collections.Generic.IList<global::Mistral.GuardrailConfig>? guardrails,
             string? name,
             string? description,
-            object? metadata,
+            global::Mistral.MetadataDict? metadata,
             string? @object)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

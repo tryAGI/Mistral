@@ -46,7 +46,7 @@ namespace Mistral
             global::System.Collections.Generic.IList<global::Mistral.GuardrailConfig>? guardrails = default,
             string? description = default,
             global::System.Collections.Generic.IList<string>? handoffs = default,
-            object? metadata = default,
+            global::Mistral.MetadataDict? metadata = default,
             string? versionMessage = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

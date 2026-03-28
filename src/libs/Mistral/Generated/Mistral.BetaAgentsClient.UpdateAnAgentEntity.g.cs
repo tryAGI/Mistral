@@ -259,7 +259,7 @@ namespace Mistral
             string? description = default,
             global::System.Collections.Generic.IList<string>? handoffs = default,
             bool? deploymentChat = default,
-            object? metadata = default,
+            global::Mistral.MetadataDict? metadata = default,
             string? versionMessage = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
