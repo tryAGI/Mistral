@@ -31,10 +31,10 @@ namespace Mistral
         /// <summary>
         /// Initializes a new instance of the <see cref="ImageURLChunk" /> class.
         /// </summary>
+        /// <param name="imageUrl"></param>
         /// <param name="type">
         /// Default Value: image_url
         /// </param>
-        /// <param name="imageUrl"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -42,8 +42,8 @@ namespace Mistral
             global::Mistral.AnyOf<global::Mistral.ImageURL, string> imageUrl,
             string? type)
         {
-            this.ImageUrl = imageUrl;
             this.Type = type;
+            this.ImageUrl = imageUrl;
         }
 
         /// <summary>

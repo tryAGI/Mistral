@@ -44,9 +44,9 @@ namespace Mistral
         /// Initializes a new instance of the <see cref="BlobResourceContents" /> class.
         /// </summary>
         /// <param name="uri"></param>
+        /// <param name="blob"></param>
         /// <param name="mimeType"></param>
         /// <param name="meta"></param>
-        /// <param name="blob"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -57,9 +57,9 @@ namespace Mistral
             object? meta)
         {
             this.Uri = uri ?? throw new global::System.ArgumentNullException(nameof(uri));
-            this.Blob = blob ?? throw new global::System.ArgumentNullException(nameof(blob));
             this.MimeType = mimeType;
             this.Meta = meta;
+            this.Blob = blob ?? throw new global::System.ArgumentNullException(nameof(blob));
         }
 
         /// <summary>

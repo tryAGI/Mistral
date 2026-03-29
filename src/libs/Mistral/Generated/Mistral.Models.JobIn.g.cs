@@ -87,6 +87,7 @@ namespace Mistral
         /// Initializes a new instance of the <see cref="JobIn" /> class.
         /// </summary>
         /// <param name="model"></param>
+        /// <param name="hyperparameters"></param>
         /// <param name="trainingFiles">
         /// Default Value: []
         /// </param>
@@ -106,7 +107,6 @@ namespace Mistral
         /// Default Value: 0
         /// </param>
         /// <param name="jobType"></param>
-        /// <param name="hyperparameters"></param>
         /// <param name="repositories"></param>
         /// <param name="classifierTargets"></param>
 #if NET7_0_OR_GREATER
@@ -126,7 +126,6 @@ namespace Mistral
             global::System.Collections.Generic.IList<global::Mistral.ClassifierTargetIn>? classifierTargets)
         {
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
-            this.Hyperparameters = hyperparameters;
             this.TrainingFiles = trainingFiles;
             this.ValidationFiles = validationFiles;
             this.Suffix = suffix;
@@ -134,6 +133,7 @@ namespace Mistral
             this.AutoStart = autoStart;
             this.InvalidSampleSkipPercentage = invalidSampleSkipPercentage;
             this.JobType = jobType;
+            this.Hyperparameters = hyperparameters;
             this.Repositories = repositories;
             this.ClassifierTargets = classifierTargets;
         }

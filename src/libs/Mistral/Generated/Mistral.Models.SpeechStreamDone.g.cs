@@ -30,10 +30,10 @@ namespace Mistral
         /// <summary>
         /// Initializes a new instance of the <see cref="SpeechStreamDone" /> class.
         /// </summary>
+        /// <param name="usage"></param>
         /// <param name="type">
         /// Default Value: speech.audio.done
         /// </param>
-        /// <param name="usage"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -41,8 +41,8 @@ namespace Mistral
             global::Mistral.UsageInfo usage,
             string? type)
         {
-            this.Usage = usage ?? throw new global::System.ArgumentNullException(nameof(usage));
             this.Type = type;
+            this.Usage = usage ?? throw new global::System.ArgumentNullException(nameof(usage));
         }
 
         /// <summary>

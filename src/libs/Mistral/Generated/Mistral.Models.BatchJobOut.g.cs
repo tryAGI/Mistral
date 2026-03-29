@@ -143,24 +143,24 @@ namespace Mistral
         /// Initializes a new instance of the <see cref="BatchJobOut" /> class.
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="object">
-        /// Default Value: batch
-        /// </param>
         /// <param name="inputFiles"></param>
-        /// <param name="metadata"></param>
         /// <param name="endpoint"></param>
-        /// <param name="model"></param>
-        /// <param name="agentId"></param>
-        /// <param name="outputFile"></param>
-        /// <param name="errorFile"></param>
         /// <param name="errors"></param>
-        /// <param name="outputs"></param>
         /// <param name="status"></param>
         /// <param name="createdAt"></param>
         /// <param name="totalRequests"></param>
         /// <param name="completedRequests"></param>
         /// <param name="succeededRequests"></param>
         /// <param name="failedRequests"></param>
+        /// <param name="object">
+        /// Default Value: batch
+        /// </param>
+        /// <param name="metadata"></param>
+        /// <param name="model"></param>
+        /// <param name="agentId"></param>
+        /// <param name="outputFile"></param>
+        /// <param name="errorFile"></param>
+        /// <param name="outputs"></param>
         /// <param name="startedAt"></param>
         /// <param name="completedAt"></param>
 #if NET7_0_OR_GREATER
@@ -188,22 +188,22 @@ namespace Mistral
             int? completedAt)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Object = @object;
             this.InputFiles = inputFiles ?? throw new global::System.ArgumentNullException(nameof(inputFiles));
+            this.Metadata = metadata;
             this.Endpoint = endpoint ?? throw new global::System.ArgumentNullException(nameof(endpoint));
+            this.Model = model;
+            this.AgentId = agentId;
+            this.OutputFile = outputFile;
+            this.ErrorFile = errorFile;
             this.Errors = errors ?? throw new global::System.ArgumentNullException(nameof(errors));
+            this.Outputs = outputs;
             this.Status = status;
             this.CreatedAt = createdAt;
             this.TotalRequests = totalRequests;
             this.CompletedRequests = completedRequests;
             this.SucceededRequests = succeededRequests;
             this.FailedRequests = failedRequests;
-            this.Object = @object;
-            this.Metadata = metadata;
-            this.Model = model;
-            this.AgentId = agentId;
-            this.OutputFile = outputFile;
-            this.ErrorFile = errorFile;
-            this.Outputs = outputs;
             this.StartedAt = startedAt;
             this.CompletedAt = completedAt;
         }

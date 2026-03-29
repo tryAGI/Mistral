@@ -41,10 +41,10 @@ namespace Mistral
         /// <param name="model">
         /// ID of the model to use.
         /// </param>
-        /// <param name="metadata"></param>
         /// <param name="input">
         /// Text to classify.
         /// </param>
+        /// <param name="metadata"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -54,8 +54,8 @@ namespace Mistral
             object? metadata)
         {
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
-            this.Input = input;
             this.Metadata = metadata;
+            this.Input = input;
         }
 
         /// <summary>

@@ -49,17 +49,17 @@ namespace Mistral
         /// <summary>
         /// Initializes a new instance of the <see cref="JudgeRegressionOutput" /> class.
         /// </summary>
+        /// <param name="minDescription"></param>
+        /// <param name="maxDescription"></param>
         /// <param name="type">
         /// Default Value: REGRESSION
         /// </param>
         /// <param name="min">
         /// Default Value: 0
         /// </param>
-        /// <param name="minDescription"></param>
         /// <param name="max">
         /// Default Value: 1
         /// </param>
-        /// <param name="maxDescription"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -70,11 +70,11 @@ namespace Mistral
             double? min,
             double? max)
         {
-            this.MinDescription = minDescription ?? throw new global::System.ArgumentNullException(nameof(minDescription));
-            this.MaxDescription = maxDescription ?? throw new global::System.ArgumentNullException(nameof(maxDescription));
             this.Type = type;
             this.Min = min;
+            this.MinDescription = minDescription ?? throw new global::System.ArgumentNullException(nameof(minDescription));
             this.Max = max;
+            this.MaxDescription = maxDescription ?? throw new global::System.ArgumentNullException(nameof(maxDescription));
         }
 
         /// <summary>

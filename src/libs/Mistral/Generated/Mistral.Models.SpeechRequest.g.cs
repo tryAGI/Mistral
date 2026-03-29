@@ -56,6 +56,9 @@ namespace Mistral
         /// <summary>
         /// Initializes a new instance of the <see cref="SpeechRequest" /> class.
         /// </summary>
+        /// <param name="input">
+        /// Text to generate speech from.
+        /// </param>
         /// <param name="model"></param>
         /// <param name="stream">
         /// Default Value: false
@@ -65,9 +68,6 @@ namespace Mistral
         /// </param>
         /// <param name="refAudio">
         /// The base64-encoded audio reference for zero-shot voice cloning.
-        /// </param>
-        /// <param name="input">
-        /// Text to generate speech from.
         /// </param>
         /// <param name="responseFormat">
         /// Output audio format. Defaults to mp3.<br/>
@@ -84,11 +84,11 @@ namespace Mistral
             string? refAudio,
             global::Mistral.SpeechOutputFormat? responseFormat)
         {
-            this.Input = input ?? throw new global::System.ArgumentNullException(nameof(input));
             this.Model = model;
             this.Stream = stream;
             this.VoiceId = voiceId;
             this.RefAudio = refAudio;
+            this.Input = input ?? throw new global::System.ArgumentNullException(nameof(input));
             this.ResponseFormat = responseFormat;
         }
 

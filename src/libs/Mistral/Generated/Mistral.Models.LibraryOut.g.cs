@@ -124,10 +124,10 @@ namespace Mistral
         /// <param name="name"></param>
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
-        /// <param name="ownerId"></param>
         /// <param name="ownerType"></param>
         /// <param name="totalSize"></param>
         /// <param name="nbDocuments"></param>
+        /// <param name="ownerId"></param>
         /// <param name="chunkSize"></param>
         /// <param name="emoji"></param>
         /// <param name="description"></param>
@@ -163,10 +163,10 @@ namespace Mistral
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
+            this.OwnerId = ownerId;
             this.OwnerType = ownerType ?? throw new global::System.ArgumentNullException(nameof(ownerType));
             this.TotalSize = totalSize;
             this.NbDocuments = nbDocuments;
-            this.OwnerId = ownerId;
             this.ChunkSize = chunkSize;
             this.Emoji = emoji;
             this.Description = description;

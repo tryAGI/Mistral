@@ -56,11 +56,11 @@ namespace Mistral
         /// <summary>
         /// Initializes a new instance of the <see cref="ToolReferenceChunk" /> class.
         /// </summary>
+        /// <param name="tool"></param>
+        /// <param name="title"></param>
         /// <param name="type">
         /// Default Value: tool_reference
         /// </param>
-        /// <param name="tool"></param>
-        /// <param name="title"></param>
         /// <param name="url"></param>
         /// <param name="favicon"></param>
         /// <param name="description"></param>
@@ -75,9 +75,9 @@ namespace Mistral
             string? favicon,
             string? description)
         {
+            this.Type = type;
             this.Tool = tool;
             this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
-            this.Type = type;
             this.Url = url;
             this.Favicon = favicon;
             this.Description = description;

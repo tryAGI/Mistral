@@ -37,12 +37,12 @@ namespace Mistral
         /// <summary>
         /// Initializes a new instance of the <see cref="DocumentLibraryTool" /> class.
         /// </summary>
+        /// <param name="libraryIds">
+        /// Ids of the library in which to search.
+        /// </param>
         /// <param name="toolConfiguration"></param>
         /// <param name="type">
         /// Default Value: document_library
-        /// </param>
-        /// <param name="libraryIds">
-        /// Ids of the library in which to search.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -52,9 +52,9 @@ namespace Mistral
             global::Mistral.ToolConfiguration? toolConfiguration,
             global::Mistral.DocumentLibraryToolType? type)
         {
-            this.LibraryIds = libraryIds ?? throw new global::System.ArgumentNullException(nameof(libraryIds));
             this.ToolConfiguration = toolConfiguration;
             this.Type = type;
+            this.LibraryIds = libraryIds ?? throw new global::System.ArgumentNullException(nameof(libraryIds));
         }
 
         /// <summary>

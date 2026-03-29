@@ -30,10 +30,10 @@ namespace Mistral
         /// <summary>
         /// Initializes a new instance of the <see cref="RealtimeTranscriptionSessionUpdateMessage" /> class.
         /// </summary>
+        /// <param name="session"></param>
         /// <param name="type">
         /// Default Value: session.update
         /// </param>
-        /// <param name="session"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -41,8 +41,8 @@ namespace Mistral
             global::Mistral.RealtimeTranscriptionSessionUpdatePayload session,
             string? type)
         {
-            this.Session = session ?? throw new global::System.ArgumentNullException(nameof(session));
             this.Type = type;
+            this.Session = session ?? throw new global::System.ArgumentNullException(nameof(session));
         }
 
         /// <summary>

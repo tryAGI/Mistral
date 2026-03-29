@@ -44,8 +44,8 @@ namespace Mistral
         /// Initializes a new instance of the <see cref="JsonSchema" /> class.
         /// </summary>
         /// <param name="name"></param>
-        /// <param name="description"></param>
         /// <param name="schema"></param>
+        /// <param name="description"></param>
         /// <param name="strict">
         /// Default Value: false
         /// </param>
@@ -59,8 +59,8 @@ namespace Mistral
             bool? strict)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Schema = schema ?? throw new global::System.ArgumentNullException(nameof(schema));
             this.Description = description;
+            this.Schema = schema ?? throw new global::System.ArgumentNullException(nameof(schema));
             this.Strict = strict;
         }
 

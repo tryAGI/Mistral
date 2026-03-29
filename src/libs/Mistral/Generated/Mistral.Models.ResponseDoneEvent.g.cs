@@ -36,11 +36,11 @@ namespace Mistral
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseDoneEvent" /> class.
         /// </summary>
+        /// <param name="usage"></param>
         /// <param name="type">
         /// Default Value: conversation.response.done
         /// </param>
         /// <param name="createdAt"></param>
-        /// <param name="usage"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -49,9 +49,9 @@ namespace Mistral
             string? type,
             global::System.DateTime? createdAt)
         {
-            this.Usage = usage ?? throw new global::System.ArgumentNullException(nameof(usage));
             this.Type = type;
             this.CreatedAt = createdAt;
+            this.Usage = usage ?? throw new global::System.ArgumentNullException(nameof(usage));
         }
 
         /// <summary>

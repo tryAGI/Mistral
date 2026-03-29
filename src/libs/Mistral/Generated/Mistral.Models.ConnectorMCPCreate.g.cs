@@ -76,15 +76,15 @@ namespace Mistral
         /// <param name="description">
         /// The description of the connector.
         /// </param>
+        /// <param name="server">
+        /// The url of the MCP server.
+        /// </param>
         /// <param name="iconUrl">
         /// The optional url of the icon you want to associate to the connector.
         /// </param>
         /// <param name="visibility">
         /// Visibility of the connector. Use 'shared_workspace' for workspace scoped connectors, or 'private' for private connectors.<br/>
         /// Default Value: shared_org
-        /// </param>
-        /// <param name="server">
-        /// The url of the MCP server.
         /// </param>
         /// <param name="headers">
         /// Optional organization-level headers to be sent with the request to the mcp server.
@@ -110,9 +110,9 @@ namespace Mistral
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
-            this.Server = server ?? throw new global::System.ArgumentNullException(nameof(server));
             this.IconUrl = iconUrl;
             this.Visibility = visibility;
+            this.Server = server ?? throw new global::System.ArgumentNullException(nameof(server));
             this.Headers = headers;
             this.AuthData = authData;
             this.SystemPrompt = systemPrompt;

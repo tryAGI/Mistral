@@ -69,6 +69,9 @@ namespace Mistral
         /// <summary>
         /// Initializes a new instance of the <see cref="ToolExecutionStartedEvent" /> class.
         /// </summary>
+        /// <param name="id"></param>
+        /// <param name="name"></param>
+        /// <param name="arguments"></param>
         /// <param name="type">
         /// Default Value: tool.execution.started
         /// </param>
@@ -76,15 +79,12 @@ namespace Mistral
         /// <param name="outputIndex">
         /// Default Value: 0
         /// </param>
-        /// <param name="id"></param>
         /// <param name="model">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="agentId">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
-        /// <param name="name"></param>
-        /// <param name="arguments"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -98,14 +98,14 @@ namespace Mistral
             string? model,
             string? agentId)
         {
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Name = name;
-            this.Arguments = arguments ?? throw new global::System.ArgumentNullException(nameof(arguments));
             this.Type = type;
             this.CreatedAt = createdAt;
             this.OutputIndex = outputIndex;
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Model = model;
             this.AgentId = agentId;
+            this.Name = name;
+            this.Arguments = arguments ?? throw new global::System.ArgumentNullException(nameof(arguments));
         }
 
         /// <summary>

@@ -69,6 +69,8 @@ namespace Mistral
         /// <summary>
         /// Initializes a new instance of the <see cref="MessageInputEntry" /> class.
         /// </summary>
+        /// <param name="role"></param>
+        /// <param name="content"></param>
         /// <param name="object">
         /// Default Value: entry
         /// </param>
@@ -78,8 +80,6 @@ namespace Mistral
         /// <param name="createdAt"></param>
         /// <param name="completedAt"></param>
         /// <param name="id"></param>
-        /// <param name="role"></param>
-        /// <param name="content"></param>
         /// <param name="prefix">
         /// Default Value: false
         /// </param>
@@ -96,13 +96,13 @@ namespace Mistral
             string? id,
             bool? prefix)
         {
-            this.Role = role;
-            this.Content = content;
             this.Object = @object;
             this.Type = type;
             this.CreatedAt = createdAt;
             this.CompletedAt = completedAt;
             this.Id = id;
+            this.Role = role;
+            this.Content = content;
             this.Prefix = prefix;
         }
 

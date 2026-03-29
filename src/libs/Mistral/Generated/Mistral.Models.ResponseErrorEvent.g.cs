@@ -43,12 +43,12 @@ namespace Mistral
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseErrorEvent" /> class.
         /// </summary>
+        /// <param name="message"></param>
+        /// <param name="code"></param>
         /// <param name="type">
         /// Default Value: conversation.response.error
         /// </param>
         /// <param name="createdAt"></param>
-        /// <param name="message"></param>
-        /// <param name="code"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -58,10 +58,10 @@ namespace Mistral
             string? type,
             global::System.DateTime? createdAt)
         {
-            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
-            this.Code = code;
             this.Type = type;
             this.CreatedAt = createdAt;
+            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
+            this.Code = code;
         }
 
         /// <summary>

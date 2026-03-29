@@ -93,13 +93,13 @@ namespace Mistral
         /// <param name="id"></param>
         /// <param name="name"></param>
         /// <param name="description"></param>
+        /// <param name="visibility"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="modifiedAt"></param>
         /// <param name="systemPrompt"></param>
         /// <param name="locale"></param>
         /// <param name="jsonschema"></param>
         /// <param name="executionConfig"></param>
-        /// <param name="visibility"></param>
-        /// <param name="createdAt"></param>
-        /// <param name="modifiedAt"></param>
         /// <param name="active"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -120,13 +120,13 @@ namespace Mistral
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
-            this.Visibility = visibility;
-            this.CreatedAt = createdAt;
-            this.ModifiedAt = modifiedAt;
             this.SystemPrompt = systemPrompt;
             this.Locale = locale;
             this.Jsonschema = jsonschema;
             this.ExecutionConfig = executionConfig;
+            this.Visibility = visibility;
+            this.CreatedAt = createdAt;
+            this.ModifiedAt = modifiedAt;
             this.Active = active;
         }
 

@@ -56,16 +56,16 @@ namespace Mistral
         /// <summary>
         /// Initializes a new instance of the <see cref="GithubRepositoryIn" /> class.
         /// </summary>
+        /// <param name="name"></param>
+        /// <param name="owner"></param>
+        /// <param name="token"></param>
         /// <param name="type">
         /// Default Value: github
         /// </param>
-        /// <param name="name"></param>
-        /// <param name="owner"></param>
         /// <param name="ref"></param>
         /// <param name="weight">
         /// Default Value: 1.0
         /// </param>
-        /// <param name="token"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -77,12 +77,12 @@ namespace Mistral
             string? @ref,
             double? weight)
         {
+            this.Type = type;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Owner = owner ?? throw new global::System.ArgumentNullException(nameof(owner));
-            this.Token = token ?? throw new global::System.ArgumentNullException(nameof(token));
-            this.Type = type;
             this.Ref = @ref;
             this.Weight = weight;
+            this.Token = token ?? throw new global::System.ArgumentNullException(nameof(token));
         }
 
         /// <summary>

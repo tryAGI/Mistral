@@ -36,10 +36,10 @@ namespace Mistral
         /// <summary>
         /// Initializes a new instance of the <see cref="DocumentURLChunk" /> class.
         /// </summary>
+        /// <param name="documentUrl"></param>
         /// <param name="type">
         /// Default Value: document_url
         /// </param>
-        /// <param name="documentUrl"></param>
         /// <param name="documentName">
         /// The filename of the document
         /// </param>
@@ -51,8 +51,8 @@ namespace Mistral
             string? type,
             string? documentName)
         {
-            this.DocumentUrl = documentUrl ?? throw new global::System.ArgumentNullException(nameof(documentUrl));
             this.Type = type;
+            this.DocumentUrl = documentUrl ?? throw new global::System.ArgumentNullException(nameof(documentUrl));
             this.DocumentName = documentName;
         }
 

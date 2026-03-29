@@ -30,10 +30,10 @@ namespace Mistral
         /// <summary>
         /// Initializes a new instance of the <see cref="SpeechStreamAudioDelta" /> class.
         /// </summary>
+        /// <param name="audioData"></param>
         /// <param name="type">
         /// Default Value: speech.audio.delta
         /// </param>
-        /// <param name="audioData"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -41,8 +41,8 @@ namespace Mistral
             string audioData,
             string? type)
         {
-            this.AudioData = audioData ?? throw new global::System.ArgumentNullException(nameof(audioData));
             this.Type = type;
+            this.AudioData = audioData ?? throw new global::System.ArgumentNullException(nameof(audioData));
         }
 
         /// <summary>

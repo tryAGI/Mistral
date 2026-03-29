@@ -75,6 +75,10 @@ namespace Mistral
         /// <summary>
         /// Initializes a new instance of the <see cref="AgentHandoffEntry" /> class.
         /// </summary>
+        /// <param name="previousAgentId"></param>
+        /// <param name="previousAgentName"></param>
+        /// <param name="nextAgentId"></param>
+        /// <param name="nextAgentName"></param>
         /// <param name="object">
         /// Default Value: entry
         /// </param>
@@ -84,10 +88,6 @@ namespace Mistral
         /// <param name="createdAt"></param>
         /// <param name="completedAt"></param>
         /// <param name="id"></param>
-        /// <param name="previousAgentId"></param>
-        /// <param name="previousAgentName"></param>
-        /// <param name="nextAgentId"></param>
-        /// <param name="nextAgentName"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -102,15 +102,15 @@ namespace Mistral
             global::System.DateTime? completedAt,
             string? id)
         {
-            this.PreviousAgentId = previousAgentId ?? throw new global::System.ArgumentNullException(nameof(previousAgentId));
-            this.PreviousAgentName = previousAgentName ?? throw new global::System.ArgumentNullException(nameof(previousAgentName));
-            this.NextAgentId = nextAgentId ?? throw new global::System.ArgumentNullException(nameof(nextAgentId));
-            this.NextAgentName = nextAgentName ?? throw new global::System.ArgumentNullException(nameof(nextAgentName));
             this.Object = @object;
             this.Type = type;
             this.CreatedAt = createdAt;
             this.CompletedAt = completedAt;
             this.Id = id;
+            this.PreviousAgentId = previousAgentId ?? throw new global::System.ArgumentNullException(nameof(previousAgentId));
+            this.PreviousAgentName = previousAgentName ?? throw new global::System.ArgumentNullException(nameof(previousAgentName));
+            this.NextAgentId = nextAgentId ?? throw new global::System.ArgumentNullException(nameof(nextAgentId));
+            this.NextAgentName = nextAgentName ?? throw new global::System.ArgumentNullException(nameof(nextAgentName));
         }
 
         /// <summary>

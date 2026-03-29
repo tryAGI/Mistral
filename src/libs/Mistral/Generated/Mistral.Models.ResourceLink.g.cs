@@ -82,8 +82,8 @@ namespace Mistral
         /// Initializes a new instance of the <see cref="ResourceLink" /> class.
         /// </summary>
         /// <param name="name"></param>
-        /// <param name="title"></param>
         /// <param name="uri"></param>
+        /// <param name="title"></param>
         /// <param name="description"></param>
         /// <param name="mimeType"></param>
         /// <param name="size"></param>
@@ -107,8 +107,8 @@ namespace Mistral
             string type = "resource_link")
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Uri = uri ?? throw new global::System.ArgumentNullException(nameof(uri));
             this.Title = title;
+            this.Uri = uri ?? throw new global::System.ArgumentNullException(nameof(uri));
             this.Description = description;
             this.MimeType = mimeType;
             this.Size = size;

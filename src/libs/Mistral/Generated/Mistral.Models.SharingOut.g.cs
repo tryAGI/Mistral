@@ -58,10 +58,10 @@ namespace Mistral
         /// Initializes a new instance of the <see cref="SharingOut" /> class.
         /// </summary>
         /// <param name="libraryId"></param>
-        /// <param name="userId"></param>
         /// <param name="orgId"></param>
         /// <param name="role"></param>
         /// <param name="shareWithType"></param>
+        /// <param name="userId"></param>
         /// <param name="shareWithUuid"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -75,10 +75,10 @@ namespace Mistral
             global::System.Guid? shareWithUuid)
         {
             this.LibraryId = libraryId;
+            this.UserId = userId;
             this.OrgId = orgId;
             this.Role = role ?? throw new global::System.ArgumentNullException(nameof(role));
             this.ShareWithType = shareWithType ?? throw new global::System.ArgumentNullException(nameof(shareWithType));
-            this.UserId = userId;
             this.ShareWithUuid = shareWithUuid;
         }
 

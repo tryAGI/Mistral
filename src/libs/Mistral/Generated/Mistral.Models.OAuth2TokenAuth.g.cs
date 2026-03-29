@@ -31,10 +31,10 @@ namespace Mistral
         /// <summary>
         /// Initializes a new instance of the <see cref="OAuth2TokenAuth" /> class.
         /// </summary>
+        /// <param name="value"></param>
         /// <param name="type">
         /// Default Value: oauth2-token
         /// </param>
-        /// <param name="value"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -42,8 +42,8 @@ namespace Mistral
             string value,
             global::Mistral.OAuth2TokenAuthType? type)
         {
-            this.Value = value ?? throw new global::System.ArgumentNullException(nameof(value));
             this.Type = type;
+            this.Value = value ?? throw new global::System.ArgumentNullException(nameof(value));
         }
 
         /// <summary>

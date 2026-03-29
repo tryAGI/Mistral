@@ -81,6 +81,10 @@ namespace Mistral
         /// <summary>
         /// Initializes a new instance of the <see cref="FunctionCallEvent" /> class.
         /// </summary>
+        /// <param name="id"></param>
+        /// <param name="name"></param>
+        /// <param name="toolCallId"></param>
+        /// <param name="arguments"></param>
         /// <param name="type">
         /// Default Value: function.call.delta
         /// </param>
@@ -88,16 +92,12 @@ namespace Mistral
         /// <param name="outputIndex">
         /// Default Value: 0
         /// </param>
-        /// <param name="id"></param>
         /// <param name="model">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="agentId">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
-        /// <param name="name"></param>
-        /// <param name="toolCallId"></param>
-        /// <param name="arguments"></param>
         /// <param name="confirmationStatus">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
@@ -116,15 +116,15 @@ namespace Mistral
             string? agentId,
             global::Mistral.FunctionCallEventConfirmationStatus2? confirmationStatus)
         {
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.ToolCallId = toolCallId ?? throw new global::System.ArgumentNullException(nameof(toolCallId));
-            this.Arguments = arguments ?? throw new global::System.ArgumentNullException(nameof(arguments));
             this.Type = type;
             this.CreatedAt = createdAt;
             this.OutputIndex = outputIndex;
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Model = model;
             this.AgentId = agentId;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.ToolCallId = toolCallId ?? throw new global::System.ArgumentNullException(nameof(toolCallId));
+            this.Arguments = arguments ?? throw new global::System.ArgumentNullException(nameof(arguments));
             this.ConfirmationStatus = confirmationStatus;
         }
 

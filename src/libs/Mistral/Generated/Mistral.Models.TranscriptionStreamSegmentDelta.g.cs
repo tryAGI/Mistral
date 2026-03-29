@@ -50,12 +50,12 @@ namespace Mistral
         /// <summary>
         /// Initializes a new instance of the <see cref="TranscriptionStreamSegmentDelta" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Default Value: transcription.segment
-        /// </param>
         /// <param name="text"></param>
         /// <param name="start"></param>
         /// <param name="end"></param>
+        /// <param name="type">
+        /// Default Value: transcription.segment
+        /// </param>
         /// <param name="speakerId">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
@@ -69,10 +69,10 @@ namespace Mistral
             string? type,
             string? speakerId)
         {
+            this.Type = type;
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Start = start;
             this.End = end;
-            this.Type = type;
             this.SpeakerId = speakerId;
         }
 

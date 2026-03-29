@@ -43,10 +43,10 @@ namespace Mistral
         /// <summary>
         /// Initializes a new instance of the <see cref="TextContent" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="text"></param>
         /// <param name="annotations"></param>
         /// <param name="meta"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -56,8 +56,8 @@ namespace Mistral
             object? meta,
             string type = "text")
         {
-            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Type = type;
+            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Annotations = annotations;
             this.Meta = meta;
         }

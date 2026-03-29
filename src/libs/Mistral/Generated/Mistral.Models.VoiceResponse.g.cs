@@ -87,6 +87,8 @@ namespace Mistral
         /// Initializes a new instance of the <see cref="VoiceResponse" /> class.
         /// </summary>
         /// <param name="name"></param>
+        /// <param name="id"></param>
+        /// <param name="createdAt"></param>
         /// <param name="slug"></param>
         /// <param name="languages">
         /// Default Value: []
@@ -98,8 +100,6 @@ namespace Mistral
         /// <param name="retentionNotice">
         /// Default Value: 30
         /// </param>
-        /// <param name="id"></param>
-        /// <param name="createdAt"></param>
         /// <param name="userId"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -118,8 +118,6 @@ namespace Mistral
             string? userId)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Id = id;
-            this.CreatedAt = createdAt;
             this.Slug = slug;
             this.Languages = languages;
             this.Gender = gender;
@@ -127,6 +125,8 @@ namespace Mistral
             this.Tags = tags;
             this.Color = color;
             this.RetentionNotice = retentionNotice;
+            this.Id = id;
+            this.CreatedAt = createdAt;
             this.UserId = userId;
         }
 

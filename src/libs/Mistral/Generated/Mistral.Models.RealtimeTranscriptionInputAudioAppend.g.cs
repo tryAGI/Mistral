@@ -30,11 +30,11 @@ namespace Mistral
         /// <summary>
         /// Initializes a new instance of the <see cref="RealtimeTranscriptionInputAudioAppend" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Default Value: input_audio.append
-        /// </param>
         /// <param name="audio">
         /// Base64-encoded raw PCM bytes matching the current audio_format. Max decoded size: 262144 bytes.
+        /// </param>
+        /// <param name="type">
+        /// Default Value: input_audio.append
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -43,8 +43,8 @@ namespace Mistral
             string audio,
             string? type)
         {
-            this.Audio = audio ?? throw new global::System.ArgumentNullException(nameof(audio));
             this.Type = type;
+            this.Audio = audio ?? throw new global::System.ArgumentNullException(nameof(audio));
         }
 
         /// <summary>

@@ -68,11 +68,11 @@ namespace Mistral
         /// ID of the model to use.<br/>
         /// Example: mistral-embed
         /// </param>
-        /// <param name="metadata"></param>
         /// <param name="input">
         /// Text to embed.<br/>
         /// Example: [Embed this sentence., As well as this one.]
         /// </param>
+        /// <param name="metadata"></param>
         /// <param name="outputDimension">
         /// The dimension of the output embeddings when feature available. If not provided, a default output dimension will be used.
         /// </param>
@@ -96,8 +96,8 @@ namespace Mistral
             global::Mistral.EncodingFormat? encodingFormat)
         {
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
-            this.Input = input;
             this.Metadata = metadata;
+            this.Input = input;
             this.OutputDimension = outputDimension;
             this.OutputDtype = outputDtype;
             this.EncodingFormat = encodingFormat;

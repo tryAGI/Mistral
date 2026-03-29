@@ -148,18 +148,18 @@ namespace Mistral
         /// </summary>
         /// <param name="id"></param>
         /// <param name="libraryId"></param>
+        /// <param name="name"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="processStatus"></param>
+        /// <param name="uploadedByType"></param>
         /// <param name="hash"></param>
         /// <param name="mimeType"></param>
         /// <param name="extension"></param>
         /// <param name="size"></param>
-        /// <param name="name"></param>
         /// <param name="summary"></param>
-        /// <param name="createdAt"></param>
         /// <param name="lastProcessedAt"></param>
         /// <param name="numberOfPages"></param>
-        /// <param name="processStatus"></param>
         /// <param name="uploadedById"></param>
-        /// <param name="uploadedByType"></param>
         /// <param name="tokensProcessingMainContent"></param>
         /// <param name="tokensProcessingSummary"></param>
         /// <param name="url"></param>
@@ -197,18 +197,18 @@ namespace Mistral
         {
             this.Id = id;
             this.LibraryId = libraryId;
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.CreatedAt = createdAt;
-            this.ProcessStatus = processStatus;
-            this.UploadedByType = uploadedByType ?? throw new global::System.ArgumentNullException(nameof(uploadedByType));
             this.Hash = hash;
             this.MimeType = mimeType;
             this.Extension = extension;
             this.Size = size;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Summary = summary;
+            this.CreatedAt = createdAt;
             this.LastProcessedAt = lastProcessedAt;
             this.NumberOfPages = numberOfPages;
+            this.ProcessStatus = processStatus;
             this.UploadedById = uploadedById;
+            this.UploadedByType = uploadedByType ?? throw new global::System.ArgumentNullException(nameof(uploadedByType));
             this.TokensProcessingMainContent = tokensProcessingMainContent;
             this.TokensProcessingSummary = tokensProcessingSummary;
             this.Url = url;

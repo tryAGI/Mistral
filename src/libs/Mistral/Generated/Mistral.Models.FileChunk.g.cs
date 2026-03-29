@@ -30,10 +30,10 @@ namespace Mistral
         /// <summary>
         /// Initializes a new instance of the <see cref="FileChunk" /> class.
         /// </summary>
+        /// <param name="fileId"></param>
         /// <param name="type">
         /// Default Value: file
         /// </param>
-        /// <param name="fileId"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -41,8 +41,8 @@ namespace Mistral
             global::System.Guid fileId,
             string? type)
         {
-            this.FileId = fileId;
             this.Type = type;
+            this.FileId = fileId;
         }
 
         /// <summary>

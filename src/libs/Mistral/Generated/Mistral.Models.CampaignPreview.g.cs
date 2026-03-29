@@ -96,7 +96,6 @@ namespace Mistral
         /// <param name="id"></param>
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
-        /// <param name="deletedAt"></param>
         /// <param name="name"></param>
         /// <param name="ownerId"></param>
         /// <param name="workspaceId"></param>
@@ -104,6 +103,7 @@ namespace Mistral
         /// <param name="maxNbEvents"></param>
         /// <param name="searchParams"></param>
         /// <param name="judge"></param>
+        /// <param name="deletedAt"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -123,6 +123,7 @@ namespace Mistral
             this.Id = id;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
+            this.DeletedAt = deletedAt;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.OwnerId = ownerId;
             this.WorkspaceId = workspaceId;
@@ -130,7 +131,6 @@ namespace Mistral
             this.MaxNbEvents = maxNbEvents;
             this.SearchParams = searchParams ?? throw new global::System.ArgumentNullException(nameof(searchParams));
             this.Judge = judge ?? throw new global::System.ArgumentNullException(nameof(judge));
-            this.DeletedAt = deletedAt;
         }
 
         /// <summary>
