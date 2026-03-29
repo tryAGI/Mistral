@@ -44,9 +44,9 @@ namespace Mistral
         /// Initializes a new instance of the <see cref="TextResourceContents" /> class.
         /// </summary>
         /// <param name="uri"></param>
+        /// <param name="text"></param>
         /// <param name="mimeType"></param>
         /// <param name="meta"></param>
-        /// <param name="text"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -57,9 +57,9 @@ namespace Mistral
             object? meta)
         {
             this.Uri = uri ?? throw new global::System.ArgumentNullException(nameof(uri));
-            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.MimeType = mimeType;
             this.Meta = meta;
+            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
         }
 
         /// <summary>

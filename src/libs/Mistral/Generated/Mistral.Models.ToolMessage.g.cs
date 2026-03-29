@@ -43,10 +43,10 @@ namespace Mistral
         /// <summary>
         /// Initializes a new instance of the <see cref="ToolMessage" /> class.
         /// </summary>
+        /// <param name="content"></param>
         /// <param name="role">
         /// Default Value: tool
         /// </param>
-        /// <param name="content"></param>
         /// <param name="toolCallId"></param>
         /// <param name="name"></param>
 #if NET7_0_OR_GREATER
@@ -58,8 +58,8 @@ namespace Mistral
             string? toolCallId,
             string? name)
         {
-            this.Content = content;
             this.Role = role;
+            this.Content = content;
             this.ToolCallId = toolCallId;
             this.Name = name;
         }

@@ -30,8 +30,8 @@ namespace Mistral
         /// <summary>
         /// Initializes a new instance of the <see cref="PaginationResponse" /> class.
         /// </summary>
-        /// <param name="nextCursor"></param>
         /// <param name="pageSize"></param>
+        /// <param name="nextCursor"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -39,8 +39,8 @@ namespace Mistral
             int pageSize,
             string? nextCursor)
         {
-            this.PageSize = pageSize;
             this.NextCursor = nextCursor;
+            this.PageSize = pageSize;
         }
 
         /// <summary>

@@ -73,6 +73,7 @@ namespace Mistral
         /// <summary>
         /// Initializes a new instance of the <see cref="MessageOutputEntry" /> class.
         /// </summary>
+        /// <param name="content"></param>
         /// <param name="object">
         /// Default Value: entry
         /// </param>
@@ -87,7 +88,6 @@ namespace Mistral
         /// <param name="role">
         /// Default Value: assistant
         /// </param>
-        /// <param name="content"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -102,7 +102,6 @@ namespace Mistral
             string? id,
             string? role)
         {
-            this.Content = content;
             this.Object = @object;
             this.Type = type;
             this.CreatedAt = createdAt;
@@ -111,6 +110,7 @@ namespace Mistral
             this.Model = model;
             this.Id = id;
             this.Role = role;
+            this.Content = content;
         }
 
         /// <summary>

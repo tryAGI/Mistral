@@ -43,10 +43,10 @@ namespace Mistral
         /// <summary>
         /// Initializes a new instance of the <see cref="CustomConnector" /> class.
         /// </summary>
+        /// <param name="connectorId"></param>
         /// <param name="type">
         /// Default Value: connector
         /// </param>
-        /// <param name="connectorId"></param>
         /// <param name="authorization"></param>
         /// <param name="toolConfiguration"></param>
 #if NET7_0_OR_GREATER
@@ -58,8 +58,8 @@ namespace Mistral
             global::Mistral.AuthorizationVariant1? authorization,
             global::Mistral.ToolConfiguration? toolConfiguration)
         {
-            this.ConnectorId = connectorId ?? throw new global::System.ArgumentNullException(nameof(connectorId));
             this.Type = type;
+            this.ConnectorId = connectorId ?? throw new global::System.ArgumentNullException(nameof(connectorId));
             this.Authorization = authorization;
             this.ToolConfiguration = toolConfiguration;
         }

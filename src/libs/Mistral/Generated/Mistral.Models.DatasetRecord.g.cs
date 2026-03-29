@@ -76,11 +76,11 @@ namespace Mistral
         /// <param name="id"></param>
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
-        /// <param name="deletedAt"></param>
         /// <param name="datasetId"></param>
         /// <param name="payload"></param>
         /// <param name="properties"></param>
         /// <param name="source"></param>
+        /// <param name="deletedAt"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -97,11 +97,11 @@ namespace Mistral
             this.Id = id;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
+            this.DeletedAt = deletedAt;
             this.DatasetId = datasetId;
             this.Payload = payload ?? throw new global::System.ArgumentNullException(nameof(payload));
             this.Properties = properties ?? throw new global::System.ArgumentNullException(nameof(properties));
             this.Source = source;
-            this.DeletedAt = deletedAt;
         }
 
         /// <summary>

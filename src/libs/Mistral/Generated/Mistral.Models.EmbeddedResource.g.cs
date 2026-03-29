@@ -46,10 +46,10 @@ namespace Mistral
         /// <summary>
         /// Initializes a new instance of the <see cref="EmbeddedResource" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="resource"></param>
         /// <param name="annotations"></param>
         /// <param name="meta"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -59,8 +59,8 @@ namespace Mistral
             object? meta,
             string type = "resource")
         {
-            this.Resource = resource;
             this.Type = type;
+            this.Resource = resource;
             this.Annotations = annotations;
             this.Meta = meta;
         }

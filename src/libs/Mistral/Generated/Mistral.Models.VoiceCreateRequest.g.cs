@@ -80,6 +80,9 @@ namespace Mistral
         /// Initializes a new instance of the <see cref="VoiceCreateRequest" /> class.
         /// </summary>
         /// <param name="name"></param>
+        /// <param name="sampleAudio">
+        /// Base64-encoded audio file
+        /// </param>
         /// <param name="slug"></param>
         /// <param name="languages">
         /// Default Value: []
@@ -90,9 +93,6 @@ namespace Mistral
         /// <param name="color"></param>
         /// <param name="retentionNotice">
         /// Default Value: 30
-        /// </param>
-        /// <param name="sampleAudio">
-        /// Base64-encoded audio file
         /// </param>
         /// <param name="sampleFilename">
         /// Original filename for extension detection
@@ -113,7 +113,6 @@ namespace Mistral
             string? sampleFilename)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.SampleAudio = sampleAudio ?? throw new global::System.ArgumentNullException(nameof(sampleAudio));
             this.Slug = slug;
             this.Languages = languages;
             this.Gender = gender;
@@ -121,6 +120,7 @@ namespace Mistral
             this.Tags = tags;
             this.Color = color;
             this.RetentionNotice = retentionNotice;
+            this.SampleAudio = sampleAudio ?? throw new global::System.ArgumentNullException(nameof(sampleAudio));
             this.SampleFilename = sampleFilename;
         }
 

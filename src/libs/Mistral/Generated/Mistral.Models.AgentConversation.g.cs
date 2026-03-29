@@ -76,6 +76,10 @@ namespace Mistral
         /// <summary>
         /// Initializes a new instance of the <see cref="AgentConversation" /> class.
         /// </summary>
+        /// <param name="id"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="updatedAt"></param>
+        /// <param name="agentId"></param>
         /// <param name="name">
         /// Name given to the conversation.
         /// </param>
@@ -88,10 +92,6 @@ namespace Mistral
         /// <param name="object">
         /// Default Value: conversation
         /// </param>
-        /// <param name="id"></param>
-        /// <param name="createdAt"></param>
-        /// <param name="updatedAt"></param>
-        /// <param name="agentId"></param>
         /// <param name="agentVersion"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -107,14 +107,14 @@ namespace Mistral
             string? @object,
             global::Mistral.AnyOf<string, int?, object>? agentVersion)
         {
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.CreatedAt = createdAt;
-            this.UpdatedAt = updatedAt;
-            this.AgentId = agentId ?? throw new global::System.ArgumentNullException(nameof(agentId));
             this.Name = name;
             this.Description = description;
             this.Metadata = metadata;
             this.Object = @object;
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
+            this.AgentId = agentId ?? throw new global::System.ArgumentNullException(nameof(agentId));
             this.AgentVersion = agentVersion;
         }
 

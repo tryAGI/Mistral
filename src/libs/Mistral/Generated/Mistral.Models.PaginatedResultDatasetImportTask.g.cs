@@ -42,8 +42,8 @@ namespace Mistral
         /// <summary>
         /// Initializes a new instance of the <see cref="PaginatedResultDatasetImportTask" /> class.
         /// </summary>
-        /// <param name="results"></param>
         /// <param name="count"></param>
+        /// <param name="results"></param>
         /// <param name="next"></param>
         /// <param name="previous"></param>
 #if NET7_0_OR_GREATER
@@ -55,8 +55,8 @@ namespace Mistral
             string? next,
             string? previous)
         {
-            this.Count = count;
             this.Results = results;
+            this.Count = count;
             this.Next = next;
             this.Previous = previous;
         }

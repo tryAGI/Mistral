@@ -50,11 +50,11 @@ namespace Mistral
         /// <summary>
         /// Initializes a new instance of the <see cref="ToolFileChunk" /> class.
         /// </summary>
+        /// <param name="tool"></param>
+        /// <param name="fileId"></param>
         /// <param name="type">
         /// Default Value: tool_file
         /// </param>
-        /// <param name="tool"></param>
-        /// <param name="fileId"></param>
         /// <param name="fileName"></param>
         /// <param name="fileType"></param>
 #if NET7_0_OR_GREATER
@@ -67,9 +67,9 @@ namespace Mistral
             string? fileName,
             string? fileType)
         {
+            this.Type = type;
             this.Tool = tool;
             this.FileId = fileId ?? throw new global::System.ArgumentNullException(nameof(fileId));
-            this.Type = type;
             this.FileName = fileName;
             this.FileType = fileType;
         }

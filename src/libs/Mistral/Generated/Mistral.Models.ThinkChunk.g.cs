@@ -37,10 +37,10 @@ namespace Mistral
         /// <summary>
         /// Initializes a new instance of the <see cref="ThinkChunk" /> class.
         /// </summary>
+        /// <param name="thinking"></param>
         /// <param name="type">
         /// Default Value: thinking
         /// </param>
-        /// <param name="thinking"></param>
         /// <param name="closed">
         /// Whether the thinking chunk is closed or not. Currently only used for prefixing.<br/>
         /// Default Value: true
@@ -53,8 +53,8 @@ namespace Mistral
             string? type,
             bool? closed)
         {
-            this.Thinking = thinking ?? throw new global::System.ArgumentNullException(nameof(thinking));
             this.Type = type;
+            this.Thinking = thinking ?? throw new global::System.ArgumentNullException(nameof(thinking));
             this.Closed = closed;
         }
 

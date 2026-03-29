@@ -61,6 +61,8 @@ namespace Mistral
         /// <summary>
         /// Initializes a new instance of the <see cref="FunctionResultEntry" /> class.
         /// </summary>
+        /// <param name="toolCallId"></param>
+        /// <param name="result"></param>
         /// <param name="object">
         /// Default Value: entry
         /// </param>
@@ -70,8 +72,6 @@ namespace Mistral
         /// <param name="createdAt"></param>
         /// <param name="completedAt"></param>
         /// <param name="id"></param>
-        /// <param name="toolCallId"></param>
-        /// <param name="result"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -84,13 +84,13 @@ namespace Mistral
             global::System.DateTime? completedAt,
             string? id)
         {
-            this.ToolCallId = toolCallId ?? throw new global::System.ArgumentNullException(nameof(toolCallId));
-            this.Result = result ?? throw new global::System.ArgumentNullException(nameof(result));
             this.Object = @object;
             this.Type = type;
             this.CreatedAt = createdAt;
             this.CompletedAt = completedAt;
             this.Id = id;
+            this.ToolCallId = toolCallId ?? throw new global::System.ArgumentNullException(nameof(toolCallId));
+            this.Result = result ?? throw new global::System.ArgumentNullException(nameof(result));
         }
 
         /// <summary>

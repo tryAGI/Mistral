@@ -93,6 +93,10 @@ namespace Mistral
         /// <summary>
         /// Initializes a new instance of the <see cref="ModelConversation" /> class.
         /// </summary>
+        /// <param name="id"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="updatedAt"></param>
+        /// <param name="model"></param>
         /// <param name="instructions">
         /// Instruction prompt the model will follow during the conversation.
         /// </param>
@@ -115,10 +119,6 @@ namespace Mistral
         /// <param name="object">
         /// Default Value: conversation
         /// </param>
-        /// <param name="id"></param>
-        /// <param name="createdAt"></param>
-        /// <param name="updatedAt"></param>
-        /// <param name="model"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -136,10 +136,6 @@ namespace Mistral
             global::Mistral.MetadataDict? metadata,
             string? @object)
         {
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.CreatedAt = createdAt;
-            this.UpdatedAt = updatedAt;
-            this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
             this.Instructions = instructions;
             this.Tools = tools;
             this.CompletionArgs = completionArgs;
@@ -148,6 +144,10 @@ namespace Mistral
             this.Description = description;
             this.Metadata = metadata;
             this.Object = @object;
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
+            this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
         }
 
         /// <summary>

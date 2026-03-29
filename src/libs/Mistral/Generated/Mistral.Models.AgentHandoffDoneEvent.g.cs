@@ -56,6 +56,9 @@ namespace Mistral
         /// <summary>
         /// Initializes a new instance of the <see cref="AgentHandoffDoneEvent" /> class.
         /// </summary>
+        /// <param name="id"></param>
+        /// <param name="nextAgentId"></param>
+        /// <param name="nextAgentName"></param>
         /// <param name="type">
         /// Default Value: agent.handoff.done
         /// </param>
@@ -63,9 +66,6 @@ namespace Mistral
         /// <param name="outputIndex">
         /// Default Value: 0
         /// </param>
-        /// <param name="id"></param>
-        /// <param name="nextAgentId"></param>
-        /// <param name="nextAgentName"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -77,12 +77,12 @@ namespace Mistral
             global::System.DateTime? createdAt,
             int? outputIndex)
         {
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.NextAgentId = nextAgentId ?? throw new global::System.ArgumentNullException(nameof(nextAgentId));
-            this.NextAgentName = nextAgentName ?? throw new global::System.ArgumentNullException(nameof(nextAgentName));
             this.Type = type;
             this.CreatedAt = createdAt;
             this.OutputIndex = outputIndex;
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.NextAgentId = nextAgentId ?? throw new global::System.ArgumentNullException(nameof(nextAgentId));
+            this.NextAgentName = nextAgentName ?? throw new global::System.ArgumentNullException(nameof(nextAgentName));
         }
 
         /// <summary>

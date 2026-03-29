@@ -133,13 +133,13 @@ namespace Mistral
         /// The intended purpose of the uploaded file, currently supports fine-tuning (`fine-tune`), OCR (`ocr`), Audio/Transcription (`audio`) and batch inference (`batch`).
         /// </param>
         /// <param name="sampleType"></param>
+        /// <param name="source"></param>
+        /// <param name="deleted"></param>
         /// <param name="numLines"></param>
         /// <param name="mimetype"></param>
-        /// <param name="source"></param>
         /// <param name="signature"></param>
         /// <param name="expiresAt"></param>
         /// <param name="visibility"></param>
-        /// <param name="deleted"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -166,13 +166,13 @@ namespace Mistral
             this.Filename = filename ?? throw new global::System.ArgumentNullException(nameof(filename));
             this.Purpose = purpose;
             this.SampleType = sampleType;
-            this.Source = source;
-            this.Deleted = deleted;
             this.NumLines = numLines;
             this.Mimetype = mimetype;
+            this.Source = source;
             this.Signature = signature;
             this.ExpiresAt = expiresAt;
             this.Visibility = visibility;
+            this.Deleted = deleted;
         }
 
         /// <summary>

@@ -46,7 +46,6 @@ namespace Mistral
         /// <summary>
         /// Initializes a new instance of the <see cref="SharingIn" /> class.
         /// </summary>
-        /// <param name="orgId"></param>
         /// <param name="level"></param>
         /// <param name="shareWithUuid">
         /// The id of the entity (user, workspace or organization) to share with
@@ -54,6 +53,7 @@ namespace Mistral
         /// <param name="shareWithType">
         /// The type of entity, used to share a library.
         /// </param>
+        /// <param name="orgId"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -63,10 +63,10 @@ namespace Mistral
             global::Mistral.EntityType shareWithType,
             global::System.Guid? orgId)
         {
+            this.OrgId = orgId;
             this.Level = level;
             this.ShareWithUuid = shareWithUuid;
             this.ShareWithType = shareWithType;
-            this.OrgId = orgId;
         }
 
         /// <summary>

@@ -30,10 +30,10 @@ namespace Mistral
         /// <summary>
         /// Initializes a new instance of the <see cref="TranscriptionStreamLanguage" /> class.
         /// </summary>
+        /// <param name="audioLanguage"></param>
         /// <param name="type">
         /// Default Value: transcription.language
         /// </param>
-        /// <param name="audioLanguage"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -41,8 +41,8 @@ namespace Mistral
             string audioLanguage,
             string? type)
         {
-            this.AudioLanguage = audioLanguage ?? throw new global::System.ArgumentNullException(nameof(audioLanguage));
             this.Type = type;
+            this.AudioLanguage = audioLanguage ?? throw new global::System.ArgumentNullException(nameof(audioLanguage));
         }
 
         /// <summary>

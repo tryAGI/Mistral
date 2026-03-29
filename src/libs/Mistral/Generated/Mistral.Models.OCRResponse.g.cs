@@ -50,11 +50,11 @@ namespace Mistral
         /// <param name="model">
         /// The model used to generate the OCR.
         /// </param>
-        /// <param name="documentAnnotation">
-        /// Formatted response in the request_format if provided in json str
-        /// </param>
         /// <param name="usageInfo">
         /// Usage info for the OCR request.
+        /// </param>
+        /// <param name="documentAnnotation">
+        /// Formatted response in the request_format if provided in json str
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -67,8 +67,8 @@ namespace Mistral
         {
             this.Pages = pages ?? throw new global::System.ArgumentNullException(nameof(pages));
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
-            this.UsageInfo = usageInfo ?? throw new global::System.ArgumentNullException(nameof(usageInfo));
             this.DocumentAnnotation = documentAnnotation;
+            this.UsageInfo = usageInfo ?? throw new global::System.ArgumentNullException(nameof(usageInfo));
         }
 
         /// <summary>

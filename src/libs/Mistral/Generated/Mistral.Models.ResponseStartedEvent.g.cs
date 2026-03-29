@@ -36,11 +36,11 @@ namespace Mistral
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseStartedEvent" /> class.
         /// </summary>
+        /// <param name="conversationId"></param>
         /// <param name="type">
         /// Default Value: conversation.response.started
         /// </param>
         /// <param name="createdAt"></param>
-        /// <param name="conversationId"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -49,9 +49,9 @@ namespace Mistral
             string? type,
             global::System.DateTime? createdAt)
         {
-            this.ConversationId = conversationId ?? throw new global::System.ArgumentNullException(nameof(conversationId));
             this.Type = type;
             this.CreatedAt = createdAt;
+            this.ConversationId = conversationId ?? throw new global::System.ArgumentNullException(nameof(conversationId));
         }
 
         /// <summary>

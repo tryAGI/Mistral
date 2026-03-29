@@ -30,10 +30,10 @@ namespace Mistral
         /// <summary>
         /// Initializes a new instance of the <see cref="ReferenceChunk" /> class.
         /// </summary>
+        /// <param name="referenceIds"></param>
         /// <param name="type">
         /// Default Value: reference
         /// </param>
-        /// <param name="referenceIds"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -41,8 +41,8 @@ namespace Mistral
             global::System.Collections.Generic.IList<int> referenceIds,
             string? type)
         {
-            this.ReferenceIds = referenceIds ?? throw new global::System.ArgumentNullException(nameof(referenceIds));
             this.Type = type;
+            this.ReferenceIds = referenceIds ?? throw new global::System.ArgumentNullException(nameof(referenceIds));
         }
 
         /// <summary>

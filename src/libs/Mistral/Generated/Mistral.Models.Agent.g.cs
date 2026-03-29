@@ -134,6 +134,15 @@ namespace Mistral
         /// <summary>
         /// Initializes a new instance of the <see cref="Agent" /> class.
         /// </summary>
+        /// <param name="model"></param>
+        /// <param name="name"></param>
+        /// <param name="id"></param>
+        /// <param name="version"></param>
+        /// <param name="versions"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="updatedAt"></param>
+        /// <param name="deploymentChat"></param>
+        /// <param name="source"></param>
         /// <param name="instructions">
         /// Instruction prompt the model will follow during the conversation.
         /// </param>
@@ -144,21 +153,12 @@ namespace Mistral
         /// Completion arguments that will be used to generate assistant responses. Can be overridden at each message request.
         /// </param>
         /// <param name="guardrails"></param>
-        /// <param name="model"></param>
-        /// <param name="name"></param>
         /// <param name="description"></param>
         /// <param name="handoffs"></param>
         /// <param name="metadata"></param>
         /// <param name="object">
         /// Default Value: agent
         /// </param>
-        /// <param name="id"></param>
-        /// <param name="version"></param>
-        /// <param name="versions"></param>
-        /// <param name="createdAt"></param>
-        /// <param name="updatedAt"></param>
-        /// <param name="deploymentChat"></param>
-        /// <param name="source"></param>
         /// <param name="versionMessage"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -183,8 +183,16 @@ namespace Mistral
             string? @object,
             string? versionMessage)
         {
+            this.Instructions = instructions;
+            this.Tools = tools;
+            this.CompletionArgs = completionArgs;
+            this.Guardrails = guardrails;
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Description = description;
+            this.Handoffs = handoffs;
+            this.Metadata = metadata;
+            this.Object = @object;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Version = version;
             this.Versions = versions ?? throw new global::System.ArgumentNullException(nameof(versions));
@@ -192,14 +200,6 @@ namespace Mistral
             this.UpdatedAt = updatedAt;
             this.DeploymentChat = deploymentChat;
             this.Source = source ?? throw new global::System.ArgumentNullException(nameof(source));
-            this.Instructions = instructions;
-            this.Tools = tools;
-            this.CompletionArgs = completionArgs;
-            this.Guardrails = guardrails;
-            this.Description = description;
-            this.Handoffs = handoffs;
-            this.Metadata = metadata;
-            this.Object = @object;
             this.VersionMessage = versionMessage;
         }
 

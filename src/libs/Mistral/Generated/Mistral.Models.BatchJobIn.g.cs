@@ -62,13 +62,13 @@ namespace Mistral
         /// <summary>
         /// Initializes a new instance of the <see cref="BatchJobIn" /> class.
         /// </summary>
+        /// <param name="endpoint">
+        /// The endpoint to be used for batch inference.
+        /// </param>
         /// <param name="inputFiles">
         /// The list of input files to be used for batch inference, these files should be `jsonl` files, containing the input data corresponding to the bory request for the batch inference in a "body" field. An example of such file is the following: ```json {"custom_id": "0", "body": {"max_tokens": 100, "messages": [{"role": "user", "content": "What is the best French cheese?"}]}} {"custom_id": "1", "body": {"max_tokens": 100, "messages": [{"role": "user", "content": "What is the best French wine?"}]}} ```
         /// </param>
         /// <param name="requests"></param>
-        /// <param name="endpoint">
-        /// The endpoint to be used for batch inference.
-        /// </param>
         /// <param name="model">
         /// The model to be used for batch inference.
         /// </param>
@@ -94,9 +94,9 @@ namespace Mistral
             global::System.Collections.Generic.Dictionary<string, string>? metadata,
             int? timeoutHours)
         {
-            this.Endpoint = endpoint;
             this.InputFiles = inputFiles;
             this.Requests = requests;
+            this.Endpoint = endpoint;
             this.Model = model;
             this.AgentId = agentId;
             this.Metadata = metadata;

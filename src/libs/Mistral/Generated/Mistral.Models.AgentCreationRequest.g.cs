@@ -79,6 +79,8 @@ namespace Mistral
         /// <summary>
         /// Initializes a new instance of the <see cref="AgentCreationRequest" /> class.
         /// </summary>
+        /// <param name="model"></param>
+        /// <param name="name"></param>
         /// <param name="instructions">
         /// Instruction prompt the model will follow during the conversation.
         /// </param>
@@ -89,8 +91,6 @@ namespace Mistral
         /// Completion arguments that will be used to generate assistant responses. Can be overridden at each message request.
         /// </param>
         /// <param name="guardrails"></param>
-        /// <param name="model"></param>
-        /// <param name="name"></param>
         /// <param name="description"></param>
         /// <param name="handoffs"></param>
         /// <param name="metadata"></param>
@@ -110,12 +110,12 @@ namespace Mistral
             global::Mistral.MetadataDict? metadata,
             string? versionMessage)
         {
-            this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Instructions = instructions;
             this.Tools = tools;
             this.CompletionArgs = completionArgs;
             this.Guardrails = guardrails;
+            this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Description = description;
             this.Handoffs = handoffs;
             this.Metadata = metadata;

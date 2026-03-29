@@ -88,11 +88,11 @@ namespace Mistral
         /// <param name="id"></param>
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
-        /// <param name="deletedAt"></param>
         /// <param name="creatorId"></param>
         /// <param name="datasetId"></param>
         /// <param name="workspaceId"></param>
         /// <param name="status"></param>
+        /// <param name="deletedAt"></param>
         /// <param name="progress"></param>
         /// <param name="message"></param>
 #if NET7_0_OR_GREATER
@@ -113,11 +113,11 @@ namespace Mistral
             this.Id = id;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
+            this.DeletedAt = deletedAt;
             this.CreatorId = creatorId;
             this.DatasetId = datasetId;
             this.WorkspaceId = workspaceId;
             this.Status = status;
-            this.DeletedAt = deletedAt;
             this.Progress = progress;
             this.Message = message;
         }

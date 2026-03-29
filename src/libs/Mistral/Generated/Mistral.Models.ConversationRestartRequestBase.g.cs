@@ -77,6 +77,7 @@ namespace Mistral
         /// <summary>
         /// Initializes a new instance of the <see cref="ConversationRestartRequestBase" /> class.
         /// </summary>
+        /// <param name="fromEntryId"></param>
         /// <param name="inputs"></param>
         /// <param name="stream">
         /// Whether to stream back partial progress. Otherwise, the server will hold the request open until the timeout or until completion, with the response containing the full result as JSON.<br/>
@@ -96,7 +97,6 @@ namespace Mistral
         /// <param name="metadata">
         /// Custom metadata for the conversation.
         /// </param>
-        /// <param name="fromEntryId"></param>
         /// <param name="agentVersion">
         /// Specific version of the agent to use when restarting. If not provided, uses the current version.
         /// </param>
@@ -114,7 +114,6 @@ namespace Mistral
             global::Mistral.MetadataDict? metadata,
             global::Mistral.AnyOf<string, int?, object>? agentVersion)
         {
-            this.FromEntryId = fromEntryId ?? throw new global::System.ArgumentNullException(nameof(fromEntryId));
             this.Inputs = inputs;
             this.Stream = stream;
             this.Store = store;
@@ -122,6 +121,7 @@ namespace Mistral
             this.CompletionArgs = completionArgs;
             this.Guardrails = guardrails;
             this.Metadata = metadata;
+            this.FromEntryId = fromEntryId ?? throw new global::System.ArgumentNullException(nameof(fromEntryId));
             this.AgentVersion = agentVersion;
         }
 

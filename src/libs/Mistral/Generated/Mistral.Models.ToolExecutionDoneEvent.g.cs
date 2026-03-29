@@ -56,6 +56,8 @@ namespace Mistral
         /// <summary>
         /// Initializes a new instance of the <see cref="ToolExecutionDoneEvent" /> class.
         /// </summary>
+        /// <param name="id"></param>
+        /// <param name="name"></param>
         /// <param name="type">
         /// Default Value: tool.execution.done
         /// </param>
@@ -63,8 +65,6 @@ namespace Mistral
         /// <param name="outputIndex">
         /// Default Value: 0
         /// </param>
-        /// <param name="id"></param>
-        /// <param name="name"></param>
         /// <param name="info"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -77,11 +77,11 @@ namespace Mistral
             int? outputIndex,
             global::Mistral.ToolExecutionInfo? info)
         {
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Name = name;
             this.Type = type;
             this.CreatedAt = createdAt;
             this.OutputIndex = outputIndex;
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Name = name;
             this.Info = info;
         }
 

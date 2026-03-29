@@ -74,6 +74,8 @@ namespace Mistral
         /// <summary>
         /// Initializes a new instance of the <see cref="MessageOutputEvent" /> class.
         /// </summary>
+        /// <param name="id"></param>
+        /// <param name="content"></param>
         /// <param name="type">
         /// Default Value: message.output.delta
         /// </param>
@@ -81,7 +83,6 @@ namespace Mistral
         /// <param name="outputIndex">
         /// Default Value: 0
         /// </param>
-        /// <param name="id"></param>
         /// <param name="contentIndex">
         /// Default Value: 0
         /// </param>
@@ -94,7 +95,6 @@ namespace Mistral
         /// <param name="role">
         /// Default Value: assistant
         /// </param>
-        /// <param name="content"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -109,15 +109,15 @@ namespace Mistral
             string? agentId,
             string? role)
         {
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Content = content;
             this.Type = type;
             this.CreatedAt = createdAt;
             this.OutputIndex = outputIndex;
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.ContentIndex = contentIndex;
             this.Model = model;
             this.AgentId = agentId;
             this.Role = role;
+            this.Content = content;
         }
 
         /// <summary>

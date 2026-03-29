@@ -31,10 +31,10 @@ namespace Mistral
         /// <summary>
         /// Initializes a new instance of the <see cref="AudioChunk" /> class.
         /// </summary>
+        /// <param name="inputAudio"></param>
         /// <param name="type">
         /// Default Value: input_audio
         /// </param>
-        /// <param name="inputAudio"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -42,8 +42,8 @@ namespace Mistral
             global::Mistral.AnyOf<string, byte[]> inputAudio,
             string? type)
         {
-            this.InputAudio = inputAudio;
             this.Type = type;
+            this.InputAudio = inputAudio;
         }
 
         /// <summary>

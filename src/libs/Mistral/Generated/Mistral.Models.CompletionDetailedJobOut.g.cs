@@ -148,6 +148,7 @@ namespace Mistral
         /// <param name="createdAt"></param>
         /// <param name="modifiedAt"></param>
         /// <param name="trainingFiles"></param>
+        /// <param name="hyperparameters"></param>
         /// <param name="validationFiles">
         /// Default Value: []
         /// </param>
@@ -162,7 +163,6 @@ namespace Mistral
         /// <param name="jobType">
         /// Default Value: completion
         /// </param>
-        /// <param name="hyperparameters"></param>
         /// <param name="repositories">
         /// Default Value: []
         /// </param>
@@ -204,7 +204,6 @@ namespace Mistral
             this.CreatedAt = createdAt;
             this.ModifiedAt = modifiedAt;
             this.TrainingFiles = trainingFiles ?? throw new global::System.ArgumentNullException(nameof(trainingFiles));
-            this.Hyperparameters = hyperparameters ?? throw new global::System.ArgumentNullException(nameof(hyperparameters));
             this.ValidationFiles = validationFiles;
             this.Object = @object;
             this.FineTunedModel = fineTunedModel;
@@ -213,6 +212,7 @@ namespace Mistral
             this.TrainedTokens = trainedTokens;
             this.Metadata = metadata;
             this.JobType = jobType;
+            this.Hyperparameters = hyperparameters ?? throw new global::System.ArgumentNullException(nameof(hyperparameters));
             this.Repositories = repositories;
             this.Events = events;
             this.Checkpoints = checkpoints;

@@ -37,11 +37,11 @@ namespace Mistral
         /// <summary>
         /// Initializes a new instance of the <see cref="ConversationMessages" /> class.
         /// </summary>
+        /// <param name="conversationId"></param>
+        /// <param name="messages"></param>
         /// <param name="object">
         /// Default Value: conversation.messages
         /// </param>
-        /// <param name="conversationId"></param>
-        /// <param name="messages"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -50,9 +50,9 @@ namespace Mistral
             global::System.Collections.Generic.IList<global::Mistral.AnyOf<global::Mistral.MessageInputEntry, global::Mistral.MessageOutputEntry>> messages,
             string? @object)
         {
+            this.Object = @object;
             this.ConversationId = conversationId ?? throw new global::System.ArgumentNullException(nameof(conversationId));
             this.Messages = messages ?? throw new global::System.ArgumentNullException(nameof(messages));
-            this.Object = @object;
         }
 
         /// <summary>

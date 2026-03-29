@@ -31,10 +31,10 @@ namespace Mistral
         /// <summary>
         /// Initializes a new instance of the <see cref="SystemMessage" /> class.
         /// </summary>
+        /// <param name="content"></param>
         /// <param name="role">
         /// Default Value: system
         /// </param>
-        /// <param name="content"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -42,8 +42,8 @@ namespace Mistral
             global::Mistral.AnyOf<string, global::System.Collections.Generic.IList<global::Mistral.SystemMessageContentChunks>> content,
             string? role)
         {
-            this.Content = content;
             this.Role = role;
+            this.Content = content;
         }
 
         /// <summary>

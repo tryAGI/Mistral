@@ -122,7 +122,6 @@ namespace Mistral
         /// <param name="id"></param>
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
-        /// <param name="deletedAt"></param>
         /// <param name="ownerId"></param>
         /// <param name="workspaceId"></param>
         /// <param name="name"></param>
@@ -131,6 +130,7 @@ namespace Mistral
         /// <param name="output"></param>
         /// <param name="instructions"></param>
         /// <param name="tools"></param>
+        /// <param name="deletedAt"></param>
         /// <param name="upRevision"></param>
         /// <param name="downRevision"></param>
         /// <param name="baseRevision"></param>
@@ -157,6 +157,7 @@ namespace Mistral
             this.Id = id;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
+            this.DeletedAt = deletedAt;
             this.OwnerId = ownerId;
             this.WorkspaceId = workspaceId;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
@@ -165,7 +166,6 @@ namespace Mistral
             this.Output = output;
             this.Instructions = instructions ?? throw new global::System.ArgumentNullException(nameof(instructions));
             this.Tools = tools ?? throw new global::System.ArgumentNullException(nameof(tools));
-            this.DeletedAt = deletedAt;
             this.UpRevision = upRevision;
             this.DownRevision = downRevision;
             this.BaseRevision = baseRevision;

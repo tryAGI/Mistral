@@ -52,9 +52,9 @@ namespace Mistral
         /// </summary>
         /// <param name="model"></param>
         /// <param name="text"></param>
+        /// <param name="usage"></param>
         /// <param name="language"></param>
         /// <param name="segments"></param>
-        /// <param name="usage"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -67,9 +67,9 @@ namespace Mistral
         {
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
-            this.Usage = usage ?? throw new global::System.ArgumentNullException(nameof(usage));
             this.Language = language;
             this.Segments = segments;
+            this.Usage = usage ?? throw new global::System.ArgumentNullException(nameof(usage));
         }
 
         /// <summary>

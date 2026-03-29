@@ -67,11 +67,6 @@ namespace Mistral
         /// <summary>
         /// Initializes a new instance of the <see cref="FilesApiRoutesUploadFileRequest" /> class.
         /// </summary>
-        /// <param name="expiry"></param>
-        /// <param name="visibility">
-        /// Default Value: workspace
-        /// </param>
-        /// <param name="purpose"></param>
         /// <param name="file">
         /// The File object (not file name) to be uploaded.<br/>
         ///  To upload a file and specify a custom file name you should format your request as such:<br/>
@@ -94,6 +89,11 @@ namespace Mistral
         ///  file=@path/to/your/file.jsonl<br/>
         ///  ```
         /// </param>
+        /// <param name="expiry"></param>
+        /// <param name="visibility">
+        /// Default Value: workspace
+        /// </param>
+        /// <param name="purpose"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -104,11 +104,11 @@ namespace Mistral
             global::Mistral.FilesApiRoutesUploadFileRequestVisibility? visibility,
             global::Mistral.FilePurpose? purpose)
         {
-            this.File = file ?? throw new global::System.ArgumentNullException(nameof(file));
-            this.Filename = filename ?? throw new global::System.ArgumentNullException(nameof(filename));
             this.Expiry = expiry;
             this.Visibility = visibility;
             this.Purpose = purpose;
+            this.File = file ?? throw new global::System.ArgumentNullException(nameof(file));
+            this.Filename = filename ?? throw new global::System.ArgumentNullException(nameof(filename));
         }
 
         /// <summary>

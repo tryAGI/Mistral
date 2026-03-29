@@ -80,6 +80,8 @@ namespace Mistral
         /// <summary>
         /// Initializes a new instance of the <see cref="ToolExecutionEntry" /> class.
         /// </summary>
+        /// <param name="name"></param>
+        /// <param name="arguments"></param>
         /// <param name="object">
         /// Default Value: entry
         /// </param>
@@ -91,8 +93,6 @@ namespace Mistral
         /// <param name="agentId"></param>
         /// <param name="model"></param>
         /// <param name="id"></param>
-        /// <param name="name"></param>
-        /// <param name="arguments"></param>
         /// <param name="info"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -109,8 +109,6 @@ namespace Mistral
             string? id,
             global::Mistral.ToolExecutionInfo? info)
         {
-            this.Name = name;
-            this.Arguments = arguments ?? throw new global::System.ArgumentNullException(nameof(arguments));
             this.Object = @object;
             this.Type = type;
             this.CreatedAt = createdAt;
@@ -118,6 +116,8 @@ namespace Mistral
             this.AgentId = agentId;
             this.Model = model;
             this.Id = id;
+            this.Name = name;
+            this.Arguments = arguments ?? throw new global::System.ArgumentNullException(nameof(arguments));
             this.Info = info;
         }
 

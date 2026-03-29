@@ -75,11 +75,11 @@ namespace Mistral
         /// <param name="id"></param>
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
-        /// <param name="deletedAt"></param>
         /// <param name="name"></param>
         /// <param name="description"></param>
         /// <param name="ownerId"></param>
         /// <param name="workspaceId"></param>
+        /// <param name="deletedAt"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -96,11 +96,11 @@ namespace Mistral
             this.Id = id;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
+            this.DeletedAt = deletedAt;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
             this.OwnerId = ownerId;
             this.WorkspaceId = workspaceId;
-            this.DeletedAt = deletedAt;
         }
 
         /// <summary>

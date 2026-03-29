@@ -30,10 +30,10 @@ namespace Mistral
         /// <summary>
         /// Initializes a new instance of the <see cref="JudgeClassificationOutput" /> class.
         /// </summary>
+        /// <param name="options"></param>
         /// <param name="type">
         /// Default Value: CLASSIFICATION
         /// </param>
-        /// <param name="options"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -41,8 +41,8 @@ namespace Mistral
             global::System.Collections.Generic.IList<global::Mistral.JudgeClassificationOutputOption> options,
             string? type)
         {
-            this.Options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             this.Type = type;
+            this.Options = options ?? throw new global::System.ArgumentNullException(nameof(options));
         }
 
         /// <summary>

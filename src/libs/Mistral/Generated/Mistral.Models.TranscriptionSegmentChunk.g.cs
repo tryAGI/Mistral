@@ -56,12 +56,12 @@ namespace Mistral
         /// <summary>
         /// Initializes a new instance of the <see cref="TranscriptionSegmentChunk" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Default Value: transcription_segment
-        /// </param>
         /// <param name="text"></param>
         /// <param name="start"></param>
         /// <param name="end"></param>
+        /// <param name="type">
+        /// Default Value: transcription_segment
+        /// </param>
         /// <param name="score"></param>
         /// <param name="speakerId"></param>
 #if NET7_0_OR_GREATER
@@ -75,10 +75,10 @@ namespace Mistral
             double? score,
             string? speakerId)
         {
+            this.Type = type;
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Start = start;
             this.End = end;
-            this.Type = type;
             this.Score = score;
             this.SpeakerId = speakerId;
         }

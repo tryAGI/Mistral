@@ -87,6 +87,9 @@ namespace Mistral
         /// <summary>
         /// Initializes a new instance of the <see cref="FunctionCallEntry" /> class.
         /// </summary>
+        /// <param name="toolCallId"></param>
+        /// <param name="name"></param>
+        /// <param name="arguments"></param>
         /// <param name="object">
         /// Default Value: entry
         /// </param>
@@ -98,9 +101,6 @@ namespace Mistral
         /// <param name="agentId"></param>
         /// <param name="model"></param>
         /// <param name="id"></param>
-        /// <param name="toolCallId"></param>
-        /// <param name="name"></param>
-        /// <param name="arguments"></param>
         /// <param name="confirmationStatus"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -118,9 +118,6 @@ namespace Mistral
             string? id,
             global::Mistral.FunctionCallEntryConfirmationStatus2? confirmationStatus)
         {
-            this.ToolCallId = toolCallId ?? throw new global::System.ArgumentNullException(nameof(toolCallId));
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Arguments = arguments;
             this.Object = @object;
             this.Type = type;
             this.CreatedAt = createdAt;
@@ -128,6 +125,9 @@ namespace Mistral
             this.AgentId = agentId;
             this.Model = model;
             this.Id = id;
+            this.ToolCallId = toolCallId ?? throw new global::System.ArgumentNullException(nameof(toolCallId));
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Arguments = arguments;
             this.ConfirmationStatus = confirmationStatus;
         }
 

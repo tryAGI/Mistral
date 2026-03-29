@@ -30,8 +30,8 @@ namespace Mistral
         /// <summary>
         /// Initializes a new instance of the <see cref="BatchRequest" /> class.
         /// </summary>
-        /// <param name="customId"></param>
         /// <param name="body"></param>
+        /// <param name="customId"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -39,8 +39,8 @@ namespace Mistral
             object body,
             string? customId)
         {
-            this.Body = body ?? throw new global::System.ArgumentNullException(nameof(body));
             this.CustomId = customId;
+            this.Body = body ?? throw new global::System.ArgumentNullException(nameof(body));
         }
 
         /// <summary>

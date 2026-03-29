@@ -50,12 +50,12 @@ namespace Mistral
         /// <summary>
         /// Initializes a new instance of the <see cref="ConversationResponse" /> class.
         /// </summary>
-        /// <param name="object">
-        /// Default Value: conversation.response
-        /// </param>
         /// <param name="conversationId"></param>
         /// <param name="outputs"></param>
         /// <param name="usage"></param>
+        /// <param name="object">
+        /// Default Value: conversation.response
+        /// </param>
         /// <param name="guardrails">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
@@ -69,10 +69,10 @@ namespace Mistral
             string? @object,
             global::System.Collections.Generic.IList<object>? guardrails)
         {
+            this.Object = @object;
             this.ConversationId = conversationId ?? throw new global::System.ArgumentNullException(nameof(conversationId));
             this.Outputs = outputs ?? throw new global::System.ArgumentNullException(nameof(outputs));
             this.Usage = usage ?? throw new global::System.ArgumentNullException(nameof(usage));
-            this.Object = @object;
             this.Guardrails = guardrails;
         }
 
