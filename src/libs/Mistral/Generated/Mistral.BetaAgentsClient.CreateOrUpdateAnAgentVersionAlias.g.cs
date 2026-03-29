@@ -53,7 +53,7 @@ namespace Mistral
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddRequiredParameter("alias", alias)
-                .AddRequiredParameter("version", version.ToString()) 
+                .AddRequiredParameter("version", version.ToString()!) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
