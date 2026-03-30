@@ -119,6 +119,60 @@ namespace Mistral
         };
 
         /// <summary>
+        /// (beta) Observability - Campaigns
+        /// </summary>
+        public BetaObservabilityCampaignsClient BetaObservabilityCampaigns => new BetaObservabilityCampaignsClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// (beta) Observability - Chat completion events
+        /// </summary>
+        public BetaObservabilityChatCompletionEventsClient BetaObservabilityChatCompletionEvents => new BetaObservabilityChatCompletionEventsClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// (beta) Observability - Chat completion fields
+        /// </summary>
+        public BetaObservabilityChatCompletionEventsFieldsClient BetaObservabilityChatCompletionEventsFields => new BetaObservabilityChatCompletionEventsFieldsClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// (beta) Observability - Datasets
+        /// </summary>
+        public BetaObservabilityDatasetsClient BetaObservabilityDatasets => new BetaObservabilityDatasetsClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// (beta) Observability - Dataset records
+        /// </summary>
+        public BetaObservabilityDatasetsRecordsClient BetaObservabilityDatasetsRecords => new BetaObservabilityDatasetsRecordsClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// (beta) Observability - Judges
+        /// </summary>
+        public BetaObservabilityJudgesClient BetaObservabilityJudges => new BetaObservabilityJudgesClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
         /// Chat
         /// </summary>
         public ChatClient Chat => new ChatClient(HttpClient, authorizations: Authorizations)

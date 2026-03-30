@@ -86,6 +86,36 @@ namespace Mistral
         public BetaLibrariesDocumentsClient BetaLibrariesDocuments { get; }
 
         /// <summary>
+        /// (beta) Observability - Campaigns
+        /// </summary>
+        public BetaObservabilityCampaignsClient BetaObservabilityCampaigns { get; }
+
+        /// <summary>
+        /// (beta) Observability - Chat completion events
+        /// </summary>
+        public BetaObservabilityChatCompletionEventsClient BetaObservabilityChatCompletionEvents { get; }
+
+        /// <summary>
+        /// (beta) Observability - Chat completion fields
+        /// </summary>
+        public BetaObservabilityChatCompletionEventsFieldsClient BetaObservabilityChatCompletionEventsFields { get; }
+
+        /// <summary>
+        /// (beta) Observability - Datasets
+        /// </summary>
+        public BetaObservabilityDatasetsClient BetaObservabilityDatasets { get; }
+
+        /// <summary>
+        /// (beta) Observability - Dataset records
+        /// </summary>
+        public BetaObservabilityDatasetsRecordsClient BetaObservabilityDatasetsRecords { get; }
+
+        /// <summary>
+        /// (beta) Observability - Judges
+        /// </summary>
+        public BetaObservabilityJudgesClient BetaObservabilityJudges { get; }
+
+        /// <summary>
         /// Chat
         /// </summary>
         public ChatClient Chat { get; }
