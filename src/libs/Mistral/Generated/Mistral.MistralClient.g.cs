@@ -173,6 +173,78 @@ namespace Mistral
         };
 
         /// <summary>
+        /// Workflows
+        /// </summary>
+        public BetaWorkflowsClient BetaWorkflows => new BetaWorkflowsClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// Deployments
+        /// </summary>
+        public BetaWorkflowsDeploymentsClient BetaWorkflowsDeployments => new BetaWorkflowsDeploymentsClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// Events
+        /// </summary>
+        public BetaWorkflowsEventsClient BetaWorkflowsEvents => new BetaWorkflowsEventsClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// Executions
+        /// </summary>
+        public BetaWorkflowsExecutionsClient BetaWorkflowsExecutions => new BetaWorkflowsExecutionsClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// Metrics
+        /// </summary>
+        public BetaWorkflowsMetricsClient BetaWorkflowsMetrics => new BetaWorkflowsMetricsClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// Runs
+        /// </summary>
+        public BetaWorkflowsRunsClient BetaWorkflowsRuns => new BetaWorkflowsRunsClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// Schedules
+        /// </summary>
+        public BetaWorkflowsSchedulesClient BetaWorkflowsSchedules => new BetaWorkflowsSchedulesClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// Workers
+        /// </summary>
+        public BetaWorkflowsWorkersClient BetaWorkflowsWorkers => new BetaWorkflowsWorkersClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
         /// Chat
         /// </summary>
         public ChatClient Chat => new ChatClient(HttpClient, authorizations: Authorizations)

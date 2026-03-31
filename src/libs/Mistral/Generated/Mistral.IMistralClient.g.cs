@@ -116,6 +116,46 @@ namespace Mistral
         public BetaObservabilityJudgesClient BetaObservabilityJudges { get; }
 
         /// <summary>
+        /// Workflows
+        /// </summary>
+        public BetaWorkflowsClient BetaWorkflows { get; }
+
+        /// <summary>
+        /// Deployments
+        /// </summary>
+        public BetaWorkflowsDeploymentsClient BetaWorkflowsDeployments { get; }
+
+        /// <summary>
+        /// Events
+        /// </summary>
+        public BetaWorkflowsEventsClient BetaWorkflowsEvents { get; }
+
+        /// <summary>
+        /// Executions
+        /// </summary>
+        public BetaWorkflowsExecutionsClient BetaWorkflowsExecutions { get; }
+
+        /// <summary>
+        /// Metrics
+        /// </summary>
+        public BetaWorkflowsMetricsClient BetaWorkflowsMetrics { get; }
+
+        /// <summary>
+        /// Runs
+        /// </summary>
+        public BetaWorkflowsRunsClient BetaWorkflowsRuns { get; }
+
+        /// <summary>
+        /// Schedules
+        /// </summary>
+        public BetaWorkflowsSchedulesClient BetaWorkflowsSchedules { get; }
+
+        /// <summary>
+        /// Workers
+        /// </summary>
+        public BetaWorkflowsWorkersClient BetaWorkflowsWorkers { get; }
+
+        /// <summary>
         /// Chat
         /// </summary>
         public ChatClient Chat { get; }
