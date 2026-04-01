@@ -77,25 +77,25 @@ namespace Mistral.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.JSONPatchAppend), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.JSONPatchAppend?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.JSONPatchAppend).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Append, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Append!, typeInfo);
             }
             else if (value.IsAdd)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.JSONPatchAdd), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.JSONPatchAdd?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.JSONPatchAdd).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Add, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Add!, typeInfo);
             }
             else if (value.IsReplace)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.JSONPatchReplace), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.JSONPatchReplace?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.JSONPatchReplace).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Replace, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Replace!, typeInfo);
             }
             else if (value.IsRemove)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.JSONPatchRemove), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.JSONPatchRemove?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.JSONPatchRemove).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Remove, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Remove!, typeInfo);
             }
         }
     }

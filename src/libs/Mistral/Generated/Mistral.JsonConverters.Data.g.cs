@@ -131,61 +131,61 @@ namespace Mistral.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.ResponseStartedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.ResponseStartedEvent?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.ResponseStartedEvent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ConversationResponseStarted, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ConversationResponseStarted!, typeInfo);
             }
             else if (value.IsConversationResponseDone)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.ResponseDoneEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.ResponseDoneEvent?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.ResponseDoneEvent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ConversationResponseDone, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ConversationResponseDone!, typeInfo);
             }
             else if (value.IsConversationResponseError)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.ResponseErrorEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.ResponseErrorEvent?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.ResponseErrorEvent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ConversationResponseError, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ConversationResponseError!, typeInfo);
             }
             else if (value.IsToolExecutionStarted)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.ToolExecutionStartedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.ToolExecutionStartedEvent?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.ToolExecutionStartedEvent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ToolExecutionStarted, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ToolExecutionStarted!, typeInfo);
             }
             else if (value.IsToolExecutionDelta)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.ToolExecutionDeltaEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.ToolExecutionDeltaEvent?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.ToolExecutionDeltaEvent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ToolExecutionDelta, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ToolExecutionDelta!, typeInfo);
             }
             else if (value.IsToolExecutionDone)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.ToolExecutionDoneEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.ToolExecutionDoneEvent?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.ToolExecutionDoneEvent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ToolExecutionDone, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ToolExecutionDone!, typeInfo);
             }
             else if (value.IsMessageOutputDelta)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.MessageOutputEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.MessageOutputEvent?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.MessageOutputEvent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessageOutputDelta, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessageOutputDelta!, typeInfo);
             }
             else if (value.IsFunctionCallDelta)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.FunctionCallEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.FunctionCallEvent?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.FunctionCallEvent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FunctionCallDelta, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FunctionCallDelta!, typeInfo);
             }
             else if (value.IsAgentHandoffStarted)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.AgentHandoffStartedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.AgentHandoffStartedEvent?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.AgentHandoffStartedEvent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AgentHandoffStarted, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AgentHandoffStarted!, typeInfo);
             }
             else if (value.IsAgentHandoffDone)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.AgentHandoffDoneEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.AgentHandoffDoneEvent?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.AgentHandoffDoneEvent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AgentHandoffDone, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AgentHandoffDone!, typeInfo);
             }
         }
     }
