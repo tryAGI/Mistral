@@ -59,13 +59,13 @@ namespace Mistral.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.CompletionFTModelOut), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.CompletionFTModelOut?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.CompletionFTModelOut).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Completion, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Completion!, typeInfo);
             }
             else if (value.IsClassifier)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.ClassifierFTModelOut), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.ClassifierFTModelOut?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.ClassifierFTModelOut).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Classifier, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Classifier!, typeInfo);
             }
         }
     }

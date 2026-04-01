@@ -30,7 +30,6 @@ namespace Mistral
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
-
             request = new global::Mistral.FIMCompletionRequest
             {
                 Model = request.Model,

@@ -59,13 +59,13 @@ namespace Mistral.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.SpeechStreamAudioDelta), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.SpeechStreamAudioDelta?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.SpeechStreamAudioDelta).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SpeechAudioDelta, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SpeechAudioDelta!, typeInfo);
             }
             else if (value.IsSpeechAudioDone)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.SpeechStreamDone), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.SpeechStreamDone?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.SpeechStreamDone).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SpeechAudioDone, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SpeechAudioDone!, typeInfo);
             }
         }
     }

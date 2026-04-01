@@ -59,13 +59,13 @@ namespace Mistral.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.OAuth2TokenAuth), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.OAuth2TokenAuth?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.OAuth2TokenAuth).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Oauth2Token, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Oauth2Token!, typeInfo);
             }
             else if (value.IsApiKey)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.APIKeyAuth), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.APIKeyAuth?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.APIKeyAuth).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ApiKey, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ApiKey!, typeInfo);
             }
         }
     }

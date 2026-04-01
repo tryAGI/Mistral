@@ -59,13 +59,13 @@ namespace Mistral.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.JudgeClassificationOutput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.JudgeClassificationOutput?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.JudgeClassificationOutput).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Classification, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Classification!, typeInfo);
             }
             else if (value.IsRegression)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.JudgeRegressionOutput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.JudgeRegressionOutput?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.JudgeRegressionOutput).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Regression, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Regression!, typeInfo);
             }
         }
     }
