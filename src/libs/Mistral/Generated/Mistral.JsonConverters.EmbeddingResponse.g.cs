@@ -39,7 +39,7 @@ namespace Mistral.JsonConverters
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
 
             global::Mistral.ResponseBase? responseBase = default;
-            global::Mistral.EmbeddingResponseVariant2? value2 = default;
+            global::Mistral.EmbeddingResponseVariant2? embeddingResponseVariant2 = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -63,7 +63,7 @@ namespace Mistral.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.EmbeddingResponseVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.EmbeddingResponseVariant2> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.EmbeddingResponseVariant2).Name}");
-                        value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        embeddingResponseVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -74,7 +74,7 @@ namespace Mistral.JsonConverters
                 }
             }
 
-            if (responseBase == null && value2 == null)
+            if (responseBase == null && embeddingResponseVariant2 == null)
             {
                 try
                 {
@@ -93,7 +93,7 @@ namespace Mistral.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.EmbeddingResponseVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.EmbeddingResponseVariant2> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.EmbeddingResponseVariant2).Name}");
-                    value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    embeddingResponseVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -106,7 +106,7 @@ namespace Mistral.JsonConverters
             var __value = new global::Mistral.EmbeddingResponse(
                 responseBase,
 
-                value2
+                embeddingResponseVariant2
                 );
 
             return __value;
@@ -127,11 +127,11 @@ namespace Mistral.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.ResponseBase).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseBase!, typeInfo);
             }
-            else if (value.IsValue2)
+            else if (value.IsEmbeddingResponseVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.EmbeddingResponseVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.EmbeddingResponseVariant2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.EmbeddingResponseVariant2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.EmbeddingResponseVariant2!, typeInfo);
             }
         }
     }

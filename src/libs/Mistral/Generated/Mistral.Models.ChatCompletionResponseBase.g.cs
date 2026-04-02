@@ -30,18 +30,18 @@ namespace Mistral
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Mistral.ChatCompletionResponseBaseChatCompletionResponseBase1? Value2 { get; init; }
+        public global::Mistral.ChatCompletionResponseBaseChatCompletionResponseBase1? Base1 { get; init; }
 #else
-        public global::Mistral.ChatCompletionResponseBaseChatCompletionResponseBase1? Value2 { get; }
+        public global::Mistral.ChatCompletionResponseBaseChatCompletionResponseBase1? Base1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Base1))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsBase1 => Base1 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -68,14 +68,14 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Mistral.ChatCompletionResponseBaseChatCompletionResponseBase1?(ChatCompletionResponseBase @this) => @this.Value2;
+        public static implicit operator global::Mistral.ChatCompletionResponseBaseChatCompletionResponseBase1?(ChatCompletionResponseBase @this) => @this.Base1;
 
         /// <summary>
         /// 
         /// </summary>
         public ChatCompletionResponseBase(global::Mistral.ChatCompletionResponseBaseChatCompletionResponseBase1? value)
         {
-            Value2 = value;
+            Base1 = value;
         }
 
         /// <summary>
@@ -83,18 +83,18 @@ namespace Mistral
         /// </summary>
         public ChatCompletionResponseBase(
             global::Mistral.ResponseBase? responseBase,
-            global::Mistral.ChatCompletionResponseBaseChatCompletionResponseBase1? value2
+            global::Mistral.ChatCompletionResponseBaseChatCompletionResponseBase1? base1
             )
         {
             ResponseBase = responseBase;
-            Value2 = value2;
+            Base1 = base1;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
+            Base1 as object ??
             ResponseBase as object 
             ;
 
@@ -103,7 +103,7 @@ namespace Mistral
         /// </summary>
         public override string? ToString() =>
             ResponseBase?.ToString() ??
-            Value2?.ToString() 
+            Base1?.ToString() 
             ;
 
         /// <summary>
@@ -111,7 +111,7 @@ namespace Mistral
         /// </summary>
         public bool Validate()
         {
-            return IsResponseBase && IsValue2;
+            return IsResponseBase && IsBase1;
         }
 
         /// <summary>
@@ -119,7 +119,7 @@ namespace Mistral
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Mistral.ResponseBase?, TResult>? responseBase = null,
-            global::System.Func<global::Mistral.ChatCompletionResponseBaseChatCompletionResponseBase1?, TResult>? value2 = null,
+            global::System.Func<global::Mistral.ChatCompletionResponseBaseChatCompletionResponseBase1?, TResult>? base1 = null,
             bool validate = true)
         {
             if (validate)
@@ -131,9 +131,9 @@ namespace Mistral
             {
                 return responseBase(ResponseBase!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsBase1 && base1 != null)
             {
-                return value2(Value2!);
+                return base1(Base1!);
             }
 
             return default(TResult);
@@ -144,7 +144,7 @@ namespace Mistral
         /// </summary>
         public void Match(
             global::System.Action<global::Mistral.ResponseBase?>? responseBase = null,
-            global::System.Action<global::Mistral.ChatCompletionResponseBaseChatCompletionResponseBase1?>? value2 = null,
+            global::System.Action<global::Mistral.ChatCompletionResponseBaseChatCompletionResponseBase1?>? base1 = null,
             bool validate = true)
         {
             if (validate)
@@ -156,9 +156,9 @@ namespace Mistral
             {
                 responseBase?.Invoke(ResponseBase!);
             }
-            else if (IsValue2)
+            else if (IsBase1)
             {
-                value2?.Invoke(Value2!);
+                base1?.Invoke(Base1!);
             }
         }
 
@@ -171,7 +171,7 @@ namespace Mistral
             {
                 ResponseBase,
                 typeof(global::Mistral.ResponseBase),
-                Value2,
+                Base1,
                 typeof(global::Mistral.ChatCompletionResponseBaseChatCompletionResponseBase1),
             };
             const int offset = unchecked((int)2166136261);
@@ -190,7 +190,7 @@ namespace Mistral
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Mistral.ResponseBase?>.Default.Equals(ResponseBase, other.ResponseBase) &&
-                global::System.Collections.Generic.EqualityComparer<global::Mistral.ChatCompletionResponseBaseChatCompletionResponseBase1?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::Mistral.ChatCompletionResponseBaseChatCompletionResponseBase1?>.Default.Equals(Base1, other.Base1) 
                 ;
         }
 

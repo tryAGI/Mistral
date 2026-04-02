@@ -13,35 +13,35 @@ namespace Mistral
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Mistral.ConversationAppendRequestBase? Value1 { get; init; }
+        public global::Mistral.ConversationAppendRequestBase? Base { get; init; }
 #else
-        public global::Mistral.ConversationAppendRequestBase? Value1 { get; }
+        public global::Mistral.ConversationAppendRequestBase? Base { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Base))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsBase => Base != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Mistral.ConversationAppendRequestVariant2? Value2 { get; init; }
+        public global::Mistral.ConversationAppendRequestVariant2? ConversationAppendRequestVariant2 { get; init; }
 #else
-        public global::Mistral.ConversationAppendRequestVariant2? Value2 { get; }
+        public global::Mistral.ConversationAppendRequestVariant2? ConversationAppendRequestVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ConversationAppendRequestVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsConversationAppendRequestVariant2 => ConversationAppendRequestVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -50,14 +50,14 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Mistral.ConversationAppendRequestBase?(ConversationAppendRequest @this) => @this.Value1;
+        public static implicit operator global::Mistral.ConversationAppendRequestBase?(ConversationAppendRequest @this) => @this.Base;
 
         /// <summary>
         /// 
         /// </summary>
         public ConversationAppendRequest(global::Mistral.ConversationAppendRequestBase? value)
         {
-            Value1 = value;
+            Base = value;
         }
 
         /// <summary>
@@ -68,42 +68,42 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Mistral.ConversationAppendRequestVariant2?(ConversationAppendRequest @this) => @this.Value2;
+        public static implicit operator global::Mistral.ConversationAppendRequestVariant2?(ConversationAppendRequest @this) => @this.ConversationAppendRequestVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public ConversationAppendRequest(global::Mistral.ConversationAppendRequestVariant2? value)
         {
-            Value2 = value;
+            ConversationAppendRequestVariant2 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public ConversationAppendRequest(
-            global::Mistral.ConversationAppendRequestBase? value1,
-            global::Mistral.ConversationAppendRequestVariant2? value2
+            global::Mistral.ConversationAppendRequestBase? @base,
+            global::Mistral.ConversationAppendRequestVariant2? conversationAppendRequestVariant2
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            Base = @base;
+            ConversationAppendRequestVariant2 = conversationAppendRequestVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            ConversationAppendRequestVariant2 as object ??
+            Base as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            Base?.ToString() ??
+            ConversationAppendRequestVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -111,15 +111,15 @@ namespace Mistral
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && IsValue2;
+            return IsBase && IsConversationAppendRequestVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Mistral.ConversationAppendRequestBase?, TResult>? value1 = null,
-            global::System.Func<global::Mistral.ConversationAppendRequestVariant2?, TResult>? value2 = null,
+            global::System.Func<global::Mistral.ConversationAppendRequestBase?, TResult>? @base = null,
+            global::System.Func<global::Mistral.ConversationAppendRequestVariant2?, TResult>? conversationAppendRequestVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -127,13 +127,13 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsBase && @base != null)
             {
-                return value1(Value1!);
+                return @base(Base!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsConversationAppendRequestVariant2 && conversationAppendRequestVariant2 != null)
             {
-                return value2(Value2!);
+                return conversationAppendRequestVariant2(ConversationAppendRequestVariant2!);
             }
 
             return default(TResult);
@@ -143,8 +143,8 @@ namespace Mistral
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Mistral.ConversationAppendRequestBase?>? value1 = null,
-            global::System.Action<global::Mistral.ConversationAppendRequestVariant2?>? value2 = null,
+            global::System.Action<global::Mistral.ConversationAppendRequestBase?>? @base = null,
+            global::System.Action<global::Mistral.ConversationAppendRequestVariant2?>? conversationAppendRequestVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -152,13 +152,13 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsBase)
             {
-                value1?.Invoke(Value1!);
+                @base?.Invoke(Base!);
             }
-            else if (IsValue2)
+            else if (IsConversationAppendRequestVariant2)
             {
-                value2?.Invoke(Value2!);
+                conversationAppendRequestVariant2?.Invoke(ConversationAppendRequestVariant2!);
             }
         }
 
@@ -169,9 +169,9 @@ namespace Mistral
         {
             var fields = new object?[]
             {
-                Value1,
+                Base,
                 typeof(global::Mistral.ConversationAppendRequestBase),
-                Value2,
+                ConversationAppendRequestVariant2,
                 typeof(global::Mistral.ConversationAppendRequestVariant2),
             };
             const int offset = unchecked((int)2166136261);
@@ -189,8 +189,8 @@ namespace Mistral
         public bool Equals(ConversationAppendRequest other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Mistral.ConversationAppendRequestBase?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::Mistral.ConversationAppendRequestVariant2?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::Mistral.ConversationAppendRequestBase?>.Default.Equals(Base, other.Base) &&
+                global::System.Collections.Generic.EqualityComparer<global::Mistral.ConversationAppendRequestVariant2?>.Default.Equals(ConversationAppendRequestVariant2, other.ConversationAppendRequestVariant2) 
                 ;
         }
 

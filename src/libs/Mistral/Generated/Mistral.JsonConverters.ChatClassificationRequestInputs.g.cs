@@ -35,7 +35,7 @@ namespace Mistral.JsonConverters
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
 
             global::Mistral.InstructRequest? instructRequest = default;
-            global::System.Collections.Generic.IList<global::Mistral.InstructRequest>? value2 = default;
+            global::System.Collections.Generic.IList<global::Mistral.InstructRequest>? chatClassificationRequestInputsVariant2 = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -59,7 +59,7 @@ namespace Mistral.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<global::Mistral.InstructRequest>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<global::Mistral.InstructRequest>> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<global::Mistral.InstructRequest>).Name}");
-                        value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        chatClassificationRequestInputsVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -70,7 +70,7 @@ namespace Mistral.JsonConverters
                 }
             }
 
-            if (instructRequest == null && value2 == null)
+            if (instructRequest == null && chatClassificationRequestInputsVariant2 == null)
             {
                 try
                 {
@@ -89,7 +89,7 @@ namespace Mistral.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<global::Mistral.InstructRequest>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<global::Mistral.InstructRequest>> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<global::Mistral.InstructRequest>).Name}");
-                    value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    chatClassificationRequestInputsVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -102,7 +102,7 @@ namespace Mistral.JsonConverters
             var __value = new global::Mistral.ChatClassificationRequestInputs(
                 instructRequest,
 
-                value2
+                chatClassificationRequestInputsVariant2
                 );
 
             return __value;
@@ -123,11 +123,11 @@ namespace Mistral.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.InstructRequest).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.InstructRequest!, typeInfo);
             }
-            else if (value.IsValue2)
+            else if (value.IsChatClassificationRequestInputsVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<global::Mistral.InstructRequest>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<global::Mistral.InstructRequest>?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<global::Mistral.InstructRequest>).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatClassificationRequestInputsVariant2!, typeInfo);
             }
         }
     }

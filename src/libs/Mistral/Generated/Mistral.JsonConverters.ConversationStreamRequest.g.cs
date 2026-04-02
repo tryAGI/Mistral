@@ -49,7 +49,7 @@ namespace Mistral.JsonConverters
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
 
             global::Mistral.ConversationRequestBase? conversationRequest = default;
-            global::Mistral.ConversationStreamRequestVariant2? value2 = default;
+            global::Mistral.ConversationStreamRequestVariant2? conversationStreamRequestVariant2 = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -73,7 +73,7 @@ namespace Mistral.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.ConversationStreamRequestVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.ConversationStreamRequestVariant2> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.ConversationStreamRequestVariant2).Name}");
-                        value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        conversationStreamRequestVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -84,7 +84,7 @@ namespace Mistral.JsonConverters
                 }
             }
 
-            if (conversationRequest == null && value2 == null)
+            if (conversationRequest == null && conversationStreamRequestVariant2 == null)
             {
                 try
                 {
@@ -103,7 +103,7 @@ namespace Mistral.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.ConversationStreamRequestVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.ConversationStreamRequestVariant2> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.ConversationStreamRequestVariant2).Name}");
-                    value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    conversationStreamRequestVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -116,7 +116,7 @@ namespace Mistral.JsonConverters
             var __value = new global::Mistral.ConversationStreamRequest(
                 conversationRequest,
 
-                value2
+                conversationStreamRequestVariant2
                 );
 
             return __value;
@@ -137,11 +137,11 @@ namespace Mistral.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.ConversationRequestBase).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.ConversationRequest!, typeInfo);
             }
-            else if (value.IsValue2)
+            else if (value.IsConversationStreamRequestVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.ConversationStreamRequestVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.ConversationStreamRequestVariant2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.ConversationStreamRequestVariant2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ConversationStreamRequestVariant2!, typeInfo);
             }
         }
     }
