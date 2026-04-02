@@ -13,18 +13,18 @@ namespace Mistral
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value1 { get; init; }
+        public string? ConversationInputsVariant1 { get; init; }
 #else
-        public string? Value1 { get; }
+        public string? ConversationInputsVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ConversationInputsVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsConversationInputsVariant1 => ConversationInputsVariant1 != null;
 
         /// <summary>
         /// 
@@ -50,25 +50,25 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator string?(ConversationInputs @this) => @this.Value1;
+        public static implicit operator string?(ConversationInputs @this) => @this.ConversationInputsVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public ConversationInputs(string? value)
         {
-            Value1 = value;
+            ConversationInputsVariant1 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public ConversationInputs(
-            string? value1,
+            string? conversationInputsVariant1,
             global::System.Collections.Generic.IList<global::Mistral.AnyOf<global::Mistral.MessageInputEntry, global::Mistral.MessageOutputEntry, global::Mistral.FunctionResultEntry, global::Mistral.FunctionCallEntry, global::Mistral.ToolExecutionEntry, global::Mistral.AgentHandoffEntry>>? inputEntries
             )
         {
-            Value1 = value1;
+            ConversationInputsVariant1 = conversationInputsVariant1;
             InputEntries = inputEntries;
         }
 
@@ -77,14 +77,14 @@ namespace Mistral
         /// </summary>
         public object? Object =>
             InputEntries as object ??
-            Value1 as object 
+            ConversationInputsVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
+            ConversationInputsVariant1?.ToString() ??
             InputEntries?.ToString() 
             ;
 
@@ -93,14 +93,14 @@ namespace Mistral
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 || IsInputEntries;
+            return IsConversationInputsVariant1 || IsInputEntries;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? value1 = null,
+            global::System.Func<string?, TResult>? conversationInputsVariant1 = null,
             global::System.Func<global::System.Collections.Generic.IList<global::Mistral.AnyOf<global::Mistral.MessageInputEntry, global::Mistral.MessageOutputEntry, global::Mistral.FunctionResultEntry, global::Mistral.FunctionCallEntry, global::Mistral.ToolExecutionEntry, global::Mistral.AgentHandoffEntry>>?, TResult>? inputEntries = null,
             bool validate = true)
         {
@@ -109,9 +109,9 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsConversationInputsVariant1 && conversationInputsVariant1 != null)
             {
-                return value1(Value1!);
+                return conversationInputsVariant1(ConversationInputsVariant1!);
             }
             else if (IsInputEntries && inputEntries != null)
             {
@@ -125,7 +125,7 @@ namespace Mistral
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? value1 = null,
+            global::System.Action<string?>? conversationInputsVariant1 = null,
             global::System.Action<global::System.Collections.Generic.IList<global::Mistral.AnyOf<global::Mistral.MessageInputEntry, global::Mistral.MessageOutputEntry, global::Mistral.FunctionResultEntry, global::Mistral.FunctionCallEntry, global::Mistral.ToolExecutionEntry, global::Mistral.AgentHandoffEntry>>?>? inputEntries = null,
             bool validate = true)
         {
@@ -134,9 +134,9 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsConversationInputsVariant1)
             {
-                value1?.Invoke(Value1!);
+                conversationInputsVariant1?.Invoke(ConversationInputsVariant1!);
             }
             else if (IsInputEntries)
             {
@@ -151,7 +151,7 @@ namespace Mistral
         {
             var fields = new object?[]
             {
-                Value1,
+                ConversationInputsVariant1,
                 typeof(string),
                 InputEntries,
                 typeof(global::System.Collections.Generic.IList<global::Mistral.AnyOf<global::Mistral.MessageInputEntry, global::Mistral.MessageOutputEntry, global::Mistral.FunctionResultEntry, global::Mistral.FunctionCallEntry, global::Mistral.ToolExecutionEntry, global::Mistral.AgentHandoffEntry>>),
@@ -171,7 +171,7 @@ namespace Mistral
         public bool Equals(ConversationInputs other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value1, other.Value1) &&
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(ConversationInputsVariant1, other.ConversationInputsVariant1) &&
                 global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::Mistral.AnyOf<global::Mistral.MessageInputEntry, global::Mistral.MessageOutputEntry, global::Mistral.FunctionResultEntry, global::Mistral.FunctionCallEntry, global::Mistral.ToolExecutionEntry, global::Mistral.AgentHandoffEntry>>?>.Default.Equals(InputEntries, other.InputEntries) 
                 ;
         }

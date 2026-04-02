@@ -30,18 +30,18 @@ namespace Mistral
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Mistral.EmbeddingResponseVariant2? Value2 { get; init; }
+        public global::Mistral.EmbeddingResponseVariant2? EmbeddingResponseVariant2 { get; init; }
 #else
-        public global::Mistral.EmbeddingResponseVariant2? Value2 { get; }
+        public global::Mistral.EmbeddingResponseVariant2? EmbeddingResponseVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EmbeddingResponseVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsEmbeddingResponseVariant2 => EmbeddingResponseVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -68,14 +68,14 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Mistral.EmbeddingResponseVariant2?(EmbeddingResponse @this) => @this.Value2;
+        public static implicit operator global::Mistral.EmbeddingResponseVariant2?(EmbeddingResponse @this) => @this.EmbeddingResponseVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public EmbeddingResponse(global::Mistral.EmbeddingResponseVariant2? value)
         {
-            Value2 = value;
+            EmbeddingResponseVariant2 = value;
         }
 
         /// <summary>
@@ -83,18 +83,18 @@ namespace Mistral
         /// </summary>
         public EmbeddingResponse(
             global::Mistral.ResponseBase? responseBase,
-            global::Mistral.EmbeddingResponseVariant2? value2
+            global::Mistral.EmbeddingResponseVariant2? embeddingResponseVariant2
             )
         {
             ResponseBase = responseBase;
-            Value2 = value2;
+            EmbeddingResponseVariant2 = embeddingResponseVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
+            EmbeddingResponseVariant2 as object ??
             ResponseBase as object 
             ;
 
@@ -103,7 +103,7 @@ namespace Mistral
         /// </summary>
         public override string? ToString() =>
             ResponseBase?.ToString() ??
-            Value2?.ToString() 
+            EmbeddingResponseVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -111,7 +111,7 @@ namespace Mistral
         /// </summary>
         public bool Validate()
         {
-            return IsResponseBase && IsValue2;
+            return IsResponseBase && IsEmbeddingResponseVariant2;
         }
 
         /// <summary>
@@ -119,7 +119,7 @@ namespace Mistral
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Mistral.ResponseBase?, TResult>? responseBase = null,
-            global::System.Func<global::Mistral.EmbeddingResponseVariant2?, TResult>? value2 = null,
+            global::System.Func<global::Mistral.EmbeddingResponseVariant2?, TResult>? embeddingResponseVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -131,9 +131,9 @@ namespace Mistral
             {
                 return responseBase(ResponseBase!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsEmbeddingResponseVariant2 && embeddingResponseVariant2 != null)
             {
-                return value2(Value2!);
+                return embeddingResponseVariant2(EmbeddingResponseVariant2!);
             }
 
             return default(TResult);
@@ -144,7 +144,7 @@ namespace Mistral
         /// </summary>
         public void Match(
             global::System.Action<global::Mistral.ResponseBase?>? responseBase = null,
-            global::System.Action<global::Mistral.EmbeddingResponseVariant2?>? value2 = null,
+            global::System.Action<global::Mistral.EmbeddingResponseVariant2?>? embeddingResponseVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -156,9 +156,9 @@ namespace Mistral
             {
                 responseBase?.Invoke(ResponseBase!);
             }
-            else if (IsValue2)
+            else if (IsEmbeddingResponseVariant2)
             {
-                value2?.Invoke(Value2!);
+                embeddingResponseVariant2?.Invoke(EmbeddingResponseVariant2!);
             }
         }
 
@@ -171,7 +171,7 @@ namespace Mistral
             {
                 ResponseBase,
                 typeof(global::Mistral.ResponseBase),
-                Value2,
+                EmbeddingResponseVariant2,
                 typeof(global::Mistral.EmbeddingResponseVariant2),
             };
             const int offset = unchecked((int)2166136261);
@@ -190,7 +190,7 @@ namespace Mistral
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Mistral.ResponseBase?>.Default.Equals(ResponseBase, other.ResponseBase) &&
-                global::System.Collections.Generic.EqualityComparer<global::Mistral.EmbeddingResponseVariant2?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::Mistral.EmbeddingResponseVariant2?>.Default.Equals(EmbeddingResponseVariant2, other.EmbeddingResponseVariant2) 
                 ;
         }
 

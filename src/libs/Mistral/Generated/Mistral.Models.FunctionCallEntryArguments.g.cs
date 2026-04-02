@@ -13,35 +13,35 @@ namespace Mistral
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public object? Value1 { get; init; }
+        public object? FunctionCallEntryArgumentsVariant1 { get; init; }
 #else
-        public object? Value1 { get; }
+        public object? FunctionCallEntryArgumentsVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FunctionCallEntryArgumentsVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsFunctionCallEntryArgumentsVariant1 => FunctionCallEntryArgumentsVariant1 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value2 { get; init; }
+        public string? FunctionCallEntryArgumentsVariant2 { get; init; }
 #else
-        public string? Value2 { get; }
+        public string? FunctionCallEntryArgumentsVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FunctionCallEntryArgumentsVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsFunctionCallEntryArgumentsVariant2 => FunctionCallEntryArgumentsVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -50,42 +50,42 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator string?(FunctionCallEntryArguments @this) => @this.Value2;
+        public static implicit operator string?(FunctionCallEntryArguments @this) => @this.FunctionCallEntryArgumentsVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public FunctionCallEntryArguments(string? value)
         {
-            Value2 = value;
+            FunctionCallEntryArgumentsVariant2 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public FunctionCallEntryArguments(
-            object? value1,
-            string? value2
+            object? functionCallEntryArgumentsVariant1,
+            string? functionCallEntryArgumentsVariant2
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            FunctionCallEntryArgumentsVariant1 = functionCallEntryArgumentsVariant1;
+            FunctionCallEntryArgumentsVariant2 = functionCallEntryArgumentsVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            FunctionCallEntryArgumentsVariant2 as object ??
+            FunctionCallEntryArgumentsVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            FunctionCallEntryArgumentsVariant1?.ToString() ??
+            FunctionCallEntryArgumentsVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -93,15 +93,15 @@ namespace Mistral
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 || IsValue2;
+            return IsFunctionCallEntryArgumentsVariant1 || IsFunctionCallEntryArgumentsVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<object?, TResult>? value1 = null,
-            global::System.Func<string?, TResult>? value2 = null,
+            global::System.Func<object?, TResult>? functionCallEntryArgumentsVariant1 = null,
+            global::System.Func<string?, TResult>? functionCallEntryArgumentsVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -109,13 +109,13 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsFunctionCallEntryArgumentsVariant1 && functionCallEntryArgumentsVariant1 != null)
             {
-                return value1(Value1!);
+                return functionCallEntryArgumentsVariant1(FunctionCallEntryArgumentsVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsFunctionCallEntryArgumentsVariant2 && functionCallEntryArgumentsVariant2 != null)
             {
-                return value2(Value2!);
+                return functionCallEntryArgumentsVariant2(FunctionCallEntryArgumentsVariant2!);
             }
 
             return default(TResult);
@@ -125,8 +125,8 @@ namespace Mistral
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<object?>? value1 = null,
-            global::System.Action<string?>? value2 = null,
+            global::System.Action<object?>? functionCallEntryArgumentsVariant1 = null,
+            global::System.Action<string?>? functionCallEntryArgumentsVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -134,13 +134,13 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsFunctionCallEntryArgumentsVariant1)
             {
-                value1?.Invoke(Value1!);
+                functionCallEntryArgumentsVariant1?.Invoke(FunctionCallEntryArgumentsVariant1!);
             }
-            else if (IsValue2)
+            else if (IsFunctionCallEntryArgumentsVariant2)
             {
-                value2?.Invoke(Value2!);
+                functionCallEntryArgumentsVariant2?.Invoke(FunctionCallEntryArgumentsVariant2!);
             }
         }
 
@@ -151,9 +151,9 @@ namespace Mistral
         {
             var fields = new object?[]
             {
-                Value1,
+                FunctionCallEntryArgumentsVariant1,
                 typeof(object),
-                Value2,
+                FunctionCallEntryArgumentsVariant2,
                 typeof(string),
             };
             const int offset = unchecked((int)2166136261);
@@ -171,8 +171,8 @@ namespace Mistral
         public bool Equals(FunctionCallEntryArguments other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(FunctionCallEntryArgumentsVariant1, other.FunctionCallEntryArgumentsVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(FunctionCallEntryArgumentsVariant2, other.FunctionCallEntryArgumentsVariant2) 
                 ;
         }
 

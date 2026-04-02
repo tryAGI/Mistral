@@ -13,35 +13,35 @@ namespace Mistral
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Mistral.ConversationRequestBase? Value1 { get; init; }
+        public global::Mistral.ConversationRequestBase? Base { get; init; }
 #else
-        public global::Mistral.ConversationRequestBase? Value1 { get; }
+        public global::Mistral.ConversationRequestBase? Base { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Base))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsBase => Base != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Mistral.ConversationRequestVariant2? Value2 { get; init; }
+        public global::Mistral.ConversationRequestVariant2? ConversationRequestVariant2 { get; init; }
 #else
-        public global::Mistral.ConversationRequestVariant2? Value2 { get; }
+        public global::Mistral.ConversationRequestVariant2? ConversationRequestVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ConversationRequestVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsConversationRequestVariant2 => ConversationRequestVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -50,14 +50,14 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Mistral.ConversationRequestBase?(ConversationRequest @this) => @this.Value1;
+        public static implicit operator global::Mistral.ConversationRequestBase?(ConversationRequest @this) => @this.Base;
 
         /// <summary>
         /// 
         /// </summary>
         public ConversationRequest(global::Mistral.ConversationRequestBase? value)
         {
-            Value1 = value;
+            Base = value;
         }
 
         /// <summary>
@@ -68,42 +68,42 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Mistral.ConversationRequestVariant2?(ConversationRequest @this) => @this.Value2;
+        public static implicit operator global::Mistral.ConversationRequestVariant2?(ConversationRequest @this) => @this.ConversationRequestVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public ConversationRequest(global::Mistral.ConversationRequestVariant2? value)
         {
-            Value2 = value;
+            ConversationRequestVariant2 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public ConversationRequest(
-            global::Mistral.ConversationRequestBase? value1,
-            global::Mistral.ConversationRequestVariant2? value2
+            global::Mistral.ConversationRequestBase? @base,
+            global::Mistral.ConversationRequestVariant2? conversationRequestVariant2
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            Base = @base;
+            ConversationRequestVariant2 = conversationRequestVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            ConversationRequestVariant2 as object ??
+            Base as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            Base?.ToString() ??
+            ConversationRequestVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -111,15 +111,15 @@ namespace Mistral
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && IsValue2;
+            return IsBase && IsConversationRequestVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Mistral.ConversationRequestBase?, TResult>? value1 = null,
-            global::System.Func<global::Mistral.ConversationRequestVariant2?, TResult>? value2 = null,
+            global::System.Func<global::Mistral.ConversationRequestBase?, TResult>? @base = null,
+            global::System.Func<global::Mistral.ConversationRequestVariant2?, TResult>? conversationRequestVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -127,13 +127,13 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsBase && @base != null)
             {
-                return value1(Value1!);
+                return @base(Base!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsConversationRequestVariant2 && conversationRequestVariant2 != null)
             {
-                return value2(Value2!);
+                return conversationRequestVariant2(ConversationRequestVariant2!);
             }
 
             return default(TResult);
@@ -143,8 +143,8 @@ namespace Mistral
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Mistral.ConversationRequestBase?>? value1 = null,
-            global::System.Action<global::Mistral.ConversationRequestVariant2?>? value2 = null,
+            global::System.Action<global::Mistral.ConversationRequestBase?>? @base = null,
+            global::System.Action<global::Mistral.ConversationRequestVariant2?>? conversationRequestVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -152,13 +152,13 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsBase)
             {
-                value1?.Invoke(Value1!);
+                @base?.Invoke(Base!);
             }
-            else if (IsValue2)
+            else if (IsConversationRequestVariant2)
             {
-                value2?.Invoke(Value2!);
+                conversationRequestVariant2?.Invoke(ConversationRequestVariant2!);
             }
         }
 
@@ -169,9 +169,9 @@ namespace Mistral
         {
             var fields = new object?[]
             {
-                Value1,
+                Base,
                 typeof(global::Mistral.ConversationRequestBase),
-                Value2,
+                ConversationRequestVariant2,
                 typeof(global::Mistral.ConversationRequestVariant2),
             };
             const int offset = unchecked((int)2166136261);
@@ -189,8 +189,8 @@ namespace Mistral
         public bool Equals(ConversationRequest other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Mistral.ConversationRequestBase?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::Mistral.ConversationRequestVariant2?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::Mistral.ConversationRequestBase?>.Default.Equals(Base, other.Base) &&
+                global::System.Collections.Generic.EqualityComparer<global::Mistral.ConversationRequestVariant2?>.Default.Equals(ConversationRequestVariant2, other.ConversationRequestVariant2) 
                 ;
         }
 

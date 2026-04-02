@@ -41,7 +41,7 @@ namespace Mistral.JsonConverters
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
 
             global::Mistral.ConversationAppendRequestBase? conversationAppendRequest = default;
-            global::Mistral.ConversationAppendStreamRequestVariant2? value2 = default;
+            global::Mistral.ConversationAppendStreamRequestVariant2? conversationAppendStreamRequestVariant2 = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -65,7 +65,7 @@ namespace Mistral.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.ConversationAppendStreamRequestVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.ConversationAppendStreamRequestVariant2> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.ConversationAppendStreamRequestVariant2).Name}");
-                        value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        conversationAppendStreamRequestVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -76,7 +76,7 @@ namespace Mistral.JsonConverters
                 }
             }
 
-            if (conversationAppendRequest == null && value2 == null)
+            if (conversationAppendRequest == null && conversationAppendStreamRequestVariant2 == null)
             {
                 try
                 {
@@ -95,7 +95,7 @@ namespace Mistral.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.ConversationAppendStreamRequestVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.ConversationAppendStreamRequestVariant2> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.ConversationAppendStreamRequestVariant2).Name}");
-                    value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    conversationAppendStreamRequestVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -108,7 +108,7 @@ namespace Mistral.JsonConverters
             var __value = new global::Mistral.ConversationAppendStreamRequest(
                 conversationAppendRequest,
 
-                value2
+                conversationAppendStreamRequestVariant2
                 );
 
             return __value;
@@ -129,11 +129,11 @@ namespace Mistral.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.ConversationAppendRequestBase).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.ConversationAppendRequest!, typeInfo);
             }
-            else if (value.IsValue2)
+            else if (value.IsConversationAppendStreamRequestVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.ConversationAppendStreamRequestVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.ConversationAppendStreamRequestVariant2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.ConversationAppendStreamRequestVariant2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ConversationAppendStreamRequestVariant2!, typeInfo);
             }
         }
     }
