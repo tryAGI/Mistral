@@ -12,21 +12,16 @@ namespace Mistral.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.CompletionJobOutRepositorieDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.CompletionJobOutRepositorieDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.CompletionJobOutRepositorieDiscriminator)}");
-            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.CompletionJobOutRepositorieDiscriminator>(ref readerCopy, options);
 
             global::Mistral.GithubRepositoryOut? github = default;
             if (discriminator?.Type == global::Mistral.CompletionJobOutRepositorieDiscriminatorType.Github)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.GithubRepositoryOut), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.GithubRepositoryOut> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.GithubRepositoryOut)}");
-                github = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                github = global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.GithubRepositoryOut>(ref reader, options);
             }
 
             var __value = new global::Mistral.RepositoriesItem(
@@ -43,14 +38,11 @@ namespace Mistral.JsonConverters
             global::Mistral.RepositoriesItem value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             if (value.IsGithub)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.GithubRepositoryOut), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.GithubRepositoryOut?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.GithubRepositoryOut).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Github!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Github, typeof(global::Mistral.GithubRepositoryOut), options);
             }
         }
     }

@@ -119,7 +119,7 @@ namespace Mistral
                     __response.EnsureSuccessStatusCode();
 
                     return
-                        global::Mistral.FileSignedURL.FromJson(__content, JsonSerializerContext) ??
+                        global::Mistral.FileSignedURL.FromJson(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
@@ -150,7 +150,7 @@ namespace Mistral
                     ).ConfigureAwait(false);
 
                     return
-                        await global::Mistral.FileSignedURL.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                        await global::Mistral.FileSignedURL.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)

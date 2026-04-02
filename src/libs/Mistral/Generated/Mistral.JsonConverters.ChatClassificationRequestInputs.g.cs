@@ -12,8 +12,7 @@ namespace Mistral.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
@@ -42,9 +41,7 @@ namespace Mistral.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.InstructRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.InstructRequest> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.InstructRequest).Name}");
-                        instructRequest = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        instructRequest = global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.InstructRequest>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -57,9 +54,7 @@ namespace Mistral.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<global::Mistral.InstructRequest>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<global::Mistral.InstructRequest>> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<global::Mistral.InstructRequest>).Name}");
-                        chatClassificationRequestInputsVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        chatClassificationRequestInputsVariant2 = global::System.Text.Json.JsonSerializer.Deserialize<global::System.Collections.Generic.IList<global::Mistral.InstructRequest>>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -74,9 +69,7 @@ namespace Mistral.JsonConverters
             {
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.InstructRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.InstructRequest> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.InstructRequest).Name}");
-                    instructRequest = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    instructRequest = global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.InstructRequest>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -87,9 +80,7 @@ namespace Mistral.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<global::Mistral.InstructRequest>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<global::Mistral.InstructRequest>> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<global::Mistral.InstructRequest>).Name}");
-                    chatClassificationRequestInputsVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    chatClassificationRequestInputsVariant2 = global::System.Text.Json.JsonSerializer.Deserialize<global::System.Collections.Generic.IList<global::Mistral.InstructRequest>>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -114,20 +105,15 @@ namespace Mistral.JsonConverters
             global::Mistral.ChatClassificationRequestInputs value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             if (value.IsInstructRequest)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.InstructRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.InstructRequest?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.InstructRequest).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InstructRequest!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InstructRequest, typeof(global::Mistral.InstructRequest), options);
             }
             else if (value.IsChatClassificationRequestInputsVariant2)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<global::Mistral.InstructRequest>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<global::Mistral.InstructRequest>?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<global::Mistral.InstructRequest>).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatClassificationRequestInputsVariant2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatClassificationRequestInputsVariant2, typeof(global::System.Collections.Generic.IList<global::Mistral.InstructRequest>), options);
             }
         }
     }

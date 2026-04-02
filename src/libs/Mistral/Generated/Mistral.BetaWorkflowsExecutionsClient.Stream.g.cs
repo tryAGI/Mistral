@@ -143,7 +143,7 @@ namespace Mistral
                     yield break;
                 }
 
-                var __streamedResponse = global::Mistral.StreamV1WorkflowsExecutionsExecutionIdStreamGetResponse.FromJson(__content, JsonSerializerContext) ??
+                var __streamedResponse = global::Mistral.StreamV1WorkflowsExecutionsExecutionIdStreamGetResponse.FromJson(__content, JsonSerializerOptions) ??
                                        throw new global::Mistral.ApiException(
                                            message: $"Response deserialization failed for \"{__content}\" ",
                                            statusCode: __response.StatusCode)

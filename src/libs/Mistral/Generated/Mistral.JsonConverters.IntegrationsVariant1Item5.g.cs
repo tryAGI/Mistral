@@ -12,21 +12,16 @@ namespace Mistral.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.CompletionDetailedJobOutIntegrationsVariant1ItemDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.CompletionDetailedJobOutIntegrationsVariant1ItemDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.CompletionDetailedJobOutIntegrationsVariant1ItemDiscriminator)}");
-            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.CompletionDetailedJobOutIntegrationsVariant1ItemDiscriminator>(ref readerCopy, options);
 
             global::Mistral.WandbIntegrationOut? wandb = default;
             if (discriminator?.Type == global::Mistral.CompletionDetailedJobOutIntegrationsVariant1ItemDiscriminatorType.Wandb)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.WandbIntegrationOut), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.WandbIntegrationOut> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.WandbIntegrationOut)}");
-                wandb = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                wandb = global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.WandbIntegrationOut>(ref reader, options);
             }
 
             var __value = new global::Mistral.IntegrationsVariant1Item5(
@@ -43,14 +38,11 @@ namespace Mistral.JsonConverters
             global::Mistral.IntegrationsVariant1Item5 value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             if (value.IsWandb)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.WandbIntegrationOut), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.WandbIntegrationOut?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.WandbIntegrationOut).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Wandb!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Wandb, typeof(global::Mistral.WandbIntegrationOut), options);
             }
         }
     }

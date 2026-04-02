@@ -12,28 +12,21 @@ namespace Mistral.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.SpeechStreamEventsDataDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.SpeechStreamEventsDataDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.SpeechStreamEventsDataDiscriminator)}");
-            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.SpeechStreamEventsDataDiscriminator>(ref readerCopy, options);
 
             global::Mistral.SpeechStreamAudioDelta? speechAudioDelta = default;
             if (discriminator?.Type == global::Mistral.SpeechStreamEventsDataDiscriminatorType.SpeechAudioDelta)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.SpeechStreamAudioDelta), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.SpeechStreamAudioDelta> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.SpeechStreamAudioDelta)}");
-                speechAudioDelta = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                speechAudioDelta = global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.SpeechStreamAudioDelta>(ref reader, options);
             }
             global::Mistral.SpeechStreamDone? speechAudioDone = default;
             if (discriminator?.Type == global::Mistral.SpeechStreamEventsDataDiscriminatorType.SpeechAudioDone)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.SpeechStreamDone), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.SpeechStreamDone> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.SpeechStreamDone)}");
-                speechAudioDone = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                speechAudioDone = global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.SpeechStreamDone>(ref reader, options);
             }
 
             var __value = new global::Mistral.Data2(
@@ -52,20 +45,15 @@ namespace Mistral.JsonConverters
             global::Mistral.Data2 value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             if (value.IsSpeechAudioDelta)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.SpeechStreamAudioDelta), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.SpeechStreamAudioDelta?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.SpeechStreamAudioDelta).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SpeechAudioDelta!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SpeechAudioDelta, typeof(global::Mistral.SpeechStreamAudioDelta), options);
             }
             else if (value.IsSpeechAudioDone)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.SpeechStreamDone), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.SpeechStreamDone?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.SpeechStreamDone).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SpeechAudioDone!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SpeechAudioDone, typeof(global::Mistral.SpeechStreamDone), options);
             }
         }
     }

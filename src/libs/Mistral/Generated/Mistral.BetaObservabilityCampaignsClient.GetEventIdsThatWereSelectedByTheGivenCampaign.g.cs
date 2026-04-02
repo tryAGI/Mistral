@@ -115,13 +115,13 @@ namespace Mistral
                     if (ReadResponseAsString)
                     {
                         __content_400 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_400 = global::Mistral.ObservabilityError.FromJson(__content_400, JsonSerializerContext);
+                        __value_400 = global::Mistral.ObservabilityError.FromJson(__content_400, JsonSerializerOptions);
                     }
                     else
                     {
                         __content_400 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_400 = global::Mistral.ObservabilityError.FromJson(__content_400, JsonSerializerContext);
+                        __value_400 = global::Mistral.ObservabilityError.FromJson(__content_400, JsonSerializerOptions);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -153,13 +153,13 @@ namespace Mistral
                     if (ReadResponseAsString)
                     {
                         __content_404 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_404 = global::Mistral.ObservabilityError.FromJson(__content_404, JsonSerializerContext);
+                        __value_404 = global::Mistral.ObservabilityError.FromJson(__content_404, JsonSerializerOptions);
                     }
                     else
                     {
                         __content_404 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_404 = global::Mistral.ObservabilityError.FromJson(__content_404, JsonSerializerContext);
+                        __value_404 = global::Mistral.ObservabilityError.FromJson(__content_404, JsonSerializerOptions);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -191,13 +191,13 @@ namespace Mistral
                     if (ReadResponseAsString)
                     {
                         __content_408 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_408 = global::Mistral.ObservabilityError.FromJson(__content_408, JsonSerializerContext);
+                        __value_408 = global::Mistral.ObservabilityError.FromJson(__content_408, JsonSerializerOptions);
                     }
                     else
                     {
                         __content_408 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_408 = global::Mistral.ObservabilityError.FromJson(__content_408, JsonSerializerContext);
+                        __value_408 = global::Mistral.ObservabilityError.FromJson(__content_408, JsonSerializerOptions);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -229,13 +229,13 @@ namespace Mistral
                     if (ReadResponseAsString)
                     {
                         __content_409 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_409 = global::Mistral.ObservabilityError.FromJson(__content_409, JsonSerializerContext);
+                        __value_409 = global::Mistral.ObservabilityError.FromJson(__content_409, JsonSerializerOptions);
                     }
                     else
                     {
                         __content_409 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_409 = global::Mistral.ObservabilityError.FromJson(__content_409, JsonSerializerContext);
+                        __value_409 = global::Mistral.ObservabilityError.FromJson(__content_409, JsonSerializerOptions);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -267,13 +267,13 @@ namespace Mistral
                     if (ReadResponseAsString)
                     {
                         __content_422 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_422 = global::Mistral.ObservabilityError.FromJson(__content_422, JsonSerializerContext);
+                        __value_422 = global::Mistral.ObservabilityError.FromJson(__content_422, JsonSerializerOptions);
                     }
                     else
                     {
                         __content_422 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_422 = global::Mistral.ObservabilityError.FromJson(__content_422, JsonSerializerContext);
+                        __value_422 = global::Mistral.ObservabilityError.FromJson(__content_422, JsonSerializerOptions);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -317,7 +317,7 @@ namespace Mistral
                     __response.EnsureSuccessStatusCode();
 
                     return
-                        global::Mistral.CampaignSelectedEvents.FromJson(__content, JsonSerializerContext) ??
+                        global::Mistral.CampaignSelectedEvents.FromJson(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
@@ -348,7 +348,7 @@ namespace Mistral
                     ).ConfigureAwait(false);
 
                     return
-                        await global::Mistral.CampaignSelectedEvents.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                        await global::Mistral.CampaignSelectedEvents.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)

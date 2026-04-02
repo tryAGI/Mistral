@@ -12,28 +12,21 @@ namespace Mistral.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.CustomConnectorAuthorizationVariant1Discriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.CustomConnectorAuthorizationVariant1Discriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.CustomConnectorAuthorizationVariant1Discriminator)}");
-            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.CustomConnectorAuthorizationVariant1Discriminator>(ref readerCopy, options);
 
             global::Mistral.OAuth2TokenAuth? oauth2Token = default;
             if (discriminator?.Type == global::Mistral.CustomConnectorAuthorizationVariant1DiscriminatorType.Oauth2Token)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.OAuth2TokenAuth), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.OAuth2TokenAuth> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.OAuth2TokenAuth)}");
-                oauth2Token = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                oauth2Token = global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.OAuth2TokenAuth>(ref reader, options);
             }
             global::Mistral.APIKeyAuth? apiKey = default;
             if (discriminator?.Type == global::Mistral.CustomConnectorAuthorizationVariant1DiscriminatorType.ApiKey)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.APIKeyAuth), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.APIKeyAuth> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.APIKeyAuth)}");
-                apiKey = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                apiKey = global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.APIKeyAuth>(ref reader, options);
             }
 
             var __value = new global::Mistral.AuthorizationVariant1(
@@ -52,20 +45,15 @@ namespace Mistral.JsonConverters
             global::Mistral.AuthorizationVariant1 value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             if (value.IsOauth2Token)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.OAuth2TokenAuth), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.OAuth2TokenAuth?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.OAuth2TokenAuth).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Oauth2Token!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Oauth2Token, typeof(global::Mistral.OAuth2TokenAuth), options);
             }
             else if (value.IsApiKey)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.APIKeyAuth), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.APIKeyAuth?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.APIKeyAuth).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ApiKey!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ApiKey, typeof(global::Mistral.APIKeyAuth), options);
             }
         }
     }
