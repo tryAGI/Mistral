@@ -12,42 +12,31 @@ namespace Mistral.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.TranscriptionStreamEventsDataDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.TranscriptionStreamEventsDataDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.TranscriptionStreamEventsDataDiscriminator)}");
-            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.TranscriptionStreamEventsDataDiscriminator>(ref readerCopy, options);
 
             global::Mistral.TranscriptionStreamTextDelta? transcriptionTextDelta = default;
             if (discriminator?.Type == global::Mistral.TranscriptionStreamEventsDataDiscriminatorType.TranscriptionTextDelta)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.TranscriptionStreamTextDelta), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.TranscriptionStreamTextDelta> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.TranscriptionStreamTextDelta)}");
-                transcriptionTextDelta = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                transcriptionTextDelta = global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.TranscriptionStreamTextDelta>(ref reader, options);
             }
             global::Mistral.TranscriptionStreamLanguage? transcriptionLanguage = default;
             if (discriminator?.Type == global::Mistral.TranscriptionStreamEventsDataDiscriminatorType.TranscriptionLanguage)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.TranscriptionStreamLanguage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.TranscriptionStreamLanguage> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.TranscriptionStreamLanguage)}");
-                transcriptionLanguage = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                transcriptionLanguage = global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.TranscriptionStreamLanguage>(ref reader, options);
             }
             global::Mistral.TranscriptionStreamSegmentDelta? transcriptionSegment = default;
             if (discriminator?.Type == global::Mistral.TranscriptionStreamEventsDataDiscriminatorType.TranscriptionSegment)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.TranscriptionStreamSegmentDelta), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.TranscriptionStreamSegmentDelta> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.TranscriptionStreamSegmentDelta)}");
-                transcriptionSegment = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                transcriptionSegment = global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.TranscriptionStreamSegmentDelta>(ref reader, options);
             }
             global::Mistral.TranscriptionStreamDone? transcriptionDone = default;
             if (discriminator?.Type == global::Mistral.TranscriptionStreamEventsDataDiscriminatorType.TranscriptionDone)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.TranscriptionStreamDone), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.TranscriptionStreamDone> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.TranscriptionStreamDone)}");
-                transcriptionDone = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                transcriptionDone = global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.TranscriptionStreamDone>(ref reader, options);
             }
 
             var __value = new global::Mistral.Data3(
@@ -70,32 +59,23 @@ namespace Mistral.JsonConverters
             global::Mistral.Data3 value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             if (value.IsTranscriptionTextDelta)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.TranscriptionStreamTextDelta), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.TranscriptionStreamTextDelta?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.TranscriptionStreamTextDelta).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TranscriptionTextDelta!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TranscriptionTextDelta, typeof(global::Mistral.TranscriptionStreamTextDelta), options);
             }
             else if (value.IsTranscriptionLanguage)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.TranscriptionStreamLanguage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.TranscriptionStreamLanguage?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.TranscriptionStreamLanguage).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TranscriptionLanguage!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TranscriptionLanguage, typeof(global::Mistral.TranscriptionStreamLanguage), options);
             }
             else if (value.IsTranscriptionSegment)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.TranscriptionStreamSegmentDelta), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.TranscriptionStreamSegmentDelta?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.TranscriptionStreamSegmentDelta).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TranscriptionSegment!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TranscriptionSegment, typeof(global::Mistral.TranscriptionStreamSegmentDelta), options);
             }
             else if (value.IsTranscriptionDone)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.TranscriptionStreamDone), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.TranscriptionStreamDone?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.TranscriptionStreamDone).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TranscriptionDone!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TranscriptionDone, typeof(global::Mistral.TranscriptionStreamDone), options);
             }
         }
     }

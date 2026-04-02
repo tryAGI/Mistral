@@ -12,8 +12,7 @@ namespace Mistral.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
@@ -48,9 +47,7 @@ namespace Mistral.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.ConversationAppendRequestBase), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.ConversationAppendRequestBase> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.ConversationAppendRequestBase).Name}");
-                        conversationAppendRequest = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        conversationAppendRequest = global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.ConversationAppendRequestBase>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -63,9 +60,7 @@ namespace Mistral.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.ConversationAppendStreamRequestVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.ConversationAppendStreamRequestVariant2> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.ConversationAppendStreamRequestVariant2).Name}");
-                        conversationAppendStreamRequestVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        conversationAppendStreamRequestVariant2 = global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.ConversationAppendStreamRequestVariant2>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -80,9 +75,7 @@ namespace Mistral.JsonConverters
             {
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.ConversationAppendRequestBase), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.ConversationAppendRequestBase> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.ConversationAppendRequestBase).Name}");
-                    conversationAppendRequest = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    conversationAppendRequest = global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.ConversationAppendRequestBase>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -93,9 +86,7 @@ namespace Mistral.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.ConversationAppendStreamRequestVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.ConversationAppendStreamRequestVariant2> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.ConversationAppendStreamRequestVariant2).Name}");
-                    conversationAppendStreamRequestVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    conversationAppendStreamRequestVariant2 = global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.ConversationAppendStreamRequestVariant2>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -120,20 +111,15 @@ namespace Mistral.JsonConverters
             global::Mistral.ConversationAppendStreamRequest value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             if (value.IsConversationAppendRequest)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.ConversationAppendRequestBase), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.ConversationAppendRequestBase?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.ConversationAppendRequestBase).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ConversationAppendRequest!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ConversationAppendRequest, typeof(global::Mistral.ConversationAppendRequestBase), options);
             }
             else if (value.IsConversationAppendStreamRequestVariant2)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.ConversationAppendStreamRequestVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.ConversationAppendStreamRequestVariant2?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.ConversationAppendStreamRequestVariant2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ConversationAppendStreamRequestVariant2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ConversationAppendStreamRequestVariant2, typeof(global::Mistral.ConversationAppendStreamRequestVariant2), options);
             }
         }
     }

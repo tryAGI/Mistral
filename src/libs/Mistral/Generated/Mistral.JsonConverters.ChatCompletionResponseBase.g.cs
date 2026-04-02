@@ -12,8 +12,7 @@ namespace Mistral.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
@@ -46,9 +45,7 @@ namespace Mistral.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.ResponseBase), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.ResponseBase> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.ResponseBase).Name}");
-                        responseBase = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        responseBase = global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.ResponseBase>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -61,9 +58,7 @@ namespace Mistral.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.ChatCompletionResponseBaseChatCompletionResponseBase1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.ChatCompletionResponseBaseChatCompletionResponseBase1> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.ChatCompletionResponseBaseChatCompletionResponseBase1).Name}");
-                        base1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        base1 = global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.ChatCompletionResponseBaseChatCompletionResponseBase1>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -78,9 +73,7 @@ namespace Mistral.JsonConverters
             {
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.ResponseBase), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.ResponseBase> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.ResponseBase).Name}");
-                    responseBase = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    responseBase = global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.ResponseBase>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -91,9 +84,7 @@ namespace Mistral.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.ChatCompletionResponseBaseChatCompletionResponseBase1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.ChatCompletionResponseBaseChatCompletionResponseBase1> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.ChatCompletionResponseBaseChatCompletionResponseBase1).Name}");
-                    base1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    base1 = global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.ChatCompletionResponseBaseChatCompletionResponseBase1>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -118,20 +109,15 @@ namespace Mistral.JsonConverters
             global::Mistral.ChatCompletionResponseBase value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             if (value.IsResponseBase)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.ResponseBase), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.ResponseBase?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.ResponseBase).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseBase!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseBase, typeof(global::Mistral.ResponseBase), options);
             }
             else if (value.IsBase1)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.ChatCompletionResponseBaseChatCompletionResponseBase1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.ChatCompletionResponseBaseChatCompletionResponseBase1?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.ChatCompletionResponseBaseChatCompletionResponseBase1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Base1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Base1, typeof(global::Mistral.ChatCompletionResponseBaseChatCompletionResponseBase1), options);
             }
         }
     }

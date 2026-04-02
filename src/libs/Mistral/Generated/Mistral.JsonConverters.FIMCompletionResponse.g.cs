@@ -12,8 +12,7 @@ namespace Mistral.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
@@ -42,9 +41,7 @@ namespace Mistral.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.ChatCompletionResponse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.ChatCompletionResponse> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.ChatCompletionResponse).Name}");
-                        chat = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        chat = global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.ChatCompletionResponse>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -57,9 +54,7 @@ namespace Mistral.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.FIMCompletionResponseVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.FIMCompletionResponseVariant2> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.FIMCompletionResponseVariant2).Name}");
-                        fIMCompletionResponseVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        fIMCompletionResponseVariant2 = global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.FIMCompletionResponseVariant2>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -74,9 +69,7 @@ namespace Mistral.JsonConverters
             {
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.ChatCompletionResponse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.ChatCompletionResponse> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.ChatCompletionResponse).Name}");
-                    chat = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    chat = global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.ChatCompletionResponse>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -87,9 +80,7 @@ namespace Mistral.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.FIMCompletionResponseVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.FIMCompletionResponseVariant2> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.FIMCompletionResponseVariant2).Name}");
-                    fIMCompletionResponseVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    fIMCompletionResponseVariant2 = global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.FIMCompletionResponseVariant2>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -114,20 +105,15 @@ namespace Mistral.JsonConverters
             global::Mistral.FIMCompletionResponse value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             if (value.IsChat)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.ChatCompletionResponse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.ChatCompletionResponse> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.ChatCompletionResponse).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Chat!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Chat, typeof(global::Mistral.ChatCompletionResponse), options);
             }
             else if (value.IsFIMCompletionResponseVariant2)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.FIMCompletionResponseVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.FIMCompletionResponseVariant2?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.FIMCompletionResponseVariant2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FIMCompletionResponseVariant2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FIMCompletionResponseVariant2, typeof(global::Mistral.FIMCompletionResponseVariant2), options);
             }
         }
     }

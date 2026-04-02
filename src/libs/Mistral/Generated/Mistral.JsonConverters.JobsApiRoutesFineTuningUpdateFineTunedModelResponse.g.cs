@@ -12,28 +12,21 @@ namespace Mistral.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.JobsApiRoutesFineTuningUpdateFineTunedModelResponseDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.JobsApiRoutesFineTuningUpdateFineTunedModelResponseDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.JobsApiRoutesFineTuningUpdateFineTunedModelResponseDiscriminator)}");
-            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.JobsApiRoutesFineTuningUpdateFineTunedModelResponseDiscriminator>(ref readerCopy, options);
 
             global::Mistral.CompletionFTModelOut? completion = default;
             if (discriminator?.ModelType == global::Mistral.JobsApiRoutesFineTuningUpdateFineTunedModelResponseDiscriminatorModelType.Completion)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.CompletionFTModelOut), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.CompletionFTModelOut> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.CompletionFTModelOut)}");
-                completion = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                completion = global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.CompletionFTModelOut>(ref reader, options);
             }
             global::Mistral.ClassifierFTModelOut? classifier = default;
             if (discriminator?.ModelType == global::Mistral.JobsApiRoutesFineTuningUpdateFineTunedModelResponseDiscriminatorModelType.Classifier)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.ClassifierFTModelOut), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.ClassifierFTModelOut> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.ClassifierFTModelOut)}");
-                classifier = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                classifier = global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.ClassifierFTModelOut>(ref reader, options);
             }
 
             var __value = new global::Mistral.JobsApiRoutesFineTuningUpdateFineTunedModelResponse(
@@ -52,20 +45,15 @@ namespace Mistral.JsonConverters
             global::Mistral.JobsApiRoutesFineTuningUpdateFineTunedModelResponse value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             if (value.IsCompletion)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.CompletionFTModelOut), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.CompletionFTModelOut?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.CompletionFTModelOut).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Completion!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Completion, typeof(global::Mistral.CompletionFTModelOut), options);
             }
             else if (value.IsClassifier)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.ClassifierFTModelOut), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.ClassifierFTModelOut?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.ClassifierFTModelOut).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Classifier!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Classifier, typeof(global::Mistral.ClassifierFTModelOut), options);
             }
         }
     }
