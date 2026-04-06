@@ -108,7 +108,7 @@ namespace Mistral
                     __response.EnsureSuccessStatusCode();
 
                     return
-                        global::Mistral.JobsApiRoutesFineTuningCancelFineTuningJobResponse.FromJson(__content, JsonSerializerOptions) ??
+                        global::Mistral.JobsApiRoutesFineTuningCancelFineTuningJobResponse.FromJson(__content, JsonSerializerContext) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
@@ -138,7 +138,7 @@ namespace Mistral
                     ).ConfigureAwait(false);
 
                     return
-                        await global::Mistral.JobsApiRoutesFineTuningCancelFineTuningJobResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                        await global::Mistral.JobsApiRoutesFineTuningCancelFineTuningJobResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)

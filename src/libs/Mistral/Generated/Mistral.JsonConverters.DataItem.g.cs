@@ -12,21 +12,28 @@ namespace Mistral.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
 
             var readerCopy = reader;
-            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.ModelListDataItemDiscriminator>(ref readerCopy, options);
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.ModelListDataItemDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.ModelListDataItemDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.ModelListDataItemDiscriminator)}");
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::Mistral.BaseModelCard? @base = default;
             if (discriminator?.Type == global::Mistral.ModelListDataItemDiscriminatorType.Base)
             {
-                @base = global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.BaseModelCard>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.BaseModelCard), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.BaseModelCard> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.BaseModelCard)}");
+                @base = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::Mistral.FTModelCard? fineTuned = default;
             if (discriminator?.Type == global::Mistral.ModelListDataItemDiscriminatorType.FineTuned)
             {
-                fineTuned = global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.FTModelCard>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.FTModelCard), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.FTModelCard> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.FTModelCard)}");
+                fineTuned = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var __value = new global::Mistral.DataItem(
@@ -45,15 +52,20 @@ namespace Mistral.JsonConverters
             global::Mistral.DataItem value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             if (value.IsBase)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Base, typeof(global::Mistral.BaseModelCard), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.BaseModelCard), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.BaseModelCard?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.BaseModelCard).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Base!, typeInfo);
             }
             else if (value.IsFineTuned)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FineTuned, typeof(global::Mistral.FTModelCard), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.FTModelCard), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.FTModelCard?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.FTModelCard).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FineTuned!, typeInfo);
             }
         }
     }
