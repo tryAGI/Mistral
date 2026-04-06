@@ -12,21 +12,28 @@ namespace Mistral.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
 
             var readerCopy = reader;
-            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.JudgePreviewOutputDiscriminator>(ref readerCopy, options);
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.JudgePreviewOutputDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.JudgePreviewOutputDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.JudgePreviewOutputDiscriminator)}");
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::Mistral.JudgeClassificationOutput? classification = default;
             if (discriminator?.Type == global::Mistral.JudgePreviewOutputDiscriminatorType.Classification)
             {
-                classification = global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.JudgeClassificationOutput>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.JudgeClassificationOutput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.JudgeClassificationOutput> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.JudgeClassificationOutput)}");
+                classification = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::Mistral.JudgeRegressionOutput? regression = default;
             if (discriminator?.Type == global::Mistral.JudgePreviewOutputDiscriminatorType.Regression)
             {
-                regression = global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.JudgeRegressionOutput>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.JudgeRegressionOutput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.JudgeRegressionOutput> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.JudgeRegressionOutput)}");
+                regression = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var __value = new global::Mistral.Output(
@@ -45,15 +52,20 @@ namespace Mistral.JsonConverters
             global::Mistral.Output value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             if (value.IsClassification)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Classification, typeof(global::Mistral.JudgeClassificationOutput), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.JudgeClassificationOutput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.JudgeClassificationOutput?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.JudgeClassificationOutput).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Classification!, typeInfo);
             }
             else if (value.IsRegression)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Regression, typeof(global::Mistral.JudgeRegressionOutput), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.JudgeRegressionOutput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.JudgeRegressionOutput?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.JudgeRegressionOutput).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Regression!, typeInfo);
             }
         }
     }

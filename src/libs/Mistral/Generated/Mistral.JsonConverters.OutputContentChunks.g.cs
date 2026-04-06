@@ -12,7 +12,8 @@ namespace Mistral.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
@@ -73,7 +74,9 @@ namespace Mistral.JsonConverters
                 {
                     try
                     {
-                        textChunk = global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.TextChunk>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.TextChunk), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.TextChunk> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.TextChunk).Name}");
+                        textChunk = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -86,7 +89,9 @@ namespace Mistral.JsonConverters
                 {
                     try
                     {
-                        imageURLChunk = global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.ImageURLChunk>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.ImageURLChunk), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.ImageURLChunk> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.ImageURLChunk).Name}");
+                        imageURLChunk = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -99,7 +104,9 @@ namespace Mistral.JsonConverters
                 {
                     try
                     {
-                        toolFileChunk = global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.ToolFileChunk>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.ToolFileChunk), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.ToolFileChunk> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.ToolFileChunk).Name}");
+                        toolFileChunk = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -112,7 +119,9 @@ namespace Mistral.JsonConverters
                 {
                     try
                     {
-                        documentURLChunk = global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.DocumentURLChunk>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.DocumentURLChunk), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.DocumentURLChunk> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.DocumentURLChunk).Name}");
+                        documentURLChunk = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -125,7 +134,9 @@ namespace Mistral.JsonConverters
                 {
                     try
                     {
-                        thinkChunk = global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.ThinkChunk>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.ThinkChunk), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.ThinkChunk> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.ThinkChunk).Name}");
+                        thinkChunk = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -138,7 +149,9 @@ namespace Mistral.JsonConverters
                 {
                     try
                     {
-                        toolReferenceChunk = global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.ToolReferenceChunk>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.ToolReferenceChunk), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.ToolReferenceChunk> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.ToolReferenceChunk).Name}");
+                        toolReferenceChunk = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -153,7 +166,9 @@ namespace Mistral.JsonConverters
             {
                 try
                 {
-                    textChunk = global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.TextChunk>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.TextChunk), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.TextChunk> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.TextChunk).Name}");
+                    textChunk = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -164,7 +179,9 @@ namespace Mistral.JsonConverters
 
                 try
                 {
-                    imageURLChunk = global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.ImageURLChunk>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.ImageURLChunk), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.ImageURLChunk> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.ImageURLChunk).Name}");
+                    imageURLChunk = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -175,7 +192,9 @@ namespace Mistral.JsonConverters
 
                 try
                 {
-                    toolFileChunk = global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.ToolFileChunk>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.ToolFileChunk), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.ToolFileChunk> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.ToolFileChunk).Name}");
+                    toolFileChunk = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -186,7 +205,9 @@ namespace Mistral.JsonConverters
 
                 try
                 {
-                    documentURLChunk = global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.DocumentURLChunk>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.DocumentURLChunk), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.DocumentURLChunk> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.DocumentURLChunk).Name}");
+                    documentURLChunk = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -197,7 +218,9 @@ namespace Mistral.JsonConverters
 
                 try
                 {
-                    thinkChunk = global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.ThinkChunk>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.ThinkChunk), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.ThinkChunk> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.ThinkChunk).Name}");
+                    thinkChunk = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -208,7 +231,9 @@ namespace Mistral.JsonConverters
 
                 try
                 {
-                    toolReferenceChunk = global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.ToolReferenceChunk>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.ToolReferenceChunk), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.ToolReferenceChunk> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.ToolReferenceChunk).Name}");
+                    toolReferenceChunk = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -241,31 +266,44 @@ namespace Mistral.JsonConverters
             global::Mistral.OutputContentChunks value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             if (value.IsTextChunk)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TextChunk, typeof(global::Mistral.TextChunk), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.TextChunk), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.TextChunk?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.TextChunk).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TextChunk!, typeInfo);
             }
             else if (value.IsImageURLChunk)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ImageURLChunk, typeof(global::Mistral.ImageURLChunk), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.ImageURLChunk), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.ImageURLChunk?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.ImageURLChunk).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ImageURLChunk!, typeInfo);
             }
             else if (value.IsToolFileChunk)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ToolFileChunk, typeof(global::Mistral.ToolFileChunk), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.ToolFileChunk), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.ToolFileChunk?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.ToolFileChunk).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ToolFileChunk!, typeInfo);
             }
             else if (value.IsDocumentURLChunk)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DocumentURLChunk, typeof(global::Mistral.DocumentURLChunk), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.DocumentURLChunk), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.DocumentURLChunk?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.DocumentURLChunk).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DocumentURLChunk!, typeInfo);
             }
             else if (value.IsThinkChunk)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ThinkChunk, typeof(global::Mistral.ThinkChunk), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.ThinkChunk), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.ThinkChunk?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.ThinkChunk).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ThinkChunk!, typeInfo);
             }
             else if (value.IsToolReferenceChunk)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ToolReferenceChunk, typeof(global::Mistral.ToolReferenceChunk), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.ToolReferenceChunk), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.ToolReferenceChunk?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.ToolReferenceChunk).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ToolReferenceChunk!, typeInfo);
             }
         }
     }

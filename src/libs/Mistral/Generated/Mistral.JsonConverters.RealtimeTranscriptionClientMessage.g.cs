@@ -12,31 +12,42 @@ namespace Mistral.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
 
             var readerCopy = reader;
-            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.RealtimeTranscriptionClientMessageDiscriminator>(ref readerCopy, options);
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.RealtimeTranscriptionClientMessageDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.RealtimeTranscriptionClientMessageDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.RealtimeTranscriptionClientMessageDiscriminator)}");
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::Mistral.RealtimeTranscriptionSessionUpdateMessage? sessionUpdate = default;
             if (discriminator?.Type == global::Mistral.RealtimeTranscriptionClientMessageDiscriminatorType.SessionUpdate)
             {
-                sessionUpdate = global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.RealtimeTranscriptionSessionUpdateMessage>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.RealtimeTranscriptionSessionUpdateMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.RealtimeTranscriptionSessionUpdateMessage> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.RealtimeTranscriptionSessionUpdateMessage)}");
+                sessionUpdate = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::Mistral.RealtimeTranscriptionInputAudioAppend? inputAudioAppend = default;
             if (discriminator?.Type == global::Mistral.RealtimeTranscriptionClientMessageDiscriminatorType.InputAudioAppend)
             {
-                inputAudioAppend = global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.RealtimeTranscriptionInputAudioAppend>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.RealtimeTranscriptionInputAudioAppend), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.RealtimeTranscriptionInputAudioAppend> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.RealtimeTranscriptionInputAudioAppend)}");
+                inputAudioAppend = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::Mistral.RealtimeTranscriptionInputAudioFlush? inputAudioFlush = default;
             if (discriminator?.Type == global::Mistral.RealtimeTranscriptionClientMessageDiscriminatorType.InputAudioFlush)
             {
-                inputAudioFlush = global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.RealtimeTranscriptionInputAudioFlush>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.RealtimeTranscriptionInputAudioFlush), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.RealtimeTranscriptionInputAudioFlush> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.RealtimeTranscriptionInputAudioFlush)}");
+                inputAudioFlush = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::Mistral.RealtimeTranscriptionInputAudioEnd? inputAudioEnd = default;
             if (discriminator?.Type == global::Mistral.RealtimeTranscriptionClientMessageDiscriminatorType.InputAudioEnd)
             {
-                inputAudioEnd = global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.RealtimeTranscriptionInputAudioEnd>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.RealtimeTranscriptionInputAudioEnd), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.RealtimeTranscriptionInputAudioEnd> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.RealtimeTranscriptionInputAudioEnd)}");
+                inputAudioEnd = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var __value = new global::Mistral.RealtimeTranscriptionClientMessage(
@@ -59,23 +70,32 @@ namespace Mistral.JsonConverters
             global::Mistral.RealtimeTranscriptionClientMessage value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             if (value.IsSessionUpdate)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SessionUpdate, typeof(global::Mistral.RealtimeTranscriptionSessionUpdateMessage), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.RealtimeTranscriptionSessionUpdateMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.RealtimeTranscriptionSessionUpdateMessage?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.RealtimeTranscriptionSessionUpdateMessage).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SessionUpdate!, typeInfo);
             }
             else if (value.IsInputAudioAppend)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputAudioAppend, typeof(global::Mistral.RealtimeTranscriptionInputAudioAppend), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.RealtimeTranscriptionInputAudioAppend), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.RealtimeTranscriptionInputAudioAppend?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.RealtimeTranscriptionInputAudioAppend).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputAudioAppend!, typeInfo);
             }
             else if (value.IsInputAudioFlush)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputAudioFlush, typeof(global::Mistral.RealtimeTranscriptionInputAudioFlush), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.RealtimeTranscriptionInputAudioFlush), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.RealtimeTranscriptionInputAudioFlush?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.RealtimeTranscriptionInputAudioFlush).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputAudioFlush!, typeInfo);
             }
             else if (value.IsInputAudioEnd)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputAudioEnd, typeof(global::Mistral.RealtimeTranscriptionInputAudioEnd), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.RealtimeTranscriptionInputAudioEnd), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.RealtimeTranscriptionInputAudioEnd?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.RealtimeTranscriptionInputAudioEnd).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputAudioEnd!, typeInfo);
             }
         }
     }

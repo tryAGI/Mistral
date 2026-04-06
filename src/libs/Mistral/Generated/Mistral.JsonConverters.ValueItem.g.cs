@@ -12,31 +12,42 @@ namespace Mistral.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
 
             var readerCopy = reader;
-            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.JSONPatchPayloadResponseValueItemDiscriminator>(ref readerCopy, options);
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.JSONPatchPayloadResponseValueItemDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.JSONPatchPayloadResponseValueItemDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.JSONPatchPayloadResponseValueItemDiscriminator)}");
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::Mistral.JSONPatchAppend? append = default;
             if (discriminator?.Op == global::Mistral.JSONPatchPayloadResponseValueItemDiscriminatorOp.Append)
             {
-                append = global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.JSONPatchAppend>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.JSONPatchAppend), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.JSONPatchAppend> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.JSONPatchAppend)}");
+                append = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::Mistral.JSONPatchAdd? add = default;
             if (discriminator?.Op == global::Mistral.JSONPatchPayloadResponseValueItemDiscriminatorOp.Add)
             {
-                add = global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.JSONPatchAdd>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.JSONPatchAdd), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.JSONPatchAdd> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.JSONPatchAdd)}");
+                add = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::Mistral.JSONPatchReplace? replace = default;
             if (discriminator?.Op == global::Mistral.JSONPatchPayloadResponseValueItemDiscriminatorOp.Replace)
             {
-                replace = global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.JSONPatchReplace>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.JSONPatchReplace), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.JSONPatchReplace> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.JSONPatchReplace)}");
+                replace = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::Mistral.JSONPatchRemove? remove = default;
             if (discriminator?.Op == global::Mistral.JSONPatchPayloadResponseValueItemDiscriminatorOp.Remove)
             {
-                remove = global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.JSONPatchRemove>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.JSONPatchRemove), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.JSONPatchRemove> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.JSONPatchRemove)}");
+                remove = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var __value = new global::Mistral.ValueItem(
@@ -59,23 +70,32 @@ namespace Mistral.JsonConverters
             global::Mistral.ValueItem value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             if (value.IsAppend)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Append, typeof(global::Mistral.JSONPatchAppend), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.JSONPatchAppend), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.JSONPatchAppend?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.JSONPatchAppend).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Append!, typeInfo);
             }
             else if (value.IsAdd)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Add, typeof(global::Mistral.JSONPatchAdd), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.JSONPatchAdd), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.JSONPatchAdd?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.JSONPatchAdd).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Add!, typeInfo);
             }
             else if (value.IsReplace)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Replace, typeof(global::Mistral.JSONPatchReplace), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.JSONPatchReplace), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.JSONPatchReplace?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.JSONPatchReplace).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Replace!, typeInfo);
             }
             else if (value.IsRemove)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Remove, typeof(global::Mistral.JSONPatchRemove), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.JSONPatchRemove), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.JSONPatchRemove?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.JSONPatchRemove).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Remove!, typeInfo);
             }
         }
     }

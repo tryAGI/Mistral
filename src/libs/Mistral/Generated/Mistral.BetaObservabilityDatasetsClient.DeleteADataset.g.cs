@@ -90,13 +90,13 @@ namespace Mistral
                     if (ReadResponseAsString)
                     {
                         __content_400 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_400 = global::Mistral.ObservabilityError.FromJson(__content_400, JsonSerializerOptions);
+                        __value_400 = global::Mistral.ObservabilityError.FromJson(__content_400, JsonSerializerContext);
                     }
                     else
                     {
                         __content_400 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_400 = global::Mistral.ObservabilityError.FromJson(__content_400, JsonSerializerOptions);
+                        __value_400 = global::Mistral.ObservabilityError.FromJson(__content_400, JsonSerializerContext);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -128,13 +128,13 @@ namespace Mistral
                     if (ReadResponseAsString)
                     {
                         __content_404 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_404 = global::Mistral.ObservabilityError.FromJson(__content_404, JsonSerializerOptions);
+                        __value_404 = global::Mistral.ObservabilityError.FromJson(__content_404, JsonSerializerContext);
                     }
                     else
                     {
                         __content_404 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_404 = global::Mistral.ObservabilityError.FromJson(__content_404, JsonSerializerOptions);
+                        __value_404 = global::Mistral.ObservabilityError.FromJson(__content_404, JsonSerializerContext);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -166,13 +166,13 @@ namespace Mistral
                     if (ReadResponseAsString)
                     {
                         __content_408 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_408 = global::Mistral.ObservabilityError.FromJson(__content_408, JsonSerializerOptions);
+                        __value_408 = global::Mistral.ObservabilityError.FromJson(__content_408, JsonSerializerContext);
                     }
                     else
                     {
                         __content_408 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_408 = global::Mistral.ObservabilityError.FromJson(__content_408, JsonSerializerOptions);
+                        __value_408 = global::Mistral.ObservabilityError.FromJson(__content_408, JsonSerializerContext);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -204,13 +204,13 @@ namespace Mistral
                     if (ReadResponseAsString)
                     {
                         __content_409 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_409 = global::Mistral.ObservabilityError.FromJson(__content_409, JsonSerializerOptions);
+                        __value_409 = global::Mistral.ObservabilityError.FromJson(__content_409, JsonSerializerContext);
                     }
                     else
                     {
                         __content_409 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_409 = global::Mistral.ObservabilityError.FromJson(__content_409, JsonSerializerOptions);
+                        __value_409 = global::Mistral.ObservabilityError.FromJson(__content_409, JsonSerializerContext);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -242,13 +242,13 @@ namespace Mistral
                     if (ReadResponseAsString)
                     {
                         __content_422 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_422 = global::Mistral.ObservabilityError.FromJson(__content_422, JsonSerializerOptions);
+                        __value_422 = global::Mistral.ObservabilityError.FromJson(__content_422, JsonSerializerContext);
                     }
                     else
                     {
                         __content_422 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_422 = global::Mistral.ObservabilityError.FromJson(__content_422, JsonSerializerOptions);
+                        __value_422 = global::Mistral.ObservabilityError.FromJson(__content_422, JsonSerializerContext);
                     }
                 }
                 catch (global::System.Exception __ex)

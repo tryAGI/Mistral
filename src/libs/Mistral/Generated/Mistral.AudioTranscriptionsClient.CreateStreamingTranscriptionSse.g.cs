@@ -204,7 +204,7 @@ namespace Mistral
                     yield break;
                 }
 
-                var __streamedResponse = global::Mistral.TranscriptionStreamEvents.FromJson(__content, JsonSerializerOptions) ??
+                var __streamedResponse = global::Mistral.TranscriptionStreamEvents.FromJson(__content, JsonSerializerContext) ??
                                        throw new global::Mistral.ApiException(
                                            message: $"Response deserialization failed for \"{__content}\" ",
                                            statusCode: __response.StatusCode)

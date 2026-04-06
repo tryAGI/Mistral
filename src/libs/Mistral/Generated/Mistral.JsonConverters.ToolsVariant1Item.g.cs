@@ -12,46 +12,63 @@ namespace Mistral.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
 
             var readerCopy = reader;
-            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.ConversationRequestBaseToolsVariant1ItemDiscriminator>(ref readerCopy, options);
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.ConversationRequestBaseToolsVariant1ItemDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.ConversationRequestBaseToolsVariant1ItemDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.ConversationRequestBaseToolsVariant1ItemDiscriminator)}");
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::Mistral.FunctionTool? function = default;
             if (discriminator?.Type == global::Mistral.ConversationRequestBaseToolsVariant1ItemDiscriminatorType.Function)
             {
-                function = global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.FunctionTool>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.FunctionTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.FunctionTool> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.FunctionTool)}");
+                function = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::Mistral.WebSearchTool? webSearch = default;
             if (discriminator?.Type == global::Mistral.ConversationRequestBaseToolsVariant1ItemDiscriminatorType.WebSearch)
             {
-                webSearch = global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.WebSearchTool>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.WebSearchTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.WebSearchTool> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.WebSearchTool)}");
+                webSearch = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::Mistral.WebSearchPremiumTool? webSearchPremium = default;
             if (discriminator?.Type == global::Mistral.ConversationRequestBaseToolsVariant1ItemDiscriminatorType.WebSearchPremium)
             {
-                webSearchPremium = global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.WebSearchPremiumTool>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.WebSearchPremiumTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.WebSearchPremiumTool> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.WebSearchPremiumTool)}");
+                webSearchPremium = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::Mistral.CodeInterpreterTool? codeInterpreter = default;
             if (discriminator?.Type == global::Mistral.ConversationRequestBaseToolsVariant1ItemDiscriminatorType.CodeInterpreter)
             {
-                codeInterpreter = global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.CodeInterpreterTool>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.CodeInterpreterTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.CodeInterpreterTool> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.CodeInterpreterTool)}");
+                codeInterpreter = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::Mistral.ImageGenerationTool? imageGeneration = default;
             if (discriminator?.Type == global::Mistral.ConversationRequestBaseToolsVariant1ItemDiscriminatorType.ImageGeneration)
             {
-                imageGeneration = global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.ImageGenerationTool>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.ImageGenerationTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.ImageGenerationTool> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.ImageGenerationTool)}");
+                imageGeneration = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::Mistral.DocumentLibraryTool? documentLibrary = default;
             if (discriminator?.Type == global::Mistral.ConversationRequestBaseToolsVariant1ItemDiscriminatorType.DocumentLibrary)
             {
-                documentLibrary = global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.DocumentLibraryTool>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.DocumentLibraryTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.DocumentLibraryTool> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.DocumentLibraryTool)}");
+                documentLibrary = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::Mistral.CustomConnector? connector = default;
             if (discriminator?.Type == global::Mistral.ConversationRequestBaseToolsVariant1ItemDiscriminatorType.Connector)
             {
-                connector = global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.CustomConnector>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.CustomConnector), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.CustomConnector> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.CustomConnector)}");
+                connector = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var __value = new global::Mistral.ToolsVariant1Item(
@@ -80,35 +97,50 @@ namespace Mistral.JsonConverters
             global::Mistral.ToolsVariant1Item value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             if (value.IsFunction)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Function, typeof(global::Mistral.FunctionTool), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.FunctionTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.FunctionTool?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.FunctionTool).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Function!, typeInfo);
             }
             else if (value.IsWebSearch)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.WebSearch, typeof(global::Mistral.WebSearchTool), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.WebSearchTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.WebSearchTool?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.WebSearchTool).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.WebSearch!, typeInfo);
             }
             else if (value.IsWebSearchPremium)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.WebSearchPremium, typeof(global::Mistral.WebSearchPremiumTool), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.WebSearchPremiumTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.WebSearchPremiumTool?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.WebSearchPremiumTool).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.WebSearchPremium!, typeInfo);
             }
             else if (value.IsCodeInterpreter)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CodeInterpreter, typeof(global::Mistral.CodeInterpreterTool), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.CodeInterpreterTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.CodeInterpreterTool?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.CodeInterpreterTool).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CodeInterpreter!, typeInfo);
             }
             else if (value.IsImageGeneration)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ImageGeneration, typeof(global::Mistral.ImageGenerationTool), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.ImageGenerationTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.ImageGenerationTool?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.ImageGenerationTool).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ImageGeneration!, typeInfo);
             }
             else if (value.IsDocumentLibrary)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DocumentLibrary, typeof(global::Mistral.DocumentLibraryTool), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.DocumentLibraryTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.DocumentLibraryTool?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.DocumentLibraryTool).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DocumentLibrary!, typeInfo);
             }
             else if (value.IsConnector)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Connector, typeof(global::Mistral.CustomConnector), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.CustomConnector), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.CustomConnector?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.CustomConnector).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Connector!, typeInfo);
             }
         }
     }
