@@ -6,6 +6,7 @@ namespace Mistral
     public sealed partial class MistralClient
     {
         /// <inheritdoc cref="MistralClient(global::System.Net.Http.HttpClient?, global::System.Uri?, global::System.Collections.Generic.List{global::Mistral.EndPointAuthorization}?, bool)"/>
+
         public MistralClient(
             string apiKey,
             global::System.Net.Http.HttpClient? httpClient = null,

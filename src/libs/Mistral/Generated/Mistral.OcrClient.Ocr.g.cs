@@ -5,6 +5,25 @@ namespace Mistral
 {
     public partial class OcrClient
     {
+
+
+        private static readonly global::Mistral.EndPointSecurityRequirement s_OcrSecurityRequirement0 =
+            new global::Mistral.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Mistral.EndPointAuthorizationRequirement[]
+                {                    new global::Mistral.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::Mistral.EndPointSecurityRequirement[] s_OcrSecurityRequirements =
+            new global::Mistral.EndPointSecurityRequirement[]
+            {                s_OcrSecurityRequirement0,
+            };
         partial void PrepareOcrArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::Mistral.OCRRequest request);
@@ -40,9 +59,15 @@ namespace Mistral
                 httpClient: HttpClient,
                 request: request);
 
+
+            var __authorizations = global::Mistral.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_OcrSecurityRequirements,
+                operationName: "OcrAsync");
+
             var __pathBuilder = new global::Mistral.PathBuilder(
                 path: "/v1/ocr",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
@@ -52,7 +77,7 @@ namespace Mistral
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

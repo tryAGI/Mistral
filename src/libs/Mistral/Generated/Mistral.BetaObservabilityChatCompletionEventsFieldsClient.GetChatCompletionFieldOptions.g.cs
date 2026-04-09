@@ -5,6 +5,25 @@ namespace Mistral
 {
     public partial class BetaObservabilityChatCompletionEventsFieldsClient
     {
+
+
+        private static readonly global::Mistral.EndPointSecurityRequirement s_GetChatCompletionFieldOptionsSecurityRequirement0 =
+            new global::Mistral.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Mistral.EndPointAuthorizationRequirement[]
+                {                    new global::Mistral.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::Mistral.EndPointSecurityRequirement[] s_GetChatCompletionFieldOptionsSecurityRequirements =
+            new global::Mistral.EndPointSecurityRequirement[]
+            {                s_GetChatCompletionFieldOptionsSecurityRequirement0,
+            };
         partial void PrepareGetChatCompletionFieldOptionsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string fieldName,
@@ -44,12 +63,18 @@ namespace Mistral
                 fieldName: ref fieldName,
                 @operator: ref @operator);
 
+
+            var __authorizations = global::Mistral.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetChatCompletionFieldOptionsSecurityRequirements,
+                operationName: "GetChatCompletionFieldOptionsAsync");
+
             var __pathBuilder = new global::Mistral.PathBuilder(
                 path: $"/v1/observability/chat-completion-fields/{fieldName}/options",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddRequiredParameter("operator", @operator.ToValueString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -59,7 +84,7 @@ namespace Mistral
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

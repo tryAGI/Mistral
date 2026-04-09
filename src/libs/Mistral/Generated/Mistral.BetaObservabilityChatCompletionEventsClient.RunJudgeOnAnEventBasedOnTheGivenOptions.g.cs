@@ -5,6 +5,25 @@ namespace Mistral
 {
     public partial class BetaObservabilityChatCompletionEventsClient
     {
+
+
+        private static readonly global::Mistral.EndPointSecurityRequirement s_RunJudgeOnAnEventBasedOnTheGivenOptionsSecurityRequirement0 =
+            new global::Mistral.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Mistral.EndPointAuthorizationRequirement[]
+                {                    new global::Mistral.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::Mistral.EndPointSecurityRequirement[] s_RunJudgeOnAnEventBasedOnTheGivenOptionsSecurityRequirements =
+            new global::Mistral.EndPointSecurityRequirement[]
+            {                s_RunJudgeOnAnEventBasedOnTheGivenOptionsSecurityRequirement0,
+            };
         partial void PrepareRunJudgeOnAnEventBasedOnTheGivenOptionsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid eventId,
@@ -45,9 +64,15 @@ namespace Mistral
                 eventId: ref eventId,
                 request: request);
 
+
+            var __authorizations = global::Mistral.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_RunJudgeOnAnEventBasedOnTheGivenOptionsSecurityRequirements,
+                operationName: "RunJudgeOnAnEventBasedOnTheGivenOptionsAsync");
+
             var __pathBuilder = new global::Mistral.PathBuilder(
                 path: $"/v1/observability/chat-completion-events/{eventId}/live-judging",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
@@ -57,7 +82,7 @@ namespace Mistral
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

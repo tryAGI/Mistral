@@ -5,6 +5,25 @@ namespace Mistral
 {
     public partial class BetaWorkflowsRunsClient
     {
+
+
+        private static readonly global::Mistral.EndPointSecurityRequirement s_ListRunsSecurityRequirement0 =
+            new global::Mistral.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Mistral.EndPointAuthorizationRequirement[]
+                {                    new global::Mistral.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::Mistral.EndPointSecurityRequirement[] s_ListRunsSecurityRequirements =
+            new global::Mistral.EndPointSecurityRequirement[]
+            {                s_ListRunsSecurityRequirement0,
+            };
         partial void PrepareListRunsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? workflowIdentifier,
@@ -68,6 +87,12 @@ namespace Mistral
                 pageSize: ref pageSize,
                 nextPageToken: ref nextPageToken);
 
+
+            var __authorizations = global::Mistral.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ListRunsSecurityRequirements,
+                operationName: "ListRunsAsync");
+
             var __pathBuilder = new global::Mistral.PathBuilder(
                 path: "/v1/workflows/runs",
                 baseUri: HttpClient.BaseAddress); 
@@ -77,7 +102,7 @@ namespace Mistral
                 .AddOptionalParameter("status", status?.ToString())
                 .AddOptionalParameter("page_size", pageSize?.ToString())
                 .AddOptionalParameter("next_page_token", nextPageToken) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -87,7 +112,7 @@ namespace Mistral
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

@@ -5,6 +5,25 @@ namespace Mistral
 {
     public partial class BetaObservabilityCampaignsClient
     {
+
+
+        private static readonly global::Mistral.EndPointSecurityRequirement s_GetEventIdsThatWereSelectedByTheGivenCampaignSecurityRequirement0 =
+            new global::Mistral.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Mistral.EndPointAuthorizationRequirement[]
+                {                    new global::Mistral.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::Mistral.EndPointSecurityRequirement[] s_GetEventIdsThatWereSelectedByTheGivenCampaignSecurityRequirements =
+            new global::Mistral.EndPointSecurityRequirement[]
+            {                s_GetEventIdsThatWereSelectedByTheGivenCampaignSecurityRequirement0,
+            };
         partial void PrepareGetEventIdsThatWereSelectedByTheGivenCampaignArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid campaignId,
@@ -51,13 +70,19 @@ namespace Mistral
                 pageSize: ref pageSize,
                 page: ref page);
 
+
+            var __authorizations = global::Mistral.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetEventIdsThatWereSelectedByTheGivenCampaignSecurityRequirements,
+                operationName: "GetEventIdsThatWereSelectedByTheGivenCampaignAsync");
+
             var __pathBuilder = new global::Mistral.PathBuilder(
                 path: $"/v1/observability/campaigns/{campaignId}/selected-events",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddOptionalParameter("page_size", pageSize?.ToString())
                 .AddOptionalParameter("page", page?.ToString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -67,7 +92,7 @@ namespace Mistral
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

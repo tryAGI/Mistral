@@ -5,6 +5,25 @@ namespace Mistral
 {
     public partial class BetaLibrariesAccessesClient
     {
+
+
+        private static readonly global::Mistral.EndPointSecurityRequirement s_DeleteAnAccessLevelSecurityRequirement0 =
+            new global::Mistral.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Mistral.EndPointAuthorizationRequirement[]
+                {                    new global::Mistral.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::Mistral.EndPointSecurityRequirement[] s_DeleteAnAccessLevelSecurityRequirements =
+            new global::Mistral.EndPointSecurityRequirement[]
+            {                s_DeleteAnAccessLevelSecurityRequirement0,
+            };
         partial void PrepareDeleteAnAccessLevelArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid libraryId,
@@ -46,9 +65,15 @@ namespace Mistral
                 libraryId: ref libraryId,
                 request: request);
 
+
+            var __authorizations = global::Mistral.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_DeleteAnAccessLevelSecurityRequirements,
+                operationName: "DeleteAnAccessLevelAsync");
+
             var __pathBuilder = new global::Mistral.PathBuilder(
                 path: $"/v1/libraries/{libraryId}/share",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Delete,
@@ -58,7 +83,7 @@ namespace Mistral
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")
