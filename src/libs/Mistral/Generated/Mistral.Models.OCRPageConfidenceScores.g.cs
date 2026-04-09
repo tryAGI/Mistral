@@ -6,29 +6,21 @@ namespace Mistral
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class OCRTableObject
+    public sealed partial class OCRPageConfidenceScores
     {
         /// <summary>
-        /// Table ID for extracted table in a page
+        /// Average confidence score across all words on the page, between 0 and 1.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("average_page_confidence_score")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Id { get; set; }
+        public required double AveragePageConfidenceScore { get; set; }
 
         /// <summary>
-        /// Content of the table in the given format
+        /// Minimum confidence score across all words on the page, between 0 and 1.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("content")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("minimum_page_confidence_score")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Content { get; set; }
-
-        /// <summary>
-        /// Format of the table
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("format")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.OCRTableObjectFormatJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Mistral.OCRTableObjectFormat Format { get; set; }
+        public required double MinimumPageConfidenceScore { get; set; }
 
         /// <summary>
         /// Per-word confidence scores. Returned when `confidence_scores_granularity` is set to `"word"`.
@@ -43,16 +35,13 @@ namespace Mistral
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="OCRTableObject" /> class.
+        /// Initializes a new instance of the <see cref="OCRPageConfidenceScores" /> class.
         /// </summary>
-        /// <param name="id">
-        /// Table ID for extracted table in a page
+        /// <param name="averagePageConfidenceScore">
+        /// Average confidence score across all words on the page, between 0 and 1.
         /// </param>
-        /// <param name="content">
-        /// Content of the table in the given format
-        /// </param>
-        /// <param name="format">
-        /// Format of the table
+        /// <param name="minimumPageConfidenceScore">
+        /// Minimum confidence score across all words on the page, between 0 and 1.
         /// </param>
         /// <param name="wordConfidenceScores">
         /// Per-word confidence scores. Returned when `confidence_scores_granularity` is set to `"word"`.
@@ -60,22 +49,20 @@ namespace Mistral
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public OCRTableObject(
-            string id,
-            string content,
-            global::Mistral.OCRTableObjectFormat format,
+        public OCRPageConfidenceScores(
+            double averagePageConfidenceScore,
+            double minimumPageConfidenceScore,
             global::System.Collections.Generic.IList<global::Mistral.OCRConfidenceScore>? wordConfidenceScores)
         {
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
-            this.Format = format;
+            this.AveragePageConfidenceScore = averagePageConfidenceScore;
+            this.MinimumPageConfidenceScore = minimumPageConfidenceScore;
             this.WordConfidenceScores = wordConfidenceScores;
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="OCRTableObject" /> class.
+        /// Initializes a new instance of the <see cref="OCRPageConfidenceScores" /> class.
         /// </summary>
-        public OCRTableObject()
+        public OCRPageConfidenceScores()
         {
         }
     }
