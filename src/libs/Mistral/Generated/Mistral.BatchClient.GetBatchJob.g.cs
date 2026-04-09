@@ -5,6 +5,25 @@ namespace Mistral
 {
     public partial class BatchClient
     {
+
+
+        private static readonly global::Mistral.EndPointSecurityRequirement s_GetBatchJobSecurityRequirement0 =
+            new global::Mistral.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Mistral.EndPointAuthorizationRequirement[]
+                {                    new global::Mistral.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::Mistral.EndPointSecurityRequirement[] s_GetBatchJobSecurityRequirements =
+            new global::Mistral.EndPointSecurityRequirement[]
+            {                s_GetBatchJobSecurityRequirement0,
+            };
         partial void PrepareGetBatchJobArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid jobId,
@@ -45,12 +64,18 @@ namespace Mistral
                 jobId: ref jobId,
                 inline: inline);
 
+
+            var __authorizations = global::Mistral.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetBatchJobSecurityRequirements,
+                operationName: "GetBatchJobAsync");
+
             var __pathBuilder = new global::Mistral.PathBuilder(
                 path: $"/v1/batch/jobs/{jobId}",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddOptionalParameter("inline", inline?.ToString().ToLowerInvariant()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -60,7 +85,7 @@ namespace Mistral
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

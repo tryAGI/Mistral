@@ -4,7 +4,7 @@
 namespace Mistral
 {
     /// <summary>
-    /// (beta) Libraries  API - Main<br/>
+    /// (beta) Libraries  API - Main. (beta) Libraries API to create and manage libraries - index your documents to enhance agent capabilities.<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>

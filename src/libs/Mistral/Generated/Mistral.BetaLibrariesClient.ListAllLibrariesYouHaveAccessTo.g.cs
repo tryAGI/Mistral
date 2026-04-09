@@ -5,6 +5,25 @@ namespace Mistral
 {
     public partial class BetaLibrariesClient
     {
+
+
+        private static readonly global::Mistral.EndPointSecurityRequirement s_ListAllLibrariesYouHaveAccessToSecurityRequirement0 =
+            new global::Mistral.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Mistral.EndPointAuthorizationRequirement[]
+                {                    new global::Mistral.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::Mistral.EndPointSecurityRequirement[] s_ListAllLibrariesYouHaveAccessToSecurityRequirements =
+            new global::Mistral.EndPointSecurityRequirement[]
+            {                s_ListAllLibrariesYouHaveAccessToSecurityRequirement0,
+            };
         partial void PrepareListAllLibrariesYouHaveAccessToArguments(
             global::System.Net.Http.HttpClient httpClient);
         partial void PrepareListAllLibrariesYouHaveAccessToRequest(
@@ -33,9 +52,15 @@ namespace Mistral
             PrepareListAllLibrariesYouHaveAccessToArguments(
                 httpClient: HttpClient);
 
+
+            var __authorizations = global::Mistral.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ListAllLibrariesYouHaveAccessToSecurityRequirements,
+                operationName: "ListAllLibrariesYouHaveAccessToAsync");
+
             var __pathBuilder = new global::Mistral.PathBuilder(
                 path: "/v1/libraries",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -45,7 +70,7 @@ namespace Mistral
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

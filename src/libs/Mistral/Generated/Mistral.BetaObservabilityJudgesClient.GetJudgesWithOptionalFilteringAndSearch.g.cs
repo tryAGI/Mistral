@@ -5,6 +5,25 @@ namespace Mistral
 {
     public partial class BetaObservabilityJudgesClient
     {
+
+
+        private static readonly global::Mistral.EndPointSecurityRequirement s_GetJudgesWithOptionalFilteringAndSearchSecurityRequirement0 =
+            new global::Mistral.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Mistral.EndPointAuthorizationRequirement[]
+                {                    new global::Mistral.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::Mistral.EndPointSecurityRequirement[] s_GetJudgesWithOptionalFilteringAndSearchSecurityRequirements =
+            new global::Mistral.EndPointSecurityRequirement[]
+            {                s_GetJudgesWithOptionalFilteringAndSearchSecurityRequirement0,
+            };
         partial void PrepareGetJudgesWithOptionalFilteringAndSearchArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Collections.Generic.IList<global::Mistral.JudgeOutputType>? typeFilter,
@@ -65,6 +84,12 @@ namespace Mistral
                 page: ref page,
                 q: ref q);
 
+
+            var __authorizations = global::Mistral.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetJudgesWithOptionalFilteringAndSearchSecurityRequirements,
+                operationName: "GetJudgesWithOptionalFilteringAndSearchAsync");
+
             var __pathBuilder = new global::Mistral.PathBuilder(
                 path: "/v1/observability/judges",
                 baseUri: HttpClient.BaseAddress); 
@@ -74,7 +99,7 @@ namespace Mistral
                 .AddOptionalParameter("page_size", pageSize?.ToString())
                 .AddOptionalParameter("page", page?.ToString())
                 .AddOptionalParameter("q", q) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -84,7 +109,7 @@ namespace Mistral
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

@@ -5,6 +5,25 @@ namespace Mistral
 {
     public partial class BetaWorkflowsSchedulesClient
     {
+
+
+        private static readonly global::Mistral.EndPointSecurityRequirement s_GetSchedulesSecurityRequirement0 =
+            new global::Mistral.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Mistral.EndPointAuthorizationRequirement[]
+                {                    new global::Mistral.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::Mistral.EndPointSecurityRequirement[] s_GetSchedulesSecurityRequirements =
+            new global::Mistral.EndPointSecurityRequirement[]
+            {                s_GetSchedulesSecurityRequirement0,
+            };
         partial void PrepareGetSchedulesArguments(
             global::System.Net.Http.HttpClient httpClient);
         partial void PrepareGetSchedulesRequest(
@@ -32,9 +51,15 @@ namespace Mistral
             PrepareGetSchedulesArguments(
                 httpClient: HttpClient);
 
+
+            var __authorizations = global::Mistral.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetSchedulesSecurityRequirements,
+                operationName: "GetSchedulesAsync");
+
             var __pathBuilder = new global::Mistral.PathBuilder(
                 path: "/v1/workflows/schedules",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -44,7 +69,7 @@ namespace Mistral
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

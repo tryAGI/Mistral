@@ -5,6 +5,25 @@ namespace Mistral
 {
     public partial class BetaWorkflowsExecutionsClient
     {
+
+
+        private static readonly global::Mistral.EndPointSecurityRequirement s_GetWorkflowExecutionTraceEventsSecurityRequirement0 =
+            new global::Mistral.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Mistral.EndPointAuthorizationRequirement[]
+                {                    new global::Mistral.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::Mistral.EndPointSecurityRequirement[] s_GetWorkflowExecutionTraceEventsSecurityRequirements =
+            new global::Mistral.EndPointSecurityRequirement[]
+            {                s_GetWorkflowExecutionTraceEventsSecurityRequirement0,
+            };
         partial void PrepareGetWorkflowExecutionTraceEventsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string executionId,
@@ -51,13 +70,19 @@ namespace Mistral
                 mergeSameIdEvents: ref mergeSameIdEvents,
                 includeInternalEvents: ref includeInternalEvents);
 
+
+            var __authorizations = global::Mistral.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetWorkflowExecutionTraceEventsSecurityRequirements,
+                operationName: "GetWorkflowExecutionTraceEventsAsync");
+
             var __pathBuilder = new global::Mistral.PathBuilder(
                 path: $"/v1/workflows/executions/{executionId}/trace/events",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddOptionalParameter("merge_same_id_events", mergeSameIdEvents?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("include_internal_events", includeInternalEvents?.ToString().ToLowerInvariant()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -67,7 +92,7 @@ namespace Mistral
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

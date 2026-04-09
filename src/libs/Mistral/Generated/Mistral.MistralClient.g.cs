@@ -13,7 +13,7 @@ namespace Mistral
         /// <summary>
         /// Production server
         /// </summary>
-        public const string DefaultBaseUrl = "https://api.mistral.ai";
+        public const string DefaultBaseUrl = "https://api.mistral.ai/";
 
         private bool _disposeHttpClient = true;
 
@@ -38,7 +38,7 @@ namespace Mistral
 
 
         /// <summary>
-        /// Speech API
+        /// Speech API. API for text-to-speech generation.
         /// </summary>
         public AudioSpeechClient AudioSpeech => new AudioSpeechClient(HttpClient, authorizations: Authorizations)
         {
@@ -47,7 +47,7 @@ namespace Mistral
         };
 
         /// <summary>
-        /// Transcriptions API
+        /// Transcriptions API. API for audio transcription.
         /// </summary>
         public AudioTranscriptionsClient AudioTranscriptions => new AudioTranscriptionsClient(HttpClient, authorizations: Authorizations)
         {
@@ -56,7 +56,7 @@ namespace Mistral
         };
 
         /// <summary>
-        /// Voices API
+        /// Voices API. API for managing custom voice profiles.
         /// </summary>
         public AudioVoicesClient AudioVoices => new AudioVoicesClient(HttpClient, authorizations: Authorizations)
         {
@@ -65,7 +65,7 @@ namespace Mistral
         };
 
         /// <summary>
-        /// Batch
+        /// Batch. Batch API.
         /// </summary>
         public BatchClient Batch => new BatchClient(HttpClient, authorizations: Authorizations)
         {
@@ -74,7 +74,7 @@ namespace Mistral
         };
 
         /// <summary>
-        /// (beta) Agents API
+        /// (beta) Agents API.
         /// </summary>
         public BetaAgentsClient BetaAgents => new BetaAgentsClient(HttpClient, authorizations: Authorizations)
         {
@@ -83,7 +83,7 @@ namespace Mistral
         };
 
         /// <summary>
-        /// (beta) Conversations API
+        /// (beta) Conversations API.
         /// </summary>
         public BetaConversationsClient BetaConversations => new BetaConversationsClient(HttpClient, authorizations: Authorizations)
         {
@@ -92,7 +92,7 @@ namespace Mistral
         };
 
         /// <summary>
-        /// (beta) Libraries  API - Main
+        /// (beta) Libraries  API - Main. (beta) Libraries API to create and manage libraries - index your documents to enhance agent capabilities.
         /// </summary>
         public BetaLibrariesClient BetaLibraries => new BetaLibrariesClient(HttpClient, authorizations: Authorizations)
         {
@@ -101,7 +101,7 @@ namespace Mistral
         };
 
         /// <summary>
-        /// (beta) Libraries  API - Access
+        /// (beta) Libraries  API - Access. (beta) Libraries API - manage access to a library.
         /// </summary>
         public BetaLibrariesAccessesClient BetaLibrariesAccesses => new BetaLibrariesAccessesClient(HttpClient, authorizations: Authorizations)
         {
@@ -110,7 +110,7 @@ namespace Mistral
         };
 
         /// <summary>
-        /// (beta) Libraries  API - Documents
+        /// (beta) Libraries  API - Documents. (beta) Libraries API - manage documents in a library.
         /// </summary>
         public BetaLibrariesDocumentsClient BetaLibrariesDocuments => new BetaLibrariesDocumentsClient(HttpClient, authorizations: Authorizations)
         {
@@ -119,7 +119,7 @@ namespace Mistral
         };
 
         /// <summary>
-        /// (beta) Observability - Campaigns
+        /// (beta) Observability - Campaigns. (beta) Create and manage evaluation campaigns.
         /// </summary>
         public BetaObservabilityCampaignsClient BetaObservabilityCampaigns => new BetaObservabilityCampaignsClient(HttpClient, authorizations: Authorizations)
         {
@@ -128,7 +128,7 @@ namespace Mistral
         };
 
         /// <summary>
-        /// (beta) Observability - Chat completion events
+        /// (beta) Observability - Chat completion events. (beta) Search, retrieve, and analyze chat completion events.
         /// </summary>
         public BetaObservabilityChatCompletionEventsClient BetaObservabilityChatCompletionEvents => new BetaObservabilityChatCompletionEventsClient(HttpClient, authorizations: Authorizations)
         {
@@ -137,7 +137,7 @@ namespace Mistral
         };
 
         /// <summary>
-        /// (beta) Observability - Chat completion fields
+        /// (beta) Observability - Chat completion fields. (beta) List and inspect filterable fields for chat completion events.
         /// </summary>
         public BetaObservabilityChatCompletionEventsFieldsClient BetaObservabilityChatCompletionEventsFields => new BetaObservabilityChatCompletionEventsFieldsClient(HttpClient, authorizations: Authorizations)
         {
@@ -146,7 +146,7 @@ namespace Mistral
         };
 
         /// <summary>
-        /// (beta) Observability - Datasets
+        /// (beta) Observability - Datasets. (beta) Create, update, import, and export datasets.
         /// </summary>
         public BetaObservabilityDatasetsClient BetaObservabilityDatasets => new BetaObservabilityDatasetsClient(HttpClient, authorizations: Authorizations)
         {
@@ -155,7 +155,7 @@ namespace Mistral
         };
 
         /// <summary>
-        /// (beta) Observability - Dataset records
+        /// (beta) Observability - Dataset records. (beta) Manage individual records within datasets.
         /// </summary>
         public BetaObservabilityDatasetsRecordsClient BetaObservabilityDatasetsRecords => new BetaObservabilityDatasetsRecordsClient(HttpClient, authorizations: Authorizations)
         {
@@ -164,7 +164,7 @@ namespace Mistral
         };
 
         /// <summary>
-        /// (beta) Observability - Judges
+        /// (beta) Observability - Judges. (beta) Create, update, and manage judges for evaluating chat completions.
         /// </summary>
         public BetaObservabilityJudgesClient BetaObservabilityJudges => new BetaObservabilityJudgesClient(HttpClient, authorizations: Authorizations)
         {
@@ -173,7 +173,7 @@ namespace Mistral
         };
 
         /// <summary>
-        /// Workflows
+        /// Workflows. Workflow management API.
         /// </summary>
         public BetaWorkflowsClient BetaWorkflows => new BetaWorkflowsClient(HttpClient, authorizations: Authorizations)
         {
@@ -182,7 +182,7 @@ namespace Mistral
         };
 
         /// <summary>
-        /// Deployments
+        /// Deployments. List and inspect worker deployments.
         /// </summary>
         public BetaWorkflowsDeploymentsClient BetaWorkflowsDeployments => new BetaWorkflowsDeploymentsClient(HttpClient, authorizations: Authorizations)
         {
@@ -191,7 +191,7 @@ namespace Mistral
         };
 
         /// <summary>
-        /// Events
+        /// Events. Stream and list workflow execution events.
         /// </summary>
         public BetaWorkflowsEventsClient BetaWorkflowsEvents => new BetaWorkflowsEventsClient(HttpClient, authorizations: Authorizations)
         {
@@ -200,7 +200,7 @@ namespace Mistral
         };
 
         /// <summary>
-        /// Executions
+        /// Executions. Trigger, monitor, and control workflow executions.
         /// </summary>
         public BetaWorkflowsExecutionsClient BetaWorkflowsExecutions => new BetaWorkflowsExecutionsClient(HttpClient, authorizations: Authorizations)
         {
@@ -209,7 +209,7 @@ namespace Mistral
         };
 
         /// <summary>
-        /// Metrics
+        /// Metrics. Get performance metrics for workflows.
         /// </summary>
         public BetaWorkflowsMetricsClient BetaWorkflowsMetrics => new BetaWorkflowsMetricsClient(HttpClient, authorizations: Authorizations)
         {
@@ -218,7 +218,7 @@ namespace Mistral
         };
 
         /// <summary>
-        /// Runs
+        /// Runs. List and inspect individual workflow runs.
         /// </summary>
         public BetaWorkflowsRunsClient BetaWorkflowsRuns => new BetaWorkflowsRunsClient(HttpClient, authorizations: Authorizations)
         {
@@ -227,7 +227,7 @@ namespace Mistral
         };
 
         /// <summary>
-        /// Schedules
+        /// Schedules. Create and manage workflow schedules.
         /// </summary>
         public BetaWorkflowsSchedulesClient BetaWorkflowsSchedules => new BetaWorkflowsSchedulesClient(HttpClient, authorizations: Authorizations)
         {
@@ -236,7 +236,7 @@ namespace Mistral
         };
 
         /// <summary>
-        /// Workers
+        /// Workers. Worker connection info.
         /// </summary>
         public BetaWorkflowsWorkersClient BetaWorkflowsWorkers => new BetaWorkflowsWorkersClient(HttpClient, authorizations: Authorizations)
         {
@@ -245,7 +245,7 @@ namespace Mistral
         };
 
         /// <summary>
-        /// Chat
+        /// Chat. Chat Completion API.
         /// </summary>
         public ChatClient Chat => new ChatClient(HttpClient, authorizations: Authorizations)
         {
@@ -254,7 +254,7 @@ namespace Mistral
         };
 
         /// <summary>
-        /// Classifiers
+        /// Classifiers. Classifiers API.
         /// </summary>
         public ClassifiersClient Classifiers => new ClassifiersClient(HttpClient, authorizations: Authorizations)
         {
@@ -263,7 +263,7 @@ namespace Mistral
         };
 
         /// <summary>
-        /// (deprecated) Fine Tuning
+        /// (deprecated) Fine Tuning. (deprecated) Fine-tuning API.
         /// </summary>
         public DeprecatedFineTuningClient DeprecatedFineTuning => new DeprecatedFineTuningClient(HttpClient, authorizations: Authorizations)
         {
@@ -272,7 +272,7 @@ namespace Mistral
         };
 
         /// <summary>
-        /// Embeddings
+        /// Embeddings. Embeddings API.
         /// </summary>
         public EmbeddingsClient Embeddings => new EmbeddingsClient(HttpClient, authorizations: Authorizations)
         {
@@ -281,7 +281,7 @@ namespace Mistral
         };
 
         /// <summary>
-        /// Files
+        /// Files. Files API.
         /// </summary>
         public FilesClient Files => new FilesClient(HttpClient, authorizations: Authorizations)
         {
@@ -290,7 +290,7 @@ namespace Mistral
         };
 
         /// <summary>
-        /// FIM
+        /// FIM. Fill-in-the-middle API.
         /// </summary>
         public FimClient Fim => new FimClient(HttpClient, authorizations: Authorizations)
         {
@@ -299,7 +299,7 @@ namespace Mistral
         };
 
         /// <summary>
-        /// Models
+        /// Models. Model Management API.
         /// </summary>
         public ModelsClient Models => new ModelsClient(HttpClient, authorizations: Authorizations)
         {
@@ -308,7 +308,7 @@ namespace Mistral
         };
 
         /// <summary>
-        /// OCR API
+        /// OCR API.
         /// </summary>
         public OcrClient Ocr => new OcrClient(HttpClient, authorizations: Authorizations)
         {

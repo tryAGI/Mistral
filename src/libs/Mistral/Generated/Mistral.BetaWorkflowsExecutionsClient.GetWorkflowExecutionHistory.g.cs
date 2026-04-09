@@ -5,6 +5,25 @@ namespace Mistral
 {
     public partial class BetaWorkflowsExecutionsClient
     {
+
+
+        private static readonly global::Mistral.EndPointSecurityRequirement s_GetWorkflowExecutionHistorySecurityRequirement0 =
+            new global::Mistral.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Mistral.EndPointAuthorizationRequirement[]
+                {                    new global::Mistral.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::Mistral.EndPointSecurityRequirement[] s_GetWorkflowExecutionHistorySecurityRequirements =
+            new global::Mistral.EndPointSecurityRequirement[]
+            {                s_GetWorkflowExecutionHistorySecurityRequirement0,
+            };
         partial void PrepareGetWorkflowExecutionHistoryArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string executionId,
@@ -44,12 +63,18 @@ namespace Mistral
                 executionId: ref executionId,
                 decodePayloads: ref decodePayloads);
 
+
+            var __authorizations = global::Mistral.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetWorkflowExecutionHistorySecurityRequirements,
+                operationName: "GetWorkflowExecutionHistoryAsync");
+
             var __pathBuilder = new global::Mistral.PathBuilder(
                 path: $"/v1/workflows/executions/{executionId}/history",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddOptionalParameter("decode_payloads", decodePayloads?.ToString().ToLowerInvariant()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -59,7 +84,7 @@ namespace Mistral
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

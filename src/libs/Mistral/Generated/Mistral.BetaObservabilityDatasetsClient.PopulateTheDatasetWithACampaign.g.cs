@@ -5,6 +5,25 @@ namespace Mistral
 {
     public partial class BetaObservabilityDatasetsClient
     {
+
+
+        private static readonly global::Mistral.EndPointSecurityRequirement s_PopulateTheDatasetWithACampaignSecurityRequirement0 =
+            new global::Mistral.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Mistral.EndPointAuthorizationRequirement[]
+                {                    new global::Mistral.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::Mistral.EndPointSecurityRequirement[] s_PopulateTheDatasetWithACampaignSecurityRequirements =
+            new global::Mistral.EndPointSecurityRequirement[]
+            {                s_PopulateTheDatasetWithACampaignSecurityRequirement0,
+            };
         partial void PreparePopulateTheDatasetWithACampaignArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid datasetId,
@@ -45,9 +64,15 @@ namespace Mistral
                 datasetId: ref datasetId,
                 request: request);
 
+
+            var __authorizations = global::Mistral.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_PopulateTheDatasetWithACampaignSecurityRequirements,
+                operationName: "PopulateTheDatasetWithACampaignAsync");
+
             var __pathBuilder = new global::Mistral.PathBuilder(
                 path: $"/v1/observability/datasets/{datasetId}/imports/from-campaign",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
@@ -57,7 +82,7 @@ namespace Mistral
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

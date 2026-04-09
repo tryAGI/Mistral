@@ -4,7 +4,7 @@
 namespace Mistral
 {
     /// <summary>
-    /// (beta) Observability - Chat completion fields<br/>
+    /// (beta) Observability - Chat completion fields. (beta) List and inspect filterable fields for chat completion events.<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>

@@ -5,6 +5,25 @@ namespace Mistral
 {
     public partial class DeprecatedFineTuningClient
     {
+
+
+        private static readonly global::Mistral.EndPointSecurityRequirement s_GetFineTuningJobsSecurityRequirement0 =
+            new global::Mistral.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Mistral.EndPointAuthorizationRequirement[]
+                {                    new global::Mistral.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::Mistral.EndPointSecurityRequirement[] s_GetFineTuningJobsSecurityRequirements =
+            new global::Mistral.EndPointSecurityRequirement[]
+            {                s_GetFineTuningJobsSecurityRequirement0,
+            };
         partial void PrepareGetFineTuningJobsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int? page,
@@ -89,6 +108,12 @@ namespace Mistral
                 wandbName: ref wandbName,
                 suffix: ref suffix);
 
+
+            var __authorizations = global::Mistral.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetFineTuningJobsSecurityRequirements,
+                operationName: "GetFineTuningJobsAsync");
+
             var __pathBuilder = new global::Mistral.PathBuilder(
                 path: "/v1/fine_tuning/jobs",
                 baseUri: HttpClient.BaseAddress); 
@@ -103,7 +128,7 @@ namespace Mistral
                 .AddOptionalParameter("wandb_project", wandbProject)
                 .AddOptionalParameter("wandb_name", wandbName)
                 .AddOptionalParameter("suffix", suffix) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -113,7 +138,7 @@ namespace Mistral
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

@@ -5,6 +5,25 @@ namespace Mistral
 {
     public partial class BetaAgentsClient
     {
+
+
+        private static readonly global::Mistral.EndPointSecurityRequirement s_CreateOrUpdateAnAgentVersionAliasSecurityRequirement0 =
+            new global::Mistral.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Mistral.EndPointAuthorizationRequirement[]
+                {                    new global::Mistral.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::Mistral.EndPointSecurityRequirement[] s_CreateOrUpdateAnAgentVersionAliasSecurityRequirements =
+            new global::Mistral.EndPointSecurityRequirement[]
+            {                s_CreateOrUpdateAnAgentVersionAliasSecurityRequirement0,
+            };
         partial void PrepareCreateOrUpdateAnAgentVersionAliasArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string agentId,
@@ -48,13 +67,19 @@ namespace Mistral
                 alias: ref alias,
                 version: ref version);
 
+
+            var __authorizations = global::Mistral.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_CreateOrUpdateAnAgentVersionAliasSecurityRequirements,
+                operationName: "CreateOrUpdateAnAgentVersionAliasAsync");
+
             var __pathBuilder = new global::Mistral.PathBuilder(
                 path: $"/v1/agents/{agentId}/aliases",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddRequiredParameter("alias", alias)
                 .AddRequiredParameter("version", version.ToString()!) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Put,
@@ -64,7 +89,7 @@ namespace Mistral
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

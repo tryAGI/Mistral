@@ -5,6 +5,25 @@ namespace Mistral
 {
     public partial class BetaWorkflowsExecutionsClient
     {
+
+
+        private static readonly global::Mistral.EndPointSecurityRequirement s_StreamSecurityRequirement0 =
+            new global::Mistral.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Mistral.EndPointAuthorizationRequirement[]
+                {                    new global::Mistral.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::Mistral.EndPointSecurityRequirement[] s_StreamSecurityRequirements =
+            new global::Mistral.EndPointSecurityRequirement[]
+            {                s_StreamSecurityRequirement0,
+            };
         partial void PrepareStreamArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string executionId,
@@ -42,13 +61,19 @@ namespace Mistral
                 eventSource: eventSource,
                 lastEventId: ref lastEventId);
 
+
+            var __authorizations = global::Mistral.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_StreamSecurityRequirements,
+                operationName: "StreamAsync");
+
             var __pathBuilder = new global::Mistral.PathBuilder(
                 path: $"/v1/workflows/executions/{executionId}/stream",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddOptionalParameter("event_source", eventSource?.ToString())
                 .AddOptionalParameter("last_event_id", lastEventId) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -58,7 +83,7 @@ namespace Mistral
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

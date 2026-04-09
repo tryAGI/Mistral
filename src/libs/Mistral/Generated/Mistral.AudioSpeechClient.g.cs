@@ -4,7 +4,7 @@
 namespace Mistral
 {
     /// <summary>
-    /// Speech API<br/>
+    /// Speech API. API for text-to-speech generation.<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>
@@ -13,7 +13,7 @@ namespace Mistral
         /// <summary>
         /// Production server
         /// </summary>
-        public const string DefaultBaseUrl = "https://api.mistral.ai";
+        public const string DefaultBaseUrl = "https://api.mistral.ai/";
 
         private bool _disposeHttpClient = true;
 

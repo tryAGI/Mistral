@@ -5,6 +5,25 @@ namespace Mistral
 {
     public partial class AudioTranscriptionsClient
     {
+
+
+        private static readonly global::Mistral.EndPointSecurityRequirement s_CreateTranscriptionSecurityRequirement0 =
+            new global::Mistral.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Mistral.EndPointAuthorizationRequirement[]
+                {                    new global::Mistral.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::Mistral.EndPointSecurityRequirement[] s_CreateTranscriptionSecurityRequirements =
+            new global::Mistral.EndPointSecurityRequirement[]
+            {                s_CreateTranscriptionSecurityRequirement0,
+            };
         partial void PrepareCreateTranscriptionArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::Mistral.AudioTranscriptionRequest request);
@@ -40,9 +59,15 @@ namespace Mistral
                 httpClient: HttpClient,
                 request: request);
 
+
+            var __authorizations = global::Mistral.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_CreateTranscriptionSecurityRequirements,
+                operationName: "CreateTranscriptionAsync");
+
             var __pathBuilder = new global::Mistral.PathBuilder(
                 path: "/v1/audio/transcriptions",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
@@ -52,7 +77,7 @@ namespace Mistral
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")
