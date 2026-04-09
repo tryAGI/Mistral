@@ -6,7 +6,7 @@ namespace Mistral
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class JsonSchemaSchema
+    public sealed partial class SchemaDefinition
     {
 
         /// <summary>
