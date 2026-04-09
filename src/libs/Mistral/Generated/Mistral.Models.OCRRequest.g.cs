@@ -71,6 +71,12 @@ namespace Mistral
         public string? DocumentAnnotationPrompt { get; set; }
 
         /// <summary>
+        /// Granularity level for confidence scores. Set to `"page"` to get aggregate statistics (average and minimum) per page, or `"word"` to also get per-word scores on each page and table. Defaults to `null` (no confidence scores returned).
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("confidence_scores_granularity")]
+        public global::Mistral.OCRRequestConfidenceScoresGranularity2? ConfidenceScoresGranularity { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("table_format")]
@@ -123,6 +129,9 @@ namespace Mistral
         /// <param name="documentAnnotationPrompt">
         /// Optional prompt to guide the model in extracting structured output from the entire document. A document_annotation_format must be provided.
         /// </param>
+        /// <param name="confidenceScoresGranularity">
+        /// Granularity level for confidence scores. Set to `"page"` to get aggregate statistics (average and minimum) per page, or `"word"` to also get per-word scores on each page and table. Defaults to `null` (no confidence scores returned).
+        /// </param>
         /// <param name="tableFormat"></param>
         /// <param name="extractHeader">
         /// Default Value: false
@@ -144,6 +153,7 @@ namespace Mistral
             global::Mistral.ResponseFormat? bboxAnnotationFormat,
             global::Mistral.ResponseFormat? documentAnnotationFormat,
             string? documentAnnotationPrompt,
+            global::Mistral.OCRRequestConfidenceScoresGranularity2? confidenceScoresGranularity,
             global::Mistral.OCRRequestTableFormat2? tableFormat,
             bool? extractHeader,
             bool? extractFooter)
@@ -158,6 +168,7 @@ namespace Mistral
             this.BboxAnnotationFormat = bboxAnnotationFormat;
             this.DocumentAnnotationFormat = documentAnnotationFormat;
             this.DocumentAnnotationPrompt = documentAnnotationPrompt;
+            this.ConfidenceScoresGranularity = confidenceScoresGranularity;
             this.TableFormat = tableFormat;
             this.ExtractHeader = extractHeader;
             this.ExtractFooter = extractFooter;

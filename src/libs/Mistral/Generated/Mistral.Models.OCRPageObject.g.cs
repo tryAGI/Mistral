@@ -60,6 +60,12 @@ namespace Mistral
         public global::Mistral.OCRPageDimensions? Dimensions { get; set; }
 
         /// <summary>
+        /// Confidence scores for the page. Populated when `confidence_scores_granularity` is set in the request.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("confidence_scores")]
+        public global::Mistral.OCRPageConfidenceScores? ConfidenceScores { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -92,6 +98,9 @@ namespace Mistral
         /// <param name="dimensions">
         /// The dimensions of the PDF Page's screenshot image
         /// </param>
+        /// <param name="confidenceScores">
+        /// Confidence scores for the page. Populated when `confidence_scores_granularity` is set in the request.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -103,7 +112,8 @@ namespace Mistral
             global::System.Collections.Generic.IList<string>? hyperlinks,
             string? header,
             string? footer,
-            global::Mistral.OCRPageDimensions? dimensions)
+            global::Mistral.OCRPageDimensions? dimensions,
+            global::Mistral.OCRPageConfidenceScores? confidenceScores)
         {
             this.Index = index;
             this.Markdown = markdown ?? throw new global::System.ArgumentNullException(nameof(markdown));
@@ -113,6 +123,7 @@ namespace Mistral
             this.Header = header;
             this.Footer = footer;
             this.Dimensions = dimensions;
+            this.ConfidenceScores = confidenceScores;
         }
 
         /// <summary>
