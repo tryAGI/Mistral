@@ -12,7 +12,8 @@ namespace Mistral
         /// A list of workflows
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("workflows")]
-        public global::System.Collections.Generic.IList<global::Mistral.WorkflowBasicDefinition>? Workflows { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Collections.Generic.IList<global::Mistral.WorkflowBasicDefinition> Workflows { get; set; }
 
         /// <summary>
         /// 
@@ -37,10 +38,10 @@ namespace Mistral
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public WorkflowListResponse(
-            global::System.Collections.Generic.IList<global::Mistral.WorkflowBasicDefinition>? workflows,
+            global::System.Collections.Generic.IList<global::Mistral.WorkflowBasicDefinition> workflows,
             global::System.Guid? nextCursor)
         {
-            this.Workflows = workflows;
+            this.Workflows = workflows ?? throw new global::System.ArgumentNullException(nameof(workflows));
             this.NextCursor = nextCursor;
         }
 
