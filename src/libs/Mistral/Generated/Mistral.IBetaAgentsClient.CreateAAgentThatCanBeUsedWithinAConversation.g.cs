@@ -9,11 +9,13 @@ namespace Mistral
         /// Create a new agent giving it instructions, tools, description. The agent is then available to be used as a regular assistant in a conversation or as part of an agent pool from which it can be used.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Mistral.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Mistral.Agent> CreateAAgentThatCanBeUsedWithinAConversationAsync(
 
             global::Mistral.AgentCreationRequest request,
+            global::Mistral.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a agent that can be used within a conversation.<br/>
@@ -35,6 +37,7 @@ namespace Mistral
         /// <param name="handoffs"></param>
         /// <param name="metadata"></param>
         /// <param name="versionMessage"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Mistral.Agent> CreateAAgentThatCanBeUsedWithinAConversationAsync(
@@ -48,6 +51,7 @@ namespace Mistral
             global::System.Collections.Generic.IList<string>? handoffs = default,
             global::Mistral.MetadataDict? metadata = default,
             string? versionMessage = default,
+            global::Mistral.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -20,13 +20,8 @@ namespace Mistral.JsonConverters
                     {
                         return global::Mistral.ShareEnumExtensions.ToEnum(stringValue) ?? default;
                     }
-                    
+
                     break;
-                }
-                case global::System.Text.Json.JsonTokenType.Number:
-                {
-                    var numValue = reader.GetInt32();
-                    return (global::Mistral.ShareEnum)numValue;
                 }
                 case global::System.Text.Json.JsonTokenType.Null:
                 {

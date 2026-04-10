@@ -9,11 +9,13 @@ namespace Mistral
         /// Create a new batch job, it will be queued for processing.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Mistral.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Mistral.BatchJobOut> CreateBatchJobAsync(
 
             global::Mistral.BatchJobIn request,
+            global::Mistral.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create Batch Job<br/>
@@ -39,6 +41,7 @@ namespace Mistral
         /// The timeout in hours for the batch inference job.<br/>
         /// Default Value: 24
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Mistral.BatchJobOut> CreateBatchJobAsync(
@@ -49,6 +52,7 @@ namespace Mistral
             string? agentId = default,
             global::System.Collections.Generic.Dictionary<string, string>? metadata = default,
             int? timeoutHours = default,
+            global::Mistral.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

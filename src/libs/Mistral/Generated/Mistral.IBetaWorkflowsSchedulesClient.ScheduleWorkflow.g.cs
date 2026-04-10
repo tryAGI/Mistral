@@ -10,11 +10,13 @@ namespace Mistral
         /// Schedule Workflow
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Mistral.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Mistral.WorkflowScheduleResponse> ScheduleWorkflowAsync(
 
             global::Mistral.WorkflowScheduleRequest request,
+            global::Mistral.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Schedule Workflow
@@ -37,6 +39,7 @@ namespace Mistral
         /// <param name="deploymentName">
         /// Name of the deployment to route this schedule to
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Mistral.WorkflowScheduleResponse> ScheduleWorkflowAsync(
@@ -46,6 +49,7 @@ namespace Mistral
             string? workflowIdentifier = default,
             string? scheduleId = default,
             string? deploymentName = default,
+            global::Mistral.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

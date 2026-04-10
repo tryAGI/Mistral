@@ -9,11 +9,13 @@ namespace Mistral
         /// Generate speech from text using a saved voice or a reference audio clip.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Mistral.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Mistral.SpeechResponse> SpeechAsync(
 
             global::Mistral.SpeechRequest request,
+            global::Mistral.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Speech<br/>
@@ -33,6 +35,7 @@ namespace Mistral
         /// Output audio format. Defaults to mp3.<br/>
         /// Default Value: mp3
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Mistral.SpeechResponse> SpeechAsync(
@@ -41,6 +44,7 @@ namespace Mistral
             string? voiceId = default,
             string? refAudio = default,
             global::Mistral.SpeechOutputFormat? responseFormat = default,
+            global::Mistral.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

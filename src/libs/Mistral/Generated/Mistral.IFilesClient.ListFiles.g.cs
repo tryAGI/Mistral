@@ -22,6 +22,7 @@ namespace Mistral
         /// <param name="search"></param>
         /// <param name="purpose"></param>
         /// <param name="mimetypes"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Mistral.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Mistral.ListFilesOut> ListFilesAsync(
@@ -33,6 +34,7 @@ namespace Mistral
             string? search = default,
             global::Mistral.FilePurpose? purpose = default,
             global::System.Collections.Generic.IList<string>? mimetypes = default,
+            global::Mistral.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }
