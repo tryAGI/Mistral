@@ -31,12 +31,14 @@ namespace Mistral
         /// <param name="endTime">
         /// Filter workflows started before this time (ISO 8601)
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Mistral.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Mistral.WorkflowMetrics> GetWorkflowMetricsAsync(
             string workflowName,
             global::System.DateTime? startTime = default,
             global::System.DateTime? endTime = default,
+            global::Mistral.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

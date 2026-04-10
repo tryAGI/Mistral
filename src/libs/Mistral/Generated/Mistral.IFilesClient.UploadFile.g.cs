@@ -11,11 +11,13 @@ namespace Mistral
         /// Please contact us if you need to increase these storage limits.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Mistral.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Mistral.UploadFileOut> UploadFileAsync(
 
             global::Mistral.FilesApiRoutesUploadFileRequest request,
+            global::Mistral.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Upload File<br/>
@@ -50,6 +52,7 @@ namespace Mistral
         ///  file=@path/to/your/file.jsonl<br/>
         ///  ```
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Mistral.UploadFileOut> UploadFileAsync(
@@ -58,6 +61,7 @@ namespace Mistral
             int? expiry = default,
             global::Mistral.FilesApiRoutesUploadFileRequestVisibility? visibility = default,
             global::Mistral.FilePurpose? purpose = default,
+            global::Mistral.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

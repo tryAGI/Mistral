@@ -11,12 +11,14 @@ namespace Mistral
         /// </summary>
         /// <param name="workflowIdentifier"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Mistral.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Mistral.AnyOf<global::Mistral.WorkflowExecutionResponse, global::Mistral.WorkflowExecutionSyncResponse>> ExecuteWorkflowAsync(
             string workflowIdentifier,
 
             global::Mistral.WorkflowExecutionRequest request,
+            global::Mistral.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Execute Workflow
@@ -42,6 +44,7 @@ namespace Mistral
         /// <param name="deploymentName">
         /// Name of the deployment to route this execution to
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Mistral.AnyOf<global::Mistral.WorkflowExecutionResponse, global::Mistral.WorkflowExecutionSyncResponse>> ExecuteWorkflowAsync(
@@ -53,6 +56,7 @@ namespace Mistral
             double? timeoutSeconds = default,
             global::System.Collections.Generic.Dictionary<string, string>? customTracingAttributes = default,
             string? deploymentName = default,
+            global::Mistral.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

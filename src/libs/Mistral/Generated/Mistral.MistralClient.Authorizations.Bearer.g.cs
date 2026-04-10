@@ -25,6 +25,7 @@ namespace Mistral
             Authorizations.Add(new global::Mistral.EndPointAuthorization
             {
                 Type = "Http",
+                SchemeId = "ApiKey",
                 Location = "Header",
                 Name = "Bearer",
                 Value = apiKey,

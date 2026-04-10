@@ -8,11 +8,13 @@ namespace Mistral
         /// Create Streaming Transcription (SSE)
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Mistral.ApiException"></exception>
         global::System.Collections.Generic.IAsyncEnumerable<global::Mistral.TranscriptionStreamEvents> CreateStreamingTranscriptionSseAsync(
 
             global::Mistral.AudioTranscriptionRequestStream request,
+            global::Mistral.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create Streaming Transcription (SSE)
@@ -51,6 +53,7 @@ namespace Mistral
         /// <param name="timestampGranularities">
         /// Granularities of timestamps to include in the response.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Collections.Generic.IAsyncEnumerable<global::Mistral.TranscriptionStreamEvents> CreateStreamingTranscriptionSseAsync(
@@ -65,6 +68,7 @@ namespace Mistral
             bool? diarize = default,
             global::System.Collections.Generic.IList<string>? contextBias = default,
             global::System.Collections.Generic.IList<global::Mistral.TimestampGranularity>? timestampGranularities = default,
+            global::Mistral.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

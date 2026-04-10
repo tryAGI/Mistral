@@ -8,10 +8,12 @@ namespace Mistral
         /// Get the content of a given conversation from a dataset
         /// </summary>
         /// <param name="datasetRecordId"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Mistral.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Mistral.DatasetRecord> GetTheContentOfAGivenConversationFromADatasetAsync(
             global::System.Guid datasetRecordId,
+            global::Mistral.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

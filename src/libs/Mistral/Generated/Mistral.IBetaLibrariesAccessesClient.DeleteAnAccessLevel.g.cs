@@ -10,12 +10,14 @@ namespace Mistral
         /// </summary>
         /// <param name="libraryId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Mistral.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Mistral.SharingOut> DeleteAnAccessLevelAsync(
             global::System.Guid libraryId,
 
             global::Mistral.SharingDelete request,
+            global::Mistral.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Delete an access level.<br/>
@@ -29,6 +31,7 @@ namespace Mistral
         /// <param name="shareWithType">
         /// The type of entity, used to share a library.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Mistral.SharingOut> DeleteAnAccessLevelAsync(
@@ -36,6 +39,7 @@ namespace Mistral
             global::System.Guid shareWithUuid,
             global::Mistral.EntityType shareWithType,
             global::System.Guid? orgId = default,
+            global::Mistral.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }
