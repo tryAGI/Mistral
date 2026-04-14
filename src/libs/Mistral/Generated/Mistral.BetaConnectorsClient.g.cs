@@ -4,7 +4,7 @@
 namespace Mistral
 {
     /// <summary>
-    /// (beta) Connectors API. (beta) Connectors API to create, manage, and call tools on MCP connectors.<br/>
+    /// (beta) Connectors API<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>

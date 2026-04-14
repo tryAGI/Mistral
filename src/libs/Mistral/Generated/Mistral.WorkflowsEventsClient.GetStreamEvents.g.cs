@@ -195,10 +195,10 @@ namespace Mistral
                 } 
             }
 
-                if (lastEventId != default)
-                {
-                    __httpRequest.Headers.TryAddWithoutValidation("last-event-id", lastEventId.ToString());
-                }
+            if (lastEventId != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("last-event-id", lastEventId.ToString());
+            }
 
                 global::Mistral.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
