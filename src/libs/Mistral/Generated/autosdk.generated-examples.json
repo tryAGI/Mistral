@@ -1,0 +1,191 @@
+{
+  "Examples": [
+    {
+      "Order": 1,
+      "Title": "Create Transcription",
+      "Slug": "audio-api-v1-transcriptions-post",
+      "Description": "Generated from OpenAPI examples.",
+      "Language": "http",
+      "Code": "### Create Transcription\n# @name audio_api_v1_transcriptions_post\nPOST {{host}}/v1/audio/transcriptions\nAuthorization: Bearer {{token}}\nContent-Type: multipart/form-data\nAccept: application/json\n\n## Responses\n# 200\n# Description: Successful Response\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "audio_api_v1_transcriptions_post",
+      "Setup": null
+    },
+    {
+      "Order": 2,
+      "Title": "Chat Moderations",
+      "Slug": "chat-moderations-v1-chat-moderations-post",
+      "Description": "Generated from OpenAPI examples.",
+      "Language": "http",
+      "Code": "### Chat Moderations\n# @name chat_moderations_v1_chat_moderations_post\nPOST {{host}}/v1/chat/moderations\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022input\u0022: [\n    {\n      \u0022role\u0022: \u0022system\u0022,\n      \u0022content\u0022: \u0022string\u0022\n    }\n  ],\n  \u0022model\u0022: \u0022string\u0022\n}\n\n## Responses\n# 200\n# Description: Successful Response\n# Content-Type: application/json\n# 422\n# Description: Validation Error\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "chat_moderations_v1_chat_moderations_post",
+      "Setup": null
+    },
+    {
+      "Order": 3,
+      "Title": "Moderations",
+      "Slug": "moderations-v1-moderations-post",
+      "Description": "Generated from OpenAPI examples.",
+      "Language": "http",
+      "Code": "### Moderations\n# @name moderations_v1_moderations_post\nPOST {{host}}/v1/moderations\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022model\u0022: \u0022string\u0022,\n  \u0022metadata\u0022: {},\n  \u0022input\u0022: \u0022string\u0022\n}\n\n## Responses\n# 200\n# Description: Successful Response\n# Content-Type: application/json\n# 422\n# Description: Validation Error\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "moderations_v1_moderations_post",
+      "Setup": null
+    },
+    {
+      "Order": 4,
+      "Title": "Embeddings",
+      "Slug": "embeddings-v1-embeddings-post",
+      "Description": "Embeddings",
+      "Language": "http",
+      "Code": "### Embeddings\n# @name embeddings_v1_embeddings_post\nPOST {{host}}/v1/embeddings\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022model\u0022: \u0022mistral-embed\u0022,\n  \u0022metadata\u0022: {},\n  \u0022input\u0022: [\n    \u0022Embed this sentence.\u0022,\n    \u0022As well as this one.\u0022\n  ],\n  \u0022output_dimension\u0022: 0,\n  \u0022output_dtype\u0022: \u0022float\u0022,\n  \u0022encoding_format\u0022: \u0022float\u0022\n}\n\n## Responses\n# 200\n# Description: Successful Response\n# Content-Type: application/json\n# 422\n# Description: Validation Error\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "embeddings_v1_embeddings_post",
+      "Setup": null
+    },
+    {
+      "Order": 5,
+      "Title": "Delete File",
+      "Slug": "files-api-routes-delete-file",
+      "Description": "Delete a file.",
+      "Language": "http",
+      "Code": "### Delete File\n# @name files_api_routes_delete_file\nDELETE {{host}}/v1/files/{{file_id}}\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: OK\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "files_api_routes_delete_file",
+      "Setup": null
+    },
+    {
+      "Order": 6,
+      "Title": "Get Signed Url",
+      "Slug": "files-api-routes-get-signed-url",
+      "Description": "Generated from OpenAPI examples.",
+      "Language": "http",
+      "Code": "### Get Signed Url\n# @name files_api_routes_get_signed_url\nGET {{host}}/v1/files/{{file_id}}/url?expiry=24\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: OK\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "files_api_routes_get_signed_url",
+      "Setup": null
+    },
+    {
+      "Order": 7,
+      "Title": "List Files",
+      "Slug": "files-api-routes-list-files",
+      "Description": "Returns a list of files that belong to the user\u0027s organization.",
+      "Language": "csharp",
+      "Code": "using var client = new MistralClient(apiKey);\nvar response = await client.Files.ListFilesAsync();\n\n// Example response:\n// {\n//   \u0022data\u0022: [\n//     {\n//       \u0022id\u0022: \u0022\\u003Cyour_file_id\\u003E\u0022,\n//       \u0022object\u0022: \u0022file\u0022,\n//       \u0022bytes\u0022: \u0022openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464\u0022,\n//       \u0022created_at\u0022: 1759491994,\n//       \u0022filename\u0022: \u0022\\u003Cyour_file_name\\u003E\u0022,\n//       \u0022purpose\u0022: \u0022batch\u0022,\n//       \u0022sample_type\u0022: \u0022batch_result\u0022,\n//       \u0022source\u0022: \u0022mistral\u0022,\n//       \u0022num_lines\u0022: 2,\n//       \u0022mimetype\u0022: \u0022application/jsonl\u0022,\n//       \u0022signature\u0022: \u0022openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464\u0022\n//     },\n//     {\n//       \u0022id\u0022: \u0022\\u003Cyour_file_id\\u003E\u0022,\n//       \u0022object\u0022: \u0022file\u0022,\n//       \u0022bytes\u0022: \u0022openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464\u0022,\n//       \u0022created_at\u0022: 1759491994,\n//       \u0022filename\u0022: \u0022\\u003Cyour_file_name\\u003E\u0022,\n//       \u0022purpose\u0022: \u0022batch\u0022,\n//       \u0022sample_type\u0022: \u0022batch_result\u0022,\n//       \u0022source\u0022: \u0022mistral\u0022,\n//       \u0022num_lines\u0022: 2,\n//       \u0022mimetype\u0022: \u0022application/jsonl\u0022,\n//       \u0022signature\u0022: \u0022openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464\u0022\n//     }\n//   ],\n//   \u0022object\u0022: \u0022list\u0022,\n//   \u0022total\u0022: 2\n// }",
+      "Format": "sdk",
+      "OperationId": "files_api_routes_list_files",
+      "Setup": "This example assumes \u0060using Mistral;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
+    },
+    {
+      "Order": 8,
+      "Title": "Retrieve File",
+      "Slug": "files-api-routes-retrieve-file",
+      "Description": "Returns information about a specific file.",
+      "Language": "http",
+      "Code": "### Retrieve File\n# @name files_api_routes_retrieve_file\nGET {{host}}/v1/files/{{file_id}}\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: OK\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "files_api_routes_retrieve_file",
+      "Setup": null
+    },
+    {
+      "Order": 9,
+      "Title": "Upload File",
+      "Slug": "files-api-routes-upload-file",
+      "Description": "Upload a file that can be used across various endpoints.\n\nThe size of individual files can be a maximum of 512 MB. The Fine-tuning API only supports .jsonl files.\n\nPlease contact us if you need to increase these storage limits.",
+      "Language": "http",
+      "Code": "### Upload File\n# @name files_api_routes_upload_file\nPOST {{host}}/v1/files\nAuthorization: Bearer {{token}}\nContent-Type: multipart/form-data\nAccept: application/json\n\n## Responses\n# 200\n# Description: OK\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "files_api_routes_upload_file",
+      "Setup": null
+    },
+    {
+      "Order": 10,
+      "Title": "Fim Completion",
+      "Slug": "fim-completion-v1-fim-completions-post",
+      "Description": "FIM completion.",
+      "Language": "http",
+      "Code": "### Fim Completion\n# @name fim_completion_v1_fim_completions_post\nPOST {{host}}/v1/fim/completions\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json, text/event-stream\n\n{\n  \u0022model\u0022: \u0022codestral-2404\u0022,\n  \u0022temperature\u0022: 0,\n  \u0022top_p\u0022: 1.0,\n  \u0022max_tokens\u0022: 0,\n  \u0022stream\u0022: false,\n  \u0022stop\u0022: \u0022string\u0022,\n  \u0022random_seed\u0022: 0,\n  \u0022metadata\u0022: {},\n  \u0022prompt\u0022: \u0022string\u0022,\n  \u0022suffix\u0022: \u0022\u0022,\n  \u0022min_tokens\u0022: 0\n}\n\n## Responses\n# 200\n# Description: Successful Response\n# Content-Type: application/json, text/event-stream\n# 422\n# Description: Validation Error\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "fim_completion_v1_fim_completions_post",
+      "Setup": null
+    },
+    {
+      "Order": 11,
+      "Title": "Archive Fine Tuned Model",
+      "Slug": "jobs-api-routes-fine-tuning-archive-fine-tuned-model",
+      "Description": "Archive a fine-tuned model.",
+      "Language": "csharp",
+      "Code": "using var client = new MistralClient(apiKey);\n\nvar response = await client.Models.ArchiveFineTunedModelAsync(\n    modelId: \u0022ft:open-mistral-7b:587a6b29:20240514:7e773925\u0022\n);",
+      "Format": "sdk",
+      "OperationId": "jobs_api_routes_fine_tuning_archive_fine_tuned_model",
+      "Setup": "This example assumes \u0060using Mistral;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
+    },
+    {
+      "Order": 12,
+      "Title": "Delete Model",
+      "Slug": "delete-model-v1-models-model-id-delete",
+      "Description": "Delete a fine-tuned model.",
+      "Language": "csharp",
+      "Code": "using var client = new MistralClient(apiKey);\n\nvar response = await client.Models.DeleteModelAsync(\n    modelId: \u0022ft:open-mistral-7b:587a6b29:20240514:7e773925\u0022\n);\n\n// Example response:\n// {\n//   \u0022id\u0022: \u0022ft:open-mistral-7b:587a6b29:20240514:7e773925\u0022,\n//   \u0022object\u0022: \u0022model\u0022,\n//   \u0022deleted\u0022: true\n// }",
+      "Format": "sdk",
+      "OperationId": "delete_model_v1_models__model_id__delete",
+      "Setup": "This example assumes \u0060using Mistral;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
+    },
+    {
+      "Order": 13,
+      "Title": "List Models",
+      "Slug": "list-models-v1-models-get",
+      "Description": "List all models available to the user.",
+      "Language": "csharp",
+      "Code": "using var client = new MistralClient(apiKey);\nvar response = await client.Models.ListModelsAsync();\n\n// Example response:\n// [\n//   {\n//     \u0022id\u0022: \u0022\\u003Cmodel_id\\u003E\u0022,\n//     \u0022capabilities\u0022: {\n//       \u0022completion_chat\u0022: true,\n//       \u0022completion_fim\u0022: false,\n//       \u0022function_calling\u0022: false,\n//       \u0022fine_tuning\u0022: false,\n//       \u0022vision\u0022: false,\n//       \u0022classification\u0022: false\n//     },\n//     \u0022job\u0022: \u0022\\u003Cjob_id\\u003E\u0022,\n//     \u0022root\u0022: \u0022open-mistral-7b\u0022,\n//     \u0022object\u0022: \u0022model\u0022,\n//     \u0022created\u0022: 1756746619,\n//     \u0022owned_by\u0022: \u0022\\u003Cowner_id\\u003E\u0022,\n//     \u0022name\u0022: \u0022openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464\u0022,\n//     \u0022description\u0022: \u0022openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464\u0022,\n//     \u0022max_context_length\u0022: 32768,\n//     \u0022aliases\u0022: [],\n//     \u0022deprecation\u0022: \u0022openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464\u0022,\n//     \u0022deprecation_replacement_model\u0022: \u0022openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464\u0022,\n//     \u0022default_model_temperature\u0022: \u0022openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464\u0022,\n//     \u0022TYPE\u0022: \u0022fine-tuned\u0022,\n//     \u0022archived\u0022: false\n//   }\n// ]",
+      "Format": "sdk",
+      "OperationId": "list_models_v1_models_get",
+      "Setup": "This example assumes \u0060using Mistral;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
+    },
+    {
+      "Order": 14,
+      "Title": "Retrieve Model",
+      "Slug": "retrieve-model-v1-models-model-id-get",
+      "Description": "Retrieve information about a model.",
+      "Language": "csharp",
+      "Code": "using var client = new MistralClient(apiKey);\n\nvar response = await client.Models.RetrieveModelAsync(\n    modelId: \u0022ft:open-mistral-7b:587a6b29:20240514:7e773925\u0022\n);\n\n// Example response:\n// {\n//   \u0022id\u0022: \u0022\\u003Cyour_model_id\\u003E\u0022,\n//   \u0022capabilities\u0022: {\n//     \u0022completion_chat\u0022: true,\n//     \u0022completion_fim\u0022: false,\n//     \u0022function_calling\u0022: false,\n//     \u0022fine_tuning\u0022: false,\n//     \u0022vision\u0022: false,\n//     \u0022classification\u0022: false\n//   },\n//   \u0022job\u0022: \u0022\\u003Cjob_id\\u003E\u0022,\n//   \u0022root\u0022: \u0022open-mistral-7b\u0022,\n//   \u0022object\u0022: \u0022model\u0022,\n//   \u0022created\u0022: 1756746619,\n//   \u0022owned_by\u0022: \u0022\\u003Cowner_id\\u003E\u0022,\n//   \u0022name\u0022: \u0022openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464\u0022,\n//   \u0022description\u0022: \u0022openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464\u0022,\n//   \u0022max_context_length\u0022: 32768,\n//   \u0022aliases\u0022: [],\n//   \u0022deprecation\u0022: \u0022openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464\u0022,\n//   \u0022deprecation_replacement_model\u0022: \u0022openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464\u0022,\n//   \u0022default_model_temperature\u0022: \u0022openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464\u0022,\n//   \u0022TYPE\u0022: \u0022fine-tuned\u0022,\n//   \u0022archived\u0022: false\n// }",
+      "Format": "sdk",
+      "OperationId": "retrieve_model_v1_models__model_id__get",
+      "Setup": "This example assumes \u0060using Mistral;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
+    },
+    {
+      "Order": 15,
+      "Title": "Unarchive Fine Tuned Model",
+      "Slug": "jobs-api-routes-fine-tuning-unarchive-fine-tuned-model",
+      "Description": "Un-archive a fine-tuned model.",
+      "Language": "csharp",
+      "Code": "using var client = new MistralClient(apiKey);\n\nvar response = await client.Models.UnarchiveFineTunedModelAsync(\n    modelId: \u0022ft:open-mistral-7b:587a6b29:20240514:7e773925\u0022\n);",
+      "Format": "sdk",
+      "OperationId": "jobs_api_routes_fine_tuning_unarchive_fine_tuned_model",
+      "Setup": "This example assumes \u0060using Mistral;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
+    },
+    {
+      "Order": 16,
+      "Title": "Update Fine Tuned Model",
+      "Slug": "jobs-api-routes-fine-tuning-update-fine-tuned-model",
+      "Description": "Update a model name or description.",
+      "Language": "http",
+      "Code": "### Update Fine Tuned Model\n# @name jobs_api_routes_fine_tuning_update_fine_tuned_model\nPATCH {{host}}/v1/fine_tuning/models/{{model_id}}\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022name\u0022: \u0022string\u0022,\n  \u0022description\u0022: \u0022string\u0022\n}\n\n## Responses\n# 200\n# Description: OK\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "jobs_api_routes_fine_tuning_update_fine_tuned_model",
+      "Setup": null
+    },
+    {
+      "Order": 17,
+      "Title": "OCR",
+      "Slug": "ocr-v1-ocr-post",
+      "Description": "Generated from OpenAPI examples.",
+      "Language": "http",
+      "Code": "### OCR\n# @name ocr_v1_ocr_post\nPOST {{host}}/v1/ocr\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022model\u0022: \u0022string\u0022,\n  \u0022id\u0022: \u0022string\u0022,\n  \u0022document\u0022: {\n    \u0022type\u0022: \u0022file\u0022,\n    \u0022file_id\u0022: \u002200000000-0000-0000-0000-000000000000\u0022\n  },\n  \u0022pages\u0022: [\n    0\n  ],\n  \u0022include_image_base64\u0022: true,\n  \u0022image_limit\u0022: 0,\n  \u0022image_min_size\u0022: 0,\n  \u0022bbox_annotation_format\u0022: {\n    \u0022type\u0022: \u0022text\u0022,\n    \u0022json_schema\u0022: {\n      \u0022name\u0022: \u0022string\u0022,\n      \u0022description\u0022: \u0022string\u0022,\n      \u0022schema\u0022: {},\n      \u0022strict\u0022: false\n    }\n  },\n  \u0022document_annotation_format\u0022: {\n    \u0022type\u0022: \u0022text\u0022,\n    \u0022json_schema\u0022: {\n      \u0022name\u0022: \u0022string\u0022,\n      \u0022description\u0022: \u0022string\u0022,\n      \u0022schema\u0022: {},\n      \u0022strict\u0022: false\n    }\n  },\n  \u0022document_annotation_prompt\u0022: \u0022string\u0022,\n  \u0022confidence_scores_granularity\u0022: \u0022word\u0022,\n  \u0022table_format\u0022: \u0022markdown\u0022,\n  \u0022extract_header\u0022: false,\n  \u0022extract_footer\u0022: false\n}\n\n## Responses\n# 200\n# Description: Successful Response\n# Content-Type: application/json\n# 422\n# Description: Validation Error\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "ocr_v1_ocr_post",
+      "Setup": null
+    }
+  ]
+}

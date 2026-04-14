@@ -4,7 +4,7 @@
 namespace Mistral
 {
     /// <summary>
-    /// (beta) Libraries  API - Documents. (beta) Libraries API - manage documents in a library.<br/>
+    /// (beta) Libraries  API - Documents<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>
@@ -33,11 +33,11 @@ namespace Mistral
         /// ensuring <see cref="ApiException.ResponseBody"/> is populated.
         /// </summary>
         public bool ReadResponseAsString { get; set; }
-
         /// <summary>
         /// Client-wide request defaults such as headers, query parameters, retries, and timeout.
         /// </summary>
         public global::Mistral.AutoSDKClientOptions Options { get; }
+
 
         /// <summary>
         /// 
