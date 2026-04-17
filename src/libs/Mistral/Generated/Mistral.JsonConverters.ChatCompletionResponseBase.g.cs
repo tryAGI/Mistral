@@ -23,6 +23,14 @@ namespace Mistral.JsonConverters
                 foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
                 {
                     __jsonProps.Add(__jsonProp.Name);
+                    if (__jsonProp.Value.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                    {
+                        foreach (var __nestedJsonProp in __jsonProp.Value.EnumerateObject())
+                        {
+                            __jsonProps.Add(__jsonProp.Name + "." + __nestedJsonProp.Name);
+                        }
+                    }
+
                 }
             }
 
@@ -31,6 +39,13 @@ namespace Mistral.JsonConverters
             if (__jsonProps.Contains("model")) __score0++;
             if (__jsonProps.Contains("object")) __score0++;
             if (__jsonProps.Contains("usage")) __score0++;
+            if (__jsonProps.Contains("usage.completion_tokens")) __score0++;
+            if (__jsonProps.Contains("usage.num_cached_tokens")) __score0++;
+            if (__jsonProps.Contains("usage.prompt_audio_seconds")) __score0++;
+            if (__jsonProps.Contains("usage.prompt_token_details")) __score0++;
+            if (__jsonProps.Contains("usage.prompt_tokens")) __score0++;
+            if (__jsonProps.Contains("usage.prompt_tokens_details")) __score0++;
+            if (__jsonProps.Contains("usage.total_tokens")) __score0++;
             var __score1 = 0;
             if (__jsonProps.Contains("created")) __score1++;
             var __bestScore = 0;
