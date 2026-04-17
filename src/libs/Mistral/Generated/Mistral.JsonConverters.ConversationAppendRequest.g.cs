@@ -23,11 +23,30 @@ namespace Mistral.JsonConverters
                 foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
                 {
                     __jsonProps.Add(__jsonProp.Name);
+                    if (__jsonProp.Value.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                    {
+                        foreach (var __nestedJsonProp in __jsonProp.Value.EnumerateObject())
+                        {
+                            __jsonProps.Add(__jsonProp.Name + "." + __nestedJsonProp.Name);
+                        }
+                    }
+
                 }
             }
 
             var __score0 = 0;
             if (__jsonProps.Contains("completion_args")) __score0++;
+            if (__jsonProps.Contains("completion_args.frequency_penalty")) __score0++;
+            if (__jsonProps.Contains("completion_args.max_tokens")) __score0++;
+            if (__jsonProps.Contains("completion_args.prediction")) __score0++;
+            if (__jsonProps.Contains("completion_args.presence_penalty")) __score0++;
+            if (__jsonProps.Contains("completion_args.random_seed")) __score0++;
+            if (__jsonProps.Contains("completion_args.reasoning_effort")) __score0++;
+            if (__jsonProps.Contains("completion_args.response_format")) __score0++;
+            if (__jsonProps.Contains("completion_args.stop")) __score0++;
+            if (__jsonProps.Contains("completion_args.temperature")) __score0++;
+            if (__jsonProps.Contains("completion_args.tool_choice")) __score0++;
+            if (__jsonProps.Contains("completion_args.top_p")) __score0++;
             if (__jsonProps.Contains("handoff_execution")) __score0++;
             if (__jsonProps.Contains("inputs")) __score0++;
             if (__jsonProps.Contains("store")) __score0++;
