@@ -71,11 +71,6 @@ namespace Mistral
         public BetaAgentsClient BetaAgents { get; }
 
         /// <summary>
-        /// (beta) Connectors API. (beta) Connectors API to create, manage, and call tools on MCP connectors.
-        /// </summary>
-        public BetaConnectorsClient BetaConnectors { get; }
-
-        /// <summary>
         /// (beta) Conversations API.
         /// </summary>
         public BetaConversationsClient BetaConversations { get; }
@@ -126,6 +121,46 @@ namespace Mistral
         public BetaObservabilityJudgesClient BetaObservabilityJudges { get; }
 
         /// <summary>
+        /// Workflows. Workflow management API.
+        /// </summary>
+        public BetaWorkflowsClient BetaWorkflows { get; }
+
+        /// <summary>
+        /// Deployments. List and inspect worker deployments.
+        /// </summary>
+        public BetaWorkflowsDeploymentsClient BetaWorkflowsDeployments { get; }
+
+        /// <summary>
+        /// Events. Stream and list workflow execution events.
+        /// </summary>
+        public BetaWorkflowsEventsClient BetaWorkflowsEvents { get; }
+
+        /// <summary>
+        /// Executions. Trigger, monitor, and control workflow executions.
+        /// </summary>
+        public BetaWorkflowsExecutionsClient BetaWorkflowsExecutions { get; }
+
+        /// <summary>
+        /// Metrics. Get performance metrics for workflows.
+        /// </summary>
+        public BetaWorkflowsMetricsClient BetaWorkflowsMetrics { get; }
+
+        /// <summary>
+        /// Runs. List and inspect individual workflow runs.
+        /// </summary>
+        public BetaWorkflowsRunsClient BetaWorkflowsRuns { get; }
+
+        /// <summary>
+        /// Schedules. Create and manage workflow schedules.
+        /// </summary>
+        public BetaWorkflowsSchedulesClient BetaWorkflowsSchedules { get; }
+
+        /// <summary>
+        /// Workers. Worker connection info.
+        /// </summary>
+        public BetaWorkflowsWorkersClient BetaWorkflowsWorkers { get; }
+
+        /// <summary>
         /// Chat. Chat Completion API.
         /// </summary>
         public ChatClient Chat { get; }
@@ -164,46 +199,6 @@ namespace Mistral
         /// OCR API.
         /// </summary>
         public OcrClient Ocr { get; }
-
-        /// <summary>
-        /// Workflows. Workflow management API.
-        /// </summary>
-        public WorkflowsClient Workflows { get; }
-
-        /// <summary>
-        /// Deployments. List and inspect worker deployments.
-        /// </summary>
-        public WorkflowsDeploymentsClient WorkflowsDeployments { get; }
-
-        /// <summary>
-        /// Events. Stream and list workflow execution events.
-        /// </summary>
-        public WorkflowsEventsClient WorkflowsEvents { get; }
-
-        /// <summary>
-        /// Executions. Trigger, monitor, and control workflow executions.
-        /// </summary>
-        public WorkflowsExecutionsClient WorkflowsExecutions { get; }
-
-        /// <summary>
-        /// Metrics. Get performance metrics for workflows.
-        /// </summary>
-        public WorkflowsMetricsClient WorkflowsMetrics { get; }
-
-        /// <summary>
-        /// Runs. List and inspect individual workflow runs.
-        /// </summary>
-        public WorkflowsRunsClient WorkflowsRuns { get; }
-
-        /// <summary>
-        /// Schedules. Create and manage workflow schedules.
-        /// </summary>
-        public WorkflowsSchedulesClient WorkflowsSchedules { get; }
-
-        /// <summary>
-        /// Workers. Worker connection info.
-        /// </summary>
-        public WorkflowsWorkersClient WorkflowsWorkers { get; }
 
     }
 }

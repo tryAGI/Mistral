@@ -31,12 +31,6 @@ namespace Mistral
         public required global::Mistral.OCRTableObjectFormat Format { get; set; }
 
         /// <summary>
-        /// Per-word confidence scores. Returned when `confidence_scores_granularity` is set to `"word"`.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("word_confidence_scores")]
-        public global::System.Collections.Generic.IList<global::Mistral.OCRConfidenceScore>? WordConfidenceScores { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -54,22 +48,17 @@ namespace Mistral
         /// <param name="format">
         /// Format of the table
         /// </param>
-        /// <param name="wordConfidenceScores">
-        /// Per-word confidence scores. Returned when `confidence_scores_granularity` is set to `"word"`.
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OCRTableObject(
             string id,
             string content,
-            global::Mistral.OCRTableObjectFormat format,
-            global::System.Collections.Generic.IList<global::Mistral.OCRConfidenceScore>? wordConfidenceScores)
+            global::Mistral.OCRTableObjectFormat format)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
             this.Format = format;
-            this.WordConfidenceScores = wordConfidenceScores;
         }
 
         /// <summary>

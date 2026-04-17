@@ -453,9 +453,6 @@ namespace Mistral
         /// <param name="documentAnnotationPrompt">
         /// Optional prompt to guide the model in extracting structured output from the entire document. A document_annotation_format must be provided.
         /// </param>
-        /// <param name="confidenceScoresGranularity">
-        /// Granularity level for confidence scores. Set to `"page"` to get aggregate statistics (average and minimum) per page, or `"word"` to also get per-word scores on each page and table. Defaults to `null` (no confidence scores returned).
-        /// </param>
         /// <param name="tableFormat"></param>
         /// <param name="extractHeader">
         /// Default Value: false
@@ -477,7 +474,6 @@ namespace Mistral
             global::Mistral.ResponseFormat? bboxAnnotationFormat = default,
             global::Mistral.ResponseFormat? documentAnnotationFormat = default,
             string? documentAnnotationPrompt = default,
-            global::Mistral.OCRRequestConfidenceScoresGranularity2? confidenceScoresGranularity = default,
             global::Mistral.OCRRequestTableFormat2? tableFormat = default,
             bool? extractHeader = default,
             bool? extractFooter = default,
@@ -496,7 +492,6 @@ namespace Mistral
                 BboxAnnotationFormat = bboxAnnotationFormat,
                 DocumentAnnotationFormat = documentAnnotationFormat,
                 DocumentAnnotationPrompt = documentAnnotationPrompt,
-                ConfidenceScoresGranularity = confidenceScoresGranularity,
                 TableFormat = tableFormat,
                 ExtractHeader = extractHeader,
                 ExtractFooter = extractFooter,
