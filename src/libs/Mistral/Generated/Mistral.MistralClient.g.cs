@@ -86,15 +86,6 @@ namespace Mistral
         };
 
         /// <summary>
-        /// (beta) Connectors API. (beta) Connectors API to create, manage, and call tools on MCP connectors.
-        /// </summary>
-        public BetaConnectorsClient BetaConnectors => new BetaConnectorsClient(HttpClient, authorizations: Authorizations, options: Options)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContext = JsonSerializerContext,
-        };
-
-        /// <summary>
         /// (beta) Conversations API.
         /// </summary>
         public BetaConversationsClient BetaConversations => new BetaConversationsClient(HttpClient, authorizations: Authorizations, options: Options)
@@ -185,6 +176,78 @@ namespace Mistral
         };
 
         /// <summary>
+        /// Workflows. Workflow management API.
+        /// </summary>
+        public BetaWorkflowsClient BetaWorkflows => new BetaWorkflowsClient(HttpClient, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// Deployments. List and inspect worker deployments.
+        /// </summary>
+        public BetaWorkflowsDeploymentsClient BetaWorkflowsDeployments => new BetaWorkflowsDeploymentsClient(HttpClient, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// Events. Stream and list workflow execution events.
+        /// </summary>
+        public BetaWorkflowsEventsClient BetaWorkflowsEvents => new BetaWorkflowsEventsClient(HttpClient, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// Executions. Trigger, monitor, and control workflow executions.
+        /// </summary>
+        public BetaWorkflowsExecutionsClient BetaWorkflowsExecutions => new BetaWorkflowsExecutionsClient(HttpClient, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// Metrics. Get performance metrics for workflows.
+        /// </summary>
+        public BetaWorkflowsMetricsClient BetaWorkflowsMetrics => new BetaWorkflowsMetricsClient(HttpClient, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// Runs. List and inspect individual workflow runs.
+        /// </summary>
+        public BetaWorkflowsRunsClient BetaWorkflowsRuns => new BetaWorkflowsRunsClient(HttpClient, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// Schedules. Create and manage workflow schedules.
+        /// </summary>
+        public BetaWorkflowsSchedulesClient BetaWorkflowsSchedules => new BetaWorkflowsSchedulesClient(HttpClient, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// Workers. Worker connection info.
+        /// </summary>
+        public BetaWorkflowsWorkersClient BetaWorkflowsWorkers => new BetaWorkflowsWorkersClient(HttpClient, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
         /// Chat. Chat Completion API.
         /// </summary>
         public ChatClient Chat => new ChatClient(HttpClient, authorizations: Authorizations, options: Options)
@@ -251,78 +314,6 @@ namespace Mistral
         /// OCR API.
         /// </summary>
         public OcrClient Ocr => new OcrClient(HttpClient, authorizations: Authorizations, options: Options)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContext = JsonSerializerContext,
-        };
-
-        /// <summary>
-        /// Workflows. Workflow management API.
-        /// </summary>
-        public WorkflowsClient Workflows => new WorkflowsClient(HttpClient, authorizations: Authorizations, options: Options)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContext = JsonSerializerContext,
-        };
-
-        /// <summary>
-        /// Deployments. List and inspect worker deployments.
-        /// </summary>
-        public WorkflowsDeploymentsClient WorkflowsDeployments => new WorkflowsDeploymentsClient(HttpClient, authorizations: Authorizations, options: Options)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContext = JsonSerializerContext,
-        };
-
-        /// <summary>
-        /// Events. Stream and list workflow execution events.
-        /// </summary>
-        public WorkflowsEventsClient WorkflowsEvents => new WorkflowsEventsClient(HttpClient, authorizations: Authorizations, options: Options)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContext = JsonSerializerContext,
-        };
-
-        /// <summary>
-        /// Executions. Trigger, monitor, and control workflow executions.
-        /// </summary>
-        public WorkflowsExecutionsClient WorkflowsExecutions => new WorkflowsExecutionsClient(HttpClient, authorizations: Authorizations, options: Options)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContext = JsonSerializerContext,
-        };
-
-        /// <summary>
-        /// Metrics. Get performance metrics for workflows.
-        /// </summary>
-        public WorkflowsMetricsClient WorkflowsMetrics => new WorkflowsMetricsClient(HttpClient, authorizations: Authorizations, options: Options)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContext = JsonSerializerContext,
-        };
-
-        /// <summary>
-        /// Runs. List and inspect individual workflow runs.
-        /// </summary>
-        public WorkflowsRunsClient WorkflowsRuns => new WorkflowsRunsClient(HttpClient, authorizations: Authorizations, options: Options)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContext = JsonSerializerContext,
-        };
-
-        /// <summary>
-        /// Schedules. Create and manage workflow schedules.
-        /// </summary>
-        public WorkflowsSchedulesClient WorkflowsSchedules => new WorkflowsSchedulesClient(HttpClient, authorizations: Authorizations, options: Options)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContext = JsonSerializerContext,
-        };
-
-        /// <summary>
-        /// Workers. Worker connection info.
-        /// </summary>
-        public WorkflowsWorkersClient WorkflowsWorkers => new WorkflowsWorkersClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
