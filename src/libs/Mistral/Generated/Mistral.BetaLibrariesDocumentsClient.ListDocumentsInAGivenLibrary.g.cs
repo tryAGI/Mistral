@@ -171,7 +171,7 @@ namespace Mistral
                 PrepareListDocumentsInAGivenLibraryRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    libraryId: libraryId,
+                    libraryId: libraryId!,
                     search: search,
                     pageSize: pageSize,
                     page: page,

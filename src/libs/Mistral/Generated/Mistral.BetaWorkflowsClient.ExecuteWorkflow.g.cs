@@ -140,7 +140,7 @@ namespace Mistral
                 PrepareExecuteWorkflowRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    workflowIdentifier: workflowIdentifier,
+                    workflowIdentifier: workflowIdentifier!,
                     request: request);
 
                 return __httpRequest;

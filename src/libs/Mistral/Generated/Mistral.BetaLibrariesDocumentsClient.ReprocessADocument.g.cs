@@ -125,8 +125,8 @@ namespace Mistral
                 PrepareReprocessADocumentRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    libraryId: libraryId,
-                    documentId: documentId);
+                    libraryId: libraryId!,
+                    documentId: documentId!);
 
                 return __httpRequest;
             }

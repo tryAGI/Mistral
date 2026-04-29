@@ -133,8 +133,8 @@ namespace Mistral
                 PrepareUpdateAnAgentVersionRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    agentId: agentId,
-                    version: version);
+                    agentId: agentId!,
+                    version: version!);
 
                 return __httpRequest;
             }

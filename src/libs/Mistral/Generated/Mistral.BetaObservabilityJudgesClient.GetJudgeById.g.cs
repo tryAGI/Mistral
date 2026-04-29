@@ -124,7 +124,7 @@ namespace Mistral
                 PrepareGetJudgeByIdRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    judgeId: judgeId);
+                    judgeId: judgeId!);
 
                 return __httpRequest;
             }

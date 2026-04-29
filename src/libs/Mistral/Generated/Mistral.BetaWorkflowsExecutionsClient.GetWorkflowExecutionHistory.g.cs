@@ -134,7 +134,7 @@ namespace Mistral
                 PrepareGetWorkflowExecutionHistoryRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    executionId: executionId,
+                    executionId: executionId!,
                     decodePayloads: decodePayloads);
 
                 return __httpRequest;

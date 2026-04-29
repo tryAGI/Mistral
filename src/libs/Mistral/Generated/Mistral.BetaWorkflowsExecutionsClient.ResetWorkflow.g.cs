@@ -133,7 +133,7 @@ namespace Mistral
                 PrepareResetWorkflowRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    executionId: executionId,
+                    executionId: executionId!,
                     request: request);
 
                 return __httpRequest;

@@ -134,8 +134,8 @@ namespace Mistral
                 PrepareGetChatCompletionFieldOptionsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    fieldName: fieldName,
-                    @operator: @operator);
+                    fieldName: fieldName!,
+                    @operator: @operator!);
 
                 return __httpRequest;
             }

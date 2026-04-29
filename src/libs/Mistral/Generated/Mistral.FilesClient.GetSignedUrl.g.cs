@@ -135,7 +135,7 @@ namespace Mistral
                 PrepareGetSignedUrlRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    fileId: fileId,
+                    fileId: fileId!,
                     expiry: expiry);
 
                 return __httpRequest;

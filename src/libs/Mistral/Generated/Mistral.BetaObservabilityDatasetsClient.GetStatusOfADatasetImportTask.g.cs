@@ -129,8 +129,8 @@ namespace Mistral
                 PrepareGetStatusOfADatasetImportTaskRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    datasetId: datasetId,
-                    taskId: taskId);
+                    datasetId: datasetId!,
+                    taskId: taskId!);
 
                 return __httpRequest;
             }

@@ -159,7 +159,7 @@ namespace Mistral
                 PrepareGetWorkflowMetricsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    workflowName: workflowName,
+                    workflowName: workflowName!,
                     startTime: startTime,
                     endTime: endTime);
 

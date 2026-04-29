@@ -124,7 +124,7 @@ namespace Mistral
                 PrepareGetWorkflowRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    workflowIdentifier: workflowIdentifier);
+                    workflowIdentifier: workflowIdentifier!);
 
                 return __httpRequest;
             }

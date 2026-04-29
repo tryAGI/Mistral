@@ -142,7 +142,7 @@ namespace Mistral
                 PrepareGetEventIdsThatWereSelectedByTheGivenCampaignRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    campaignId: campaignId,
+                    campaignId: campaignId!,
                     pageSize: pageSize,
                     page: page);
 

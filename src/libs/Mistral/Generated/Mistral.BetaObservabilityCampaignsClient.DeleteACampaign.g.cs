@@ -119,7 +119,7 @@ namespace Mistral
                 PrepareDeleteACampaignRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    campaignId: campaignId);
+                    campaignId: campaignId!);
 
                 return __httpRequest;
             }

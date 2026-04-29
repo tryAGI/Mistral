@@ -138,7 +138,7 @@ namespace Mistral
                 PrepareRunJudgeOnADatasetRecordBasedOnTheGivenOptionsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    datasetRecordId: datasetRecordId,
+                    datasetRecordId: datasetRecordId!,
                     request: request);
 
                 return __httpRequest;

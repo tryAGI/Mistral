@@ -144,8 +144,8 @@ namespace Mistral
                 PrepareUpdateTheMetadataOfASpecificDocumentRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    libraryId: libraryId,
-                    documentId: documentId,
+                    libraryId: libraryId!,
+                    documentId: documentId!,
                     request: request);
 
                 return __httpRequest;

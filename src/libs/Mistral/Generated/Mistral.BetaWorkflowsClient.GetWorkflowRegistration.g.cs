@@ -144,7 +144,7 @@ namespace Mistral
                 PrepareGetWorkflowRegistrationRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    workflowRegistrationId: workflowRegistrationId,
+                    workflowRegistrationId: workflowRegistrationId!,
                     withWorkflow: withWorkflow,
                     includeShared: includeShared);
 
