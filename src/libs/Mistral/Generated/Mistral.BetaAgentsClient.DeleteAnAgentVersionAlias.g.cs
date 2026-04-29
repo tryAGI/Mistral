@@ -128,8 +128,8 @@ namespace Mistral
                 PrepareDeleteAnAgentVersionAliasRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    agentId: agentId,
-                    alias: alias);
+                    agentId: agentId!,
+                    alias: alias!);
 
                 return __httpRequest;
             }

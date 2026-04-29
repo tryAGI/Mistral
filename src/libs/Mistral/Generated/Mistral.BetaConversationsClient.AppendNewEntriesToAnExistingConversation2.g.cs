@@ -134,7 +134,7 @@ namespace Mistral
                 PrepareAppendNewEntriesToAnExistingConversation2Request(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    conversationId: conversationId,
+                    conversationId: conversationId!,
                     request: request);
 
                 return __httpRequest;

@@ -130,8 +130,8 @@ namespace Mistral
                 PrepareRetrieveTheProcessingStatusOfASpecificDocumentRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    libraryId: libraryId,
-                    documentId: documentId);
+                    libraryId: libraryId!,
+                    documentId: documentId!);
 
                 return __httpRequest;
             }

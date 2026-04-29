@@ -139,9 +139,9 @@ namespace Mistral
                 PrepareCreateOrUpdateAnAgentVersionAliasRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    agentId: agentId,
-                    alias: alias,
-                    version: version);
+                    agentId: agentId!,
+                    alias: alias!,
+                    version: version!);
 
                 return __httpRequest;
             }

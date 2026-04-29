@@ -124,7 +124,7 @@ namespace Mistral
                 PrepareGetTheContentOfAGivenConversationFromADatasetRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    datasetRecordId: datasetRecordId);
+                    datasetRecordId: datasetRecordId!);
 
                 return __httpRequest;
             }

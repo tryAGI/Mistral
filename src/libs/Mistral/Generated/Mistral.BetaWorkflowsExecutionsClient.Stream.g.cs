@@ -133,7 +133,7 @@ namespace Mistral
                 PrepareStreamRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    executionId: executionId,
+                    executionId: executionId!,
                     eventSource: eventSource,
                     lastEventId: lastEventId);
 

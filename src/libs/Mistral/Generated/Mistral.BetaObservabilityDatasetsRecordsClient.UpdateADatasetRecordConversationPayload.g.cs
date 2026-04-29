@@ -133,7 +133,7 @@ namespace Mistral
                 PrepareUpdateADatasetRecordConversationPayloadRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    datasetRecordId: datasetRecordId,
+                    datasetRecordId: datasetRecordId!,
                     request: request);
 
                 return __httpRequest;

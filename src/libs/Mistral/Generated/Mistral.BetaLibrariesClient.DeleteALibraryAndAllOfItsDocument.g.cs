@@ -125,7 +125,7 @@ namespace Mistral
                 PrepareDeleteALibraryAndAllOfItsDocumentRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    libraryId: libraryId);
+                    libraryId: libraryId!);
 
                 return __httpRequest;
             }

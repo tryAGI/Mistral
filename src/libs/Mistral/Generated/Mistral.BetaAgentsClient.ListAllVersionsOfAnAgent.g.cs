@@ -145,7 +145,7 @@ namespace Mistral
                 PrepareListAllVersionsOfAnAgentRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    agentId: agentId,
+                    agentId: agentId!,
                     page: page,
                     pageSize: pageSize);
 

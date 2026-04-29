@@ -119,7 +119,7 @@ namespace Mistral
                 PrepareUnscheduleWorkflowRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    scheduleId: scheduleId);
+                    scheduleId: scheduleId!);
 
                 return __httpRequest;
             }

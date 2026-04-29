@@ -134,7 +134,7 @@ namespace Mistral
                 PrepareGetRunHistoryRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    runId: runId,
+                    runId: runId!,
                     decodePayloads: decodePayloads);
 
                 return __httpRequest;

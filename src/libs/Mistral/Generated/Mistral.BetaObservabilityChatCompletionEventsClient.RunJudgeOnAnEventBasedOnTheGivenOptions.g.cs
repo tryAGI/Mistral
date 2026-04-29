@@ -138,7 +138,7 @@ namespace Mistral
                 PrepareRunJudgeOnAnEventBasedOnTheGivenOptionsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    eventId: eventId,
+                    eventId: eventId!,
                     request: request);
 
                 return __httpRequest;

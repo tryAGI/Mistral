@@ -139,7 +139,7 @@ namespace Mistral
                 PrepareUpdateALibraryRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    libraryId: libraryId,
+                    libraryId: libraryId!,
                     request: request);
 
                 return __httpRequest;

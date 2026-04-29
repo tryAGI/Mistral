@@ -119,7 +119,7 @@ namespace Mistral
                 PrepareDeleteARecordFromADatasetRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    datasetRecordId: datasetRecordId);
+                    datasetRecordId: datasetRecordId!);
 
                 return __httpRequest;
             }

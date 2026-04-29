@@ -135,7 +135,7 @@ namespace Mistral
                 PrepareGetBatchJobRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    jobId: jobId,
+                    jobId: jobId!,
                     inline: inline);
 
                 return __httpRequest;

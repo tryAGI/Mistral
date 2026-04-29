@@ -134,7 +134,7 @@ namespace Mistral
                 PrepareRestartAConversationStartingFromAGivenEntry2Request(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    conversationId: conversationId,
+                    conversationId: conversationId!,
                     request: request);
 
                 return __httpRequest;

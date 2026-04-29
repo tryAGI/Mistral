@@ -133,7 +133,7 @@ namespace Mistral
                 PrepareUpdateAJudgeRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    judgeId: judgeId,
+                    judgeId: judgeId!,
                     request: request);
 
                 return __httpRequest;

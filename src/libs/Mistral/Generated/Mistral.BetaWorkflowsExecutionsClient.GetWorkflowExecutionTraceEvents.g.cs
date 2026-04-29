@@ -142,7 +142,7 @@ namespace Mistral
                 PrepareGetWorkflowExecutionTraceEventsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    executionId: executionId,
+                    executionId: executionId!,
                     mergeSameIdEvents: mergeSameIdEvents,
                     includeInternalEvents: includeInternalEvents);
 

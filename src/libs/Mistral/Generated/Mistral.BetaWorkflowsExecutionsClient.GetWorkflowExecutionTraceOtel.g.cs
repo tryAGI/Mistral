@@ -124,7 +124,7 @@ namespace Mistral
                 PrepareGetWorkflowExecutionTraceOtelRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    executionId: executionId);
+                    executionId: executionId!);
 
                 return __httpRequest;
             }

@@ -133,7 +133,7 @@ namespace Mistral
                 PrepareRetrieveAnAgentEntityRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    agentId: agentId,
+                    agentId: agentId!,
                     agentVersion: agentVersion);
 
                 return __httpRequest;

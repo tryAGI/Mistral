@@ -142,7 +142,7 @@ namespace Mistral
                 PrepareListExistingRecordsInTheDatasetRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    datasetId: datasetId,
+                    datasetId: datasetId!,
                     pageSize: pageSize,
                     page: page);
 

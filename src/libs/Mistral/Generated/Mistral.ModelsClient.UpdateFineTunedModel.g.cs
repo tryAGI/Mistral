@@ -139,7 +139,7 @@ namespace Mistral
                 PrepareUpdateFineTunedModelRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    modelId: modelId,
+                    modelId: modelId!,
                     request: request);
 
                 return __httpRequest;
