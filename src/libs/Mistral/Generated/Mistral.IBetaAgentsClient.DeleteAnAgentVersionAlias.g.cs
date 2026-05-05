@@ -18,5 +18,19 @@ namespace Mistral
             string alias,
             global::Mistral.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Delete an agent version alias.<br/>
+        /// Delete an existing alias for an agent.
+        /// </summary>
+        /// <param name="agentId"></param>
+        /// <param name="alias"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Mistral.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Mistral.AutoSDKHttpResponse> DeleteAnAgentVersionAliasAsResponseAsync(
+            string agentId,
+            string alias,
+            global::Mistral.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

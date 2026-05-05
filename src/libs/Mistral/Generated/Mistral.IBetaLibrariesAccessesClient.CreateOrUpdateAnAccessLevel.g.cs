@@ -24,6 +24,21 @@ namespace Mistral
         /// Given a library id, you can create or update the access level of an entity. You have to be owner of the library to share a library. An owner cannot change their own role. A library cannot be shared outside of the organization.
         /// </summary>
         /// <param name="libraryId"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Mistral.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Mistral.AutoSDKHttpResponse<global::Mistral.SharingOut>> CreateOrUpdateAnAccessLevelAsResponseAsync(
+            global::System.Guid libraryId,
+
+            global::Mistral.SharingIn request,
+            global::Mistral.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create or update an access level.<br/>
+        /// Given a library id, you can create or update the access level of an entity. You have to be owner of the library to share a library. An owner cannot change their own role. A library cannot be shared outside of the organization.
+        /// </summary>
+        /// <param name="libraryId"></param>
         /// <param name="orgId"></param>
         /// <param name="level"></param>
         /// <param name="shareWithUuid">

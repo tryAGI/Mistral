@@ -27,6 +27,23 @@ namespace Mistral
         /// </summary>
         /// <param name="libraryId"></param>
         /// <param name="documentId"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Mistral.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Mistral.AutoSDKHttpResponse<global::Mistral.DocumentOut>> UpdateTheMetadataOfASpecificDocumentAsResponseAsync(
+            global::System.Guid libraryId,
+            global::System.Guid documentId,
+
+            global::Mistral.DocumentUpdateIn request,
+            global::Mistral.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Update the metadata of a specific document.<br/>
+        /// Given a library and a document in that library, update the name of that document.
+        /// </summary>
+        /// <param name="libraryId"></param>
+        /// <param name="documentId"></param>
         /// <param name="name"></param>
         /// <param name="attributes"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

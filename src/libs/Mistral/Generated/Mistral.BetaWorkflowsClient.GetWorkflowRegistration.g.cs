@@ -67,6 +67,38 @@ namespace Mistral
             global::Mistral.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await GetWorkflowRegistrationAsResponseAsync(
+                workflowRegistrationId: workflowRegistrationId,
+                withWorkflow: withWorkflow,
+                includeShared: includeShared,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// Get Workflow Registration
+        /// </summary>
+        /// <param name="workflowRegistrationId"></param>
+        /// <param name="withWorkflow">
+        /// Whether to include the workflow definition<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="includeShared">
+        /// Whether to include shared workflow versions<br/>
+        /// Default Value: true
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Mistral.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::Mistral.AutoSDKHttpResponse<global::Mistral.WorkflowRegistrationGetResponse>> GetWorkflowRegistrationAsResponseAsync(
+            global::System.Guid workflowRegistrationId,
+            bool? withWorkflow = default,
+            bool? includeShared = default,
+            global::Mistral.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareGetWorkflowRegistrationArguments(
@@ -97,12 +129,13 @@ namespace Mistral
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
+
                             var __pathBuilder = new global::Mistral.PathBuilder(
                                 path: $"/v1/workflows/registrations/{workflowRegistrationId}",
-                                baseUri: HttpClient.BaseAddress); 
+                                baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("with_workflow", withWorkflow?.ToString().ToLowerInvariant())
-                                .AddOptionalParameter("include_shared", includeShared?.ToString().ToLowerInvariant()) 
+                                .AddOptionalParameter("include_shared", includeShared?.ToString().ToLowerInvariant())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::Mistral.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -176,6 +209,8 @@ namespace Mistral
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                     try
                     {
@@ -186,6 +221,11 @@ namespace Mistral
                     }
                     catch (global::System.Net.Http.HttpRequestException __exception)
                     {
+                        var __retryDelay = global::Mistral.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: null,
+                            attempt: __attempt);
                         var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
                         await global::Mistral.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
@@ -203,6 +243,8 @@ namespace Mistral
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: __willRetry,
+                                retryDelay: __willRetry ? __retryDelay : (global::System.TimeSpan?)null,
+                                retryReason: "exception",
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         if (!__willRetry)
                         {
@@ -212,8 +254,7 @@ namespace Mistral
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::Mistral.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -222,6 +263,11 @@ namespace Mistral
                         __attempt < __maxAttempts &&
                         global::Mistral.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
                     {
+                        var __retryDelay = global::Mistral.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: __response,
+                            attempt: __attempt);
                         await global::Mistral.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Mistral.AutoSDKRequestOptionsSupport.CreateHookContext(
@@ -238,14 +284,15 @@ namespace Mistral
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: true,
+                                retryDelay: __retryDelay,
+                                retryReason: "status:" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture),
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         __response.Dispose();
                         __response = null;
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::Mistral.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -285,6 +332,8 @@ namespace Mistral
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                 else
@@ -305,6 +354,8 @@ namespace Mistral
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                             // Validation Error
@@ -367,9 +418,13 @@ namespace Mistral
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    return
-                                        global::Mistral.WorkflowRegistrationGetResponse.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::Mistral.WorkflowRegistrationGetResponse.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                                    return new global::Mistral.AutoSDKHttpResponse<global::Mistral.WorkflowRegistrationGetResponse>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::Mistral.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -397,9 +452,13 @@ namespace Mistral
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    return
-                                        await global::Mistral.WorkflowRegistrationGetResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::Mistral.WorkflowRegistrationGetResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                                    return new global::Mistral.AutoSDKHttpResponse<global::Mistral.WorkflowRegistrationGetResponse>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::Mistral.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {

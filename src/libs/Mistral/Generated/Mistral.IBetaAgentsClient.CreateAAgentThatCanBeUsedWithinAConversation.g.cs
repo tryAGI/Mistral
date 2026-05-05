@@ -21,6 +21,19 @@ namespace Mistral
         /// Create a agent that can be used within a conversation.<br/>
         /// Create a new agent giving it instructions, tools, description. The agent is then available to be used as a regular assistant in a conversation or as part of an agent pool from which it can be used.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Mistral.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Mistral.AutoSDKHttpResponse<global::Mistral.Agent>> CreateAAgentThatCanBeUsedWithinAConversationAsResponseAsync(
+
+            global::Mistral.AgentCreationRequest request,
+            global::Mistral.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create a agent that can be used within a conversation.<br/>
+        /// Create a new agent giving it instructions, tools, description. The agent is then available to be used as a regular assistant in a conversation or as part of an agent pool from which it can be used.
+        /// </summary>
         /// <param name="instructions">
         /// Instruction prompt the model will follow during the conversation.
         /// </param>

@@ -24,6 +24,21 @@ namespace Mistral
         /// Create a new fine-tuning job, it will be queued for processing.
         /// </summary>
         /// <param name="dryRun"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Mistral.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Mistral.AutoSDKHttpResponse<global::Mistral.AnyOf<global::Mistral.JobsApiRoutesFineTuningCreateFineTuningJobResponseVariant1?, global::Mistral.LegacyJobMetadataOut>>> CreateFineTuningJobAsResponseAsync(
+
+            global::Mistral.JobIn request,
+            bool? dryRun = default,
+            global::Mistral.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create Fine Tuning Job<br/>
+        /// Create a new fine-tuning job, it will be queued for processing.
+        /// </summary>
+        /// <param name="dryRun"></param>
         /// <param name="model"></param>
         /// <param name="trainingFiles">
         /// Default Value: []
