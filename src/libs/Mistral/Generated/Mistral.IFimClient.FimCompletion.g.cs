@@ -21,6 +21,19 @@ namespace Mistral
         /// Fim Completion<br/>
         /// FIM completion.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Mistral.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Mistral.AutoSDKHttpResponse<global::Mistral.FIMCompletionResponse>> FimCompletionAsResponseAsync(
+
+            global::Mistral.FIMCompletionRequest request,
+            global::Mistral.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Fim Completion<br/>
+        /// FIM completion.
+        /// </summary>
         /// <param name="model">
         /// ID of the model with FIM to use.<br/>
         /// Default Value: codestral-2404

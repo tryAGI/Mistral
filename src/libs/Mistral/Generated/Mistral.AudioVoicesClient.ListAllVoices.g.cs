@@ -64,6 +64,36 @@ namespace Mistral
             global::Mistral.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await ListAllVoicesAsResponseAsync(
+                limit: limit,
+                offset: offset,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// List all voices<br/>
+        /// List all voices (excluding sample data)
+        /// </summary>
+        /// <param name="limit">
+        /// Maximum number of voices to return<br/>
+        /// Default Value: 10
+        /// </param>
+        /// <param name="offset">
+        /// Offset for pagination<br/>
+        /// Default Value: 0
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Mistral.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::Mistral.AutoSDKHttpResponse<global::Mistral.VoiceListResponse>> ListAllVoicesAsResponseAsync(
+            int? limit = default,
+            int? offset = default,
+            global::Mistral.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareListAllVoicesArguments(
@@ -93,12 +123,13 @@ namespace Mistral
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
+
                             var __pathBuilder = new global::Mistral.PathBuilder(
                                 path: "/v1/audio/voices",
-                                baseUri: HttpClient.BaseAddress); 
+                                baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("limit", limit?.ToString())
-                                .AddOptionalParameter("offset", offset?.ToString()) 
+                                .AddOptionalParameter("offset", offset?.ToString())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::Mistral.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -171,6 +202,8 @@ namespace Mistral
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                     try
                     {
@@ -181,6 +214,11 @@ namespace Mistral
                     }
                     catch (global::System.Net.Http.HttpRequestException __exception)
                     {
+                        var __retryDelay = global::Mistral.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: null,
+                            attempt: __attempt);
                         var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
                         await global::Mistral.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
@@ -198,6 +236,8 @@ namespace Mistral
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: __willRetry,
+                                retryDelay: __willRetry ? __retryDelay : (global::System.TimeSpan?)null,
+                                retryReason: "exception",
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         if (!__willRetry)
                         {
@@ -207,8 +247,7 @@ namespace Mistral
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::Mistral.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -217,6 +256,11 @@ namespace Mistral
                         __attempt < __maxAttempts &&
                         global::Mistral.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
                     {
+                        var __retryDelay = global::Mistral.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: __response,
+                            attempt: __attempt);
                         await global::Mistral.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Mistral.AutoSDKRequestOptionsSupport.CreateHookContext(
@@ -233,14 +277,15 @@ namespace Mistral
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: true,
+                                retryDelay: __retryDelay,
+                                retryReason: "status:" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture),
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         __response.Dispose();
                         __response = null;
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::Mistral.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -280,6 +325,8 @@ namespace Mistral
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                 else
@@ -300,6 +347,8 @@ namespace Mistral
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                             // Validation Error
@@ -362,9 +411,13 @@ namespace Mistral
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    return
-                                        global::Mistral.VoiceListResponse.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::Mistral.VoiceListResponse.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                                    return new global::Mistral.AutoSDKHttpResponse<global::Mistral.VoiceListResponse>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::Mistral.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -392,9 +445,13 @@ namespace Mistral
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    return
-                                        await global::Mistral.VoiceListResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::Mistral.VoiceListResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                                    return new global::Mistral.AutoSDKHttpResponse<global::Mistral.VoiceListResponse>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::Mistral.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {

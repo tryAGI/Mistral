@@ -18,5 +18,19 @@ namespace Mistral
             global::Mistral.AnyOf<int?, string, object>? agentVersion = default,
             global::Mistral.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Retrieve an agent entity.<br/>
+        /// Given an agent, retrieve an agent entity with its attributes. The agent_version parameter can be an integer version number or a string alias.
+        /// </summary>
+        /// <param name="agentId"></param>
+        /// <param name="agentVersion"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Mistral.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Mistral.AutoSDKHttpResponse<global::Mistral.Agent>> RetrieveAnAgentEntityAsResponseAsync(
+            string agentId,
+            global::Mistral.AnyOf<int?, string, object>? agentVersion = default,
+            global::Mistral.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

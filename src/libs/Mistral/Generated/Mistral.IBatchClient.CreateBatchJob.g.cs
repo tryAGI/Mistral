@@ -21,6 +21,19 @@ namespace Mistral
         /// Create Batch Job<br/>
         /// Create a new batch job, it will be queued for processing.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Mistral.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Mistral.AutoSDKHttpResponse<global::Mistral.BatchJobOut>> CreateBatchJobAsResponseAsync(
+
+            global::Mistral.BatchJobIn request,
+            global::Mistral.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create Batch Job<br/>
+        /// Create a new batch job, it will be queued for processing.
+        /// </summary>
         /// <param name="inputFiles">
         /// The list of input files to be used for batch inference, these files should be `jsonl` files, containing the input data corresponding to the bory request for the batch inference in a "body" field. An example of such file is the following: ```json {"custom_id": "0", "body": {"max_tokens": 100, "messages": [{"role": "user", "content": "What is the best French cheese?"}]}} {"custom_id": "1", "body": {"max_tokens": 100, "messages": [{"role": "user", "content": "What is the best French wine?"}]}} ```
         /// </param>

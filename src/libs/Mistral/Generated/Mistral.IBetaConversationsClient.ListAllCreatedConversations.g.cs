@@ -24,5 +24,25 @@ namespace Mistral
             object? metadata = default,
             global::Mistral.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// List all created conversations.<br/>
+        /// Retrieve a list of conversation entities sorted by creation time.
+        /// </summary>
+        /// <param name="page">
+        /// Default Value: 0
+        /// </param>
+        /// <param name="pageSize">
+        /// Default Value: 100
+        /// </param>
+        /// <param name="metadata"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Mistral.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Mistral.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::Mistral.AnyOf<global::Mistral.ModelConversation, global::Mistral.AgentConversation>>>> ListAllCreatedConversationsAsResponseAsync(
+            int? page = default,
+            int? pageSize = default,
+            object? metadata = default,
+            global::Mistral.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }
