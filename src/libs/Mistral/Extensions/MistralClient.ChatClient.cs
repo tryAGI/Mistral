@@ -28,7 +28,9 @@ public partial class MistralClient : Meai.IChatClient
         ArgumentNullException.ThrowIfNull(messages);
 
         var request = CreateRequest(messages, options);
-        var response = await Chat.ChatCompletionAsync(request, cancellationToken).ConfigureAwait(false);
+        var response = await Chat.ChatCompletionAsync(
+            request: request,
+            cancellationToken: cancellationToken).ConfigureAwait(false);
 
         return CreateChatResponse(response, options?.ModelId);
     }
@@ -45,7 +47,9 @@ public partial class MistralClient : Meai.IChatClient
 
         var toolCallBuilders = new Dictionary<int, (string Id, string Name, StringBuilder Args)>();
 
-        await foreach (var completionEvent in Chat.ChatCompletionAsStreamAsync(request, cancellationToken).ConfigureAwait(false))
+        await foreach (var completionEvent in Chat.ChatCompletionAsStreamAsync(
+            request: request,
+            cancellationToken: cancellationToken).ConfigureAwait(false))
         {
             var chunk = completionEvent.Data;
             var choice = chunk.Choices.Count > 0 ? chunk.Choices[0] : null;
@@ -368,8 +372,8 @@ public partial class MistralClient : Meai.IChatClient
 
     private static Meai.ChatResponse CreateChatResponse(ChatCompletionResponse response, string? requestedModelId)
     {
-        var responseBase = response.Value1?.ResponseBase;
-        var choices = response.Value2?.Choices;
+        var responseBase = response.Base?.ResponseBase;
+        var choices = response.Response1?.Choices;
         var choice = choices is { Count: > 0 } ? choices[0] : null;
 
         var responseMessage = new Meai.ChatMessage
