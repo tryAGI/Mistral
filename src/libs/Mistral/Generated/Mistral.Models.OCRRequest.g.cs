@@ -89,6 +89,12 @@ namespace Mistral
         public bool? ExtractFooter { get; set; }
 
         /// <summary>
+        /// Granularity for confidence scores: 'word' (per-word scores) or 'page' (aggregate only). Defaults to None (no confidence scores) to keep response payload small.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("confidence_scores_granularity")]
+        public global::Mistral.OCRRequestConfidenceScoresGranularity2? ConfidenceScoresGranularity { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -130,6 +136,9 @@ namespace Mistral
         /// <param name="extractFooter">
         /// Default Value: false
         /// </param>
+        /// <param name="confidenceScoresGranularity">
+        /// Granularity for confidence scores: 'word' (per-word scores) or 'page' (aggregate only). Defaults to None (no confidence scores) to keep response payload small.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -146,7 +155,8 @@ namespace Mistral
             string? documentAnnotationPrompt,
             global::Mistral.OCRRequestTableFormat2? tableFormat,
             bool? extractHeader,
-            bool? extractFooter)
+            bool? extractFooter,
+            global::Mistral.OCRRequestConfidenceScoresGranularity2? confidenceScoresGranularity)
         {
             this.Model = model;
             this.Id = id;
@@ -161,6 +171,7 @@ namespace Mistral
             this.TableFormat = tableFormat;
             this.ExtractHeader = extractHeader;
             this.ExtractFooter = extractFooter;
+            this.ConfidenceScoresGranularity = confidenceScoresGranularity;
         }
 
         /// <summary>
