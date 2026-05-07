@@ -73,6 +73,7 @@ namespace Mistral
                 PromptMode = request.PromptMode,
                 ReasoningEffort = request.ReasoningEffort,
                 Guardrails = request.Guardrails,
+                PromptCacheKey = request.PromptCacheKey,
                 SafePrompt = request.SafePrompt,
             };
             PrepareArguments(
@@ -467,6 +468,9 @@ namespace Mistral
         /// A list of guardrail configurations to apply to this request. Each guardrail specifies a moderation type, categories with thresholds to evaluate, and an action to take on violation.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="promptCacheKey">
+        /// A cache key to enable prompt caching. When provided, the API will attempt to reuse previously computed tokens for requests sharing the same prefix (e.g. multi-turn conversations or requests with a similar system prompt). Cached tokens are billed at 10% of the standard input token price.
+        /// </param>
         /// <param name="safePrompt">
         /// Whether to inject a safety prompt before all conversations.<br/>
         /// Default Value: false
@@ -494,6 +498,7 @@ namespace Mistral
             global::Mistral.MistralPromptMode? promptMode = default,
             global::Mistral.ChatCompletionRequestReasoningEffort? reasoningEffort = default,
             global::System.Collections.Generic.IList<global::Mistral.GuardrailConfig>? guardrails = default,
+            string? promptCacheKey = default,
             bool? safePrompt = default,
             global::Mistral.AutoSDKRequestOptions? requestOptions = default,
             [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)
@@ -520,6 +525,7 @@ namespace Mistral
                 PromptMode = promptMode,
                 ReasoningEffort = reasoningEffort,
                 Guardrails = guardrails,
+                PromptCacheKey = promptCacheKey,
                 SafePrompt = safePrompt,
             };
 

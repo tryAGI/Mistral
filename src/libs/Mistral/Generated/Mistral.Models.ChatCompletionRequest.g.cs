@@ -142,6 +142,12 @@ namespace Mistral
         public global::System.Collections.Generic.IList<global::Mistral.GuardrailConfig>? Guardrails { get; set; }
 
         /// <summary>
+        /// A cache key to enable prompt caching. When provided, the API will attempt to reuse previously computed tokens for requests sharing the same prefix (e.g. multi-turn conversations or requests with a similar system prompt). Cached tokens are billed at 10% of the standard input token price.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompt_cache_key")]
+        public string? PromptCacheKey { get; set; }
+
+        /// <summary>
         /// Whether to inject a safety prompt before all conversations.<br/>
         /// Default Value: false
         /// </summary>
@@ -223,6 +229,9 @@ namespace Mistral
         /// A list of guardrail configurations to apply to this request. Each guardrail specifies a moderation type, categories with thresholds to evaluate, and an action to take on violation.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="promptCacheKey">
+        /// A cache key to enable prompt caching. When provided, the API will attempt to reuse previously computed tokens for requests sharing the same prefix (e.g. multi-turn conversations or requests with a similar system prompt). Cached tokens are billed at 10% of the standard input token price.
+        /// </param>
         /// <param name="safePrompt">
         /// Whether to inject a safety prompt before all conversations.<br/>
         /// Default Value: false
@@ -251,6 +260,7 @@ namespace Mistral
             global::Mistral.MistralPromptMode? promptMode,
             global::Mistral.ChatCompletionRequestReasoningEffort? reasoningEffort,
             global::System.Collections.Generic.IList<global::Mistral.GuardrailConfig>? guardrails,
+            string? promptCacheKey,
             bool? safePrompt)
         {
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
@@ -273,6 +283,7 @@ namespace Mistral
             this.PromptMode = promptMode;
             this.ReasoningEffort = reasoningEffort;
             this.Guardrails = guardrails;
+            this.PromptCacheKey = promptCacheKey;
             this.SafePrompt = safePrompt;
         }
 

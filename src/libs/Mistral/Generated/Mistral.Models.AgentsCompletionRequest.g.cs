@@ -113,6 +113,12 @@ namespace Mistral
         public global::Mistral.AgentsCompletionRequestReasoningEffort? ReasoningEffort { get; set; }
 
         /// <summary>
+        /// A cache key to enable prompt caching. When provided, the API will attempt to reuse previously computed tokens for requests sharing the same prefix (e.g. multi-turn conversations or requests with a similar system prompt). Cached tokens are billed at 10% of the standard input token price.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompt_cache_key")]
+        public string? PromptCacheKey { get; set; }
+
+        /// <summary>
         /// The ID of the agent to use for this completion.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("agent_id")]
@@ -179,6 +185,9 @@ namespace Mistral
         /// <param name="reasoningEffort">
         /// Controls the reasoning effort level for reasoning models. "high" enables comprehensive reasoning traces, "none" disables reasoning effort.
         /// </param>
+        /// <param name="promptCacheKey">
+        /// A cache key to enable prompt caching. When provided, the API will attempt to reuse previously computed tokens for requests sharing the same prefix (e.g. multi-turn conversations or requests with a similar system prompt). Cached tokens are billed at 10% of the standard input token price.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -199,7 +208,8 @@ namespace Mistral
             global::Mistral.Prediction? prediction,
             bool? parallelToolCalls,
             global::Mistral.MistralPromptMode? promptMode,
-            global::Mistral.AgentsCompletionRequestReasoningEffort? reasoningEffort)
+            global::Mistral.AgentsCompletionRequestReasoningEffort? reasoningEffort,
+            string? promptCacheKey)
         {
             this.MaxTokens = maxTokens;
             this.Stream = stream;
@@ -217,6 +227,7 @@ namespace Mistral
             this.ParallelToolCalls = parallelToolCalls;
             this.PromptMode = promptMode;
             this.ReasoningEffort = reasoningEffort;
+            this.PromptCacheKey = promptCacheKey;
             this.AgentId = agentId ?? throw new global::System.ArgumentNullException(nameof(agentId));
         }
 
