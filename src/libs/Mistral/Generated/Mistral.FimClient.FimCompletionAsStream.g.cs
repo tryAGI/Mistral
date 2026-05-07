@@ -65,6 +65,7 @@ namespace Mistral
                 Prompt = request.Prompt,
                 Suffix = request.Suffix,
                 MinTokens = request.MinTokens,
+                PromptCacheKey = request.PromptCacheKey,
             };
             PrepareArguments(
                 client: HttpClient);
@@ -427,6 +428,9 @@ namespace Mistral
         /// <param name="minTokens">
         /// The minimum number of tokens to generate in the completion.
         /// </param>
+        /// <param name="promptCacheKey">
+        /// A cache key to enable prompt caching. When provided, the API will attempt to reuse previously computed tokens for requests sharing the same prefix (e.g. multi-turn conversations or requests with a similar system prompt). Cached tokens are billed at 10% of the standard input token price.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -441,6 +445,7 @@ namespace Mistral
             object? metadata = default,
             string? suffix = default,
             int? minTokens = default,
+            string? promptCacheKey = default,
             global::Mistral.AutoSDKRequestOptions? requestOptions = default,
             [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -457,6 +462,7 @@ namespace Mistral
                 Prompt = prompt,
                 Suffix = suffix,
                 MinTokens = minTokens,
+                PromptCacheKey = promptCacheKey,
             };
 
             var __enumerable = FimCompletionAsStreamAsync(

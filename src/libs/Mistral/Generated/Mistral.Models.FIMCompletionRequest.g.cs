@@ -82,6 +82,12 @@ namespace Mistral
         public int? MinTokens { get; set; }
 
         /// <summary>
+        /// A cache key to enable prompt caching. When provided, the API will attempt to reuse previously computed tokens for requests sharing the same prefix (e.g. multi-turn conversations or requests with a similar system prompt). Cached tokens are billed at 10% of the standard input token price.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompt_cache_key")]
+        public string? PromptCacheKey { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -124,6 +130,9 @@ namespace Mistral
         /// <param name="minTokens">
         /// The minimum number of tokens to generate in the completion.
         /// </param>
+        /// <param name="promptCacheKey">
+        /// A cache key to enable prompt caching. When provided, the API will attempt to reuse previously computed tokens for requests sharing the same prefix (e.g. multi-turn conversations or requests with a similar system prompt). Cached tokens are billed at 10% of the standard input token price.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -138,7 +147,8 @@ namespace Mistral
             int? randomSeed,
             object? metadata,
             string? suffix,
-            int? minTokens)
+            int? minTokens,
+            string? promptCacheKey)
         {
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
             this.Temperature = temperature;
@@ -151,6 +161,7 @@ namespace Mistral
             this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
             this.Suffix = suffix;
             this.MinTokens = minTokens;
+            this.PromptCacheKey = promptCacheKey;
         }
 
         /// <summary>
