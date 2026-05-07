@@ -509,6 +509,9 @@ namespace Mistral
         /// <param name="extractFooter">
         /// Default Value: false
         /// </param>
+        /// <param name="confidenceScoresGranularity">
+        /// Granularity for confidence scores: 'word' (per-word scores) or 'page' (aggregate only). Defaults to None (no confidence scores) to keep response payload small.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -526,6 +529,7 @@ namespace Mistral
             global::Mistral.OCRRequestTableFormat2? tableFormat = default,
             bool? extractHeader = default,
             bool? extractFooter = default,
+            global::Mistral.OCRRequestConfidenceScoresGranularity2? confidenceScoresGranularity = default,
             global::Mistral.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -544,6 +548,7 @@ namespace Mistral
                 TableFormat = tableFormat,
                 ExtractHeader = extractHeader,
                 ExtractFooter = extractFooter,
+                ConfidenceScoresGranularity = confidenceScoresGranularity,
             };
 
             return await OcrAsync(
