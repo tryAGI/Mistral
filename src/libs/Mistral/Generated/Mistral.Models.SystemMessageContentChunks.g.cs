@@ -34,6 +34,19 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Mistral.TextChunk? value)
+        {
+            value = Text;
+            return IsText;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.ThinkChunk? Thinking { get; init; }
 #else
@@ -47,6 +60,19 @@ namespace Mistral
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Thinking))]
 #endif
         public bool IsThinking => Thinking != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickThinking(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Mistral.ThinkChunk? value)
+        {
+            value = Thinking;
+            return IsThinking;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -126,8 +152,8 @@ namespace Mistral
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Mistral.TextChunk?, TResult>? text = null,
-            global::System.Func<global::Mistral.ThinkChunk?, TResult>? thinking = null,
+            global::System.Func<global::Mistral.TextChunk, TResult>? text = null,
+            global::System.Func<global::Mistral.ThinkChunk, TResult>? thinking = null,
             bool validate = true)
         {
             if (validate)
@@ -151,8 +177,32 @@ namespace Mistral
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Mistral.TextChunk?>? text = null,
-            global::System.Action<global::Mistral.ThinkChunk?>? thinking = null,
+            global::System.Action<global::Mistral.TextChunk>? text = null,
+
+            global::System.Action<global::Mistral.ThinkChunk>? thinking = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsText)
+            {
+                text?.Invoke(Text!);
+            }
+            else if (IsThinking)
+            {
+                thinking?.Invoke(Thinking!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Mistral.TextChunk>? text = null,
+            global::System.Action<global::Mistral.ThinkChunk>? thinking = null,
             bool validate = true)
         {
             if (validate)

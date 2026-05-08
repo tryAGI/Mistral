@@ -34,6 +34,19 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickSpeechAudioDelta(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Mistral.SpeechStreamAudioDelta? value)
+        {
+            value = SpeechAudioDelta;
+            return IsSpeechAudioDelta;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.SpeechStreamDone? SpeechAudioDone { get; init; }
 #else
@@ -47,6 +60,19 @@ namespace Mistral
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SpeechAudioDone))]
 #endif
         public bool IsSpeechAudioDone => SpeechAudioDone != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSpeechAudioDone(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Mistral.SpeechStreamDone? value)
+        {
+            value = SpeechAudioDone;
+            return IsSpeechAudioDone;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -126,8 +152,8 @@ namespace Mistral
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Mistral.SpeechStreamAudioDelta?, TResult>? speechAudioDelta = null,
-            global::System.Func<global::Mistral.SpeechStreamDone?, TResult>? speechAudioDone = null,
+            global::System.Func<global::Mistral.SpeechStreamAudioDelta, TResult>? speechAudioDelta = null,
+            global::System.Func<global::Mistral.SpeechStreamDone, TResult>? speechAudioDone = null,
             bool validate = true)
         {
             if (validate)
@@ -151,8 +177,32 @@ namespace Mistral
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Mistral.SpeechStreamAudioDelta?>? speechAudioDelta = null,
-            global::System.Action<global::Mistral.SpeechStreamDone?>? speechAudioDone = null,
+            global::System.Action<global::Mistral.SpeechStreamAudioDelta>? speechAudioDelta = null,
+
+            global::System.Action<global::Mistral.SpeechStreamDone>? speechAudioDone = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsSpeechAudioDelta)
+            {
+                speechAudioDelta?.Invoke(SpeechAudioDelta!);
+            }
+            else if (IsSpeechAudioDone)
+            {
+                speechAudioDone?.Invoke(SpeechAudioDone!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Mistral.SpeechStreamAudioDelta>? speechAudioDelta = null,
+            global::System.Action<global::Mistral.SpeechStreamDone>? speechAudioDone = null,
             bool validate = true)
         {
             if (validate)

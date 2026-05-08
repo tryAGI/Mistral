@@ -34,6 +34,19 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickSystem(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Mistral.SystemMessage? value)
+        {
+            value = System;
+            return IsSystem;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.UserMessage? User { get; init; }
 #else
@@ -47,6 +60,19 @@ namespace Mistral
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(User))]
 #endif
         public bool IsUser => User != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickUser(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Mistral.UserMessage? value)
+        {
+            value = User;
+            return IsUser;
+        }
 
         /// <summary>
         /// 
@@ -68,6 +94,19 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickAssistant(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Mistral.AssistantMessage? value)
+        {
+            value = Assistant;
+            return IsAssistant;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.ToolMessage? Tool { get; init; }
 #else
@@ -81,6 +120,19 @@ namespace Mistral
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Tool))]
 #endif
         public bool IsTool => Tool != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTool(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Mistral.ToolMessage? value)
+        {
+            value = Tool;
+            return IsTool;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -204,10 +256,10 @@ namespace Mistral
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Mistral.SystemMessage?, TResult>? system = null,
-            global::System.Func<global::Mistral.UserMessage?, TResult>? user = null,
-            global::System.Func<global::Mistral.AssistantMessage?, TResult>? assistant = null,
-            global::System.Func<global::Mistral.ToolMessage?, TResult>? tool = null,
+            global::System.Func<global::Mistral.SystemMessage, TResult>? system = null,
+            global::System.Func<global::Mistral.UserMessage, TResult>? user = null,
+            global::System.Func<global::Mistral.AssistantMessage, TResult>? assistant = null,
+            global::System.Func<global::Mistral.ToolMessage, TResult>? tool = null,
             bool validate = true)
         {
             if (validate)
@@ -239,10 +291,46 @@ namespace Mistral
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Mistral.SystemMessage?>? system = null,
-            global::System.Action<global::Mistral.UserMessage?>? user = null,
-            global::System.Action<global::Mistral.AssistantMessage?>? assistant = null,
-            global::System.Action<global::Mistral.ToolMessage?>? tool = null,
+            global::System.Action<global::Mistral.SystemMessage>? system = null,
+
+            global::System.Action<global::Mistral.UserMessage>? user = null,
+
+            global::System.Action<global::Mistral.AssistantMessage>? assistant = null,
+
+            global::System.Action<global::Mistral.ToolMessage>? tool = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsSystem)
+            {
+                system?.Invoke(System!);
+            }
+            else if (IsUser)
+            {
+                user?.Invoke(User!);
+            }
+            else if (IsAssistant)
+            {
+                assistant?.Invoke(Assistant!);
+            }
+            else if (IsTool)
+            {
+                tool?.Invoke(Tool!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Mistral.SystemMessage>? system = null,
+            global::System.Action<global::Mistral.UserMessage>? user = null,
+            global::System.Action<global::Mistral.AssistantMessage>? assistant = null,
+            global::System.Action<global::Mistral.ToolMessage>? tool = null,
             bool validate = true)
         {
             if (validate)

@@ -29,6 +29,19 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickCompletionArgsStopVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = CompletionArgsStopVariant1;
+            return IsCompletionArgsStopVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<string>? CompletionArgsStopVariant2 { get; init; }
 #else
@@ -46,6 +59,19 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickCompletionArgsStopVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<string>? value)
+        {
+            value = CompletionArgsStopVariant2;
+            return IsCompletionArgsStopVariant2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public object? CompletionArgsStopVariant3 { get; init; }
 #else
@@ -59,6 +85,19 @@ namespace Mistral
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CompletionArgsStopVariant3))]
 #endif
         public bool IsCompletionArgsStopVariant3 => CompletionArgsStopVariant3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCompletionArgsStopVariant3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out object? value)
+        {
+            value = CompletionArgsStopVariant3;
+            return IsCompletionArgsStopVariant3;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -121,9 +160,9 @@ namespace Mistral
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? completionArgsStopVariant1 = null,
-            global::System.Func<global::System.Collections.Generic.IList<string>?, TResult>? completionArgsStopVariant2 = null,
-            global::System.Func<object?, TResult>? completionArgsStopVariant3 = null,
+            global::System.Func<string, TResult>? completionArgsStopVariant1 = null,
+            global::System.Func<global::System.Collections.Generic.IList<string>, TResult>? completionArgsStopVariant2 = null,
+            global::System.Func<object, TResult>? completionArgsStopVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -151,9 +190,39 @@ namespace Mistral
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? completionArgsStopVariant1 = null,
-            global::System.Action<global::System.Collections.Generic.IList<string>?>? completionArgsStopVariant2 = null,
-            global::System.Action<object?>? completionArgsStopVariant3 = null,
+            global::System.Action<string>? completionArgsStopVariant1 = null,
+
+            global::System.Action<global::System.Collections.Generic.IList<string>>? completionArgsStopVariant2 = null,
+
+            global::System.Action<object>? completionArgsStopVariant3 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsCompletionArgsStopVariant1)
+            {
+                completionArgsStopVariant1?.Invoke(CompletionArgsStopVariant1!);
+            }
+            else if (IsCompletionArgsStopVariant2)
+            {
+                completionArgsStopVariant2?.Invoke(CompletionArgsStopVariant2!);
+            }
+            else if (IsCompletionArgsStopVariant3)
+            {
+                completionArgsStopVariant3?.Invoke(CompletionArgsStopVariant3!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<string>? completionArgsStopVariant1 = null,
+            global::System.Action<global::System.Collections.Generic.IList<string>>? completionArgsStopVariant2 = null,
+            global::System.Action<object>? completionArgsStopVariant3 = null,
             bool validate = true)
         {
             if (validate)

@@ -34,6 +34,19 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickAppend(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Mistral.JSONPatchAppend? value)
+        {
+            value = Append;
+            return IsAppend;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.JSONPatchAdd? Add { get; init; }
 #else
@@ -47,6 +60,19 @@ namespace Mistral
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Add))]
 #endif
         public bool IsAdd => Add != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAdd(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Mistral.JSONPatchAdd? value)
+        {
+            value = Add;
+            return IsAdd;
+        }
 
         /// <summary>
         /// 
@@ -68,6 +94,19 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickReplace(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Mistral.JSONPatchReplace? value)
+        {
+            value = Replace;
+            return IsReplace;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.JSONPatchRemove? Remove { get; init; }
 #else
@@ -81,6 +120,19 @@ namespace Mistral
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Remove))]
 #endif
         public bool IsRemove => Remove != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRemove(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Mistral.JSONPatchRemove? value)
+        {
+            value = Remove;
+            return IsRemove;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -204,10 +256,10 @@ namespace Mistral
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Mistral.JSONPatchAppend?, TResult>? append = null,
-            global::System.Func<global::Mistral.JSONPatchAdd?, TResult>? add = null,
-            global::System.Func<global::Mistral.JSONPatchReplace?, TResult>? replace = null,
-            global::System.Func<global::Mistral.JSONPatchRemove?, TResult>? remove = null,
+            global::System.Func<global::Mistral.JSONPatchAppend, TResult>? append = null,
+            global::System.Func<global::Mistral.JSONPatchAdd, TResult>? add = null,
+            global::System.Func<global::Mistral.JSONPatchReplace, TResult>? replace = null,
+            global::System.Func<global::Mistral.JSONPatchRemove, TResult>? remove = null,
             bool validate = true)
         {
             if (validate)
@@ -239,10 +291,46 @@ namespace Mistral
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Mistral.JSONPatchAppend?>? append = null,
-            global::System.Action<global::Mistral.JSONPatchAdd?>? add = null,
-            global::System.Action<global::Mistral.JSONPatchReplace?>? replace = null,
-            global::System.Action<global::Mistral.JSONPatchRemove?>? remove = null,
+            global::System.Action<global::Mistral.JSONPatchAppend>? append = null,
+
+            global::System.Action<global::Mistral.JSONPatchAdd>? add = null,
+
+            global::System.Action<global::Mistral.JSONPatchReplace>? replace = null,
+
+            global::System.Action<global::Mistral.JSONPatchRemove>? remove = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsAppend)
+            {
+                append?.Invoke(Append!);
+            }
+            else if (IsAdd)
+            {
+                add?.Invoke(Add!);
+            }
+            else if (IsReplace)
+            {
+                replace?.Invoke(Replace!);
+            }
+            else if (IsRemove)
+            {
+                remove?.Invoke(Remove!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Mistral.JSONPatchAppend>? append = null,
+            global::System.Action<global::Mistral.JSONPatchAdd>? add = null,
+            global::System.Action<global::Mistral.JSONPatchReplace>? replace = null,
+            global::System.Action<global::Mistral.JSONPatchRemove>? remove = null,
             bool validate = true)
         {
             if (validate)

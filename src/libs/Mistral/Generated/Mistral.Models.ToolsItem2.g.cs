@@ -34,6 +34,19 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickFunction(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Mistral.FunctionTool? value)
+        {
+            value = Function;
+            return IsFunction;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.WebSearchTool? WebSearch { get; init; }
 #else
@@ -47,6 +60,19 @@ namespace Mistral
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebSearch))]
 #endif
         public bool IsWebSearch => WebSearch != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickWebSearch(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Mistral.WebSearchTool? value)
+        {
+            value = WebSearch;
+            return IsWebSearch;
+        }
 
         /// <summary>
         /// 
@@ -68,6 +94,19 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickWebSearchPremium(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Mistral.WebSearchPremiumTool? value)
+        {
+            value = WebSearchPremium;
+            return IsWebSearchPremium;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.CodeInterpreterTool? CodeInterpreter { get; init; }
 #else
@@ -81,6 +120,19 @@ namespace Mistral
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CodeInterpreter))]
 #endif
         public bool IsCodeInterpreter => CodeInterpreter != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCodeInterpreter(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Mistral.CodeInterpreterTool? value)
+        {
+            value = CodeInterpreter;
+            return IsCodeInterpreter;
+        }
 
         /// <summary>
         /// 
@@ -102,6 +154,19 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickImageGeneration(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Mistral.ImageGenerationTool? value)
+        {
+            value = ImageGeneration;
+            return IsImageGeneration;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.DocumentLibraryTool? DocumentLibrary { get; init; }
 #else
@@ -119,6 +184,19 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickDocumentLibrary(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Mistral.DocumentLibraryTool? value)
+        {
+            value = DocumentLibrary;
+            return IsDocumentLibrary;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.CustomConnector? Connector { get; init; }
 #else
@@ -132,6 +210,19 @@ namespace Mistral
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Connector))]
 #endif
         public bool IsConnector => Connector != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickConnector(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Mistral.CustomConnector? value)
+        {
+            value = Connector;
+            return IsConnector;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -321,13 +412,13 @@ namespace Mistral
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Mistral.FunctionTool?, TResult>? function = null,
-            global::System.Func<global::Mistral.WebSearchTool?, TResult>? webSearch = null,
-            global::System.Func<global::Mistral.WebSearchPremiumTool?, TResult>? webSearchPremium = null,
-            global::System.Func<global::Mistral.CodeInterpreterTool?, TResult>? codeInterpreter = null,
-            global::System.Func<global::Mistral.ImageGenerationTool?, TResult>? imageGeneration = null,
-            global::System.Func<global::Mistral.DocumentLibraryTool?, TResult>? documentLibrary = null,
-            global::System.Func<global::Mistral.CustomConnector?, TResult>? connector = null,
+            global::System.Func<global::Mistral.FunctionTool, TResult>? function = null,
+            global::System.Func<global::Mistral.WebSearchTool, TResult>? webSearch = null,
+            global::System.Func<global::Mistral.WebSearchPremiumTool, TResult>? webSearchPremium = null,
+            global::System.Func<global::Mistral.CodeInterpreterTool, TResult>? codeInterpreter = null,
+            global::System.Func<global::Mistral.ImageGenerationTool, TResult>? imageGeneration = null,
+            global::System.Func<global::Mistral.DocumentLibraryTool, TResult>? documentLibrary = null,
+            global::System.Func<global::Mistral.CustomConnector, TResult>? connector = null,
             bool validate = true)
         {
             if (validate)
@@ -371,13 +462,67 @@ namespace Mistral
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Mistral.FunctionTool?>? function = null,
-            global::System.Action<global::Mistral.WebSearchTool?>? webSearch = null,
-            global::System.Action<global::Mistral.WebSearchPremiumTool?>? webSearchPremium = null,
-            global::System.Action<global::Mistral.CodeInterpreterTool?>? codeInterpreter = null,
-            global::System.Action<global::Mistral.ImageGenerationTool?>? imageGeneration = null,
-            global::System.Action<global::Mistral.DocumentLibraryTool?>? documentLibrary = null,
-            global::System.Action<global::Mistral.CustomConnector?>? connector = null,
+            global::System.Action<global::Mistral.FunctionTool>? function = null,
+
+            global::System.Action<global::Mistral.WebSearchTool>? webSearch = null,
+
+            global::System.Action<global::Mistral.WebSearchPremiumTool>? webSearchPremium = null,
+
+            global::System.Action<global::Mistral.CodeInterpreterTool>? codeInterpreter = null,
+
+            global::System.Action<global::Mistral.ImageGenerationTool>? imageGeneration = null,
+
+            global::System.Action<global::Mistral.DocumentLibraryTool>? documentLibrary = null,
+
+            global::System.Action<global::Mistral.CustomConnector>? connector = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsFunction)
+            {
+                function?.Invoke(Function!);
+            }
+            else if (IsWebSearch)
+            {
+                webSearch?.Invoke(WebSearch!);
+            }
+            else if (IsWebSearchPremium)
+            {
+                webSearchPremium?.Invoke(WebSearchPremium!);
+            }
+            else if (IsCodeInterpreter)
+            {
+                codeInterpreter?.Invoke(CodeInterpreter!);
+            }
+            else if (IsImageGeneration)
+            {
+                imageGeneration?.Invoke(ImageGeneration!);
+            }
+            else if (IsDocumentLibrary)
+            {
+                documentLibrary?.Invoke(DocumentLibrary!);
+            }
+            else if (IsConnector)
+            {
+                connector?.Invoke(Connector!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Mistral.FunctionTool>? function = null,
+            global::System.Action<global::Mistral.WebSearchTool>? webSearch = null,
+            global::System.Action<global::Mistral.WebSearchPremiumTool>? webSearchPremium = null,
+            global::System.Action<global::Mistral.CodeInterpreterTool>? codeInterpreter = null,
+            global::System.Action<global::Mistral.ImageGenerationTool>? imageGeneration = null,
+            global::System.Action<global::Mistral.DocumentLibraryTool>? documentLibrary = null,
+            global::System.Action<global::Mistral.CustomConnector>? connector = null,
             bool validate = true)
         {
             if (validate)

@@ -29,6 +29,19 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickResponseBase(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Mistral.ResponseBase? value)
+        {
+            value = ResponseBase;
+            return IsResponseBase;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.ChatCompletionResponseBaseChatCompletionResponseBase1? Base1 { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace Mistral
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Base1))]
 #endif
         public bool IsBase1 => Base1 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBase1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Mistral.ChatCompletionResponseBaseChatCompletionResponseBase1? value)
+        {
+            value = Base1;
+            return IsBase1;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -118,8 +144,8 @@ namespace Mistral
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Mistral.ResponseBase?, TResult>? responseBase = null,
-            global::System.Func<global::Mistral.ChatCompletionResponseBaseChatCompletionResponseBase1?, TResult>? base1 = null,
+            global::System.Func<global::Mistral.ResponseBase, TResult>? responseBase = null,
+            global::System.Func<global::Mistral.ChatCompletionResponseBaseChatCompletionResponseBase1, TResult>? base1 = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +169,32 @@ namespace Mistral
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Mistral.ResponseBase?>? responseBase = null,
-            global::System.Action<global::Mistral.ChatCompletionResponseBaseChatCompletionResponseBase1?>? base1 = null,
+            global::System.Action<global::Mistral.ResponseBase>? responseBase = null,
+
+            global::System.Action<global::Mistral.ChatCompletionResponseBaseChatCompletionResponseBase1>? base1 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsResponseBase)
+            {
+                responseBase?.Invoke(ResponseBase!);
+            }
+            else if (IsBase1)
+            {
+                base1?.Invoke(Base1!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Mistral.ResponseBase>? responseBase = null,
+            global::System.Action<global::Mistral.ChatCompletionResponseBaseChatCompletionResponseBase1>? base1 = null,
             bool validate = true)
         {
             if (validate)

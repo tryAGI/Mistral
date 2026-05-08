@@ -29,6 +29,19 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickInstructRequest(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Mistral.InstructRequest? value)
+        {
+            value = InstructRequest;
+            return IsInstructRequest;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::Mistral.InstructRequest>? ChatClassificationRequestInputsVariant2 { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace Mistral
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatClassificationRequestInputsVariant2))]
 #endif
         public bool IsChatClassificationRequestInputsVariant2 => ChatClassificationRequestInputsVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickChatClassificationRequestInputsVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<global::Mistral.InstructRequest>? value)
+        {
+            value = ChatClassificationRequestInputsVariant2;
+            return IsChatClassificationRequestInputsVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -100,8 +126,8 @@ namespace Mistral
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Mistral.InstructRequest?, TResult>? instructRequest = null,
-            global::System.Func<global::System.Collections.Generic.IList<global::Mistral.InstructRequest>?, TResult>? chatClassificationRequestInputsVariant2 = null,
+            global::System.Func<global::Mistral.InstructRequest, TResult>? instructRequest = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::Mistral.InstructRequest>, TResult>? chatClassificationRequestInputsVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -125,8 +151,32 @@ namespace Mistral
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Mistral.InstructRequest?>? instructRequest = null,
-            global::System.Action<global::System.Collections.Generic.IList<global::Mistral.InstructRequest>?>? chatClassificationRequestInputsVariant2 = null,
+            global::System.Action<global::Mistral.InstructRequest>? instructRequest = null,
+
+            global::System.Action<global::System.Collections.Generic.IList<global::Mistral.InstructRequest>>? chatClassificationRequestInputsVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsInstructRequest)
+            {
+                instructRequest?.Invoke(InstructRequest!);
+            }
+            else if (IsChatClassificationRequestInputsVariant2)
+            {
+                chatClassificationRequestInputsVariant2?.Invoke(ChatClassificationRequestInputsVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Mistral.InstructRequest>? instructRequest = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::Mistral.InstructRequest>>? chatClassificationRequestInputsVariant2 = null,
             bool validate = true)
         {
             if (validate)

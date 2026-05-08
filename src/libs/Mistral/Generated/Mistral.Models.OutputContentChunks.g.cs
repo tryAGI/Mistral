@@ -27,6 +27,19 @@ namespace Mistral
         public bool IsTextChunk => TextChunk != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTextChunk(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Mistral.TextChunk? value)
+        {
+            value = TextChunk;
+            return IsTextChunk;
+        }
+
+        /// <summary>
         /// {"type":"image_url","image_url":{"url":"data:image/png;base64,iVBORw0
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -42,6 +55,19 @@ namespace Mistral
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageURLChunk))]
 #endif
         public bool IsImageURLChunk => ImageURLChunk != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickImageURLChunk(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Mistral.ImageURLChunk? value)
+        {
+            value = ImageURLChunk;
+            return IsImageURLChunk;
+        }
 
         /// <summary>
         /// 
@@ -63,6 +89,19 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickToolFileChunk(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Mistral.ToolFileChunk? value)
+        {
+            value = ToolFileChunk;
+            return IsToolFileChunk;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.DocumentURLChunk? DocumentURLChunk { get; init; }
 #else
@@ -76,6 +115,19 @@ namespace Mistral
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DocumentURLChunk))]
 #endif
         public bool IsDocumentURLChunk => DocumentURLChunk != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDocumentURLChunk(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Mistral.DocumentURLChunk? value)
+        {
+            value = DocumentURLChunk;
+            return IsDocumentURLChunk;
+        }
 
         /// <summary>
         /// 
@@ -97,6 +149,19 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickThinkChunk(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Mistral.ThinkChunk? value)
+        {
+            value = ThinkChunk;
+            return IsThinkChunk;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.ToolReferenceChunk? ToolReferenceChunk { get; init; }
 #else
@@ -110,6 +175,19 @@ namespace Mistral
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolReferenceChunk))]
 #endif
         public bool IsToolReferenceChunk => ToolReferenceChunk != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickToolReferenceChunk(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Mistral.ToolReferenceChunk? value)
+        {
+            value = ToolReferenceChunk;
+            return IsToolReferenceChunk;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -274,12 +352,12 @@ namespace Mistral
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Mistral.TextChunk?, TResult>? textChunk = null,
-            global::System.Func<global::Mistral.ImageURLChunk?, TResult>? imageURLChunk = null,
-            global::System.Func<global::Mistral.ToolFileChunk?, TResult>? toolFileChunk = null,
-            global::System.Func<global::Mistral.DocumentURLChunk?, TResult>? documentURLChunk = null,
-            global::System.Func<global::Mistral.ThinkChunk?, TResult>? thinkChunk = null,
-            global::System.Func<global::Mistral.ToolReferenceChunk?, TResult>? toolReferenceChunk = null,
+            global::System.Func<global::Mistral.TextChunk, TResult>? textChunk = null,
+            global::System.Func<global::Mistral.ImageURLChunk, TResult>? imageURLChunk = null,
+            global::System.Func<global::Mistral.ToolFileChunk, TResult>? toolFileChunk = null,
+            global::System.Func<global::Mistral.DocumentURLChunk, TResult>? documentURLChunk = null,
+            global::System.Func<global::Mistral.ThinkChunk, TResult>? thinkChunk = null,
+            global::System.Func<global::Mistral.ToolReferenceChunk, TResult>? toolReferenceChunk = null,
             bool validate = true)
         {
             if (validate)
@@ -319,12 +397,60 @@ namespace Mistral
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Mistral.TextChunk?>? textChunk = null,
-            global::System.Action<global::Mistral.ImageURLChunk?>? imageURLChunk = null,
-            global::System.Action<global::Mistral.ToolFileChunk?>? toolFileChunk = null,
-            global::System.Action<global::Mistral.DocumentURLChunk?>? documentURLChunk = null,
-            global::System.Action<global::Mistral.ThinkChunk?>? thinkChunk = null,
-            global::System.Action<global::Mistral.ToolReferenceChunk?>? toolReferenceChunk = null,
+            global::System.Action<global::Mistral.TextChunk>? textChunk = null,
+
+            global::System.Action<global::Mistral.ImageURLChunk>? imageURLChunk = null,
+
+            global::System.Action<global::Mistral.ToolFileChunk>? toolFileChunk = null,
+
+            global::System.Action<global::Mistral.DocumentURLChunk>? documentURLChunk = null,
+
+            global::System.Action<global::Mistral.ThinkChunk>? thinkChunk = null,
+
+            global::System.Action<global::Mistral.ToolReferenceChunk>? toolReferenceChunk = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsTextChunk)
+            {
+                textChunk?.Invoke(TextChunk!);
+            }
+            else if (IsImageURLChunk)
+            {
+                imageURLChunk?.Invoke(ImageURLChunk!);
+            }
+            else if (IsToolFileChunk)
+            {
+                toolFileChunk?.Invoke(ToolFileChunk!);
+            }
+            else if (IsDocumentURLChunk)
+            {
+                documentURLChunk?.Invoke(DocumentURLChunk!);
+            }
+            else if (IsThinkChunk)
+            {
+                thinkChunk?.Invoke(ThinkChunk!);
+            }
+            else if (IsToolReferenceChunk)
+            {
+                toolReferenceChunk?.Invoke(ToolReferenceChunk!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Mistral.TextChunk>? textChunk = null,
+            global::System.Action<global::Mistral.ImageURLChunk>? imageURLChunk = null,
+            global::System.Action<global::Mistral.ToolFileChunk>? toolFileChunk = null,
+            global::System.Action<global::Mistral.DocumentURLChunk>? documentURLChunk = null,
+            global::System.Action<global::Mistral.ThinkChunk>? thinkChunk = null,
+            global::System.Action<global::Mistral.ToolReferenceChunk>? toolReferenceChunk = null,
             bool validate = true)
         {
             if (validate)
