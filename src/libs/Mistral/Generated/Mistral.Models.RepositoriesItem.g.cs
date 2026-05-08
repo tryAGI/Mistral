@@ -30,6 +30,19 @@ namespace Mistral
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Github))]
 #endif
         public bool IsGithub => Github != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickGithub(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Mistral.GithubRepositoryOut? value)
+        {
+            value = Github;
+            return IsGithub;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -87,7 +100,7 @@ namespace Mistral
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Mistral.GithubRepositoryOut?, TResult>? github = null,
+            global::System.Func<global::Mistral.GithubRepositoryOut, TResult>? github = null,
             bool validate = true)
         {
             if (validate)
@@ -107,7 +120,25 @@ namespace Mistral
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Mistral.GithubRepositoryOut?>? github = null,
+            global::System.Action<global::Mistral.GithubRepositoryOut>? github = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsGithub)
+            {
+                github?.Invoke(Github!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Mistral.GithubRepositoryOut>? github = null,
             bool validate = true)
         {
             if (validate)

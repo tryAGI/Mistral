@@ -29,6 +29,19 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickChat(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Mistral.ChatCompletionResponse? value)
+        {
+            value = Chat;
+            return IsChat;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.FIMCompletionResponseVariant2? FIMCompletionResponseVariant2 { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace Mistral
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FIMCompletionResponseVariant2))]
 #endif
         public bool IsFIMCompletionResponseVariant2 => FIMCompletionResponseVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFIMCompletionResponseVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Mistral.FIMCompletionResponseVariant2? value)
+        {
+            value = FIMCompletionResponseVariant2;
+            return IsFIMCompletionResponseVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,7 +145,7 @@ namespace Mistral
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Mistral.ChatCompletionResponse?, TResult>? chat = null,
-            global::System.Func<global::Mistral.FIMCompletionResponseVariant2?, TResult>? fIMCompletionResponseVariant2 = null,
+            global::System.Func<global::Mistral.FIMCompletionResponseVariant2, TResult>? fIMCompletionResponseVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -144,7 +170,31 @@ namespace Mistral
         /// </summary>
         public void Match(
             global::System.Action<global::Mistral.ChatCompletionResponse?>? chat = null,
-            global::System.Action<global::Mistral.FIMCompletionResponseVariant2?>? fIMCompletionResponseVariant2 = null,
+
+            global::System.Action<global::Mistral.FIMCompletionResponseVariant2>? fIMCompletionResponseVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsChat)
+            {
+                chat?.Invoke(Chat!);
+            }
+            else if (IsFIMCompletionResponseVariant2)
+            {
+                fIMCompletionResponseVariant2?.Invoke(FIMCompletionResponseVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Mistral.ChatCompletionResponse?>? chat = null,
+            global::System.Action<global::Mistral.FIMCompletionResponseVariant2>? fIMCompletionResponseVariant2 = null,
             bool validate = true)
         {
             if (validate)

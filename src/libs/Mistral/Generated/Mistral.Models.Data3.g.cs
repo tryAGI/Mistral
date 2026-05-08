@@ -34,6 +34,19 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickTranscriptionTextDelta(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Mistral.TranscriptionStreamTextDelta? value)
+        {
+            value = TranscriptionTextDelta;
+            return IsTranscriptionTextDelta;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.TranscriptionStreamLanguage? TranscriptionLanguage { get; init; }
 #else
@@ -47,6 +60,19 @@ namespace Mistral
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TranscriptionLanguage))]
 #endif
         public bool IsTranscriptionLanguage => TranscriptionLanguage != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTranscriptionLanguage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Mistral.TranscriptionStreamLanguage? value)
+        {
+            value = TranscriptionLanguage;
+            return IsTranscriptionLanguage;
+        }
 
         /// <summary>
         /// 
@@ -68,6 +94,19 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickTranscriptionSegment(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Mistral.TranscriptionStreamSegmentDelta? value)
+        {
+            value = TranscriptionSegment;
+            return IsTranscriptionSegment;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.TranscriptionStreamDone? TranscriptionDone { get; init; }
 #else
@@ -81,6 +120,19 @@ namespace Mistral
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TranscriptionDone))]
 #endif
         public bool IsTranscriptionDone => TranscriptionDone != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTranscriptionDone(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Mistral.TranscriptionStreamDone? value)
+        {
+            value = TranscriptionDone;
+            return IsTranscriptionDone;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -204,10 +256,10 @@ namespace Mistral
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Mistral.TranscriptionStreamTextDelta?, TResult>? transcriptionTextDelta = null,
-            global::System.Func<global::Mistral.TranscriptionStreamLanguage?, TResult>? transcriptionLanguage = null,
-            global::System.Func<global::Mistral.TranscriptionStreamSegmentDelta?, TResult>? transcriptionSegment = null,
-            global::System.Func<global::Mistral.TranscriptionStreamDone?, TResult>? transcriptionDone = null,
+            global::System.Func<global::Mistral.TranscriptionStreamTextDelta, TResult>? transcriptionTextDelta = null,
+            global::System.Func<global::Mistral.TranscriptionStreamLanguage, TResult>? transcriptionLanguage = null,
+            global::System.Func<global::Mistral.TranscriptionStreamSegmentDelta, TResult>? transcriptionSegment = null,
+            global::System.Func<global::Mistral.TranscriptionStreamDone, TResult>? transcriptionDone = null,
             bool validate = true)
         {
             if (validate)
@@ -239,10 +291,46 @@ namespace Mistral
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Mistral.TranscriptionStreamTextDelta?>? transcriptionTextDelta = null,
-            global::System.Action<global::Mistral.TranscriptionStreamLanguage?>? transcriptionLanguage = null,
-            global::System.Action<global::Mistral.TranscriptionStreamSegmentDelta?>? transcriptionSegment = null,
-            global::System.Action<global::Mistral.TranscriptionStreamDone?>? transcriptionDone = null,
+            global::System.Action<global::Mistral.TranscriptionStreamTextDelta>? transcriptionTextDelta = null,
+
+            global::System.Action<global::Mistral.TranscriptionStreamLanguage>? transcriptionLanguage = null,
+
+            global::System.Action<global::Mistral.TranscriptionStreamSegmentDelta>? transcriptionSegment = null,
+
+            global::System.Action<global::Mistral.TranscriptionStreamDone>? transcriptionDone = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsTranscriptionTextDelta)
+            {
+                transcriptionTextDelta?.Invoke(TranscriptionTextDelta!);
+            }
+            else if (IsTranscriptionLanguage)
+            {
+                transcriptionLanguage?.Invoke(TranscriptionLanguage!);
+            }
+            else if (IsTranscriptionSegment)
+            {
+                transcriptionSegment?.Invoke(TranscriptionSegment!);
+            }
+            else if (IsTranscriptionDone)
+            {
+                transcriptionDone?.Invoke(TranscriptionDone!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Mistral.TranscriptionStreamTextDelta>? transcriptionTextDelta = null,
+            global::System.Action<global::Mistral.TranscriptionStreamLanguage>? transcriptionLanguage = null,
+            global::System.Action<global::Mistral.TranscriptionStreamSegmentDelta>? transcriptionSegment = null,
+            global::System.Action<global::Mistral.TranscriptionStreamDone>? transcriptionDone = null,
             bool validate = true)
         {
             if (validate)

@@ -29,6 +29,19 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBase(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Mistral.ConversationRestartRequestBase? value)
+        {
+            value = Base;
+            return IsBase;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.ConversationRestartRequestVariant2? ConversationRestartRequestVariant2 { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace Mistral
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ConversationRestartRequestVariant2))]
 #endif
         public bool IsConversationRestartRequestVariant2 => ConversationRestartRequestVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickConversationRestartRequestVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Mistral.ConversationRestartRequestVariant2? value)
+        {
+            value = ConversationRestartRequestVariant2;
+            return IsConversationRestartRequestVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -118,8 +144,8 @@ namespace Mistral
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Mistral.ConversationRestartRequestBase?, TResult>? @base = null,
-            global::System.Func<global::Mistral.ConversationRestartRequestVariant2?, TResult>? conversationRestartRequestVariant2 = null,
+            global::System.Func<global::Mistral.ConversationRestartRequestBase, TResult>? @base = null,
+            global::System.Func<global::Mistral.ConversationRestartRequestVariant2, TResult>? conversationRestartRequestVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +169,32 @@ namespace Mistral
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Mistral.ConversationRestartRequestBase?>? @base = null,
-            global::System.Action<global::Mistral.ConversationRestartRequestVariant2?>? conversationRestartRequestVariant2 = null,
+            global::System.Action<global::Mistral.ConversationRestartRequestBase>? @base = null,
+
+            global::System.Action<global::Mistral.ConversationRestartRequestVariant2>? conversationRestartRequestVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsBase)
+            {
+                @base?.Invoke(Base!);
+            }
+            else if (IsConversationRestartRequestVariant2)
+            {
+                conversationRestartRequestVariant2?.Invoke(ConversationRestartRequestVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Mistral.ConversationRestartRequestBase>? @base = null,
+            global::System.Action<global::Mistral.ConversationRestartRequestVariant2>? conversationRestartRequestVariant2 = null,
             bool validate = true)
         {
             if (validate)

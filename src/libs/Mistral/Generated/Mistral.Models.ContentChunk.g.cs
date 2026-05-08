@@ -32,6 +32,19 @@ namespace Mistral
         public bool IsText => Text != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Mistral.TextChunk? value)
+        {
+            value = Text;
+            return IsText;
+        }
+
+        /// <summary>
         /// {"type":"image_url","image_url":{"url":"data:image/png;base64,iVBORw0
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -47,6 +60,19 @@ namespace Mistral
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageUrl))]
 #endif
         public bool IsImageUrl => ImageUrl != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickImageUrl(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Mistral.ImageURLChunk? value)
+        {
+            value = ImageUrl;
+            return IsImageUrl;
+        }
 
         /// <summary>
         /// 
@@ -68,6 +94,19 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickDocumentUrl(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Mistral.DocumentURLChunk? value)
+        {
+            value = DocumentUrl;
+            return IsDocumentUrl;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.ReferenceChunk? Reference { get; init; }
 #else
@@ -81,6 +120,19 @@ namespace Mistral
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Reference))]
 #endif
         public bool IsReference => Reference != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickReference(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Mistral.ReferenceChunk? value)
+        {
+            value = Reference;
+            return IsReference;
+        }
 
         /// <summary>
         /// 
@@ -102,6 +154,19 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickFile(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Mistral.FileChunk? value)
+        {
+            value = File;
+            return IsFile;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.ThinkChunk? Thinking { get; init; }
 #else
@@ -119,6 +184,19 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickThinking(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Mistral.ThinkChunk? value)
+        {
+            value = Thinking;
+            return IsThinking;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.AudioChunk? InputAudio { get; init; }
 #else
@@ -132,6 +210,19 @@ namespace Mistral
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputAudio))]
 #endif
         public bool IsInputAudio => InputAudio != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInputAudio(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Mistral.AudioChunk? value)
+        {
+            value = InputAudio;
+            return IsInputAudio;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -321,13 +412,13 @@ namespace Mistral
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Mistral.TextChunk?, TResult>? text = null,
-            global::System.Func<global::Mistral.ImageURLChunk?, TResult>? imageUrl = null,
-            global::System.Func<global::Mistral.DocumentURLChunk?, TResult>? documentUrl = null,
-            global::System.Func<global::Mistral.ReferenceChunk?, TResult>? reference = null,
-            global::System.Func<global::Mistral.FileChunk?, TResult>? file = null,
-            global::System.Func<global::Mistral.ThinkChunk?, TResult>? thinking = null,
-            global::System.Func<global::Mistral.AudioChunk?, TResult>? inputAudio = null,
+            global::System.Func<global::Mistral.TextChunk, TResult>? text = null,
+            global::System.Func<global::Mistral.ImageURLChunk, TResult>? imageUrl = null,
+            global::System.Func<global::Mistral.DocumentURLChunk, TResult>? documentUrl = null,
+            global::System.Func<global::Mistral.ReferenceChunk, TResult>? reference = null,
+            global::System.Func<global::Mistral.FileChunk, TResult>? file = null,
+            global::System.Func<global::Mistral.ThinkChunk, TResult>? thinking = null,
+            global::System.Func<global::Mistral.AudioChunk, TResult>? inputAudio = null,
             bool validate = true)
         {
             if (validate)
@@ -371,13 +462,67 @@ namespace Mistral
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Mistral.TextChunk?>? text = null,
-            global::System.Action<global::Mistral.ImageURLChunk?>? imageUrl = null,
-            global::System.Action<global::Mistral.DocumentURLChunk?>? documentUrl = null,
-            global::System.Action<global::Mistral.ReferenceChunk?>? reference = null,
-            global::System.Action<global::Mistral.FileChunk?>? file = null,
-            global::System.Action<global::Mistral.ThinkChunk?>? thinking = null,
-            global::System.Action<global::Mistral.AudioChunk?>? inputAudio = null,
+            global::System.Action<global::Mistral.TextChunk>? text = null,
+
+            global::System.Action<global::Mistral.ImageURLChunk>? imageUrl = null,
+
+            global::System.Action<global::Mistral.DocumentURLChunk>? documentUrl = null,
+
+            global::System.Action<global::Mistral.ReferenceChunk>? reference = null,
+
+            global::System.Action<global::Mistral.FileChunk>? file = null,
+
+            global::System.Action<global::Mistral.ThinkChunk>? thinking = null,
+
+            global::System.Action<global::Mistral.AudioChunk>? inputAudio = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsText)
+            {
+                text?.Invoke(Text!);
+            }
+            else if (IsImageUrl)
+            {
+                imageUrl?.Invoke(ImageUrl!);
+            }
+            else if (IsDocumentUrl)
+            {
+                documentUrl?.Invoke(DocumentUrl!);
+            }
+            else if (IsReference)
+            {
+                reference?.Invoke(Reference!);
+            }
+            else if (IsFile)
+            {
+                file?.Invoke(File!);
+            }
+            else if (IsThinking)
+            {
+                thinking?.Invoke(Thinking!);
+            }
+            else if (IsInputAudio)
+            {
+                inputAudio?.Invoke(InputAudio!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Mistral.TextChunk>? text = null,
+            global::System.Action<global::Mistral.ImageURLChunk>? imageUrl = null,
+            global::System.Action<global::Mistral.DocumentURLChunk>? documentUrl = null,
+            global::System.Action<global::Mistral.ReferenceChunk>? reference = null,
+            global::System.Action<global::Mistral.FileChunk>? file = null,
+            global::System.Action<global::Mistral.ThinkChunk>? thinking = null,
+            global::System.Action<global::Mistral.AudioChunk>? inputAudio = null,
             bool validate = true)
         {
             if (validate)

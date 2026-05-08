@@ -34,6 +34,19 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickClassification(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Mistral.JudgeClassificationOutput? value)
+        {
+            value = Classification;
+            return IsClassification;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.JudgeRegressionOutput? Regression { get; init; }
 #else
@@ -47,6 +60,19 @@ namespace Mistral
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Regression))]
 #endif
         public bool IsRegression => Regression != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRegression(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Mistral.JudgeRegressionOutput? value)
+        {
+            value = Regression;
+            return IsRegression;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -126,8 +152,8 @@ namespace Mistral
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Mistral.JudgeClassificationOutput?, TResult>? classification = null,
-            global::System.Func<global::Mistral.JudgeRegressionOutput?, TResult>? regression = null,
+            global::System.Func<global::Mistral.JudgeClassificationOutput, TResult>? classification = null,
+            global::System.Func<global::Mistral.JudgeRegressionOutput, TResult>? regression = null,
             bool validate = true)
         {
             if (validate)
@@ -151,8 +177,32 @@ namespace Mistral
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Mistral.JudgeClassificationOutput?>? classification = null,
-            global::System.Action<global::Mistral.JudgeRegressionOutput?>? regression = null,
+            global::System.Action<global::Mistral.JudgeClassificationOutput>? classification = null,
+
+            global::System.Action<global::Mistral.JudgeRegressionOutput>? regression = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsClassification)
+            {
+                classification?.Invoke(Classification!);
+            }
+            else if (IsRegression)
+            {
+                regression?.Invoke(Regression!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Mistral.JudgeClassificationOutput>? classification = null,
+            global::System.Action<global::Mistral.JudgeRegressionOutput>? regression = null,
             bool validate = true)
         {
             if (validate)

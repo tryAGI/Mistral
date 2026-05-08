@@ -32,6 +32,19 @@ namespace Mistral
         public bool IsBase => Base != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBase(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Mistral.BaseModelCard? value)
+        {
+            value = Base;
+            return IsBase;
+        }
+
+        /// <summary>
         /// Extra fields for fine-tuned models.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -47,6 +60,19 @@ namespace Mistral
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FineTuned))]
 #endif
         public bool IsFineTuned => FineTuned != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFineTuned(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Mistral.FTModelCard? value)
+        {
+            value = FineTuned;
+            return IsFineTuned;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -126,8 +152,8 @@ namespace Mistral
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Mistral.BaseModelCard?, TResult>? @base = null,
-            global::System.Func<global::Mistral.FTModelCard?, TResult>? fineTuned = null,
+            global::System.Func<global::Mistral.BaseModelCard, TResult>? @base = null,
+            global::System.Func<global::Mistral.FTModelCard, TResult>? fineTuned = null,
             bool validate = true)
         {
             if (validate)
@@ -151,8 +177,32 @@ namespace Mistral
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Mistral.BaseModelCard?>? @base = null,
-            global::System.Action<global::Mistral.FTModelCard?>? fineTuned = null,
+            global::System.Action<global::Mistral.BaseModelCard>? @base = null,
+
+            global::System.Action<global::Mistral.FTModelCard>? fineTuned = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsBase)
+            {
+                @base?.Invoke(Base!);
+            }
+            else if (IsFineTuned)
+            {
+                fineTuned?.Invoke(FineTuned!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Mistral.BaseModelCard>? @base = null,
+            global::System.Action<global::Mistral.FTModelCard>? fineTuned = null,
             bool validate = true)
         {
             if (validate)

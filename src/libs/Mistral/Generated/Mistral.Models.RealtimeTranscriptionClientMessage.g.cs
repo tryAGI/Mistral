@@ -34,6 +34,19 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickSessionUpdate(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Mistral.RealtimeTranscriptionSessionUpdateMessage? value)
+        {
+            value = SessionUpdate;
+            return IsSessionUpdate;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.RealtimeTranscriptionInputAudioAppend? InputAudioAppend { get; init; }
 #else
@@ -47,6 +60,19 @@ namespace Mistral
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputAudioAppend))]
 #endif
         public bool IsInputAudioAppend => InputAudioAppend != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInputAudioAppend(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Mistral.RealtimeTranscriptionInputAudioAppend? value)
+        {
+            value = InputAudioAppend;
+            return IsInputAudioAppend;
+        }
 
         /// <summary>
         /// 
@@ -68,6 +94,19 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickInputAudioFlush(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Mistral.RealtimeTranscriptionInputAudioFlush? value)
+        {
+            value = InputAudioFlush;
+            return IsInputAudioFlush;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.RealtimeTranscriptionInputAudioEnd? InputAudioEnd { get; init; }
 #else
@@ -81,6 +120,19 @@ namespace Mistral
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputAudioEnd))]
 #endif
         public bool IsInputAudioEnd => InputAudioEnd != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInputAudioEnd(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Mistral.RealtimeTranscriptionInputAudioEnd? value)
+        {
+            value = InputAudioEnd;
+            return IsInputAudioEnd;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -204,10 +256,10 @@ namespace Mistral
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Mistral.RealtimeTranscriptionSessionUpdateMessage?, TResult>? sessionUpdate = null,
-            global::System.Func<global::Mistral.RealtimeTranscriptionInputAudioAppend?, TResult>? inputAudioAppend = null,
-            global::System.Func<global::Mistral.RealtimeTranscriptionInputAudioFlush?, TResult>? inputAudioFlush = null,
-            global::System.Func<global::Mistral.RealtimeTranscriptionInputAudioEnd?, TResult>? inputAudioEnd = null,
+            global::System.Func<global::Mistral.RealtimeTranscriptionSessionUpdateMessage, TResult>? sessionUpdate = null,
+            global::System.Func<global::Mistral.RealtimeTranscriptionInputAudioAppend, TResult>? inputAudioAppend = null,
+            global::System.Func<global::Mistral.RealtimeTranscriptionInputAudioFlush, TResult>? inputAudioFlush = null,
+            global::System.Func<global::Mistral.RealtimeTranscriptionInputAudioEnd, TResult>? inputAudioEnd = null,
             bool validate = true)
         {
             if (validate)
@@ -239,10 +291,46 @@ namespace Mistral
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Mistral.RealtimeTranscriptionSessionUpdateMessage?>? sessionUpdate = null,
-            global::System.Action<global::Mistral.RealtimeTranscriptionInputAudioAppend?>? inputAudioAppend = null,
-            global::System.Action<global::Mistral.RealtimeTranscriptionInputAudioFlush?>? inputAudioFlush = null,
-            global::System.Action<global::Mistral.RealtimeTranscriptionInputAudioEnd?>? inputAudioEnd = null,
+            global::System.Action<global::Mistral.RealtimeTranscriptionSessionUpdateMessage>? sessionUpdate = null,
+
+            global::System.Action<global::Mistral.RealtimeTranscriptionInputAudioAppend>? inputAudioAppend = null,
+
+            global::System.Action<global::Mistral.RealtimeTranscriptionInputAudioFlush>? inputAudioFlush = null,
+
+            global::System.Action<global::Mistral.RealtimeTranscriptionInputAudioEnd>? inputAudioEnd = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsSessionUpdate)
+            {
+                sessionUpdate?.Invoke(SessionUpdate!);
+            }
+            else if (IsInputAudioAppend)
+            {
+                inputAudioAppend?.Invoke(InputAudioAppend!);
+            }
+            else if (IsInputAudioFlush)
+            {
+                inputAudioFlush?.Invoke(InputAudioFlush!);
+            }
+            else if (IsInputAudioEnd)
+            {
+                inputAudioEnd?.Invoke(InputAudioEnd!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Mistral.RealtimeTranscriptionSessionUpdateMessage>? sessionUpdate = null,
+            global::System.Action<global::Mistral.RealtimeTranscriptionInputAudioAppend>? inputAudioAppend = null,
+            global::System.Action<global::Mistral.RealtimeTranscriptionInputAudioFlush>? inputAudioFlush = null,
+            global::System.Action<global::Mistral.RealtimeTranscriptionInputAudioEnd>? inputAudioEnd = null,
             bool validate = true)
         {
             if (validate)

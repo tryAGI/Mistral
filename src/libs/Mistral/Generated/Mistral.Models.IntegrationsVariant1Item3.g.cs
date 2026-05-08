@@ -30,6 +30,19 @@ namespace Mistral
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Wandb))]
 #endif
         public bool IsWandb => Wandb != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickWandb(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Mistral.WandbIntegration? value)
+        {
+            value = Wandb;
+            return IsWandb;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -87,7 +100,7 @@ namespace Mistral
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Mistral.WandbIntegration?, TResult>? wandb = null,
+            global::System.Func<global::Mistral.WandbIntegration, TResult>? wandb = null,
             bool validate = true)
         {
             if (validate)
@@ -107,7 +120,25 @@ namespace Mistral
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Mistral.WandbIntegration?>? wandb = null,
+            global::System.Action<global::Mistral.WandbIntegration>? wandb = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsWandb)
+            {
+                wandb?.Invoke(Wandb!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Mistral.WandbIntegration>? wandb = null,
             bool validate = true)
         {
             if (validate)

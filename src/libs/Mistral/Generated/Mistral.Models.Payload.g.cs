@@ -33,6 +33,19 @@ namespace Mistral
         public bool IsJson => Json != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickJson(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Mistral.JSONPayloadResponse? value)
+        {
+            value = Json;
+            return IsJson;
+        }
+
+        /// <summary>
         /// A payload containing a list of JSON Patch operations.<br/>
         /// Used for streaming incremental updates to workflow state.
         /// </summary>
@@ -49,6 +62,19 @@ namespace Mistral
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(JsonPatch))]
 #endif
         public bool IsJsonPatch => JsonPatch != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickJsonPatch(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Mistral.JSONPatchPayloadResponse? value)
+        {
+            value = JsonPatch;
+            return IsJsonPatch;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -128,8 +154,8 @@ namespace Mistral
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Mistral.JSONPayloadResponse?, TResult>? json = null,
-            global::System.Func<global::Mistral.JSONPatchPayloadResponse?, TResult>? jsonPatch = null,
+            global::System.Func<global::Mistral.JSONPayloadResponse, TResult>? json = null,
+            global::System.Func<global::Mistral.JSONPatchPayloadResponse, TResult>? jsonPatch = null,
             bool validate = true)
         {
             if (validate)
@@ -153,8 +179,32 @@ namespace Mistral
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Mistral.JSONPayloadResponse?>? json = null,
-            global::System.Action<global::Mistral.JSONPatchPayloadResponse?>? jsonPatch = null,
+            global::System.Action<global::Mistral.JSONPayloadResponse>? json = null,
+
+            global::System.Action<global::Mistral.JSONPatchPayloadResponse>? jsonPatch = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsJson)
+            {
+                json?.Invoke(Json!);
+            }
+            else if (IsJsonPatch)
+            {
+                jsonPatch?.Invoke(JsonPatch!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Mistral.JSONPayloadResponse>? json = null,
+            global::System.Action<global::Mistral.JSONPatchPayloadResponse>? jsonPatch = null,
             bool validate = true)
         {
             if (validate)

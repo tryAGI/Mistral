@@ -29,6 +29,19 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickConversationRequest(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Mistral.ConversationRequestBase? value)
+        {
+            value = ConversationRequest;
+            return IsConversationRequest;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.ConversationStreamRequestVariant2? ConversationStreamRequestVariant2 { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace Mistral
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ConversationStreamRequestVariant2))]
 #endif
         public bool IsConversationStreamRequestVariant2 => ConversationStreamRequestVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickConversationStreamRequestVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Mistral.ConversationStreamRequestVariant2? value)
+        {
+            value = ConversationStreamRequestVariant2;
+            return IsConversationStreamRequestVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -118,8 +144,8 @@ namespace Mistral
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Mistral.ConversationRequestBase?, TResult>? conversationRequest = null,
-            global::System.Func<global::Mistral.ConversationStreamRequestVariant2?, TResult>? conversationStreamRequestVariant2 = null,
+            global::System.Func<global::Mistral.ConversationRequestBase, TResult>? conversationRequest = null,
+            global::System.Func<global::Mistral.ConversationStreamRequestVariant2, TResult>? conversationStreamRequestVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +169,32 @@ namespace Mistral
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Mistral.ConversationRequestBase?>? conversationRequest = null,
-            global::System.Action<global::Mistral.ConversationStreamRequestVariant2?>? conversationStreamRequestVariant2 = null,
+            global::System.Action<global::Mistral.ConversationRequestBase>? conversationRequest = null,
+
+            global::System.Action<global::Mistral.ConversationStreamRequestVariant2>? conversationStreamRequestVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsConversationRequest)
+            {
+                conversationRequest?.Invoke(ConversationRequest!);
+            }
+            else if (IsConversationStreamRequestVariant2)
+            {
+                conversationStreamRequestVariant2?.Invoke(ConversationStreamRequestVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Mistral.ConversationRequestBase>? conversationRequest = null,
+            global::System.Action<global::Mistral.ConversationStreamRequestVariant2>? conversationStreamRequestVariant2 = null,
             bool validate = true)
         {
             if (validate)

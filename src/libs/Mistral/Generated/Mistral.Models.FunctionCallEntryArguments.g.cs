@@ -29,6 +29,19 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickFunctionCallEntryArgumentsVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out object? value)
+        {
+            value = FunctionCallEntryArgumentsVariant1;
+            return IsFunctionCallEntryArgumentsVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public string? FunctionCallEntryArgumentsVariant2 { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace Mistral
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FunctionCallEntryArgumentsVariant2))]
 #endif
         public bool IsFunctionCallEntryArgumentsVariant2 => FunctionCallEntryArgumentsVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFunctionCallEntryArgumentsVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = FunctionCallEntryArgumentsVariant2;
+            return IsFunctionCallEntryArgumentsVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -100,8 +126,8 @@ namespace Mistral
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<object?, TResult>? functionCallEntryArgumentsVariant1 = null,
-            global::System.Func<string?, TResult>? functionCallEntryArgumentsVariant2 = null,
+            global::System.Func<object, TResult>? functionCallEntryArgumentsVariant1 = null,
+            global::System.Func<string, TResult>? functionCallEntryArgumentsVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -125,8 +151,32 @@ namespace Mistral
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<object?>? functionCallEntryArgumentsVariant1 = null,
-            global::System.Action<string?>? functionCallEntryArgumentsVariant2 = null,
+            global::System.Action<object>? functionCallEntryArgumentsVariant1 = null,
+
+            global::System.Action<string>? functionCallEntryArgumentsVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsFunctionCallEntryArgumentsVariant1)
+            {
+                functionCallEntryArgumentsVariant1?.Invoke(FunctionCallEntryArgumentsVariant1!);
+            }
+            else if (IsFunctionCallEntryArgumentsVariant2)
+            {
+                functionCallEntryArgumentsVariant2?.Invoke(FunctionCallEntryArgumentsVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<object>? functionCallEntryArgumentsVariant1 = null,
+            global::System.Action<string>? functionCallEntryArgumentsVariant2 = null,
             bool validate = true)
         {
             if (validate)

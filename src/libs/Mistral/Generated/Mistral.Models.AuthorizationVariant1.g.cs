@@ -34,6 +34,19 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickOauth2Token(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Mistral.OAuth2TokenAuth? value)
+        {
+            value = Oauth2Token;
+            return IsOauth2Token;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.APIKeyAuth? ApiKey { get; init; }
 #else
@@ -47,6 +60,19 @@ namespace Mistral
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ApiKey))]
 #endif
         public bool IsApiKey => ApiKey != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickApiKey(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Mistral.APIKeyAuth? value)
+        {
+            value = ApiKey;
+            return IsApiKey;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -126,8 +152,8 @@ namespace Mistral
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Mistral.OAuth2TokenAuth?, TResult>? oauth2Token = null,
-            global::System.Func<global::Mistral.APIKeyAuth?, TResult>? apiKey = null,
+            global::System.Func<global::Mistral.OAuth2TokenAuth, TResult>? oauth2Token = null,
+            global::System.Func<global::Mistral.APIKeyAuth, TResult>? apiKey = null,
             bool validate = true)
         {
             if (validate)
@@ -151,8 +177,32 @@ namespace Mistral
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Mistral.OAuth2TokenAuth?>? oauth2Token = null,
-            global::System.Action<global::Mistral.APIKeyAuth?>? apiKey = null,
+            global::System.Action<global::Mistral.OAuth2TokenAuth>? oauth2Token = null,
+
+            global::System.Action<global::Mistral.APIKeyAuth>? apiKey = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsOauth2Token)
+            {
+                oauth2Token?.Invoke(Oauth2Token!);
+            }
+            else if (IsApiKey)
+            {
+                apiKey?.Invoke(ApiKey!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Mistral.OAuth2TokenAuth>? oauth2Token = null,
+            global::System.Action<global::Mistral.APIKeyAuth>? apiKey = null,
             bool validate = true)
         {
             if (validate)

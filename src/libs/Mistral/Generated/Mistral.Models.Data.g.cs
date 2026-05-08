@@ -34,6 +34,19 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickConversationResponseStarted(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Mistral.ResponseStartedEvent? value)
+        {
+            value = ConversationResponseStarted;
+            return IsConversationResponseStarted;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.ResponseDoneEvent? ConversationResponseDone { get; init; }
 #else
@@ -47,6 +60,19 @@ namespace Mistral
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ConversationResponseDone))]
 #endif
         public bool IsConversationResponseDone => ConversationResponseDone != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickConversationResponseDone(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Mistral.ResponseDoneEvent? value)
+        {
+            value = ConversationResponseDone;
+            return IsConversationResponseDone;
+        }
 
         /// <summary>
         /// 
@@ -68,6 +94,19 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickConversationResponseError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Mistral.ResponseErrorEvent? value)
+        {
+            value = ConversationResponseError;
+            return IsConversationResponseError;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.ToolExecutionStartedEvent? ToolExecutionStarted { get; init; }
 #else
@@ -81,6 +120,19 @@ namespace Mistral
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolExecutionStarted))]
 #endif
         public bool IsToolExecutionStarted => ToolExecutionStarted != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickToolExecutionStarted(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Mistral.ToolExecutionStartedEvent? value)
+        {
+            value = ToolExecutionStarted;
+            return IsToolExecutionStarted;
+        }
 
         /// <summary>
         /// 
@@ -102,6 +154,19 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickToolExecutionDelta(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Mistral.ToolExecutionDeltaEvent? value)
+        {
+            value = ToolExecutionDelta;
+            return IsToolExecutionDelta;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.ToolExecutionDoneEvent? ToolExecutionDone { get; init; }
 #else
@@ -115,6 +180,19 @@ namespace Mistral
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolExecutionDone))]
 #endif
         public bool IsToolExecutionDone => ToolExecutionDone != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickToolExecutionDone(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Mistral.ToolExecutionDoneEvent? value)
+        {
+            value = ToolExecutionDone;
+            return IsToolExecutionDone;
+        }
 
         /// <summary>
         /// 
@@ -136,6 +214,19 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickMessageOutputDelta(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Mistral.MessageOutputEvent? value)
+        {
+            value = MessageOutputDelta;
+            return IsMessageOutputDelta;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.FunctionCallEvent? FunctionCallDelta { get; init; }
 #else
@@ -149,6 +240,19 @@ namespace Mistral
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FunctionCallDelta))]
 #endif
         public bool IsFunctionCallDelta => FunctionCallDelta != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFunctionCallDelta(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Mistral.FunctionCallEvent? value)
+        {
+            value = FunctionCallDelta;
+            return IsFunctionCallDelta;
+        }
 
         /// <summary>
         /// 
@@ -170,6 +274,19 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickAgentHandoffStarted(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Mistral.AgentHandoffStartedEvent? value)
+        {
+            value = AgentHandoffStarted;
+            return IsAgentHandoffStarted;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.AgentHandoffDoneEvent? AgentHandoffDone { get; init; }
 #else
@@ -183,6 +300,19 @@ namespace Mistral
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AgentHandoffDone))]
 #endif
         public bool IsAgentHandoffDone => AgentHandoffDone != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAgentHandoffDone(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Mistral.AgentHandoffDoneEvent? value)
+        {
+            value = AgentHandoffDone;
+            return IsAgentHandoffDone;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -438,16 +568,16 @@ namespace Mistral
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Mistral.ResponseStartedEvent?, TResult>? conversationResponseStarted = null,
-            global::System.Func<global::Mistral.ResponseDoneEvent?, TResult>? conversationResponseDone = null,
-            global::System.Func<global::Mistral.ResponseErrorEvent?, TResult>? conversationResponseError = null,
-            global::System.Func<global::Mistral.ToolExecutionStartedEvent?, TResult>? toolExecutionStarted = null,
-            global::System.Func<global::Mistral.ToolExecutionDeltaEvent?, TResult>? toolExecutionDelta = null,
-            global::System.Func<global::Mistral.ToolExecutionDoneEvent?, TResult>? toolExecutionDone = null,
-            global::System.Func<global::Mistral.MessageOutputEvent?, TResult>? messageOutputDelta = null,
-            global::System.Func<global::Mistral.FunctionCallEvent?, TResult>? functionCallDelta = null,
-            global::System.Func<global::Mistral.AgentHandoffStartedEvent?, TResult>? agentHandoffStarted = null,
-            global::System.Func<global::Mistral.AgentHandoffDoneEvent?, TResult>? agentHandoffDone = null,
+            global::System.Func<global::Mistral.ResponseStartedEvent, TResult>? conversationResponseStarted = null,
+            global::System.Func<global::Mistral.ResponseDoneEvent, TResult>? conversationResponseDone = null,
+            global::System.Func<global::Mistral.ResponseErrorEvent, TResult>? conversationResponseError = null,
+            global::System.Func<global::Mistral.ToolExecutionStartedEvent, TResult>? toolExecutionStarted = null,
+            global::System.Func<global::Mistral.ToolExecutionDeltaEvent, TResult>? toolExecutionDelta = null,
+            global::System.Func<global::Mistral.ToolExecutionDoneEvent, TResult>? toolExecutionDone = null,
+            global::System.Func<global::Mistral.MessageOutputEvent, TResult>? messageOutputDelta = null,
+            global::System.Func<global::Mistral.FunctionCallEvent, TResult>? functionCallDelta = null,
+            global::System.Func<global::Mistral.AgentHandoffStartedEvent, TResult>? agentHandoffStarted = null,
+            global::System.Func<global::Mistral.AgentHandoffDoneEvent, TResult>? agentHandoffDone = null,
             bool validate = true)
         {
             if (validate)
@@ -503,16 +633,88 @@ namespace Mistral
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Mistral.ResponseStartedEvent?>? conversationResponseStarted = null,
-            global::System.Action<global::Mistral.ResponseDoneEvent?>? conversationResponseDone = null,
-            global::System.Action<global::Mistral.ResponseErrorEvent?>? conversationResponseError = null,
-            global::System.Action<global::Mistral.ToolExecutionStartedEvent?>? toolExecutionStarted = null,
-            global::System.Action<global::Mistral.ToolExecutionDeltaEvent?>? toolExecutionDelta = null,
-            global::System.Action<global::Mistral.ToolExecutionDoneEvent?>? toolExecutionDone = null,
-            global::System.Action<global::Mistral.MessageOutputEvent?>? messageOutputDelta = null,
-            global::System.Action<global::Mistral.FunctionCallEvent?>? functionCallDelta = null,
-            global::System.Action<global::Mistral.AgentHandoffStartedEvent?>? agentHandoffStarted = null,
-            global::System.Action<global::Mistral.AgentHandoffDoneEvent?>? agentHandoffDone = null,
+            global::System.Action<global::Mistral.ResponseStartedEvent>? conversationResponseStarted = null,
+
+            global::System.Action<global::Mistral.ResponseDoneEvent>? conversationResponseDone = null,
+
+            global::System.Action<global::Mistral.ResponseErrorEvent>? conversationResponseError = null,
+
+            global::System.Action<global::Mistral.ToolExecutionStartedEvent>? toolExecutionStarted = null,
+
+            global::System.Action<global::Mistral.ToolExecutionDeltaEvent>? toolExecutionDelta = null,
+
+            global::System.Action<global::Mistral.ToolExecutionDoneEvent>? toolExecutionDone = null,
+
+            global::System.Action<global::Mistral.MessageOutputEvent>? messageOutputDelta = null,
+
+            global::System.Action<global::Mistral.FunctionCallEvent>? functionCallDelta = null,
+
+            global::System.Action<global::Mistral.AgentHandoffStartedEvent>? agentHandoffStarted = null,
+
+            global::System.Action<global::Mistral.AgentHandoffDoneEvent>? agentHandoffDone = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsConversationResponseStarted)
+            {
+                conversationResponseStarted?.Invoke(ConversationResponseStarted!);
+            }
+            else if (IsConversationResponseDone)
+            {
+                conversationResponseDone?.Invoke(ConversationResponseDone!);
+            }
+            else if (IsConversationResponseError)
+            {
+                conversationResponseError?.Invoke(ConversationResponseError!);
+            }
+            else if (IsToolExecutionStarted)
+            {
+                toolExecutionStarted?.Invoke(ToolExecutionStarted!);
+            }
+            else if (IsToolExecutionDelta)
+            {
+                toolExecutionDelta?.Invoke(ToolExecutionDelta!);
+            }
+            else if (IsToolExecutionDone)
+            {
+                toolExecutionDone?.Invoke(ToolExecutionDone!);
+            }
+            else if (IsMessageOutputDelta)
+            {
+                messageOutputDelta?.Invoke(MessageOutputDelta!);
+            }
+            else if (IsFunctionCallDelta)
+            {
+                functionCallDelta?.Invoke(FunctionCallDelta!);
+            }
+            else if (IsAgentHandoffStarted)
+            {
+                agentHandoffStarted?.Invoke(AgentHandoffStarted!);
+            }
+            else if (IsAgentHandoffDone)
+            {
+                agentHandoffDone?.Invoke(AgentHandoffDone!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Mistral.ResponseStartedEvent>? conversationResponseStarted = null,
+            global::System.Action<global::Mistral.ResponseDoneEvent>? conversationResponseDone = null,
+            global::System.Action<global::Mistral.ResponseErrorEvent>? conversationResponseError = null,
+            global::System.Action<global::Mistral.ToolExecutionStartedEvent>? toolExecutionStarted = null,
+            global::System.Action<global::Mistral.ToolExecutionDeltaEvent>? toolExecutionDelta = null,
+            global::System.Action<global::Mistral.ToolExecutionDoneEvent>? toolExecutionDone = null,
+            global::System.Action<global::Mistral.MessageOutputEvent>? messageOutputDelta = null,
+            global::System.Action<global::Mistral.FunctionCallEvent>? functionCallDelta = null,
+            global::System.Action<global::Mistral.AgentHandoffStartedEvent>? agentHandoffStarted = null,
+            global::System.Action<global::Mistral.AgentHandoffDoneEvent>? agentHandoffDone = null,
             bool validate = true)
         {
             if (validate)

@@ -34,6 +34,19 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickCompletion(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Mistral.CompletionJobOut? value)
+        {
+            value = Completion;
+            return IsCompletion;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.ClassifierJobOut? Classifier { get; init; }
 #else
@@ -47,6 +60,19 @@ namespace Mistral
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Classifier))]
 #endif
         public bool IsClassifier => Classifier != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickClassifier(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Mistral.ClassifierJobOut? value)
+        {
+            value = Classifier;
+            return IsClassifier;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -126,8 +152,8 @@ namespace Mistral
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Mistral.CompletionJobOut?, TResult>? completion = null,
-            global::System.Func<global::Mistral.ClassifierJobOut?, TResult>? classifier = null,
+            global::System.Func<global::Mistral.CompletionJobOut, TResult>? completion = null,
+            global::System.Func<global::Mistral.ClassifierJobOut, TResult>? classifier = null,
             bool validate = true)
         {
             if (validate)
@@ -151,8 +177,32 @@ namespace Mistral
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Mistral.CompletionJobOut?>? completion = null,
-            global::System.Action<global::Mistral.ClassifierJobOut?>? classifier = null,
+            global::System.Action<global::Mistral.CompletionJobOut>? completion = null,
+
+            global::System.Action<global::Mistral.ClassifierJobOut>? classifier = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsCompletion)
+            {
+                completion?.Invoke(Completion!);
+            }
+            else if (IsClassifier)
+            {
+                classifier?.Invoke(Classifier!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Mistral.CompletionJobOut>? completion = null,
+            global::System.Action<global::Mistral.ClassifierJobOut>? classifier = null,
             bool validate = true)
         {
             if (validate)
