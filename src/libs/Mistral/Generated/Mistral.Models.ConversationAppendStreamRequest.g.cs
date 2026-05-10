@@ -42,6 +42,13 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public global::Mistral.ConversationAppendRequestBase PickConversationAppendRequest() => IsConversationAppendRequest
+            ? ConversationAppendRequest!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationAppendRequest' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.ConversationAppendStreamRequestVariant2? ConversationAppendStreamRequestVariant2 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Mistral
             value = ConversationAppendStreamRequestVariant2;
             return IsConversationAppendStreamRequestVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Mistral.ConversationAppendStreamRequestVariant2 PickConversationAppendStreamRequestVariant2() => IsConversationAppendStreamRequestVariant2
+            ? ConversationAppendStreamRequestVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationAppendStreamRequestVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -89,6 +103,11 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public static ConversationAppendStreamRequest FromConversationAppendRequest(global::Mistral.ConversationAppendRequestBase? value) => new ConversationAppendStreamRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ConversationAppendStreamRequest(global::Mistral.ConversationAppendStreamRequestVariant2 value) => new ConversationAppendStreamRequest((global::Mistral.ConversationAppendStreamRequestVariant2?)value);
 
         /// <summary>
@@ -103,6 +122,11 @@ namespace Mistral
         {
             ConversationAppendStreamRequestVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ConversationAppendStreamRequest FromConversationAppendStreamRequestVariant2(global::Mistral.ConversationAppendStreamRequestVariant2? value) => new ConversationAppendStreamRequest(value);
 
         /// <summary>
         /// 

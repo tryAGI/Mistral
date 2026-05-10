@@ -42,6 +42,13 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public string PickCompletionArgsStopVariant1() => IsCompletionArgsStopVariant1
+            ? CompletionArgsStopVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CompletionArgsStopVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<string>? CompletionArgsStopVariant2 { get; init; }
 #else
@@ -72,6 +79,13 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public global::System.Collections.Generic.IList<string> PickCompletionArgsStopVariant2() => IsCompletionArgsStopVariant2
+            ? CompletionArgsStopVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CompletionArgsStopVariant2' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public object? CompletionArgsStopVariant3 { get; init; }
 #else
@@ -98,6 +112,13 @@ namespace Mistral
             value = CompletionArgsStopVariant3;
             return IsCompletionArgsStopVariant3;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public object PickCompletionArgsStopVariant3() => IsCompletionArgsStopVariant3
+            ? CompletionArgsStopVariant3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CompletionArgsStopVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -115,6 +136,11 @@ namespace Mistral
         {
             CompletionArgsStopVariant1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CompletionArgsStop FromCompletionArgsStopVariant1(string? value) => new CompletionArgsStop(value);
 
         /// <summary>
         /// 

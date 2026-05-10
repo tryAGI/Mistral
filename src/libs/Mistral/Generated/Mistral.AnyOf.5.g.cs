@@ -41,6 +41,13 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public T1 PickValue1() => IsValue1
+            ? Value1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public T2? Value2 { get; init; }
 #else
@@ -67,6 +74,13 @@ namespace Mistral
             value = Value2;
             return IsValue2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public T2 PickValue2() => IsValue2
+            ? Value2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value2' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -101,6 +115,13 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public T3 PickValue3() => IsValue3
+            ? Value3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value3' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public T4? Value4 { get; init; }
 #else
@@ -131,6 +152,13 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public T4 PickValue4() => IsValue4
+            ? Value4!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value4' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public T5? Value5 { get; init; }
 #else
@@ -157,6 +185,13 @@ namespace Mistral
             value = Value5;
             return IsValue5;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public T5 PickValue5() => IsValue5
+            ? Value5!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value5' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -174,6 +209,11 @@ namespace Mistral
         {
             Value1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AnyOf<T1, T2, T3, T4, T5> FromValue1(T1? value) => new AnyOf<T1, T2, T3, T4, T5>(value);
 
         /// <summary>
         /// 
@@ -196,6 +236,11 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public static AnyOf<T1, T2, T3, T4, T5> FromValue2(T2? value) => new AnyOf<T1, T2, T3, T4, T5>(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AnyOf<T1, T2, T3, T4, T5>(T3 value) => new AnyOf<T1, T2, T3, T4, T5>((T3?)value);
 
         /// <summary>
@@ -210,6 +255,11 @@ namespace Mistral
         {
             Value3 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AnyOf<T1, T2, T3, T4, T5> FromValue3(T3? value) => new AnyOf<T1, T2, T3, T4, T5>(value);
 
         /// <summary>
         /// 
@@ -232,6 +282,11 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public static AnyOf<T1, T2, T3, T4, T5> FromValue4(T4? value) => new AnyOf<T1, T2, T3, T4, T5>(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AnyOf<T1, T2, T3, T4, T5>(T5 value) => new AnyOf<T1, T2, T3, T4, T5>((T5?)value);
 
         /// <summary>
@@ -246,6 +301,11 @@ namespace Mistral
         {
             Value5 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AnyOf<T1, T2, T3, T4, T5> FromValue5(T5? value) => new AnyOf<T1, T2, T3, T4, T5>(value);
 
         /// <summary>
         /// 

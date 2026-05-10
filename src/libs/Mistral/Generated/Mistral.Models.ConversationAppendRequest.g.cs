@@ -42,6 +42,13 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public global::Mistral.ConversationAppendRequestBase PickBase() => IsBase
+            ? Base!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.ConversationAppendRequestVariant2? ConversationAppendRequestVariant2 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Mistral
             value = ConversationAppendRequestVariant2;
             return IsConversationAppendRequestVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Mistral.ConversationAppendRequestVariant2 PickConversationAppendRequestVariant2() => IsConversationAppendRequestVariant2
+            ? ConversationAppendRequestVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationAppendRequestVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -89,6 +103,11 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public static ConversationAppendRequest FromBase(global::Mistral.ConversationAppendRequestBase? value) => new ConversationAppendRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ConversationAppendRequest(global::Mistral.ConversationAppendRequestVariant2 value) => new ConversationAppendRequest((global::Mistral.ConversationAppendRequestVariant2?)value);
 
         /// <summary>
@@ -103,6 +122,11 @@ namespace Mistral
         {
             ConversationAppendRequestVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ConversationAppendRequest FromConversationAppendRequestVariant2(global::Mistral.ConversationAppendRequestVariant2? value) => new ConversationAppendRequest(value);
 
         /// <summary>
         /// 

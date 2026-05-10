@@ -47,6 +47,13 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public global::Mistral.SystemMessage PickSystem() => IsSystem
+            ? System!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'System' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.UserMessage? User { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace Mistral
             value = User;
             return IsUser;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Mistral.UserMessage PickUser() => IsUser
+            ? User!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'User' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -107,6 +121,13 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public global::Mistral.AssistantMessage PickAssistant() => IsAssistant
+            ? Assistant!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Assistant' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.ToolMessage? Tool { get; init; }
 #else
@@ -133,6 +154,13 @@ namespace Mistral
             value = Tool;
             return IsTool;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Mistral.ToolMessage PickTool() => IsTool
+            ? Tool!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Tool' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -150,6 +178,11 @@ namespace Mistral
         {
             System = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static InputVariant1Item FromSystem(global::Mistral.SystemMessage? value) => new InputVariant1Item(value);
 
         /// <summary>
         /// 
@@ -172,6 +205,11 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public static InputVariant1Item FromUser(global::Mistral.UserMessage? value) => new InputVariant1Item(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator InputVariant1Item(global::Mistral.AssistantMessage value) => new InputVariant1Item((global::Mistral.AssistantMessage?)value);
 
         /// <summary>
@@ -190,6 +228,11 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public static InputVariant1Item FromAssistant(global::Mistral.AssistantMessage? value) => new InputVariant1Item(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator InputVariant1Item(global::Mistral.ToolMessage value) => new InputVariant1Item((global::Mistral.ToolMessage?)value);
 
         /// <summary>
@@ -204,6 +247,11 @@ namespace Mistral
         {
             Tool = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static InputVariant1Item FromTool(global::Mistral.ToolMessage? value) => new InputVariant1Item(value);
 
         /// <summary>
         /// 

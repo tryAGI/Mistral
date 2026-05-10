@@ -46,6 +46,13 @@ namespace Mistral
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Mistral.JSONPayloadResponse PickJson() => IsJson
+            ? Json!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Json' but the value was {ToString()}.");
+
+        /// <summary>
         /// A payload containing a list of JSON Patch operations.<br/>
         /// Used for streaming incremental updates to workflow state.
         /// </summary>
@@ -75,6 +82,13 @@ namespace Mistral
             value = JsonPatch;
             return IsJsonPatch;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Mistral.JSONPatchPayloadResponse PickJsonPatch() => IsJsonPatch
+            ? JsonPatch!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'JsonPatch' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -96,6 +110,11 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public static Payload FromJson(global::Mistral.JSONPayloadResponse? value) => new Payload(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Payload(global::Mistral.JSONPatchPayloadResponse value) => new Payload((global::Mistral.JSONPatchPayloadResponse?)value);
 
         /// <summary>
@@ -110,6 +129,11 @@ namespace Mistral
         {
             JsonPatch = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Payload FromJsonPatch(global::Mistral.JSONPatchPayloadResponse? value) => new Payload(value);
 
         /// <summary>
         /// 

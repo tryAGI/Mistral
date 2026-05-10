@@ -40,6 +40,13 @@ namespace Mistral
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Mistral.TextChunk PickTextChunk() => IsTextChunk
+            ? TextChunk!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TextChunk' but the value was {ToString()}.");
+
+        /// <summary>
         /// {"type":"image_url","image_url":{"url":"data:image/png;base64,iVBORw0
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -68,6 +75,13 @@ namespace Mistral
             value = ImageURLChunk;
             return IsImageURLChunk;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Mistral.ImageURLChunk PickImageURLChunk() => IsImageURLChunk
+            ? ImageURLChunk!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ImageURLChunk' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -102,6 +116,13 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public global::Mistral.ToolFileChunk PickToolFileChunk() => IsToolFileChunk
+            ? ToolFileChunk!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ToolFileChunk' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.DocumentURLChunk? DocumentURLChunk { get; init; }
 #else
@@ -128,6 +149,13 @@ namespace Mistral
             value = DocumentURLChunk;
             return IsDocumentURLChunk;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Mistral.DocumentURLChunk PickDocumentURLChunk() => IsDocumentURLChunk
+            ? DocumentURLChunk!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DocumentURLChunk' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -162,6 +190,13 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public global::Mistral.ThinkChunk PickThinkChunk() => IsThinkChunk
+            ? ThinkChunk!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ThinkChunk' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.ToolReferenceChunk? ToolReferenceChunk { get; init; }
 #else
@@ -188,6 +223,13 @@ namespace Mistral
             value = ToolReferenceChunk;
             return IsToolReferenceChunk;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Mistral.ToolReferenceChunk PickToolReferenceChunk() => IsToolReferenceChunk
+            ? ToolReferenceChunk!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ToolReferenceChunk' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -205,6 +247,11 @@ namespace Mistral
         {
             TextChunk = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OutputContentChunks FromTextChunk(global::Mistral.TextChunk? value) => new OutputContentChunks(value);
 
         /// <summary>
         /// 
@@ -227,6 +274,11 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public static OutputContentChunks FromImageURLChunk(global::Mistral.ImageURLChunk? value) => new OutputContentChunks(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OutputContentChunks(global::Mistral.ToolFileChunk value) => new OutputContentChunks((global::Mistral.ToolFileChunk?)value);
 
         /// <summary>
@@ -241,6 +293,11 @@ namespace Mistral
         {
             ToolFileChunk = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OutputContentChunks FromToolFileChunk(global::Mistral.ToolFileChunk? value) => new OutputContentChunks(value);
 
         /// <summary>
         /// 
@@ -263,6 +320,11 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public static OutputContentChunks FromDocumentURLChunk(global::Mistral.DocumentURLChunk? value) => new OutputContentChunks(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OutputContentChunks(global::Mistral.ThinkChunk value) => new OutputContentChunks((global::Mistral.ThinkChunk?)value);
 
         /// <summary>
@@ -281,6 +343,11 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public static OutputContentChunks FromThinkChunk(global::Mistral.ThinkChunk? value) => new OutputContentChunks(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OutputContentChunks(global::Mistral.ToolReferenceChunk value) => new OutputContentChunks((global::Mistral.ToolReferenceChunk?)value);
 
         /// <summary>
@@ -295,6 +362,11 @@ namespace Mistral
         {
             ToolReferenceChunk = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OutputContentChunks FromToolReferenceChunk(global::Mistral.ToolReferenceChunk? value) => new OutputContentChunks(value);
 
         /// <summary>
         /// 

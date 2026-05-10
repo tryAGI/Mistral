@@ -47,6 +47,13 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public global::Mistral.CompletionFTModelOut PickCompletion() => IsCompletion
+            ? Completion!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Completion' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.ClassifierFTModelOut? Classifier { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace Mistral
             value = Classifier;
             return IsClassifier;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Mistral.ClassifierFTModelOut PickClassifier() => IsClassifier
+            ? Classifier!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Classifier' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -94,6 +108,11 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public static JobsApiRoutesFineTuningUpdateFineTunedModelResponse FromCompletion(global::Mistral.CompletionFTModelOut? value) => new JobsApiRoutesFineTuningUpdateFineTunedModelResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator JobsApiRoutesFineTuningUpdateFineTunedModelResponse(global::Mistral.ClassifierFTModelOut value) => new JobsApiRoutesFineTuningUpdateFineTunedModelResponse((global::Mistral.ClassifierFTModelOut?)value);
 
         /// <summary>
@@ -108,6 +127,11 @@ namespace Mistral
         {
             Classifier = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static JobsApiRoutesFineTuningUpdateFineTunedModelResponse FromClassifier(global::Mistral.ClassifierFTModelOut? value) => new JobsApiRoutesFineTuningUpdateFineTunedModelResponse(value);
 
         /// <summary>
         /// 

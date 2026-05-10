@@ -47,6 +47,13 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public global::Mistral.CompletionJobOut PickCompletion() => IsCompletion
+            ? Completion!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Completion' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.ClassifierJobOut? Classifier { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace Mistral
             value = Classifier;
             return IsClassifier;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Mistral.ClassifierJobOut PickClassifier() => IsClassifier
+            ? Classifier!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Classifier' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -94,6 +108,11 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public static DataItem2 FromCompletion(global::Mistral.CompletionJobOut? value) => new DataItem2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator DataItem2(global::Mistral.ClassifierJobOut value) => new DataItem2((global::Mistral.ClassifierJobOut?)value);
 
         /// <summary>
@@ -108,6 +127,11 @@ namespace Mistral
         {
             Classifier = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static DataItem2 FromClassifier(global::Mistral.ClassifierJobOut? value) => new DataItem2(value);
 
         /// <summary>
         /// 

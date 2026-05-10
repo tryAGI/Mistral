@@ -47,6 +47,13 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public global::Mistral.ResponseStartedEvent PickConversationResponseStarted() => IsConversationResponseStarted
+            ? ConversationResponseStarted!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationResponseStarted' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.ResponseDoneEvent? ConversationResponseDone { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace Mistral
             value = ConversationResponseDone;
             return IsConversationResponseDone;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Mistral.ResponseDoneEvent PickConversationResponseDone() => IsConversationResponseDone
+            ? ConversationResponseDone!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationResponseDone' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -107,6 +121,13 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public global::Mistral.ResponseErrorEvent PickConversationResponseError() => IsConversationResponseError
+            ? ConversationResponseError!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationResponseError' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.ToolExecutionStartedEvent? ToolExecutionStarted { get; init; }
 #else
@@ -133,6 +154,13 @@ namespace Mistral
             value = ToolExecutionStarted;
             return IsToolExecutionStarted;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Mistral.ToolExecutionStartedEvent PickToolExecutionStarted() => IsToolExecutionStarted
+            ? ToolExecutionStarted!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ToolExecutionStarted' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -167,6 +195,13 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public global::Mistral.ToolExecutionDeltaEvent PickToolExecutionDelta() => IsToolExecutionDelta
+            ? ToolExecutionDelta!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ToolExecutionDelta' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.ToolExecutionDoneEvent? ToolExecutionDone { get; init; }
 #else
@@ -193,6 +228,13 @@ namespace Mistral
             value = ToolExecutionDone;
             return IsToolExecutionDone;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Mistral.ToolExecutionDoneEvent PickToolExecutionDone() => IsToolExecutionDone
+            ? ToolExecutionDone!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ToolExecutionDone' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -227,6 +269,13 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public global::Mistral.MessageOutputEvent PickMessageOutputDelta() => IsMessageOutputDelta
+            ? MessageOutputDelta!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessageOutputDelta' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.FunctionCallEvent? FunctionCallDelta { get; init; }
 #else
@@ -253,6 +302,13 @@ namespace Mistral
             value = FunctionCallDelta;
             return IsFunctionCallDelta;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Mistral.FunctionCallEvent PickFunctionCallDelta() => IsFunctionCallDelta
+            ? FunctionCallDelta!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FunctionCallDelta' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -287,6 +343,13 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public global::Mistral.AgentHandoffStartedEvent PickAgentHandoffStarted() => IsAgentHandoffStarted
+            ? AgentHandoffStarted!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AgentHandoffStarted' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.AgentHandoffDoneEvent? AgentHandoffDone { get; init; }
 #else
@@ -313,6 +376,13 @@ namespace Mistral
             value = AgentHandoffDone;
             return IsAgentHandoffDone;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Mistral.AgentHandoffDoneEvent PickAgentHandoffDone() => IsAgentHandoffDone
+            ? AgentHandoffDone!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AgentHandoffDone' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -330,6 +400,11 @@ namespace Mistral
         {
             ConversationResponseStarted = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Data FromConversationResponseStarted(global::Mistral.ResponseStartedEvent? value) => new Data(value);
 
         /// <summary>
         /// 
@@ -352,6 +427,11 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public static Data FromConversationResponseDone(global::Mistral.ResponseDoneEvent? value) => new Data(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Data(global::Mistral.ResponseErrorEvent value) => new Data((global::Mistral.ResponseErrorEvent?)value);
 
         /// <summary>
@@ -366,6 +446,11 @@ namespace Mistral
         {
             ConversationResponseError = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Data FromConversationResponseError(global::Mistral.ResponseErrorEvent? value) => new Data(value);
 
         /// <summary>
         /// 
@@ -388,6 +473,11 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public static Data FromToolExecutionStarted(global::Mistral.ToolExecutionStartedEvent? value) => new Data(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Data(global::Mistral.ToolExecutionDeltaEvent value) => new Data((global::Mistral.ToolExecutionDeltaEvent?)value);
 
         /// <summary>
@@ -402,6 +492,11 @@ namespace Mistral
         {
             ToolExecutionDelta = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Data FromToolExecutionDelta(global::Mistral.ToolExecutionDeltaEvent? value) => new Data(value);
 
         /// <summary>
         /// 
@@ -424,6 +519,11 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public static Data FromToolExecutionDone(global::Mistral.ToolExecutionDoneEvent? value) => new Data(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Data(global::Mistral.MessageOutputEvent value) => new Data((global::Mistral.MessageOutputEvent?)value);
 
         /// <summary>
@@ -438,6 +538,11 @@ namespace Mistral
         {
             MessageOutputDelta = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Data FromMessageOutputDelta(global::Mistral.MessageOutputEvent? value) => new Data(value);
 
         /// <summary>
         /// 
@@ -460,6 +565,11 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public static Data FromFunctionCallDelta(global::Mistral.FunctionCallEvent? value) => new Data(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Data(global::Mistral.AgentHandoffStartedEvent value) => new Data((global::Mistral.AgentHandoffStartedEvent?)value);
 
         /// <summary>
@@ -478,6 +588,11 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public static Data FromAgentHandoffStarted(global::Mistral.AgentHandoffStartedEvent? value) => new Data(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Data(global::Mistral.AgentHandoffDoneEvent value) => new Data((global::Mistral.AgentHandoffDoneEvent?)value);
 
         /// <summary>
@@ -492,6 +607,11 @@ namespace Mistral
         {
             AgentHandoffDone = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Data FromAgentHandoffDone(global::Mistral.AgentHandoffDoneEvent? value) => new Data(value);
 
         /// <summary>
         /// 

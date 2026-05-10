@@ -42,6 +42,13 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public object PickFunctionCallEntryArgumentsVariant1() => IsFunctionCallEntryArgumentsVariant1
+            ? FunctionCallEntryArgumentsVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FunctionCallEntryArgumentsVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public string? FunctionCallEntryArgumentsVariant2 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Mistral
             value = FunctionCallEntryArgumentsVariant2;
             return IsFunctionCallEntryArgumentsVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickFunctionCallEntryArgumentsVariant2() => IsFunctionCallEntryArgumentsVariant2
+            ? FunctionCallEntryArgumentsVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FunctionCallEntryArgumentsVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -85,6 +99,11 @@ namespace Mistral
         {
             FunctionCallEntryArgumentsVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static FunctionCallEntryArguments FromFunctionCallEntryArgumentsVariant2(string? value) => new FunctionCallEntryArguments(value);
 
         /// <summary>
         /// 

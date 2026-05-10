@@ -42,6 +42,13 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public global::Mistral.ChatCompletionResponse PickChat() => IsChat
+            ? Chat!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Chat' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.FIMCompletionResponseVariant2? FIMCompletionResponseVariant2 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Mistral
             value = FIMCompletionResponseVariant2;
             return IsFIMCompletionResponseVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Mistral.FIMCompletionResponseVariant2 PickFIMCompletionResponseVariant2() => IsFIMCompletionResponseVariant2
+            ? FIMCompletionResponseVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FIMCompletionResponseVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -89,6 +103,11 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public static FIMCompletionResponse FromChat(global::Mistral.ChatCompletionResponse? value) => new FIMCompletionResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator FIMCompletionResponse(global::Mistral.FIMCompletionResponseVariant2 value) => new FIMCompletionResponse((global::Mistral.FIMCompletionResponseVariant2?)value);
 
         /// <summary>
@@ -103,6 +122,11 @@ namespace Mistral
         {
             FIMCompletionResponseVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static FIMCompletionResponse FromFIMCompletionResponseVariant2(global::Mistral.FIMCompletionResponseVariant2? value) => new FIMCompletionResponse(value);
 
         /// <summary>
         /// 

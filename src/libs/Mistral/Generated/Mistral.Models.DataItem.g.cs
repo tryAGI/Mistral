@@ -45,6 +45,13 @@ namespace Mistral
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Mistral.BaseModelCard PickBase() => IsBase
+            ? Base!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
+
+        /// <summary>
         /// Extra fields for fine-tuned models.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -73,6 +80,13 @@ namespace Mistral
             value = FineTuned;
             return IsFineTuned;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Mistral.FTModelCard PickFineTuned() => IsFineTuned
+            ? FineTuned!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FineTuned' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -94,6 +108,11 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public static DataItem FromBase(global::Mistral.BaseModelCard? value) => new DataItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator DataItem(global::Mistral.FTModelCard value) => new DataItem((global::Mistral.FTModelCard?)value);
 
         /// <summary>
@@ -108,6 +127,11 @@ namespace Mistral
         {
             FineTuned = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static DataItem FromFineTuned(global::Mistral.FTModelCard? value) => new DataItem(value);
 
         /// <summary>
         /// 

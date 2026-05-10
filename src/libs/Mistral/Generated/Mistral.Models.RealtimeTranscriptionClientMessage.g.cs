@@ -47,6 +47,13 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public global::Mistral.RealtimeTranscriptionSessionUpdateMessage PickSessionUpdate() => IsSessionUpdate
+            ? SessionUpdate!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SessionUpdate' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.RealtimeTranscriptionInputAudioAppend? InputAudioAppend { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace Mistral
             value = InputAudioAppend;
             return IsInputAudioAppend;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Mistral.RealtimeTranscriptionInputAudioAppend PickInputAudioAppend() => IsInputAudioAppend
+            ? InputAudioAppend!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputAudioAppend' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -107,6 +121,13 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public global::Mistral.RealtimeTranscriptionInputAudioFlush PickInputAudioFlush() => IsInputAudioFlush
+            ? InputAudioFlush!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputAudioFlush' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.RealtimeTranscriptionInputAudioEnd? InputAudioEnd { get; init; }
 #else
@@ -133,6 +154,13 @@ namespace Mistral
             value = InputAudioEnd;
             return IsInputAudioEnd;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Mistral.RealtimeTranscriptionInputAudioEnd PickInputAudioEnd() => IsInputAudioEnd
+            ? InputAudioEnd!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputAudioEnd' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -150,6 +178,11 @@ namespace Mistral
         {
             SessionUpdate = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static RealtimeTranscriptionClientMessage FromSessionUpdate(global::Mistral.RealtimeTranscriptionSessionUpdateMessage? value) => new RealtimeTranscriptionClientMessage(value);
 
         /// <summary>
         /// 
@@ -172,6 +205,11 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public static RealtimeTranscriptionClientMessage FromInputAudioAppend(global::Mistral.RealtimeTranscriptionInputAudioAppend? value) => new RealtimeTranscriptionClientMessage(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RealtimeTranscriptionClientMessage(global::Mistral.RealtimeTranscriptionInputAudioFlush value) => new RealtimeTranscriptionClientMessage((global::Mistral.RealtimeTranscriptionInputAudioFlush?)value);
 
         /// <summary>
@@ -190,6 +228,11 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public static RealtimeTranscriptionClientMessage FromInputAudioFlush(global::Mistral.RealtimeTranscriptionInputAudioFlush? value) => new RealtimeTranscriptionClientMessage(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RealtimeTranscriptionClientMessage(global::Mistral.RealtimeTranscriptionInputAudioEnd value) => new RealtimeTranscriptionClientMessage((global::Mistral.RealtimeTranscriptionInputAudioEnd?)value);
 
         /// <summary>
@@ -204,6 +247,11 @@ namespace Mistral
         {
             InputAudioEnd = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static RealtimeTranscriptionClientMessage FromInputAudioEnd(global::Mistral.RealtimeTranscriptionInputAudioEnd? value) => new RealtimeTranscriptionClientMessage(value);
 
         /// <summary>
         /// 
