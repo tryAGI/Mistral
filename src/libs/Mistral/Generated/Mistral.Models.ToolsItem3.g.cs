@@ -47,6 +47,13 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public global::Mistral.FunctionTool PickFunction() => IsFunction
+            ? Function!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Function' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.WebSearchTool? WebSearch { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace Mistral
             value = WebSearch;
             return IsWebSearch;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Mistral.WebSearchTool PickWebSearch() => IsWebSearch
+            ? WebSearch!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'WebSearch' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -107,6 +121,13 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public global::Mistral.WebSearchPremiumTool PickWebSearchPremium() => IsWebSearchPremium
+            ? WebSearchPremium!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'WebSearchPremium' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.CodeInterpreterTool? CodeInterpreter { get; init; }
 #else
@@ -133,6 +154,13 @@ namespace Mistral
             value = CodeInterpreter;
             return IsCodeInterpreter;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Mistral.CodeInterpreterTool PickCodeInterpreter() => IsCodeInterpreter
+            ? CodeInterpreter!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CodeInterpreter' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -167,6 +195,13 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public global::Mistral.ImageGenerationTool PickImageGeneration() => IsImageGeneration
+            ? ImageGeneration!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ImageGeneration' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.DocumentLibraryTool? DocumentLibrary { get; init; }
 #else
@@ -197,6 +232,13 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public global::Mistral.DocumentLibraryTool PickDocumentLibrary() => IsDocumentLibrary
+            ? DocumentLibrary!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DocumentLibrary' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.CustomConnector? Connector { get; init; }
 #else
@@ -223,6 +265,13 @@ namespace Mistral
             value = Connector;
             return IsConnector;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Mistral.CustomConnector PickConnector() => IsConnector
+            ? Connector!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Connector' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -240,6 +289,11 @@ namespace Mistral
         {
             Function = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolsItem3 FromFunction(global::Mistral.FunctionTool? value) => new ToolsItem3(value);
 
         /// <summary>
         /// 
@@ -262,6 +316,11 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public static ToolsItem3 FromWebSearch(global::Mistral.WebSearchTool? value) => new ToolsItem3(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolsItem3(global::Mistral.WebSearchPremiumTool value) => new ToolsItem3((global::Mistral.WebSearchPremiumTool?)value);
 
         /// <summary>
@@ -276,6 +335,11 @@ namespace Mistral
         {
             WebSearchPremium = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolsItem3 FromWebSearchPremium(global::Mistral.WebSearchPremiumTool? value) => new ToolsItem3(value);
 
         /// <summary>
         /// 
@@ -298,6 +362,11 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public static ToolsItem3 FromCodeInterpreter(global::Mistral.CodeInterpreterTool? value) => new ToolsItem3(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolsItem3(global::Mistral.ImageGenerationTool value) => new ToolsItem3((global::Mistral.ImageGenerationTool?)value);
 
         /// <summary>
@@ -312,6 +381,11 @@ namespace Mistral
         {
             ImageGeneration = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolsItem3 FromImageGeneration(global::Mistral.ImageGenerationTool? value) => new ToolsItem3(value);
 
         /// <summary>
         /// 
@@ -334,6 +408,11 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public static ToolsItem3 FromDocumentLibrary(global::Mistral.DocumentLibraryTool? value) => new ToolsItem3(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolsItem3(global::Mistral.CustomConnector value) => new ToolsItem3((global::Mistral.CustomConnector?)value);
 
         /// <summary>
@@ -348,6 +427,11 @@ namespace Mistral
         {
             Connector = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolsItem3 FromConnector(global::Mistral.CustomConnector? value) => new ToolsItem3(value);
 
         /// <summary>
         /// 

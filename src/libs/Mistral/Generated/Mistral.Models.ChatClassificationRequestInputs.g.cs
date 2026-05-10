@@ -42,6 +42,13 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public global::Mistral.InstructRequest PickInstructRequest() => IsInstructRequest
+            ? InstructRequest!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InstructRequest' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::Mistral.InstructRequest>? ChatClassificationRequestInputsVariant2 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Mistral
             value = ChatClassificationRequestInputsVariant2;
             return IsChatClassificationRequestInputsVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::Mistral.InstructRequest> PickChatClassificationRequestInputsVariant2() => IsChatClassificationRequestInputsVariant2
+            ? ChatClassificationRequestInputsVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatClassificationRequestInputsVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -85,6 +99,11 @@ namespace Mistral
         {
             InstructRequest = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatClassificationRequestInputs FromInstructRequest(global::Mistral.InstructRequest? value) => new ChatClassificationRequestInputs(value);
 
         /// <summary>
         /// 

@@ -47,6 +47,13 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public global::Mistral.CompletionDetailedJobOut PickCompletion() => IsCompletion
+            ? Completion!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Completion' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.ClassifierDetailedJobOut? Classifier { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace Mistral
             value = Classifier;
             return IsClassifier;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Mistral.ClassifierDetailedJobOut PickClassifier() => IsClassifier
+            ? Classifier!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Classifier' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -94,6 +108,11 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public static JobsApiRoutesFineTuningStartFineTuningJobResponse FromCompletion(global::Mistral.CompletionDetailedJobOut? value) => new JobsApiRoutesFineTuningStartFineTuningJobResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator JobsApiRoutesFineTuningStartFineTuningJobResponse(global::Mistral.ClassifierDetailedJobOut value) => new JobsApiRoutesFineTuningStartFineTuningJobResponse((global::Mistral.ClassifierDetailedJobOut?)value);
 
         /// <summary>
@@ -108,6 +127,11 @@ namespace Mistral
         {
             Classifier = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static JobsApiRoutesFineTuningStartFineTuningJobResponse FromClassifier(global::Mistral.ClassifierDetailedJobOut? value) => new JobsApiRoutesFineTuningStartFineTuningJobResponse(value);
 
         /// <summary>
         /// 

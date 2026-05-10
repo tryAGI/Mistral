@@ -42,6 +42,13 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public global::Mistral.ResponseBase PickResponseBase() => IsResponseBase
+            ? ResponseBase!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseBase' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.EmbeddingResponseVariant2? EmbeddingResponseVariant2 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Mistral
             value = EmbeddingResponseVariant2;
             return IsEmbeddingResponseVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Mistral.EmbeddingResponseVariant2 PickEmbeddingResponseVariant2() => IsEmbeddingResponseVariant2
+            ? EmbeddingResponseVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingResponseVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -89,6 +103,11 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public static EmbeddingResponse FromResponseBase(global::Mistral.ResponseBase? value) => new EmbeddingResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator EmbeddingResponse(global::Mistral.EmbeddingResponseVariant2 value) => new EmbeddingResponse((global::Mistral.EmbeddingResponseVariant2?)value);
 
         /// <summary>
@@ -103,6 +122,11 @@ namespace Mistral
         {
             EmbeddingResponseVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static EmbeddingResponse FromEmbeddingResponseVariant2(global::Mistral.EmbeddingResponseVariant2? value) => new EmbeddingResponse(value);
 
         /// <summary>
         /// 

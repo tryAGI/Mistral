@@ -42,6 +42,13 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public global::Mistral.ResponseBase PickResponseBase() => IsResponseBase
+            ? ResponseBase!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseBase' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.ChatCompletionResponseBaseChatCompletionResponseBase1? Base1 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Mistral
             value = Base1;
             return IsBase1;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Mistral.ChatCompletionResponseBaseChatCompletionResponseBase1 PickBase1() => IsBase1
+            ? Base1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Base1' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -89,6 +103,11 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public static ChatCompletionResponseBase FromResponseBase(global::Mistral.ResponseBase? value) => new ChatCompletionResponseBase(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatCompletionResponseBase(global::Mistral.ChatCompletionResponseBaseChatCompletionResponseBase1 value) => new ChatCompletionResponseBase((global::Mistral.ChatCompletionResponseBaseChatCompletionResponseBase1?)value);
 
         /// <summary>
@@ -103,6 +122,11 @@ namespace Mistral
         {
             Base1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatCompletionResponseBase FromBase1(global::Mistral.ChatCompletionResponseBaseChatCompletionResponseBase1? value) => new ChatCompletionResponseBase(value);
 
         /// <summary>
         /// 

@@ -42,6 +42,13 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public string PickConversationInputsVariant1() => IsConversationInputsVariant1
+            ? ConversationInputsVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationInputsVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::Mistral.AnyOf<global::Mistral.MessageInputEntry, global::Mistral.MessageOutputEntry, global::Mistral.FunctionResultEntry, global::Mistral.FunctionCallEntry, global::Mistral.ToolExecutionEntry, global::Mistral.AgentHandoffEntry>>? InputEntries { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Mistral
             value = InputEntries;
             return IsInputEntries;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::Mistral.AnyOf<global::Mistral.MessageInputEntry, global::Mistral.MessageOutputEntry, global::Mistral.FunctionResultEntry, global::Mistral.FunctionCallEntry, global::Mistral.ToolExecutionEntry, global::Mistral.AgentHandoffEntry>> PickInputEntries() => IsInputEntries
+            ? InputEntries!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputEntries' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -85,6 +99,11 @@ namespace Mistral
         {
             ConversationInputsVariant1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ConversationInputs FromConversationInputsVariant1(string? value) => new ConversationInputs(value);
 
         /// <summary>
         /// 

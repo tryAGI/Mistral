@@ -43,6 +43,13 @@ namespace Mistral
             value = Wandb;
             return IsWandb;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Mistral.WandbIntegration PickWandb() => IsWandb
+            ? Wandb!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Wandb' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -60,6 +67,11 @@ namespace Mistral
         {
             Wandb = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static IntegrationsVariant1Item3 FromWandb(global::Mistral.WandbIntegration? value) => new IntegrationsVariant1Item3(value);
 
         /// <summary>
         /// 

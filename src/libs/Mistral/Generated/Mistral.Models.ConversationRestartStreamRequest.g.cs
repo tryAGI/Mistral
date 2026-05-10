@@ -42,6 +42,13 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public global::Mistral.ConversationRestartRequestBase PickConversationRestartRequest() => IsConversationRestartRequest
+            ? ConversationRestartRequest!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationRestartRequest' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.ConversationRestartStreamRequestVariant2? ConversationRestartStreamRequestVariant2 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Mistral
             value = ConversationRestartStreamRequestVariant2;
             return IsConversationRestartStreamRequestVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Mistral.ConversationRestartStreamRequestVariant2 PickConversationRestartStreamRequestVariant2() => IsConversationRestartStreamRequestVariant2
+            ? ConversationRestartStreamRequestVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationRestartStreamRequestVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -89,6 +103,11 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public static ConversationRestartStreamRequest FromConversationRestartRequest(global::Mistral.ConversationRestartRequestBase? value) => new ConversationRestartStreamRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ConversationRestartStreamRequest(global::Mistral.ConversationRestartStreamRequestVariant2 value) => new ConversationRestartStreamRequest((global::Mistral.ConversationRestartStreamRequestVariant2?)value);
 
         /// <summary>
@@ -103,6 +122,11 @@ namespace Mistral
         {
             ConversationRestartStreamRequestVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ConversationRestartStreamRequest FromConversationRestartStreamRequestVariant2(global::Mistral.ConversationRestartStreamRequestVariant2? value) => new ConversationRestartStreamRequest(value);
 
         /// <summary>
         /// 

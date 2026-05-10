@@ -42,6 +42,13 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public global::Mistral.ConversationRequestBase PickBase() => IsBase
+            ? Base!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.ConversationRequestVariant2? ConversationRequestVariant2 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Mistral
             value = ConversationRequestVariant2;
             return IsConversationRequestVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Mistral.ConversationRequestVariant2 PickConversationRequestVariant2() => IsConversationRequestVariant2
+            ? ConversationRequestVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationRequestVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -89,6 +103,11 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public static ConversationRequest FromBase(global::Mistral.ConversationRequestBase? value) => new ConversationRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ConversationRequest(global::Mistral.ConversationRequestVariant2 value) => new ConversationRequest((global::Mistral.ConversationRequestVariant2?)value);
 
         /// <summary>
@@ -103,6 +122,11 @@ namespace Mistral
         {
             ConversationRequestVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ConversationRequest FromConversationRequestVariant2(global::Mistral.ConversationRequestVariant2? value) => new ConversationRequest(value);
 
         /// <summary>
         /// 

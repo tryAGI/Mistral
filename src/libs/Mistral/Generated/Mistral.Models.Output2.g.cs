@@ -47,6 +47,13 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public global::Mistral.JudgeClassificationOutput PickClassification() => IsClassification
+            ? Classification!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Classification' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.JudgeRegressionOutput? Regression { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace Mistral
             value = Regression;
             return IsRegression;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Mistral.JudgeRegressionOutput PickRegression() => IsRegression
+            ? Regression!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Regression' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -94,6 +108,11 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public static Output2 FromClassification(global::Mistral.JudgeClassificationOutput? value) => new Output2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Output2(global::Mistral.JudgeRegressionOutput value) => new Output2((global::Mistral.JudgeRegressionOutput?)value);
 
         /// <summary>
@@ -108,6 +127,11 @@ namespace Mistral
         {
             Regression = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Output2 FromRegression(global::Mistral.JudgeRegressionOutput? value) => new Output2(value);
 
         /// <summary>
         /// 

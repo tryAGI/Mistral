@@ -42,6 +42,13 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public global::Mistral.ConversationRestartRequestBase PickBase() => IsBase
+            ? Base!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.ConversationRestartRequestVariant2? ConversationRestartRequestVariant2 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Mistral
             value = ConversationRestartRequestVariant2;
             return IsConversationRestartRequestVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Mistral.ConversationRestartRequestVariant2 PickConversationRestartRequestVariant2() => IsConversationRestartRequestVariant2
+            ? ConversationRestartRequestVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationRestartRequestVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -89,6 +103,11 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public static ConversationRestartRequest FromBase(global::Mistral.ConversationRestartRequestBase? value) => new ConversationRestartRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ConversationRestartRequest(global::Mistral.ConversationRestartRequestVariant2 value) => new ConversationRestartRequest((global::Mistral.ConversationRestartRequestVariant2?)value);
 
         /// <summary>
@@ -103,6 +122,11 @@ namespace Mistral
         {
             ConversationRestartRequestVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ConversationRestartRequest FromConversationRestartRequestVariant2(global::Mistral.ConversationRestartRequestVariant2? value) => new ConversationRestartRequest(value);
 
         /// <summary>
         /// 

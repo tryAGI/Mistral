@@ -47,6 +47,13 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public global::Mistral.SpeechStreamAudioDelta PickSpeechAudioDelta() => IsSpeechAudioDelta
+            ? SpeechAudioDelta!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SpeechAudioDelta' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.SpeechStreamDone? SpeechAudioDone { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace Mistral
             value = SpeechAudioDone;
             return IsSpeechAudioDone;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Mistral.SpeechStreamDone PickSpeechAudioDone() => IsSpeechAudioDone
+            ? SpeechAudioDone!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SpeechAudioDone' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -94,6 +108,11 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public static Data2 FromSpeechAudioDelta(global::Mistral.SpeechStreamAudioDelta? value) => new Data2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Data2(global::Mistral.SpeechStreamDone value) => new Data2((global::Mistral.SpeechStreamDone?)value);
 
         /// <summary>
@@ -108,6 +127,11 @@ namespace Mistral
         {
             SpeechAudioDone = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Data2 FromSpeechAudioDone(global::Mistral.SpeechStreamDone? value) => new Data2(value);
 
         /// <summary>
         /// 

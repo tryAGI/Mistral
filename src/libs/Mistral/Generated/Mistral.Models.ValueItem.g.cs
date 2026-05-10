@@ -47,6 +47,13 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public global::Mistral.JSONPatchAppend PickAppend() => IsAppend
+            ? Append!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Append' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.JSONPatchAdd? Add { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace Mistral
             value = Add;
             return IsAdd;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Mistral.JSONPatchAdd PickAdd() => IsAdd
+            ? Add!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Add' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -107,6 +121,13 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public global::Mistral.JSONPatchReplace PickReplace() => IsReplace
+            ? Replace!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Replace' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.JSONPatchRemove? Remove { get; init; }
 #else
@@ -133,6 +154,13 @@ namespace Mistral
             value = Remove;
             return IsRemove;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Mistral.JSONPatchRemove PickRemove() => IsRemove
+            ? Remove!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Remove' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -150,6 +178,11 @@ namespace Mistral
         {
             Append = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ValueItem FromAppend(global::Mistral.JSONPatchAppend? value) => new ValueItem(value);
 
         /// <summary>
         /// 
@@ -172,6 +205,11 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public static ValueItem FromAdd(global::Mistral.JSONPatchAdd? value) => new ValueItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ValueItem(global::Mistral.JSONPatchReplace value) => new ValueItem((global::Mistral.JSONPatchReplace?)value);
 
         /// <summary>
@@ -190,6 +228,11 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public static ValueItem FromReplace(global::Mistral.JSONPatchReplace? value) => new ValueItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ValueItem(global::Mistral.JSONPatchRemove value) => new ValueItem((global::Mistral.JSONPatchRemove?)value);
 
         /// <summary>
@@ -204,6 +247,11 @@ namespace Mistral
         {
             Remove = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ValueItem FromRemove(global::Mistral.JSONPatchRemove? value) => new ValueItem(value);
 
         /// <summary>
         /// 

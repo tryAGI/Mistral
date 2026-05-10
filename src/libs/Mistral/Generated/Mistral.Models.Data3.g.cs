@@ -47,6 +47,13 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public global::Mistral.TranscriptionStreamTextDelta PickTranscriptionTextDelta() => IsTranscriptionTextDelta
+            ? TranscriptionTextDelta!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TranscriptionTextDelta' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.TranscriptionStreamLanguage? TranscriptionLanguage { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace Mistral
             value = TranscriptionLanguage;
             return IsTranscriptionLanguage;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Mistral.TranscriptionStreamLanguage PickTranscriptionLanguage() => IsTranscriptionLanguage
+            ? TranscriptionLanguage!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TranscriptionLanguage' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -107,6 +121,13 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public global::Mistral.TranscriptionStreamSegmentDelta PickTranscriptionSegment() => IsTranscriptionSegment
+            ? TranscriptionSegment!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TranscriptionSegment' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.TranscriptionStreamDone? TranscriptionDone { get; init; }
 #else
@@ -133,6 +154,13 @@ namespace Mistral
             value = TranscriptionDone;
             return IsTranscriptionDone;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Mistral.TranscriptionStreamDone PickTranscriptionDone() => IsTranscriptionDone
+            ? TranscriptionDone!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TranscriptionDone' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -150,6 +178,11 @@ namespace Mistral
         {
             TranscriptionTextDelta = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Data3 FromTranscriptionTextDelta(global::Mistral.TranscriptionStreamTextDelta? value) => new Data3(value);
 
         /// <summary>
         /// 
@@ -172,6 +205,11 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public static Data3 FromTranscriptionLanguage(global::Mistral.TranscriptionStreamLanguage? value) => new Data3(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Data3(global::Mistral.TranscriptionStreamSegmentDelta value) => new Data3((global::Mistral.TranscriptionStreamSegmentDelta?)value);
 
         /// <summary>
@@ -190,6 +228,11 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public static Data3 FromTranscriptionSegment(global::Mistral.TranscriptionStreamSegmentDelta? value) => new Data3(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Data3(global::Mistral.TranscriptionStreamDone value) => new Data3((global::Mistral.TranscriptionStreamDone?)value);
 
         /// <summary>
@@ -204,6 +247,11 @@ namespace Mistral
         {
             TranscriptionDone = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Data3 FromTranscriptionDone(global::Mistral.TranscriptionStreamDone? value) => new Data3(value);
 
         /// <summary>
         /// 

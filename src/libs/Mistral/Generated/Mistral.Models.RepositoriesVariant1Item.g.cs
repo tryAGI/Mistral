@@ -43,6 +43,13 @@ namespace Mistral
             value = Github;
             return IsGithub;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Mistral.GithubRepositoryIn PickGithub() => IsGithub
+            ? Github!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Github' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -60,6 +67,11 @@ namespace Mistral
         {
             Github = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static RepositoriesVariant1Item FromGithub(global::Mistral.GithubRepositoryIn? value) => new RepositoriesVariant1Item(value);
 
         /// <summary>
         /// 

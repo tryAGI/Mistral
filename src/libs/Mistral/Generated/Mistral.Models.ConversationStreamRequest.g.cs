@@ -42,6 +42,13 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public global::Mistral.ConversationRequestBase PickConversationRequest() => IsConversationRequest
+            ? ConversationRequest!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationRequest' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.ConversationStreamRequestVariant2? ConversationStreamRequestVariant2 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Mistral
             value = ConversationStreamRequestVariant2;
             return IsConversationStreamRequestVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Mistral.ConversationStreamRequestVariant2 PickConversationStreamRequestVariant2() => IsConversationStreamRequestVariant2
+            ? ConversationStreamRequestVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationStreamRequestVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -89,6 +103,11 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public static ConversationStreamRequest FromConversationRequest(global::Mistral.ConversationRequestBase? value) => new ConversationStreamRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ConversationStreamRequest(global::Mistral.ConversationStreamRequestVariant2 value) => new ConversationStreamRequest((global::Mistral.ConversationStreamRequestVariant2?)value);
 
         /// <summary>
@@ -103,6 +122,11 @@ namespace Mistral
         {
             ConversationStreamRequestVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ConversationStreamRequest FromConversationStreamRequestVariant2(global::Mistral.ConversationStreamRequestVariant2? value) => new ConversationStreamRequest(value);
 
         /// <summary>
         /// 

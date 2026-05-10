@@ -47,6 +47,13 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public global::Mistral.OAuth2TokenAuth PickOauth2Token() => IsOauth2Token
+            ? Oauth2Token!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Oauth2Token' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.APIKeyAuth? ApiKey { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace Mistral
             value = ApiKey;
             return IsApiKey;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Mistral.APIKeyAuth PickApiKey() => IsApiKey
+            ? ApiKey!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ApiKey' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -94,6 +108,11 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public static AuthorizationVariant1 FromOauth2Token(global::Mistral.OAuth2TokenAuth? value) => new AuthorizationVariant1(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AuthorizationVariant1(global::Mistral.APIKeyAuth value) => new AuthorizationVariant1((global::Mistral.APIKeyAuth?)value);
 
         /// <summary>
@@ -108,6 +127,11 @@ namespace Mistral
         {
             ApiKey = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AuthorizationVariant1 FromApiKey(global::Mistral.APIKeyAuth? value) => new AuthorizationVariant1(value);
 
         /// <summary>
         /// 

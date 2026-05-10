@@ -47,6 +47,13 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public global::Mistral.TextChunk PickText() => IsText
+            ? Text!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.ThinkChunk? Thinking { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace Mistral
             value = Thinking;
             return IsThinking;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Mistral.ThinkChunk PickThinking() => IsThinking
+            ? Thinking!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Thinking' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -94,6 +108,11 @@ namespace Mistral
         /// <summary>
         /// 
         /// </summary>
+        public static SystemMessageContentChunks FromText(global::Mistral.TextChunk? value) => new SystemMessageContentChunks(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator SystemMessageContentChunks(global::Mistral.ThinkChunk value) => new SystemMessageContentChunks((global::Mistral.ThinkChunk?)value);
 
         /// <summary>
@@ -108,6 +127,11 @@ namespace Mistral
         {
             Thinking = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static SystemMessageContentChunks FromThinking(global::Mistral.ThinkChunk? value) => new SystemMessageContentChunks(value);
 
         /// <summary>
         /// 
