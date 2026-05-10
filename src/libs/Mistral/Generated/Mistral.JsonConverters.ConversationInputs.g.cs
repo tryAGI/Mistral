@@ -108,7 +108,10 @@ namespace Mistral.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (conversationInputsVariant1 == null && inputEntries == null)
+            {
                 try
                 {
 

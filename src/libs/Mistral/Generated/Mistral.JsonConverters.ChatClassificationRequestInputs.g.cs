@@ -75,6 +75,7 @@ namespace Mistral.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.InstructRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.InstructRequest> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.InstructRequest).Name}");
                     instructRequest = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -85,9 +86,13 @@ namespace Mistral.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (instructRequest == null && chatClassificationRequestInputsVariant2 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<global::Mistral.InstructRequest>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<global::Mistral.InstructRequest>> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<global::Mistral.InstructRequest>).Name}");
                     chatClassificationRequestInputsVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

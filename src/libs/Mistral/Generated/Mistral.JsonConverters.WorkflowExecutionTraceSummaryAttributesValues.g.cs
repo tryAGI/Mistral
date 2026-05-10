@@ -198,7 +198,10 @@ namespace Mistral.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (workflowExecutionTraceSummaryAttributesValuesVariant1 == null && workflowExecutionTraceSummaryAttributesValuesVariant2 == null && workflowExecutionTraceSummaryAttributesValuesVariant3 == null && workflowExecutionTraceSummaryAttributesValuesVariant4 == null && workflowExecutionTraceSummaryAttributesValuesVariant5 == null)
+            {
                 try
                 {
 
@@ -212,7 +215,10 @@ namespace Mistral.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (workflowExecutionTraceSummaryAttributesValuesVariant1 == null && workflowExecutionTraceSummaryAttributesValuesVariant2 == null && workflowExecutionTraceSummaryAttributesValuesVariant3 == null && workflowExecutionTraceSummaryAttributesValuesVariant4 == null && workflowExecutionTraceSummaryAttributesValuesVariant5 == null)
+            {
                 try
                 {
 
@@ -226,7 +232,10 @@ namespace Mistral.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (workflowExecutionTraceSummaryAttributesValuesVariant1 == null && workflowExecutionTraceSummaryAttributesValuesVariant2 == null && workflowExecutionTraceSummaryAttributesValuesVariant3 == null && workflowExecutionTraceSummaryAttributesValuesVariant4 == null && workflowExecutionTraceSummaryAttributesValuesVariant5 == null)
+            {
                 try
                 {
 
@@ -240,7 +249,10 @@ namespace Mistral.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (workflowExecutionTraceSummaryAttributesValuesVariant1 == null && workflowExecutionTraceSummaryAttributesValuesVariant2 == null && workflowExecutionTraceSummaryAttributesValuesVariant3 == null && workflowExecutionTraceSummaryAttributesValuesVariant4 == null && workflowExecutionTraceSummaryAttributesValuesVariant5 == null)
+            {
                 try
                 {
 

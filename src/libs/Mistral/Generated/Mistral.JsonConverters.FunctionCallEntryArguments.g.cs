@@ -108,7 +108,10 @@ namespace Mistral.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (functionCallEntryArgumentsVariant1 == null && functionCallEntryArgumentsVariant2 == null)
+            {
                 try
                 {
 
