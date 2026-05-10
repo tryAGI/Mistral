@@ -101,5 +101,6 @@ namespace Mistral
         public CompletionTrainingParameters()
         {
         }
+
     }
 }

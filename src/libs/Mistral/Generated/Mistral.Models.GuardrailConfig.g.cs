@@ -61,5 +61,6 @@ namespace Mistral
         public GuardrailConfig()
         {
         }
+
     }
 }

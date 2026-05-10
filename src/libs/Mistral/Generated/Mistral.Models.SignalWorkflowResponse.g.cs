@@ -41,5 +41,6 @@ namespace Mistral
         public SignalWorkflowResponse()
         {
         }
+
     }
 }

@@ -57,5 +57,6 @@ namespace Mistral
         public FeedResultChatCompletionEventPreview()
         {
         }
+
     }
 }

@@ -182,5 +182,6 @@ namespace Mistral
         public CompletionFTModelOut()
         {
         }
+
     }
 }

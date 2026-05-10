@@ -83,5 +83,6 @@ namespace Mistral
         public JudgeRegressionOutput()
         {
         }
+
     }
 }

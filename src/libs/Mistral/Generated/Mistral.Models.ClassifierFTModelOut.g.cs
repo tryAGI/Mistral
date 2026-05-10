@@ -192,5 +192,6 @@ namespace Mistral
         public ClassifierFTModelOut()
         {
         }
+
     }
 }

@@ -175,5 +175,6 @@ namespace Mistral
         public WorkflowWithWorkerStatus()
         {
         }
+
     }
 }

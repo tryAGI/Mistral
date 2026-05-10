@@ -100,5 +100,6 @@ namespace Mistral
         public WorkflowRegistration()
         {
         }
+
     }
 }

@@ -124,5 +124,6 @@ namespace Mistral
         public ResourceLink()
         {
         }
+
     }
 }

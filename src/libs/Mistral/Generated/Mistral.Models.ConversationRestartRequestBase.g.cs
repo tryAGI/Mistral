@@ -131,5 +131,6 @@ namespace Mistral
         public ConversationRestartRequestBase()
         {
         }
+
     }
 }

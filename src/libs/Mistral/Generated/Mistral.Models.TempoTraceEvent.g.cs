@@ -65,5 +65,6 @@ namespace Mistral
         public TempoTraceEvent()
         {
         }
+
     }
 }

@@ -111,5 +111,6 @@ namespace Mistral
         public ModerationLLMV1CategoryThresholds()
         {
         }
+
     }
 }

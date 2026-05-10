@@ -54,5 +54,6 @@ namespace Mistral
         public WorkflowExecutionFailedAttributes()
         {
         }
+
     }
 }

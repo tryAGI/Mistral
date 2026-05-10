@@ -86,5 +86,6 @@ namespace Mistral
         public LibrariesDocumentsUploadV1Request()
         {
         }
+
     }
 }

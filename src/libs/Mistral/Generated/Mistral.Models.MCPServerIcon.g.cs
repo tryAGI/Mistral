@@ -58,5 +58,6 @@ namespace Mistral
         public MCPServerIcon()
         {
         }
+
     }
 }

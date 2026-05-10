@@ -167,5 +167,6 @@ namespace Mistral
         public WorkflowExecutionTraceOTelResponse()
         {
         }
+
     }
 }

@@ -141,5 +141,6 @@ namespace Mistral
         public CustomTaskCanceledResponse()
         {
         }
+
     }
 }

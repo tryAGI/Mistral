@@ -62,5 +62,6 @@ namespace Mistral
         public ArchiveFTModelOut()
         {
         }
+
     }
 }

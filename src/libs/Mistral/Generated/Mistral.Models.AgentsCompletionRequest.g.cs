@@ -237,5 +237,6 @@ namespace Mistral
         public AgentsCompletionRequest()
         {
         }
+
     }
 }

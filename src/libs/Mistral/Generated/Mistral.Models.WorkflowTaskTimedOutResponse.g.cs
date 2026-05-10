@@ -142,5 +142,6 @@ namespace Mistral
         public WorkflowTaskTimedOutResponse()
         {
         }
+
     }
 }

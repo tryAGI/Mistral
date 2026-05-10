@@ -60,5 +60,6 @@ namespace Mistral
         public CompletionResponseStreamChoice()
         {
         }
+
     }
 }

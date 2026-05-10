@@ -53,5 +53,6 @@ namespace Mistral
         public WorkflowExecutionCanceledAttributes()
         {
         }
+
     }
 }

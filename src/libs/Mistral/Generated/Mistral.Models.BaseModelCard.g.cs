@@ -159,5 +159,6 @@ namespace Mistral
         public BaseModelCard()
         {
         }
+
     }
 }

@@ -51,5 +51,6 @@ namespace Mistral
         public TrainingFile()
         {
         }
+
     }
 }

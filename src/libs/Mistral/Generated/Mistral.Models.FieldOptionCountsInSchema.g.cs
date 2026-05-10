@@ -39,5 +39,6 @@ namespace Mistral
         public FieldOptionCountsInSchema()
         {
         }
+
     }
 }

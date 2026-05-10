@@ -75,5 +75,6 @@ namespace Mistral
         public VoiceUpdateRequest()
         {
         }
+
     }
 }

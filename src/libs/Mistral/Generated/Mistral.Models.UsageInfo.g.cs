@@ -102,5 +102,6 @@ namespace Mistral
         public UsageInfo()
         {
         }
+
     }
 }

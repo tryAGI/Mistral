@@ -122,5 +122,6 @@ namespace Mistral
         public WorkflowExecutionWithoutResultResponse()
         {
         }
+
     }
 }

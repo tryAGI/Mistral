@@ -90,5 +90,6 @@ namespace Mistral
         public ChatCompletionEventPreview()
         {
         }
+
     }
 }

@@ -57,5 +57,18 @@ namespace Mistral
         public JSONPayloadResponse()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="JSONPayloadResponse"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static JSONPayloadResponse FromValue(object value)
+        {
+            return new JSONPayloadResponse
+            {
+                Value = value,
+            };
+        }
+
     }
 }

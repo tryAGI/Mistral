@@ -109,5 +109,6 @@ namespace Mistral
         public BatchJobIn()
         {
         }
+
     }
 }

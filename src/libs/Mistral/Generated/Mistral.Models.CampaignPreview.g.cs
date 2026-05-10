@@ -139,5 +139,6 @@ namespace Mistral
         public CampaignPreview()
         {
         }
+
     }
 }

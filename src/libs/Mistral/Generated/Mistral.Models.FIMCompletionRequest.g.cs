@@ -170,5 +170,6 @@ namespace Mistral
         public FIMCompletionRequest()
         {
         }
+
     }
 }

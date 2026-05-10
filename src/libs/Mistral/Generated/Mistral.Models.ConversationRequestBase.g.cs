@@ -185,5 +185,6 @@ namespace Mistral
         public ConversationRequestBase()
         {
         }
+
     }
 }

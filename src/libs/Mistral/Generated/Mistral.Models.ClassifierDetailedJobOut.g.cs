@@ -223,5 +223,6 @@ namespace Mistral
         public ClassifierDetailedJobOut()
         {
         }
+
     }
 }

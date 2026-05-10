@@ -49,5 +49,6 @@ namespace Mistral
         public BatchRequest()
         {
         }
+
     }
 }

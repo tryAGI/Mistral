@@ -67,5 +67,6 @@ namespace Mistral
         public ChatCompletionChoice()
         {
         }
+
     }
 }

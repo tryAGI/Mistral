@@ -132,5 +132,6 @@ namespace Mistral
         public OCRPageObject()
         {
         }
+
     }
 }

@@ -74,5 +74,6 @@ namespace Mistral
         public ToolCall()
         {
         }
+
     }
 }

@@ -71,5 +71,6 @@ namespace Mistral
         public ClassifierTargetOut()
         {
         }
+
     }
 }

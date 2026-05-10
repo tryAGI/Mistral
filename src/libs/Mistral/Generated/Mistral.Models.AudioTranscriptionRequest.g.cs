@@ -158,5 +158,6 @@ namespace Mistral
         public AudioTranscriptionRequest()
         {
         }
+
     }
 }

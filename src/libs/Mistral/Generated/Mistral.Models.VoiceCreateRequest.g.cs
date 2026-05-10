@@ -130,5 +130,6 @@ namespace Mistral
         public VoiceCreateRequest()
         {
         }
+
     }
 }

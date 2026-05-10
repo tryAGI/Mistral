@@ -136,5 +136,6 @@ namespace Mistral
         public TempoTraceSpan()
         {
         }
+
     }
 }

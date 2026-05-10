@@ -42,5 +42,6 @@ namespace Mistral
         public TempoTraceAttributeBoolValue()
         {
         }
+
     }
 }

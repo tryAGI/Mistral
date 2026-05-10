@@ -69,5 +69,6 @@ namespace Mistral
         public SchedulePolicy()
         {
         }
+
     }
 }
