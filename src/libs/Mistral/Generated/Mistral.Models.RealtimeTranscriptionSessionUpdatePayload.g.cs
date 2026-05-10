@@ -56,5 +56,6 @@ namespace Mistral
         public RealtimeTranscriptionSessionUpdatePayload()
         {
         }
+
     }
 }

@@ -214,5 +214,6 @@ namespace Mistral
         public BatchJobOut()
         {
         }
+
     }
 }

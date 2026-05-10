@@ -76,5 +76,6 @@ namespace Mistral
         public QueryDefinition()
         {
         }
+
     }
 }

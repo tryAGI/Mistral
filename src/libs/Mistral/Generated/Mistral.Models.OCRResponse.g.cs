@@ -77,5 +77,6 @@ namespace Mistral
         public OCRResponse()
         {
         }
+
     }
 }

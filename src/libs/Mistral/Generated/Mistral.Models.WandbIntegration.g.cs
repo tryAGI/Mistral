@@ -85,5 +85,6 @@ namespace Mistral
         public WandbIntegration()
         {
         }
+
     }
 }

@@ -98,5 +98,6 @@ namespace Mistral
         public ClassifierTrainingParametersIn()
         {
         }
+
     }
 }

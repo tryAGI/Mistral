@@ -99,5 +99,6 @@ namespace Mistral
         public FunctionResultEntry()
         {
         }
+
     }
 }

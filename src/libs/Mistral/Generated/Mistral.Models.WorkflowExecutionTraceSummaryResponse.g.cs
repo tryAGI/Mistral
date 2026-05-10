@@ -144,5 +144,6 @@ namespace Mistral
         public WorkflowExecutionTraceSummaryResponse()
         {
         }
+
     }
 }

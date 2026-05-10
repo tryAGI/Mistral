@@ -52,5 +52,6 @@ namespace Mistral
         public OAuth2TokenAuth()
         {
         }
+
     }
 }

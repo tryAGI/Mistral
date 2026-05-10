@@ -190,5 +190,6 @@ namespace Mistral
         public FTModelCard()
         {
         }
+
     }
 }

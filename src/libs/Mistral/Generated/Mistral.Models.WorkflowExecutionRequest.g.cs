@@ -116,5 +116,6 @@ namespace Mistral
         public WorkflowExecutionRequest()
         {
         }
+
     }
 }

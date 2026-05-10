@@ -64,5 +64,6 @@ namespace Mistral
         public ThinkChunk()
         {
         }
+
     }
 }

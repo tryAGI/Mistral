@@ -78,5 +78,6 @@ namespace Mistral
         public ActivityTaskRetryingAttributes()
         {
         }
+
     }
 }

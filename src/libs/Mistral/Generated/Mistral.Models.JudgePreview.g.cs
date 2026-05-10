@@ -177,5 +177,6 @@ namespace Mistral
         public JudgePreview()
         {
         }
+
     }
 }

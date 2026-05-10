@@ -56,5 +56,18 @@ namespace Mistral
         public WorkflowRegistrationGetResponse()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="WorkflowRegistrationGetResponse"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static WorkflowRegistrationGetResponse FromWorkflowRegistration(global::Mistral.WorkflowRegistrationWithWorkerStatus workflowRegistration)
+        {
+            return new WorkflowRegistrationGetResponse
+            {
+                WorkflowRegistration = workflowRegistration,
+            };
+        }
+
     }
 }

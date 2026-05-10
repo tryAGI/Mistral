@@ -63,5 +63,6 @@ namespace Mistral
         public ProcessingStatusOut()
         {
         }
+
     }
 }

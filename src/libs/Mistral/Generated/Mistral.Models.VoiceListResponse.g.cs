@@ -80,5 +80,6 @@ namespace Mistral
         public VoiceListResponse()
         {
         }
+
     }
 }

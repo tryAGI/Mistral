@@ -126,5 +126,6 @@ namespace Mistral
         public MessageOutputEvent()
         {
         }
+
     }
 }

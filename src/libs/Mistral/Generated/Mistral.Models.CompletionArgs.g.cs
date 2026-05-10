@@ -135,5 +135,6 @@ namespace Mistral
         public CompletionArgs()
         {
         }
+
     }
 }

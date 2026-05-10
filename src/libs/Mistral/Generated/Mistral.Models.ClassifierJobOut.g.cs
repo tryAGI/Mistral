@@ -215,5 +215,6 @@ namespace Mistral
         public ClassifierJobOut()
         {
         }
+
     }
 }

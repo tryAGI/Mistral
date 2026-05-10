@@ -93,5 +93,6 @@ namespace Mistral
         public JobMetadataOut()
         {
         }
+
     }
 }

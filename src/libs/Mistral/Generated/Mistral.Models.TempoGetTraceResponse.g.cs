@@ -44,5 +44,6 @@ namespace Mistral
         public TempoGetTraceResponse()
         {
         }
+
     }
 }

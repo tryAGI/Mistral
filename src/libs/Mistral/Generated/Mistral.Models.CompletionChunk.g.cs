@@ -87,5 +87,6 @@ namespace Mistral
         public CompletionChunk()
         {
         }
+
     }
 }

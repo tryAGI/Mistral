@@ -91,5 +91,6 @@ namespace Mistral
         public GithubRepositoryIn()
         {
         }
+
     }
 }

@@ -79,5 +79,6 @@ namespace Mistral
         public ModerationLLMV2Config()
         {
         }
+
     }
 }

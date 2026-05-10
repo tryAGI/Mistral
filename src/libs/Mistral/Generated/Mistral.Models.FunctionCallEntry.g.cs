@@ -137,5 +137,6 @@ namespace Mistral
         public FunctionCallEntry()
         {
         }
+
     }
 }

@@ -226,5 +226,6 @@ namespace Mistral
         public CompletionJobOut()
         {
         }
+
     }
 }

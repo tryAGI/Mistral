@@ -55,5 +55,6 @@ namespace Mistral
         public TempoTraceAttribute()
         {
         }
+
     }
 }

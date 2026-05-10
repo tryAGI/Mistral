@@ -70,5 +70,6 @@ namespace Mistral
         public ResponseErrorEvent()
         {
         }
+
     }
 }

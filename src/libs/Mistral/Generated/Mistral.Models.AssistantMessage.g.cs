@@ -73,5 +73,6 @@ namespace Mistral
         public AssistantMessage()
         {
         }
+
     }
 }

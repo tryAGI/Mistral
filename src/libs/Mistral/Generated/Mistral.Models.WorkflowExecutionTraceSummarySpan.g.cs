@@ -112,5 +112,6 @@ namespace Mistral
         public WorkflowExecutionTraceSummarySpan()
         {
         }
+
     }
 }

@@ -66,5 +66,6 @@ namespace Mistral
         public DeploymentWorkerResponse()
         {
         }
+
     }
 }

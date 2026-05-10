@@ -68,5 +68,6 @@ namespace Mistral
         public DeleteModelOut()
         {
         }
+
     }
 }

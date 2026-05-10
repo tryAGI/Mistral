@@ -40,5 +40,6 @@ namespace Mistral
         public ConversationRequestBaseToolsVariant1ItemDiscriminator()
         {
         }
+
     }
 }

@@ -106,5 +106,6 @@ namespace Mistral
         public WorkflowScheduleRequest()
         {
         }
+
     }
 }

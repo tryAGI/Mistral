@@ -293,5 +293,6 @@ namespace Mistral
         public ChatCompletionRequest()
         {
         }
+
     }
 }
