@@ -138,7 +138,10 @@ namespace Mistral.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (completionArgsStopVariant1 == null && completionArgsStopVariant2 == null && completionArgsStopVariant3 == null)
+            {
                 try
                 {
 
@@ -152,7 +155,10 @@ namespace Mistral.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (completionArgsStopVariant1 == null && completionArgsStopVariant2 == null && completionArgsStopVariant3 == null)
+            {
                 try
                 {
 
