@@ -72,10 +72,10 @@
       "Slug": "files-api-routes-list-files",
       "Description": "Returns a list of files that belong to the user\u0027s organization.",
       "Language": "csharp",
-      "Code": "using var client = new MistralClient(apiKey);\nvar response = await client.Files.ListFilesAsync();\n\n// Example response:\n// {\n//   \u0022data\u0022: [\n//     {\n//       \u0022id\u0022: \u0022\\u003Cyour_file_id\\u003E\u0022,\n//       \u0022object\u0022: \u0022file\u0022,\n//       \u0022bytes\u0022: \u0022openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464\u0022,\n//       \u0022created_at\u0022: 1759491994,\n//       \u0022filename\u0022: \u0022\\u003Cyour_file_name\\u003E\u0022,\n//       \u0022purpose\u0022: \u0022batch\u0022,\n//       \u0022sample_type\u0022: \u0022batch_result\u0022,\n//       \u0022source\u0022: \u0022mistral\u0022,\n//       \u0022num_lines\u0022: 2,\n//       \u0022mimetype\u0022: \u0022application/jsonl\u0022,\n//       \u0022signature\u0022: \u0022openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464\u0022\n//     },\n//     {\n//       \u0022id\u0022: \u0022\\u003Cyour_file_id\\u003E\u0022,\n//       \u0022object\u0022: \u0022file\u0022,\n//       \u0022bytes\u0022: \u0022openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464\u0022,\n//       \u0022created_at\u0022: 1759491994,\n//       \u0022filename\u0022: \u0022\\u003Cyour_file_name\\u003E\u0022,\n//       \u0022purpose\u0022: \u0022batch\u0022,\n//       \u0022sample_type\u0022: \u0022batch_result\u0022,\n//       \u0022source\u0022: \u0022mistral\u0022,\n//       \u0022num_lines\u0022: 2,\n//       \u0022mimetype\u0022: \u0022application/jsonl\u0022,\n//       \u0022signature\u0022: \u0022openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464\u0022\n//     }\n//   ],\n//   \u0022object\u0022: \u0022list\u0022,\n//   \u0022total\u0022: 2\n// }",
+      "Code": "using var client = MistralClient.CreateFromEnvironment();\nvar response = await client.Files.ListFilesAsync();\n\n// Example response:\n// {\n//   \u0022data\u0022: [\n//     {\n//       \u0022id\u0022: \u0022\\u003Cyour_file_id\\u003E\u0022,\n//       \u0022object\u0022: \u0022file\u0022,\n//       \u0022bytes\u0022: \u0022openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464\u0022,\n//       \u0022created_at\u0022: 1759491994,\n//       \u0022filename\u0022: \u0022\\u003Cyour_file_name\\u003E\u0022,\n//       \u0022purpose\u0022: \u0022batch\u0022,\n//       \u0022sample_type\u0022: \u0022batch_result\u0022,\n//       \u0022source\u0022: \u0022mistral\u0022,\n//       \u0022num_lines\u0022: 2,\n//       \u0022mimetype\u0022: \u0022application/jsonl\u0022,\n//       \u0022signature\u0022: \u0022openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464\u0022\n//     },\n//     {\n//       \u0022id\u0022: \u0022\\u003Cyour_file_id\\u003E\u0022,\n//       \u0022object\u0022: \u0022file\u0022,\n//       \u0022bytes\u0022: \u0022openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464\u0022,\n//       \u0022created_at\u0022: 1759491994,\n//       \u0022filename\u0022: \u0022\\u003Cyour_file_name\\u003E\u0022,\n//       \u0022purpose\u0022: \u0022batch\u0022,\n//       \u0022sample_type\u0022: \u0022batch_result\u0022,\n//       \u0022source\u0022: \u0022mistral\u0022,\n//       \u0022num_lines\u0022: 2,\n//       \u0022mimetype\u0022: \u0022application/jsonl\u0022,\n//       \u0022signature\u0022: \u0022openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464\u0022\n//     }\n//   ],\n//   \u0022object\u0022: \u0022list\u0022,\n//   \u0022total\u0022: 2\n// }",
       "Format": "sdk",
       "OperationId": "files_api_routes_list_files",
-      "Setup": "This example assumes \u0060using Mistral;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
+      "Setup": "This example assumes \u0060using Mistral;\u0060 is in scope and a configured credential environment variable is set: \u0060MISTRAL_API_KEY\u0060."
     },
     {
       "Order": 8,
@@ -116,10 +116,10 @@
       "Slug": "jobs-api-routes-fine-tuning-archive-fine-tuned-model",
       "Description": "Archive a fine-tuned model.",
       "Language": "csharp",
-      "Code": "using var client = new MistralClient(apiKey);\n\nvar response = await client.Models.ArchiveFineTunedModelAsync(\n    modelId: \u0022ft:open-mistral-7b:587a6b29:20240514:7e773925\u0022\n);",
+      "Code": "using var client = MistralClient.CreateFromEnvironment();\n\nvar response = await client.Models.ArchiveFineTunedModelAsync(\n    modelId: \u0022ft:open-mistral-7b:587a6b29:20240514:7e773925\u0022\n);",
       "Format": "sdk",
       "OperationId": "jobs_api_routes_fine_tuning_archive_fine_tuned_model",
-      "Setup": "This example assumes \u0060using Mistral;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
+      "Setup": "This example assumes \u0060using Mistral;\u0060 is in scope and a configured credential environment variable is set: \u0060MISTRAL_API_KEY\u0060."
     },
     {
       "Order": 12,
@@ -127,10 +127,10 @@
       "Slug": "delete-model-v1-models-model-id-delete",
       "Description": "Delete a fine-tuned model.",
       "Language": "csharp",
-      "Code": "using var client = new MistralClient(apiKey);\n\nvar response = await client.Models.DeleteModelAsync(\n    modelId: \u0022ft:open-mistral-7b:587a6b29:20240514:7e773925\u0022\n);\n\n// Example response:\n// {\n//   \u0022id\u0022: \u0022ft:open-mistral-7b:587a6b29:20240514:7e773925\u0022,\n//   \u0022object\u0022: \u0022model\u0022,\n//   \u0022deleted\u0022: true\n// }",
+      "Code": "using var client = MistralClient.CreateFromEnvironment();\n\nvar response = await client.Models.DeleteModelAsync(\n    modelId: \u0022ft:open-mistral-7b:587a6b29:20240514:7e773925\u0022\n);\n\n// Example response:\n// {\n//   \u0022id\u0022: \u0022ft:open-mistral-7b:587a6b29:20240514:7e773925\u0022,\n//   \u0022object\u0022: \u0022model\u0022,\n//   \u0022deleted\u0022: true\n// }",
       "Format": "sdk",
       "OperationId": "delete_model_v1_models__model_id__delete",
-      "Setup": "This example assumes \u0060using Mistral;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
+      "Setup": "This example assumes \u0060using Mistral;\u0060 is in scope and a configured credential environment variable is set: \u0060MISTRAL_API_KEY\u0060."
     },
     {
       "Order": 13,
@@ -138,10 +138,10 @@
       "Slug": "list-models-v1-models-get",
       "Description": "List all models available to the user.",
       "Language": "csharp",
-      "Code": "using var client = new MistralClient(apiKey);\nvar response = await client.Models.ListModelsAsync();\n\n// Example response:\n// [\n//   {\n//     \u0022id\u0022: \u0022\\u003Cmodel_id\\u003E\u0022,\n//     \u0022capabilities\u0022: {\n//       \u0022completion_chat\u0022: true,\n//       \u0022completion_fim\u0022: false,\n//       \u0022function_calling\u0022: false,\n//       \u0022fine_tuning\u0022: false,\n//       \u0022vision\u0022: false,\n//       \u0022classification\u0022: false\n//     },\n//     \u0022job\u0022: \u0022\\u003Cjob_id\\u003E\u0022,\n//     \u0022root\u0022: \u0022open-mistral-7b\u0022,\n//     \u0022object\u0022: \u0022model\u0022,\n//     \u0022created\u0022: 1756746619,\n//     \u0022owned_by\u0022: \u0022\\u003Cowner_id\\u003E\u0022,\n//     \u0022name\u0022: \u0022openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464\u0022,\n//     \u0022description\u0022: \u0022openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464\u0022,\n//     \u0022max_context_length\u0022: 32768,\n//     \u0022aliases\u0022: [],\n//     \u0022deprecation\u0022: \u0022openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464\u0022,\n//     \u0022deprecation_replacement_model\u0022: \u0022openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464\u0022,\n//     \u0022default_model_temperature\u0022: \u0022openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464\u0022,\n//     \u0022TYPE\u0022: \u0022fine-tuned\u0022,\n//     \u0022archived\u0022: false\n//   }\n// ]",
+      "Code": "using var client = MistralClient.CreateFromEnvironment();\nvar response = await client.Models.ListModelsAsync();\n\n// Example response:\n// [\n//   {\n//     \u0022id\u0022: \u0022\\u003Cmodel_id\\u003E\u0022,\n//     \u0022capabilities\u0022: {\n//       \u0022completion_chat\u0022: true,\n//       \u0022completion_fim\u0022: false,\n//       \u0022function_calling\u0022: false,\n//       \u0022fine_tuning\u0022: false,\n//       \u0022vision\u0022: false,\n//       \u0022classification\u0022: false\n//     },\n//     \u0022job\u0022: \u0022\\u003Cjob_id\\u003E\u0022,\n//     \u0022root\u0022: \u0022open-mistral-7b\u0022,\n//     \u0022object\u0022: \u0022model\u0022,\n//     \u0022created\u0022: 1756746619,\n//     \u0022owned_by\u0022: \u0022\\u003Cowner_id\\u003E\u0022,\n//     \u0022name\u0022: \u0022openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464\u0022,\n//     \u0022description\u0022: \u0022openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464\u0022,\n//     \u0022max_context_length\u0022: 32768,\n//     \u0022aliases\u0022: [],\n//     \u0022deprecation\u0022: \u0022openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464\u0022,\n//     \u0022deprecation_replacement_model\u0022: \u0022openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464\u0022,\n//     \u0022default_model_temperature\u0022: \u0022openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464\u0022,\n//     \u0022TYPE\u0022: \u0022fine-tuned\u0022,\n//     \u0022archived\u0022: false\n//   }\n// ]",
       "Format": "sdk",
       "OperationId": "list_models_v1_models_get",
-      "Setup": "This example assumes \u0060using Mistral;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
+      "Setup": "This example assumes \u0060using Mistral;\u0060 is in scope and a configured credential environment variable is set: \u0060MISTRAL_API_KEY\u0060."
     },
     {
       "Order": 14,
@@ -149,10 +149,10 @@
       "Slug": "retrieve-model-v1-models-model-id-get",
       "Description": "Retrieve information about a model.",
       "Language": "csharp",
-      "Code": "using var client = new MistralClient(apiKey);\n\nvar response = await client.Models.RetrieveModelAsync(\n    modelId: \u0022ft:open-mistral-7b:587a6b29:20240514:7e773925\u0022\n);\n\n// Example response:\n// {\n//   \u0022id\u0022: \u0022\\u003Cyour_model_id\\u003E\u0022,\n//   \u0022capabilities\u0022: {\n//     \u0022completion_chat\u0022: true,\n//     \u0022completion_fim\u0022: false,\n//     \u0022function_calling\u0022: false,\n//     \u0022fine_tuning\u0022: false,\n//     \u0022vision\u0022: false,\n//     \u0022classification\u0022: false\n//   },\n//   \u0022job\u0022: \u0022\\u003Cjob_id\\u003E\u0022,\n//   \u0022root\u0022: \u0022open-mistral-7b\u0022,\n//   \u0022object\u0022: \u0022model\u0022,\n//   \u0022created\u0022: 1756746619,\n//   \u0022owned_by\u0022: \u0022\\u003Cowner_id\\u003E\u0022,\n//   \u0022name\u0022: \u0022openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464\u0022,\n//   \u0022description\u0022: \u0022openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464\u0022,\n//   \u0022max_context_length\u0022: 32768,\n//   \u0022aliases\u0022: [],\n//   \u0022deprecation\u0022: \u0022openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464\u0022,\n//   \u0022deprecation_replacement_model\u0022: \u0022openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464\u0022,\n//   \u0022default_model_temperature\u0022: \u0022openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464\u0022,\n//   \u0022TYPE\u0022: \u0022fine-tuned\u0022,\n//   \u0022archived\u0022: false\n// }",
+      "Code": "using var client = MistralClient.CreateFromEnvironment();\n\nvar response = await client.Models.RetrieveModelAsync(\n    modelId: \u0022ft:open-mistral-7b:587a6b29:20240514:7e773925\u0022\n);\n\n// Example response:\n// {\n//   \u0022id\u0022: \u0022\\u003Cyour_model_id\\u003E\u0022,\n//   \u0022capabilities\u0022: {\n//     \u0022completion_chat\u0022: true,\n//     \u0022completion_fim\u0022: false,\n//     \u0022function_calling\u0022: false,\n//     \u0022fine_tuning\u0022: false,\n//     \u0022vision\u0022: false,\n//     \u0022classification\u0022: false\n//   },\n//   \u0022job\u0022: \u0022\\u003Cjob_id\\u003E\u0022,\n//   \u0022root\u0022: \u0022open-mistral-7b\u0022,\n//   \u0022object\u0022: \u0022model\u0022,\n//   \u0022created\u0022: 1756746619,\n//   \u0022owned_by\u0022: \u0022\\u003Cowner_id\\u003E\u0022,\n//   \u0022name\u0022: \u0022openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464\u0022,\n//   \u0022description\u0022: \u0022openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464\u0022,\n//   \u0022max_context_length\u0022: 32768,\n//   \u0022aliases\u0022: [],\n//   \u0022deprecation\u0022: \u0022openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464\u0022,\n//   \u0022deprecation_replacement_model\u0022: \u0022openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464\u0022,\n//   \u0022default_model_temperature\u0022: \u0022openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464\u0022,\n//   \u0022TYPE\u0022: \u0022fine-tuned\u0022,\n//   \u0022archived\u0022: false\n// }",
       "Format": "sdk",
       "OperationId": "retrieve_model_v1_models__model_id__get",
-      "Setup": "This example assumes \u0060using Mistral;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
+      "Setup": "This example assumes \u0060using Mistral;\u0060 is in scope and a configured credential environment variable is set: \u0060MISTRAL_API_KEY\u0060."
     },
     {
       "Order": 15,
@@ -160,10 +160,10 @@
       "Slug": "jobs-api-routes-fine-tuning-unarchive-fine-tuned-model",
       "Description": "Un-archive a fine-tuned model.",
       "Language": "csharp",
-      "Code": "using var client = new MistralClient(apiKey);\n\nvar response = await client.Models.UnarchiveFineTunedModelAsync(\n    modelId: \u0022ft:open-mistral-7b:587a6b29:20240514:7e773925\u0022\n);",
+      "Code": "using var client = MistralClient.CreateFromEnvironment();\n\nvar response = await client.Models.UnarchiveFineTunedModelAsync(\n    modelId: \u0022ft:open-mistral-7b:587a6b29:20240514:7e773925\u0022\n);",
       "Format": "sdk",
       "OperationId": "jobs_api_routes_fine_tuning_unarchive_fine_tuned_model",
-      "Setup": "This example assumes \u0060using Mistral;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
+      "Setup": "This example assumes \u0060using Mistral;\u0060 is in scope and a configured credential environment variable is set: \u0060MISTRAL_API_KEY\u0060."
     },
     {
       "Order": 16,

@@ -1,0 +1,107 @@
+
+#nullable enable
+
+namespace Mistral.Realtime
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed partial class UsageInfo
+    {
+        /// <summary>
+        /// Default Value: 0
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompt_tokens")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int PromptTokens { get; set; }
+
+        /// <summary>
+        /// Default Value: 0
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("completion_tokens")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int CompletionTokens { get; set; }
+
+        /// <summary>
+        /// Default Value: 0
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("total_tokens")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int TotalTokens { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompt_audio_seconds")]
+        public int? PromptAudioSeconds { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("num_cached_tokens")]
+        public int? NumCachedTokens { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompt_tokens_details")]
+        public global::Mistral.Realtime.PromptTokensDetails? PromptTokensDetails { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompt_token_details")]
+        public global::Mistral.Realtime.PromptTokensDetails? PromptTokenDetails { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UsageInfo" /> class.
+        /// </summary>
+        /// <param name="promptTokens">
+        /// Default Value: 0
+        /// </param>
+        /// <param name="completionTokens">
+        /// Default Value: 0
+        /// </param>
+        /// <param name="totalTokens">
+        /// Default Value: 0
+        /// </param>
+        /// <param name="promptAudioSeconds"></param>
+        /// <param name="numCachedTokens"></param>
+        /// <param name="promptTokensDetails"></param>
+        /// <param name="promptTokenDetails"></param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public UsageInfo(
+            int promptTokens,
+            int completionTokens,
+            int totalTokens,
+            int? promptAudioSeconds,
+            int? numCachedTokens,
+            global::Mistral.Realtime.PromptTokensDetails? promptTokensDetails,
+            global::Mistral.Realtime.PromptTokensDetails? promptTokenDetails)
+        {
+            this.PromptTokens = promptTokens;
+            this.CompletionTokens = completionTokens;
+            this.TotalTokens = totalTokens;
+            this.PromptAudioSeconds = promptAudioSeconds;
+            this.NumCachedTokens = numCachedTokens;
+            this.PromptTokensDetails = promptTokensDetails;
+            this.PromptTokenDetails = promptTokenDetails;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UsageInfo" /> class.
+        /// </summary>
+        public UsageInfo()
+        {
+        }
+
+    }
+}

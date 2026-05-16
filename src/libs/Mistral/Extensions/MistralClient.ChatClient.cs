@@ -258,6 +258,25 @@ public partial class MistralClient : Meai.IChatClient
                     }
                     break;
 
+                case Meai.DataContent audioContent when audioContent.HasTopLevelMediaType("audio"):
+                    if (audioContent.Uri is { } audioUri)
+                    {
+                        contents.Add(new AudioChunk
+                        {
+                            InputAudio = new AnyOf<string, byte[]>(audioUri.ToString()),
+                        });
+                    }
+                    else if (audioContent.Data is { } audioData)
+                    {
+                        var mediaType = audioContent.MediaType ?? "audio/wav";
+                        contents.Add(new AudioChunk
+                        {
+                            InputAudio = new AnyOf<string, byte[]>(
+                                $"data:{mediaType};base64,{Convert.ToBase64String(audioData.ToArray())}"),
+                        });
+                    }
+                    break;
+
                 case Meai.TextReasoningContent:
                 case Meai.UsageContent:
                     break;

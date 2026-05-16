@@ -1,0 +1,705 @@
+{
+  "asyncapi": "3.0.0",
+  "info": {
+    "title": "Mistral Voxtral Realtime Transcription API",
+    "version": "1.0.0",
+    "description": "Mistral Voxtral realtime transcription over WebSocket.\n\nAuto-generated from openapi.yaml by build-asyncapi.py \u2014 do not edit by hand. Server event schemas missing from the upstream OpenAPI spec are reverse-engineered from the upstream mistralai Python client."
+  },
+  "servers": {
+    "production": {
+      "host": "api.mistral.ai",
+      "pathname": "/v1/audio/transcriptions/realtime",
+      "protocol": "wss",
+      "description": "Mistral Voxtral Realtime WebSocket server",
+      "variables": {
+        "model": {
+          "description": "Realtime transcription model ID. Appended to the URL as ?model=<id>.",
+          "examples": [
+            "voxtral-mini-transcribe-realtime-2602"
+          ]
+        }
+      },
+      "security": [
+        {
+          "$ref": "#/components/securitySchemes/bearer"
+        }
+      ]
+    }
+  },
+  "channels": {
+    "realtime": {
+      "address": "/v1/audio/transcriptions/realtime",
+      "messages": {
+        "RealtimeTranscriptionSessionUpdateMessage": {
+          "$ref": "#/components/messages/RealtimeTranscriptionSessionUpdateMessage"
+        },
+        "RealtimeTranscriptionInputAudioAppend": {
+          "$ref": "#/components/messages/RealtimeTranscriptionInputAudioAppend"
+        },
+        "RealtimeTranscriptionInputAudioFlush": {
+          "$ref": "#/components/messages/RealtimeTranscriptionInputAudioFlush"
+        },
+        "RealtimeTranscriptionInputAudioEnd": {
+          "$ref": "#/components/messages/RealtimeTranscriptionInputAudioEnd"
+        },
+        "ServerEvent": {
+          "$ref": "#/components/messages/ServerEvent"
+        }
+      }
+    }
+  },
+  "operations": {
+    "sendRealtimeTranscriptionSessionUpdateMessage": {
+      "action": "send",
+      "channel": {
+        "$ref": "#/channels/realtime"
+      },
+      "messages": [
+        {
+          "$ref": "#/channels/realtime/messages/RealtimeTranscriptionSessionUpdateMessage"
+        }
+      ]
+    },
+    "sendRealtimeTranscriptionInputAudioAppend": {
+      "action": "send",
+      "channel": {
+        "$ref": "#/channels/realtime"
+      },
+      "messages": [
+        {
+          "$ref": "#/channels/realtime/messages/RealtimeTranscriptionInputAudioAppend"
+        }
+      ]
+    },
+    "sendRealtimeTranscriptionInputAudioFlush": {
+      "action": "send",
+      "channel": {
+        "$ref": "#/channels/realtime"
+      },
+      "messages": [
+        {
+          "$ref": "#/channels/realtime/messages/RealtimeTranscriptionInputAudioFlush"
+        }
+      ]
+    },
+    "sendRealtimeTranscriptionInputAudioEnd": {
+      "action": "send",
+      "channel": {
+        "$ref": "#/channels/realtime"
+      },
+      "messages": [
+        {
+          "$ref": "#/channels/realtime/messages/RealtimeTranscriptionInputAudioEnd"
+        }
+      ]
+    },
+    "receiveServerEvent": {
+      "action": "receive",
+      "channel": {
+        "$ref": "#/channels/realtime"
+      },
+      "messages": [
+        {
+          "$ref": "#/channels/realtime/messages/ServerEvent"
+        }
+      ]
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "bearer": {
+        "type": "http",
+        "scheme": "bearer",
+        "description": "Mistral API key as a Bearer token."
+      }
+    },
+    "messages": {
+      "RealtimeTranscriptionSessionUpdateMessage": {
+        "name": "RealtimeTranscriptionSessionUpdateMessage",
+        "title": "session.update",
+        "payload": {
+          "$ref": "#/components/schemas/RealtimeTranscriptionSessionUpdateMessage"
+        }
+      },
+      "RealtimeTranscriptionInputAudioAppend": {
+        "name": "RealtimeTranscriptionInputAudioAppend",
+        "title": "input_audio.append",
+        "payload": {
+          "$ref": "#/components/schemas/RealtimeTranscriptionInputAudioAppend"
+        }
+      },
+      "RealtimeTranscriptionInputAudioFlush": {
+        "name": "RealtimeTranscriptionInputAudioFlush",
+        "title": "input_audio.flush",
+        "payload": {
+          "$ref": "#/components/schemas/RealtimeTranscriptionInputAudioFlush"
+        }
+      },
+      "RealtimeTranscriptionInputAudioEnd": {
+        "name": "RealtimeTranscriptionInputAudioEnd",
+        "title": "input_audio.end",
+        "payload": {
+          "$ref": "#/components/schemas/RealtimeTranscriptionInputAudioEnd"
+        }
+      },
+      "ServerEvent": {
+        "name": "ServerEvent",
+        "title": "Realtime Transcription Server Event",
+        "summary": "Discriminated union of all server-sent realtime transcription events.",
+        "payload": {
+          "$ref": "#/components/schemas/RealtimeTranscriptionServerEvent"
+        }
+      }
+    },
+    "schemas": {
+      "AudioEncoding": {
+        "type": "string",
+        "title": "AudioEncoding",
+        "enum": [
+          "pcm_s16le",
+          "pcm_s32le",
+          "pcm_f16le",
+          "pcm_f32le",
+          "pcm_mulaw",
+          "pcm_alaw"
+        ]
+      },
+      "AudioFormat": {
+        "type": "object",
+        "properties": {
+          "encoding": {
+            "$ref": "#/components/schemas/AudioEncoding"
+          },
+          "sample_rate": {
+            "type": "integer",
+            "title": "Sample Rate",
+            "maximum": 96000,
+            "minimum": 8000
+          }
+        },
+        "title": "AudioFormat",
+        "required": [
+          "encoding",
+          "sample_rate"
+        ],
+        "additionalProperties": false
+      },
+      "PromptTokensDetails": {
+        "properties": {
+          "cached_tokens": {
+            "type": "integer",
+            "title": "Cached Tokens",
+            "default": 0
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "title": "PromptTokensDetails",
+        "description": "Token usage details for the prompt."
+      },
+      "RealtimeTranscriptionError": {
+        "type": "object",
+        "title": "RealtimeTranscriptionError",
+        "properties": {
+          "type": {
+            "type": "string",
+            "title": "Type",
+            "default": "error",
+            "const": "error"
+          },
+          "error": {
+            "$ref": "#/components/schemas/RealtimeTranscriptionErrorDetail"
+          }
+        },
+        "required": [
+          "error"
+        ],
+        "additionalProperties": false
+      },
+      "RealtimeTranscriptionErrorDetail": {
+        "type": "object",
+        "title": "RealtimeTranscriptionErrorDetail",
+        "properties": {
+          "message": {
+            "type": "string",
+            "title": "Message",
+            "description": "Human-readable error message."
+          },
+          "code": {
+            "type": "integer",
+            "title": "Code",
+            "description": "Internal error code for debugging."
+          }
+        },
+        "required": [
+          "message",
+          "code"
+        ],
+        "additionalProperties": false
+      },
+      "RealtimeTranscriptionInputAudioAppend": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "title": "Type",
+            "default": "input_audio.append",
+            "const": "input_audio.append"
+          },
+          "audio": {
+            "type": "string",
+            "title": "Audio",
+            "format": "base64",
+            "description": "Base64-encoded raw PCM bytes matching the current audio_format. Max decoded size: 262144 bytes."
+          }
+        },
+        "title": "RealtimeTranscriptionInputAudioAppend",
+        "required": [
+          "audio"
+        ],
+        "additionalProperties": false
+      },
+      "RealtimeTranscriptionInputAudioEnd": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "title": "Type",
+            "default": "input_audio.end",
+            "const": "input_audio.end"
+          }
+        },
+        "title": "RealtimeTranscriptionInputAudioEnd",
+        "additionalProperties": false
+      },
+      "RealtimeTranscriptionInputAudioFlush": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "title": "Type",
+            "default": "input_audio.flush",
+            "const": "input_audio.flush"
+          }
+        },
+        "title": "RealtimeTranscriptionInputAudioFlush",
+        "additionalProperties": false
+      },
+      "RealtimeTranscriptionServerEvent": {
+        "title": "RealtimeTranscriptionServerEvent",
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/TranscriptionStreamLanguage"
+          },
+          {
+            "$ref": "#/components/schemas/TranscriptionStreamSegmentDelta"
+          },
+          {
+            "$ref": "#/components/schemas/TranscriptionStreamTextDelta"
+          },
+          {
+            "$ref": "#/components/schemas/TranscriptionStreamDone"
+          },
+          {
+            "$ref": "#/components/schemas/RealtimeTranscriptionSessionCreated"
+          },
+          {
+            "$ref": "#/components/schemas/RealtimeTranscriptionSessionUpdated"
+          },
+          {
+            "$ref": "#/components/schemas/RealtimeTranscriptionError"
+          }
+        ],
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "transcription.language": "#/components/schemas/TranscriptionStreamLanguage",
+            "transcription.segment": "#/components/schemas/TranscriptionStreamSegmentDelta",
+            "transcription.text.delta": "#/components/schemas/TranscriptionStreamTextDelta",
+            "transcription.done": "#/components/schemas/TranscriptionStreamDone",
+            "session.created": "#/components/schemas/RealtimeTranscriptionSessionCreated",
+            "session.updated": "#/components/schemas/RealtimeTranscriptionSessionUpdated",
+            "error": "#/components/schemas/RealtimeTranscriptionError"
+          }
+        }
+      },
+      "RealtimeTranscriptionSession": {
+        "type": "object",
+        "title": "RealtimeTranscriptionSession",
+        "properties": {
+          "request_id": {
+            "type": "string",
+            "title": "Request Id"
+          },
+          "model": {
+            "type": "string",
+            "title": "Model"
+          },
+          "audio_format": {
+            "$ref": "#/components/schemas/AudioFormat"
+          },
+          "target_streaming_delay_ms": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Target Streaming Delay Ms",
+            "default": null
+          }
+        },
+        "required": [
+          "request_id",
+          "model",
+          "audio_format"
+        ],
+        "additionalProperties": false
+      },
+      "RealtimeTranscriptionSessionCreated": {
+        "type": "object",
+        "title": "RealtimeTranscriptionSessionCreated",
+        "properties": {
+          "type": {
+            "type": "string",
+            "title": "Type",
+            "default": "session.created",
+            "const": "session.created"
+          },
+          "session": {
+            "$ref": "#/components/schemas/RealtimeTranscriptionSession"
+          }
+        },
+        "required": [
+          "session"
+        ],
+        "additionalProperties": false
+      },
+      "RealtimeTranscriptionSessionUpdateMessage": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "title": "Type",
+            "default": "session.update",
+            "const": "session.update"
+          },
+          "session": {
+            "$ref": "#/components/schemas/RealtimeTranscriptionSessionUpdatePayload"
+          }
+        },
+        "title": "RealtimeTranscriptionSessionUpdateMessage",
+        "required": [
+          "session"
+        ],
+        "additionalProperties": false
+      },
+      "RealtimeTranscriptionSessionUpdatePayload": {
+        "type": "object",
+        "properties": {
+          "audio_format": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/AudioFormat"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Set before sending audio. Audio format updates are rejected after audio starts.",
+            "default": null
+          },
+          "target_streaming_delay_ms": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Target Streaming Delay Ms",
+            "description": "Set before sending audio. Streaming delay updates are rejected after audio starts.",
+            "default": null
+          }
+        },
+        "title": "RealtimeTranscriptionSessionUpdatePayload",
+        "additionalProperties": false
+      },
+      "RealtimeTranscriptionSessionUpdated": {
+        "type": "object",
+        "title": "RealtimeTranscriptionSessionUpdated",
+        "properties": {
+          "type": {
+            "type": "string",
+            "title": "Type",
+            "default": "session.updated",
+            "const": "session.updated"
+          },
+          "session": {
+            "$ref": "#/components/schemas/RealtimeTranscriptionSession"
+          }
+        },
+        "required": [
+          "session"
+        ],
+        "additionalProperties": false
+      },
+      "TranscriptionSegmentChunk": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "title": "Type",
+            "default": "transcription_segment",
+            "const": "transcription_segment"
+          },
+          "text": {
+            "type": "string",
+            "title": "Text"
+          },
+          "start": {
+            "type": "number",
+            "title": "Start"
+          },
+          "end": {
+            "type": "number",
+            "title": "End"
+          },
+          "score": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Score"
+          },
+          "speaker_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Speaker Id"
+          }
+        },
+        "title": "TranscriptionSegmentChunk",
+        "required": [
+          "text",
+          "start",
+          "end"
+        ],
+        "additionalProperties": false
+      },
+      "TranscriptionStreamDone": {
+        "type": "object",
+        "properties": {
+          "model": {
+            "type": "string",
+            "title": "Model"
+          },
+          "text": {
+            "type": "string",
+            "title": "Text"
+          },
+          "language": {
+            "anyOf": [
+              {
+                "type": "string",
+                "pattern": "^\\w{2}$"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Language"
+          },
+          "segments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TranscriptionSegmentChunk"
+            },
+            "title": "Segments"
+          },
+          "usage": {
+            "$ref": "#/components/schemas/UsageInfo"
+          },
+          "type": {
+            "type": "string",
+            "title": "Type",
+            "default": "transcription.done",
+            "const": "transcription.done"
+          }
+        },
+        "title": "TranscriptionStreamDone",
+        "required": [
+          "model",
+          "text",
+          "language",
+          "usage"
+        ],
+        "additionalProperties": false
+      },
+      "TranscriptionStreamLanguage": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "title": "Type",
+            "default": "transcription.language",
+            "const": "transcription.language"
+          },
+          "audio_language": {
+            "type": "string",
+            "title": "Audio Language",
+            "pattern": "^\\w{2}$"
+          }
+        },
+        "title": "TranscriptionStreamLanguage",
+        "required": [
+          "audio_language"
+        ],
+        "additionalProperties": false
+      },
+      "TranscriptionStreamSegmentDelta": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "title": "Type",
+            "default": "transcription.segment",
+            "const": "transcription.segment"
+          },
+          "text": {
+            "type": "string",
+            "title": "Text"
+          },
+          "start": {
+            "type": "number",
+            "title": "Start"
+          },
+          "end": {
+            "type": "number",
+            "title": "End"
+          },
+          "speaker_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Speaker Id",
+            "default": null
+          }
+        },
+        "title": "TranscriptionStreamSegmentDelta",
+        "required": [
+          "text",
+          "start",
+          "end"
+        ],
+        "additionalProperties": false
+      },
+      "TranscriptionStreamTextDelta": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "title": "Type",
+            "default": "transcription.text.delta",
+            "const": "transcription.text.delta"
+          },
+          "text": {
+            "type": "string",
+            "title": "Text"
+          }
+        },
+        "title": "TranscriptionStreamTextDelta",
+        "required": [
+          "text"
+        ],
+        "additionalProperties": false
+      },
+      "UsageInfo": {
+        "type": "object",
+        "properties": {
+          "prompt_tokens": {
+            "type": "integer",
+            "title": "Prompt Tokens",
+            "default": 0
+          },
+          "completion_tokens": {
+            "title": "Completion Tokens",
+            "default": 0,
+            "type": "integer"
+          },
+          "total_tokens": {
+            "type": "integer",
+            "title": "Total Tokens",
+            "default": 0
+          },
+          "prompt_audio_seconds": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Prompt Audio Seconds"
+          },
+          "num_cached_tokens": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Num Cached Tokens"
+          },
+          "prompt_tokens_details": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/PromptTokensDetails"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "prompt_token_details": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/PromptTokensDetails"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "title": "UsageInfo",
+        "additionalProperties": false,
+        "required": [
+          "prompt_tokens",
+          "completion_tokens",
+          "total_tokens"
+        ]
+      }
+    }
+  }
+}
