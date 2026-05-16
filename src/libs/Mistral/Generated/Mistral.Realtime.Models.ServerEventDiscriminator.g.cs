@@ -6,14 +6,14 @@ namespace Mistral.Realtime
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class RealtimeTranscriptionServerEventDiscriminator
+    public sealed partial class ServerEventDiscriminator
     {
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.Realtime.JsonConverters.RealtimeTranscriptionServerEventDiscriminatorTypeJsonConverter))]
-        public global::Mistral.Realtime.RealtimeTranscriptionServerEventDiscriminatorType? Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.Realtime.JsonConverters.ServerEventDiscriminatorTypeJsonConverter))]
+        public global::Mistral.Realtime.ServerEventDiscriminatorType? Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -22,22 +22,22 @@ namespace Mistral.Realtime
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="RealtimeTranscriptionServerEventDiscriminator" /> class.
+        /// Initializes a new instance of the <see cref="ServerEventDiscriminator" /> class.
         /// </summary>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public RealtimeTranscriptionServerEventDiscriminator(
-            global::Mistral.Realtime.RealtimeTranscriptionServerEventDiscriminatorType? type)
+        public ServerEventDiscriminator(
+            global::Mistral.Realtime.ServerEventDiscriminatorType? type)
         {
             this.Type = type;
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="RealtimeTranscriptionServerEventDiscriminator" /> class.
+        /// Initializes a new instance of the <see cref="ServerEventDiscriminator" /> class.
         /// </summary>
-        public RealtimeTranscriptionServerEventDiscriminator()
+        public ServerEventDiscriminator()
         {
         }
 

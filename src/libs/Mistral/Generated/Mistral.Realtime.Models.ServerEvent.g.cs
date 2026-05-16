@@ -7,12 +7,12 @@ namespace Mistral.Realtime
     /// <summary>
     /// 
     /// </summary>
-    public readonly partial struct RealtimeTranscriptionServerEvent : global::System.IEquatable<RealtimeTranscriptionServerEvent>
+    public readonly partial struct ServerEvent : global::System.IEquatable<ServerEvent>
     {
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.Realtime.RealtimeTranscriptionServerEventDiscriminatorType? Type { get; }
+        public global::Mistral.Realtime.ServerEventDiscriminatorType? Type { get; }
 
         /// <summary>
         /// 
@@ -275,17 +275,17 @@ namespace Mistral.Realtime
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RealtimeTranscriptionServerEvent(global::Mistral.Realtime.TranscriptionStreamLanguage value) => new RealtimeTranscriptionServerEvent((global::Mistral.Realtime.TranscriptionStreamLanguage?)value);
+        public static implicit operator ServerEvent(global::Mistral.Realtime.TranscriptionStreamLanguage value) => new ServerEvent((global::Mistral.Realtime.TranscriptionStreamLanguage?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Mistral.Realtime.TranscriptionStreamLanguage?(RealtimeTranscriptionServerEvent @this) => @this.TranscriptionLanguage;
+        public static implicit operator global::Mistral.Realtime.TranscriptionStreamLanguage?(ServerEvent @this) => @this.TranscriptionLanguage;
 
         /// <summary>
         /// 
         /// </summary>
-        public RealtimeTranscriptionServerEvent(global::Mistral.Realtime.TranscriptionStreamLanguage? value)
+        public ServerEvent(global::Mistral.Realtime.TranscriptionStreamLanguage? value)
         {
             TranscriptionLanguage = value;
         }
@@ -293,22 +293,22 @@ namespace Mistral.Realtime
         /// <summary>
         /// 
         /// </summary>
-        public static RealtimeTranscriptionServerEvent FromTranscriptionLanguage(global::Mistral.Realtime.TranscriptionStreamLanguage? value) => new RealtimeTranscriptionServerEvent(value);
+        public static ServerEvent FromTranscriptionLanguage(global::Mistral.Realtime.TranscriptionStreamLanguage? value) => new ServerEvent(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RealtimeTranscriptionServerEvent(global::Mistral.Realtime.TranscriptionStreamSegmentDelta value) => new RealtimeTranscriptionServerEvent((global::Mistral.Realtime.TranscriptionStreamSegmentDelta?)value);
+        public static implicit operator ServerEvent(global::Mistral.Realtime.TranscriptionStreamSegmentDelta value) => new ServerEvent((global::Mistral.Realtime.TranscriptionStreamSegmentDelta?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Mistral.Realtime.TranscriptionStreamSegmentDelta?(RealtimeTranscriptionServerEvent @this) => @this.TranscriptionSegment;
+        public static implicit operator global::Mistral.Realtime.TranscriptionStreamSegmentDelta?(ServerEvent @this) => @this.TranscriptionSegment;
 
         /// <summary>
         /// 
         /// </summary>
-        public RealtimeTranscriptionServerEvent(global::Mistral.Realtime.TranscriptionStreamSegmentDelta? value)
+        public ServerEvent(global::Mistral.Realtime.TranscriptionStreamSegmentDelta? value)
         {
             TranscriptionSegment = value;
         }
@@ -316,22 +316,22 @@ namespace Mistral.Realtime
         /// <summary>
         /// 
         /// </summary>
-        public static RealtimeTranscriptionServerEvent FromTranscriptionSegment(global::Mistral.Realtime.TranscriptionStreamSegmentDelta? value) => new RealtimeTranscriptionServerEvent(value);
+        public static ServerEvent FromTranscriptionSegment(global::Mistral.Realtime.TranscriptionStreamSegmentDelta? value) => new ServerEvent(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RealtimeTranscriptionServerEvent(global::Mistral.Realtime.TranscriptionStreamTextDelta value) => new RealtimeTranscriptionServerEvent((global::Mistral.Realtime.TranscriptionStreamTextDelta?)value);
+        public static implicit operator ServerEvent(global::Mistral.Realtime.TranscriptionStreamTextDelta value) => new ServerEvent((global::Mistral.Realtime.TranscriptionStreamTextDelta?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Mistral.Realtime.TranscriptionStreamTextDelta?(RealtimeTranscriptionServerEvent @this) => @this.TranscriptionTextDelta;
+        public static implicit operator global::Mistral.Realtime.TranscriptionStreamTextDelta?(ServerEvent @this) => @this.TranscriptionTextDelta;
 
         /// <summary>
         /// 
         /// </summary>
-        public RealtimeTranscriptionServerEvent(global::Mistral.Realtime.TranscriptionStreamTextDelta? value)
+        public ServerEvent(global::Mistral.Realtime.TranscriptionStreamTextDelta? value)
         {
             TranscriptionTextDelta = value;
         }
@@ -339,22 +339,22 @@ namespace Mistral.Realtime
         /// <summary>
         /// 
         /// </summary>
-        public static RealtimeTranscriptionServerEvent FromTranscriptionTextDelta(global::Mistral.Realtime.TranscriptionStreamTextDelta? value) => new RealtimeTranscriptionServerEvent(value);
+        public static ServerEvent FromTranscriptionTextDelta(global::Mistral.Realtime.TranscriptionStreamTextDelta? value) => new ServerEvent(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RealtimeTranscriptionServerEvent(global::Mistral.Realtime.TranscriptionStreamDone value) => new RealtimeTranscriptionServerEvent((global::Mistral.Realtime.TranscriptionStreamDone?)value);
+        public static implicit operator ServerEvent(global::Mistral.Realtime.TranscriptionStreamDone value) => new ServerEvent((global::Mistral.Realtime.TranscriptionStreamDone?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Mistral.Realtime.TranscriptionStreamDone?(RealtimeTranscriptionServerEvent @this) => @this.TranscriptionDone;
+        public static implicit operator global::Mistral.Realtime.TranscriptionStreamDone?(ServerEvent @this) => @this.TranscriptionDone;
 
         /// <summary>
         /// 
         /// </summary>
-        public RealtimeTranscriptionServerEvent(global::Mistral.Realtime.TranscriptionStreamDone? value)
+        public ServerEvent(global::Mistral.Realtime.TranscriptionStreamDone? value)
         {
             TranscriptionDone = value;
         }
@@ -362,22 +362,22 @@ namespace Mistral.Realtime
         /// <summary>
         /// 
         /// </summary>
-        public static RealtimeTranscriptionServerEvent FromTranscriptionDone(global::Mistral.Realtime.TranscriptionStreamDone? value) => new RealtimeTranscriptionServerEvent(value);
+        public static ServerEvent FromTranscriptionDone(global::Mistral.Realtime.TranscriptionStreamDone? value) => new ServerEvent(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RealtimeTranscriptionServerEvent(global::Mistral.Realtime.RealtimeTranscriptionSessionCreated value) => new RealtimeTranscriptionServerEvent((global::Mistral.Realtime.RealtimeTranscriptionSessionCreated?)value);
+        public static implicit operator ServerEvent(global::Mistral.Realtime.RealtimeTranscriptionSessionCreated value) => new ServerEvent((global::Mistral.Realtime.RealtimeTranscriptionSessionCreated?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Mistral.Realtime.RealtimeTranscriptionSessionCreated?(RealtimeTranscriptionServerEvent @this) => @this.SessionCreated;
+        public static implicit operator global::Mistral.Realtime.RealtimeTranscriptionSessionCreated?(ServerEvent @this) => @this.SessionCreated;
 
         /// <summary>
         /// 
         /// </summary>
-        public RealtimeTranscriptionServerEvent(global::Mistral.Realtime.RealtimeTranscriptionSessionCreated? value)
+        public ServerEvent(global::Mistral.Realtime.RealtimeTranscriptionSessionCreated? value)
         {
             SessionCreated = value;
         }
@@ -385,22 +385,22 @@ namespace Mistral.Realtime
         /// <summary>
         /// 
         /// </summary>
-        public static RealtimeTranscriptionServerEvent FromSessionCreated(global::Mistral.Realtime.RealtimeTranscriptionSessionCreated? value) => new RealtimeTranscriptionServerEvent(value);
+        public static ServerEvent FromSessionCreated(global::Mistral.Realtime.RealtimeTranscriptionSessionCreated? value) => new ServerEvent(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RealtimeTranscriptionServerEvent(global::Mistral.Realtime.RealtimeTranscriptionSessionUpdated value) => new RealtimeTranscriptionServerEvent((global::Mistral.Realtime.RealtimeTranscriptionSessionUpdated?)value);
+        public static implicit operator ServerEvent(global::Mistral.Realtime.RealtimeTranscriptionSessionUpdated value) => new ServerEvent((global::Mistral.Realtime.RealtimeTranscriptionSessionUpdated?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Mistral.Realtime.RealtimeTranscriptionSessionUpdated?(RealtimeTranscriptionServerEvent @this) => @this.SessionUpdated;
+        public static implicit operator global::Mistral.Realtime.RealtimeTranscriptionSessionUpdated?(ServerEvent @this) => @this.SessionUpdated;
 
         /// <summary>
         /// 
         /// </summary>
-        public RealtimeTranscriptionServerEvent(global::Mistral.Realtime.RealtimeTranscriptionSessionUpdated? value)
+        public ServerEvent(global::Mistral.Realtime.RealtimeTranscriptionSessionUpdated? value)
         {
             SessionUpdated = value;
         }
@@ -408,22 +408,22 @@ namespace Mistral.Realtime
         /// <summary>
         /// 
         /// </summary>
-        public static RealtimeTranscriptionServerEvent FromSessionUpdated(global::Mistral.Realtime.RealtimeTranscriptionSessionUpdated? value) => new RealtimeTranscriptionServerEvent(value);
+        public static ServerEvent FromSessionUpdated(global::Mistral.Realtime.RealtimeTranscriptionSessionUpdated? value) => new ServerEvent(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RealtimeTranscriptionServerEvent(global::Mistral.Realtime.RealtimeTranscriptionError value) => new RealtimeTranscriptionServerEvent((global::Mistral.Realtime.RealtimeTranscriptionError?)value);
+        public static implicit operator ServerEvent(global::Mistral.Realtime.RealtimeTranscriptionError value) => new ServerEvent((global::Mistral.Realtime.RealtimeTranscriptionError?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Mistral.Realtime.RealtimeTranscriptionError?(RealtimeTranscriptionServerEvent @this) => @this.Error;
+        public static implicit operator global::Mistral.Realtime.RealtimeTranscriptionError?(ServerEvent @this) => @this.Error;
 
         /// <summary>
         /// 
         /// </summary>
-        public RealtimeTranscriptionServerEvent(global::Mistral.Realtime.RealtimeTranscriptionError? value)
+        public ServerEvent(global::Mistral.Realtime.RealtimeTranscriptionError? value)
         {
             Error = value;
         }
@@ -431,13 +431,13 @@ namespace Mistral.Realtime
         /// <summary>
         /// 
         /// </summary>
-        public static RealtimeTranscriptionServerEvent FromError(global::Mistral.Realtime.RealtimeTranscriptionError? value) => new RealtimeTranscriptionServerEvent(value);
+        public static ServerEvent FromError(global::Mistral.Realtime.RealtimeTranscriptionError? value) => new ServerEvent(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public RealtimeTranscriptionServerEvent(
-            global::Mistral.Realtime.RealtimeTranscriptionServerEventDiscriminatorType? type,
+        public ServerEvent(
+            global::Mistral.Realtime.ServerEventDiscriminatorType? type,
             global::Mistral.Realtime.TranscriptionStreamLanguage? transcriptionLanguage,
             global::Mistral.Realtime.TranscriptionStreamSegmentDelta? transcriptionSegment,
             global::Mistral.Realtime.TranscriptionStreamTextDelta? transcriptionTextDelta,
@@ -678,7 +678,7 @@ namespace Mistral.Realtime
         /// <summary>
         /// 
         /// </summary>
-        public bool Equals(RealtimeTranscriptionServerEvent other)
+        public bool Equals(ServerEvent other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Mistral.Realtime.TranscriptionStreamLanguage?>.Default.Equals(TranscriptionLanguage, other.TranscriptionLanguage) &&
@@ -694,15 +694,15 @@ namespace Mistral.Realtime
         /// <summary>
         /// 
         /// </summary>
-        public static bool operator ==(RealtimeTranscriptionServerEvent obj1, RealtimeTranscriptionServerEvent obj2)
+        public static bool operator ==(ServerEvent obj1, ServerEvent obj2)
         {
-            return global::System.Collections.Generic.EqualityComparer<RealtimeTranscriptionServerEvent>.Default.Equals(obj1, obj2);
+            return global::System.Collections.Generic.EqualityComparer<ServerEvent>.Default.Equals(obj1, obj2);
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static bool operator !=(RealtimeTranscriptionServerEvent obj1, RealtimeTranscriptionServerEvent obj2)
+        public static bool operator !=(ServerEvent obj1, ServerEvent obj2)
         {
             return !(obj1 == obj2);
         }
@@ -712,7 +712,7 @@ namespace Mistral.Realtime
         /// </summary>
         public override bool Equals(object? obj)
         {
-            return obj is RealtimeTranscriptionServerEvent o && Equals(o);
+            return obj is ServerEvent o && Equals(o);
         }
     }
 }

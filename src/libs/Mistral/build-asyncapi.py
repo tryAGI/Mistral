@@ -13,6 +13,13 @@ from the upstream ``mistralai`` Python client.
 This script stitches everything into a self-contained AsyncAPI 3.0 document so
 AutoSDK's WebSocket generator can emit a Mistral.Realtime namespace.
 
+Layout: one ``send*`` operation per client message and one ``receive*``
+operation per server message. AutoSDK auto-synthesises the ``ServerEvent``
+oneOf union from the receive payloads and (since AutoSDK #324) tags each
+receive op with the union's discriminator-derived property name so the
+generated ``ReceiveUpdates`` dispatcher compiles. No hand-authored union
+wrapper schema is required.
+
 Run after fetching openapi.yaml; invoked by generate.sh.
 """
 from __future__ import annotations
@@ -48,7 +55,9 @@ SYNTHESIZED_SERVER_MESSAGES: list[tuple[str, str]] = [
     ("RealtimeTranscriptionError", "error"),
 ]
 
-SERVER_UNION_SCHEMA = "RealtimeTranscriptionServerEvent"
+ALL_SERVER_MESSAGES: list[tuple[str, str]] = (
+    EXISTING_SERVER_MESSAGES + SYNTHESIZED_SERVER_MESSAGES
+)
 
 
 def find_refs(node, refs: set[str] | None = None) -> set[str]:
@@ -166,20 +175,6 @@ def synthesized_schemas() -> dict:
             "required": ["error"],
             "additionalProperties": False,
         },
-        SERVER_UNION_SCHEMA: {
-            "title": SERVER_UNION_SCHEMA,
-            "oneOf": [
-                {"$ref": f"#/components/schemas/{name}"}
-                for name, _ in EXISTING_SERVER_MESSAGES + SYNTHESIZED_SERVER_MESSAGES
-            ],
-            "discriminator": {
-                "propertyName": "type",
-                "mapping": {
-                    type_str: f"#/components/schemas/{name}"
-                    for name, type_str in EXISTING_SERVER_MESSAGES + SYNTHESIZED_SERVER_MESSAGES
-                },
-            },
-        },
     }
 
 
@@ -197,12 +192,10 @@ def main() -> int:
     merged_schemas = dict(all_schemas)
     merged_schemas.update(synthesized_schemas())
 
-    seed: set[str] = {SERVER_UNION_SCHEMA}
+    seed: set[str] = set()
     for schema_name, _ in CLIENT_MESSAGES:
         seed.add(schema_name)
-    for schema_name, _ in EXISTING_SERVER_MESSAGES:
-        seed.add(schema_name)
-    for schema_name, _ in SYNTHESIZED_SERVER_MESSAGES:
+    for schema_name, _ in ALL_SERVER_MESSAGES:
         seed.add(schema_name)
 
     missing = seed - merged_schemas.keys()
@@ -233,20 +226,19 @@ def main() -> int:
             "messages": [{"$ref": f"#/channels/realtime/messages/{msg_name}"}],
         }
 
-    server_message_names: list[str] = []
-    component_messages["ServerEvent"] = {
-        "name": "ServerEvent",
-        "title": "Realtime Transcription Server Event",
-        "summary": "Discriminated union of all server-sent realtime transcription events.",
-        "payload": {"$ref": f"#/components/schemas/{SERVER_UNION_SCHEMA}"},
-    }
-    channel_messages["ServerEvent"] = {"$ref": "#/components/messages/ServerEvent"}
-    operations["receiveServerEvent"] = {
-        "action": "receive",
-        "channel": {"$ref": "#/channels/realtime"},
-        "messages": [{"$ref": "#/channels/realtime/messages/ServerEvent"}],
-    }
-    server_message_names.append("ServerEvent")
+    for schema_name, type_str in ALL_SERVER_MESSAGES:
+        msg_name = schema_name
+        component_messages[msg_name] = {
+            "name": msg_name,
+            "title": type_str,
+            "payload": {"$ref": f"#/components/schemas/{schema_name}"},
+        }
+        channel_messages[msg_name] = {"$ref": f"#/components/messages/{msg_name}"}
+        operations[f"receive{schema_name}"] = {
+            "action": "receive",
+            "channel": {"$ref": "#/channels/realtime"},
+            "messages": [{"$ref": f"#/channels/realtime/messages/{msg_name}"}],
+        }
 
     doc = {
         "asyncapi": "3.0.0",
@@ -305,7 +297,7 @@ def main() -> int:
     print(
         f"Wrote {args.output}: "
         f"{len(CLIENT_MESSAGES)} client messages, "
-        f"{len(server_message_names)} server messages, "
+        f"{len(ALL_SERVER_MESSAGES)} server messages, "
         f"{len(inline_schemas)} schemas"
     )
     return 0

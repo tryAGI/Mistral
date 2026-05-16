@@ -68,71 +68,71 @@ namespace Mistral.Realtime
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.Realtime.RealtimeTranscriptionServerEvent? Type10 { get; set; }
+        public global::Mistral.Realtime.RealtimeTranscriptionSession? Type10 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.Realtime.TranscriptionStreamLanguage? Type11 { get; set; }
+        public object? Type11 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.Realtime.TranscriptionStreamSegmentDelta? Type12 { get; set; }
+        public global::Mistral.Realtime.RealtimeTranscriptionSessionCreated? Type12 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.Realtime.TranscriptionStreamTextDelta? Type13 { get; set; }
+        public global::Mistral.Realtime.RealtimeTranscriptionSessionUpdateMessage? Type13 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.Realtime.TranscriptionStreamDone? Type14 { get; set; }
+        public global::Mistral.Realtime.RealtimeTranscriptionSessionUpdatePayload? Type14 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.Realtime.RealtimeTranscriptionSessionCreated? Type15 { get; set; }
+        public global::Mistral.Realtime.RealtimeTranscriptionSessionUpdated? Type15 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.Realtime.RealtimeTranscriptionSessionUpdated? Type16 { get; set; }
+        public global::Mistral.Realtime.TranscriptionSegmentChunk? Type16 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.Realtime.RealtimeTranscriptionServerEventDiscriminator? Type17 { get; set; }
+        public double? Type17 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.Realtime.RealtimeTranscriptionServerEventDiscriminatorType? Type18 { get; set; }
+        public global::Mistral.Realtime.TranscriptionStreamDone? Type18 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.Realtime.RealtimeTranscriptionSession? Type19 { get; set; }
+        public global::System.Collections.Generic.IList<global::Mistral.Realtime.TranscriptionSegmentChunk>? Type19 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public object? Type20 { get; set; }
+        public global::Mistral.Realtime.UsageInfo? Type20 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.Realtime.RealtimeTranscriptionSessionUpdateMessage? Type21 { get; set; }
+        public global::Mistral.Realtime.TranscriptionStreamLanguage? Type21 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.Realtime.RealtimeTranscriptionSessionUpdatePayload? Type22 { get; set; }
+        public global::Mistral.Realtime.TranscriptionStreamSegmentDelta? Type22 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.Realtime.TranscriptionSegmentChunk? Type23 { get; set; }
+        public global::Mistral.Realtime.TranscriptionStreamTextDelta? Type23 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public double? Type24 { get; set; }
+        public global::Mistral.Realtime.ServerEvent? Type24 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Mistral.Realtime.TranscriptionSegmentChunk>? Type25 { get; set; }
+        public global::Mistral.Realtime.ServerEventDiscriminator? Type25 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Mistral.Realtime.UsageInfo? Type26 { get; set; }
+        public global::Mistral.Realtime.ServerEventDiscriminatorType? Type26 { get; set; }
 
         /// <summary>
         /// 

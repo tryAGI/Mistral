@@ -4,10 +4,10 @@
 namespace Mistral.Realtime.JsonConverters
 {
     /// <inheritdoc />
-    public class RealtimeTranscriptionServerEventJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Mistral.Realtime.RealtimeTranscriptionServerEvent>
+    public class ServerEventJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Mistral.Realtime.ServerEvent>
     {
         /// <inheritdoc />
-        public override global::Mistral.Realtime.RealtimeTranscriptionServerEvent Read(
+        public override global::Mistral.Realtime.ServerEvent Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -17,61 +17,61 @@ namespace Mistral.Realtime.JsonConverters
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.Realtime.RealtimeTranscriptionServerEventDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.Realtime.RealtimeTranscriptionServerEventDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.Realtime.RealtimeTranscriptionServerEventDiscriminator)}");
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.Realtime.ServerEventDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.Realtime.ServerEventDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.Realtime.ServerEventDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::Mistral.Realtime.TranscriptionStreamLanguage? transcriptionLanguage = default;
-            if (discriminator?.Type == global::Mistral.Realtime.RealtimeTranscriptionServerEventDiscriminatorType.TranscriptionLanguage)
+            if (discriminator?.Type == global::Mistral.Realtime.ServerEventDiscriminatorType.TranscriptionLanguage)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.Realtime.TranscriptionStreamLanguage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.Realtime.TranscriptionStreamLanguage> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.Realtime.TranscriptionStreamLanguage)}");
                 transcriptionLanguage = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::Mistral.Realtime.TranscriptionStreamSegmentDelta? transcriptionSegment = default;
-            if (discriminator?.Type == global::Mistral.Realtime.RealtimeTranscriptionServerEventDiscriminatorType.TranscriptionSegment)
+            if (discriminator?.Type == global::Mistral.Realtime.ServerEventDiscriminatorType.TranscriptionSegment)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.Realtime.TranscriptionStreamSegmentDelta), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.Realtime.TranscriptionStreamSegmentDelta> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.Realtime.TranscriptionStreamSegmentDelta)}");
                 transcriptionSegment = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::Mistral.Realtime.TranscriptionStreamTextDelta? transcriptionTextDelta = default;
-            if (discriminator?.Type == global::Mistral.Realtime.RealtimeTranscriptionServerEventDiscriminatorType.TranscriptionTextDelta)
+            if (discriminator?.Type == global::Mistral.Realtime.ServerEventDiscriminatorType.TranscriptionTextDelta)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.Realtime.TranscriptionStreamTextDelta), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.Realtime.TranscriptionStreamTextDelta> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.Realtime.TranscriptionStreamTextDelta)}");
                 transcriptionTextDelta = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::Mistral.Realtime.TranscriptionStreamDone? transcriptionDone = default;
-            if (discriminator?.Type == global::Mistral.Realtime.RealtimeTranscriptionServerEventDiscriminatorType.TranscriptionDone)
+            if (discriminator?.Type == global::Mistral.Realtime.ServerEventDiscriminatorType.TranscriptionDone)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.Realtime.TranscriptionStreamDone), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.Realtime.TranscriptionStreamDone> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.Realtime.TranscriptionStreamDone)}");
                 transcriptionDone = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::Mistral.Realtime.RealtimeTranscriptionSessionCreated? sessionCreated = default;
-            if (discriminator?.Type == global::Mistral.Realtime.RealtimeTranscriptionServerEventDiscriminatorType.SessionCreated)
+            if (discriminator?.Type == global::Mistral.Realtime.ServerEventDiscriminatorType.SessionCreated)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.Realtime.RealtimeTranscriptionSessionCreated), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.Realtime.RealtimeTranscriptionSessionCreated> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.Realtime.RealtimeTranscriptionSessionCreated)}");
                 sessionCreated = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::Mistral.Realtime.RealtimeTranscriptionSessionUpdated? sessionUpdated = default;
-            if (discriminator?.Type == global::Mistral.Realtime.RealtimeTranscriptionServerEventDiscriminatorType.SessionUpdated)
+            if (discriminator?.Type == global::Mistral.Realtime.ServerEventDiscriminatorType.SessionUpdated)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.Realtime.RealtimeTranscriptionSessionUpdated), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.Realtime.RealtimeTranscriptionSessionUpdated> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.Realtime.RealtimeTranscriptionSessionUpdated)}");
                 sessionUpdated = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::Mistral.Realtime.RealtimeTranscriptionError? error = default;
-            if (discriminator?.Type == global::Mistral.Realtime.RealtimeTranscriptionServerEventDiscriminatorType.Error)
+            if (discriminator?.Type == global::Mistral.Realtime.ServerEventDiscriminatorType.Error)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.Realtime.RealtimeTranscriptionError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.Realtime.RealtimeTranscriptionError> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Mistral.Realtime.RealtimeTranscriptionError)}");
                 error = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            var __value = new global::Mistral.Realtime.RealtimeTranscriptionServerEvent(
+            var __value = new global::Mistral.Realtime.ServerEvent(
                 discriminator?.Type,
                 transcriptionLanguage,
 
@@ -94,7 +94,7 @@ namespace Mistral.Realtime.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::Mistral.Realtime.RealtimeTranscriptionServerEvent value,
+            global::Mistral.Realtime.ServerEvent value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));

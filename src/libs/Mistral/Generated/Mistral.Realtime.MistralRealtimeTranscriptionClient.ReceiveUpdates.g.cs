@@ -10,7 +10,7 @@ namespace Mistral.Realtime
         /// </summary>
         /// <param name="cancellationToken">A cancellation token.</param>
         /// <returns>An async enumerable of server events.</returns>
-        public async global::System.Collections.Generic.IAsyncEnumerable<global::Mistral.Realtime.RealtimeTranscriptionServerEvent> ReceiveUpdatesAsync(
+        public async global::System.Collections.Generic.IAsyncEnumerable<global::Mistral.Realtime.ServerEvent> ReceiveUpdatesAsync(
             [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)
         {
             if (!IsConnected)
@@ -105,10 +105,10 @@ namespace Mistral.Realtime
                 }
 
                 string json = global::System.Text.Encoding.UTF8.GetString(__messageBuffer.ToArray());
-                    global::Mistral.Realtime.RealtimeTranscriptionServerEvent @event;
+                    global::Mistral.Realtime.ServerEvent @event;
                     try
                     {
-                        @event = (global::Mistral.Realtime.RealtimeTranscriptionServerEvent)global::System.Text.Json.JsonSerializer.Deserialize(json, typeof(global::Mistral.Realtime.RealtimeTranscriptionServerEvent), JsonSerializerContext)!;
+                        @event = (global::Mistral.Realtime.ServerEvent)global::System.Text.Json.JsonSerializer.Deserialize(json, typeof(global::Mistral.Realtime.ServerEvent), JsonSerializerContext)!;
                     }
                     catch (global::System.Exception exception) when (
                         exception is global::System.Text.Json.JsonException ||
@@ -157,23 +157,80 @@ namespace Mistral.Realtime
         }
 
         private void DispatchReceivedMessage(
-            global::Mistral.Realtime.RealtimeTranscriptionServerEvent @event,
+            global::Mistral.Realtime.ServerEvent @event,
             string rawText)
         {
             var json = TryParseMessageJson(rawText);
             MessageReceived?.Invoke(
                 this,
-                new AutoSDKWebSocketMessageEventArgs<global::Mistral.Realtime.RealtimeTranscriptionServerEvent>(
+                new AutoSDKWebSocketMessageEventArgs<global::Mistral.Realtime.ServerEvent>(
                     @event,
                     rawText,
                     json));
 
-            ServerEventReceived?.Invoke(
-                this,
-                new AutoSDKWebSocketMessageEventArgs<global::Mistral.Realtime.RealtimeTranscriptionServerEvent>(
-                    @event,
-                    rawText,
-                    json));
+            if (@event.TranscriptionLanguage is { } __TranscriptionStreamLanguageReceived)
+            {
+                TranscriptionStreamLanguageReceived?.Invoke(
+                    this,
+                    new AutoSDKWebSocketMessageEventArgs<global::Mistral.Realtime.TranscriptionStreamLanguage>(
+                        __TranscriptionStreamLanguageReceived,
+                        rawText,
+                        json));
+            }
+            if (@event.TranscriptionSegment is { } __TranscriptionStreamSegmentDeltaReceived)
+            {
+                TranscriptionStreamSegmentDeltaReceived?.Invoke(
+                    this,
+                    new AutoSDKWebSocketMessageEventArgs<global::Mistral.Realtime.TranscriptionStreamSegmentDelta>(
+                        __TranscriptionStreamSegmentDeltaReceived,
+                        rawText,
+                        json));
+            }
+            if (@event.TranscriptionTextDelta is { } __TranscriptionStreamTextDeltaReceived)
+            {
+                TranscriptionStreamTextDeltaReceived?.Invoke(
+                    this,
+                    new AutoSDKWebSocketMessageEventArgs<global::Mistral.Realtime.TranscriptionStreamTextDelta>(
+                        __TranscriptionStreamTextDeltaReceived,
+                        rawText,
+                        json));
+            }
+            if (@event.TranscriptionDone is { } __TranscriptionStreamDoneReceived)
+            {
+                TranscriptionStreamDoneReceived?.Invoke(
+                    this,
+                    new AutoSDKWebSocketMessageEventArgs<global::Mistral.Realtime.TranscriptionStreamDone>(
+                        __TranscriptionStreamDoneReceived,
+                        rawText,
+                        json));
+            }
+            if (@event.SessionCreated is { } __RealtimeTranscriptionSessionCreatedReceived)
+            {
+                RealtimeTranscriptionSessionCreatedReceived?.Invoke(
+                    this,
+                    new AutoSDKWebSocketMessageEventArgs<global::Mistral.Realtime.RealtimeTranscriptionSessionCreated>(
+                        __RealtimeTranscriptionSessionCreatedReceived,
+                        rawText,
+                        json));
+            }
+            if (@event.SessionUpdated is { } __RealtimeTranscriptionSessionUpdatedReceived)
+            {
+                RealtimeTranscriptionSessionUpdatedReceived?.Invoke(
+                    this,
+                    new AutoSDKWebSocketMessageEventArgs<global::Mistral.Realtime.RealtimeTranscriptionSessionUpdated>(
+                        __RealtimeTranscriptionSessionUpdatedReceived,
+                        rawText,
+                        json));
+            }
+            if (@event.Error is { } __RealtimeTranscriptionErrorReceived)
+            {
+                RealtimeTranscriptionErrorReceived?.Invoke(
+                    this,
+                    new AutoSDKWebSocketMessageEventArgs<global::Mistral.Realtime.RealtimeTranscriptionError>(
+                        __RealtimeTranscriptionErrorReceived,
+                        rawText,
+                        json));
+            }
         }
     }
 }

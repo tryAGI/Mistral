@@ -67,7 +67,7 @@ Voxtral is Mistral's audio-understanding line. It is **not** a separate SDK — 
 - Client → server messages (already in upstream OpenAPI): `session.update`, `input_audio.append` (base64 PCM, max 262 144 decoded bytes per frame), `input_audio.flush`, `input_audio.end`
 - Server → client messages: `transcription.language`, `transcription.segment`, `transcription.text.delta`, `transcription.done` (in upstream OpenAPI) plus `session.created`, `session.updated`, `error` (synthesized in `build-asyncapi.py` from the upstream `mistralai` Python client)
 
-**AutoSDK WS-dispatcher naming-mismatch workaround.** When `build-asyncapi.py` emits one `receive*` operation per server message, AutoSDK generates a `ServerEvent` union struct whose property names are *short* (e.g. `TranscriptionLanguage`) but the `ReceiveUpdates.g.cs` dispatcher references them by *message name* (e.g. `TranscriptionStreamLanguage`), producing `CS1061` errors. Workaround used here: a single `receiveServerEvent` operation whose payload is a synthesized `oneOf` union schema (`RealtimeTranscriptionServerEvent`). When regenerating, keep this pattern.
+`build-asyncapi.py` emits one `send*` op per client message and one `receive*` op per server message; AutoSDK auto-synthesises the `Mistral.Realtime.ServerEvent` oneOf union from the receive payloads (since AutoSDK [#324](https://github.com/tryAGI/AutoSDK/issues/324) — requires `autosdk.cli` ≥ 0.30.2-dev.45). No hand-authored union wrapper schema is required.
 
 ### Documentation Generation
 

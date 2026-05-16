@@ -3,10 +3,10 @@
 namespace Mistral.Realtime.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class RealtimeTranscriptionServerEventDiscriminatorTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Mistral.Realtime.RealtimeTranscriptionServerEventDiscriminatorType>
+    public sealed class ServerEventDiscriminatorTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Mistral.Realtime.ServerEventDiscriminatorType>
     {
         /// <inheritdoc />
-        public override global::Mistral.Realtime.RealtimeTranscriptionServerEventDiscriminatorType Read(
+        public override global::Mistral.Realtime.ServerEventDiscriminatorType Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,7 +18,7 @@ namespace Mistral.Realtime.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::Mistral.Realtime.RealtimeTranscriptionServerEventDiscriminatorTypeExtensions.ToEnum(stringValue) ?? default;
+                        return global::Mistral.Realtime.ServerEventDiscriminatorTypeExtensions.ToEnum(stringValue) ?? default;
                     }
                     
                     break;
@@ -26,11 +26,11 @@ namespace Mistral.Realtime.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::Mistral.Realtime.RealtimeTranscriptionServerEventDiscriminatorType)numValue;
+                    return (global::Mistral.Realtime.ServerEventDiscriminatorType)numValue;
                 }
                 case global::System.Text.Json.JsonTokenType.Null:
                 {
-                    return default(global::Mistral.Realtime.RealtimeTranscriptionServerEventDiscriminatorType);
+                    return default(global::Mistral.Realtime.ServerEventDiscriminatorType);
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -42,12 +42,12 @@ namespace Mistral.Realtime.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::Mistral.Realtime.RealtimeTranscriptionServerEventDiscriminatorType value,
+            global::Mistral.Realtime.ServerEventDiscriminatorType value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
 
-            writer.WriteStringValue(global::Mistral.Realtime.RealtimeTranscriptionServerEventDiscriminatorTypeExtensions.ToValueString(value));
+            writer.WriteStringValue(global::Mistral.Realtime.ServerEventDiscriminatorTypeExtensions.ToValueString(value));
         }
     }
 }

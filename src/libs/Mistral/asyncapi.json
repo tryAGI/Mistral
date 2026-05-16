@@ -42,8 +42,26 @@
         "RealtimeTranscriptionInputAudioEnd": {
           "$ref": "#/components/messages/RealtimeTranscriptionInputAudioEnd"
         },
-        "ServerEvent": {
-          "$ref": "#/components/messages/ServerEvent"
+        "TranscriptionStreamLanguage": {
+          "$ref": "#/components/messages/TranscriptionStreamLanguage"
+        },
+        "TranscriptionStreamSegmentDelta": {
+          "$ref": "#/components/messages/TranscriptionStreamSegmentDelta"
+        },
+        "TranscriptionStreamTextDelta": {
+          "$ref": "#/components/messages/TranscriptionStreamTextDelta"
+        },
+        "TranscriptionStreamDone": {
+          "$ref": "#/components/messages/TranscriptionStreamDone"
+        },
+        "RealtimeTranscriptionSessionCreated": {
+          "$ref": "#/components/messages/RealtimeTranscriptionSessionCreated"
+        },
+        "RealtimeTranscriptionSessionUpdated": {
+          "$ref": "#/components/messages/RealtimeTranscriptionSessionUpdated"
+        },
+        "RealtimeTranscriptionError": {
+          "$ref": "#/components/messages/RealtimeTranscriptionError"
         }
       }
     }
@@ -93,14 +111,80 @@
         }
       ]
     },
-    "receiveServerEvent": {
+    "receiveTranscriptionStreamLanguage": {
       "action": "receive",
       "channel": {
         "$ref": "#/channels/realtime"
       },
       "messages": [
         {
-          "$ref": "#/channels/realtime/messages/ServerEvent"
+          "$ref": "#/channels/realtime/messages/TranscriptionStreamLanguage"
+        }
+      ]
+    },
+    "receiveTranscriptionStreamSegmentDelta": {
+      "action": "receive",
+      "channel": {
+        "$ref": "#/channels/realtime"
+      },
+      "messages": [
+        {
+          "$ref": "#/channels/realtime/messages/TranscriptionStreamSegmentDelta"
+        }
+      ]
+    },
+    "receiveTranscriptionStreamTextDelta": {
+      "action": "receive",
+      "channel": {
+        "$ref": "#/channels/realtime"
+      },
+      "messages": [
+        {
+          "$ref": "#/channels/realtime/messages/TranscriptionStreamTextDelta"
+        }
+      ]
+    },
+    "receiveTranscriptionStreamDone": {
+      "action": "receive",
+      "channel": {
+        "$ref": "#/channels/realtime"
+      },
+      "messages": [
+        {
+          "$ref": "#/channels/realtime/messages/TranscriptionStreamDone"
+        }
+      ]
+    },
+    "receiveRealtimeTranscriptionSessionCreated": {
+      "action": "receive",
+      "channel": {
+        "$ref": "#/channels/realtime"
+      },
+      "messages": [
+        {
+          "$ref": "#/channels/realtime/messages/RealtimeTranscriptionSessionCreated"
+        }
+      ]
+    },
+    "receiveRealtimeTranscriptionSessionUpdated": {
+      "action": "receive",
+      "channel": {
+        "$ref": "#/channels/realtime"
+      },
+      "messages": [
+        {
+          "$ref": "#/channels/realtime/messages/RealtimeTranscriptionSessionUpdated"
+        }
+      ]
+    },
+    "receiveRealtimeTranscriptionError": {
+      "action": "receive",
+      "channel": {
+        "$ref": "#/channels/realtime"
+      },
+      "messages": [
+        {
+          "$ref": "#/channels/realtime/messages/RealtimeTranscriptionError"
         }
       ]
     }
@@ -142,12 +226,53 @@
           "$ref": "#/components/schemas/RealtimeTranscriptionInputAudioEnd"
         }
       },
-      "ServerEvent": {
-        "name": "ServerEvent",
-        "title": "Realtime Transcription Server Event",
-        "summary": "Discriminated union of all server-sent realtime transcription events.",
+      "TranscriptionStreamLanguage": {
+        "name": "TranscriptionStreamLanguage",
+        "title": "transcription.language",
         "payload": {
-          "$ref": "#/components/schemas/RealtimeTranscriptionServerEvent"
+          "$ref": "#/components/schemas/TranscriptionStreamLanguage"
+        }
+      },
+      "TranscriptionStreamSegmentDelta": {
+        "name": "TranscriptionStreamSegmentDelta",
+        "title": "transcription.segment",
+        "payload": {
+          "$ref": "#/components/schemas/TranscriptionStreamSegmentDelta"
+        }
+      },
+      "TranscriptionStreamTextDelta": {
+        "name": "TranscriptionStreamTextDelta",
+        "title": "transcription.text.delta",
+        "payload": {
+          "$ref": "#/components/schemas/TranscriptionStreamTextDelta"
+        }
+      },
+      "TranscriptionStreamDone": {
+        "name": "TranscriptionStreamDone",
+        "title": "transcription.done",
+        "payload": {
+          "$ref": "#/components/schemas/TranscriptionStreamDone"
+        }
+      },
+      "RealtimeTranscriptionSessionCreated": {
+        "name": "RealtimeTranscriptionSessionCreated",
+        "title": "session.created",
+        "payload": {
+          "$ref": "#/components/schemas/RealtimeTranscriptionSessionCreated"
+        }
+      },
+      "RealtimeTranscriptionSessionUpdated": {
+        "name": "RealtimeTranscriptionSessionUpdated",
+        "title": "session.updated",
+        "payload": {
+          "$ref": "#/components/schemas/RealtimeTranscriptionSessionUpdated"
+        }
+      },
+      "RealtimeTranscriptionError": {
+        "name": "RealtimeTranscriptionError",
+        "title": "error",
+        "payload": {
+          "$ref": "#/components/schemas/RealtimeTranscriptionError"
         }
       }
     },
@@ -284,44 +409,6 @@
         },
         "title": "RealtimeTranscriptionInputAudioFlush",
         "additionalProperties": false
-      },
-      "RealtimeTranscriptionServerEvent": {
-        "title": "RealtimeTranscriptionServerEvent",
-        "oneOf": [
-          {
-            "$ref": "#/components/schemas/TranscriptionStreamLanguage"
-          },
-          {
-            "$ref": "#/components/schemas/TranscriptionStreamSegmentDelta"
-          },
-          {
-            "$ref": "#/components/schemas/TranscriptionStreamTextDelta"
-          },
-          {
-            "$ref": "#/components/schemas/TranscriptionStreamDone"
-          },
-          {
-            "$ref": "#/components/schemas/RealtimeTranscriptionSessionCreated"
-          },
-          {
-            "$ref": "#/components/schemas/RealtimeTranscriptionSessionUpdated"
-          },
-          {
-            "$ref": "#/components/schemas/RealtimeTranscriptionError"
-          }
-        ],
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "transcription.language": "#/components/schemas/TranscriptionStreamLanguage",
-            "transcription.segment": "#/components/schemas/TranscriptionStreamSegmentDelta",
-            "transcription.text.delta": "#/components/schemas/TranscriptionStreamTextDelta",
-            "transcription.done": "#/components/schemas/TranscriptionStreamDone",
-            "session.created": "#/components/schemas/RealtimeTranscriptionSessionCreated",
-            "session.updated": "#/components/schemas/RealtimeTranscriptionSessionUpdated",
-            "error": "#/components/schemas/RealtimeTranscriptionError"
-          }
-        }
       },
       "RealtimeTranscriptionSession": {
         "type": "object",

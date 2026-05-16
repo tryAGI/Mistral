@@ -264,11 +264,35 @@ namespace Mistral.Realtime
         /// <summary>
         /// Raised after a text message is deserialized into the receive event type.
         /// </summary>
-        public event global::System.EventHandler<AutoSDKWebSocketMessageEventArgs<global::Mistral.Realtime.RealtimeTranscriptionServerEvent>>? MessageReceived;
+        public event global::System.EventHandler<AutoSDKWebSocketMessageEventArgs<global::Mistral.Realtime.ServerEvent>>? MessageReceived;
         /// <summary>
-        /// Raised after a ServerEvent message is deserialized.
+        /// Raised after a TranscriptionStreamLanguage message is deserialized.
         /// </summary>
-        public event global::System.EventHandler<AutoSDKWebSocketMessageEventArgs<global::Mistral.Realtime.RealtimeTranscriptionServerEvent>>? ServerEventReceived;
+        public event global::System.EventHandler<AutoSDKWebSocketMessageEventArgs<global::Mistral.Realtime.TranscriptionStreamLanguage>>? TranscriptionStreamLanguageReceived;
+        /// <summary>
+        /// Raised after a TranscriptionStreamSegmentDelta message is deserialized.
+        /// </summary>
+        public event global::System.EventHandler<AutoSDKWebSocketMessageEventArgs<global::Mistral.Realtime.TranscriptionStreamSegmentDelta>>? TranscriptionStreamSegmentDeltaReceived;
+        /// <summary>
+        /// Raised after a TranscriptionStreamTextDelta message is deserialized.
+        /// </summary>
+        public event global::System.EventHandler<AutoSDKWebSocketMessageEventArgs<global::Mistral.Realtime.TranscriptionStreamTextDelta>>? TranscriptionStreamTextDeltaReceived;
+        /// <summary>
+        /// Raised after a TranscriptionStreamDone message is deserialized.
+        /// </summary>
+        public event global::System.EventHandler<AutoSDKWebSocketMessageEventArgs<global::Mistral.Realtime.TranscriptionStreamDone>>? TranscriptionStreamDoneReceived;
+        /// <summary>
+        /// Raised after a RealtimeTranscriptionSessionCreated message is deserialized.
+        /// </summary>
+        public event global::System.EventHandler<AutoSDKWebSocketMessageEventArgs<global::Mistral.Realtime.RealtimeTranscriptionSessionCreated>>? RealtimeTranscriptionSessionCreatedReceived;
+        /// <summary>
+        /// Raised after a RealtimeTranscriptionSessionUpdated message is deserialized.
+        /// </summary>
+        public event global::System.EventHandler<AutoSDKWebSocketMessageEventArgs<global::Mistral.Realtime.RealtimeTranscriptionSessionUpdated>>? RealtimeTranscriptionSessionUpdatedReceived;
+        /// <summary>
+        /// Raised after a RealtimeTranscriptionError message is deserialized.
+        /// </summary>
+        public event global::System.EventHandler<AutoSDKWebSocketMessageEventArgs<global::Mistral.Realtime.RealtimeTranscriptionError>>? RealtimeTranscriptionErrorReceived;
 
         /// <summary>
         /// 

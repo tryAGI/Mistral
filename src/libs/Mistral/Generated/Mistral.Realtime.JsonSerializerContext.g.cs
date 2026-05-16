@@ -17,11 +17,11 @@ namespace Mistral.Realtime
 
             typeof(global::Mistral.Realtime.JsonConverters.AudioEncodingNullableJsonConverter),
 
-            typeof(global::Mistral.Realtime.JsonConverters.RealtimeTranscriptionServerEventDiscriminatorTypeJsonConverter),
+            typeof(global::Mistral.Realtime.JsonConverters.ServerEventDiscriminatorTypeJsonConverter),
 
-            typeof(global::Mistral.Realtime.JsonConverters.RealtimeTranscriptionServerEventDiscriminatorTypeNullableJsonConverter),
+            typeof(global::Mistral.Realtime.JsonConverters.ServerEventDiscriminatorTypeNullableJsonConverter),
 
-            typeof(global::Mistral.Realtime.JsonConverters.RealtimeTranscriptionServerEventJsonConverter),
+            typeof(global::Mistral.Realtime.JsonConverters.ServerEventJsonConverter),
         })]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.Realtime.JsonSerializerContextTypes))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.Realtime.AudioEncoding), TypeInfoPropertyName = "AudioEncoding2")]
@@ -34,23 +34,23 @@ namespace Mistral.Realtime
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.Realtime.RealtimeTranscriptionInputAudioAppend))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.Realtime.RealtimeTranscriptionInputAudioEnd))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.Realtime.RealtimeTranscriptionInputAudioFlush))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.Realtime.RealtimeTranscriptionServerEvent), TypeInfoPropertyName = "RealtimeTranscriptionServerEvent2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.Realtime.RealtimeTranscriptionSession))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(object))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.Realtime.RealtimeTranscriptionSessionCreated))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.Realtime.RealtimeTranscriptionSessionUpdateMessage))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.Realtime.RealtimeTranscriptionSessionUpdatePayload))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.Realtime.RealtimeTranscriptionSessionUpdated))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.Realtime.TranscriptionSegmentChunk))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(double))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.Realtime.TranscriptionStreamDone))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Mistral.Realtime.TranscriptionSegmentChunk>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.Realtime.UsageInfo))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.Realtime.TranscriptionStreamLanguage))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.Realtime.TranscriptionStreamSegmentDelta))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.Realtime.TranscriptionStreamTextDelta))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.Realtime.TranscriptionStreamDone))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.Realtime.RealtimeTranscriptionSessionCreated))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.Realtime.RealtimeTranscriptionSessionUpdated))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.Realtime.RealtimeTranscriptionServerEventDiscriminator))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.Realtime.RealtimeTranscriptionServerEventDiscriminatorType), TypeInfoPropertyName = "RealtimeTranscriptionServerEventDiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.Realtime.RealtimeTranscriptionSession))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(object))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.Realtime.RealtimeTranscriptionSessionUpdateMessage))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.Realtime.RealtimeTranscriptionSessionUpdatePayload))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.Realtime.TranscriptionSegmentChunk))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(double))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Mistral.Realtime.TranscriptionSegmentChunk>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.Realtime.UsageInfo))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.Realtime.ServerEvent), TypeInfoPropertyName = "ServerEvent2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.Realtime.ServerEventDiscriminator))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.Realtime.ServerEventDiscriminatorType), TypeInfoPropertyName = "ServerEventDiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Mistral.Realtime.TranscriptionSegmentChunk>))]
     public sealed partial class RealtimeSourceGenerationContext : global::System.Text.Json.Serialization.JsonSerializerContext
     {

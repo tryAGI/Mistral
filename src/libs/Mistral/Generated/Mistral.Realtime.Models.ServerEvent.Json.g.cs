@@ -2,7 +2,7 @@
 
 namespace Mistral.Realtime
 {
-    public sealed partial class RealtimeTranscriptionServerEventDiscriminator
+    public readonly partial struct ServerEvent
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -34,14 +34,14 @@ namespace Mistral.Realtime
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerContext.
         /// </summary>
-        public static global::Mistral.Realtime.RealtimeTranscriptionServerEventDiscriminator? FromJson(
+        public static global::Mistral.Realtime.ServerEvent? FromJson(
             string json,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::Mistral.Realtime.RealtimeTranscriptionServerEventDiscriminator),
-                jsonSerializerContext) as global::Mistral.Realtime.RealtimeTranscriptionServerEventDiscriminator;
+                typeof(global::Mistral.Realtime.ServerEvent),
+                jsonSerializerContext) as global::Mistral.Realtime.ServerEvent?;
         }
 
         /// <summary>
@@ -51,11 +51,11 @@ namespace Mistral.Realtime
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::Mistral.Realtime.RealtimeTranscriptionServerEventDiscriminator? FromJson(
+        public static global::Mistral.Realtime.ServerEvent? FromJson(
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.Realtime.RealtimeTranscriptionServerEventDiscriminator>(
+            return global::System.Text.Json.JsonSerializer.Deserialize<global::Mistral.Realtime.ServerEvent>(
                 json,
                 jsonSerializerOptions);
         }
@@ -63,14 +63,14 @@ namespace Mistral.Realtime
         /// <summary>
         /// Deserializes a JSON stream using the provided JsonSerializerContext.
         /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::Mistral.Realtime.RealtimeTranscriptionServerEventDiscriminator?> FromJsonStreamAsync(
+        public static async global::System.Threading.Tasks.ValueTask<global::Mistral.Realtime.ServerEvent?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
-                typeof(global::Mistral.Realtime.RealtimeTranscriptionServerEventDiscriminator),
-                jsonSerializerContext).ConfigureAwait(false)) as global::Mistral.Realtime.RealtimeTranscriptionServerEventDiscriminator;
+                typeof(global::Mistral.Realtime.ServerEvent),
+                jsonSerializerContext).ConfigureAwait(false)) as global::Mistral.Realtime.ServerEvent?;
         }
 
         /// <summary>
@@ -80,11 +80,11 @@ namespace Mistral.Realtime
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::System.Threading.Tasks.ValueTask<global::Mistral.Realtime.RealtimeTranscriptionServerEventDiscriminator?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::Mistral.Realtime.ServerEvent?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::Mistral.Realtime.RealtimeTranscriptionServerEventDiscriminator?>(
+            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::Mistral.Realtime.ServerEvent?>(
                 jsonStream,
                 jsonSerializerOptions);
         }

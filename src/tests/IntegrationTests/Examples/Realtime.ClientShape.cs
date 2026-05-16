@@ -7,8 +7,8 @@ slug: voxtral-realtime-client-shape
 for `wss://api.mistral.ai/v1/audio/transcriptions/realtime?model=<id>`. It
 ships with strongly-typed send methods for `session.update`,
 `input_audio.append`, `input_audio.flush`, and `input_audio.end`, plus a
-`ReceiveUpdatesAsync()` that yields a `RealtimeTranscriptionServerEvent` union
-covering `transcription.language`, `transcription.segment`,
+`ReceiveUpdatesAsync()` that yields a `ServerEvent` union covering
+`transcription.language`, `transcription.segment`,
 `transcription.text.delta`, `transcription.done`, `session.created`,
 `session.updated`, and `error` server events.
 */
@@ -30,7 +30,7 @@ public partial class Tests
     [TestMethod]
     public void Realtime_ServerEvent_HasAllDiscriminators()
     {
-        var ev = default(Mistral.Realtime.RealtimeTranscriptionServerEvent);
+        var ev = default(Mistral.Realtime.ServerEvent);
 
         ev.IsTranscriptionLanguage.Should().BeFalse();
         ev.IsTranscriptionSegment.Should().BeFalse();
