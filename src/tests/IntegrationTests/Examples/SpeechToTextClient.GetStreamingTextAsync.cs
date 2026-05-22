@@ -69,7 +69,7 @@ public partial class Tests
         // that's expected and not a failure of the streaming plumbing itself.
         if (finalUpdate is not null)
         {
-            finalUpdate.ModelId.Should().Be("voxtral-mini-transcribe-realtime-2602");
+            finalUpdate.ModelId.Should().Be(MistralClient.DefaultRealtimeModelId);
         }
     }
 }

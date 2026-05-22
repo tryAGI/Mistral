@@ -70,6 +70,6 @@ public partial class Tests
         var response = await speechClient.GetTextAsync(audioStream);
 
         response.Text.Should().NotBeNullOrWhiteSpace();
-        response.ModelId.Should().Be("voxtral-mini-2507");
+        response.ModelId.Should().Be(MistralClient.DefaultBatchModelId);
     }
 }
