@@ -22,7 +22,7 @@ namespace Mistral.IntegrationTests;
 
 public partial class Tests
 {
-    private const string VoxtralChatModelId = "voxtral-small-latest";
+    private const string VoxtralChatModelId = VoxtralModels.SmallChat;
 
     [TestMethod]
     public async Task ChatClient_AudioInput_VoxtralRoundTrip()

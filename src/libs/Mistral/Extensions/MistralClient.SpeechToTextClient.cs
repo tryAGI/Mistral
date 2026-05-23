@@ -27,26 +27,17 @@ public partial class MistralClient : Meai.ISpeechToTextClient
 
     /// <summary>
     /// Default model ID used by <see cref="Meai.ISpeechToTextClient.GetTextAsync"/> when
-    /// <see cref="Meai.SpeechToTextOptions.ModelId"/> is not set. Voxtral Mini Transcribe
-    /// (batch) — see https://docs.mistral.ai/models/voxtral-mini-transcribe-26-02.
+    /// <see cref="Meai.SpeechToTextOptions.ModelId"/> is not set. Aliases
+    /// <see cref="VoxtralModels.MiniTranscribe"/>.
     /// </summary>
-    /// <remarks>
-    /// When Mistral rotates the dated suffix (e.g. <c>2507</c> → next snapshot), update
-    /// this single constant rather than threading a new id through every caller.
-    /// </remarks>
-    public const string DefaultBatchModelId = "voxtral-mini-2507";
+    public const string DefaultBatchModelId = VoxtralModels.MiniTranscribe;
 
     /// <summary>
     /// Default model ID used by <see cref="Meai.ISpeechToTextClient.GetStreamingTextAsync"/>
-    /// when <see cref="Meai.SpeechToTextOptions.ModelId"/> is not set. Voxtral Mini
-    /// Transcribe Realtime — see
-    /// https://docs.mistral.ai/models/voxtral-mini-transcribe-realtime-26-02.
+    /// when <see cref="Meai.SpeechToTextOptions.ModelId"/> is not set. Aliases
+    /// <see cref="VoxtralModels.MiniTranscribeRealtime"/>.
     /// </summary>
-    /// <remarks>
-    /// When Mistral rotates the dated suffix (e.g. <c>2602</c> → next snapshot), update
-    /// this single constant rather than threading a new id through every caller.
-    /// </remarks>
-    public const string DefaultRealtimeModelId = "voxtral-mini-transcribe-realtime-2602";
+    public const string DefaultRealtimeModelId = VoxtralModels.MiniTranscribeRealtime;
 
     /// <inheritdoc />
     object? Meai.ISpeechToTextClient.GetService(Type serviceType, object? serviceKey)
