@@ -509,7 +509,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// Wraps ListFilesAsync as an IAsyncEnumerable&lt;global::Mistral.FileSchema&gt; that auto-pages over the response.
+        /// Wraps ListFilesAsync as an IAsyncEnumerable<global::Mistral.FileSchema> that auto-pages over the response.
         /// </summary>
         /// <param name="pageSize">
         /// Default Value: 100

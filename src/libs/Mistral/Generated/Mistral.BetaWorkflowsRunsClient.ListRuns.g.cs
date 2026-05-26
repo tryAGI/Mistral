@@ -524,7 +524,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// Wraps ListRunsAsync as an IAsyncEnumerable&lt;global::Mistral.WorkflowExecutionWithoutResultResponse&gt; that auto-pages over the response.
+        /// Wraps ListRunsAsync as an IAsyncEnumerable<global::Mistral.WorkflowExecutionWithoutResultResponse> that auto-pages over the response.
         /// </summary>
         /// <param name="workflowIdentifier">
         /// Filter by workflow name or id

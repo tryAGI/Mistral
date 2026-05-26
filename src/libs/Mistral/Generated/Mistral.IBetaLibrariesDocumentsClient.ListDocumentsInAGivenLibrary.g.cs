@@ -70,7 +70,7 @@ namespace Mistral
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Wraps ListDocumentsInAGivenLibraryAsync as an IAsyncEnumerable&lt;global::Mistral.DocumentOut&gt; that auto-pages over the response.
+        /// Wraps ListDocumentsInAGivenLibraryAsync as an IAsyncEnumerable<global::Mistral.DocumentOut> that auto-pages over the response.
         /// </summary>
         /// <param name="libraryId"></param>
         /// <param name="search"></param>
