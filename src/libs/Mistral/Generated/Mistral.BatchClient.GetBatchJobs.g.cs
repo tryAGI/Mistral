@@ -523,7 +523,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// Wraps GetBatchJobsAsync as an IAsyncEnumerable<global::Mistral.BatchJobOut> that auto-pages over the response.
+        /// Wraps GetBatchJobsAsync as an IAsyncEnumerable&lt;global::Mistral.BatchJobOut&gt; that auto-pages over the response.
         /// </summary>
         /// <param name="pageSize">
         /// Default Value: 100
