@@ -64,5 +64,32 @@ namespace Mistral
             string? nextPageToken = default,
             global::Mistral.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Wraps ListRunsAsync as an IAsyncEnumerable<global::Mistral.WorkflowExecutionWithoutResultResponse> that auto-pages over the response.
+        /// </summary>
+        /// <param name="workflowIdentifier">
+        /// Filter by workflow name or id
+        /// </param>
+        /// <param name="search">
+        /// Search by workflow name, display name or id
+        /// </param>
+        /// <param name="status">
+        /// Filter by workflow status
+        /// </param>
+        /// <param name="pageSize">
+        /// Number of items per page<br/>
+        /// Default Value: 50
+        /// </param> 
+        /// <param name="nextPageToken">Initial cursor to start enumerating from. Defaults to null (first page).</param>
+        /// <param name="cancellationToken"></param>
+        global::System.Collections.Generic.IAsyncEnumerable<global::Mistral.WorkflowExecutionWithoutResultResponse> ListRunsAutoPagingAsync(
+              string? workflowIdentifier = default,
+            string? search = default,
+            global::Mistral.AnyOf<global::Mistral.WorkflowExecutionStatus?, global::System.Collections.Generic.IList<global::Mistral.WorkflowExecutionStatus>, object>? status = default,
+            int? pageSize = default,
+            string? nextPageToken = null,
+            global::System.Threading.CancellationToken cancellationToken = default);
+
     }
 }

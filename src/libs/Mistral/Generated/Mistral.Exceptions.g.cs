@@ -66,6 +66,27 @@ namespace Mistral
             global::System.Exception? innerException = null,
             global::System.Collections.Generic.IDictionary<string, global::System.Collections.Generic.IEnumerable<string>>? responseHeaders = null)
         {
+            switch ((int)statusCode)
+            {
+                case 401: return new global::Mistral.AuthenticationException(message, innerException);
+                case 402: return new global::Mistral.PaymentRequiredException(message, innerException);
+                case 403: return new global::Mistral.AuthorizationException(message, innerException);
+                case 404: return new global::Mistral.NotFoundException(message, innerException);
+                case 408: return new global::Mistral.RequestTimeoutException(message, innerException);
+                case 409: return new global::Mistral.ConflictException(message, innerException);
+                case 422: return new global::Mistral.ValidationException(message, innerException);
+                case 429:
+                {
+                    var retryAfter = global::Mistral.ApiException.TryParseRetryAfter(responseHeaders);
+                    return new global::Mistral.RateLimitException(message, innerException) { RetryAfter = retryAfter };
+                }
+            }
+
+            if ((int)statusCode >= 500 && (int)statusCode <= 599)
+            {
+                return new global::Mistral.ServerException(message, innerException, statusCode);
+            }
+
             return new global::Mistral.ApiException(message, innerException, statusCode);
         }
 
@@ -202,6 +223,27 @@ namespace Mistral
             global::System.Exception? innerException = null,
             global::System.Collections.Generic.IDictionary<string, global::System.Collections.Generic.IEnumerable<string>>? responseHeaders = null)
         {
+            switch ((int)statusCode)
+            {
+                case 401: return new global::Mistral.AuthenticationException<T>(message, innerException);
+                case 402: return new global::Mistral.PaymentRequiredException<T>(message, innerException);
+                case 403: return new global::Mistral.AuthorizationException<T>(message, innerException);
+                case 404: return new global::Mistral.NotFoundException<T>(message, innerException);
+                case 408: return new global::Mistral.RequestTimeoutException<T>(message, innerException);
+                case 409: return new global::Mistral.ConflictException<T>(message, innerException);
+                case 422: return new global::Mistral.ValidationException<T>(message, innerException);
+                case 429:
+                {
+                    var retryAfter = global::Mistral.ApiException.TryParseRetryAfter(responseHeaders);
+                    return new global::Mistral.RateLimitException<T>(message, innerException) { RetryAfter = retryAfter };
+                }
+            }
+
+            if ((int)statusCode >= 500 && (int)statusCode <= 599)
+            {
+                return new global::Mistral.ServerException<T>(message, innerException, statusCode);
+            }
+
             return new global::Mistral.ApiException<T>(message, innerException, statusCode);
         }
 
@@ -223,4 +265,227 @@ namespace Mistral
             return exception;
         }
     }
+
+    /// <summary>Thrown for HTTP 401 (Unauthorized).</summary>
+    [global::System.Serializable]
+    public partial class AuthenticationException : global::Mistral.ApiException
+    {
+        /// <inheritdoc />
+        public AuthenticationException() : base("Authentication failed.", global::System.Net.HttpStatusCode.Unauthorized) { }
+        /// <inheritdoc />
+        public AuthenticationException(string message) : base(message, global::System.Net.HttpStatusCode.Unauthorized) { }
+        /// <inheritdoc />
+        public AuthenticationException(string message, global::System.Exception? innerException) : base(message, innerException, global::System.Net.HttpStatusCode.Unauthorized) { }
+    }
+
+    /// <summary>Thrown for HTTP 401 (Unauthorized) with a typed response body.</summary>
+    [global::System.Serializable]
+    public partial class AuthenticationException<T> : global::Mistral.ApiException<T>
+    {
+        /// <inheritdoc />
+        public AuthenticationException() : base("Authentication failed.", global::System.Net.HttpStatusCode.Unauthorized) { }
+        /// <inheritdoc />
+        public AuthenticationException(string message) : base(message, global::System.Net.HttpStatusCode.Unauthorized) { }
+        /// <inheritdoc />
+        public AuthenticationException(string message, global::System.Exception? innerException) : base(message, innerException, global::System.Net.HttpStatusCode.Unauthorized) { }
+    }
+
+    /// <summary>Thrown for HTTP 402 (Payment Required).</summary>
+    [global::System.Serializable]
+    public partial class PaymentRequiredException : global::Mistral.ApiException
+    {
+        /// <inheritdoc />
+        public PaymentRequiredException() : base("Payment required.", global::System.Net.HttpStatusCode.PaymentRequired) { }
+        /// <inheritdoc />
+        public PaymentRequiredException(string message) : base(message, global::System.Net.HttpStatusCode.PaymentRequired) { }
+        /// <inheritdoc />
+        public PaymentRequiredException(string message, global::System.Exception? innerException) : base(message, innerException, global::System.Net.HttpStatusCode.PaymentRequired) { }
+    }
+
+    /// <summary>Thrown for HTTP 402 (Payment Required) with a typed response body.</summary>
+    [global::System.Serializable]
+    public partial class PaymentRequiredException<T> : global::Mistral.ApiException<T>
+    {
+        /// <inheritdoc />
+        public PaymentRequiredException() : base("Payment required.", global::System.Net.HttpStatusCode.PaymentRequired) { }
+        /// <inheritdoc />
+        public PaymentRequiredException(string message) : base(message, global::System.Net.HttpStatusCode.PaymentRequired) { }
+        /// <inheritdoc />
+        public PaymentRequiredException(string message, global::System.Exception? innerException) : base(message, innerException, global::System.Net.HttpStatusCode.PaymentRequired) { }
+    }
+
+    /// <summary>Thrown for HTTP 403 (Forbidden).</summary>
+    [global::System.Serializable]
+    public partial class AuthorizationException : global::Mistral.ApiException
+    {
+        /// <inheritdoc />
+        public AuthorizationException() : base("Authorization failed.", global::System.Net.HttpStatusCode.Forbidden) { }
+        /// <inheritdoc />
+        public AuthorizationException(string message) : base(message, global::System.Net.HttpStatusCode.Forbidden) { }
+        /// <inheritdoc />
+        public AuthorizationException(string message, global::System.Exception? innerException) : base(message, innerException, global::System.Net.HttpStatusCode.Forbidden) { }
+    }
+
+    /// <summary>Thrown for HTTP 403 (Forbidden) with a typed response body.</summary>
+    [global::System.Serializable]
+    public partial class AuthorizationException<T> : global::Mistral.ApiException<T>
+    {
+        /// <inheritdoc />
+        public AuthorizationException() : base("Authorization failed.", global::System.Net.HttpStatusCode.Forbidden) { }
+        /// <inheritdoc />
+        public AuthorizationException(string message) : base(message, global::System.Net.HttpStatusCode.Forbidden) { }
+        /// <inheritdoc />
+        public AuthorizationException(string message, global::System.Exception? innerException) : base(message, innerException, global::System.Net.HttpStatusCode.Forbidden) { }
+    }
+
+    /// <summary>Thrown for HTTP 404 (Not Found).</summary>
+    [global::System.Serializable]
+    public partial class NotFoundException : global::Mistral.ApiException
+    {
+        /// <inheritdoc />
+        public NotFoundException() : base("Resource not found.", global::System.Net.HttpStatusCode.NotFound) { }
+        /// <inheritdoc />
+        public NotFoundException(string message) : base(message, global::System.Net.HttpStatusCode.NotFound) { }
+        /// <inheritdoc />
+        public NotFoundException(string message, global::System.Exception? innerException) : base(message, innerException, global::System.Net.HttpStatusCode.NotFound) { }
+    }
+
+    /// <summary>Thrown for HTTP 404 (Not Found) with a typed response body.</summary>
+    [global::System.Serializable]
+    public partial class NotFoundException<T> : global::Mistral.ApiException<T>
+    {
+        /// <inheritdoc />
+        public NotFoundException() : base("Resource not found.", global::System.Net.HttpStatusCode.NotFound) { }
+        /// <inheritdoc />
+        public NotFoundException(string message) : base(message, global::System.Net.HttpStatusCode.NotFound) { }
+        /// <inheritdoc />
+        public NotFoundException(string message, global::System.Exception? innerException) : base(message, innerException, global::System.Net.HttpStatusCode.NotFound) { }
+    }
+
+    /// <summary>Thrown for HTTP 408 (Request Timeout).</summary>
+    [global::System.Serializable]
+    public partial class RequestTimeoutException : global::Mistral.ApiException
+    {
+        /// <inheritdoc />
+        public RequestTimeoutException() : base("Request timed out.", global::System.Net.HttpStatusCode.RequestTimeout) { }
+        /// <inheritdoc />
+        public RequestTimeoutException(string message) : base(message, global::System.Net.HttpStatusCode.RequestTimeout) { }
+        /// <inheritdoc />
+        public RequestTimeoutException(string message, global::System.Exception? innerException) : base(message, innerException, global::System.Net.HttpStatusCode.RequestTimeout) { }
+    }
+
+    /// <summary>Thrown for HTTP 408 (Request Timeout) with a typed response body.</summary>
+    [global::System.Serializable]
+    public partial class RequestTimeoutException<T> : global::Mistral.ApiException<T>
+    {
+        /// <inheritdoc />
+        public RequestTimeoutException() : base("Request timed out.", global::System.Net.HttpStatusCode.RequestTimeout) { }
+        /// <inheritdoc />
+        public RequestTimeoutException(string message) : base(message, global::System.Net.HttpStatusCode.RequestTimeout) { }
+        /// <inheritdoc />
+        public RequestTimeoutException(string message, global::System.Exception? innerException) : base(message, innerException, global::System.Net.HttpStatusCode.RequestTimeout) { }
+    }
+
+    /// <summary>Thrown for HTTP 409 (Conflict).</summary>
+    [global::System.Serializable]
+    public partial class ConflictException : global::Mistral.ApiException
+    {
+        /// <inheritdoc />
+        public ConflictException() : base("Conflict.", global::System.Net.HttpStatusCode.Conflict) { }
+        /// <inheritdoc />
+        public ConflictException(string message) : base(message, global::System.Net.HttpStatusCode.Conflict) { }
+        /// <inheritdoc />
+        public ConflictException(string message, global::System.Exception? innerException) : base(message, innerException, global::System.Net.HttpStatusCode.Conflict) { }
+    }
+
+    /// <summary>Thrown for HTTP 409 (Conflict) with a typed response body.</summary>
+    [global::System.Serializable]
+    public partial class ConflictException<T> : global::Mistral.ApiException<T>
+    {
+        /// <inheritdoc />
+        public ConflictException() : base("Conflict.", global::System.Net.HttpStatusCode.Conflict) { }
+        /// <inheritdoc />
+        public ConflictException(string message) : base(message, global::System.Net.HttpStatusCode.Conflict) { }
+        /// <inheritdoc />
+        public ConflictException(string message, global::System.Exception? innerException) : base(message, innerException, global::System.Net.HttpStatusCode.Conflict) { }
+    }
+
+    /// <summary>Thrown for HTTP 422 (Unprocessable Entity).</summary>
+    [global::System.Serializable]
+    public partial class ValidationException : global::Mistral.ApiException
+    {
+        /// <inheritdoc />
+        public ValidationException() : base("Validation failed.", (global::System.Net.HttpStatusCode)422) { }
+        /// <inheritdoc />
+        public ValidationException(string message) : base(message, (global::System.Net.HttpStatusCode)422) { }
+        /// <inheritdoc />
+        public ValidationException(string message, global::System.Exception? innerException) : base(message, innerException, (global::System.Net.HttpStatusCode)422) { }
+    }
+
+    /// <summary>Thrown for HTTP 422 (Unprocessable Entity) with a typed response body.</summary>
+    [global::System.Serializable]
+    public partial class ValidationException<T> : global::Mistral.ApiException<T>
+    {
+        /// <inheritdoc />
+        public ValidationException() : base("Validation failed.", (global::System.Net.HttpStatusCode)422) { }
+        /// <inheritdoc />
+        public ValidationException(string message) : base(message, (global::System.Net.HttpStatusCode)422) { }
+        /// <inheritdoc />
+        public ValidationException(string message, global::System.Exception? innerException) : base(message, innerException, (global::System.Net.HttpStatusCode)422) { }
+    }
+
+    /// <summary>Thrown for HTTP 429 (Too Many Requests). Exposes the parsed <c>Retry-After</c> delay.</summary>
+    [global::System.Serializable]
+    public partial class RateLimitException : global::Mistral.ApiException
+    {
+        /// <summary>The parsed <c>Retry-After</c> delay, if present on the response.</summary>
+        public global::System.TimeSpan? RetryAfter { get; set; }
+
+        /// <inheritdoc />
+        public RateLimitException() : base("Rate limit exceeded.", (global::System.Net.HttpStatusCode)429) { }
+        /// <inheritdoc />
+        public RateLimitException(string message) : base(message, (global::System.Net.HttpStatusCode)429) { }
+        /// <inheritdoc />
+        public RateLimitException(string message, global::System.Exception? innerException) : base(message, innerException, (global::System.Net.HttpStatusCode)429) { }
+    }
+
+    /// <summary>Thrown for HTTP 429 (Too Many Requests) with a typed response body. Exposes the parsed <c>Retry-After</c> delay.</summary>
+    [global::System.Serializable]
+    public partial class RateLimitException<T> : global::Mistral.ApiException<T>
+    {
+        /// <summary>The parsed <c>Retry-After</c> delay, if present on the response.</summary>
+        public global::System.TimeSpan? RetryAfter { get; set; }
+
+        /// <inheritdoc />
+        public RateLimitException() : base("Rate limit exceeded.", (global::System.Net.HttpStatusCode)429) { }
+        /// <inheritdoc />
+        public RateLimitException(string message) : base(message, (global::System.Net.HttpStatusCode)429) { }
+        /// <inheritdoc />
+        public RateLimitException(string message, global::System.Exception? innerException) : base(message, innerException, (global::System.Net.HttpStatusCode)429) { }
+    }
+
+    /// <summary>Thrown for HTTP 5xx (Server Error).</summary>
+    [global::System.Serializable]
+    public partial class ServerException : global::Mistral.ApiException
+    {
+        /// <inheritdoc />
+        public ServerException() : base("Server error.", global::System.Net.HttpStatusCode.InternalServerError) { }
+        /// <inheritdoc />
+        public ServerException(string message, global::System.Net.HttpStatusCode statusCode) : base(message, statusCode) { }
+        /// <inheritdoc />
+        public ServerException(string message, global::System.Exception? innerException, global::System.Net.HttpStatusCode statusCode) : base(message, innerException, statusCode) { }
+    }
+
+    /// <summary>Thrown for HTTP 5xx (Server Error) with a typed response body.</summary>
+    [global::System.Serializable]
+    public partial class ServerException<T> : global::Mistral.ApiException<T>
+    {
+        /// <inheritdoc />
+        public ServerException() : base("Server error.", global::System.Net.HttpStatusCode.InternalServerError) { }
+        /// <inheritdoc />
+        public ServerException(string message, global::System.Net.HttpStatusCode statusCode) : base(message, statusCode) { }
+        /// <inheritdoc />
+        public ServerException(string message, global::System.Exception? innerException, global::System.Net.HttpStatusCode statusCode) : base(message, innerException, statusCode) { }
+    }
+
 }

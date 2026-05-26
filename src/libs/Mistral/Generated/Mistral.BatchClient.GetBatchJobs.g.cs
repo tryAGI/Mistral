@@ -521,5 +521,56 @@ namespace Mistral
                 __httpRequest?.Dispose();
             }
         }
+
+        /// <summary>
+        /// Wraps GetBatchJobsAsync as an IAsyncEnumerable<global::Mistral.BatchJobOut> that auto-pages over the response.
+        /// </summary>
+        /// <param name="pageSize">
+        /// Default Value: 100
+        /// </param>
+        /// <param name="model"></param>
+        /// <param name="agentId"></param>
+        /// <param name="metadata"></param>
+        /// <param name="createdAfter"></param>
+        /// <param name="createdByMe">
+        /// Default Value: false
+        /// </param>
+        /// <param name="status"></param>
+        /// <param name="orderBy">
+        /// Default Value: -created
+        /// </param> 
+        /// <param name="page">Initial page number to start enumerating from. Defaults to 1.</param>
+        /// <param name="cancellationToken"></param>
+        public global::System.Collections.Generic.IAsyncEnumerable<global::Mistral.BatchJobOut> GetBatchJobsAutoPagingAsync(
+              int? pageSize = default,
+            string? model = default,
+            string? agentId = default,
+            object? metadata = default,
+            global::System.DateTime? createdAfter = default,
+            bool? createdByMe = default,
+            global::System.Collections.Generic.IList<global::Mistral.BatchJobStatus>? status = default,
+            global::Mistral.JobsApiRoutesBatchGetBatchJobsOrderBy? orderBy = default,
+            int? page = null,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            return global::Mistral.AutoSDKPager.OffsetAsync<global::Mistral.BatchJobsOut, global::Mistral.BatchJobOut>(
+                fetchPage: (__page, __ct) => GetBatchJobsAsync(
+                    page: __page,
+                    pageSize: pageSize,
+                    model: model,
+                    agentId: agentId,
+                    metadata: metadata,
+                    createdAfter: createdAfter,
+                    createdByMe: createdByMe,
+                    status: status,
+                    orderBy: orderBy,
+                    cancellationToken: __ct),
+                extractItems: static __response => __response is null
+                    ? null
+                    : (global::System.Collections.Generic.IEnumerable<global::Mistral.BatchJobOut>?)__response.Data,
+                initialPage: page ?? 1,
+                cancellationToken: cancellationToken);
+        }
+
     }
 }

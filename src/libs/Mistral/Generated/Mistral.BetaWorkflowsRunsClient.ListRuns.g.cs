@@ -522,5 +522,48 @@ namespace Mistral
                 __httpRequest?.Dispose();
             }
         }
+
+        /// <summary>
+        /// Wraps ListRunsAsync as an IAsyncEnumerable<global::Mistral.WorkflowExecutionWithoutResultResponse> that auto-pages over the response.
+        /// </summary>
+        /// <param name="workflowIdentifier">
+        /// Filter by workflow name or id
+        /// </param>
+        /// <param name="search">
+        /// Search by workflow name, display name or id
+        /// </param>
+        /// <param name="status">
+        /// Filter by workflow status
+        /// </param>
+        /// <param name="pageSize">
+        /// Number of items per page<br/>
+        /// Default Value: 50
+        /// </param> 
+        /// <param name="nextPageToken">Initial cursor to start enumerating from. Defaults to null (first page).</param>
+        /// <param name="cancellationToken"></param>
+        public global::System.Collections.Generic.IAsyncEnumerable<global::Mistral.WorkflowExecutionWithoutResultResponse> ListRunsAutoPagingAsync(
+              string? workflowIdentifier = default,
+            string? search = default,
+            global::Mistral.AnyOf<global::Mistral.WorkflowExecutionStatus?, global::System.Collections.Generic.IList<global::Mistral.WorkflowExecutionStatus>, object>? status = default,
+            int? pageSize = default,
+            string? nextPageToken = null,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            return global::Mistral.AutoSDKPager.CursorAsync<global::Mistral.WorkflowExecutionListResponse, global::Mistral.WorkflowExecutionWithoutResultResponse>(
+                fetchPage: (__cursor, __ct) => ListRunsAsync(
+                    workflowIdentifier: workflowIdentifier,
+                    search: search,
+                    status: status,
+                    pageSize: pageSize,
+                    nextPageToken: __cursor,
+                    cancellationToken: __ct),
+                extractItems: static __response => __response is null
+                    ? null
+                    : (global::System.Collections.Generic.IEnumerable<global::Mistral.WorkflowExecutionWithoutResultResponse>?)__response.Executions,
+                extractNextCursor: static __response => __response is null ? null : __response.NextPageToken,
+                initialCursor: nextPageToken,
+                cancellationToken: cancellationToken);
+        }
+
     }
 }

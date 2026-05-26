@@ -507,5 +507,51 @@ namespace Mistral
                 __httpRequest?.Dispose();
             }
         }
+
+        /// <summary>
+        /// Wraps ListFilesAsync as an IAsyncEnumerable<global::Mistral.FileSchema> that auto-pages over the response.
+        /// </summary>
+        /// <param name="pageSize">
+        /// Default Value: 100
+        /// </param>
+        /// <param name="includeTotal">
+        /// Default Value: true
+        /// </param>
+        /// <param name="sampleType"></param>
+        /// <param name="source"></param>
+        /// <param name="search"></param>
+        /// <param name="purpose"></param>
+        /// <param name="mimetypes"></param> 
+        /// <param name="page">Initial page number to start enumerating from. Defaults to 1.</param>
+        /// <param name="cancellationToken"></param>
+        public global::System.Collections.Generic.IAsyncEnumerable<global::Mistral.FileSchema> ListFilesAutoPagingAsync(
+              int? pageSize = default,
+            bool? includeTotal = default,
+            global::System.Collections.Generic.IList<global::Mistral.SampleType>? sampleType = default,
+            global::System.Collections.Generic.IList<global::Mistral.Source>? source = default,
+            string? search = default,
+            global::Mistral.FilePurpose? purpose = default,
+            global::System.Collections.Generic.IList<string>? mimetypes = default,
+            int? page = null,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            return global::Mistral.AutoSDKPager.OffsetAsync<global::Mistral.ListFilesOut, global::Mistral.FileSchema>(
+                fetchPage: (__page, __ct) => ListFilesAsync(
+                    page: __page,
+                    pageSize: pageSize,
+                    includeTotal: includeTotal,
+                    sampleType: sampleType,
+                    source: source,
+                    search: search,
+                    purpose: purpose,
+                    mimetypes: mimetypes,
+                    cancellationToken: __ct),
+                extractItems: static __response => __response is null
+                    ? null
+                    : (global::System.Collections.Generic.IEnumerable<global::Mistral.FileSchema>?)__response.Data,
+                initialPage: page ?? 1,
+                cancellationToken: cancellationToken);
+        }
+
     }
 }

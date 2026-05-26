@@ -537,5 +537,49 @@ namespace Mistral
                 __httpRequest?.Dispose();
             }
         }
+
+        /// <summary>
+        /// Wraps ListDocumentsInAGivenLibraryAsync as an IAsyncEnumerable<global::Mistral.DocumentOut> that auto-pages over the response.
+        /// </summary>
+        /// <param name="libraryId"></param>
+        /// <param name="search"></param>
+        /// <param name="pageSize">
+        /// Default Value: 100
+        /// </param>
+        /// <param name="filtersAttributes"></param>
+        /// <param name="sortBy">
+        /// Default Value: created_at
+        /// </param>
+        /// <param name="sortOrder">
+        /// Default Value: desc
+        /// </param> 
+        /// <param name="page">Initial page number to start enumerating from. Defaults to 1.</param>
+        /// <param name="cancellationToken"></param>
+        public global::System.Collections.Generic.IAsyncEnumerable<global::Mistral.DocumentOut> ListDocumentsInAGivenLibraryAutoPagingAsync(
+            global::System.Guid libraryId,             string? search = default,
+            int? pageSize = default,
+            string? filtersAttributes = default,
+            string? sortBy = default,
+            string? sortOrder = default,
+            int? page = null,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            return global::Mistral.AutoSDKPager.OffsetAsync<global::Mistral.ListDocumentOut, global::Mistral.DocumentOut>(
+                fetchPage: (__page, __ct) => ListDocumentsInAGivenLibraryAsync(
+                    libraryId: libraryId,
+                    search: search,
+                    pageSize: pageSize,
+                    page: __page,
+                    filtersAttributes: filtersAttributes,
+                    sortBy: sortBy,
+                    sortOrder: sortOrder,
+                    cancellationToken: __ct),
+                extractItems: static __response => __response is null
+                    ? null
+                    : (global::System.Collections.Generic.IEnumerable<global::Mistral.DocumentOut>?)__response.Data,
+                initialPage: page ?? 1,
+                cancellationToken: cancellationToken);
+        }
+
     }
 }

@@ -68,5 +68,33 @@ namespace Mistral
             global::System.Collections.Generic.IList<string>? mimetypes = default,
             global::Mistral.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Wraps ListFilesAsync as an IAsyncEnumerable<global::Mistral.FileSchema> that auto-pages over the response.
+        /// </summary>
+        /// <param name="pageSize">
+        /// Default Value: 100
+        /// </param>
+        /// <param name="includeTotal">
+        /// Default Value: true
+        /// </param>
+        /// <param name="sampleType"></param>
+        /// <param name="source"></param>
+        /// <param name="search"></param>
+        /// <param name="purpose"></param>
+        /// <param name="mimetypes"></param> 
+        /// <param name="page">Initial page number to start enumerating from. Defaults to 1.</param>
+        /// <param name="cancellationToken"></param>
+        global::System.Collections.Generic.IAsyncEnumerable<global::Mistral.FileSchema> ListFilesAutoPagingAsync(
+              int? pageSize = default,
+            bool? includeTotal = default,
+            global::System.Collections.Generic.IList<global::Mistral.SampleType>? sampleType = default,
+            global::System.Collections.Generic.IList<global::Mistral.Source>? source = default,
+            string? search = default,
+            global::Mistral.FilePurpose? purpose = default,
+            global::System.Collections.Generic.IList<string>? mimetypes = default,
+            int? page = null,
+            global::System.Threading.CancellationToken cancellationToken = default);
+
     }
 }

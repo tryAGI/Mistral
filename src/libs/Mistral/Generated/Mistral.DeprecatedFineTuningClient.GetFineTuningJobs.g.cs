@@ -527,5 +527,57 @@ namespace Mistral
                 __httpRequest?.Dispose();
             }
         }
+
+        /// <summary>
+        /// Wraps GetFineTuningJobsAsync as an IAsyncEnumerable<global::Mistral.DataItem2> that auto-pages over the response.
+        /// </summary>
+        /// <param name="pageSize">
+        /// Default Value: 100
+        /// </param>
+        /// <param name="model"></param>
+        /// <param name="createdAfter"></param>
+        /// <param name="createdBefore"></param>
+        /// <param name="createdByMe">
+        /// Default Value: false
+        /// </param>
+        /// <param name="status"></param>
+        /// <param name="wandbProject"></param>
+        /// <param name="wandbName"></param>
+        /// <param name="suffix"></param> 
+        /// <param name="page">Initial page number to start enumerating from. Defaults to 1.</param>
+        /// <param name="cancellationToken"></param>
+        public global::System.Collections.Generic.IAsyncEnumerable<global::Mistral.DataItem2> GetFineTuningJobsAutoPagingAsync(
+              int? pageSize = default,
+            string? model = default,
+            global::System.DateTime? createdAfter = default,
+            global::System.DateTime? createdBefore = default,
+            bool? createdByMe = default,
+            global::Mistral.JobsApiRoutesFineTuningGetFineTuningJobsStatus2? status = default,
+            string? wandbProject = default,
+            string? wandbName = default,
+            string? suffix = default,
+            int? page = null,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            return global::Mistral.AutoSDKPager.OffsetAsync<global::Mistral.JobsOut, global::Mistral.DataItem2>(
+                fetchPage: (__page, __ct) => GetFineTuningJobsAsync(
+                    page: __page,
+                    pageSize: pageSize,
+                    model: model,
+                    createdAfter: createdAfter,
+                    createdBefore: createdBefore,
+                    createdByMe: createdByMe,
+                    status: status,
+                    wandbProject: wandbProject,
+                    wandbName: wandbName,
+                    suffix: suffix,
+                    cancellationToken: __ct),
+                extractItems: static __response => __response is null
+                    ? null
+                    : (global::System.Collections.Generic.IEnumerable<global::Mistral.DataItem2>?)__response.Data,
+                initialPage: page ?? 1,
+                cancellationToken: cancellationToken);
+        }
+
     }
 }
