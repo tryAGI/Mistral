@@ -78,7 +78,7 @@ namespace Mistral
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Wraps GetFineTuningJobsAsync as an IAsyncEnumerable<global::Mistral.DataItem2> that auto-pages over the response.
+        /// Wraps GetFineTuningJobsAsync as an IAsyncEnumerable&lt;global::Mistral.DataItem2&gt; that auto-pages over the response.
         /// </summary>
         /// <param name="pageSize">
         /// Default Value: 100
