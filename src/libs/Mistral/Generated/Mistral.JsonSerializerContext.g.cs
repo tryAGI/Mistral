@@ -433,6 +433,26 @@ namespace Mistral
 
             typeof(global::Mistral.JsonConverters.WorkflowTypeNullableJsonConverter),
 
+            typeof(global::Mistral.JsonConverters.MCPSupportedLanguageJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.MCPSupportedLanguageNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.MCPUIToolMetaVisibilityVariant1ItemJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.MCPUIToolMetaVisibilityVariant1ItemNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.OutboundAuthenticationTypeJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.OutboundAuthenticationTypeNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ToolExecutionTaskSupport2JsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ToolExecutionTaskSupport2NullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ToolTypeJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ToolTypeNullableJsonConverter),
+
             typeof(global::Mistral.JsonConverters.FilesApiRoutesUploadFileRequestVisibilityJsonConverter),
 
             typeof(global::Mistral.JsonConverters.FilesApiRoutesUploadFileRequestVisibilityNullableJsonConverter),
@@ -710,6 +730,8 @@ namespace Mistral
             typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<global::Mistral.WorkflowExecutionResponse, global::Mistral.WorkflowExecutionSyncResponse>),
 
             typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<global::Mistral.WorkflowExecutionResponse, global::Mistral.WorkflowExecutionSyncResponse>),
+
+            typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::Mistral.IntegrationsSchemasApiToolTool>, global::System.Collections.Generic.IList<global::Mistral.MCPTool>, global::System.Collections.Generic.IList<object>>),
 
             typeof(global::Mistral.JsonConverters.UnixTimestampJsonConverter),
         })]
@@ -1644,6 +1666,26 @@ namespace Mistral
 
             typeof(global::Mistral.JsonConverters.WorkflowTypeNullableJsonConverter),
 
+            typeof(global::Mistral.JsonConverters.MCPSupportedLanguageJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.MCPSupportedLanguageNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.MCPUIToolMetaVisibilityVariant1ItemJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.MCPUIToolMetaVisibilityVariant1ItemNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.OutboundAuthenticationTypeJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.OutboundAuthenticationTypeNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ToolExecutionTaskSupport2JsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ToolExecutionTaskSupport2NullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ToolTypeJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ToolTypeNullableJsonConverter),
+
             typeof(global::Mistral.JsonConverters.FilesApiRoutesUploadFileRequestVisibilityJsonConverter),
 
             typeof(global::Mistral.JsonConverters.FilesApiRoutesUploadFileRequestVisibilityNullableJsonConverter),
@@ -1922,6 +1964,8 @@ namespace Mistral
 
             typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<global::Mistral.WorkflowExecutionResponse, global::Mistral.WorkflowExecutionSyncResponse>),
 
+            typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::Mistral.IntegrationsSchemasApiToolTool>, global::System.Collections.Generic.IList<global::Mistral.MCPTool>, global::System.Collections.Generic.IList<object>>),
+
             typeof(global::Mistral.JsonConverters.UnixTimestampJsonConverter),
         })]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ListDocumentOut), TypeInfoPropertyName = "ListDocumentOut_Mistral_ListDocumentOut")]
@@ -2179,6 +2223,30 @@ namespace Mistral
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.WorkflowUnarchiveResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.WorkflowUpdateRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.WorkflowUpdateResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AuthUrlResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AuthenticationConfiguration))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.OutboundAuthenticationType), TypeInfoPropertyName = "OutboundAuthenticationType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ConnectionCredentials))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.OAuth2Token))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ConnectorAuthenticationHeader))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.CredentialsCreateOrUpdate))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.CredentialsResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Mistral.AuthenticationConfiguration>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Mistral.OutboundAuthenticationType>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.MCPSupportedLanguage), TypeInfoPropertyName = "MCPSupportedLanguage2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.MCPTool))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ToolAnnotations))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.MCPToolMeta2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ToolExecution))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.MCPUIToolMeta))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.TurbineToolMeta))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Mistral.MCPUIToolMetaVisibilityVariant1Item>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.MCPUIToolMetaVisibilityVariant1Item), TypeInfoPropertyName = "MCPUIToolMetaVisibilityVariant1Item2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.PublicAuthenticationMethod))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Mistral.ConnectorAuthenticationHeader>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ToolExecutionTaskSupport2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ToolType), TypeInfoPropertyName = "ToolType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.TurbineToolLocale))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.FilesApiRoutesUploadFileRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.FilesApiRoutesUploadFileRequestVisibility), TypeInfoPropertyName = "FilesApiRoutesUploadFileRequestVisibility2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.LibrariesDocumentsUploadV1Request))]
@@ -2221,6 +2289,9 @@ namespace Mistral
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.StreamV1WorkflowsExecutionsExecutionIdStreamGetResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.GetStreamEventsV1WorkflowsEventsStreamGetResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AnyOf<global::Mistral.WorkflowExecutionResponse, global::Mistral.WorkflowExecutionSyncResponse>), TypeInfoPropertyName = "AnyOfWorkflowExecutionResponseWorkflowExecutionSyncResponse2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AnyOf<global::System.Collections.Generic.IList<global::Mistral.IntegrationsSchemasApiToolTool>, global::System.Collections.Generic.IList<global::Mistral.MCPTool>, global::System.Collections.Generic.IList<object>>), TypeInfoPropertyName = "AnyOfIListIntegrationsSchemasApiToolToolIListMCPToolIListObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Mistral.MCPTool>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Mistral.PublicAuthenticationMethod>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Mistral.ValidationError>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Mistral.DataItem>))]
@@ -2334,6 +2405,10 @@ namespace Mistral
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Mistral.WorkflowBasicDefinition>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Mistral.WorkflowRegistration>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Mistral.ScheduleDefinitionOutput>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Mistral.AuthenticationConfiguration>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Mistral.OutboundAuthenticationType>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Mistral.MCPUIToolMetaVisibilityVariant1Item>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Mistral.ConnectorAuthenticationHeader>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Mistral.RequestSource>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Mistral.SampleType>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Mistral.Source>))]
@@ -2345,6 +2420,9 @@ namespace Mistral
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Mistral.AnyOf<global::Mistral.ModelConversation, global::Mistral.AgentConversation>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Mistral.Agent>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Mistral.AgentAliasResponse>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AnyOf<global::System.Collections.Generic.List<global::Mistral.IntegrationsSchemasApiToolTool>, global::System.Collections.Generic.List<global::Mistral.MCPTool>, global::System.Collections.Generic.List<object>>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Mistral.MCPTool>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Mistral.PublicAuthenticationMethod>))]
     internal sealed partial class SourceGenerationContextChunk1 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -2597,6 +2675,16 @@ namespace Mistral
             options.Converters.Add(new global::Mistral.JsonConverters.WorkflowExecutionStatusNullableJsonConverter());
             options.Converters.Add(new global::Mistral.JsonConverters.WorkflowTypeJsonConverter());
             options.Converters.Add(new global::Mistral.JsonConverters.WorkflowTypeNullableJsonConverter());
+            options.Converters.Add(new global::Mistral.JsonConverters.MCPSupportedLanguageJsonConverter());
+            options.Converters.Add(new global::Mistral.JsonConverters.MCPSupportedLanguageNullableJsonConverter());
+            options.Converters.Add(new global::Mistral.JsonConverters.MCPUIToolMetaVisibilityVariant1ItemJsonConverter());
+            options.Converters.Add(new global::Mistral.JsonConverters.MCPUIToolMetaVisibilityVariant1ItemNullableJsonConverter());
+            options.Converters.Add(new global::Mistral.JsonConverters.OutboundAuthenticationTypeJsonConverter());
+            options.Converters.Add(new global::Mistral.JsonConverters.OutboundAuthenticationTypeNullableJsonConverter());
+            options.Converters.Add(new global::Mistral.JsonConverters.ToolExecutionTaskSupport2JsonConverter());
+            options.Converters.Add(new global::Mistral.JsonConverters.ToolExecutionTaskSupport2NullableJsonConverter());
+            options.Converters.Add(new global::Mistral.JsonConverters.ToolTypeJsonConverter());
+            options.Converters.Add(new global::Mistral.JsonConverters.ToolTypeNullableJsonConverter());
             options.Converters.Add(new global::Mistral.JsonConverters.FilesApiRoutesUploadFileRequestVisibilityJsonConverter());
             options.Converters.Add(new global::Mistral.JsonConverters.FilesApiRoutesUploadFileRequestVisibilityNullableJsonConverter());
             options.Converters.Add(new global::Mistral.JsonConverters.JobsApiRoutesFineTuningGetFineTuningJobsStatus2JsonConverter());
@@ -2736,6 +2824,7 @@ namespace Mistral
             options.Converters.Add(new global::Mistral.JsonConverters.AnyOfJsonConverter<global::Mistral.JobsApiRoutesFineTuningCreateFineTuningJobResponseVariant1?, global::Mistral.LegacyJobMetadataOut>());
             options.Converters.Add(new global::Mistral.JsonConverters.AnyOfJsonConverter<global::Mistral.WorkflowExecutionResponse, global::Mistral.WorkflowExecutionSyncResponse>());
             options.Converters.Add(new global::Mistral.JsonConverters.AnyOfJsonConverter<global::Mistral.WorkflowExecutionResponse, global::Mistral.WorkflowExecutionSyncResponse>());
+            options.Converters.Add(new global::Mistral.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::Mistral.IntegrationsSchemasApiToolTool>, global::System.Collections.Generic.IList<global::Mistral.MCPTool>, global::System.Collections.Generic.IList<object>>());
             options.Converters.Add(new global::Mistral.JsonConverters.UnixTimestampJsonConverter());
 
             return options;
