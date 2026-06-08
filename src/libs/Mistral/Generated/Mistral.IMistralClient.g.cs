@@ -71,6 +71,11 @@ namespace Mistral
         public BetaAgentsClient BetaAgents { get; }
 
         /// <summary>
+        /// (beta) Connectors.
+        /// </summary>
+        public BetaConnectorsClient BetaConnectors { get; }
+
+        /// <summary>
         /// (beta) Conversations API.
         /// </summary>
         public BetaConversationsClient BetaConversations { get; }
