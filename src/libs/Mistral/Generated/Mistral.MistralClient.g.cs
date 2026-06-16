@@ -86,6 +86,15 @@ namespace Mistral
         };
 
         /// <summary>
+        /// (beta) Connectors.
+        /// </summary>
+        public BetaConnectorsClient BetaConnectors => new BetaConnectorsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
         /// (beta) Conversations API.
         /// </summary>
         public BetaConversationsClient BetaConversations => new BetaConversationsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
