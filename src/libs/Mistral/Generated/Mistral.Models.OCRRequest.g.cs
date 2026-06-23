@@ -29,10 +29,11 @@ namespace Mistral
         public required global::Mistral.AnyOf<global::Mistral.FileChunk, global::Mistral.DocumentURLChunk, global::Mistral.ImageURLChunk> Document { get; set; }
 
         /// <summary>
-        /// Specific pages user wants to process in various formats: single number, range, or list of both. Starts from 0
+        /// Specific pages to process. Accepts a list of integers or a string of comma-separated numbers and ranges (e.g. '0,1,2' or '0-5' or '0,2-4'). Page numbers start from 0.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pages")]
-        public global::System.Collections.Generic.IList<int>? Pages { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<int>, object>))]
+        public global::Mistral.AnyOf<string, global::System.Collections.Generic.IList<int>, object>? Pages { get; set; }
 
         /// <summary>
         /// Include image URLs in response
@@ -89,6 +90,13 @@ namespace Mistral
         public bool? ExtractFooter { get; set; }
 
         /// <summary>
+        /// Return paragraph-level bounding boxes for all content blocks in the response<br/>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("include_blocks")]
+        public bool? IncludeBlocks { get; set; }
+
+        /// <summary>
         /// Granularity for confidence scores: 'word' (per-word scores) or 'page' (aggregate only). Defaults to None (no confidence scores) to keep response payload small.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("confidence_scores_granularity")]
@@ -109,7 +117,7 @@ namespace Mistral
         /// <param name="model"></param>
         /// <param name="id"></param>
         /// <param name="pages">
-        /// Specific pages user wants to process in various formats: single number, range, or list of both. Starts from 0
+        /// Specific pages to process. Accepts a list of integers or a string of comma-separated numbers and ranges (e.g. '0,1,2' or '0-5' or '0,2-4'). Page numbers start from 0.
         /// </param>
         /// <param name="includeImageBase64">
         /// Include image URLs in response
@@ -136,6 +144,10 @@ namespace Mistral
         /// <param name="extractFooter">
         /// Default Value: false
         /// </param>
+        /// <param name="includeBlocks">
+        /// Return paragraph-level bounding boxes for all content blocks in the response<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="confidenceScoresGranularity">
         /// Granularity for confidence scores: 'word' (per-word scores) or 'page' (aggregate only). Defaults to None (no confidence scores) to keep response payload small.
         /// </param>
@@ -146,7 +158,7 @@ namespace Mistral
             global::Mistral.AnyOf<global::Mistral.FileChunk, global::Mistral.DocumentURLChunk, global::Mistral.ImageURLChunk> document,
             string? model,
             string? id,
-            global::System.Collections.Generic.IList<int>? pages,
+            global::Mistral.AnyOf<string, global::System.Collections.Generic.IList<int>, object>? pages,
             bool? includeImageBase64,
             int? imageLimit,
             int? imageMinSize,
@@ -156,6 +168,7 @@ namespace Mistral
             global::Mistral.OCRRequestTableFormat2? tableFormat,
             bool? extractHeader,
             bool? extractFooter,
+            bool? includeBlocks,
             global::Mistral.OCRRequestConfidenceScoresGranularity2? confidenceScoresGranularity)
         {
             this.Model = model;
@@ -171,6 +184,7 @@ namespace Mistral
             this.TableFormat = tableFormat;
             this.ExtractHeader = extractHeader;
             this.ExtractFooter = extractFooter;
+            this.IncludeBlocks = includeBlocks;
             this.ConfidenceScoresGranularity = confidenceScoresGranularity;
         }
 

@@ -257,6 +257,10 @@ namespace Mistral
 
             typeof(global::Mistral.JsonConverters.MistralPromptModeNullableJsonConverter),
 
+            typeof(global::Mistral.JsonConverters.OCRPageObjectBlocksVariant1ItemDiscriminatorTypeJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.OCRPageObjectBlocksVariant1ItemDiscriminatorTypeNullableJsonConverter),
+
             typeof(global::Mistral.JsonConverters.OCRRequestTableFormat2JsonConverter),
 
             typeof(global::Mistral.JsonConverters.OCRRequestTableFormat2NullableJsonConverter),
@@ -559,6 +563,8 @@ namespace Mistral
 
             typeof(global::Mistral.JsonConverters.MessagesItem2JsonConverter),
 
+            typeof(global::Mistral.JsonConverters.BlocksVariant1ItemJsonConverter),
+
             typeof(global::Mistral.JsonConverters.Data2JsonConverter),
 
             typeof(global::Mistral.JsonConverters.Data3JsonConverter),
@@ -668,6 +674,8 @@ namespace Mistral
             typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<object, string>),
 
             typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<global::Mistral.FileChunk, global::Mistral.DocumentURLChunk, global::Mistral.ImageURLChunk>),
+
+            typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<int>, object>),
 
             typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Mistral.SystemMessageContentChunks>>),
 
@@ -1068,8 +1076,16 @@ namespace Mistral
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.MessagesItem2), TypeInfoPropertyName = "MessagesItem22")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.InstructRequestMessageDiscriminator))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.InstructRequestMessageDiscriminatorRole), TypeInfoPropertyName = "InstructRequestMessageDiscriminatorRole2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.OCRAsideTextBlock))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.OCRCaptionBlock))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.OCRCodeBlock))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.OCRConfidenceScore))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.OCREquationBlock))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.OCRFooterBlock))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.OCRHeaderBlock))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.OCRImageBlock))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.OCRImageObject))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.OCRListBlock))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.OCRPageConfidenceScores))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Mistral.OCRConfidenceScore>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.OCRPageDimensions))]
@@ -1077,8 +1093,18 @@ namespace Mistral
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Mistral.OCRImageObject>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Mistral.OCRTableObject>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.OCRTableObject))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Mistral.BlocksVariant1Item>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.BlocksVariant1Item), TypeInfoPropertyName = "BlocksVariant1Item2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.OCRTextBlock))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.OCRTableBlock))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.OCRTitleBlock))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.OCRReferencesBlock))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.OCRSignatureBlock))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.OCRPageObjectBlocksVariant1ItemDiscriminator))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.OCRPageObjectBlocksVariant1ItemDiscriminatorType), TypeInfoPropertyName = "OCRPageObjectBlocksVariant1ItemDiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.OCRRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AnyOf<global::Mistral.FileChunk, global::Mistral.DocumentURLChunk, global::Mistral.ImageURLChunk>), TypeInfoPropertyName = "AnyOfFileChunkDocumentURLChunkImageURLChunk2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AnyOf<string, global::System.Collections.Generic.IList<int>, object>), TypeInfoPropertyName = "AnyOfStringIListInt32Object2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.OCRRequestTableFormat2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.OCRRequestConfidenceScoresGranularity2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.OCRResponse))]
@@ -1217,24 +1243,6 @@ namespace Mistral
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.DatasetPreview))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.DatasetPreviews))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.PaginatedResultDatasetPreview))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.DatasetRecord))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.DatasetRecords))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.PaginatedResultDatasetRecord))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.DeleteDatasetRecordsInSchema))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Mistral.ChatCompletionEventPreview>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.FieldOptionCountItem))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.FieldOptionCountsInSchema))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.FieldOptionCounts))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Mistral.FieldOptionCountItem>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AnyOf<global::Mistral.FilterGroup, global::Mistral.FilterCondition, object>), TypeInfoPropertyName = "AnyOfFilterGroupFilterConditionObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.GetChatCompletionEventIdsInSchema))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.GetChatCompletionEventsInSchema))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.JudgeClassificationOutput))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Mistral.JudgeClassificationOutputOption>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.JudgeClassificationOutputOption))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.JudgeOutput))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AnyOf<string, double?>), TypeInfoPropertyName = "AnyOfStringDouble2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.JudgeOutputType), TypeInfoPropertyName = "JudgeOutputType2")]
     internal sealed partial class SourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -1489,6 +1497,10 @@ namespace Mistral
             typeof(global::Mistral.JsonConverters.MistralPromptModeJsonConverter),
 
             typeof(global::Mistral.JsonConverters.MistralPromptModeNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.OCRPageObjectBlocksVariant1ItemDiscriminatorTypeJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.OCRPageObjectBlocksVariant1ItemDiscriminatorTypeNullableJsonConverter),
 
             typeof(global::Mistral.JsonConverters.OCRRequestTableFormat2JsonConverter),
 
@@ -1792,6 +1804,8 @@ namespace Mistral
 
             typeof(global::Mistral.JsonConverters.MessagesItem2JsonConverter),
 
+            typeof(global::Mistral.JsonConverters.BlocksVariant1ItemJsonConverter),
+
             typeof(global::Mistral.JsonConverters.Data2JsonConverter),
 
             typeof(global::Mistral.JsonConverters.Data3JsonConverter),
@@ -1902,6 +1916,8 @@ namespace Mistral
 
             typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<global::Mistral.FileChunk, global::Mistral.DocumentURLChunk, global::Mistral.ImageURLChunk>),
 
+            typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<int>, object>),
+
             typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Mistral.SystemMessageContentChunks>>),
 
             typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<string, object, global::System.Collections.Generic.IList<global::Mistral.ContentChunk>>),
@@ -1978,6 +1994,24 @@ namespace Mistral
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Mistral.LibraryOut>), TypeInfoPropertyName = "ListLibraryOut_System_Collections_Generic_List_global_Mistral_LibraryOut")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Mistral.SharingOut>), TypeInfoPropertyName = "ListSharingOut_System_Collections_Generic_List_global_Mistral_SharingOut")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Mistral.OneOf<global::Mistral.WorkflowExecutionStartedResponse, global::Mistral.WorkflowExecutionCompletedResponse, global::Mistral.WorkflowExecutionFailedResponse, global::Mistral.WorkflowExecutionCanceledResponse, global::Mistral.WorkflowExecutionContinuedAsNewResponse, global::Mistral.WorkflowTaskTimedOutResponse, global::Mistral.WorkflowTaskFailedResponse, global::Mistral.CustomTaskStartedResponse, global::Mistral.CustomTaskInProgressResponse, global::Mistral.CustomTaskCompletedResponse, global::Mistral.CustomTaskFailedResponse, global::Mistral.CustomTaskTimedOutResponse, global::Mistral.CustomTaskCanceledResponse, global::Mistral.ActivityTaskStartedResponse, global::Mistral.ActivityTaskCompletedResponse, global::Mistral.ActivityTaskRetryingResponse, global::Mistral.ActivityTaskFailedResponse>>), TypeInfoPropertyName = "ActivityTaskFailedResponse_40289a742d078cef")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.DatasetRecord))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.DatasetRecords))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.PaginatedResultDatasetRecord))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.DeleteDatasetRecordsInSchema))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Mistral.ChatCompletionEventPreview>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.FieldOptionCountItem))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.FieldOptionCountsInSchema))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.FieldOptionCounts))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Mistral.FieldOptionCountItem>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AnyOf<global::Mistral.FilterGroup, global::Mistral.FilterCondition, object>), TypeInfoPropertyName = "AnyOfFilterGroupFilterConditionObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.GetChatCompletionEventIdsInSchema))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.GetChatCompletionEventsInSchema))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.JudgeClassificationOutput))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Mistral.JudgeClassificationOutputOption>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.JudgeClassificationOutputOption))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.JudgeOutput))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AnyOf<string, double?>), TypeInfoPropertyName = "AnyOfStringDouble2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.JudgeOutputType), TypeInfoPropertyName = "JudgeOutputType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.Output), TypeInfoPropertyName = "Output2_3")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.JudgeRegressionOutput))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.JudgePreviewOutputDiscriminator))]
@@ -2346,6 +2380,8 @@ namespace Mistral
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Mistral.OCRConfidenceScore>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Mistral.OCRImageObject>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Mistral.OCRTableObject>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Mistral.BlocksVariant1Item>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AnyOf<string, global::System.Collections.Generic.List<int>, object>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Mistral.OCRPageObject>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AnyOf<string, global::System.Collections.Generic.List<global::Mistral.SystemMessageContentChunks>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Mistral.SystemMessageContentChunks>))]
@@ -2587,6 +2623,8 @@ namespace Mistral
             options.Converters.Add(new global::Mistral.JsonConverters.InstructRequestMessageDiscriminatorRoleNullableJsonConverter());
             options.Converters.Add(new global::Mistral.JsonConverters.MistralPromptModeJsonConverter());
             options.Converters.Add(new global::Mistral.JsonConverters.MistralPromptModeNullableJsonConverter());
+            options.Converters.Add(new global::Mistral.JsonConverters.OCRPageObjectBlocksVariant1ItemDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Mistral.JsonConverters.OCRPageObjectBlocksVariant1ItemDiscriminatorTypeNullableJsonConverter());
             options.Converters.Add(new global::Mistral.JsonConverters.OCRRequestTableFormat2JsonConverter());
             options.Converters.Add(new global::Mistral.JsonConverters.OCRRequestTableFormat2NullableJsonConverter());
             options.Converters.Add(new global::Mistral.JsonConverters.OCRRequestConfidenceScoresGranularity2JsonConverter());
@@ -2738,6 +2776,7 @@ namespace Mistral
             options.Converters.Add(new global::Mistral.JsonConverters.InputVariant1ItemJsonConverter());
             options.Converters.Add(new global::Mistral.JsonConverters.InputVariant2ItemItemJsonConverter());
             options.Converters.Add(new global::Mistral.JsonConverters.MessagesItem2JsonConverter());
+            options.Converters.Add(new global::Mistral.JsonConverters.BlocksVariant1ItemJsonConverter());
             options.Converters.Add(new global::Mistral.JsonConverters.Data2JsonConverter());
             options.Converters.Add(new global::Mistral.JsonConverters.Data3JsonConverter());
             options.Converters.Add(new global::Mistral.JsonConverters.RealtimeTranscriptionClientMessageJsonConverter());
@@ -2793,6 +2832,7 @@ namespace Mistral
             options.Converters.Add(new global::Mistral.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>>());
             options.Converters.Add(new global::Mistral.JsonConverters.AnyOfJsonConverter<object, string>());
             options.Converters.Add(new global::Mistral.JsonConverters.AnyOfJsonConverter<global::Mistral.FileChunk, global::Mistral.DocumentURLChunk, global::Mistral.ImageURLChunk>());
+            options.Converters.Add(new global::Mistral.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<int>, object>());
             options.Converters.Add(new global::Mistral.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Mistral.SystemMessageContentChunks>>());
             options.Converters.Add(new global::Mistral.JsonConverters.AnyOfJsonConverter<string, object, global::System.Collections.Generic.IList<global::Mistral.ContentChunk>>());
             options.Converters.Add(new global::Mistral.JsonConverters.AnyOfJsonConverter<string, object, global::System.Collections.Generic.IList<global::Mistral.ContentChunk>>());
