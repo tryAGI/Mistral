@@ -753,7 +753,9 @@ namespace Mistral
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Mistral.LibraryOut>), TypeInfoPropertyName = "ListLibraryOut_System_Collections_Generic_List_global_Mistral_LibraryOut")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Mistral.SharingOut>), TypeInfoPropertyName = "ListSharingOut_System_Collections_Generic_List_global_Mistral_SharingOut")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Mistral.OneOf<global::Mistral.WorkflowExecutionStartedResponse, global::Mistral.WorkflowExecutionCompletedResponse, global::Mistral.WorkflowExecutionFailedResponse, global::Mistral.WorkflowExecutionCanceledResponse, global::Mistral.WorkflowExecutionContinuedAsNewResponse, global::Mistral.WorkflowTaskTimedOutResponse, global::Mistral.WorkflowTaskFailedResponse, global::Mistral.CustomTaskStartedResponse, global::Mistral.CustomTaskInProgressResponse, global::Mistral.CustomTaskCompletedResponse, global::Mistral.CustomTaskFailedResponse, global::Mistral.CustomTaskTimedOutResponse, global::Mistral.CustomTaskCanceledResponse, global::Mistral.ActivityTaskStartedResponse, global::Mistral.ActivityTaskCompletedResponse, global::Mistral.ActivityTaskRetryingResponse, global::Mistral.ActivityTaskFailedResponse>>), TypeInfoPropertyName = "ActivityTaskFailedResponse_40289a742d078cef")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.JsonSerializerContextTypes))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, string>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, object>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Text.Json.JsonElement?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.BaseModelCard))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(string))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(int))]
@@ -1026,7 +1028,6 @@ namespace Mistral
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.BatchJobIn))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Mistral.BatchRequest>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.BatchRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, string>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AssistantMessage))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AnyOf<string, object, global::System.Collections.Generic.IList<global::Mistral.ContentChunk>>), TypeInfoPropertyName = "AnyOfStringObjectIListContentChunk2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Mistral.ContentChunk>))]
@@ -1242,7 +1243,6 @@ namespace Mistral
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.Dataset))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.DatasetPreview))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.DatasetPreviews))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.PaginatedResultDatasetPreview))]
     internal sealed partial class SourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -1994,6 +1994,7 @@ namespace Mistral
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Mistral.LibraryOut>), TypeInfoPropertyName = "ListLibraryOut_System_Collections_Generic_List_global_Mistral_LibraryOut")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Mistral.SharingOut>), TypeInfoPropertyName = "ListSharingOut_System_Collections_Generic_List_global_Mistral_SharingOut")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Mistral.OneOf<global::Mistral.WorkflowExecutionStartedResponse, global::Mistral.WorkflowExecutionCompletedResponse, global::Mistral.WorkflowExecutionFailedResponse, global::Mistral.WorkflowExecutionCanceledResponse, global::Mistral.WorkflowExecutionContinuedAsNewResponse, global::Mistral.WorkflowTaskTimedOutResponse, global::Mistral.WorkflowTaskFailedResponse, global::Mistral.CustomTaskStartedResponse, global::Mistral.CustomTaskInProgressResponse, global::Mistral.CustomTaskCompletedResponse, global::Mistral.CustomTaskFailedResponse, global::Mistral.CustomTaskTimedOutResponse, global::Mistral.CustomTaskCanceledResponse, global::Mistral.ActivityTaskStartedResponse, global::Mistral.ActivityTaskCompletedResponse, global::Mistral.ActivityTaskRetryingResponse, global::Mistral.ActivityTaskFailedResponse>>), TypeInfoPropertyName = "ActivityTaskFailedResponse_40289a742d078cef")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.PaginatedResultDatasetPreview))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.DatasetRecord))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.DatasetRecords))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.PaginatedResultDatasetRecord))]
@@ -2326,6 +2327,968 @@ namespace Mistral
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AnyOf<global::System.Collections.Generic.IList<global::Mistral.IntegrationsSchemasApiToolTool>, global::System.Collections.Generic.IList<global::Mistral.MCPTool>, global::System.Collections.Generic.IList<object>>), TypeInfoPropertyName = "AnyOfIListIntegrationsSchemasApiToolToolIListMCPToolIListObject2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Mistral.MCPTool>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Mistral.PublicAuthenticationMethod>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(int?))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool?))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.DataItem?), TypeInfoPropertyName = "NullableDataItem2_3")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ModelListDataItemDiscriminatorType?), TypeInfoPropertyName = "NullableModelListDataItemDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AnyOf<string, int?>?), TypeInfoPropertyName = "NullableAnyOfStringInt322")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.APIKeyAuthType?), TypeInfoPropertyName = "NullableAPIKeyAuthType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ToolsItem?), TypeInfoPropertyName = "NullableToolsItem2_3")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AgentToolDiscriminatorType?), TypeInfoPropertyName = "NullableAgentToolDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AnyOf<string, int?, object>?), TypeInfoPropertyName = "NullableAnyOfStringInt32Object2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ToolsItem2?), TypeInfoPropertyName = "NullableToolsItem22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AgentCreationRequestToolDiscriminatorType?), TypeInfoPropertyName = "NullableAgentCreationRequestToolDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ToolsItem3?), TypeInfoPropertyName = "NullableToolsItem32")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AgentUpdateRequestToolDiscriminatorType?), TypeInfoPropertyName = "NullableAgentUpdateRequestToolDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.BuiltInConnectors?), TypeInfoPropertyName = "NullableBuiltInConnectors2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.CodeInterpreterToolType?), TypeInfoPropertyName = "NullableCodeInterpreterToolType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.CompletionArgsStop?), TypeInfoPropertyName = "NullableCompletionArgsStop2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ToolChoiceEnum?), TypeInfoPropertyName = "NullableToolChoiceEnum2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ConversationAppendRequest?), TypeInfoPropertyName = "NullableConversationAppendRequest2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AnyOf<global::Mistral.MessageInputEntry, global::Mistral.MessageOutputEntry, global::Mistral.FunctionResultEntry, global::Mistral.FunctionCallEntry, global::Mistral.ToolExecutionEntry, global::Mistral.AgentHandoffEntry>?), TypeInfoPropertyName = "NullableAnyOfMessageInputEntryMessageOutputEntryFunctionResultEntryFunctionCallEntryToolExecutionEntryAgentHandoffEntry2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ConversationRestartRequest?), TypeInfoPropertyName = "NullableConversationRestartRequest2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.CustomConnectorType?), TypeInfoPropertyName = "NullableCustomConnectorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.CustomConnectorAuthorizationVariant1DiscriminatorType?), TypeInfoPropertyName = "NullableCustomConnectorAuthorizationVariant1DiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.DocumentLibraryToolType?), TypeInfoPropertyName = "NullableDocumentLibraryToolType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.FunctionCallEntryArguments?), TypeInfoPropertyName = "NullableFunctionCallEntryArguments2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.FunctionToolType?), TypeInfoPropertyName = "NullableFunctionToolType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ImageDetail?), TypeInfoPropertyName = "NullableImageDetail2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ImageGenerationToolType?), TypeInfoPropertyName = "NullableImageGenerationToolType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AnyOf<global::Mistral.ImageURL, string>?), TypeInfoPropertyName = "NullableAnyOfImageURLString2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.MessageInputEntryRole?), TypeInfoPropertyName = "NullableMessageInputEntryRole2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AnyOf<string, global::System.Collections.Generic.IList<global::Mistral.AnyOf<global::Mistral.TextChunk, global::Mistral.ImageURLChunk, global::Mistral.ToolFileChunk, global::Mistral.DocumentURLChunk, global::Mistral.ThinkChunk>>>?), TypeInfoPropertyName = "NullableAnyOfStringIListAnyOfTextChunkImageURLChunkToolFileChunkDocumentURLChunkThinkChunk2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AnyOf<string, global::System.Collections.Generic.IList<global::Mistral.AnyOf<global::Mistral.TextChunk, global::Mistral.ImageURLChunk, global::Mistral.ToolFileChunk, global::Mistral.DocumentURLChunk, global::Mistral.ThinkChunk, global::Mistral.ToolReferenceChunk>>>?), TypeInfoPropertyName = "NullableAnyOfStringIListAnyOfTextChunkImageURLChunkToolFileChunkDocumentURLChunkThinkChunkToolReferenceChunk2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ToolsItem4?), TypeInfoPropertyName = "NullableToolsItem42")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ModelConversationToolDiscriminatorType?), TypeInfoPropertyName = "NullableModelConversationToolDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ModerationLLMAction?), TypeInfoPropertyName = "NullableModerationLLMAction2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.OAuth2TokenAuthType?), TypeInfoPropertyName = "NullableOAuth2TokenAuthType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.RequestSource?), TypeInfoPropertyName = "NullableRequestSource2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ResponseFormats?), TypeInfoPropertyName = "NullableResponseFormats2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AnyOf<global::Mistral.TextChunk, global::Mistral.ToolReferenceChunk, global::Mistral.ReferenceChunk>?), TypeInfoPropertyName = "NullableAnyOfTextChunkToolReferenceChunkReferenceChunk2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ToolCallConfirmationConfirmation?), TypeInfoPropertyName = "NullableToolCallConfirmationConfirmation2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AnyOf<global::Mistral.BuiltInConnectors?, string>?), TypeInfoPropertyName = "NullableAnyOfBuiltInConnectorsString2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.WebSearchPremiumToolType?), TypeInfoPropertyName = "NullableWebSearchPremiumToolType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.WebSearchToolType?), TypeInfoPropertyName = "NullableWebSearchToolType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AnyOf<global::Mistral.MessageOutputEntry, global::Mistral.ToolExecutionEntry, global::Mistral.FunctionCallEntry, global::Mistral.AgentHandoffEntry>?), TypeInfoPropertyName = "NullableAnyOfMessageOutputEntryToolExecutionEntryFunctionCallEntryAgentHandoffEntry2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ConversationRequest?), TypeInfoPropertyName = "NullableConversationRequest2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AnyOf<string, global::Mistral.OutputContentChunks?>?), TypeInfoPropertyName = "NullableAnyOfStringOutputContentChunks2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.OutputContentChunks?), TypeInfoPropertyName = "NullableOutputContentChunks2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.SSETypes?), TypeInfoPropertyName = "NullableSSETypes2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.Data?), TypeInfoPropertyName = "NullableData2_3")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ConversationEventsDataDiscriminatorType?), TypeInfoPropertyName = "NullableConversationEventsDataDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AnyOf<global::Mistral.TextChunk, global::Mistral.ImageURLChunk, global::Mistral.ToolFileChunk, global::Mistral.DocumentURLChunk, global::Mistral.ThinkChunk>?), TypeInfoPropertyName = "NullableAnyOfTextChunkImageURLChunkToolFileChunkDocumentURLChunkThinkChunk2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AnyOf<global::Mistral.TextChunk, global::Mistral.ImageURLChunk, global::Mistral.ToolFileChunk, global::Mistral.DocumentURLChunk, global::Mistral.ThinkChunk, global::Mistral.ToolReferenceChunk>?), TypeInfoPropertyName = "NullableAnyOfTextChunkImageURLChunkToolFileChunkDocumentURLChunkThinkChunkToolReferenceChunk2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AnyOf<global::Mistral.MessageInputEntry, global::Mistral.MessageOutputEntry>?), TypeInfoPropertyName = "NullableAnyOfMessageInputEntryMessageOutputEntry2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ConversationInputs?), TypeInfoPropertyName = "NullableConversationInputs2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ToolsVariant1Item?), TypeInfoPropertyName = "NullableToolsVariant1Item2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ConversationRequestBaseToolsVariant1ItemDiscriminatorType?), TypeInfoPropertyName = "NullableConversationRequestBaseToolsVariant1ItemDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ConversationStreamRequest?), TypeInfoPropertyName = "NullableConversationStreamRequest2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ConversationAppendRequestBaseHandoffExecution?), TypeInfoPropertyName = "NullableConversationAppendRequestBaseHandoffExecution2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ConversationAppendStreamRequest?), TypeInfoPropertyName = "NullableConversationAppendStreamRequest2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ConversationRestartRequestBaseHandoffExecution?), TypeInfoPropertyName = "NullableConversationRestartRequestBaseHandoffExecution2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ConversationRestartStreamRequest?), TypeInfoPropertyName = "NullableConversationRestartStreamRequest2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.FilePurpose?), TypeInfoPropertyName = "NullableFilePurpose2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.FileVisibility?), TypeInfoPropertyName = "NullableFileVisibility2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.SampleType?), TypeInfoPropertyName = "NullableSampleType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.Source?), TypeInfoPropertyName = "NullableSource2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Guid?))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(long?))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.DateTimeOffset?))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.FineTuneableModelType?), TypeInfoPropertyName = "NullableFineTuneableModelType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ClassifierJobOutStatus?), TypeInfoPropertyName = "NullableClassifierJobOutStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.IntegrationsVariant1Item?), TypeInfoPropertyName = "NullableIntegrationsVariant1Item2_3")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ClassifierJobOutIntegrationsVariant1ItemDiscriminatorType?), TypeInfoPropertyName = "NullableClassifierJobOutIntegrationsVariant1ItemDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.CompletionJobOutStatus?), TypeInfoPropertyName = "NullableCompletionJobOutStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.IntegrationsVariant1Item2?), TypeInfoPropertyName = "NullableIntegrationsVariant1Item22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.CompletionJobOutIntegrationsVariant1ItemDiscriminatorType?), TypeInfoPropertyName = "NullableCompletionJobOutIntegrationsVariant1ItemDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.RepositoriesItem?), TypeInfoPropertyName = "NullableRepositoriesItem2_3")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.CompletionJobOutRepositorieDiscriminatorType?), TypeInfoPropertyName = "NullableCompletionJobOutRepositorieDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.DataItem2?), TypeInfoPropertyName = "NullableDataItem22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.JobsOutDataItemDiscriminatorJobType?), TypeInfoPropertyName = "NullableJobsOutDataItemDiscriminatorJobType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.IntegrationsVariant1Item3?), TypeInfoPropertyName = "NullableIntegrationsVariant1Item32")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.JobInIntegrationsVariant1ItemDiscriminatorType?), TypeInfoPropertyName = "NullableJobInIntegrationsVariant1ItemDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AnyOf<global::Mistral.CompletionTrainingParametersIn, global::Mistral.ClassifierTrainingParametersIn>?), TypeInfoPropertyName = "NullableAnyOfCompletionTrainingParametersInClassifierTrainingParametersIn2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.RepositoriesVariant1Item?), TypeInfoPropertyName = "NullableRepositoriesVariant1Item2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.JobInRepositoriesVariant1ItemDiscriminatorType?), TypeInfoPropertyName = "NullableJobInRepositoriesVariant1ItemDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ClassifierDetailedJobOutStatus?), TypeInfoPropertyName = "NullableClassifierDetailedJobOutStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.IntegrationsVariant1Item4?), TypeInfoPropertyName = "NullableIntegrationsVariant1Item42")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ClassifierDetailedJobOutIntegrationsVariant1ItemDiscriminatorType?), TypeInfoPropertyName = "NullableClassifierDetailedJobOutIntegrationsVariant1ItemDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.CompletionDetailedJobOutStatus?), TypeInfoPropertyName = "NullableCompletionDetailedJobOutStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.IntegrationsVariant1Item5?), TypeInfoPropertyName = "NullableIntegrationsVariant1Item52")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.CompletionDetailedJobOutIntegrationsVariant1ItemDiscriminatorType?), TypeInfoPropertyName = "NullableCompletionDetailedJobOutIntegrationsVariant1ItemDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.RepositoriesItem2?), TypeInfoPropertyName = "NullableRepositoriesItem22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.CompletionDetailedJobOutRepositorieDiscriminatorType?), TypeInfoPropertyName = "NullableCompletionDetailedJobOutRepositorieDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.BatchJobStatus?), TypeInfoPropertyName = "NullableBatchJobStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ApiEndpoint?), TypeInfoPropertyName = "NullableApiEndpoint2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AnyOf<string, object, global::System.Collections.Generic.IList<global::Mistral.ContentChunk>>?), TypeInfoPropertyName = "NullableAnyOfStringObjectIListContentChunk2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ContentChunk?), TypeInfoPropertyName = "NullableContentChunk2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AnyOf<string, byte[]>?), TypeInfoPropertyName = "NullableAnyOfStringByteArray2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AnyOf<string, global::System.Collections.Generic.IList<string>>?), TypeInfoPropertyName = "NullableAnyOfStringIListString2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.MessagesItem?), TypeInfoPropertyName = "NullableMessagesItem2_3")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ChatCompletionRequestMessageDiscriminatorRole?), TypeInfoPropertyName = "NullableChatCompletionRequestMessageDiscriminatorRole2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AnyOf<global::Mistral.ToolChoice2, global::Mistral.ToolChoiceEnum?>?), TypeInfoPropertyName = "NullableAnyOfToolChoice2ToolChoiceEnum2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ChatCompletionRequestReasoningEffort?), TypeInfoPropertyName = "NullableChatCompletionRequestReasoningEffort2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AnyOf<global::System.Collections.Generic.IList<global::Mistral.InputVariant1Item>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::Mistral.InputVariant2ItemItem>>>?), TypeInfoPropertyName = "NullableAnyOfIListInputVariant1ItemIListIListInputVariant2ItemItem2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.InputVariant1Item?), TypeInfoPropertyName = "NullableInputVariant1Item2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ChatModerationRequestInputVariant1ItemDiscriminatorRole?), TypeInfoPropertyName = "NullableChatModerationRequestInputVariant1ItemDiscriminatorRole2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.InputVariant2ItemItem?), TypeInfoPropertyName = "NullableInputVariant2ItemItem2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ChatModerationRequestInputVariant2ItemItemDiscriminatorRole?), TypeInfoPropertyName = "NullableChatModerationRequestInputVariant2ItemItemDiscriminatorRole2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.EmbeddingDtype?), TypeInfoPropertyName = "NullableEmbeddingDtype2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.EncodingFormat?), TypeInfoPropertyName = "NullableEncodingFormat2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AnyOf<object, string>?), TypeInfoPropertyName = "NullableAnyOfObjectString2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.MessagesItem2?), TypeInfoPropertyName = "NullableMessagesItem22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.InstructRequestMessageDiscriminatorRole?), TypeInfoPropertyName = "NullableInstructRequestMessageDiscriminatorRole2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.BlocksVariant1Item?), TypeInfoPropertyName = "NullableBlocksVariant1Item2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.OCRPageObjectBlocksVariant1ItemDiscriminatorType?), TypeInfoPropertyName = "NullableOCRPageObjectBlocksVariant1ItemDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AnyOf<global::Mistral.FileChunk, global::Mistral.DocumentURLChunk, global::Mistral.ImageURLChunk>?), TypeInfoPropertyName = "NullableAnyOfFileChunkDocumentURLChunkImageURLChunk2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AnyOf<string, global::System.Collections.Generic.IList<int>, object>?), TypeInfoPropertyName = "NullableAnyOfStringIListInt32Object2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.OCRTableObjectFormat?), TypeInfoPropertyName = "NullableOCRTableObjectFormat2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AnyOf<string, global::System.Collections.Generic.IList<global::Mistral.SystemMessageContentChunks>>?), TypeInfoPropertyName = "NullableAnyOfStringIListSystemMessageContentChunks2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.SystemMessageContentChunks?), TypeInfoPropertyName = "NullableSystemMessageContentChunks2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ToolTypes?), TypeInfoPropertyName = "NullableToolTypes2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.SpeechOutputFormat?), TypeInfoPropertyName = "NullableSpeechOutputFormat2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.SpeechStreamEventsEvent?), TypeInfoPropertyName = "NullableSpeechStreamEventsEvent2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.Data2?), TypeInfoPropertyName = "NullableData22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.SpeechStreamEventsDataDiscriminatorType?), TypeInfoPropertyName = "NullableSpeechStreamEventsDataDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.TimestampGranularity?), TypeInfoPropertyName = "NullableTimestampGranularity2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.TranscriptionStreamEventTypes?), TypeInfoPropertyName = "NullableTranscriptionStreamEventTypes2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.Data3?), TypeInfoPropertyName = "NullableData32")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.TranscriptionStreamEventsDataDiscriminatorType?), TypeInfoPropertyName = "NullableTranscriptionStreamEventsDataDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.RealtimeTranscriptionClientMessage?), TypeInfoPropertyName = "NullableRealtimeTranscriptionClientMessage2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.RealtimeTranscriptionClientMessageDiscriminatorType?), TypeInfoPropertyName = "NullableRealtimeTranscriptionClientMessageDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AudioEncoding?), TypeInfoPropertyName = "NullableAudioEncoding2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.MessagesItem3?), TypeInfoPropertyName = "NullableMessagesItem32")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AgentsCompletionRequestMessageDiscriminatorRole?), TypeInfoPropertyName = "NullableAgentsCompletionRequestMessageDiscriminatorRole2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AgentsCompletionRequestReasoningEffort?), TypeInfoPropertyName = "NullableAgentsCompletionRequestReasoningEffort2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ChatClassificationRequestInputs?), TypeInfoPropertyName = "NullableChatClassificationRequestInputs2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ContentChunkDiscriminatorType?), TypeInfoPropertyName = "NullableContentChunkDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.SystemMessageContentChunksDiscriminatorType?), TypeInfoPropertyName = "NullableSystemMessageContentChunksDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ProcessStatus?), TypeInfoPropertyName = "NullableProcessStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AnyOf<bool?, string, int?, double?, global::System.DateTime?, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<int>, global::System.Collections.Generic.IList<double>, global::System.Collections.Generic.IList<bool>>?), TypeInfoPropertyName = "NullableAnyOfBooleanStringInt32DoubleDateTimeIListStringIListInt32IListDoubleIListBoolean2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.FilterConditionOp?), TypeInfoPropertyName = "NullableFilterConditionOp2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AnyOf<global::Mistral.FilterGroup, global::Mistral.FilterCondition>?), TypeInfoPropertyName = "NullableAnyOfFilterGroupFilterCondition2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ShareEnum?), TypeInfoPropertyName = "NullableShareEnum2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.EntityType?), TypeInfoPropertyName = "NullableEntityType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.BaseFieldDefinitionType?), TypeInfoPropertyName = "NullableBaseFieldDefinitionType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.BaseFieldDefinitionSupportedOperator?), TypeInfoPropertyName = "NullableBaseFieldDefinitionSupportedOperator2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.BaseTaskStatus?), TypeInfoPropertyName = "NullableBaseTaskStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AnyOf<bool?, int?, double?, string, global::System.DateTime?, global::System.Collections.Generic.IList<string>, object>?), TypeInfoPropertyName = "NullableAnyOfBooleanInt32DoubleStringDateTimeIListStringObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AnyOf<string, bool?, object>?), TypeInfoPropertyName = "NullableAnyOfStringBooleanObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ConversationSource?), TypeInfoPropertyName = "NullableConversationSource2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AnyOf<global::Mistral.FilterGroup, global::Mistral.FilterCondition, object>?), TypeInfoPropertyName = "NullableAnyOfFilterGroupFilterConditionObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AnyOf<string, double?>?), TypeInfoPropertyName = "NullableAnyOfStringDouble2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.JudgeOutputType?), TypeInfoPropertyName = "NullableJudgeOutputType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.Output?), TypeInfoPropertyName = "NullableOutput2_3")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.JudgePreviewOutputDiscriminatorType?), TypeInfoPropertyName = "NullableJudgePreviewOutputDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.Output2?), TypeInfoPropertyName = "NullableOutput22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.PostJudgeInSchemaOutputDiscriminatorType?), TypeInfoPropertyName = "NullablePostJudgeInSchemaOutputDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.Output3?), TypeInfoPropertyName = "NullableOutput32")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.PutJudgeInSchemaOutputDiscriminatorType?), TypeInfoPropertyName = "NullablePutJudgeInSchemaOutputDiscriminatorType2")]
+    internal sealed partial class SourceGenerationContextChunk1 : global::System.Text.Json.Serialization.JsonSerializerContext
+    {
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
+        DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
+        Converters = new global::System.Type[]
+        {
+            typeof(global::Mistral.JsonConverters.ModelListDataItemDiscriminatorTypeJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ModelListDataItemDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.APIKeyAuthTypeJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.APIKeyAuthTypeNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.AgentToolDiscriminatorTypeJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.AgentToolDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.AgentCreationRequestToolDiscriminatorTypeJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.AgentCreationRequestToolDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.AgentUpdateRequestToolDiscriminatorTypeJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.AgentUpdateRequestToolDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.BuiltInConnectorsJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.BuiltInConnectorsNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.CodeInterpreterToolTypeJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.CodeInterpreterToolTypeNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.CompletionArgsReasoningEffort2JsonConverter),
+
+            typeof(global::Mistral.JsonConverters.CompletionArgsReasoningEffort2NullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.CustomConnectorTypeJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.CustomConnectorTypeNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.CustomConnectorAuthorizationVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.CustomConnectorAuthorizationVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.DocumentLibraryToolTypeJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.DocumentLibraryToolTypeNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.FunctionCallEntryConfirmationStatus2JsonConverter),
+
+            typeof(global::Mistral.JsonConverters.FunctionCallEntryConfirmationStatus2NullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.FunctionToolTypeJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.FunctionToolTypeNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ImageDetailJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ImageDetailNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ImageGenerationToolTypeJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ImageGenerationToolTypeNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.MessageInputEntryRoleJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.MessageInputEntryRoleNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ModelConversationToolDiscriminatorTypeJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ModelConversationToolDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ModerationLLMActionJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ModerationLLMActionNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.OAuth2TokenAuthTypeJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.OAuth2TokenAuthTypeNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.RequestSourceJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.RequestSourceNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ResponseFormatsJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ResponseFormatsNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ToolCallConfirmationConfirmationJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ToolCallConfirmationConfirmationNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ToolChoiceEnumJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ToolChoiceEnumNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.WebSearchPremiumToolTypeJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.WebSearchPremiumToolTypeNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.WebSearchToolTypeJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.WebSearchToolTypeNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.FunctionCallEventConfirmationStatus2JsonConverter),
+
+            typeof(global::Mistral.JsonConverters.FunctionCallEventConfirmationStatus2NullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.SSETypesJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.SSETypesNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ConversationEventsDataDiscriminatorTypeJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ConversationEventsDataDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ConversationRequestBaseHandoffExecution2JsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ConversationRequestBaseHandoffExecution2NullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ConversationRequestBaseToolsVariant1ItemDiscriminatorTypeJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ConversationRequestBaseToolsVariant1ItemDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ConversationAppendRequestBaseHandoffExecutionJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ConversationAppendRequestBaseHandoffExecutionNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ConversationRestartRequestBaseHandoffExecutionJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ConversationRestartRequestBaseHandoffExecutionNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.FilePurposeJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.FilePurposeNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.FileVisibilityJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.FileVisibilityNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.SampleTypeJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.SampleTypeNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.SourceJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.SourceNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.FineTuneableModelTypeJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.FineTuneableModelTypeNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ClassifierJobOutStatusJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ClassifierJobOutStatusNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ClassifierJobOutIntegrationsVariant1ItemDiscriminatorTypeJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ClassifierJobOutIntegrationsVariant1ItemDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.CompletionJobOutStatusJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.CompletionJobOutStatusNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.CompletionJobOutIntegrationsVariant1ItemDiscriminatorTypeJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.CompletionJobOutIntegrationsVariant1ItemDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.CompletionJobOutRepositorieDiscriminatorTypeJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.CompletionJobOutRepositorieDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.JobsOutDataItemDiscriminatorJobTypeJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.JobsOutDataItemDiscriminatorJobTypeNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.FTClassifierLossFunctionJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.FTClassifierLossFunctionNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.JobInIntegrationsVariant1ItemDiscriminatorTypeJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.JobInIntegrationsVariant1ItemDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.JobInRepositoriesVariant1ItemDiscriminatorTypeJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.JobInRepositoriesVariant1ItemDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ClassifierDetailedJobOutStatusJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ClassifierDetailedJobOutStatusNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ClassifierDetailedJobOutIntegrationsVariant1ItemDiscriminatorTypeJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ClassifierDetailedJobOutIntegrationsVariant1ItemDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.CompletionDetailedJobOutStatusJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.CompletionDetailedJobOutStatusNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.CompletionDetailedJobOutIntegrationsVariant1ItemDiscriminatorTypeJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.CompletionDetailedJobOutIntegrationsVariant1ItemDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.CompletionDetailedJobOutRepositorieDiscriminatorTypeJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.CompletionDetailedJobOutRepositorieDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.BatchJobStatusJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.BatchJobStatusNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ApiEndpointJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ApiEndpointNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ChatCompletionRequestMessageDiscriminatorRoleJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ChatCompletionRequestMessageDiscriminatorRoleNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ChatCompletionRequestReasoningEffortJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ChatCompletionRequestReasoningEffortNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ChatModerationRequestInputVariant1ItemDiscriminatorRoleJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ChatModerationRequestInputVariant1ItemDiscriminatorRoleNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ChatModerationRequestInputVariant2ItemItemDiscriminatorRoleJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ChatModerationRequestInputVariant2ItemItemDiscriminatorRoleNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.EmbeddingDtypeJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.EmbeddingDtypeNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.EncodingFormatJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.EncodingFormatNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.InstructRequestMessageDiscriminatorRoleJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.InstructRequestMessageDiscriminatorRoleNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.MistralPromptModeJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.MistralPromptModeNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.OCRPageObjectBlocksVariant1ItemDiscriminatorTypeJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.OCRPageObjectBlocksVariant1ItemDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.OCRRequestTableFormat2JsonConverter),
+
+            typeof(global::Mistral.JsonConverters.OCRRequestTableFormat2NullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.OCRRequestConfidenceScoresGranularity2JsonConverter),
+
+            typeof(global::Mistral.JsonConverters.OCRRequestConfidenceScoresGranularity2NullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.OCRTableObjectFormatJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.OCRTableObjectFormatNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ToolTypesJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ToolTypesNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.SpeechOutputFormatJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.SpeechOutputFormatNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.SpeechStreamEventsEventJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.SpeechStreamEventsEventNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.SpeechStreamEventsDataDiscriminatorTypeJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.SpeechStreamEventsDataDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.TimestampGranularityJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.TimestampGranularityNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.TranscriptionStreamEventsDataDiscriminatorTypeJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.TranscriptionStreamEventsDataDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.TranscriptionStreamEventTypesJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.TranscriptionStreamEventTypesNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.RealtimeTranscriptionClientMessageDiscriminatorTypeJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.RealtimeTranscriptionClientMessageDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.AudioEncodingJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.AudioEncodingNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.AgentsCompletionRequestMessageDiscriminatorRoleJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.AgentsCompletionRequestMessageDiscriminatorRoleNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.AgentsCompletionRequestReasoningEffortJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.AgentsCompletionRequestReasoningEffortNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ContentChunkDiscriminatorTypeJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ContentChunkDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.SystemMessageContentChunksDiscriminatorTypeJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.SystemMessageContentChunksDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.FilterConditionOpJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.FilterConditionOpNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ProcessStatusJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ProcessStatusNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ShareEnumJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ShareEnumNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.EntityTypeJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.EntityTypeNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.BaseFieldDefinitionTypeJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.BaseFieldDefinitionTypeNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.BaseFieldDefinitionSupportedOperatorJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.BaseFieldDefinitionSupportedOperatorNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.BaseTaskStatusJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.BaseTaskStatusNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ConversationSourceJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ConversationSourceNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.JudgeOutputTypeJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.JudgeOutputTypeNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.JudgePreviewOutputDiscriminatorTypeJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.JudgePreviewOutputDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.PostJudgeInSchemaOutputDiscriminatorTypeJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.PostJudgeInSchemaOutputDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.PutJudgeInSchemaOutputDiscriminatorTypeJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.PutJudgeInSchemaOutputDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ObservabilityErrorCodeJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ObservabilityErrorCodeNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.AnnotationsAudienceVariant1ItemJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.AnnotationsAudienceVariant1ItemNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ConnectorSupportedLanguageJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ConnectorSupportedLanguageNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ResourceVisibilityJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ResourceVisibilityNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.CompletionResponseStreamChoiceFinishReasonJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.CompletionResponseStreamChoiceFinishReasonNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ChatCompletionChoiceFinishReasonJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ChatCompletionChoiceFinishReasonNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.CustomTaskInProgressAttributesResponsePayloadDiscriminatorTypeJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.CustomTaskInProgressAttributesResponsePayloadDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.EncodedPayloadOptionsJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.EncodedPayloadOptionsNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.EventProgressStatusJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.EventProgressStatusNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.EventSourceJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.EventSourceNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.EventTypeJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.EventTypeNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.JSONPatchPayloadResponseValueItemDiscriminatorOpJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.JSONPatchPayloadResponseValueItemDiscriminatorOpNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.TempoTraceScopeKindJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.TempoTraceScopeKindNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.WorkflowEventTypeJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.WorkflowEventTypeNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.WorkflowExecutionStatusJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.WorkflowExecutionStatusNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.WorkflowTypeJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.WorkflowTypeNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.MCPSupportedLanguageJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.MCPSupportedLanguageNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.MCPUIToolMetaVisibilityVariant1ItemJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.MCPUIToolMetaVisibilityVariant1ItemNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.OutboundAuthenticationTypeJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.OutboundAuthenticationTypeNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ToolExecutionTaskSupport2JsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ToolExecutionTaskSupport2NullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ToolTypeJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ToolTypeNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.FilesApiRoutesUploadFileRequestVisibilityJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.FilesApiRoutesUploadFileRequestVisibilityNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.JobsApiRoutesFineTuningGetFineTuningJobsStatus2JsonConverter),
+
+            typeof(global::Mistral.JsonConverters.JobsApiRoutesFineTuningGetFineTuningJobsStatus2NullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.JobsApiRoutesBatchGetBatchJobsOrderByJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.JobsApiRoutesBatchGetBatchJobsOrderByNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.GetChatCompletionFieldOptionsV1ObservabilityChatCompletionFieldsFieldNameOptionsGetOperatorJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.GetChatCompletionFieldOptionsV1ObservabilityChatCompletionFieldsFieldNameOptionsGetOperatorNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.GetStreamEventsV1WorkflowsEventsStreamGetScopeJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.GetStreamEventsV1WorkflowsEventsStreamGetScopeNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.RetrieveModelV1ModelsModelIdGetResponseDiscriminatorTypeJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.RetrieveModelV1ModelsModelIdGetResponseDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.JobsApiRoutesFineTuningCreateFineTuningJobResponseVariant1DiscriminatorJobTypeJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.JobsApiRoutesFineTuningCreateFineTuningJobResponseVariant1DiscriminatorJobTypeNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.JobsApiRoutesFineTuningGetFineTuningJobResponseDiscriminatorJobTypeJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.JobsApiRoutesFineTuningGetFineTuningJobResponseDiscriminatorJobTypeNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.JobsApiRoutesFineTuningCancelFineTuningJobResponseDiscriminatorJobTypeJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.JobsApiRoutesFineTuningCancelFineTuningJobResponseDiscriminatorJobTypeNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.JobsApiRoutesFineTuningStartFineTuningJobResponseDiscriminatorJobTypeJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.JobsApiRoutesFineTuningStartFineTuningJobResponseDiscriminatorJobTypeNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.JobsApiRoutesFineTuningUpdateFineTunedModelResponseDiscriminatorModelTypeJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.JobsApiRoutesFineTuningUpdateFineTunedModelResponseDiscriminatorModelTypeNullableJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.DataItemJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ToolsItemJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ToolsItem2JsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ToolsItem3JsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ConversationAppendRequestJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ConversationRestartRequestJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.AuthorizationVariant1JsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ToolsItem4JsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ConversationRequestJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.DataJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.OutputContentChunksJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.CompletionArgsStopJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.FunctionCallEntryArgumentsJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ConversationInputsJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ToolsVariant1ItemJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ConversationStreamRequestJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ConversationAppendStreamRequestJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ConversationRestartStreamRequestJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.IntegrationsVariant1ItemJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.IntegrationsVariant1Item2JsonConverter),
+
+            typeof(global::Mistral.JsonConverters.RepositoriesItemJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.DataItem2JsonConverter),
+
+            typeof(global::Mistral.JsonConverters.IntegrationsVariant1Item3JsonConverter),
+
+            typeof(global::Mistral.JsonConverters.RepositoriesVariant1ItemJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.IntegrationsVariant1Item4JsonConverter),
+
+            typeof(global::Mistral.JsonConverters.IntegrationsVariant1Item5JsonConverter),
+
+            typeof(global::Mistral.JsonConverters.RepositoriesItem2JsonConverter),
+
+            typeof(global::Mistral.JsonConverters.MessagesItemJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.InputVariant1ItemJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.InputVariant2ItemItemJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.MessagesItem2JsonConverter),
+
+            typeof(global::Mistral.JsonConverters.BlocksVariant1ItemJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.Data2JsonConverter),
+
+            typeof(global::Mistral.JsonConverters.Data3JsonConverter),
+
+            typeof(global::Mistral.JsonConverters.RealtimeTranscriptionClientMessageJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.MessagesItem3JsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ChatClassificationRequestInputsJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ContentChunkJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.SystemMessageContentChunksJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.OutputJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.Output2JsonConverter),
+
+            typeof(global::Mistral.JsonConverters.Output3JsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ChatCompletionResponseBaseJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ChatCompletionResponseJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.FIMCompletionResponseJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.EmbeddingResponseJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.PayloadJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.ValueItemJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.WorkflowExecutionTraceSummaryAttributesValuesJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.RetrieveModelV1ModelsModelIdGetResponseJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.JobsApiRoutesFineTuningCreateFineTuningJobResponseVariant1JsonConverter),
+
+            typeof(global::Mistral.JsonConverters.JobsApiRoutesFineTuningGetFineTuningJobResponseJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.JobsApiRoutesFineTuningCancelFineTuningJobResponseJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.JobsApiRoutesFineTuningStartFineTuningJobResponseJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.JobsApiRoutesFineTuningUpdateFineTunedModelResponseJsonConverter),
+
+            typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<string, int?>),
+
+            typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<string, int?, object>),
+
+            typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<global::Mistral.MessageInputEntry, global::Mistral.MessageOutputEntry, global::Mistral.FunctionResultEntry, global::Mistral.FunctionCallEntry, global::Mistral.ToolExecutionEntry, global::Mistral.AgentHandoffEntry>),
+
+            typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<global::Mistral.ImageURL, string>),
+
+            typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Mistral.AnyOf<global::Mistral.TextChunk, global::Mistral.ImageURLChunk, global::Mistral.ToolFileChunk, global::Mistral.DocumentURLChunk, global::Mistral.ThinkChunk>>>),
+
+            typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Mistral.AnyOf<global::Mistral.TextChunk, global::Mistral.ImageURLChunk, global::Mistral.ToolFileChunk, global::Mistral.DocumentURLChunk, global::Mistral.ThinkChunk, global::Mistral.ToolReferenceChunk>>>),
+
+            typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<global::Mistral.TextChunk, global::Mistral.ToolReferenceChunk, global::Mistral.ReferenceChunk>),
+
+            typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<global::Mistral.BuiltInConnectors?, string>),
+
+            typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<global::Mistral.BuiltInConnectors?, string>),
+
+            typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<global::Mistral.BuiltInConnectors?, string>),
+
+            typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<global::Mistral.MessageOutputEntry, global::Mistral.ToolExecutionEntry, global::Mistral.FunctionCallEntry, global::Mistral.AgentHandoffEntry>),
+
+            typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<string, global::Mistral.OutputContentChunks?>),
+
+            typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<global::Mistral.BuiltInConnectors?, string>),
+
+            typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<global::Mistral.BuiltInConnectors?, string>),
+
+            typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<global::Mistral.BuiltInConnectors?, string>),
+
+            typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<global::Mistral.TextChunk, global::Mistral.ImageURLChunk, global::Mistral.ToolFileChunk, global::Mistral.DocumentURLChunk, global::Mistral.ThinkChunk>),
+
+            typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<global::Mistral.TextChunk, global::Mistral.ImageURLChunk, global::Mistral.ToolFileChunk, global::Mistral.DocumentURLChunk, global::Mistral.ThinkChunk, global::Mistral.ToolReferenceChunk>),
+
+            typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<global::Mistral.MessageInputEntry, global::Mistral.MessageOutputEntry>),
+
+            typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<global::Mistral.MessageInputEntry, global::Mistral.MessageOutputEntry, global::Mistral.FunctionResultEntry, global::Mistral.FunctionCallEntry, global::Mistral.ToolExecutionEntry, global::Mistral.AgentHandoffEntry>),
+
+            typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<string, int?, object>),
+
+            typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<string, int?, object>),
+
+            typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<global::Mistral.CompletionTrainingParametersIn, global::Mistral.ClassifierTrainingParametersIn>),
+
+            typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<string, object, global::System.Collections.Generic.IList<global::Mistral.ContentChunk>>),
+
+            typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<string, byte[]>),
+
+            typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>>),
+
+            typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<global::Mistral.ToolChoice2, global::Mistral.ToolChoiceEnum?>),
+
+            typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::Mistral.InputVariant1Item>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::Mistral.InputVariant2ItemItem>>>),
+
+            typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>>),
+
+            typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>>),
+
+            typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>>),
+
+            typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<object, string>),
+
+            typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<global::Mistral.FileChunk, global::Mistral.DocumentURLChunk, global::Mistral.ImageURLChunk>),
+
+            typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<int>, object>),
+
+            typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Mistral.SystemMessageContentChunks>>),
+
+            typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<string, object, global::System.Collections.Generic.IList<global::Mistral.ContentChunk>>),
+
+            typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<string, object, global::System.Collections.Generic.IList<global::Mistral.ContentChunk>>),
+
+            typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>>),
+
+            typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<global::Mistral.ToolChoice2, global::Mistral.ToolChoiceEnum?>),
+
+            typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<bool?, string, int?, double?, global::System.DateTime?, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<int>, global::System.Collections.Generic.IList<double>, global::System.Collections.Generic.IList<bool>>),
+
+            typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<global::Mistral.FilterGroup, global::Mistral.FilterCondition>),
+
+            typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<global::Mistral.FilterGroup, global::Mistral.FilterCondition>),
+
+            typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<bool?, int?, double?, string, global::System.DateTime?, global::System.Collections.Generic.IList<string>, object>),
+
+            typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<bool?, int?, double?, string, global::System.DateTime?, global::System.Collections.Generic.IList<string>, object>),
+
+            typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<string, bool?, object>),
+
+            typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<global::Mistral.FilterGroup, global::Mistral.FilterCondition, object>),
+
+            typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<string, double?>),
+
+            typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<global::Mistral.TextResourceContents, global::Mistral.BlobResourceContents>),
+
+            typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<global::Mistral.TextContent, global::Mistral.ImageContent, global::Mistral.AudioContent, global::Mistral.ResourceLink, global::Mistral.EmbeddedResource>),
+
+            typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<string, object, global::System.Collections.Generic.IList<global::Mistral.ContentChunk>>),
+
+            typeof(global::Mistral.JsonConverters.OneOfJsonConverter<global::Mistral.WorkflowExecutionStartedResponse, global::Mistral.WorkflowExecutionCompletedResponse, global::Mistral.WorkflowExecutionFailedResponse, global::Mistral.WorkflowExecutionCanceledResponse, global::Mistral.WorkflowExecutionContinuedAsNewResponse, global::Mistral.WorkflowTaskTimedOutResponse, global::Mistral.WorkflowTaskFailedResponse, global::Mistral.CustomTaskStartedResponse, global::Mistral.CustomTaskInProgressResponse, global::Mistral.CustomTaskCompletedResponse, global::Mistral.CustomTaskFailedResponse, global::Mistral.CustomTaskTimedOutResponse, global::Mistral.CustomTaskCanceledResponse, global::Mistral.ActivityTaskStartedResponse, global::Mistral.ActivityTaskCompletedResponse, global::Mistral.ActivityTaskRetryingResponse, global::Mistral.ActivityTaskFailedResponse>),
+
+            typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<global::Mistral.NetworkEncodedInput, object, object>),
+
+            typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<int?, double?>),
+
+            typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<global::Mistral.NetworkEncodedInput, object, object>),
+
+            typeof(global::Mistral.JsonConverters.OneOfJsonConverter<global::Mistral.WorkflowExecutionStartedResponse, global::Mistral.WorkflowExecutionCompletedResponse, global::Mistral.WorkflowExecutionFailedResponse, global::Mistral.WorkflowExecutionCanceledResponse, global::Mistral.WorkflowExecutionContinuedAsNewResponse, global::Mistral.WorkflowTaskTimedOutResponse, global::Mistral.WorkflowTaskFailedResponse, global::Mistral.CustomTaskStartedResponse, global::Mistral.CustomTaskInProgressResponse, global::Mistral.CustomTaskCompletedResponse, global::Mistral.CustomTaskFailedResponse, global::Mistral.CustomTaskTimedOutResponse, global::Mistral.CustomTaskCanceledResponse, global::Mistral.ActivityTaskStartedResponse, global::Mistral.ActivityTaskCompletedResponse, global::Mistral.ActivityTaskRetryingResponse, global::Mistral.ActivityTaskFailedResponse>),
+
+            typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<global::Mistral.TempoTraceAttributeStringValue, global::Mistral.TempoTraceAttributeIntValue, global::Mistral.TempoTraceAttributeBoolValue>),
+
+            typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<global::Mistral.NetworkEncodedInput, object, object>),
+
+            typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<global::Mistral.WorkflowExecutionTraceEvent, global::Mistral.WorkflowExecutionProgressTraceEvent>),
+
+            typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<int?, string, object>),
+
+            typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<global::Mistral.WorkflowExecutionStatus?, global::System.Collections.Generic.IList<global::Mistral.WorkflowExecutionStatus>, object>),
+
+            typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<global::Mistral.ModelConversation, global::Mistral.AgentConversation>),
+
+            typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<global::Mistral.ModelConversation, global::Mistral.AgentConversation>),
+
+            typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<global::Mistral.JobsApiRoutesFineTuningCreateFineTuningJobResponseVariant1?, global::Mistral.LegacyJobMetadataOut>),
+
+            typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<global::Mistral.WorkflowExecutionResponse, global::Mistral.WorkflowExecutionSyncResponse>),
+
+            typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<global::Mistral.WorkflowExecutionResponse, global::Mistral.WorkflowExecutionSyncResponse>),
+
+            typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::Mistral.IntegrationsSchemasApiToolTool>, global::System.Collections.Generic.IList<global::Mistral.MCPTool>, global::System.Collections.Generic.IList<object>>),
+
+            typeof(global::Mistral.JsonConverters.UnixTimestampJsonConverter),
+        })]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ListDocumentOut), TypeInfoPropertyName = "ListDocumentOut_Mistral_ListDocumentOut")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ListLibraryOut), TypeInfoPropertyName = "ListLibraryOut_Mistral_ListLibraryOut")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ListSharingOut), TypeInfoPropertyName = "ListSharingOut_Mistral_ListSharingOut")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Mistral.OneOf<global::Mistral.WorkflowExecutionStartedResponse, global::Mistral.WorkflowExecutionCompletedResponse, global::Mistral.WorkflowExecutionFailedResponse, global::Mistral.WorkflowExecutionCanceledResponse, global::Mistral.WorkflowExecutionContinuedAsNewResponse, global::Mistral.WorkflowTaskTimedOutResponse, global::Mistral.WorkflowTaskFailedResponse, global::Mistral.CustomTaskStartedResponse, global::Mistral.CustomTaskInProgressResponse, global::Mistral.CustomTaskCompletedResponse, global::Mistral.CustomTaskFailedResponse, global::Mistral.CustomTaskTimedOutResponse, global::Mistral.CustomTaskCanceledResponse, global::Mistral.ActivityTaskStartedResponse, global::Mistral.ActivityTaskCompletedResponse, global::Mistral.ActivityTaskRetryingResponse, global::Mistral.ActivityTaskFailedResponse>>), TypeInfoPropertyName = "ActivityTaskFailedResponse_4eb8600ed13d6756")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.OneOf<global::Mistral.WorkflowExecutionStartedResponse, global::Mistral.WorkflowExecutionCompletedResponse, global::Mistral.WorkflowExecutionFailedResponse, global::Mistral.WorkflowExecutionCanceledResponse, global::Mistral.WorkflowExecutionContinuedAsNewResponse, global::Mistral.WorkflowTaskTimedOutResponse, global::Mistral.WorkflowTaskFailedResponse, global::Mistral.CustomTaskStartedResponse, global::Mistral.CustomTaskInProgressResponse, global::Mistral.CustomTaskCompletedResponse, global::Mistral.CustomTaskFailedResponse, global::Mistral.CustomTaskTimedOutResponse, global::Mistral.CustomTaskCanceledResponse, global::Mistral.ActivityTaskStartedResponse, global::Mistral.ActivityTaskCompletedResponse, global::Mistral.ActivityTaskRetryingResponse, global::Mistral.ActivityTaskFailedResponse>), TypeInfoPropertyName = "ActivityTaskFailedResponse_0bde6d32684fee68")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.OneOf<global::Mistral.WorkflowExecutionStartedResponse, global::Mistral.WorkflowExecutionCompletedResponse, global::Mistral.WorkflowExecutionFailedResponse, global::Mistral.WorkflowExecutionCanceledResponse, global::Mistral.WorkflowExecutionContinuedAsNewResponse, global::Mistral.WorkflowTaskTimedOutResponse, global::Mistral.WorkflowTaskFailedResponse, global::Mistral.CustomTaskStartedResponse, global::Mistral.CustomTaskInProgressResponse, global::Mistral.CustomTaskCompletedResponse, global::Mistral.CustomTaskFailedResponse, global::Mistral.CustomTaskTimedOutResponse, global::Mistral.CustomTaskCanceledResponse, global::Mistral.ActivityTaskStartedResponse, global::Mistral.ActivityTaskCompletedResponse, global::Mistral.ActivityTaskRetryingResponse, global::Mistral.ActivityTaskFailedResponse>?), TypeInfoPropertyName = "ActivityTaskFailedResponse_d33e2eb74053f9ed")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Mistral.DocumentOut>), TypeInfoPropertyName = "ListDocumentOut_System_Collections_Generic_List_global_Mistral_DocumentOut")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Mistral.LibraryOut>), TypeInfoPropertyName = "ListLibraryOut_System_Collections_Generic_List_global_Mistral_LibraryOut")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Mistral.SharingOut>), TypeInfoPropertyName = "ListSharingOut_System_Collections_Generic_List_global_Mistral_SharingOut")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Mistral.OneOf<global::Mistral.WorkflowExecutionStartedResponse, global::Mistral.WorkflowExecutionCompletedResponse, global::Mistral.WorkflowExecutionFailedResponse, global::Mistral.WorkflowExecutionCanceledResponse, global::Mistral.WorkflowExecutionContinuedAsNewResponse, global::Mistral.WorkflowTaskTimedOutResponse, global::Mistral.WorkflowTaskFailedResponse, global::Mistral.CustomTaskStartedResponse, global::Mistral.CustomTaskInProgressResponse, global::Mistral.CustomTaskCompletedResponse, global::Mistral.CustomTaskFailedResponse, global::Mistral.CustomTaskTimedOutResponse, global::Mistral.CustomTaskCanceledResponse, global::Mistral.ActivityTaskStartedResponse, global::Mistral.ActivityTaskCompletedResponse, global::Mistral.ActivityTaskRetryingResponse, global::Mistral.ActivityTaskFailedResponse>>), TypeInfoPropertyName = "ActivityTaskFailedResponse_40289a742d078cef")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ObservabilityErrorCode?), TypeInfoPropertyName = "NullableObservabilityErrorCode2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AnnotationsAudienceVariant1Item?), TypeInfoPropertyName = "NullableAnnotationsAudienceVariant1Item2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ResourceVisibility?), TypeInfoPropertyName = "NullableResourceVisibility2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ConnectorSupportedLanguage?), TypeInfoPropertyName = "NullableConnectorSupportedLanguage2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AnyOf<global::Mistral.TextResourceContents, global::Mistral.BlobResourceContents>?), TypeInfoPropertyName = "NullableAnyOfTextResourceContentsBlobResourceContents2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AnyOf<global::Mistral.TextContent, global::Mistral.ImageContent, global::Mistral.AudioContent, global::Mistral.ResourceLink, global::Mistral.EmbeddedResource>?), TypeInfoPropertyName = "NullableAnyOfTextContentImageContentAudioContentResourceLinkEmbeddedResource2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.CompletionResponseStreamChoiceFinishReason?), TypeInfoPropertyName = "NullableCompletionResponseStreamChoiceFinishReason2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ChatCompletionChoiceFinishReason?), TypeInfoPropertyName = "NullableChatCompletionChoiceFinishReason2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ChatCompletionResponseBase?), TypeInfoPropertyName = "NullableChatCompletionResponseBase2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ChatCompletionResponse?), TypeInfoPropertyName = "NullableChatCompletionResponse2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.FIMCompletionResponse?), TypeInfoPropertyName = "NullableFIMCompletionResponse2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.EmbeddingResponse?), TypeInfoPropertyName = "NullableEmbeddingResponse2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.Payload?), TypeInfoPropertyName = "NullablePayload2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.CustomTaskInProgressAttributesResponsePayloadDiscriminatorType?), TypeInfoPropertyName = "NullableCustomTaskInProgressAttributesResponsePayloadDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.EncodedPayloadOptions?), TypeInfoPropertyName = "NullableEncodedPayloadOptions2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.EventProgressStatus?), TypeInfoPropertyName = "NullableEventProgressStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.EventSource?), TypeInfoPropertyName = "NullableEventSource2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.EventType?), TypeInfoPropertyName = "NullableEventType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ValueItem?), TypeInfoPropertyName = "NullableValueItem2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.JSONPatchPayloadResponseValueItemDiscriminatorOp?), TypeInfoPropertyName = "NullableJSONPatchPayloadResponseValueItemDiscriminatorOp2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AnyOf<global::Mistral.NetworkEncodedInput, object, object>?), TypeInfoPropertyName = "NullableAnyOfNetworkEncodedInputObjectObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AnyOf<int?, double?>?), TypeInfoPropertyName = "NullableAnyOfInt32Double2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AnyOf<global::Mistral.TempoTraceAttributeStringValue, global::Mistral.TempoTraceAttributeIntValue, global::Mistral.TempoTraceAttributeBoolValue>?), TypeInfoPropertyName = "NullableAnyOfTempoTraceAttributeStringValueTempoTraceAttributeIntValueTempoTraceAttributeBoolValue2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.TempoTraceScopeKind?), TypeInfoPropertyName = "NullableTempoTraceScopeKind2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.WorkflowType?), TypeInfoPropertyName = "NullableWorkflowType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.WorkflowEventType?), TypeInfoPropertyName = "NullableWorkflowEventType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.WorkflowExecutionTraceSummaryAttributesValues?), TypeInfoPropertyName = "NullableWorkflowExecutionTraceSummaryAttributesValues2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AnyOf<global::Mistral.WorkflowExecutionTraceEvent, global::Mistral.WorkflowExecutionProgressTraceEvent>?), TypeInfoPropertyName = "NullableAnyOfWorkflowExecutionTraceEventWorkflowExecutionProgressTraceEvent2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.OutboundAuthenticationType?), TypeInfoPropertyName = "NullableOutboundAuthenticationType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.MCPSupportedLanguage?), TypeInfoPropertyName = "NullableMCPSupportedLanguage2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.MCPUIToolMetaVisibilityVariant1Item?), TypeInfoPropertyName = "NullableMCPUIToolMetaVisibilityVariant1Item2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ToolType?), TypeInfoPropertyName = "NullableToolType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.FilesApiRoutesUploadFileRequestVisibility?), TypeInfoPropertyName = "NullableFilesApiRoutesUploadFileRequestVisibility2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AnyOf<int?, string, object>?), TypeInfoPropertyName = "NullableAnyOfInt32StringObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.JobsApiRoutesBatchGetBatchJobsOrderBy?), TypeInfoPropertyName = "NullableJobsApiRoutesBatchGetBatchJobsOrderBy2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.GetChatCompletionFieldOptionsV1ObservabilityChatCompletionFieldsFieldNameOptionsGetOperator?), TypeInfoPropertyName = "NullableGetChatCompletionFieldOptionsV1ObservabilityChatCompletionFieldsFieldNameOptionsGetOperator2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AnyOf<global::Mistral.WorkflowExecutionStatus?, global::System.Collections.Generic.IList<global::Mistral.WorkflowExecutionStatus>, object>?), TypeInfoPropertyName = "NullableAnyOfWorkflowExecutionStatusIListWorkflowExecutionStatusObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.GetStreamEventsV1WorkflowsEventsStreamGetScope?), TypeInfoPropertyName = "NullableGetStreamEventsV1WorkflowsEventsStreamGetScope2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.RetrieveModelV1ModelsModelIdGetResponse?), TypeInfoPropertyName = "NullableRetrieveModelV1ModelsModelIdGetResponse2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.RetrieveModelV1ModelsModelIdGetResponseDiscriminatorType?), TypeInfoPropertyName = "NullableRetrieveModelV1ModelsModelIdGetResponseDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AnyOf<global::Mistral.ModelConversation, global::Mistral.AgentConversation>?), TypeInfoPropertyName = "NullableAnyOfModelConversationAgentConversation2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AnyOf<global::Mistral.JobsApiRoutesFineTuningCreateFineTuningJobResponseVariant1?, global::Mistral.LegacyJobMetadataOut>?), TypeInfoPropertyName = "NullableAnyOfJobsApiRoutesFineTuningCreateFineTuningJobResponseVariant1LegacyJobMetadataOut2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.JobsApiRoutesFineTuningCreateFineTuningJobResponseVariant1?), TypeInfoPropertyName = "NullableJobsApiRoutesFineTuningCreateFineTuningJobResponseVariant12")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.JobsApiRoutesFineTuningCreateFineTuningJobResponseVariant1DiscriminatorJobType?), TypeInfoPropertyName = "NullableJobsApiRoutesFineTuningCreateFineTuningJobResponseVariant1DiscriminatorJobType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.JobsApiRoutesFineTuningGetFineTuningJobResponse?), TypeInfoPropertyName = "NullableJobsApiRoutesFineTuningGetFineTuningJobResponse2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.JobsApiRoutesFineTuningGetFineTuningJobResponseDiscriminatorJobType?), TypeInfoPropertyName = "NullableJobsApiRoutesFineTuningGetFineTuningJobResponseDiscriminatorJobType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.JobsApiRoutesFineTuningCancelFineTuningJobResponse?), TypeInfoPropertyName = "NullableJobsApiRoutesFineTuningCancelFineTuningJobResponse2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.JobsApiRoutesFineTuningCancelFineTuningJobResponseDiscriminatorJobType?), TypeInfoPropertyName = "NullableJobsApiRoutesFineTuningCancelFineTuningJobResponseDiscriminatorJobType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.JobsApiRoutesFineTuningStartFineTuningJobResponse?), TypeInfoPropertyName = "NullableJobsApiRoutesFineTuningStartFineTuningJobResponse2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.JobsApiRoutesFineTuningStartFineTuningJobResponseDiscriminatorJobType?), TypeInfoPropertyName = "NullableJobsApiRoutesFineTuningStartFineTuningJobResponseDiscriminatorJobType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.JobsApiRoutesFineTuningUpdateFineTunedModelResponse?), TypeInfoPropertyName = "NullableJobsApiRoutesFineTuningUpdateFineTunedModelResponse2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.JobsApiRoutesFineTuningUpdateFineTunedModelResponseDiscriminatorModelType?), TypeInfoPropertyName = "NullableJobsApiRoutesFineTuningUpdateFineTunedModelResponseDiscriminatorModelType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AnyOf<global::Mistral.WorkflowExecutionResponse, global::Mistral.WorkflowExecutionSyncResponse>?), TypeInfoPropertyName = "NullableAnyOfWorkflowExecutionResponseWorkflowExecutionSyncResponse2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AnyOf<global::System.Collections.Generic.IList<global::Mistral.IntegrationsSchemasApiToolTool>, global::System.Collections.Generic.IList<global::Mistral.MCPTool>, global::System.Collections.Generic.IList<object>>?), TypeInfoPropertyName = "NullableAnyOfIListIntegrationsSchemasApiToolToolIListMCPToolIListObject2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Mistral.ValidationError>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Mistral.DataItem>))]
@@ -2459,7 +3422,7 @@ namespace Mistral
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AnyOf<global::System.Collections.Generic.List<global::Mistral.IntegrationsSchemasApiToolTool>, global::System.Collections.Generic.List<global::Mistral.MCPTool>, global::System.Collections.Generic.List<object>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Mistral.MCPTool>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Mistral.PublicAuthenticationMethod>))]
-    internal sealed partial class SourceGenerationContextChunk1 : global::System.Text.Json.Serialization.JsonSerializerContext
+    internal sealed partial class SourceGenerationContextChunk2 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
     /// <summary>
@@ -2470,7 +3433,9 @@ namespace Mistral
         private static readonly global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver Resolver = global::System.Text.Json.Serialization.Metadata.JsonTypeInfoResolver.Combine(
             SourceGenerationContextChunk0.Default,
 
-            SourceGenerationContextChunk1.Default
+            SourceGenerationContextChunk1.Default,
+
+            SourceGenerationContextChunk2.Default
             );
 
         private static readonly global::System.Text.Json.JsonSerializerOptions DefaultOptions = CreateDefaultOptions();
