@@ -184,6 +184,7 @@ public partial class MistralClient : Meai.IChatClient
         {
             return new SystemMessage
             {
+                Role = "system",
                 Content = string.Concat(message.Contents.OfType<Meai.TextContent>().Select(tc => tc.Text)),
             };
         }
@@ -193,6 +194,7 @@ public partial class MistralClient : Meai.IChatClient
             var functionResult = message.Contents.OfType<Meai.FunctionResultContent>().FirstOrDefault();
             return new ToolMessage
             {
+                Role = "tool",
                 Content = ToResultString(functionResult),
                 ToolCallId = functionResult?.CallId,
             };
@@ -205,6 +207,7 @@ public partial class MistralClient : Meai.IChatClient
 
             var assistantMessage = new AssistantMessage
             {
+                Role = "assistant",
                 Content = string.IsNullOrEmpty(text) ? null : (AnyOf<string, object, IList<ContentChunk>>?)new AnyOf<string, object, IList<ContentChunk>>(text),
             };
 
@@ -287,12 +290,14 @@ public partial class MistralClient : Meai.IChatClient
         {
             return new UserMessage
             {
+                Role = "user",
                 Content = contents[0].Text!.Text,
             };
         }
 
         return new UserMessage
         {
+            Role = "user",
             Content = new AnyOf<string, object, IList<ContentChunk>>(contents),
         };
     }
