@@ -37,7 +37,7 @@ namespace Mistral
         /// Document to run OCR on
         /// </param>
         /// <param name="pages">
-        /// Specific pages user wants to process in various formats: single number, range, or list of both. Starts from 0
+        /// Specific pages to process. Accepts a list of integers or a string of comma-separated numbers and ranges (e.g. '0,1,2' or '0-5' or '0,2-4'). Page numbers start from 0.
         /// </param>
         /// <param name="includeImageBase64">
         /// Include image URLs in response
@@ -64,6 +64,10 @@ namespace Mistral
         /// <param name="extractFooter">
         /// Default Value: false
         /// </param>
+        /// <param name="includeBlocks">
+        /// Return paragraph-level bounding boxes for all content blocks in the response<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="confidenceScoresGranularity">
         /// Granularity for confidence scores: 'word' (per-word scores) or 'page' (aggregate only). Defaults to None (no confidence scores) to keep response payload small.
         /// </param>
@@ -74,7 +78,7 @@ namespace Mistral
             global::Mistral.AnyOf<global::Mistral.FileChunk, global::Mistral.DocumentURLChunk, global::Mistral.ImageURLChunk> document,
             string? model = default,
             string? id = default,
-            global::System.Collections.Generic.IList<int>? pages = default,
+            global::Mistral.AnyOf<string, global::System.Collections.Generic.IList<int>, object>? pages = default,
             bool? includeImageBase64 = default,
             int? imageLimit = default,
             int? imageMinSize = default,
@@ -84,6 +88,7 @@ namespace Mistral
             global::Mistral.OCRRequestTableFormat2? tableFormat = default,
             bool? extractHeader = default,
             bool? extractFooter = default,
+            bool? includeBlocks = default,
             global::Mistral.OCRRequestConfidenceScoresGranularity2? confidenceScoresGranularity = default,
             global::Mistral.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

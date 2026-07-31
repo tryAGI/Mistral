@@ -4,9 +4,9 @@
 namespace Mistral
 {
     /// <summary>
-    /// Specific pages user wants to process in various formats: single number, range, or list of both. Starts from 0
+    /// 
     /// </summary>
-    public sealed partial class OCRRequestPages
+    public sealed partial class AgentsApiV1AgentsListPagesSources
     {
 
         /// <summary>

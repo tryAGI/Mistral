@@ -66,6 +66,12 @@ namespace Mistral
         public global::Mistral.OCRPageConfidenceScores? ConfidenceScores { get; set; }
 
         /// <summary>
+        /// Paragraph-level bounding boxes for all content blocks in reading order (populated when include_blocks is True)
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("blocks")]
+        public global::System.Collections.Generic.IList<global::Mistral.BlocksVariant1Item>? Blocks { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -101,6 +107,9 @@ namespace Mistral
         /// <param name="confidenceScores">
         /// Confidence scores for the OCR page (populated when confidence_scores_granularity is set)
         /// </param>
+        /// <param name="blocks">
+        /// Paragraph-level bounding boxes for all content blocks in reading order (populated when include_blocks is True)
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -113,7 +122,8 @@ namespace Mistral
             string? header,
             string? footer,
             global::Mistral.OCRPageDimensions? dimensions,
-            global::Mistral.OCRPageConfidenceScores? confidenceScores)
+            global::Mistral.OCRPageConfidenceScores? confidenceScores,
+            global::System.Collections.Generic.IList<global::Mistral.BlocksVariant1Item>? blocks)
         {
             this.Index = index;
             this.Markdown = markdown ?? throw new global::System.ArgumentNullException(nameof(markdown));
@@ -124,6 +134,7 @@ namespace Mistral
             this.Footer = footer;
             this.Dimensions = dimensions;
             this.ConfidenceScores = confidenceScores;
+            this.Blocks = blocks;
         }
 
         /// <summary>

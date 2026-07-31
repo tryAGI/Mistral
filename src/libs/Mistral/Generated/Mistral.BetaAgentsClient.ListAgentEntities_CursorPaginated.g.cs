@@ -7,7 +7,7 @@ namespace Mistral
     {
 
 
-        private static readonly global::Mistral.EndPointSecurityRequirement s_ListAgentEntitiesSecurityRequirement0 =
+        private static readonly global::Mistral.EndPointSecurityRequirement s_ListAgentEntities_CursorPaginatedSecurityRequirement0 =
             new global::Mistral.EndPointSecurityRequirement
             {
                 Authorizations = new global::Mistral.EndPointAuthorizationRequirement[]
@@ -21,48 +21,44 @@ namespace Mistral
                     },
                 },
             };
-        private static readonly global::Mistral.EndPointSecurityRequirement[] s_ListAgentEntitiesSecurityRequirements =
+        private static readonly global::Mistral.EndPointSecurityRequirement[] s_ListAgentEntities_CursorPaginatedSecurityRequirements =
             new global::Mistral.EndPointSecurityRequirement[]
-            {                s_ListAgentEntitiesSecurityRequirement0,
+            {                s_ListAgentEntities_CursorPaginatedSecurityRequirement0,
             };
-        partial void PrepareListAgentEntitiesArguments(
+        partial void PrepareListAgentEntities_CursorPaginatedArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref int? page,
             ref int? pageSize,
             bool? deploymentChat,
             global::System.Collections.Generic.IList<global::Mistral.RequestSource>? sources,
             ref string? name,
             ref string? search,
             ref string? id,
+            ref string? pageToken,
             object? metadata);
-        partial void PrepareListAgentEntitiesRequest(
+        partial void PrepareListAgentEntities_CursorPaginatedRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            int? page,
             int? pageSize,
             bool? deploymentChat,
             global::System.Collections.Generic.IList<global::Mistral.RequestSource>? sources,
             string? name,
             string? search,
             string? id,
+            string? pageToken,
             object? metadata);
-        partial void ProcessListAgentEntitiesResponse(
+        partial void ProcessListAgentEntities_CursorPaginatedResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessListAgentEntitiesResponseContent(
+        partial void ProcessListAgentEntities_CursorPaginatedResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// List agent entities.<br/>
-        /// Retrieve a list of agent entities sorted by creation time.
+        /// List agent entities, cursor-paginated.<br/>
+        /// Retrieve a page of agent entities. Unlike the deprecated `GET /v1/agents`, this endpoint paginates by opaque cursor and honors per-agent sharing, returning only agents the caller is authorized to see.
         /// </summary>
-        /// <param name="page">
-        /// Page number (0-indexed)<br/>
-        /// Default Value: 0
-        /// </param>
         /// <param name="pageSize">
         /// Number of agents per page<br/>
         /// Default Value: 20
@@ -76,30 +72,33 @@ namespace Mistral
         /// Search agents by name or ID
         /// </param>
         /// <param name="id"></param>
+        /// <param name="pageToken">
+        /// Opaque cursor from a previous response's next_page_token. When set, results page forward from the cursor.
+        /// </param>
         /// <param name="metadata"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Mistral.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::Mistral.Agent>> ListAgentEntitiesAsync(
-            int? page = default,
+        public async global::System.Threading.Tasks.Task<global::Mistral.AgentListPage> ListAgentEntities_CursorPaginatedAsync(
             int? pageSize = default,
             bool? deploymentChat = default,
             global::System.Collections.Generic.IList<global::Mistral.RequestSource>? sources = default,
             string? name = default,
             string? search = default,
             string? id = default,
+            string? pageToken = default,
             object? metadata = default,
             global::Mistral.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __response = await ListAgentEntitiesAsResponseAsync(
-                page: page,
+            var __response = await ListAgentEntities_CursorPaginatedAsResponseAsync(
                 pageSize: pageSize,
                 deploymentChat: deploymentChat,
                 sources: sources,
                 name: name,
                 search: search,
                 id: id,
+                pageToken: pageToken,
                 metadata: metadata,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
@@ -108,13 +107,9 @@ namespace Mistral
             return __response.Body;
         }
         /// <summary>
-        /// List agent entities.<br/>
-        /// Retrieve a list of agent entities sorted by creation time.
+        /// List agent entities, cursor-paginated.<br/>
+        /// Retrieve a page of agent entities. Unlike the deprecated `GET /v1/agents`, this endpoint paginates by opaque cursor and honors per-agent sharing, returning only agents the caller is authorized to see.
         /// </summary>
-        /// <param name="page">
-        /// Page number (0-indexed)<br/>
-        /// Default Value: 0
-        /// </param>
         /// <param name="pageSize">
         /// Number of agents per page<br/>
         /// Default Value: 20
@@ -128,40 +123,43 @@ namespace Mistral
         /// Search agents by name or ID
         /// </param>
         /// <param name="id"></param>
+        /// <param name="pageToken">
+        /// Opaque cursor from a previous response's next_page_token. When set, results page forward from the cursor.
+        /// </param>
         /// <param name="metadata"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Mistral.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Mistral.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::Mistral.Agent>>> ListAgentEntitiesAsResponseAsync(
-            int? page = default,
+        public async global::System.Threading.Tasks.Task<global::Mistral.AutoSDKHttpResponse<global::Mistral.AgentListPage>> ListAgentEntities_CursorPaginatedAsResponseAsync(
             int? pageSize = default,
             bool? deploymentChat = default,
             global::System.Collections.Generic.IList<global::Mistral.RequestSource>? sources = default,
             string? name = default,
             string? search = default,
             string? id = default,
+            string? pageToken = default,
             object? metadata = default,
             global::Mistral.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
-            PrepareListAgentEntitiesArguments(
+            PrepareListAgentEntities_CursorPaginatedArguments(
                 httpClient: HttpClient,
-                page: ref page,
                 pageSize: ref pageSize,
                 deploymentChat: deploymentChat,
                 sources: sources,
                 name: ref name,
                 search: ref search,
                 id: ref id,
+                pageToken: ref pageToken,
                 metadata: metadata);
 
 
             var __authorizations = global::Mistral.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_ListAgentEntitiesSecurityRequirements,
-                operationName: "ListAgentEntitiesAsync");
+                securityRequirements: s_ListAgentEntities_CursorPaginatedSecurityRequirements,
+                operationName: "ListAgentEntities_CursorPaginatedAsync");
 
             using var __timeoutCancellationTokenSource = global::Mistral.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -181,16 +179,16 @@ namespace Mistral
             {
 
                             var __pathBuilder = new global::Mistral.PathBuilder(
-                                path: "/v1/agents",
+                                path: "/v1/agents/pages",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
-                                .AddOptionalParameter("page", page?.ToString())
                                 .AddOptionalParameter("page_size", pageSize?.ToString())
                                 .AddOptionalParameter("deployment_chat", deploymentChat?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("sources", sources?.ToString())
                                 .AddOptionalParameter("name", name)
                                 .AddOptionalParameter("search", search)
                                 .AddOptionalParameter("id", id)
+                                .AddOptionalParameter("page_token", pageToken)
                                 .AddOptionalParameter("metadata", metadata?.ToString())
                                 ;
                             var __path = __pathBuilder.ToString();
@@ -230,16 +228,16 @@ namespace Mistral
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareListAgentEntitiesRequest(
+                PrepareListAgentEntities_CursorPaginatedRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    page: page,
                     pageSize: pageSize,
                     deploymentChat: deploymentChat,
                     sources: sources,
                     name: name,
                     search: search,
                     id: id,
+                    pageToken: pageToken,
                     metadata: metadata);
 
                 return __httpRequest;
@@ -257,9 +255,9 @@ namespace Mistral
                     await global::Mistral.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::Mistral.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ListAgentEntities",
-                                methodName: "ListAgentEntitiesAsync",
-                                pathTemplate: "\"/v1/agents\"",
+                                operationId: "ListAgentEntities_CursorPaginated",
+                                methodName: "ListAgentEntities_CursorPaginatedAsync",
+                                pathTemplate: "\"/v1/agents/pages\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -291,9 +289,9 @@ namespace Mistral
                         await global::Mistral.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Mistral.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ListAgentEntities",
-                                methodName: "ListAgentEntitiesAsync",
-                                pathTemplate: "\"/v1/agents\"",
+                                operationId: "ListAgentEntities_CursorPaginated",
+                                methodName: "ListAgentEntities_CursorPaginatedAsync",
+                                pathTemplate: "\"/v1/agents/pages\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -332,9 +330,9 @@ namespace Mistral
                         await global::Mistral.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Mistral.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ListAgentEntities",
-                                methodName: "ListAgentEntitiesAsync",
-                                pathTemplate: "\"/v1/agents\"",
+                                operationId: "ListAgentEntities_CursorPaginated",
+                                methodName: "ListAgentEntities_CursorPaginatedAsync",
+                                pathTemplate: "\"/v1/agents/pages\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -372,7 +370,7 @@ namespace Mistral
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessListAgentEntitiesResponse(
+                ProcessListAgentEntities_CursorPaginatedResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -380,9 +378,9 @@ namespace Mistral
                     await global::Mistral.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::Mistral.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ListAgentEntities",
-                                methodName: "ListAgentEntitiesAsync",
-                                pathTemplate: "\"/v1/agents\"",
+                                operationId: "ListAgentEntities_CursorPaginated",
+                                methodName: "ListAgentEntities_CursorPaginatedAsync",
+                                pathTemplate: "\"/v1/agents/pages\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -402,9 +400,9 @@ namespace Mistral
                     await global::Mistral.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Mistral.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ListAgentEntities",
-                                methodName: "ListAgentEntitiesAsync",
-                                pathTemplate: "\"/v1/agents\"",
+                                operationId: "ListAgentEntities_CursorPaginated",
+                                methodName: "ListAgentEntities_CursorPaginatedAsync",
+                                pathTemplate: "\"/v1/agents/pages\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -469,7 +467,7 @@ namespace Mistral
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
-                                ProcessListAgentEntitiesResponseContent(
+                                ProcessListAgentEntities_CursorPaginatedResponseContent(
                                     httpClient: HttpClient,
                                     httpResponseMessage: __response,
                                     content: ref __content);
@@ -478,9 +476,9 @@ namespace Mistral
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = (global::System.Collections.Generic.IList<global::Mistral.Agent>?)global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::System.Collections.Generic.IList<global::Mistral.Agent>), JsonSerializerContext) ??
+                                    var __value = global::Mistral.AgentListPage.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::Mistral.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::Mistral.Agent>>(
+                                    return new global::Mistral.AutoSDKHttpResponse<global::Mistral.AgentListPage>(
                                         statusCode: __response.StatusCode,
                                         headers: global::Mistral.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -510,9 +508,9 @@ namespace Mistral
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = (global::System.Collections.Generic.IList<global::Mistral.Agent>?)await global::System.Text.Json.JsonSerializer.DeserializeAsync(__content, typeof(global::System.Collections.Generic.IList<global::Mistral.Agent>), JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::Mistral.AgentListPage.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::Mistral.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::Mistral.Agent>>(
+                                    return new global::Mistral.AutoSDKHttpResponse<global::Mistral.AgentListPage>(
                                         statusCode: __response.StatusCode,
                                         headers: global::Mistral.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -552,5 +550,55 @@ namespace Mistral
                 __httpRequest?.Dispose();
             }
         }
+
+        /// <summary>
+        /// Wraps ListAgentEntities_CursorPaginatedAsync as an IAsyncEnumerable&lt;global::Mistral.Agent&gt; that auto-pages over the response.
+        /// </summary>
+        /// <param name="pageSize">
+        /// Number of agents per page<br/>
+        /// Default Value: 20
+        /// </param>
+        /// <param name="deploymentChat"></param>
+        /// <param name="sources"></param>
+        /// <param name="name">
+        /// Filter by agent name
+        /// </param>
+        /// <param name="search">
+        /// Search agents by name or ID
+        /// </param>
+        /// <param name="id"></param>
+        /// <param name="metadata"></param> 
+        /// <param name="pageToken">Initial cursor to start enumerating from. Defaults to null (first page).</param>
+        /// <param name="cancellationToken"></param>
+        public global::System.Collections.Generic.IAsyncEnumerable<global::Mistral.Agent> ListAgentEntities_CursorPaginatedAutoPagingAsync(
+              int? pageSize = default,
+            bool? deploymentChat = default,
+            global::System.Collections.Generic.IList<global::Mistral.RequestSource>? sources = default,
+            string? name = default,
+            string? search = default,
+            string? id = default,
+            object? metadata = default,
+            string? pageToken = null,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            return global::Mistral.AutoSDKPager.CursorAsync<global::Mistral.AgentListPage, global::Mistral.Agent>(
+                fetchPage: (__cursor, __ct) => ListAgentEntities_CursorPaginatedAsync(
+                    pageSize: pageSize,
+                    deploymentChat: deploymentChat,
+                    sources: sources,
+                    name: name,
+                    search: search,
+                    id: id,
+                    pageToken: __cursor,
+                    metadata: metadata,
+                    cancellationToken: __ct),
+                extractItems: static __response => __response is null
+                    ? null
+                    : (global::System.Collections.Generic.IEnumerable<global::Mistral.Agent>?)__response.Data,
+                extractNextCursor: static __response => __response is null ? null : __response.NextPageToken,
+                initialCursor: pageToken,
+                cancellationToken: cancellationToken);
+        }
+
     }
 }

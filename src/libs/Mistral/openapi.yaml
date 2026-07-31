@@ -452,7 +452,10 @@ paths:
     get:
       operationId: agents_api_v1_agents_list
       summary: List agent entities.
-      description: Retrieve a list of agent entities sorted by creation time.
+      description: 'Retrieve a list of agent entities sorted by creation time. Deprecated: some features such as agent sharing are not supported by this endpoint. Use the cursor-paginated `GET /v1/agents/pages` instead.'
+      deprecated: true
+      x-speakeasy-deprecation-message: Some features such as agent sharing are not supported by this endpoint.
+      x-speakeasy-deprecation-replacement: v1_agents_list_pages
       tags:
       - beta.agents
       parameters:
@@ -639,6 +642,117 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/HTTPValidationError'
+  /v1/agents/pages:
+    get:
+      operationId: agents_api_v1_agents_list_pages
+      summary: List agent entities, cursor-paginated.
+      description: Retrieve a page of agent entities. Unlike the deprecated `GET /v1/agents`, this endpoint paginates by opaque cursor and honors per-agent sharing, returning only agents the caller is authorized to see.
+      tags:
+      - beta.agents
+      parameters:
+      - name: page_size
+        in: query
+        description: Number of agents per page
+        required: false
+        schema:
+          type: integer
+          title: Page Size
+          maximum: 1000
+          minimum: 1
+          description: Number of agents per page
+          default: 20
+      - name: deployment_chat
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: boolean
+          - type: 'null'
+          title: Deployment Chat
+      - name: sources
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: array
+            items:
+              $ref: '#/components/schemas/RequestSource'
+          - type: 'null'
+          title: Sources
+      - name: name
+        in: query
+        description: Filter by agent name
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Name
+          description: Filter by agent name
+      - name: search
+        in: query
+        description: Search agents by name or ID
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Search
+          description: Search agents by name or ID
+      - name: id
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Id
+      - name: metadata
+        in: query
+        required: false
+        content:
+          application/json:
+            schema:
+              anyOf:
+              - type: object
+                additionalProperties: true
+              - type: 'null'
+              title: Metadata
+      - name: page_token
+        in: query
+        description: Opaque cursor from a previous response's next_page_token. When set, results page forward from the cursor.
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Page Token
+          description: Opaque cursor from a previous response's next_page_token. When set, results page forward from the cursor.
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AgentListPage'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      x-speakeasy-pagination:
+        type: cursor
+        inputs:
+        - name: page_token
+          in: parameters
+          type: cursor
+        - name: page_size
+          in: parameters
+          type: limit
+        outputs:
+          results: $.data
+          nextCursor: $.next_page_token
   /v1/agents/{agent_id}/version:
     patch:
       operationId: agents_api_v1_agents_update_version
@@ -7778,6 +7892,28 @@ components:
       - deployment_chat
       - source
       additionalProperties: false
+    AgentListPage:
+      type: object
+      properties:
+        object:
+          type: string
+          title: Object
+          default: list
+          const: list
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Agent'
+          title: Data
+        next_page_token:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Next Page Token
+      title: AgentListPage
+      required:
+      - data
+      additionalProperties: false
     AgentAliasResponse:
       type: object
       properties:
@@ -12447,6 +12583,114 @@ components:
         Values represent high-level intent. Assignment to actual SPs is handled internally.
 
         System prompt may include knowledge cutoff date, model capabilities, tone to use, safety guidelines, etc.'
+    OCRAsideTextBlock:
+      type: object
+      properties:
+        top_left_x:
+          type: integer
+          title: Top Left X
+          minimum: 0
+        top_left_y:
+          type: integer
+          title: Top Left Y
+          minimum: 0
+        bottom_right_x:
+          type: integer
+          title: Bottom Right X
+          minimum: 0
+        bottom_right_y:
+          type: integer
+          title: Bottom Right Y
+          minimum: 0
+        content:
+          type: string
+          title: Content
+          description: Text/markdown/html content of this block
+        type:
+          type: string
+          title: Type
+          default: aside_text
+          const: aside_text
+      title: OCRAsideTextBlock
+      required:
+      - top_left_x
+      - top_left_y
+      - bottom_right_x
+      - bottom_right_y
+      - content
+      additionalProperties: false
+    OCRCaptionBlock:
+      type: object
+      properties:
+        top_left_x:
+          type: integer
+          title: Top Left X
+          minimum: 0
+        top_left_y:
+          type: integer
+          title: Top Left Y
+          minimum: 0
+        bottom_right_x:
+          type: integer
+          title: Bottom Right X
+          minimum: 0
+        bottom_right_y:
+          type: integer
+          title: Bottom Right Y
+          minimum: 0
+        content:
+          type: string
+          title: Content
+          description: Text/markdown/html content of this block
+        type:
+          type: string
+          title: Type
+          default: caption
+          const: caption
+      title: OCRCaptionBlock
+      required:
+      - top_left_x
+      - top_left_y
+      - bottom_right_x
+      - bottom_right_y
+      - content
+      additionalProperties: false
+    OCRCodeBlock:
+      type: object
+      properties:
+        top_left_x:
+          type: integer
+          title: Top Left X
+          minimum: 0
+        top_left_y:
+          type: integer
+          title: Top Left Y
+          minimum: 0
+        bottom_right_x:
+          type: integer
+          title: Bottom Right X
+          minimum: 0
+        bottom_right_y:
+          type: integer
+          title: Bottom Right Y
+          minimum: 0
+        content:
+          type: string
+          title: Content
+          description: Text/markdown/html content of this block
+        type:
+          type: string
+          title: Type
+          default: code
+          const: code
+      title: OCRCodeBlock
+      required:
+      - top_left_x
+      - top_left_y
+      - bottom_right_x
+      - bottom_right_y
+      - content
+      additionalProperties: false
     OCRConfidenceScore:
       type: object
       properties:
@@ -12472,6 +12716,155 @@ components:
       - start_index
       additionalProperties: false
       description: Confidence score for a token or word in OCR output.
+    OCREquationBlock:
+      type: object
+      properties:
+        top_left_x:
+          type: integer
+          title: Top Left X
+          minimum: 0
+        top_left_y:
+          type: integer
+          title: Top Left Y
+          minimum: 0
+        bottom_right_x:
+          type: integer
+          title: Bottom Right X
+          minimum: 0
+        bottom_right_y:
+          type: integer
+          title: Bottom Right Y
+          minimum: 0
+        content:
+          type: string
+          title: Content
+          description: Text/markdown/html content of this block
+        type:
+          type: string
+          title: Type
+          default: equation
+          const: equation
+      title: OCREquationBlock
+      required:
+      - top_left_x
+      - top_left_y
+      - bottom_right_x
+      - bottom_right_y
+      - content
+      additionalProperties: false
+    OCRFooterBlock:
+      type: object
+      properties:
+        top_left_x:
+          type: integer
+          title: Top Left X
+          minimum: 0
+        top_left_y:
+          type: integer
+          title: Top Left Y
+          minimum: 0
+        bottom_right_x:
+          type: integer
+          title: Bottom Right X
+          minimum: 0
+        bottom_right_y:
+          type: integer
+          title: Bottom Right Y
+          minimum: 0
+        content:
+          type: string
+          title: Content
+          description: Text/markdown/html content of this block
+        type:
+          type: string
+          title: Type
+          default: footer
+          const: footer
+      title: OCRFooterBlock
+      required:
+      - top_left_x
+      - top_left_y
+      - bottom_right_x
+      - bottom_right_y
+      - content
+      additionalProperties: false
+    OCRHeaderBlock:
+      type: object
+      properties:
+        top_left_x:
+          type: integer
+          title: Top Left X
+          minimum: 0
+        top_left_y:
+          type: integer
+          title: Top Left Y
+          minimum: 0
+        bottom_right_x:
+          type: integer
+          title: Bottom Right X
+          minimum: 0
+        bottom_right_y:
+          type: integer
+          title: Bottom Right Y
+          minimum: 0
+        content:
+          type: string
+          title: Content
+          description: Text/markdown/html content of this block
+        type:
+          type: string
+          title: Type
+          default: header
+          const: header
+      title: OCRHeaderBlock
+      required:
+      - top_left_x
+      - top_left_y
+      - bottom_right_x
+      - bottom_right_y
+      - content
+      additionalProperties: false
+    OCRImageBlock:
+      type: object
+      properties:
+        top_left_x:
+          type: integer
+          title: Top Left X
+          minimum: 0
+        top_left_y:
+          type: integer
+          title: Top Left Y
+          minimum: 0
+        bottom_right_x:
+          type: integer
+          title: Bottom Right X
+          minimum: 0
+        bottom_right_y:
+          type: integer
+          title: Bottom Right Y
+          minimum: 0
+        content:
+          type: string
+          title: Content
+          description: Text/markdown/html content of this block
+        type:
+          type: string
+          title: Type
+          default: image
+          const: image
+        image_id:
+          type: string
+          title: Image Id
+          description: References the corresponding entry in OCRPageObject.images
+      title: OCRImageBlock
+      required:
+      - top_left_x
+      - top_left_y
+      - bottom_right_x
+      - bottom_right_y
+      - content
+      - image_id
+      additionalProperties: false
     OCRImageObject:
       type: object
       properties:
@@ -12526,6 +12919,42 @@ components:
       - top_left_y
       - bottom_right_x
       - bottom_right_y
+      additionalProperties: false
+    OCRListBlock:
+      type: object
+      properties:
+        top_left_x:
+          type: integer
+          title: Top Left X
+          minimum: 0
+        top_left_y:
+          type: integer
+          title: Top Left Y
+          minimum: 0
+        bottom_right_x:
+          type: integer
+          title: Bottom Right X
+          minimum: 0
+        bottom_right_y:
+          type: integer
+          title: Bottom Right Y
+          minimum: 0
+        content:
+          type: string
+          title: Content
+          description: Text/markdown/html content of this block
+        type:
+          type: string
+          title: Type
+          default: list
+          const: list
+      title: OCRListBlock
+      required:
+      - top_left_x
+      - top_left_y
+      - bottom_right_x
+      - bottom_right_y
+      - content
       additionalProperties: false
     OCRPageConfidenceScores:
       type: object
@@ -12630,12 +13059,85 @@ components:
           - $ref: '#/components/schemas/OCRPageConfidenceScores'
           - type: 'null'
           description: Confidence scores for the OCR page (populated when confidence_scores_granularity is set)
+        blocks:
+          anyOf:
+          - type: array
+            items:
+              oneOf:
+              - $ref: '#/components/schemas/OCRTextBlock'
+              - $ref: '#/components/schemas/OCRListBlock'
+              - $ref: '#/components/schemas/OCRImageBlock'
+              - $ref: '#/components/schemas/OCRTableBlock'
+              - $ref: '#/components/schemas/OCRTitleBlock'
+              - $ref: '#/components/schemas/OCREquationBlock'
+              - $ref: '#/components/schemas/OCRCaptionBlock'
+              - $ref: '#/components/schemas/OCRCodeBlock'
+              - $ref: '#/components/schemas/OCRReferencesBlock'
+              - $ref: '#/components/schemas/OCRAsideTextBlock'
+              - $ref: '#/components/schemas/OCRHeaderBlock'
+              - $ref: '#/components/schemas/OCRFooterBlock'
+              - $ref: '#/components/schemas/OCRSignatureBlock'
+              discriminator:
+                propertyName: type
+                mapping:
+                  aside_text: '#/components/schemas/OCRAsideTextBlock'
+                  caption: '#/components/schemas/OCRCaptionBlock'
+                  code: '#/components/schemas/OCRCodeBlock'
+                  equation: '#/components/schemas/OCREquationBlock'
+                  footer: '#/components/schemas/OCRFooterBlock'
+                  header: '#/components/schemas/OCRHeaderBlock'
+                  image: '#/components/schemas/OCRImageBlock'
+                  list: '#/components/schemas/OCRListBlock'
+                  references: '#/components/schemas/OCRReferencesBlock'
+                  signature: '#/components/schemas/OCRSignatureBlock'
+                  table: '#/components/schemas/OCRTableBlock'
+                  text: '#/components/schemas/OCRTextBlock'
+                  title: '#/components/schemas/OCRTitleBlock'
+          - type: 'null'
+          title: Blocks
+          description: Paragraph-level bounding boxes for all content blocks in reading order (populated when include_blocks is True)
       title: OCRPageObject
       required:
       - index
       - markdown
       - images
       - dimensions
+      additionalProperties: false
+    OCRReferencesBlock:
+      type: object
+      properties:
+        top_left_x:
+          type: integer
+          title: Top Left X
+          minimum: 0
+        top_left_y:
+          type: integer
+          title: Top Left Y
+          minimum: 0
+        bottom_right_x:
+          type: integer
+          title: Bottom Right X
+          minimum: 0
+        bottom_right_y:
+          type: integer
+          title: Bottom Right Y
+          minimum: 0
+        content:
+          type: string
+          title: Content
+          description: Text/markdown/html content of this block
+        type:
+          type: string
+          title: Type
+          default: references
+          const: references
+      title: OCRReferencesBlock
+      required:
+      - top_left_x
+      - top_left_y
+      - bottom_right_x
+      - bottom_right_y
+      - content
       additionalProperties: false
     OCRRequest:
       type: object
@@ -12657,12 +13159,13 @@ components:
           description: Document to run OCR on
         pages:
           anyOf:
+          - type: string
           - type: array
             items:
               type: integer
           - type: 'null'
           title: Pages
-          description: 'Specific pages user wants to process in various formats: single number, range, or list of both. Starts from 0'
+          description: 'Specific pages to process. Accepts a list of integers or a string of comma-separated numbers and ranges (e.g. ''0,1,2'' or ''0-5'' or ''0,2-4''). Page numbers start from 0.'
         include_image_base64:
           anyOf:
           - type: boolean
@@ -12713,6 +13216,11 @@ components:
           type: boolean
           title: Extract Footer
           default: false
+        include_blocks:
+          type: boolean
+          title: Include Blocks
+          description: Return paragraph-level bounding boxes for all content blocks in the response
+          default: false
         confidence_scores_granularity:
           anyOf:
           - type: string
@@ -12754,6 +13262,85 @@ components:
       - model
       - usage_info
       additionalProperties: false
+    OCRSignatureBlock:
+      type: object
+      properties:
+        top_left_x:
+          type: integer
+          title: Top Left X
+          minimum: 0
+        top_left_y:
+          type: integer
+          title: Top Left Y
+          minimum: 0
+        bottom_right_x:
+          type: integer
+          title: Bottom Right X
+          minimum: 0
+        bottom_right_y:
+          type: integer
+          title: Bottom Right Y
+          minimum: 0
+        content:
+          type: string
+          title: Content
+          description: Text/markdown/html content of this block
+        type:
+          type: string
+          title: Type
+          default: signature
+          const: signature
+      title: OCRSignatureBlock
+      required:
+      - top_left_x
+      - top_left_y
+      - bottom_right_x
+      - bottom_right_y
+      - content
+      additionalProperties: false
+      description: Signature region. ``content`` is the transcribed name when legible, else ``""``.
+    OCRTableBlock:
+      type: object
+      properties:
+        top_left_x:
+          type: integer
+          title: Top Left X
+          minimum: 0
+        top_left_y:
+          type: integer
+          title: Top Left Y
+          minimum: 0
+        bottom_right_x:
+          type: integer
+          title: Bottom Right X
+          minimum: 0
+        bottom_right_y:
+          type: integer
+          title: Bottom Right Y
+          minimum: 0
+        content:
+          type: string
+          title: Content
+          description: Text/markdown/html content of this block
+        type:
+          type: string
+          title: Type
+          default: table
+          const: table
+        table_id:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Table Id
+          description: References the corresponding entry in OCRPageObject.tables, when tables are extracted
+      title: OCRTableBlock
+      required:
+      - top_left_x
+      - top_left_y
+      - bottom_right_x
+      - bottom_right_y
+      - content
+      additionalProperties: false
     OCRTableObject:
       type: object
       properties:
@@ -12785,6 +13372,78 @@ components:
       - id
       - content
       - format
+      additionalProperties: false
+    OCRTextBlock:
+      type: object
+      properties:
+        top_left_x:
+          type: integer
+          title: Top Left X
+          minimum: 0
+        top_left_y:
+          type: integer
+          title: Top Left Y
+          minimum: 0
+        bottom_right_x:
+          type: integer
+          title: Bottom Right X
+          minimum: 0
+        bottom_right_y:
+          type: integer
+          title: Bottom Right Y
+          minimum: 0
+        content:
+          type: string
+          title: Content
+          description: Text/markdown/html content of this block
+        type:
+          type: string
+          title: Type
+          default: text
+          const: text
+      title: OCRTextBlock
+      required:
+      - top_left_x
+      - top_left_y
+      - bottom_right_x
+      - bottom_right_y
+      - content
+      additionalProperties: false
+    OCRTitleBlock:
+      type: object
+      properties:
+        top_left_x:
+          type: integer
+          title: Top Left X
+          minimum: 0
+        top_left_y:
+          type: integer
+          title: Top Left Y
+          minimum: 0
+        bottom_right_x:
+          type: integer
+          title: Bottom Right X
+          minimum: 0
+        bottom_right_y:
+          type: integer
+          title: Bottom Right Y
+          minimum: 0
+        content:
+          type: string
+          title: Content
+          description: Text/markdown/html content of this block
+        type:
+          type: string
+          title: Type
+          default: title
+          const: title
+      title: OCRTitleBlock
+      required:
+      - top_left_x
+      - top_left_y
+      - bottom_right_x
+      - bottom_right_y
+      - content
       additionalProperties: false
     OCRUsageInfo:
       type: object
