@@ -146,6 +146,7 @@ public partial class MistralClient : Meai.IChatClient
         {
             requestMessages.Add(new SystemMessage
             {
+                Role = "system",
                 Content = options!.Instructions!,
             });
         }

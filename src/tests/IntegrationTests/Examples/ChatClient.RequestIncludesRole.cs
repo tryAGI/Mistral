@@ -22,13 +22,21 @@ public partial class Tests
 
         Meai.IChatClient chatClient = client;
         await chatClient.GetResponseAsync(
-            [new Meai.ChatMessage(Meai.ChatRole.User, "Generate 5 random words.")]);
+            [new Meai.ChatMessage(Meai.ChatRole.User, "Generate 5 random words.")],
+            new Meai.ChatOptions
+            {
+                Instructions = "Respond concisely.",
+            });
 
         using var request = JsonDocument.Parse(handler.RequestBody!);
-        var message = request.RootElement.GetProperty("messages")[0];
+        var messages = request.RootElement.GetProperty("messages");
+        var systemMessage = messages[0];
+        var userMessage = messages[1];
 
-        message.GetProperty("role").GetString().Should().Be("user");
-        message.GetProperty("content").GetString().Should().Be("Generate 5 random words.");
+        systemMessage.GetProperty("role").GetString().Should().Be("system");
+        systemMessage.GetProperty("content").GetString().Should().Be("Respond concisely.");
+        userMessage.GetProperty("role").GetString().Should().Be("user");
+        userMessage.GetProperty("content").GetString().Should().Be("Generate 5 random words.");
     }
 
     private sealed class RecordingHandler : HttpMessageHandler
