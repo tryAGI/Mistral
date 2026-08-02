@@ -18,7 +18,7 @@ namespace Mistral.Realtime.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::Mistral.Realtime.ServerEventDiscriminatorTypeExtensions.ToEnum(stringValue) ?? default;
+                        return global::Mistral.Realtime.ServerEventDiscriminatorTypeExtensions.ToEnum(stringValue) ?? throw new global::System.Text.Json.JsonException($"Unknown discriminator value '{stringValue}' for global::Mistral.Realtime.ServerEventDiscriminatorType.");
                     }
                     
                     break;
