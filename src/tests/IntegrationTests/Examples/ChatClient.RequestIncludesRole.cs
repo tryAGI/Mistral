@@ -14,7 +14,7 @@ namespace Mistral.IntegrationTests;
 public partial class Tests
 {
     [TestMethod]
-    public async Task ChatClient_RequestIncludesRole()
+    public async Task ChatClient_RequestIncludesRoleForEveryMessageType()
     {
         var handler = new RecordingHandler();
         using var httpClient = new HttpClient(handler);
@@ -22,7 +22,22 @@ public partial class Tests
 
         Meai.IChatClient chatClient = client;
         await chatClient.GetResponseAsync(
-            [new Meai.ChatMessage(Meai.ChatRole.User, "Generate 5 random words.")],
+            [
+                new Meai.ChatMessage(Meai.ChatRole.System, "Use metric units."),
+                new Meai.ChatMessage(Meai.ChatRole.User, "What is the weather in Paris?"),
+                new Meai.ChatMessage(Meai.ChatRole.Assistant,
+                [
+                    new Meai.TextContent("I'll check."),
+                    new Meai.FunctionCallContent(
+                        "call-1",
+                        "get_weather",
+                        new Dictionary<string, object?> { ["location"] = "Paris" }),
+                ]),
+                new Meai.ChatMessage(Meai.ChatRole.Tool,
+                [
+                    new Meai.FunctionResultContent("call-1", "18°C and sunny"),
+                ]),
+            ],
             new Meai.ChatOptions
             {
                 Instructions = "Respond concisely.",
@@ -30,13 +45,21 @@ public partial class Tests
 
         using var request = JsonDocument.Parse(handler.RequestBody!);
         var messages = request.RootElement.GetProperty("messages");
-        var systemMessage = messages[0];
-        var userMessage = messages[1];
 
-        systemMessage.GetProperty("role").GetString().Should().Be("system");
-        systemMessage.GetProperty("content").GetString().Should().Be("Respond concisely.");
-        userMessage.GetProperty("role").GetString().Should().Be("user");
-        userMessage.GetProperty("content").GetString().Should().Be("Generate 5 random words.");
+        messages.GetArrayLength().Should().Be(5);
+        messages[0].GetProperty("role").GetString().Should().Be("system");
+        messages[0].GetProperty("content").GetString().Should().Be("Respond concisely.");
+        messages[1].GetProperty("role").GetString().Should().Be("system");
+        messages[1].GetProperty("content").GetString().Should().Be("Use metric units.");
+        messages[2].GetProperty("role").GetString().Should().Be("user");
+        messages[2].GetProperty("content").GetString().Should().Be("What is the weather in Paris?");
+        messages[3].GetProperty("role").GetString().Should().Be("assistant");
+        messages[3].GetProperty("content").GetString().Should().Be("I'll check.");
+        messages[3].GetProperty("tool_calls")[0].GetProperty("id").GetString().Should().Be("call-1");
+        messages[3].GetProperty("tool_calls")[0].GetProperty("type").GetString().Should().Be("function");
+        messages[4].GetProperty("role").GetString().Should().Be("tool");
+        messages[4].GetProperty("tool_call_id").GetString().Should().Be("call-1");
+        messages[4].GetProperty("content").GetString().Should().Be("18°C and sunny");
     }
 
     private sealed class RecordingHandler : HttpMessageHandler
