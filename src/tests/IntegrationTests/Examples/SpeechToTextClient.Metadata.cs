@@ -5,7 +5,7 @@ slug: voxtral-meai-speech-to-text
 
 `MistralClient` implements `Microsoft.Extensions.AI.ISpeechToTextClient`,
 backed by Voxtral. `GetTextAsync` POSTs to `/v1/audio/transcriptions`
-(default model: `voxtral-mini-2507`). `GetStreamingTextAsync` opens a WebSocket
+(default model: `voxtral-mini-latest`). `GetStreamingTextAsync` opens a WebSocket
 to `/v1/audio/transcriptions/realtime` (default model:
 `voxtral-mini-transcribe-realtime-2602`) and yields interim + final updates.
 */

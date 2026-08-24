@@ -6,7 +6,7 @@ slug: voxtral-tts-stt-roundtrip
 Exercises the Voxtral batch transcription endpoint end-to-end by:
 1. Using Mistral TTS (`/v1/audio/speech`) to synthesize a short utterance.
 2. Feeding the resulting audio bytes into
-   `Meai.ISpeechToTextClient.GetTextAsync` (default model: `voxtral-mini-2507`).
+   `Meai.ISpeechToTextClient.GetTextAsync` (default model: `voxtral-mini-latest`).
 3. Asserting the returned text is non-empty.
 
 Skips when `MISTRAL_API_KEY` is unset or the account has no voices available.
@@ -51,6 +51,7 @@ public partial class Tests
             speech = await client.AudioSpeech.SpeechAsync(new SpeechRequest
             {
                 Input = "Hello from Voxtral.",
+                Model = VoxtralModels.MiniTts,
                 VoiceId = voice.Id.ToString(),
                 ResponseFormat = SpeechOutputFormat.Wav,
             });

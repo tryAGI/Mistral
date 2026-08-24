@@ -14,13 +14,22 @@ namespace Mistral;
 public static class VoxtralModels
 {
     /// <summary>
-    /// Voxtral Mini Transcribe — batch transcription via
+    /// Voxtral Mini TTS — the latest text-to-speech model exposed through
+    /// <c>POST /v1/audio/speech</c>.
+    /// </summary>
+    public const string MiniTts = "voxtral-mini-tts-2603";
+
+    /// <summary>
+    /// Voxtral Mini Transcribe 2 — batch transcription via
     /// <c>POST /v1/audio/transcriptions</c>. Default model used by
     /// <see cref="Microsoft.Extensions.AI.ISpeechToTextClient"/>'s
     /// <c>GetTextAsync</c> path. Card:
     /// https://docs.mistral.ai/models/voxtral-mini-transcribe-26-02.
     /// </summary>
-    public const string MiniTranscribe = "voxtral-mini-2507";
+    public const string MiniTranscribe = "voxtral-mini-latest";
+
+    /// <summary>The dated Voxtral Mini Transcribe 2 snapshot.</summary>
+    public const string MiniTranscribeSnapshot = "voxtral-mini-2602";
 
     /// <summary>
     /// Voxtral Mini Transcribe Realtime — low-latency live transcription via
