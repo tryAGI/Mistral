@@ -212,7 +212,7 @@ namespace Mistral
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.ContextBias, x => x))}]"),
+                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.ContextBias!, x => x))}]"),
                                     name: "\"context_bias\"");
 
                             }
@@ -220,7 +220,7 @@ namespace Mistral
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.TimestampGranularities, x => x.ToValueString()))}]"),
+                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.TimestampGranularities!, x => x.ToValueString()))}]"),
                                     name: "\"timestamp_granularities\"");
 
                             }
