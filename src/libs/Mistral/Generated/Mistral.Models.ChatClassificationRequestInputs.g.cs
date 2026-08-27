@@ -10,7 +10,7 @@ namespace Mistral
     public readonly partial struct ChatClassificationRequestInputs : global::System.IEquatable<ChatClassificationRequestInputs>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.InstructRequest? InstructRequest { get; init; }
@@ -19,7 +19,7 @@ namespace Mistral
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InstructRequest))]
@@ -27,7 +27,7 @@ namespace Mistral
         public bool IsInstructRequest => InstructRequest != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickInstructRequest(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.InstructRequest PickInstructRequest() => IsInstructRequest
             ? InstructRequest!
             : throw new global::System.InvalidOperationException($"Expected union variant 'InstructRequest' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::Mistral.InstructRequest>? ChatClassificationRequestInputsVariant2 { get; init; }
@@ -56,7 +56,7 @@ namespace Mistral
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatClassificationRequestInputsVariant2))]
@@ -64,7 +64,7 @@ namespace Mistral
         public bool IsChatClassificationRequestInputsVariant2 => ChatClassificationRequestInputsVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickChatClassificationRequestInputsVariant2(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Collections.Generic.IList<global::Mistral.InstructRequest> PickChatClassificationRequestInputsVariant2() => IsChatClassificationRequestInputsVariant2
             ? ChatClassificationRequestInputsVariant2!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatClassificationRequestInputsVariant2' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ChatClassificationRequestInputs(global::Mistral.InstructRequest value) => new ChatClassificationRequestInputs((global::Mistral.InstructRequest?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Mistral.InstructRequest?(ChatClassificationRequestInputs @this) => @this.InstructRequest;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatClassificationRequestInputs(global::Mistral.InstructRequest? value)
         {
@@ -101,12 +101,12 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ChatClassificationRequestInputs FromInstructRequest(global::Mistral.InstructRequest? value) => new ChatClassificationRequestInputs(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatClassificationRequestInputs(
             global::Mistral.InstructRequest? instructRequest,
@@ -118,23 +118,23 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             ChatClassificationRequestInputsVariant2 as object ??
-            InstructRequest as object 
+            InstructRequest as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             InstructRequest?.ToString() ??
-            ChatClassificationRequestInputsVariant2?.ToString() 
+            ChatClassificationRequestInputsVariant2?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -142,7 +142,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Mistral.InstructRequest, TResult>? instructRequest = null,
@@ -167,7 +167,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Mistral.InstructRequest>? instructRequest = null,
@@ -191,7 +191,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Mistral.InstructRequest>? instructRequest = null,
@@ -214,7 +214,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -235,18 +235,18 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ChatClassificationRequestInputs other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Mistral.InstructRequest?>.Default.Equals(InstructRequest, other.InstructRequest) &&
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::Mistral.InstructRequest>?>.Default.Equals(ChatClassificationRequestInputsVariant2, other.ChatClassificationRequestInputsVariant2) 
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::Mistral.InstructRequest>?>.Default.Equals(ChatClassificationRequestInputsVariant2, other.ChatClassificationRequestInputsVariant2)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ChatClassificationRequestInputs obj1, ChatClassificationRequestInputs obj2)
         {
@@ -254,7 +254,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ChatClassificationRequestInputs obj1, ChatClassificationRequestInputs obj2)
         {
@@ -262,7 +262,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

@@ -82,7 +82,7 @@ namespace Mistral
         /// <param name="source"></param>
         /// <param name="search"></param>
         /// <param name="purpose"></param>
-        /// <param name="mimetypes"></param> 
+        /// <param name="mimetypes"></param>
         /// <param name="page">Initial page number to start enumerating from. Defaults to 1.</param>
         /// <param name="cancellationToken"></param>
         global::System.Collections.Generic.IAsyncEnumerable<global::Mistral.FileSchema> ListFilesAutoPagingAsync(

@@ -9,28 +9,28 @@ namespace Mistral
     public sealed partial class OCRSignatureBlock
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("top_left_x")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int TopLeftX { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("top_left_y")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int TopLeftY { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("bottom_right_x")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int BottomRightX { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("bottom_right_y")]
         [global::System.Text.Json.Serialization.JsonRequired]

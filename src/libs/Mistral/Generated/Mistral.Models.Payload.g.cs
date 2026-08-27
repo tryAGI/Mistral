@@ -10,7 +10,7 @@ namespace Mistral
     public readonly partial struct Payload : global::System.IEquatable<Payload>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.CustomTaskInProgressAttributesResponsePayloadDiscriminatorType? Type { get; }
 
@@ -25,7 +25,7 @@ namespace Mistral
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Json))]
@@ -33,7 +33,7 @@ namespace Mistral
         public bool IsJson => Json != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickJson(
 #if NET6_0_OR_GREATER
@@ -46,7 +46,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.JSONPayloadResponse PickJson() => IsJson
             ? Json!
@@ -63,7 +63,7 @@ namespace Mistral
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(JsonPatch))]
@@ -71,7 +71,7 @@ namespace Mistral
         public bool IsJsonPatch => JsonPatch != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickJsonPatch(
 #if NET6_0_OR_GREATER
@@ -84,23 +84,23 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.JSONPatchPayloadResponse PickJsonPatch() => IsJsonPatch
             ? JsonPatch!
             : throw new global::System.InvalidOperationException($"Expected union variant 'JsonPatch' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Payload(global::Mistral.JSONPayloadResponse value) => new Payload((global::Mistral.JSONPayloadResponse?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Mistral.JSONPayloadResponse?(Payload @this) => @this.Json;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Payload(global::Mistral.JSONPayloadResponse? value)
         {
@@ -108,22 +108,22 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Payload FromJson(global::Mistral.JSONPayloadResponse? value) => new Payload(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Payload(global::Mistral.JSONPatchPayloadResponse value) => new Payload((global::Mistral.JSONPatchPayloadResponse?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Mistral.JSONPatchPayloadResponse?(Payload @this) => @this.JsonPatch;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Payload(global::Mistral.JSONPatchPayloadResponse? value)
         {
@@ -131,12 +131,12 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Payload FromJsonPatch(global::Mistral.JSONPatchPayloadResponse? value) => new Payload(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Payload(
             global::Mistral.CustomTaskInProgressAttributesResponsePayloadDiscriminatorType? type,
@@ -151,23 +151,23 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             JsonPatch as object ??
-            Json as object 
+            Json as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Json?.ToString() ??
-            JsonPatch?.ToString() 
+            JsonPatch?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -175,7 +175,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Mistral.JSONPayloadResponse, TResult>? json = null,
@@ -200,7 +200,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Mistral.JSONPayloadResponse>? json = null,
@@ -224,7 +224,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Mistral.JSONPayloadResponse>? json = null,
@@ -247,7 +247,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -268,18 +268,18 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(Payload other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Mistral.JSONPayloadResponse?>.Default.Equals(Json, other.Json) &&
-                global::System.Collections.Generic.EqualityComparer<global::Mistral.JSONPatchPayloadResponse?>.Default.Equals(JsonPatch, other.JsonPatch) 
+                global::System.Collections.Generic.EqualityComparer<global::Mistral.JSONPatchPayloadResponse?>.Default.Equals(JsonPatch, other.JsonPatch)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(Payload obj1, Payload obj2)
         {
@@ -287,7 +287,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(Payload obj1, Payload obj2)
         {
@@ -295,7 +295,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

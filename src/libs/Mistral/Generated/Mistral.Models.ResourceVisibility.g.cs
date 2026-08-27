@@ -4,24 +4,24 @@
 namespace Mistral
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ResourceVisibility
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Private,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SharedGlobal,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SharedOrg,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SharedWorkspace,
     }

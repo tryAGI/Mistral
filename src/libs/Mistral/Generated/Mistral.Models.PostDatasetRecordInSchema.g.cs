@@ -4,19 +4,19 @@
 namespace Mistral
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class PostDatasetRecordInSchema
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("payload")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::Mistral.ConversationPayload Payload { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("properties")]
         [global::System.Text.Json.Serialization.JsonRequired]

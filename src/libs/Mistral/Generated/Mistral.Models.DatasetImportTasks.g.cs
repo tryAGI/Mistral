@@ -4,12 +4,12 @@
 namespace Mistral
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class DatasetImportTasks
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tasks")]
         [global::System.Text.Json.Serialization.JsonRequired]

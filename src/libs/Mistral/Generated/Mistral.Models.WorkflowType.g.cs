@@ -4,12 +4,12 @@
 namespace Mistral
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum WorkflowType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Code,
     }

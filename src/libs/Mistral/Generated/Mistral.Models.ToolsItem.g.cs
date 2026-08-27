@@ -5,17 +5,17 @@
 namespace Mistral
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct ToolsItem : global::System.IEquatable<ToolsItem>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.AgentToolDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.FunctionTool? Function { get; init; }
@@ -24,7 +24,7 @@ namespace Mistral
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Function))]
@@ -32,7 +32,7 @@ namespace Mistral
         public bool IsFunction => Function != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickFunction(
 #if NET6_0_OR_GREATER
@@ -45,14 +45,14 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.FunctionTool PickFunction() => IsFunction
             ? Function!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Function' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.WebSearchTool? WebSearch { get; init; }
@@ -61,7 +61,7 @@ namespace Mistral
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebSearch))]
@@ -69,7 +69,7 @@ namespace Mistral
         public bool IsWebSearch => WebSearch != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickWebSearch(
 #if NET6_0_OR_GREATER
@@ -82,14 +82,14 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.WebSearchTool PickWebSearch() => IsWebSearch
             ? WebSearch!
             : throw new global::System.InvalidOperationException($"Expected union variant 'WebSearch' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.WebSearchPremiumTool? WebSearchPremium { get; init; }
@@ -98,7 +98,7 @@ namespace Mistral
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebSearchPremium))]
@@ -106,7 +106,7 @@ namespace Mistral
         public bool IsWebSearchPremium => WebSearchPremium != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickWebSearchPremium(
 #if NET6_0_OR_GREATER
@@ -119,14 +119,14 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.WebSearchPremiumTool PickWebSearchPremium() => IsWebSearchPremium
             ? WebSearchPremium!
             : throw new global::System.InvalidOperationException($"Expected union variant 'WebSearchPremium' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.CodeInterpreterTool? CodeInterpreter { get; init; }
@@ -135,7 +135,7 @@ namespace Mistral
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CodeInterpreter))]
@@ -143,7 +143,7 @@ namespace Mistral
         public bool IsCodeInterpreter => CodeInterpreter != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickCodeInterpreter(
 #if NET6_0_OR_GREATER
@@ -156,14 +156,14 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.CodeInterpreterTool PickCodeInterpreter() => IsCodeInterpreter
             ? CodeInterpreter!
             : throw new global::System.InvalidOperationException($"Expected union variant 'CodeInterpreter' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.ImageGenerationTool? ImageGeneration { get; init; }
@@ -172,7 +172,7 @@ namespace Mistral
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageGeneration))]
@@ -180,7 +180,7 @@ namespace Mistral
         public bool IsImageGeneration => ImageGeneration != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickImageGeneration(
 #if NET6_0_OR_GREATER
@@ -193,14 +193,14 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.ImageGenerationTool PickImageGeneration() => IsImageGeneration
             ? ImageGeneration!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ImageGeneration' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.DocumentLibraryTool? DocumentLibrary { get; init; }
@@ -209,7 +209,7 @@ namespace Mistral
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DocumentLibrary))]
@@ -217,7 +217,7 @@ namespace Mistral
         public bool IsDocumentLibrary => DocumentLibrary != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickDocumentLibrary(
 #if NET6_0_OR_GREATER
@@ -230,14 +230,14 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.DocumentLibraryTool PickDocumentLibrary() => IsDocumentLibrary
             ? DocumentLibrary!
             : throw new global::System.InvalidOperationException($"Expected union variant 'DocumentLibrary' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.CustomConnector? Connector { get; init; }
@@ -246,7 +246,7 @@ namespace Mistral
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Connector))]
@@ -254,7 +254,7 @@ namespace Mistral
         public bool IsConnector => Connector != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickConnector(
 #if NET6_0_OR_GREATER
@@ -267,23 +267,23 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.CustomConnector PickConnector() => IsConnector
             ? Connector!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Connector' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ToolsItem(global::Mistral.FunctionTool value) => new ToolsItem((global::Mistral.FunctionTool?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Mistral.FunctionTool?(ToolsItem @this) => @this.Function;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ToolsItem(global::Mistral.FunctionTool? value)
         {
@@ -291,22 +291,22 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ToolsItem FromFunction(global::Mistral.FunctionTool? value) => new ToolsItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ToolsItem(global::Mistral.WebSearchTool value) => new ToolsItem((global::Mistral.WebSearchTool?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Mistral.WebSearchTool?(ToolsItem @this) => @this.WebSearch;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ToolsItem(global::Mistral.WebSearchTool? value)
         {
@@ -314,22 +314,22 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ToolsItem FromWebSearch(global::Mistral.WebSearchTool? value) => new ToolsItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ToolsItem(global::Mistral.WebSearchPremiumTool value) => new ToolsItem((global::Mistral.WebSearchPremiumTool?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Mistral.WebSearchPremiumTool?(ToolsItem @this) => @this.WebSearchPremium;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ToolsItem(global::Mistral.WebSearchPremiumTool? value)
         {
@@ -337,22 +337,22 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ToolsItem FromWebSearchPremium(global::Mistral.WebSearchPremiumTool? value) => new ToolsItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ToolsItem(global::Mistral.CodeInterpreterTool value) => new ToolsItem((global::Mistral.CodeInterpreterTool?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Mistral.CodeInterpreterTool?(ToolsItem @this) => @this.CodeInterpreter;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ToolsItem(global::Mistral.CodeInterpreterTool? value)
         {
@@ -360,22 +360,22 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ToolsItem FromCodeInterpreter(global::Mistral.CodeInterpreterTool? value) => new ToolsItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ToolsItem(global::Mistral.ImageGenerationTool value) => new ToolsItem((global::Mistral.ImageGenerationTool?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Mistral.ImageGenerationTool?(ToolsItem @this) => @this.ImageGeneration;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ToolsItem(global::Mistral.ImageGenerationTool? value)
         {
@@ -383,22 +383,22 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ToolsItem FromImageGeneration(global::Mistral.ImageGenerationTool? value) => new ToolsItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ToolsItem(global::Mistral.DocumentLibraryTool value) => new ToolsItem((global::Mistral.DocumentLibraryTool?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Mistral.DocumentLibraryTool?(ToolsItem @this) => @this.DocumentLibrary;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ToolsItem(global::Mistral.DocumentLibraryTool? value)
         {
@@ -406,22 +406,22 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ToolsItem FromDocumentLibrary(global::Mistral.DocumentLibraryTool? value) => new ToolsItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ToolsItem(global::Mistral.CustomConnector value) => new ToolsItem((global::Mistral.CustomConnector?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Mistral.CustomConnector?(ToolsItem @this) => @this.Connector;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ToolsItem(global::Mistral.CustomConnector? value)
         {
@@ -429,12 +429,12 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ToolsItem FromConnector(global::Mistral.CustomConnector? value) => new ToolsItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ToolsItem(
             global::Mistral.AgentToolDiscriminatorType? type,
@@ -459,7 +459,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Connector as object ??
@@ -468,11 +468,11 @@ namespace Mistral
             CodeInterpreter as object ??
             WebSearchPremium as object ??
             WebSearch as object ??
-            Function as object 
+            Function as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Function?.ToString() ??
@@ -481,11 +481,11 @@ namespace Mistral
             CodeInterpreter?.ToString() ??
             ImageGeneration?.ToString() ??
             DocumentLibrary?.ToString() ??
-            Connector?.ToString() 
+            Connector?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -493,7 +493,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Mistral.FunctionTool, TResult>? function = null,
@@ -543,7 +543,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Mistral.FunctionTool>? function = null,
@@ -597,7 +597,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Mistral.FunctionTool>? function = null,
@@ -645,7 +645,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -676,7 +676,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ToolsItem other)
         {
@@ -687,12 +687,12 @@ namespace Mistral
                 global::System.Collections.Generic.EqualityComparer<global::Mistral.CodeInterpreterTool?>.Default.Equals(CodeInterpreter, other.CodeInterpreter) &&
                 global::System.Collections.Generic.EqualityComparer<global::Mistral.ImageGenerationTool?>.Default.Equals(ImageGeneration, other.ImageGeneration) &&
                 global::System.Collections.Generic.EqualityComparer<global::Mistral.DocumentLibraryTool?>.Default.Equals(DocumentLibrary, other.DocumentLibrary) &&
-                global::System.Collections.Generic.EqualityComparer<global::Mistral.CustomConnector?>.Default.Equals(Connector, other.Connector) 
+                global::System.Collections.Generic.EqualityComparer<global::Mistral.CustomConnector?>.Default.Equals(Connector, other.Connector)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ToolsItem obj1, ToolsItem obj2)
         {
@@ -700,7 +700,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ToolsItem obj1, ToolsItem obj2)
         {
@@ -708,7 +708,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

@@ -5,17 +5,17 @@
 namespace Mistral
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct ContentChunk : global::System.IEquatable<ContentChunk>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.ContentChunkDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.TextChunk? Text { get; init; }
@@ -24,7 +24,7 @@ namespace Mistral
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
@@ -32,7 +32,7 @@ namespace Mistral
         public bool IsText => Text != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickText(
 #if NET6_0_OR_GREATER
@@ -45,7 +45,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.TextChunk PickText() => IsText
             ? Text!
@@ -61,7 +61,7 @@ namespace Mistral
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageUrl))]
@@ -69,7 +69,7 @@ namespace Mistral
         public bool IsImageUrl => ImageUrl != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickImageUrl(
 #if NET6_0_OR_GREATER
@@ -82,14 +82,14 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.ImageURLChunk PickImageUrl() => IsImageUrl
             ? ImageUrl!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ImageUrl' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.DocumentURLChunk? DocumentUrl { get; init; }
@@ -98,7 +98,7 @@ namespace Mistral
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DocumentUrl))]
@@ -106,7 +106,7 @@ namespace Mistral
         public bool IsDocumentUrl => DocumentUrl != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickDocumentUrl(
 #if NET6_0_OR_GREATER
@@ -119,14 +119,14 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.DocumentURLChunk PickDocumentUrl() => IsDocumentUrl
             ? DocumentUrl!
             : throw new global::System.InvalidOperationException($"Expected union variant 'DocumentUrl' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.ReferenceChunk? Reference { get; init; }
@@ -135,7 +135,7 @@ namespace Mistral
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Reference))]
@@ -143,7 +143,7 @@ namespace Mistral
         public bool IsReference => Reference != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickReference(
 #if NET6_0_OR_GREATER
@@ -156,14 +156,14 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.ReferenceChunk PickReference() => IsReference
             ? Reference!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Reference' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.FileChunk? File { get; init; }
@@ -172,7 +172,7 @@ namespace Mistral
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(File))]
@@ -180,7 +180,7 @@ namespace Mistral
         public bool IsFile => File != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickFile(
 #if NET6_0_OR_GREATER
@@ -193,14 +193,14 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.FileChunk PickFile() => IsFile
             ? File!
             : throw new global::System.InvalidOperationException($"Expected union variant 'File' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.ThinkChunk? Thinking { get; init; }
@@ -209,7 +209,7 @@ namespace Mistral
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Thinking))]
@@ -217,7 +217,7 @@ namespace Mistral
         public bool IsThinking => Thinking != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickThinking(
 #if NET6_0_OR_GREATER
@@ -230,14 +230,14 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.ThinkChunk PickThinking() => IsThinking
             ? Thinking!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Thinking' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.AudioChunk? InputAudio { get; init; }
@@ -246,7 +246,7 @@ namespace Mistral
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputAudio))]
@@ -254,7 +254,7 @@ namespace Mistral
         public bool IsInputAudio => InputAudio != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickInputAudio(
 #if NET6_0_OR_GREATER
@@ -267,23 +267,23 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.AudioChunk PickInputAudio() => IsInputAudio
             ? InputAudio!
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputAudio' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ContentChunk(global::Mistral.TextChunk value) => new ContentChunk((global::Mistral.TextChunk?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Mistral.TextChunk?(ContentChunk @this) => @this.Text;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ContentChunk(global::Mistral.TextChunk? value)
         {
@@ -291,22 +291,22 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ContentChunk FromText(global::Mistral.TextChunk? value) => new ContentChunk(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ContentChunk(global::Mistral.ImageURLChunk value) => new ContentChunk((global::Mistral.ImageURLChunk?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Mistral.ImageURLChunk?(ContentChunk @this) => @this.ImageUrl;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ContentChunk(global::Mistral.ImageURLChunk? value)
         {
@@ -314,22 +314,22 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ContentChunk FromImageUrl(global::Mistral.ImageURLChunk? value) => new ContentChunk(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ContentChunk(global::Mistral.DocumentURLChunk value) => new ContentChunk((global::Mistral.DocumentURLChunk?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Mistral.DocumentURLChunk?(ContentChunk @this) => @this.DocumentUrl;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ContentChunk(global::Mistral.DocumentURLChunk? value)
         {
@@ -337,22 +337,22 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ContentChunk FromDocumentUrl(global::Mistral.DocumentURLChunk? value) => new ContentChunk(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ContentChunk(global::Mistral.ReferenceChunk value) => new ContentChunk((global::Mistral.ReferenceChunk?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Mistral.ReferenceChunk?(ContentChunk @this) => @this.Reference;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ContentChunk(global::Mistral.ReferenceChunk? value)
         {
@@ -360,22 +360,22 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ContentChunk FromReference(global::Mistral.ReferenceChunk? value) => new ContentChunk(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ContentChunk(global::Mistral.FileChunk value) => new ContentChunk((global::Mistral.FileChunk?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Mistral.FileChunk?(ContentChunk @this) => @this.File;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ContentChunk(global::Mistral.FileChunk? value)
         {
@@ -383,22 +383,22 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ContentChunk FromFile(global::Mistral.FileChunk? value) => new ContentChunk(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ContentChunk(global::Mistral.ThinkChunk value) => new ContentChunk((global::Mistral.ThinkChunk?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Mistral.ThinkChunk?(ContentChunk @this) => @this.Thinking;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ContentChunk(global::Mistral.ThinkChunk? value)
         {
@@ -406,22 +406,22 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ContentChunk FromThinking(global::Mistral.ThinkChunk? value) => new ContentChunk(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ContentChunk(global::Mistral.AudioChunk value) => new ContentChunk((global::Mistral.AudioChunk?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Mistral.AudioChunk?(ContentChunk @this) => @this.InputAudio;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ContentChunk(global::Mistral.AudioChunk? value)
         {
@@ -429,12 +429,12 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ContentChunk FromInputAudio(global::Mistral.AudioChunk? value) => new ContentChunk(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ContentChunk(
             global::Mistral.ContentChunkDiscriminatorType? type,
@@ -459,7 +459,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             InputAudio as object ??
@@ -468,11 +468,11 @@ namespace Mistral
             Reference as object ??
             DocumentUrl as object ??
             ImageUrl as object ??
-            Text as object 
+            Text as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Text?.ToString() ??
@@ -481,11 +481,11 @@ namespace Mistral
             Reference?.ToString() ??
             File?.ToString() ??
             Thinking?.ToString() ??
-            InputAudio?.ToString() 
+            InputAudio?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -493,7 +493,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Mistral.TextChunk, TResult>? text = null,
@@ -543,7 +543,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Mistral.TextChunk>? text = null,
@@ -597,7 +597,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Mistral.TextChunk>? text = null,
@@ -645,7 +645,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -676,7 +676,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ContentChunk other)
         {
@@ -687,12 +687,12 @@ namespace Mistral
                 global::System.Collections.Generic.EqualityComparer<global::Mistral.ReferenceChunk?>.Default.Equals(Reference, other.Reference) &&
                 global::System.Collections.Generic.EqualityComparer<global::Mistral.FileChunk?>.Default.Equals(File, other.File) &&
                 global::System.Collections.Generic.EqualityComparer<global::Mistral.ThinkChunk?>.Default.Equals(Thinking, other.Thinking) &&
-                global::System.Collections.Generic.EqualityComparer<global::Mistral.AudioChunk?>.Default.Equals(InputAudio, other.InputAudio) 
+                global::System.Collections.Generic.EqualityComparer<global::Mistral.AudioChunk?>.Default.Equals(InputAudio, other.InputAudio)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ContentChunk obj1, ContentChunk obj2)
         {
@@ -700,7 +700,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ContentChunk obj1, ContentChunk obj2)
         {
@@ -708,7 +708,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

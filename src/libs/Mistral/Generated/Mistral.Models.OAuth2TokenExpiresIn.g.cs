@@ -4,7 +4,7 @@
 namespace Mistral
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class OAuth2TokenExpiresIn
     {

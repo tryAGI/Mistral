@@ -4,20 +4,20 @@
 namespace Mistral
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum FunctionCallEntryConfirmationStatus2
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Allowed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Denied,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Pending,
     }

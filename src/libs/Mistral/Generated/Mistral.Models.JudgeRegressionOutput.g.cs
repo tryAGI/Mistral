@@ -4,7 +4,7 @@
 namespace Mistral
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class JudgeRegressionOutput
     {
@@ -21,7 +21,7 @@ namespace Mistral
         public double? Min { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("min_description")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -34,7 +34,7 @@ namespace Mistral
         public double? Max { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_description")]
         [global::System.Text.Json.Serialization.JsonRequired]

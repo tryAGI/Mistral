@@ -5,17 +5,17 @@
 namespace Mistral
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct DataItem2 : global::System.IEquatable<DataItem2>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.JobsOutDataItemDiscriminatorJobType? JobType { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.CompletionJobOut? Completion { get; init; }
@@ -24,7 +24,7 @@ namespace Mistral
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Completion))]
@@ -32,7 +32,7 @@ namespace Mistral
         public bool IsCompletion => Completion != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickCompletion(
 #if NET6_0_OR_GREATER
@@ -45,14 +45,14 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.CompletionJobOut PickCompletion() => IsCompletion
             ? Completion!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Completion' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.ClassifierJobOut? Classifier { get; init; }
@@ -61,7 +61,7 @@ namespace Mistral
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Classifier))]
@@ -69,7 +69,7 @@ namespace Mistral
         public bool IsClassifier => Classifier != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickClassifier(
 #if NET6_0_OR_GREATER
@@ -82,23 +82,23 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.ClassifierJobOut PickClassifier() => IsClassifier
             ? Classifier!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Classifier' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator DataItem2(global::Mistral.CompletionJobOut value) => new DataItem2((global::Mistral.CompletionJobOut?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Mistral.CompletionJobOut?(DataItem2 @this) => @this.Completion;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public DataItem2(global::Mistral.CompletionJobOut? value)
         {
@@ -106,22 +106,22 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static DataItem2 FromCompletion(global::Mistral.CompletionJobOut? value) => new DataItem2(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator DataItem2(global::Mistral.ClassifierJobOut value) => new DataItem2((global::Mistral.ClassifierJobOut?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Mistral.ClassifierJobOut?(DataItem2 @this) => @this.Classifier;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public DataItem2(global::Mistral.ClassifierJobOut? value)
         {
@@ -129,12 +129,12 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static DataItem2 FromClassifier(global::Mistral.ClassifierJobOut? value) => new DataItem2(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public DataItem2(
             global::Mistral.JobsOutDataItemDiscriminatorJobType? jobType,
@@ -149,23 +149,23 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Classifier as object ??
-            Completion as object 
+            Completion as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Completion?.ToString() ??
-            Classifier?.ToString() 
+            Classifier?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -173,7 +173,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Mistral.CompletionJobOut, TResult>? completion = null,
@@ -198,7 +198,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Mistral.CompletionJobOut>? completion = null,
@@ -222,7 +222,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Mistral.CompletionJobOut>? completion = null,
@@ -245,7 +245,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -266,18 +266,18 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(DataItem2 other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Mistral.CompletionJobOut?>.Default.Equals(Completion, other.Completion) &&
-                global::System.Collections.Generic.EqualityComparer<global::Mistral.ClassifierJobOut?>.Default.Equals(Classifier, other.Classifier) 
+                global::System.Collections.Generic.EqualityComparer<global::Mistral.ClassifierJobOut?>.Default.Equals(Classifier, other.Classifier)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(DataItem2 obj1, DataItem2 obj2)
         {
@@ -285,7 +285,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(DataItem2 obj1, DataItem2 obj2)
         {
@@ -293,7 +293,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

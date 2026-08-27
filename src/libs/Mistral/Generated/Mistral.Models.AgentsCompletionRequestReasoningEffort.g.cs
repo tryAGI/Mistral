@@ -9,11 +9,11 @@ namespace Mistral
     public enum AgentsCompletionRequestReasoningEffort
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         High,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         None,
     }

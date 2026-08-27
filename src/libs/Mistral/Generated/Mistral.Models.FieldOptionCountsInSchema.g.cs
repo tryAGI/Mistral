@@ -4,12 +4,12 @@
 namespace Mistral
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class FieldOptionCountsInSchema
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("filter_params")]
         public global::Mistral.FilterPayload? FilterParams { get; set; }

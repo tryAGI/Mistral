@@ -11,7 +11,7 @@ namespace Mistral
     public sealed partial class MCPToolCallMetadata
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("mcp_meta")]
         public global::Mistral.MCPResultMetadata? McpMeta { get; set; }

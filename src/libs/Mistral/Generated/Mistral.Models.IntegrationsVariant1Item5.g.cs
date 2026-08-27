@@ -5,17 +5,17 @@
 namespace Mistral
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct IntegrationsVariant1Item5 : global::System.IEquatable<IntegrationsVariant1Item5>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.CompletionDetailedJobOutIntegrationsVariant1ItemDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.WandbIntegrationOut? Wandb { get; init; }
@@ -24,7 +24,7 @@ namespace Mistral
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Wandb))]
@@ -32,7 +32,7 @@ namespace Mistral
         public bool IsWandb => Wandb != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickWandb(
 #if NET6_0_OR_GREATER
@@ -45,23 +45,23 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.WandbIntegrationOut PickWandb() => IsWandb
             ? Wandb!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Wandb' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator IntegrationsVariant1Item5(global::Mistral.WandbIntegrationOut value) => new IntegrationsVariant1Item5((global::Mistral.WandbIntegrationOut?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Mistral.WandbIntegrationOut?(IntegrationsVariant1Item5 @this) => @this.Wandb;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public IntegrationsVariant1Item5(global::Mistral.WandbIntegrationOut? value)
         {
@@ -69,12 +69,12 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static IntegrationsVariant1Item5 FromWandb(global::Mistral.WandbIntegrationOut? value) => new IntegrationsVariant1Item5(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public IntegrationsVariant1Item5(
             global::Mistral.CompletionDetailedJobOutIntegrationsVariant1ItemDiscriminatorType? type,
@@ -87,21 +87,21 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
-            Wandb as object 
+            Wandb as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
-            Wandb?.ToString() 
+            Wandb?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -109,7 +109,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Mistral.WandbIntegrationOut, TResult>? wandb = null,
@@ -129,7 +129,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Mistral.WandbIntegrationOut>? wandb = null,
@@ -147,7 +147,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Mistral.WandbIntegrationOut>? wandb = null,
@@ -165,7 +165,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -184,17 +184,17 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(IntegrationsVariant1Item5 other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Mistral.WandbIntegrationOut?>.Default.Equals(Wandb, other.Wandb) 
+                global::System.Collections.Generic.EqualityComparer<global::Mistral.WandbIntegrationOut?>.Default.Equals(Wandb, other.Wandb)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(IntegrationsVariant1Item5 obj1, IntegrationsVariant1Item5 obj2)
         {
@@ -202,7 +202,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(IntegrationsVariant1Item5 obj1, IntegrationsVariant1Item5 obj2)
         {
@@ -210,7 +210,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

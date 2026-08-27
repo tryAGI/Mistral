@@ -4,7 +4,7 @@
 namespace Mistral
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ConnectorMCPCreateHeaders2
     {

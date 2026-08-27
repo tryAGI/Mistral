@@ -4,7 +4,7 @@
 namespace Mistral.Realtime
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class RealtimeTranscriptionSessionUpdated
     {
@@ -15,7 +15,7 @@ namespace Mistral.Realtime
         public string? Type { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("session")]
         [global::System.Text.Json.Serialization.JsonRequired]

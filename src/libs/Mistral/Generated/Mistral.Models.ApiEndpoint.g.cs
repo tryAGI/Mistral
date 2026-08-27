@@ -4,48 +4,48 @@
 namespace Mistral
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ApiEndpoint
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         V1AudioTranscriptions,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         V1ChatClassifications,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         V1ChatCompletions,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         V1ChatModerations,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         V1Classifications,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         V1Conversations,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         V1Embeddings,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         V1FimCompletions,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         V1Moderations,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         V1Ocr,
     }

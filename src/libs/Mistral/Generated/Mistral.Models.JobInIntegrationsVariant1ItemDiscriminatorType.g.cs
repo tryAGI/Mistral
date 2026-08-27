@@ -4,12 +4,12 @@
 namespace Mistral
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum JobInIntegrationsVariant1ItemDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Wandb,
     }

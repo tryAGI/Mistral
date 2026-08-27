@@ -4,48 +4,48 @@
 namespace Mistral
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ConversationEventsDataDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AgentHandoffDone,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AgentHandoffStarted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ConversationResponseDone,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ConversationResponseError,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ConversationResponseStarted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FunctionCallDelta,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MessageOutputDelta,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ToolExecutionDelta,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ToolExecutionDone,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ToolExecutionStarted,
     }

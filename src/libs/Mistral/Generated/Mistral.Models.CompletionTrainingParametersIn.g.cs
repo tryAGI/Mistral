@@ -36,13 +36,13 @@ namespace Mistral
         public double? WarmupFraction { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("epochs")]
         public double? Epochs { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("seq_len")]
         public int? SeqLen { get; set; }

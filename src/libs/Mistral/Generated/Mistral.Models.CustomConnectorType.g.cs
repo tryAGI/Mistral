@@ -9,7 +9,7 @@ namespace Mistral
     public enum CustomConnectorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Connector,
     }

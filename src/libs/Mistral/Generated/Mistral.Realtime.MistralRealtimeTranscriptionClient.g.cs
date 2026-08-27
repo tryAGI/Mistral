@@ -295,7 +295,7 @@ namespace Mistral.Realtime
         public event global::System.EventHandler<AutoSDKWebSocketMessageEventArgs<global::Mistral.Realtime.RealtimeTranscriptionError>>? RealtimeTranscriptionErrorReceived;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 
         public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext { get; set; } = global::Mistral.Realtime.RealtimeSourceGenerationContext.Default;

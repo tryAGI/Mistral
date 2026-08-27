@@ -83,7 +83,7 @@ namespace Mistral
         /// </param>
         /// <param name="sortOrder">
         /// Default Value: desc
-        /// </param> 
+        /// </param>
         /// <param name="page">Initial page number to start enumerating from. Defaults to 1.</param>
         /// <param name="cancellationToken"></param>
         global::System.Collections.Generic.IAsyncEnumerable<global::Mistral.DocumentOut> ListDocumentsInAGivenLibraryAutoPagingAsync(

@@ -9,11 +9,11 @@ namespace Mistral
     public enum ConversationRestartRequestBaseHandoffExecution
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Client,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Server,
     }

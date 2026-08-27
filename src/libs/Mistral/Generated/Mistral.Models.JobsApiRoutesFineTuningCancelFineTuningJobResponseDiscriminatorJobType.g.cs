@@ -4,16 +4,16 @@
 namespace Mistral
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum JobsApiRoutesFineTuningCancelFineTuningJobResponseDiscriminatorJobType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Classifier,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Completion,
     }

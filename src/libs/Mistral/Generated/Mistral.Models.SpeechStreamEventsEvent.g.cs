@@ -4,16 +4,16 @@
 namespace Mistral
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum SpeechStreamEventsEvent
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SpeechAudioDelta,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SpeechAudioDone,
     }

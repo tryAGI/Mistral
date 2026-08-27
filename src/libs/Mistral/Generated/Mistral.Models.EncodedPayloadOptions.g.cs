@@ -4,20 +4,20 @@
 namespace Mistral
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum EncodedPayloadOptions
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Encrypted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EncryptedPartial,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Offloaded,
     }

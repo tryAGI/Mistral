@@ -5,17 +5,17 @@
 namespace Mistral
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct Data2 : global::System.IEquatable<Data2>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.SpeechStreamEventsDataDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.SpeechStreamAudioDelta? SpeechAudioDelta { get; init; }
@@ -24,7 +24,7 @@ namespace Mistral
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SpeechAudioDelta))]
@@ -32,7 +32,7 @@ namespace Mistral
         public bool IsSpeechAudioDelta => SpeechAudioDelta != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSpeechAudioDelta(
 #if NET6_0_OR_GREATER
@@ -45,14 +45,14 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.SpeechStreamAudioDelta PickSpeechAudioDelta() => IsSpeechAudioDelta
             ? SpeechAudioDelta!
             : throw new global::System.InvalidOperationException($"Expected union variant 'SpeechAudioDelta' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.SpeechStreamDone? SpeechAudioDone { get; init; }
@@ -61,7 +61,7 @@ namespace Mistral
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SpeechAudioDone))]
@@ -69,7 +69,7 @@ namespace Mistral
         public bool IsSpeechAudioDone => SpeechAudioDone != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSpeechAudioDone(
 #if NET6_0_OR_GREATER
@@ -82,23 +82,23 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.SpeechStreamDone PickSpeechAudioDone() => IsSpeechAudioDone
             ? SpeechAudioDone!
             : throw new global::System.InvalidOperationException($"Expected union variant 'SpeechAudioDone' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Data2(global::Mistral.SpeechStreamAudioDelta value) => new Data2((global::Mistral.SpeechStreamAudioDelta?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Mistral.SpeechStreamAudioDelta?(Data2 @this) => @this.SpeechAudioDelta;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Data2(global::Mistral.SpeechStreamAudioDelta? value)
         {
@@ -106,22 +106,22 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Data2 FromSpeechAudioDelta(global::Mistral.SpeechStreamAudioDelta? value) => new Data2(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Data2(global::Mistral.SpeechStreamDone value) => new Data2((global::Mistral.SpeechStreamDone?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Mistral.SpeechStreamDone?(Data2 @this) => @this.SpeechAudioDone;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Data2(global::Mistral.SpeechStreamDone? value)
         {
@@ -129,12 +129,12 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Data2 FromSpeechAudioDone(global::Mistral.SpeechStreamDone? value) => new Data2(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Data2(
             global::Mistral.SpeechStreamEventsDataDiscriminatorType? type,
@@ -149,23 +149,23 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             SpeechAudioDone as object ??
-            SpeechAudioDelta as object 
+            SpeechAudioDelta as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             SpeechAudioDelta?.ToString() ??
-            SpeechAudioDone?.ToString() 
+            SpeechAudioDone?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -173,7 +173,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Mistral.SpeechStreamAudioDelta, TResult>? speechAudioDelta = null,
@@ -198,7 +198,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Mistral.SpeechStreamAudioDelta>? speechAudioDelta = null,
@@ -222,7 +222,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Mistral.SpeechStreamAudioDelta>? speechAudioDelta = null,
@@ -245,7 +245,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -266,18 +266,18 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(Data2 other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Mistral.SpeechStreamAudioDelta?>.Default.Equals(SpeechAudioDelta, other.SpeechAudioDelta) &&
-                global::System.Collections.Generic.EqualityComparer<global::Mistral.SpeechStreamDone?>.Default.Equals(SpeechAudioDone, other.SpeechAudioDone) 
+                global::System.Collections.Generic.EqualityComparer<global::Mistral.SpeechStreamDone?>.Default.Equals(SpeechAudioDone, other.SpeechAudioDone)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(Data2 obj1, Data2 obj2)
         {
@@ -285,7 +285,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(Data2 obj1, Data2 obj2)
         {
@@ -293,7 +293,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

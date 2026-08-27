@@ -10,13 +10,13 @@ namespace Mistral
     public sealed partial class MCPToolMeta2
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ui")]
         public global::Mistral.MCPUIToolMeta? Ui { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ai.mistral/turbine")]
         public global::Mistral.TurbineToolMeta? AiMistralTurbine { get; set; }

@@ -4,36 +4,36 @@
 namespace Mistral
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ConversationRequestBaseToolsVariant1ItemDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CodeInterpreter,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Connector,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DocumentLibrary,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Function,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ImageGeneration,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WebSearch,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WebSearchPremium,
     }

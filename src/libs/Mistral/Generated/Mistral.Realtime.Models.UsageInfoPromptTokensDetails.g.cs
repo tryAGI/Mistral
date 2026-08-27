@@ -4,7 +4,7 @@
 namespace Mistral.Realtime
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class UsageInfoPromptTokensDetails
     {

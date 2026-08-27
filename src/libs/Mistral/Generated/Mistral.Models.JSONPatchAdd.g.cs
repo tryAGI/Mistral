@@ -4,7 +4,7 @@
 namespace Mistral
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class JSONPatchAdd
     {
@@ -23,7 +23,7 @@ namespace Mistral
         public required object Value { get; set; }
 
         /// <summary>
-        /// Add operation 
+        /// Add operation
         /// </summary>
         /// <default>"add"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("op")]
@@ -45,7 +45,7 @@ namespace Mistral
         /// The value to use for the operation
         /// </param>
         /// <param name="op">
-        /// Add operation 
+        /// Add operation
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

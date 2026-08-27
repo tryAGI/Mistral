@@ -9,7 +9,7 @@ namespace Mistral
     public enum APIKeyAuthType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ApiKey,
     }

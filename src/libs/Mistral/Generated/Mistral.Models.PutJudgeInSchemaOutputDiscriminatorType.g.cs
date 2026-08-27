@@ -4,16 +4,16 @@
 namespace Mistral
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum PutJudgeInSchemaOutputDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Classification,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Regression,
     }

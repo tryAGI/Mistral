@@ -4,20 +4,20 @@
 namespace Mistral
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum Source
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Mistral,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Repository,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Upload,
     }

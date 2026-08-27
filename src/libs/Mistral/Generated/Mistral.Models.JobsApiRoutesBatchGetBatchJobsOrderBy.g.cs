@@ -9,11 +9,11 @@ namespace Mistral
     public enum JobsApiRoutesBatchGetBatchJobsOrderBy
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Minuscreated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Created,
     }

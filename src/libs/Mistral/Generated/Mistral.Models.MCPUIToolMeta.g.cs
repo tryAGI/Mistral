@@ -9,13 +9,13 @@ namespace Mistral
     public sealed partial class MCPUIToolMeta
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("resourceUri")]
         public string? ResourceUri { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("visibility")]
         public global::System.Collections.Generic.IList<global::Mistral.MCPUIToolMetaVisibilityVariant1Item>? Visibility { get; set; }

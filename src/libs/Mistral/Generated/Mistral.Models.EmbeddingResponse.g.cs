@@ -5,12 +5,12 @@
 namespace Mistral
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct EmbeddingResponse : global::System.IEquatable<EmbeddingResponse>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.ResponseBase? ResponseBase { get; init; }
@@ -19,7 +19,7 @@ namespace Mistral
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseBase))]
@@ -27,7 +27,7 @@ namespace Mistral
         public bool IsResponseBase => ResponseBase != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponseBase(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.ResponseBase PickResponseBase() => IsResponseBase
             ? ResponseBase!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseBase' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.EmbeddingResponseVariant2? EmbeddingResponseVariant2 { get; init; }
@@ -56,7 +56,7 @@ namespace Mistral
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EmbeddingResponseVariant2))]
@@ -64,7 +64,7 @@ namespace Mistral
         public bool IsEmbeddingResponseVariant2 => EmbeddingResponseVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickEmbeddingResponseVariant2(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.EmbeddingResponseVariant2 PickEmbeddingResponseVariant2() => IsEmbeddingResponseVariant2
             ? EmbeddingResponseVariant2!
             : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingResponseVariant2' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator EmbeddingResponse(global::Mistral.ResponseBase value) => new EmbeddingResponse((global::Mistral.ResponseBase?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Mistral.ResponseBase?(EmbeddingResponse @this) => @this.ResponseBase;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EmbeddingResponse(global::Mistral.ResponseBase? value)
         {
@@ -101,22 +101,22 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static EmbeddingResponse FromResponseBase(global::Mistral.ResponseBase? value) => new EmbeddingResponse(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator EmbeddingResponse(global::Mistral.EmbeddingResponseVariant2 value) => new EmbeddingResponse((global::Mistral.EmbeddingResponseVariant2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Mistral.EmbeddingResponseVariant2?(EmbeddingResponse @this) => @this.EmbeddingResponseVariant2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EmbeddingResponse(global::Mistral.EmbeddingResponseVariant2? value)
         {
@@ -124,12 +124,12 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static EmbeddingResponse FromEmbeddingResponseVariant2(global::Mistral.EmbeddingResponseVariant2? value) => new EmbeddingResponse(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EmbeddingResponse(
             global::Mistral.ResponseBase? responseBase,
@@ -141,23 +141,23 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             EmbeddingResponseVariant2 as object ??
-            ResponseBase as object 
+            ResponseBase as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             ResponseBase?.ToString() ??
-            EmbeddingResponseVariant2?.ToString() 
+            EmbeddingResponseVariant2?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Mistral.ResponseBase, TResult>? responseBase = null,
@@ -190,7 +190,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Mistral.ResponseBase>? responseBase = null,
@@ -214,7 +214,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Mistral.ResponseBase>? responseBase = null,
@@ -237,7 +237,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(EmbeddingResponse other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Mistral.ResponseBase?>.Default.Equals(ResponseBase, other.ResponseBase) &&
-                global::System.Collections.Generic.EqualityComparer<global::Mistral.EmbeddingResponseVariant2?>.Default.Equals(EmbeddingResponseVariant2, other.EmbeddingResponseVariant2) 
+                global::System.Collections.Generic.EqualityComparer<global::Mistral.EmbeddingResponseVariant2?>.Default.Equals(EmbeddingResponseVariant2, other.EmbeddingResponseVariant2)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(EmbeddingResponse obj1, EmbeddingResponse obj2)
         {
@@ -277,7 +277,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(EmbeddingResponse obj1, EmbeddingResponse obj2)
         {
@@ -285,7 +285,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

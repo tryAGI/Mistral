@@ -6,7 +6,7 @@
 namespace Mistral
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class WorkflowExecutionRequest
     {
@@ -42,7 +42,7 @@ namespace Mistral
         public double? TimeoutSeconds { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("custom_tracing_attributes")]
         public global::System.Collections.Generic.Dictionary<string, string>? CustomTracingAttributes { get; set; }

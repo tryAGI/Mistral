@@ -4,12 +4,12 @@
 namespace Mistral
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ConversationAppendRequestBase
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("inputs")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.ConversationInputsJsonConverter))]
@@ -43,7 +43,7 @@ namespace Mistral
         public global::Mistral.CompletionArgs? CompletionArgs { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_confirmations")]
         public global::System.Collections.Generic.IList<global::Mistral.ToolCallConfirmation>? ToolConfirmations { get; set; }

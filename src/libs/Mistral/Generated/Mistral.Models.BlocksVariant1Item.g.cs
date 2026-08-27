@@ -5,17 +5,17 @@
 namespace Mistral
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct BlocksVariant1Item : global::System.IEquatable<BlocksVariant1Item>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.OCRPageObjectBlocksVariant1ItemDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.OCRTextBlock? Text { get; init; }
@@ -24,7 +24,7 @@ namespace Mistral
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
@@ -32,7 +32,7 @@ namespace Mistral
         public bool IsText => Text != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickText(
 #if NET6_0_OR_GREATER
@@ -45,14 +45,14 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.OCRTextBlock PickText() => IsText
             ? Text!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.OCRListBlock? List { get; init; }
@@ -61,7 +61,7 @@ namespace Mistral
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(List))]
@@ -69,7 +69,7 @@ namespace Mistral
         public bool IsList => List != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickList(
 #if NET6_0_OR_GREATER
@@ -82,14 +82,14 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.OCRListBlock PickList() => IsList
             ? List!
             : throw new global::System.InvalidOperationException($"Expected union variant 'List' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.OCRImageBlock? Image { get; init; }
@@ -98,7 +98,7 @@ namespace Mistral
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Image))]
@@ -106,7 +106,7 @@ namespace Mistral
         public bool IsImage => Image != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickImage(
 #if NET6_0_OR_GREATER
@@ -119,14 +119,14 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.OCRImageBlock PickImage() => IsImage
             ? Image!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Image' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.OCRTableBlock? Table { get; init; }
@@ -135,7 +135,7 @@ namespace Mistral
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Table))]
@@ -143,7 +143,7 @@ namespace Mistral
         public bool IsTable => Table != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickTable(
 #if NET6_0_OR_GREATER
@@ -156,14 +156,14 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.OCRTableBlock PickTable() => IsTable
             ? Table!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Table' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.OCRTitleBlock? Title { get; init; }
@@ -172,7 +172,7 @@ namespace Mistral
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Title))]
@@ -180,7 +180,7 @@ namespace Mistral
         public bool IsTitle => Title != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickTitle(
 #if NET6_0_OR_GREATER
@@ -193,14 +193,14 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.OCRTitleBlock PickTitle() => IsTitle
             ? Title!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Title' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.OCREquationBlock? Equation { get; init; }
@@ -209,7 +209,7 @@ namespace Mistral
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Equation))]
@@ -217,7 +217,7 @@ namespace Mistral
         public bool IsEquation => Equation != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickEquation(
 #if NET6_0_OR_GREATER
@@ -230,14 +230,14 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.OCREquationBlock PickEquation() => IsEquation
             ? Equation!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Equation' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.OCRCaptionBlock? Caption { get; init; }
@@ -246,7 +246,7 @@ namespace Mistral
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Caption))]
@@ -254,7 +254,7 @@ namespace Mistral
         public bool IsCaption => Caption != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickCaption(
 #if NET6_0_OR_GREATER
@@ -267,14 +267,14 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.OCRCaptionBlock PickCaption() => IsCaption
             ? Caption!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Caption' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.OCRCodeBlock? Code { get; init; }
@@ -283,7 +283,7 @@ namespace Mistral
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Code))]
@@ -291,7 +291,7 @@ namespace Mistral
         public bool IsCode => Code != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickCode(
 #if NET6_0_OR_GREATER
@@ -304,14 +304,14 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.OCRCodeBlock PickCode() => IsCode
             ? Code!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Code' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.OCRReferencesBlock? References { get; init; }
@@ -320,7 +320,7 @@ namespace Mistral
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(References))]
@@ -328,7 +328,7 @@ namespace Mistral
         public bool IsReferences => References != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickReferences(
 #if NET6_0_OR_GREATER
@@ -341,14 +341,14 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.OCRReferencesBlock PickReferences() => IsReferences
             ? References!
             : throw new global::System.InvalidOperationException($"Expected union variant 'References' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.OCRAsideTextBlock? AsideText { get; init; }
@@ -357,7 +357,7 @@ namespace Mistral
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AsideText))]
@@ -365,7 +365,7 @@ namespace Mistral
         public bool IsAsideText => AsideText != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAsideText(
 #if NET6_0_OR_GREATER
@@ -378,14 +378,14 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.OCRAsideTextBlock PickAsideText() => IsAsideText
             ? AsideText!
             : throw new global::System.InvalidOperationException($"Expected union variant 'AsideText' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.OCRHeaderBlock? Header { get; init; }
@@ -394,7 +394,7 @@ namespace Mistral
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Header))]
@@ -402,7 +402,7 @@ namespace Mistral
         public bool IsHeader => Header != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickHeader(
 #if NET6_0_OR_GREATER
@@ -415,14 +415,14 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.OCRHeaderBlock PickHeader() => IsHeader
             ? Header!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Header' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.OCRFooterBlock? Footer { get; init; }
@@ -431,7 +431,7 @@ namespace Mistral
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Footer))]
@@ -439,7 +439,7 @@ namespace Mistral
         public bool IsFooter => Footer != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickFooter(
 #if NET6_0_OR_GREATER
@@ -452,7 +452,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.OCRFooterBlock PickFooter() => IsFooter
             ? Footer!
@@ -468,7 +468,7 @@ namespace Mistral
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Signature))]
@@ -476,7 +476,7 @@ namespace Mistral
         public bool IsSignature => Signature != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSignature(
 #if NET6_0_OR_GREATER
@@ -489,23 +489,23 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.OCRSignatureBlock PickSignature() => IsSignature
             ? Signature!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Signature' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BlocksVariant1Item(global::Mistral.OCRTextBlock value) => new BlocksVariant1Item((global::Mistral.OCRTextBlock?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Mistral.OCRTextBlock?(BlocksVariant1Item @this) => @this.Text;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BlocksVariant1Item(global::Mistral.OCRTextBlock? value)
         {
@@ -513,22 +513,22 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BlocksVariant1Item FromText(global::Mistral.OCRTextBlock? value) => new BlocksVariant1Item(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BlocksVariant1Item(global::Mistral.OCRListBlock value) => new BlocksVariant1Item((global::Mistral.OCRListBlock?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Mistral.OCRListBlock?(BlocksVariant1Item @this) => @this.List;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BlocksVariant1Item(global::Mistral.OCRListBlock? value)
         {
@@ -536,22 +536,22 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BlocksVariant1Item FromList(global::Mistral.OCRListBlock? value) => new BlocksVariant1Item(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BlocksVariant1Item(global::Mistral.OCRImageBlock value) => new BlocksVariant1Item((global::Mistral.OCRImageBlock?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Mistral.OCRImageBlock?(BlocksVariant1Item @this) => @this.Image;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BlocksVariant1Item(global::Mistral.OCRImageBlock? value)
         {
@@ -559,22 +559,22 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BlocksVariant1Item FromImage(global::Mistral.OCRImageBlock? value) => new BlocksVariant1Item(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BlocksVariant1Item(global::Mistral.OCRTableBlock value) => new BlocksVariant1Item((global::Mistral.OCRTableBlock?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Mistral.OCRTableBlock?(BlocksVariant1Item @this) => @this.Table;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BlocksVariant1Item(global::Mistral.OCRTableBlock? value)
         {
@@ -582,22 +582,22 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BlocksVariant1Item FromTable(global::Mistral.OCRTableBlock? value) => new BlocksVariant1Item(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BlocksVariant1Item(global::Mistral.OCRTitleBlock value) => new BlocksVariant1Item((global::Mistral.OCRTitleBlock?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Mistral.OCRTitleBlock?(BlocksVariant1Item @this) => @this.Title;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BlocksVariant1Item(global::Mistral.OCRTitleBlock? value)
         {
@@ -605,22 +605,22 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BlocksVariant1Item FromTitle(global::Mistral.OCRTitleBlock? value) => new BlocksVariant1Item(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BlocksVariant1Item(global::Mistral.OCREquationBlock value) => new BlocksVariant1Item((global::Mistral.OCREquationBlock?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Mistral.OCREquationBlock?(BlocksVariant1Item @this) => @this.Equation;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BlocksVariant1Item(global::Mistral.OCREquationBlock? value)
         {
@@ -628,22 +628,22 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BlocksVariant1Item FromEquation(global::Mistral.OCREquationBlock? value) => new BlocksVariant1Item(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BlocksVariant1Item(global::Mistral.OCRCaptionBlock value) => new BlocksVariant1Item((global::Mistral.OCRCaptionBlock?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Mistral.OCRCaptionBlock?(BlocksVariant1Item @this) => @this.Caption;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BlocksVariant1Item(global::Mistral.OCRCaptionBlock? value)
         {
@@ -651,22 +651,22 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BlocksVariant1Item FromCaption(global::Mistral.OCRCaptionBlock? value) => new BlocksVariant1Item(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BlocksVariant1Item(global::Mistral.OCRCodeBlock value) => new BlocksVariant1Item((global::Mistral.OCRCodeBlock?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Mistral.OCRCodeBlock?(BlocksVariant1Item @this) => @this.Code;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BlocksVariant1Item(global::Mistral.OCRCodeBlock? value)
         {
@@ -674,22 +674,22 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BlocksVariant1Item FromCode(global::Mistral.OCRCodeBlock? value) => new BlocksVariant1Item(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BlocksVariant1Item(global::Mistral.OCRReferencesBlock value) => new BlocksVariant1Item((global::Mistral.OCRReferencesBlock?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Mistral.OCRReferencesBlock?(BlocksVariant1Item @this) => @this.References;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BlocksVariant1Item(global::Mistral.OCRReferencesBlock? value)
         {
@@ -697,22 +697,22 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BlocksVariant1Item FromReferences(global::Mistral.OCRReferencesBlock? value) => new BlocksVariant1Item(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BlocksVariant1Item(global::Mistral.OCRAsideTextBlock value) => new BlocksVariant1Item((global::Mistral.OCRAsideTextBlock?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Mistral.OCRAsideTextBlock?(BlocksVariant1Item @this) => @this.AsideText;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BlocksVariant1Item(global::Mistral.OCRAsideTextBlock? value)
         {
@@ -720,22 +720,22 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BlocksVariant1Item FromAsideText(global::Mistral.OCRAsideTextBlock? value) => new BlocksVariant1Item(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BlocksVariant1Item(global::Mistral.OCRHeaderBlock value) => new BlocksVariant1Item((global::Mistral.OCRHeaderBlock?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Mistral.OCRHeaderBlock?(BlocksVariant1Item @this) => @this.Header;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BlocksVariant1Item(global::Mistral.OCRHeaderBlock? value)
         {
@@ -743,22 +743,22 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BlocksVariant1Item FromHeader(global::Mistral.OCRHeaderBlock? value) => new BlocksVariant1Item(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BlocksVariant1Item(global::Mistral.OCRFooterBlock value) => new BlocksVariant1Item((global::Mistral.OCRFooterBlock?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Mistral.OCRFooterBlock?(BlocksVariant1Item @this) => @this.Footer;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BlocksVariant1Item(global::Mistral.OCRFooterBlock? value)
         {
@@ -766,22 +766,22 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BlocksVariant1Item FromFooter(global::Mistral.OCRFooterBlock? value) => new BlocksVariant1Item(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BlocksVariant1Item(global::Mistral.OCRSignatureBlock value) => new BlocksVariant1Item((global::Mistral.OCRSignatureBlock?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Mistral.OCRSignatureBlock?(BlocksVariant1Item @this) => @this.Signature;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BlocksVariant1Item(global::Mistral.OCRSignatureBlock? value)
         {
@@ -789,12 +789,12 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BlocksVariant1Item FromSignature(global::Mistral.OCRSignatureBlock? value) => new BlocksVariant1Item(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BlocksVariant1Item(
             global::Mistral.OCRPageObjectBlocksVariant1ItemDiscriminatorType? type,
@@ -831,7 +831,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Signature as object ??
@@ -846,11 +846,11 @@ namespace Mistral
             Table as object ??
             Image as object ??
             List as object ??
-            Text as object 
+            Text as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Text?.ToString() ??
@@ -865,11 +865,11 @@ namespace Mistral
             AsideText?.ToString() ??
             Header?.ToString() ??
             Footer?.ToString() ??
-            Signature?.ToString() 
+            Signature?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -877,7 +877,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Mistral.OCRTextBlock, TResult>? text = null,
@@ -957,7 +957,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Mistral.OCRTextBlock>? text = null,
@@ -1047,7 +1047,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Mistral.OCRTextBlock>? text = null,
@@ -1125,7 +1125,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -1168,7 +1168,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(BlocksVariant1Item other)
         {
@@ -1185,12 +1185,12 @@ namespace Mistral
                 global::System.Collections.Generic.EqualityComparer<global::Mistral.OCRAsideTextBlock?>.Default.Equals(AsideText, other.AsideText) &&
                 global::System.Collections.Generic.EqualityComparer<global::Mistral.OCRHeaderBlock?>.Default.Equals(Header, other.Header) &&
                 global::System.Collections.Generic.EqualityComparer<global::Mistral.OCRFooterBlock?>.Default.Equals(Footer, other.Footer) &&
-                global::System.Collections.Generic.EqualityComparer<global::Mistral.OCRSignatureBlock?>.Default.Equals(Signature, other.Signature) 
+                global::System.Collections.Generic.EqualityComparer<global::Mistral.OCRSignatureBlock?>.Default.Equals(Signature, other.Signature)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(BlocksVariant1Item obj1, BlocksVariant1Item obj2)
         {
@@ -1198,7 +1198,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(BlocksVariant1Item obj1, BlocksVariant1Item obj2)
         {
@@ -1206,7 +1206,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

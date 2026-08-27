@@ -9,15 +9,15 @@ namespace Mistral
     public enum GetStreamEventsV1WorkflowsEventsStreamGetScope
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Multiply,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Activity,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Workflow,
     }

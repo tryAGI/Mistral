@@ -33,7 +33,7 @@ namespace Mistral
         };
 
         private static readonly string[] s_baseUrlEnvironmentVariables = new string[]
-        { 
+        {
         };
 
         /// <summary>

@@ -11,14 +11,14 @@ namespace Mistral
     public sealed partial class EmbeddedResource
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"resource"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         public string Type { get; set; } = "resource";
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("resource")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<global::Mistral.TextResourceContents, global::Mistral.BlobResourceContents>))]
@@ -26,13 +26,13 @@ namespace Mistral
         public required global::Mistral.AnyOf<global::Mistral.TextResourceContents, global::Mistral.BlobResourceContents> Resource { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("annotations")]
         public global::Mistral.Annotations? Annotations { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("_meta")]
         public object? Meta { get; set; }

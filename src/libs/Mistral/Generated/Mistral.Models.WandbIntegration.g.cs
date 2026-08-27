@@ -4,7 +4,7 @@
 namespace Mistral
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class WandbIntegration
     {
@@ -35,7 +35,7 @@ namespace Mistral
         public required string ApiKey { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("run_name")]
         public string? RunName { get; set; }

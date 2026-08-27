@@ -4,7 +4,7 @@
 namespace Mistral
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class BatchJobIn
     {
@@ -15,7 +15,7 @@ namespace Mistral
         public global::System.Collections.Generic.IList<global::System.Guid>? InputFiles { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("requests")]
         public global::System.Collections.Generic.IList<global::Mistral.BatchRequest>? Requests { get; set; }

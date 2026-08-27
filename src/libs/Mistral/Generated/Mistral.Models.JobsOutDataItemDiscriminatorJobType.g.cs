@@ -4,16 +4,16 @@
 namespace Mistral
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum JobsOutDataItemDiscriminatorJobType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Classifier,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Completion,
     }

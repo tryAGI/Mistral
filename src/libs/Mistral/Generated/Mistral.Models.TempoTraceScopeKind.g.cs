@@ -4,20 +4,20 @@
 namespace Mistral
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum TempoTraceScopeKind
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SpanKindClient,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SpanKindInternal,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SpanKindServer,
     }

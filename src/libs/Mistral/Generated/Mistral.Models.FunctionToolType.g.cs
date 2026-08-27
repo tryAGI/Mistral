@@ -9,7 +9,7 @@ namespace Mistral
     public enum FunctionToolType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Function,
     }

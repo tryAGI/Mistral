@@ -4,20 +4,20 @@
 namespace Mistral
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum RequestSource
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AgentBuilderV1,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Api,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Playground,
     }

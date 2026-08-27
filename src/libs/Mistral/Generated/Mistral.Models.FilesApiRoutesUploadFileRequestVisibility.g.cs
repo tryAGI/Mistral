@@ -4,16 +4,16 @@
 namespace Mistral
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum FilesApiRoutesUploadFileRequestVisibility
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         User,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Workspace,
     }

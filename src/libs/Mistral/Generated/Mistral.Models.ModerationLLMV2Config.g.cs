@@ -4,7 +4,7 @@
 namespace Mistral
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ModerationLLMV2Config
     {
@@ -16,7 +16,7 @@ namespace Mistral
         public string? ModelName { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("custom_category_thresholds")]
         public global::Mistral.ModerationLLMV2CategoryThresholds? CustomCategoryThresholds { get; set; }

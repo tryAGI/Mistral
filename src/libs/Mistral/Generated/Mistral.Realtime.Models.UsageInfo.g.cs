@@ -4,7 +4,7 @@
 namespace Mistral.Realtime
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class UsageInfo
     {
@@ -30,25 +30,25 @@ namespace Mistral.Realtime
         public required int TotalTokens { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_audio_seconds")]
         public int? PromptAudioSeconds { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("num_cached_tokens")]
         public int? NumCachedTokens { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_tokens_details")]
         public global::Mistral.Realtime.PromptTokensDetails? PromptTokensDetails { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_token_details")]
         public global::Mistral.Realtime.PromptTokensDetails? PromptTokenDetails { get; set; }

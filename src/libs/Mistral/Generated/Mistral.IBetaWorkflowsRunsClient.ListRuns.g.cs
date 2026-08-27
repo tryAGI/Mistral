@@ -80,7 +80,7 @@ namespace Mistral
         /// <param name="pageSize">
         /// Number of items per page<br/>
         /// Default Value: 50
-        /// </param> 
+        /// </param>
         /// <param name="nextPageToken">Initial cursor to start enumerating from. Defaults to null (first page).</param>
         /// <param name="cancellationToken"></param>
         global::System.Collections.Generic.IAsyncEnumerable<global::Mistral.WorkflowExecutionWithoutResultResponse> ListRunsAutoPagingAsync(

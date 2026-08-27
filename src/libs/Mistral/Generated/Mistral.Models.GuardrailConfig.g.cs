@@ -4,7 +4,7 @@
 namespace Mistral
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class GuardrailConfig
     {
@@ -16,13 +16,13 @@ namespace Mistral
         public bool? BlockOnError { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("moderation_llm_v1")]
         public global::Mistral.ModerationLLMV1Config? ModerationLlmV1 { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("moderation_llm_v2")]
         public global::Mistral.ModerationLLMV2Config? ModerationLlmV2 { get; set; }

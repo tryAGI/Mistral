@@ -4,16 +4,16 @@
 namespace Mistral
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum RetrieveModelV1ModelsModelIdGetResponseDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Base,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FineTuned,
     }

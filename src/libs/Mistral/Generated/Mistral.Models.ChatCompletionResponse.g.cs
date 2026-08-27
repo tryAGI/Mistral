@@ -5,12 +5,12 @@
 namespace Mistral
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct ChatCompletionResponse : global::System.IEquatable<ChatCompletionResponse>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.ChatCompletionResponseBase? Base { get; init; }
@@ -19,7 +19,7 @@ namespace Mistral
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Base))]
@@ -27,7 +27,7 @@ namespace Mistral
         public bool IsBase => Base != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickBase(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.ChatCompletionResponseBase PickBase() => IsBase
             ? Base!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.ChatCompletionResponseChatCompletionResponse1? Response1 { get; init; }
@@ -56,7 +56,7 @@ namespace Mistral
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Response1))]
@@ -64,7 +64,7 @@ namespace Mistral
         public bool IsResponse1 => Response1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponse1(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.ChatCompletionResponseChatCompletionResponse1 PickResponse1() => IsResponse1
             ? Response1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Response1' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ChatCompletionResponse(global::Mistral.ChatCompletionResponseBase value) => new ChatCompletionResponse((global::Mistral.ChatCompletionResponseBase?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Mistral.ChatCompletionResponseBase?(ChatCompletionResponse @this) => @this.Base;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatCompletionResponse(global::Mistral.ChatCompletionResponseBase? value)
         {
@@ -101,22 +101,22 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ChatCompletionResponse FromBase(global::Mistral.ChatCompletionResponseBase? value) => new ChatCompletionResponse(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ChatCompletionResponse(global::Mistral.ChatCompletionResponseChatCompletionResponse1 value) => new ChatCompletionResponse((global::Mistral.ChatCompletionResponseChatCompletionResponse1?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Mistral.ChatCompletionResponseChatCompletionResponse1?(ChatCompletionResponse @this) => @this.Response1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatCompletionResponse(global::Mistral.ChatCompletionResponseChatCompletionResponse1? value)
         {
@@ -124,12 +124,12 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ChatCompletionResponse FromResponse1(global::Mistral.ChatCompletionResponseChatCompletionResponse1? value) => new ChatCompletionResponse(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatCompletionResponse(
             global::Mistral.ChatCompletionResponseBase? @base,
@@ -141,23 +141,23 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Response1 as object ??
-            Base as object 
+            Base as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Base?.ToString() ??
-            Response1?.ToString() 
+            Response1?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Mistral.ChatCompletionResponseBase?, TResult>? @base = null,
@@ -190,7 +190,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Mistral.ChatCompletionResponseBase?>? @base = null,
@@ -214,7 +214,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Mistral.ChatCompletionResponseBase?>? @base = null,
@@ -237,7 +237,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ChatCompletionResponse other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Mistral.ChatCompletionResponseBase?>.Default.Equals(Base, other.Base) &&
-                global::System.Collections.Generic.EqualityComparer<global::Mistral.ChatCompletionResponseChatCompletionResponse1?>.Default.Equals(Response1, other.Response1) 
+                global::System.Collections.Generic.EqualityComparer<global::Mistral.ChatCompletionResponseChatCompletionResponse1?>.Default.Equals(Response1, other.Response1)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ChatCompletionResponse obj1, ChatCompletionResponse obj2)
         {
@@ -277,7 +277,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ChatCompletionResponse obj1, ChatCompletionResponse obj2)
         {
@@ -285,7 +285,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

@@ -4,24 +4,24 @@
 namespace Mistral
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum JSONPatchPayloadResponseValueItemDiscriminatorOp
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Add,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Append,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Remove,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Replace,
     }
