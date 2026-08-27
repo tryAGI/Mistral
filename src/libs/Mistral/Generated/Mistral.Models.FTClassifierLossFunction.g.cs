@@ -4,16 +4,16 @@
 namespace Mistral
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum FTClassifierLossFunction
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MultiClass,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SingleClass,
     }

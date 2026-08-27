@@ -5,12 +5,12 @@
 namespace Mistral
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct FIMCompletionResponse : global::System.IEquatable<FIMCompletionResponse>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.ChatCompletionResponse? Chat { get; init; }
@@ -19,7 +19,7 @@ namespace Mistral
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Chat))]
@@ -27,7 +27,7 @@ namespace Mistral
         public bool IsChat => Chat != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickChat(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.ChatCompletionResponse PickChat() => IsChat
             ? Chat!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Chat' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.FIMCompletionResponseVariant2? FIMCompletionResponseVariant2 { get; init; }
@@ -56,7 +56,7 @@ namespace Mistral
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FIMCompletionResponseVariant2))]
@@ -64,7 +64,7 @@ namespace Mistral
         public bool IsFIMCompletionResponseVariant2 => FIMCompletionResponseVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickFIMCompletionResponseVariant2(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.FIMCompletionResponseVariant2 PickFIMCompletionResponseVariant2() => IsFIMCompletionResponseVariant2
             ? FIMCompletionResponseVariant2!
             : throw new global::System.InvalidOperationException($"Expected union variant 'FIMCompletionResponseVariant2' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator FIMCompletionResponse(global::Mistral.ChatCompletionResponse value) => new FIMCompletionResponse((global::Mistral.ChatCompletionResponse?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Mistral.ChatCompletionResponse?(FIMCompletionResponse @this) => @this.Chat;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public FIMCompletionResponse(global::Mistral.ChatCompletionResponse? value)
         {
@@ -101,22 +101,22 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static FIMCompletionResponse FromChat(global::Mistral.ChatCompletionResponse? value) => new FIMCompletionResponse(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator FIMCompletionResponse(global::Mistral.FIMCompletionResponseVariant2 value) => new FIMCompletionResponse((global::Mistral.FIMCompletionResponseVariant2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Mistral.FIMCompletionResponseVariant2?(FIMCompletionResponse @this) => @this.FIMCompletionResponseVariant2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public FIMCompletionResponse(global::Mistral.FIMCompletionResponseVariant2? value)
         {
@@ -124,12 +124,12 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static FIMCompletionResponse FromFIMCompletionResponseVariant2(global::Mistral.FIMCompletionResponseVariant2? value) => new FIMCompletionResponse(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public FIMCompletionResponse(
             global::Mistral.ChatCompletionResponse? chat,
@@ -141,23 +141,23 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             FIMCompletionResponseVariant2 as object ??
-            Chat as object 
+            Chat as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Chat?.ToString() ??
-            FIMCompletionResponseVariant2?.ToString() 
+            FIMCompletionResponseVariant2?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Mistral.ChatCompletionResponse?, TResult>? chat = null,
@@ -190,7 +190,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Mistral.ChatCompletionResponse?>? chat = null,
@@ -214,7 +214,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Mistral.ChatCompletionResponse?>? chat = null,
@@ -237,7 +237,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(FIMCompletionResponse other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Mistral.ChatCompletionResponse?>.Default.Equals(Chat, other.Chat) &&
-                global::System.Collections.Generic.EqualityComparer<global::Mistral.FIMCompletionResponseVariant2?>.Default.Equals(FIMCompletionResponseVariant2, other.FIMCompletionResponseVariant2) 
+                global::System.Collections.Generic.EqualityComparer<global::Mistral.FIMCompletionResponseVariant2?>.Default.Equals(FIMCompletionResponseVariant2, other.FIMCompletionResponseVariant2)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(FIMCompletionResponse obj1, FIMCompletionResponse obj2)
         {
@@ -277,7 +277,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(FIMCompletionResponse obj1, FIMCompletionResponse obj2)
         {
@@ -285,7 +285,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

@@ -9,11 +9,11 @@ namespace Mistral
     public enum OCRTableObjectFormat
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Html,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Markdown,
     }

@@ -5,17 +5,17 @@
 namespace Mistral
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct DataItem : global::System.IEquatable<DataItem>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.ModelListDataItemDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.BaseModelCard? Base { get; init; }
@@ -24,7 +24,7 @@ namespace Mistral
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Base))]
@@ -32,7 +32,7 @@ namespace Mistral
         public bool IsBase => Base != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickBase(
 #if NET6_0_OR_GREATER
@@ -45,7 +45,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.BaseModelCard PickBase() => IsBase
             ? Base!
@@ -61,7 +61,7 @@ namespace Mistral
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FineTuned))]
@@ -69,7 +69,7 @@ namespace Mistral
         public bool IsFineTuned => FineTuned != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickFineTuned(
 #if NET6_0_OR_GREATER
@@ -82,23 +82,23 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.FTModelCard PickFineTuned() => IsFineTuned
             ? FineTuned!
             : throw new global::System.InvalidOperationException($"Expected union variant 'FineTuned' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator DataItem(global::Mistral.BaseModelCard value) => new DataItem((global::Mistral.BaseModelCard?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Mistral.BaseModelCard?(DataItem @this) => @this.Base;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public DataItem(global::Mistral.BaseModelCard? value)
         {
@@ -106,22 +106,22 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static DataItem FromBase(global::Mistral.BaseModelCard? value) => new DataItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator DataItem(global::Mistral.FTModelCard value) => new DataItem((global::Mistral.FTModelCard?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Mistral.FTModelCard?(DataItem @this) => @this.FineTuned;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public DataItem(global::Mistral.FTModelCard? value)
         {
@@ -129,12 +129,12 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static DataItem FromFineTuned(global::Mistral.FTModelCard? value) => new DataItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public DataItem(
             global::Mistral.ModelListDataItemDiscriminatorType? type,
@@ -149,23 +149,23 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             FineTuned as object ??
-            Base as object 
+            Base as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Base?.ToString() ??
-            FineTuned?.ToString() 
+            FineTuned?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -173,7 +173,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Mistral.BaseModelCard, TResult>? @base = null,
@@ -198,7 +198,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Mistral.BaseModelCard>? @base = null,
@@ -222,7 +222,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Mistral.BaseModelCard>? @base = null,
@@ -245,7 +245,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -266,18 +266,18 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(DataItem other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Mistral.BaseModelCard?>.Default.Equals(Base, other.Base) &&
-                global::System.Collections.Generic.EqualityComparer<global::Mistral.FTModelCard?>.Default.Equals(FineTuned, other.FineTuned) 
+                global::System.Collections.Generic.EqualityComparer<global::Mistral.FTModelCard?>.Default.Equals(FineTuned, other.FineTuned)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(DataItem obj1, DataItem obj2)
         {
@@ -285,7 +285,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(DataItem obj1, DataItem obj2)
         {
@@ -293,7 +293,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

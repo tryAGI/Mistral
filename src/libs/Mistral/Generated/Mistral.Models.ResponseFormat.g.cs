@@ -16,7 +16,7 @@ namespace Mistral
         public global::Mistral.ResponseFormats? Type { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("json_schema")]
         public global::Mistral.JsonSchema? JsonSchema { get; set; }

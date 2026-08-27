@@ -10,7 +10,7 @@ namespace Mistral
     public readonly partial struct EntityType : global::System.IEquatable<EntityType>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EntityType(string value)
         {
@@ -18,25 +18,25 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string Value { get; }
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static EntityType Org { get; } = new("Org");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static EntityType User { get; } = new("User");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static EntityType Workspace { get; } = new("Workspace");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static EntityType FromValue(string value)
         {
@@ -52,7 +52,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool IsKnown => Value switch
         {
@@ -63,12 +63,12 @@ namespace Mistral
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string ToString() => Value ?? string.Empty;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(EntityType other)
         {
@@ -76,7 +76,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {
@@ -84,7 +84,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -92,12 +92,12 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(EntityType left, EntityType right) => left.Equals(right);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(EntityType left, EntityType right) => !left.Equals(right);
     }

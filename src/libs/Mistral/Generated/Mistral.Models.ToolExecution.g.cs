@@ -9,7 +9,7 @@ namespace Mistral
     public sealed partial class ToolExecution
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("taskSupport")]
         public global::Mistral.ToolExecutionTaskSupport2? TaskSupport { get; set; }

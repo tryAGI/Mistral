@@ -212,7 +212,7 @@ namespace Mistral
                          __authorization.Location == "Header")
                 {
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
-                } 
+                }
             }
                 global::Mistral.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
@@ -521,7 +521,7 @@ namespace Mistral
         /// <param name="source"></param>
         /// <param name="search"></param>
         /// <param name="purpose"></param>
-        /// <param name="mimetypes"></param> 
+        /// <param name="mimetypes"></param>
         /// <param name="page">Initial page number to start enumerating from. Defaults to 1.</param>
         /// <param name="cancellationToken"></param>
         public global::System.Collections.Generic.IAsyncEnumerable<global::Mistral.FileSchema> ListFilesAutoPagingAsync(

@@ -9,7 +9,7 @@ namespace Mistral
     public enum WebSearchToolType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WebSearch,
     }

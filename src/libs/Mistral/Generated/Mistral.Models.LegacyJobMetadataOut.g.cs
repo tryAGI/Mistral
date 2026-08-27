@@ -4,7 +4,7 @@
 namespace Mistral
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class LegacyJobMetadataOut
     {
@@ -45,7 +45,7 @@ namespace Mistral
         public int? DataTokens { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("estimated_start_time")]
         public int? EstimatedStartTime { get; set; }
@@ -57,7 +57,7 @@ namespace Mistral
         public bool? Deprecated { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("details")]
         [global::System.Text.Json.Serialization.JsonRequired]

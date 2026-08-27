@@ -4,180 +4,180 @@
 namespace Mistral
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ObservabilityErrorCode
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AgentMistralApiError,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AgentNotFound,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AuthForbidden,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AuthForbiddenNotWorkspaceAdmin,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AuthForbiddenOrgNotWhitelisted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AuthForbiddenRoleNotFound,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AuthForbiddenWorkspaceNotFound,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AuthUnauthorized,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CampaignNotFound,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CampaignNoMatchingEvents,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DatabaseError,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DatabaseQueryError,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DatabaseTimeout,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DatabaseUnavailable,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DatasetNotFound,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DatasetRecordFormatError,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DatasetRecordNotFound,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DatasetTaskNotFound,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EvaluationCurrentlyRunning,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EvaluationNotFound,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EvaluationRecordNotFound,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EvaluationRunNotFound,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EvaluationRunTransitionError,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EvaluationRunTransitionIsInvalid,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EvaluationRunTransitionIsRunningAlready,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FeatureNotSupported,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FieldsBadRequest,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FieldsNotFound,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         JudgeAlreadyHasNewVersion,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         JudgeConversationFormatError,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         JudgeDidNotChange,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         JudgeMistralApiError,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         JudgeMistralApiTimeout,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         JudgeNameAlreadyExists,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         JudgeNotFound,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         JudgeUsedInCampaignCannotBeUpdated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SearchBadRequest,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SearchFilterToSqlConversionError,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SearchNotFound,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SearchServiceUnavailable,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TemplateSyntaxError,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UnknownError,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ValidationError,
     }

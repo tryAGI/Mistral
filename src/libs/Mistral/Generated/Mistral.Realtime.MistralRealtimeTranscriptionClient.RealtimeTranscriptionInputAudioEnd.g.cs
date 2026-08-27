@@ -6,7 +6,7 @@ namespace Mistral.Realtime
     public sealed partial class MistralRealtimeTranscriptionClient
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="message">The message to send.</param>
         /// <param name="cancellationToken">A cancellation token.</param>

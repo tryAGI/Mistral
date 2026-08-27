@@ -193,7 +193,7 @@ namespace Mistral
                          __authorization.Location == "Header")
                 {
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
-                } 
+                }
             }
                 global::Mistral.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
@@ -538,7 +538,7 @@ namespace Mistral
         /// <param name="pageSize">
         /// Number of items per page<br/>
         /// Default Value: 50
-        /// </param> 
+        /// </param>
         /// <param name="nextPageToken">Initial cursor to start enumerating from. Defaults to null (first page).</param>
         /// <param name="cancellationToken"></param>
         public global::System.Collections.Generic.IAsyncEnumerable<global::Mistral.WorkflowExecutionWithoutResultResponse> ListRunsAutoPagingAsync(

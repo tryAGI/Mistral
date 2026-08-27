@@ -11,7 +11,7 @@ namespace Mistral
     public enum MistralPromptMode
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Reasoning,
     }

@@ -9,7 +9,7 @@ namespace Mistral
     public enum OAuth2TokenAuthType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Oauth2Token,
     }

@@ -15,13 +15,13 @@ namespace Mistral
         public bool? IsError { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("structuredContent")]
         public object? StructuredContent { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("_meta")]
         public object? Meta { get; set; }

@@ -5,12 +5,12 @@
 namespace Mistral
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct WorkflowExecutionTraceSummaryAttributesValues : global::System.IEquatable<WorkflowExecutionTraceSummaryAttributesValues>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? WorkflowExecutionTraceSummaryAttributesValuesVariant1 { get; init; }
@@ -19,7 +19,7 @@ namespace Mistral
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WorkflowExecutionTraceSummaryAttributesValuesVariant1))]
@@ -27,7 +27,7 @@ namespace Mistral
         public bool IsWorkflowExecutionTraceSummaryAttributesValuesVariant1 => WorkflowExecutionTraceSummaryAttributesValuesVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickWorkflowExecutionTraceSummaryAttributesValuesVariant1(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string PickWorkflowExecutionTraceSummaryAttributesValuesVariant1() => IsWorkflowExecutionTraceSummaryAttributesValuesVariant1
             ? WorkflowExecutionTraceSummaryAttributesValuesVariant1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'WorkflowExecutionTraceSummaryAttributesValuesVariant1' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public int? WorkflowExecutionTraceSummaryAttributesValuesVariant2 { get; init; }
@@ -56,7 +56,7 @@ namespace Mistral
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WorkflowExecutionTraceSummaryAttributesValuesVariant2))]
@@ -64,7 +64,7 @@ namespace Mistral
         public bool IsWorkflowExecutionTraceSummaryAttributesValuesVariant2 => WorkflowExecutionTraceSummaryAttributesValuesVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickWorkflowExecutionTraceSummaryAttributesValuesVariant2(
 #if NET6_0_OR_GREATER
@@ -77,14 +77,14 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public int PickWorkflowExecutionTraceSummaryAttributesValuesVariant2() => IsWorkflowExecutionTraceSummaryAttributesValuesVariant2
             ? WorkflowExecutionTraceSummaryAttributesValuesVariant2!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'WorkflowExecutionTraceSummaryAttributesValuesVariant2' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public double? WorkflowExecutionTraceSummaryAttributesValuesVariant3 { get; init; }
@@ -93,7 +93,7 @@ namespace Mistral
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WorkflowExecutionTraceSummaryAttributesValuesVariant3))]
@@ -101,7 +101,7 @@ namespace Mistral
         public bool IsWorkflowExecutionTraceSummaryAttributesValuesVariant3 => WorkflowExecutionTraceSummaryAttributesValuesVariant3 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickWorkflowExecutionTraceSummaryAttributesValuesVariant3(
 #if NET6_0_OR_GREATER
@@ -114,14 +114,14 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public double PickWorkflowExecutionTraceSummaryAttributesValuesVariant3() => IsWorkflowExecutionTraceSummaryAttributesValuesVariant3
             ? WorkflowExecutionTraceSummaryAttributesValuesVariant3!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'WorkflowExecutionTraceSummaryAttributesValuesVariant3' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public bool? WorkflowExecutionTraceSummaryAttributesValuesVariant4 { get; init; }
@@ -130,7 +130,7 @@ namespace Mistral
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WorkflowExecutionTraceSummaryAttributesValuesVariant4))]
@@ -138,7 +138,7 @@ namespace Mistral
         public bool IsWorkflowExecutionTraceSummaryAttributesValuesVariant4 => WorkflowExecutionTraceSummaryAttributesValuesVariant4 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickWorkflowExecutionTraceSummaryAttributesValuesVariant4(
 #if NET6_0_OR_GREATER
@@ -151,14 +151,14 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool PickWorkflowExecutionTraceSummaryAttributesValuesVariant4() => IsWorkflowExecutionTraceSummaryAttributesValuesVariant4
             ? WorkflowExecutionTraceSummaryAttributesValuesVariant4!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'WorkflowExecutionTraceSummaryAttributesValuesVariant4' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public object? WorkflowExecutionTraceSummaryAttributesValuesVariant5 { get; init; }
@@ -167,7 +167,7 @@ namespace Mistral
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WorkflowExecutionTraceSummaryAttributesValuesVariant5))]
@@ -175,7 +175,7 @@ namespace Mistral
         public bool IsWorkflowExecutionTraceSummaryAttributesValuesVariant5 => WorkflowExecutionTraceSummaryAttributesValuesVariant5 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickWorkflowExecutionTraceSummaryAttributesValuesVariant5(
 #if NET6_0_OR_GREATER
@@ -188,23 +188,23 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object PickWorkflowExecutionTraceSummaryAttributesValuesVariant5() => IsWorkflowExecutionTraceSummaryAttributesValuesVariant5
             ? WorkflowExecutionTraceSummaryAttributesValuesVariant5!
             : throw new global::System.InvalidOperationException($"Expected union variant 'WorkflowExecutionTraceSummaryAttributesValuesVariant5' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator WorkflowExecutionTraceSummaryAttributesValues(string value) => new WorkflowExecutionTraceSummaryAttributesValues((string?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator string?(WorkflowExecutionTraceSummaryAttributesValues @this) => @this.WorkflowExecutionTraceSummaryAttributesValuesVariant1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public WorkflowExecutionTraceSummaryAttributesValues(string? value)
         {
@@ -212,22 +212,22 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static WorkflowExecutionTraceSummaryAttributesValues FromWorkflowExecutionTraceSummaryAttributesValuesVariant1(string? value) => new WorkflowExecutionTraceSummaryAttributesValues(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator WorkflowExecutionTraceSummaryAttributesValues(int value) => new WorkflowExecutionTraceSummaryAttributesValues((int?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator int?(WorkflowExecutionTraceSummaryAttributesValues @this) => @this.WorkflowExecutionTraceSummaryAttributesValuesVariant2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public WorkflowExecutionTraceSummaryAttributesValues(int? value)
         {
@@ -235,22 +235,22 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static WorkflowExecutionTraceSummaryAttributesValues FromWorkflowExecutionTraceSummaryAttributesValuesVariant2(int? value) => new WorkflowExecutionTraceSummaryAttributesValues(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator WorkflowExecutionTraceSummaryAttributesValues(double value) => new WorkflowExecutionTraceSummaryAttributesValues((double?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator double?(WorkflowExecutionTraceSummaryAttributesValues @this) => @this.WorkflowExecutionTraceSummaryAttributesValuesVariant3;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public WorkflowExecutionTraceSummaryAttributesValues(double? value)
         {
@@ -258,22 +258,22 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static WorkflowExecutionTraceSummaryAttributesValues FromWorkflowExecutionTraceSummaryAttributesValuesVariant3(double? value) => new WorkflowExecutionTraceSummaryAttributesValues(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator WorkflowExecutionTraceSummaryAttributesValues(bool value) => new WorkflowExecutionTraceSummaryAttributesValues((bool?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator bool?(WorkflowExecutionTraceSummaryAttributesValues @this) => @this.WorkflowExecutionTraceSummaryAttributesValuesVariant4;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public WorkflowExecutionTraceSummaryAttributesValues(bool? value)
         {
@@ -281,12 +281,12 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static WorkflowExecutionTraceSummaryAttributesValues FromWorkflowExecutionTraceSummaryAttributesValuesVariant4(bool? value) => new WorkflowExecutionTraceSummaryAttributesValues(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public WorkflowExecutionTraceSummaryAttributesValues(
             string? workflowExecutionTraceSummaryAttributesValuesVariant1,
@@ -304,29 +304,29 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             WorkflowExecutionTraceSummaryAttributesValuesVariant5 as object ??
             WorkflowExecutionTraceSummaryAttributesValuesVariant4 as object ??
             WorkflowExecutionTraceSummaryAttributesValuesVariant3 as object ??
             WorkflowExecutionTraceSummaryAttributesValuesVariant2 as object ??
-            WorkflowExecutionTraceSummaryAttributesValuesVariant1 as object 
+            WorkflowExecutionTraceSummaryAttributesValuesVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             WorkflowExecutionTraceSummaryAttributesValuesVariant1?.ToString() ??
             WorkflowExecutionTraceSummaryAttributesValuesVariant2?.ToString() ??
             WorkflowExecutionTraceSummaryAttributesValuesVariant3?.ToString() ??
             WorkflowExecutionTraceSummaryAttributesValuesVariant4?.ToString().ToLowerInvariant() ??
-            WorkflowExecutionTraceSummaryAttributesValuesVariant5?.ToString() 
+            WorkflowExecutionTraceSummaryAttributesValuesVariant5?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -334,7 +334,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<string, TResult>? workflowExecutionTraceSummaryAttributesValuesVariant1 = null,
@@ -374,7 +374,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<string>? workflowExecutionTraceSummaryAttributesValuesVariant1 = null,
@@ -416,7 +416,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<string>? workflowExecutionTraceSummaryAttributesValuesVariant1 = null,
@@ -454,7 +454,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -481,7 +481,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(WorkflowExecutionTraceSummaryAttributesValues other)
         {
@@ -490,12 +490,12 @@ namespace Mistral
                 global::System.Collections.Generic.EqualityComparer<int?>.Default.Equals(WorkflowExecutionTraceSummaryAttributesValuesVariant2, other.WorkflowExecutionTraceSummaryAttributesValuesVariant2) &&
                 global::System.Collections.Generic.EqualityComparer<double?>.Default.Equals(WorkflowExecutionTraceSummaryAttributesValuesVariant3, other.WorkflowExecutionTraceSummaryAttributesValuesVariant3) &&
                 global::System.Collections.Generic.EqualityComparer<bool?>.Default.Equals(WorkflowExecutionTraceSummaryAttributesValuesVariant4, other.WorkflowExecutionTraceSummaryAttributesValuesVariant4) &&
-                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(WorkflowExecutionTraceSummaryAttributesValuesVariant5, other.WorkflowExecutionTraceSummaryAttributesValuesVariant5) 
+                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(WorkflowExecutionTraceSummaryAttributesValuesVariant5, other.WorkflowExecutionTraceSummaryAttributesValuesVariant5)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(WorkflowExecutionTraceSummaryAttributesValues obj1, WorkflowExecutionTraceSummaryAttributesValues obj2)
         {
@@ -503,7 +503,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(WorkflowExecutionTraceSummaryAttributesValues obj1, WorkflowExecutionTraceSummaryAttributesValues obj2)
         {
@@ -511,7 +511,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

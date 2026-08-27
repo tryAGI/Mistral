@@ -4,24 +4,24 @@
 namespace Mistral
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum RealtimeTranscriptionClientMessageDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InputAudioAppend,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InputAudioEnd,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InputAudioFlush,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SessionUpdate,
     }

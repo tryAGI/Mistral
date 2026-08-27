@@ -9,7 +9,7 @@ namespace Mistral
     public enum ImageGenerationToolType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ImageGeneration,
     }

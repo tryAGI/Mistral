@@ -5,7 +5,7 @@
 namespace Mistral
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct ConversationRestartRequest : global::System.IEquatable<ConversationRestartRequest>
     {
@@ -19,7 +19,7 @@ namespace Mistral
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Base))]
@@ -27,7 +27,7 @@ namespace Mistral
         public bool IsBase => Base != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickBase(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.ConversationRestartRequestBase PickBase() => IsBase
             ? Base!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.ConversationRestartRequestVariant2? ConversationRestartRequestVariant2 { get; init; }
@@ -56,7 +56,7 @@ namespace Mistral
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ConversationRestartRequestVariant2))]
@@ -64,7 +64,7 @@ namespace Mistral
         public bool IsConversationRestartRequestVariant2 => ConversationRestartRequestVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickConversationRestartRequestVariant2(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.ConversationRestartRequestVariant2 PickConversationRestartRequestVariant2() => IsConversationRestartRequestVariant2
             ? ConversationRestartRequestVariant2!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationRestartRequestVariant2' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ConversationRestartRequest(global::Mistral.ConversationRestartRequestBase value) => new ConversationRestartRequest((global::Mistral.ConversationRestartRequestBase?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Mistral.ConversationRestartRequestBase?(ConversationRestartRequest @this) => @this.Base;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ConversationRestartRequest(global::Mistral.ConversationRestartRequestBase? value)
         {
@@ -101,22 +101,22 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ConversationRestartRequest FromBase(global::Mistral.ConversationRestartRequestBase? value) => new ConversationRestartRequest(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ConversationRestartRequest(global::Mistral.ConversationRestartRequestVariant2 value) => new ConversationRestartRequest((global::Mistral.ConversationRestartRequestVariant2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Mistral.ConversationRestartRequestVariant2?(ConversationRestartRequest @this) => @this.ConversationRestartRequestVariant2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ConversationRestartRequest(global::Mistral.ConversationRestartRequestVariant2? value)
         {
@@ -124,12 +124,12 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ConversationRestartRequest FromConversationRestartRequestVariant2(global::Mistral.ConversationRestartRequestVariant2? value) => new ConversationRestartRequest(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ConversationRestartRequest(
             global::Mistral.ConversationRestartRequestBase? @base,
@@ -141,23 +141,23 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             ConversationRestartRequestVariant2 as object ??
-            Base as object 
+            Base as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Base?.ToString() ??
-            ConversationRestartRequestVariant2?.ToString() 
+            ConversationRestartRequestVariant2?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Mistral.ConversationRestartRequestBase, TResult>? @base = null,
@@ -190,7 +190,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Mistral.ConversationRestartRequestBase>? @base = null,
@@ -214,7 +214,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Mistral.ConversationRestartRequestBase>? @base = null,
@@ -237,7 +237,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ConversationRestartRequest other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Mistral.ConversationRestartRequestBase?>.Default.Equals(Base, other.Base) &&
-                global::System.Collections.Generic.EqualityComparer<global::Mistral.ConversationRestartRequestVariant2?>.Default.Equals(ConversationRestartRequestVariant2, other.ConversationRestartRequestVariant2) 
+                global::System.Collections.Generic.EqualityComparer<global::Mistral.ConversationRestartRequestVariant2?>.Default.Equals(ConversationRestartRequestVariant2, other.ConversationRestartRequestVariant2)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ConversationRestartRequest obj1, ConversationRestartRequest obj2)
         {
@@ -277,7 +277,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ConversationRestartRequest obj1, ConversationRestartRequest obj2)
         {
@@ -285,7 +285,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

@@ -5,17 +5,17 @@
 namespace Mistral
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct RealtimeTranscriptionClientMessage : global::System.IEquatable<RealtimeTranscriptionClientMessage>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.RealtimeTranscriptionClientMessageDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.RealtimeTranscriptionSessionUpdateMessage? SessionUpdate { get; init; }
@@ -24,7 +24,7 @@ namespace Mistral
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SessionUpdate))]
@@ -32,7 +32,7 @@ namespace Mistral
         public bool IsSessionUpdate => SessionUpdate != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSessionUpdate(
 #if NET6_0_OR_GREATER
@@ -45,14 +45,14 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.RealtimeTranscriptionSessionUpdateMessage PickSessionUpdate() => IsSessionUpdate
             ? SessionUpdate!
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionUpdate' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.RealtimeTranscriptionInputAudioAppend? InputAudioAppend { get; init; }
@@ -61,7 +61,7 @@ namespace Mistral
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputAudioAppend))]
@@ -69,7 +69,7 @@ namespace Mistral
         public bool IsInputAudioAppend => InputAudioAppend != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickInputAudioAppend(
 #if NET6_0_OR_GREATER
@@ -82,14 +82,14 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.RealtimeTranscriptionInputAudioAppend PickInputAudioAppend() => IsInputAudioAppend
             ? InputAudioAppend!
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputAudioAppend' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.RealtimeTranscriptionInputAudioFlush? InputAudioFlush { get; init; }
@@ -98,7 +98,7 @@ namespace Mistral
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputAudioFlush))]
@@ -106,7 +106,7 @@ namespace Mistral
         public bool IsInputAudioFlush => InputAudioFlush != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickInputAudioFlush(
 #if NET6_0_OR_GREATER
@@ -119,14 +119,14 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.RealtimeTranscriptionInputAudioFlush PickInputAudioFlush() => IsInputAudioFlush
             ? InputAudioFlush!
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputAudioFlush' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.RealtimeTranscriptionInputAudioEnd? InputAudioEnd { get; init; }
@@ -135,7 +135,7 @@ namespace Mistral
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputAudioEnd))]
@@ -143,7 +143,7 @@ namespace Mistral
         public bool IsInputAudioEnd => InputAudioEnd != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickInputAudioEnd(
 #if NET6_0_OR_GREATER
@@ -156,23 +156,23 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.RealtimeTranscriptionInputAudioEnd PickInputAudioEnd() => IsInputAudioEnd
             ? InputAudioEnd!
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputAudioEnd' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator RealtimeTranscriptionClientMessage(global::Mistral.RealtimeTranscriptionSessionUpdateMessage value) => new RealtimeTranscriptionClientMessage((global::Mistral.RealtimeTranscriptionSessionUpdateMessage?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Mistral.RealtimeTranscriptionSessionUpdateMessage?(RealtimeTranscriptionClientMessage @this) => @this.SessionUpdate;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RealtimeTranscriptionClientMessage(global::Mistral.RealtimeTranscriptionSessionUpdateMessage? value)
         {
@@ -180,22 +180,22 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static RealtimeTranscriptionClientMessage FromSessionUpdate(global::Mistral.RealtimeTranscriptionSessionUpdateMessage? value) => new RealtimeTranscriptionClientMessage(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator RealtimeTranscriptionClientMessage(global::Mistral.RealtimeTranscriptionInputAudioAppend value) => new RealtimeTranscriptionClientMessage((global::Mistral.RealtimeTranscriptionInputAudioAppend?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Mistral.RealtimeTranscriptionInputAudioAppend?(RealtimeTranscriptionClientMessage @this) => @this.InputAudioAppend;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RealtimeTranscriptionClientMessage(global::Mistral.RealtimeTranscriptionInputAudioAppend? value)
         {
@@ -203,22 +203,22 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static RealtimeTranscriptionClientMessage FromInputAudioAppend(global::Mistral.RealtimeTranscriptionInputAudioAppend? value) => new RealtimeTranscriptionClientMessage(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator RealtimeTranscriptionClientMessage(global::Mistral.RealtimeTranscriptionInputAudioFlush value) => new RealtimeTranscriptionClientMessage((global::Mistral.RealtimeTranscriptionInputAudioFlush?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Mistral.RealtimeTranscriptionInputAudioFlush?(RealtimeTranscriptionClientMessage @this) => @this.InputAudioFlush;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RealtimeTranscriptionClientMessage(global::Mistral.RealtimeTranscriptionInputAudioFlush? value)
         {
@@ -226,22 +226,22 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static RealtimeTranscriptionClientMessage FromInputAudioFlush(global::Mistral.RealtimeTranscriptionInputAudioFlush? value) => new RealtimeTranscriptionClientMessage(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator RealtimeTranscriptionClientMessage(global::Mistral.RealtimeTranscriptionInputAudioEnd value) => new RealtimeTranscriptionClientMessage((global::Mistral.RealtimeTranscriptionInputAudioEnd?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Mistral.RealtimeTranscriptionInputAudioEnd?(RealtimeTranscriptionClientMessage @this) => @this.InputAudioEnd;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RealtimeTranscriptionClientMessage(global::Mistral.RealtimeTranscriptionInputAudioEnd? value)
         {
@@ -249,12 +249,12 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static RealtimeTranscriptionClientMessage FromInputAudioEnd(global::Mistral.RealtimeTranscriptionInputAudioEnd? value) => new RealtimeTranscriptionClientMessage(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RealtimeTranscriptionClientMessage(
             global::Mistral.RealtimeTranscriptionClientMessageDiscriminatorType? type,
@@ -273,27 +273,27 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             InputAudioEnd as object ??
             InputAudioFlush as object ??
             InputAudioAppend as object ??
-            SessionUpdate as object 
+            SessionUpdate as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             SessionUpdate?.ToString() ??
             InputAudioAppend?.ToString() ??
             InputAudioFlush?.ToString() ??
-            InputAudioEnd?.ToString() 
+            InputAudioEnd?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -301,7 +301,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Mistral.RealtimeTranscriptionSessionUpdateMessage, TResult>? sessionUpdate = null,
@@ -336,7 +336,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Mistral.RealtimeTranscriptionSessionUpdateMessage>? sessionUpdate = null,
@@ -372,7 +372,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Mistral.RealtimeTranscriptionSessionUpdateMessage>? sessionUpdate = null,
@@ -405,7 +405,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -430,7 +430,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(RealtimeTranscriptionClientMessage other)
         {
@@ -438,12 +438,12 @@ namespace Mistral
                 global::System.Collections.Generic.EqualityComparer<global::Mistral.RealtimeTranscriptionSessionUpdateMessage?>.Default.Equals(SessionUpdate, other.SessionUpdate) &&
                 global::System.Collections.Generic.EqualityComparer<global::Mistral.RealtimeTranscriptionInputAudioAppend?>.Default.Equals(InputAudioAppend, other.InputAudioAppend) &&
                 global::System.Collections.Generic.EqualityComparer<global::Mistral.RealtimeTranscriptionInputAudioFlush?>.Default.Equals(InputAudioFlush, other.InputAudioFlush) &&
-                global::System.Collections.Generic.EqualityComparer<global::Mistral.RealtimeTranscriptionInputAudioEnd?>.Default.Equals(InputAudioEnd, other.InputAudioEnd) 
+                global::System.Collections.Generic.EqualityComparer<global::Mistral.RealtimeTranscriptionInputAudioEnd?>.Default.Equals(InputAudioEnd, other.InputAudioEnd)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(RealtimeTranscriptionClientMessage obj1, RealtimeTranscriptionClientMessage obj2)
         {
@@ -451,7 +451,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(RealtimeTranscriptionClientMessage obj1, RealtimeTranscriptionClientMessage obj2)
         {
@@ -459,7 +459,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

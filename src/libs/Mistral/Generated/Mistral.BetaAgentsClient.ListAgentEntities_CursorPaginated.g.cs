@@ -218,7 +218,7 @@ namespace Mistral
                          __authorization.Location == "Header")
                 {
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
-                } 
+                }
             }
                 global::Mistral.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
@@ -567,7 +567,7 @@ namespace Mistral
         /// Search agents by name or ID
         /// </param>
         /// <param name="id"></param>
-        /// <param name="metadata"></param> 
+        /// <param name="metadata"></param>
         /// <param name="pageToken">Initial cursor to start enumerating from. Defaults to null (first page).</param>
         /// <param name="cancellationToken"></param>
         public global::System.Collections.Generic.IAsyncEnumerable<global::Mistral.Agent> ListAgentEntities_CursorPaginatedAutoPagingAsync(

@@ -9,7 +9,7 @@ namespace Mistral
     public sealed partial class PublicAuthenticationMethod
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("method_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.OutboundAuthenticationTypeJsonConverter))]
@@ -17,7 +17,7 @@ namespace Mistral
         public required global::Mistral.OutboundAuthenticationType MethodType { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("headers")]
         public global::System.Collections.Generic.IList<global::Mistral.ConnectorAuthenticationHeader>? Headers { get; set; }

@@ -5,12 +5,12 @@
 namespace Mistral
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct ConversationAppendStreamRequest : global::System.IEquatable<ConversationAppendStreamRequest>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.ConversationAppendRequestBase? ConversationAppendRequest { get; init; }
@@ -19,7 +19,7 @@ namespace Mistral
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ConversationAppendRequest))]
@@ -27,7 +27,7 @@ namespace Mistral
         public bool IsConversationAppendRequest => ConversationAppendRequest != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickConversationAppendRequest(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.ConversationAppendRequestBase PickConversationAppendRequest() => IsConversationAppendRequest
             ? ConversationAppendRequest!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationAppendRequest' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.ConversationAppendStreamRequestVariant2? ConversationAppendStreamRequestVariant2 { get; init; }
@@ -56,7 +56,7 @@ namespace Mistral
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ConversationAppendStreamRequestVariant2))]
@@ -64,7 +64,7 @@ namespace Mistral
         public bool IsConversationAppendStreamRequestVariant2 => ConversationAppendStreamRequestVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickConversationAppendStreamRequestVariant2(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.ConversationAppendStreamRequestVariant2 PickConversationAppendStreamRequestVariant2() => IsConversationAppendStreamRequestVariant2
             ? ConversationAppendStreamRequestVariant2!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationAppendStreamRequestVariant2' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ConversationAppendStreamRequest(global::Mistral.ConversationAppendRequestBase value) => new ConversationAppendStreamRequest((global::Mistral.ConversationAppendRequestBase?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Mistral.ConversationAppendRequestBase?(ConversationAppendStreamRequest @this) => @this.ConversationAppendRequest;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ConversationAppendStreamRequest(global::Mistral.ConversationAppendRequestBase? value)
         {
@@ -101,22 +101,22 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ConversationAppendStreamRequest FromConversationAppendRequest(global::Mistral.ConversationAppendRequestBase? value) => new ConversationAppendStreamRequest(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ConversationAppendStreamRequest(global::Mistral.ConversationAppendStreamRequestVariant2 value) => new ConversationAppendStreamRequest((global::Mistral.ConversationAppendStreamRequestVariant2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Mistral.ConversationAppendStreamRequestVariant2?(ConversationAppendStreamRequest @this) => @this.ConversationAppendStreamRequestVariant2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ConversationAppendStreamRequest(global::Mistral.ConversationAppendStreamRequestVariant2? value)
         {
@@ -124,12 +124,12 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ConversationAppendStreamRequest FromConversationAppendStreamRequestVariant2(global::Mistral.ConversationAppendStreamRequestVariant2? value) => new ConversationAppendStreamRequest(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ConversationAppendStreamRequest(
             global::Mistral.ConversationAppendRequestBase? conversationAppendRequest,
@@ -141,23 +141,23 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             ConversationAppendStreamRequestVariant2 as object ??
-            ConversationAppendRequest as object 
+            ConversationAppendRequest as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             ConversationAppendRequest?.ToString() ??
-            ConversationAppendStreamRequestVariant2?.ToString() 
+            ConversationAppendStreamRequestVariant2?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Mistral.ConversationAppendRequestBase, TResult>? conversationAppendRequest = null,
@@ -190,7 +190,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Mistral.ConversationAppendRequestBase>? conversationAppendRequest = null,
@@ -214,7 +214,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Mistral.ConversationAppendRequestBase>? conversationAppendRequest = null,
@@ -237,7 +237,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ConversationAppendStreamRequest other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Mistral.ConversationAppendRequestBase?>.Default.Equals(ConversationAppendRequest, other.ConversationAppendRequest) &&
-                global::System.Collections.Generic.EqualityComparer<global::Mistral.ConversationAppendStreamRequestVariant2?>.Default.Equals(ConversationAppendStreamRequestVariant2, other.ConversationAppendStreamRequestVariant2) 
+                global::System.Collections.Generic.EqualityComparer<global::Mistral.ConversationAppendStreamRequestVariant2?>.Default.Equals(ConversationAppendStreamRequestVariant2, other.ConversationAppendStreamRequestVariant2)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ConversationAppendStreamRequest obj1, ConversationAppendStreamRequest obj2)
         {
@@ -277,7 +277,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ConversationAppendStreamRequest obj1, ConversationAppendStreamRequest obj2)
         {
@@ -285,7 +285,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

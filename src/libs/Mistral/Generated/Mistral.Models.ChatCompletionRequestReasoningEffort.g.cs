@@ -9,11 +9,11 @@ namespace Mistral
     public enum ChatCompletionRequestReasoningEffort
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         High,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         None,
     }

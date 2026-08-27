@@ -5,17 +5,17 @@
 namespace Mistral.Realtime
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct ServerEvent : global::System.IEquatable<ServerEvent>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.Realtime.ServerEventDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.Realtime.TranscriptionStreamLanguage? TranscriptionLanguage { get; init; }
@@ -24,7 +24,7 @@ namespace Mistral.Realtime
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TranscriptionLanguage))]
@@ -32,7 +32,7 @@ namespace Mistral.Realtime
         public bool IsTranscriptionLanguage => TranscriptionLanguage != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickTranscriptionLanguage(
 #if NET6_0_OR_GREATER
@@ -45,14 +45,14 @@ namespace Mistral.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.Realtime.TranscriptionStreamLanguage PickTranscriptionLanguage() => IsTranscriptionLanguage
             ? TranscriptionLanguage!
             : throw new global::System.InvalidOperationException($"Expected union variant 'TranscriptionLanguage' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.Realtime.TranscriptionStreamSegmentDelta? TranscriptionSegment { get; init; }
@@ -61,7 +61,7 @@ namespace Mistral.Realtime
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TranscriptionSegment))]
@@ -69,7 +69,7 @@ namespace Mistral.Realtime
         public bool IsTranscriptionSegment => TranscriptionSegment != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickTranscriptionSegment(
 #if NET6_0_OR_GREATER
@@ -82,14 +82,14 @@ namespace Mistral.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.Realtime.TranscriptionStreamSegmentDelta PickTranscriptionSegment() => IsTranscriptionSegment
             ? TranscriptionSegment!
             : throw new global::System.InvalidOperationException($"Expected union variant 'TranscriptionSegment' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.Realtime.TranscriptionStreamTextDelta? TranscriptionTextDelta { get; init; }
@@ -98,7 +98,7 @@ namespace Mistral.Realtime
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TranscriptionTextDelta))]
@@ -106,7 +106,7 @@ namespace Mistral.Realtime
         public bool IsTranscriptionTextDelta => TranscriptionTextDelta != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickTranscriptionTextDelta(
 #if NET6_0_OR_GREATER
@@ -119,14 +119,14 @@ namespace Mistral.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.Realtime.TranscriptionStreamTextDelta PickTranscriptionTextDelta() => IsTranscriptionTextDelta
             ? TranscriptionTextDelta!
             : throw new global::System.InvalidOperationException($"Expected union variant 'TranscriptionTextDelta' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.Realtime.TranscriptionStreamDone? TranscriptionDone { get; init; }
@@ -135,7 +135,7 @@ namespace Mistral.Realtime
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TranscriptionDone))]
@@ -143,7 +143,7 @@ namespace Mistral.Realtime
         public bool IsTranscriptionDone => TranscriptionDone != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickTranscriptionDone(
 #if NET6_0_OR_GREATER
@@ -156,14 +156,14 @@ namespace Mistral.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.Realtime.TranscriptionStreamDone PickTranscriptionDone() => IsTranscriptionDone
             ? TranscriptionDone!
             : throw new global::System.InvalidOperationException($"Expected union variant 'TranscriptionDone' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.Realtime.RealtimeTranscriptionSessionCreated? SessionCreated { get; init; }
@@ -172,7 +172,7 @@ namespace Mistral.Realtime
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SessionCreated))]
@@ -180,7 +180,7 @@ namespace Mistral.Realtime
         public bool IsSessionCreated => SessionCreated != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSessionCreated(
 #if NET6_0_OR_GREATER
@@ -193,14 +193,14 @@ namespace Mistral.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.Realtime.RealtimeTranscriptionSessionCreated PickSessionCreated() => IsSessionCreated
             ? SessionCreated!
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionCreated' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.Realtime.RealtimeTranscriptionSessionUpdated? SessionUpdated { get; init; }
@@ -209,7 +209,7 @@ namespace Mistral.Realtime
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SessionUpdated))]
@@ -217,7 +217,7 @@ namespace Mistral.Realtime
         public bool IsSessionUpdated => SessionUpdated != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSessionUpdated(
 #if NET6_0_OR_GREATER
@@ -230,14 +230,14 @@ namespace Mistral.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.Realtime.RealtimeTranscriptionSessionUpdated PickSessionUpdated() => IsSessionUpdated
             ? SessionUpdated!
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionUpdated' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.Realtime.RealtimeTranscriptionError? Error { get; init; }
@@ -246,7 +246,7 @@ namespace Mistral.Realtime
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Error))]
@@ -254,7 +254,7 @@ namespace Mistral.Realtime
         public bool IsError => Error != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickError(
 #if NET6_0_OR_GREATER
@@ -267,23 +267,23 @@ namespace Mistral.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.Realtime.RealtimeTranscriptionError PickError() => IsError
             ? Error!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Error' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ServerEvent(global::Mistral.Realtime.TranscriptionStreamLanguage value) => new ServerEvent((global::Mistral.Realtime.TranscriptionStreamLanguage?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Mistral.Realtime.TranscriptionStreamLanguage?(ServerEvent @this) => @this.TranscriptionLanguage;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ServerEvent(global::Mistral.Realtime.TranscriptionStreamLanguage? value)
         {
@@ -291,22 +291,22 @@ namespace Mistral.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ServerEvent FromTranscriptionLanguage(global::Mistral.Realtime.TranscriptionStreamLanguage? value) => new ServerEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ServerEvent(global::Mistral.Realtime.TranscriptionStreamSegmentDelta value) => new ServerEvent((global::Mistral.Realtime.TranscriptionStreamSegmentDelta?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Mistral.Realtime.TranscriptionStreamSegmentDelta?(ServerEvent @this) => @this.TranscriptionSegment;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ServerEvent(global::Mistral.Realtime.TranscriptionStreamSegmentDelta? value)
         {
@@ -314,22 +314,22 @@ namespace Mistral.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ServerEvent FromTranscriptionSegment(global::Mistral.Realtime.TranscriptionStreamSegmentDelta? value) => new ServerEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ServerEvent(global::Mistral.Realtime.TranscriptionStreamTextDelta value) => new ServerEvent((global::Mistral.Realtime.TranscriptionStreamTextDelta?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Mistral.Realtime.TranscriptionStreamTextDelta?(ServerEvent @this) => @this.TranscriptionTextDelta;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ServerEvent(global::Mistral.Realtime.TranscriptionStreamTextDelta? value)
         {
@@ -337,22 +337,22 @@ namespace Mistral.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ServerEvent FromTranscriptionTextDelta(global::Mistral.Realtime.TranscriptionStreamTextDelta? value) => new ServerEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ServerEvent(global::Mistral.Realtime.TranscriptionStreamDone value) => new ServerEvent((global::Mistral.Realtime.TranscriptionStreamDone?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Mistral.Realtime.TranscriptionStreamDone?(ServerEvent @this) => @this.TranscriptionDone;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ServerEvent(global::Mistral.Realtime.TranscriptionStreamDone? value)
         {
@@ -360,22 +360,22 @@ namespace Mistral.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ServerEvent FromTranscriptionDone(global::Mistral.Realtime.TranscriptionStreamDone? value) => new ServerEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ServerEvent(global::Mistral.Realtime.RealtimeTranscriptionSessionCreated value) => new ServerEvent((global::Mistral.Realtime.RealtimeTranscriptionSessionCreated?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Mistral.Realtime.RealtimeTranscriptionSessionCreated?(ServerEvent @this) => @this.SessionCreated;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ServerEvent(global::Mistral.Realtime.RealtimeTranscriptionSessionCreated? value)
         {
@@ -383,22 +383,22 @@ namespace Mistral.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ServerEvent FromSessionCreated(global::Mistral.Realtime.RealtimeTranscriptionSessionCreated? value) => new ServerEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ServerEvent(global::Mistral.Realtime.RealtimeTranscriptionSessionUpdated value) => new ServerEvent((global::Mistral.Realtime.RealtimeTranscriptionSessionUpdated?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Mistral.Realtime.RealtimeTranscriptionSessionUpdated?(ServerEvent @this) => @this.SessionUpdated;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ServerEvent(global::Mistral.Realtime.RealtimeTranscriptionSessionUpdated? value)
         {
@@ -406,22 +406,22 @@ namespace Mistral.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ServerEvent FromSessionUpdated(global::Mistral.Realtime.RealtimeTranscriptionSessionUpdated? value) => new ServerEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ServerEvent(global::Mistral.Realtime.RealtimeTranscriptionError value) => new ServerEvent((global::Mistral.Realtime.RealtimeTranscriptionError?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Mistral.Realtime.RealtimeTranscriptionError?(ServerEvent @this) => @this.Error;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ServerEvent(global::Mistral.Realtime.RealtimeTranscriptionError? value)
         {
@@ -429,12 +429,12 @@ namespace Mistral.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ServerEvent FromError(global::Mistral.Realtime.RealtimeTranscriptionError? value) => new ServerEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ServerEvent(
             global::Mistral.Realtime.ServerEventDiscriminatorType? type,
@@ -459,7 +459,7 @@ namespace Mistral.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Error as object ??
@@ -468,11 +468,11 @@ namespace Mistral.Realtime
             TranscriptionDone as object ??
             TranscriptionTextDelta as object ??
             TranscriptionSegment as object ??
-            TranscriptionLanguage as object 
+            TranscriptionLanguage as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             TranscriptionLanguage?.ToString() ??
@@ -481,11 +481,11 @@ namespace Mistral.Realtime
             TranscriptionDone?.ToString() ??
             SessionCreated?.ToString() ??
             SessionUpdated?.ToString() ??
-            Error?.ToString() 
+            Error?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -493,7 +493,7 @@ namespace Mistral.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Mistral.Realtime.TranscriptionStreamLanguage, TResult>? transcriptionLanguage = null,
@@ -543,7 +543,7 @@ namespace Mistral.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Mistral.Realtime.TranscriptionStreamLanguage>? transcriptionLanguage = null,
@@ -597,7 +597,7 @@ namespace Mistral.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Mistral.Realtime.TranscriptionStreamLanguage>? transcriptionLanguage = null,
@@ -645,7 +645,7 @@ namespace Mistral.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -676,7 +676,7 @@ namespace Mistral.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ServerEvent other)
         {
@@ -687,12 +687,12 @@ namespace Mistral.Realtime
                 global::System.Collections.Generic.EqualityComparer<global::Mistral.Realtime.TranscriptionStreamDone?>.Default.Equals(TranscriptionDone, other.TranscriptionDone) &&
                 global::System.Collections.Generic.EqualityComparer<global::Mistral.Realtime.RealtimeTranscriptionSessionCreated?>.Default.Equals(SessionCreated, other.SessionCreated) &&
                 global::System.Collections.Generic.EqualityComparer<global::Mistral.Realtime.RealtimeTranscriptionSessionUpdated?>.Default.Equals(SessionUpdated, other.SessionUpdated) &&
-                global::System.Collections.Generic.EqualityComparer<global::Mistral.Realtime.RealtimeTranscriptionError?>.Default.Equals(Error, other.Error) 
+                global::System.Collections.Generic.EqualityComparer<global::Mistral.Realtime.RealtimeTranscriptionError?>.Default.Equals(Error, other.Error)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ServerEvent obj1, ServerEvent obj2)
         {
@@ -700,7 +700,7 @@ namespace Mistral.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ServerEvent obj1, ServerEvent obj2)
         {
@@ -708,7 +708,7 @@ namespace Mistral.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

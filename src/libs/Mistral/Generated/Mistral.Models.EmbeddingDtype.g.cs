@@ -4,28 +4,28 @@
 namespace Mistral
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum EmbeddingDtype
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Binary,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Float,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Int8,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ubinary,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Uint8,
     }

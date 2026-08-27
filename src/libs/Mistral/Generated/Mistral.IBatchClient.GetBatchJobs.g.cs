@@ -93,7 +93,7 @@ namespace Mistral
         /// <param name="status"></param>
         /// <param name="orderBy">
         /// Default Value: -created
-        /// </param> 
+        /// </param>
         /// <param name="page">Initial page number to start enumerating from. Defaults to 1.</param>
         /// <param name="cancellationToken"></param>
         global::System.Collections.Generic.IAsyncEnumerable<global::Mistral.BatchJobOut> GetBatchJobsAutoPagingAsync(

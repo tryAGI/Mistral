@@ -4,24 +4,24 @@
 namespace Mistral
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ConversationSource
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DirectInput,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Explorer,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Playground,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UploadedFile,
     }

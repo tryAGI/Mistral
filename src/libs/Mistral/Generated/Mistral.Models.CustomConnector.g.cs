@@ -4,7 +4,7 @@
 namespace Mistral
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class CustomConnector
     {
@@ -16,20 +16,20 @@ namespace Mistral
         public global::Mistral.CustomConnectorType? Type { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("connector_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ConnectorId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("authorization")]
         public global::Mistral.AuthorizationVariant1? Authorization { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_configuration")]
         public global::Mistral.ToolConfiguration? ToolConfiguration { get; set; }

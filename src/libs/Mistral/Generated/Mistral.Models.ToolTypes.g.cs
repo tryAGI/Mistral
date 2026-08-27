@@ -4,12 +4,12 @@
 namespace Mistral
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ToolTypes
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Function,
     }

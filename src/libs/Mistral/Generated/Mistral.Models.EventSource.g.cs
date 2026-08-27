@@ -4,16 +4,16 @@
 namespace Mistral
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum EventSource
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Database,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Live,
     }

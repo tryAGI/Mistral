@@ -5,17 +5,17 @@
 namespace Mistral
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct AuthorizationVariant1 : global::System.IEquatable<AuthorizationVariant1>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.CustomConnectorAuthorizationVariant1DiscriminatorType? Type { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.OAuth2TokenAuth? Oauth2Token { get; init; }
@@ -24,7 +24,7 @@ namespace Mistral
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Oauth2Token))]
@@ -32,7 +32,7 @@ namespace Mistral
         public bool IsOauth2Token => Oauth2Token != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOauth2Token(
 #if NET6_0_OR_GREATER
@@ -45,14 +45,14 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.OAuth2TokenAuth PickOauth2Token() => IsOauth2Token
             ? Oauth2Token!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Oauth2Token' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.APIKeyAuth? ApiKey { get; init; }
@@ -61,7 +61,7 @@ namespace Mistral
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ApiKey))]
@@ -69,7 +69,7 @@ namespace Mistral
         public bool IsApiKey => ApiKey != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickApiKey(
 #if NET6_0_OR_GREATER
@@ -82,23 +82,23 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.APIKeyAuth PickApiKey() => IsApiKey
             ? ApiKey!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ApiKey' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator AuthorizationVariant1(global::Mistral.OAuth2TokenAuth value) => new AuthorizationVariant1((global::Mistral.OAuth2TokenAuth?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Mistral.OAuth2TokenAuth?(AuthorizationVariant1 @this) => @this.Oauth2Token;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AuthorizationVariant1(global::Mistral.OAuth2TokenAuth? value)
         {
@@ -106,22 +106,22 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static AuthorizationVariant1 FromOauth2Token(global::Mistral.OAuth2TokenAuth? value) => new AuthorizationVariant1(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator AuthorizationVariant1(global::Mistral.APIKeyAuth value) => new AuthorizationVariant1((global::Mistral.APIKeyAuth?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Mistral.APIKeyAuth?(AuthorizationVariant1 @this) => @this.ApiKey;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AuthorizationVariant1(global::Mistral.APIKeyAuth? value)
         {
@@ -129,12 +129,12 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static AuthorizationVariant1 FromApiKey(global::Mistral.APIKeyAuth? value) => new AuthorizationVariant1(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AuthorizationVariant1(
             global::Mistral.CustomConnectorAuthorizationVariant1DiscriminatorType? type,
@@ -149,23 +149,23 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             ApiKey as object ??
-            Oauth2Token as object 
+            Oauth2Token as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Oauth2Token?.ToString() ??
-            ApiKey?.ToString() 
+            ApiKey?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -173,7 +173,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Mistral.OAuth2TokenAuth, TResult>? oauth2Token = null,
@@ -198,7 +198,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Mistral.OAuth2TokenAuth>? oauth2Token = null,
@@ -222,7 +222,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Mistral.OAuth2TokenAuth>? oauth2Token = null,
@@ -245,7 +245,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -266,18 +266,18 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(AuthorizationVariant1 other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Mistral.OAuth2TokenAuth?>.Default.Equals(Oauth2Token, other.Oauth2Token) &&
-                global::System.Collections.Generic.EqualityComparer<global::Mistral.APIKeyAuth?>.Default.Equals(ApiKey, other.ApiKey) 
+                global::System.Collections.Generic.EqualityComparer<global::Mistral.APIKeyAuth?>.Default.Equals(ApiKey, other.ApiKey)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(AuthorizationVariant1 obj1, AuthorizationVariant1 obj2)
         {
@@ -285,7 +285,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(AuthorizationVariant1 obj1, AuthorizationVariant1 obj2)
         {
@@ -293,7 +293,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

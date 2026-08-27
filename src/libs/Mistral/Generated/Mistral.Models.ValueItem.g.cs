@@ -5,17 +5,17 @@
 namespace Mistral
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct ValueItem : global::System.IEquatable<ValueItem>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.JSONPatchPayloadResponseValueItemDiscriminatorOp? Op { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.JSONPatchAppend? Append { get; init; }
@@ -24,7 +24,7 @@ namespace Mistral
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Append))]
@@ -32,7 +32,7 @@ namespace Mistral
         public bool IsAppend => Append != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAppend(
 #if NET6_0_OR_GREATER
@@ -45,14 +45,14 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.JSONPatchAppend PickAppend() => IsAppend
             ? Append!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Append' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.JSONPatchAdd? Add { get; init; }
@@ -61,7 +61,7 @@ namespace Mistral
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Add))]
@@ -69,7 +69,7 @@ namespace Mistral
         public bool IsAdd => Add != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAdd(
 #if NET6_0_OR_GREATER
@@ -82,14 +82,14 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.JSONPatchAdd PickAdd() => IsAdd
             ? Add!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Add' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.JSONPatchReplace? Replace { get; init; }
@@ -98,7 +98,7 @@ namespace Mistral
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Replace))]
@@ -106,7 +106,7 @@ namespace Mistral
         public bool IsReplace => Replace != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickReplace(
 #if NET6_0_OR_GREATER
@@ -119,14 +119,14 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.JSONPatchReplace PickReplace() => IsReplace
             ? Replace!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Replace' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.JSONPatchRemove? Remove { get; init; }
@@ -135,7 +135,7 @@ namespace Mistral
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Remove))]
@@ -143,7 +143,7 @@ namespace Mistral
         public bool IsRemove => Remove != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickRemove(
 #if NET6_0_OR_GREATER
@@ -156,23 +156,23 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.JSONPatchRemove PickRemove() => IsRemove
             ? Remove!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Remove' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ValueItem(global::Mistral.JSONPatchAppend value) => new ValueItem((global::Mistral.JSONPatchAppend?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Mistral.JSONPatchAppend?(ValueItem @this) => @this.Append;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ValueItem(global::Mistral.JSONPatchAppend? value)
         {
@@ -180,22 +180,22 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ValueItem FromAppend(global::Mistral.JSONPatchAppend? value) => new ValueItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ValueItem(global::Mistral.JSONPatchAdd value) => new ValueItem((global::Mistral.JSONPatchAdd?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Mistral.JSONPatchAdd?(ValueItem @this) => @this.Add;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ValueItem(global::Mistral.JSONPatchAdd? value)
         {
@@ -203,22 +203,22 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ValueItem FromAdd(global::Mistral.JSONPatchAdd? value) => new ValueItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ValueItem(global::Mistral.JSONPatchReplace value) => new ValueItem((global::Mistral.JSONPatchReplace?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Mistral.JSONPatchReplace?(ValueItem @this) => @this.Replace;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ValueItem(global::Mistral.JSONPatchReplace? value)
         {
@@ -226,22 +226,22 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ValueItem FromReplace(global::Mistral.JSONPatchReplace? value) => new ValueItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ValueItem(global::Mistral.JSONPatchRemove value) => new ValueItem((global::Mistral.JSONPatchRemove?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Mistral.JSONPatchRemove?(ValueItem @this) => @this.Remove;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ValueItem(global::Mistral.JSONPatchRemove? value)
         {
@@ -249,12 +249,12 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ValueItem FromRemove(global::Mistral.JSONPatchRemove? value) => new ValueItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ValueItem(
             global::Mistral.JSONPatchPayloadResponseValueItemDiscriminatorOp? op,
@@ -273,27 +273,27 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Remove as object ??
             Replace as object ??
             Add as object ??
-            Append as object 
+            Append as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Append?.ToString() ??
             Add?.ToString() ??
             Replace?.ToString() ??
-            Remove?.ToString() 
+            Remove?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -301,7 +301,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Mistral.JSONPatchAppend, TResult>? append = null,
@@ -336,7 +336,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Mistral.JSONPatchAppend>? append = null,
@@ -372,7 +372,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Mistral.JSONPatchAppend>? append = null,
@@ -405,7 +405,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -430,7 +430,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ValueItem other)
         {
@@ -438,12 +438,12 @@ namespace Mistral
                 global::System.Collections.Generic.EqualityComparer<global::Mistral.JSONPatchAppend?>.Default.Equals(Append, other.Append) &&
                 global::System.Collections.Generic.EqualityComparer<global::Mistral.JSONPatchAdd?>.Default.Equals(Add, other.Add) &&
                 global::System.Collections.Generic.EqualityComparer<global::Mistral.JSONPatchReplace?>.Default.Equals(Replace, other.Replace) &&
-                global::System.Collections.Generic.EqualityComparer<global::Mistral.JSONPatchRemove?>.Default.Equals(Remove, other.Remove) 
+                global::System.Collections.Generic.EqualityComparer<global::Mistral.JSONPatchRemove?>.Default.Equals(Remove, other.Remove)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ValueItem obj1, ValueItem obj2)
         {
@@ -451,7 +451,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ValueItem obj1, ValueItem obj2)
         {
@@ -459,7 +459,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

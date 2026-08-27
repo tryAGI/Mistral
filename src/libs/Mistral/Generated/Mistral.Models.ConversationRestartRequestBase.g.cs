@@ -9,7 +9,7 @@ namespace Mistral
     public sealed partial class ConversationRestartRequestBase
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("inputs")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.ConversationInputsJsonConverter))]
@@ -43,7 +43,7 @@ namespace Mistral
         public global::Mistral.CompletionArgs? CompletionArgs { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("guardrails")]
         public global::System.Collections.Generic.IList<global::Mistral.GuardrailConfig>? Guardrails { get; set; }
@@ -55,7 +55,7 @@ namespace Mistral
         public global::Mistral.MetadataDict? Metadata { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("from_entry_id")]
         [global::System.Text.Json.Serialization.JsonRequired]

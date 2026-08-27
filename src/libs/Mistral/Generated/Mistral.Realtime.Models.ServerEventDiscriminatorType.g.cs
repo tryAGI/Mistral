@@ -4,36 +4,36 @@
 namespace Mistral.Realtime
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ServerEventDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Error,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SessionCreated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SessionUpdated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TranscriptionDone,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TranscriptionLanguage,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TranscriptionSegment,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TranscriptionTextDelta,
     }

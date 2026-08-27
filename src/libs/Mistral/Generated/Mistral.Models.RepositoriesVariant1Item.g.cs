@@ -5,17 +5,17 @@
 namespace Mistral
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct RepositoriesVariant1Item : global::System.IEquatable<RepositoriesVariant1Item>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.JobInRepositoriesVariant1ItemDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.GithubRepositoryIn? Github { get; init; }
@@ -24,7 +24,7 @@ namespace Mistral
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Github))]
@@ -32,7 +32,7 @@ namespace Mistral
         public bool IsGithub => Github != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickGithub(
 #if NET6_0_OR_GREATER
@@ -45,23 +45,23 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.GithubRepositoryIn PickGithub() => IsGithub
             ? Github!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Github' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator RepositoriesVariant1Item(global::Mistral.GithubRepositoryIn value) => new RepositoriesVariant1Item((global::Mistral.GithubRepositoryIn?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Mistral.GithubRepositoryIn?(RepositoriesVariant1Item @this) => @this.Github;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RepositoriesVariant1Item(global::Mistral.GithubRepositoryIn? value)
         {
@@ -69,12 +69,12 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static RepositoriesVariant1Item FromGithub(global::Mistral.GithubRepositoryIn? value) => new RepositoriesVariant1Item(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RepositoriesVariant1Item(
             global::Mistral.JobInRepositoriesVariant1ItemDiscriminatorType? type,
@@ -87,21 +87,21 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
-            Github as object 
+            Github as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
-            Github?.ToString() 
+            Github?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -109,7 +109,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Mistral.GithubRepositoryIn, TResult>? github = null,
@@ -129,7 +129,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Mistral.GithubRepositoryIn>? github = null,
@@ -147,7 +147,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Mistral.GithubRepositoryIn>? github = null,
@@ -165,7 +165,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -184,17 +184,17 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(RepositoriesVariant1Item other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Mistral.GithubRepositoryIn?>.Default.Equals(Github, other.Github) 
+                global::System.Collections.Generic.EqualityComparer<global::Mistral.GithubRepositoryIn?>.Default.Equals(Github, other.Github)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(RepositoriesVariant1Item obj1, RepositoriesVariant1Item obj2)
         {
@@ -202,7 +202,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(RepositoriesVariant1Item obj1, RepositoriesVariant1Item obj2)
         {
@@ -210,7 +210,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

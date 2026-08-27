@@ -9,79 +9,79 @@ namespace Mistral
     public enum GetChatCompletionFieldOptionsV1ObservabilityChatCompletionFieldsFieldNameOptionsGetOperator
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Contains,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Endswith,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Eq,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Excludes,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gt,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gte,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Icontains,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Iendswith,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Includes,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Inotcontains,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Isnull,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Istartswith,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         LenEq,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Lt,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Lte,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Matches,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Neq,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Notcontains,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Startswith,
     }

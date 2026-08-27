@@ -230,7 +230,7 @@ namespace Mistral
                          __authorization.Location == "Header")
                 {
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
-                } 
+                }
             }
                 global::Mistral.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
@@ -543,7 +543,7 @@ namespace Mistral
         /// <param name="status"></param>
         /// <param name="wandbProject"></param>
         /// <param name="wandbName"></param>
-        /// <param name="suffix"></param> 
+        /// <param name="suffix"></param>
         /// <param name="page">Initial page number to start enumerating from. Defaults to 1.</param>
         /// <param name="cancellationToken"></param>
         public global::System.Collections.Generic.IAsyncEnumerable<global::Mistral.DataItem2> GetFineTuningJobsAutoPagingAsync(

@@ -4,32 +4,32 @@
 namespace Mistral
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum AudioEncoding
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PcmAlaw,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PcmF16le,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PcmF32le,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PcmMulaw,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PcmS16le,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PcmS32le,
     }

@@ -4,24 +4,24 @@
 namespace Mistral
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum TranscriptionStreamEventsDataDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TranscriptionDone,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TranscriptionLanguage,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TranscriptionSegment,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TranscriptionTextDelta,
     }

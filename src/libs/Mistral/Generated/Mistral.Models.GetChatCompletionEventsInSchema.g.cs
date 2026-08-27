@@ -4,19 +4,19 @@
 namespace Mistral
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class GetChatCompletionEventsInSchema
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("search_params")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::Mistral.FilterPayload SearchParams { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("extra_fields")]
         public global::System.Collections.Generic.IList<string>? ExtraFields { get; set; }

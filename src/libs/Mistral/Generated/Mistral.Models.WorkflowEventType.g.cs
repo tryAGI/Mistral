@@ -4,76 +4,76 @@
 namespace Mistral
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum WorkflowEventType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ActivityTaskCompleted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ActivityTaskFailed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ActivityTaskRetrying,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ActivityTaskStarted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CustomTaskCanceled,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CustomTaskCompleted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CustomTaskFailed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CustomTaskInProgress,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CustomTaskStarted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CustomTaskTimedOut,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WorkflowExecutionCanceled,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WorkflowExecutionCompleted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WorkflowExecutionContinuedAsNew,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WorkflowExecutionFailed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WorkflowExecutionStarted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WorkflowTaskFailed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WorkflowTaskTimedOut,
     }

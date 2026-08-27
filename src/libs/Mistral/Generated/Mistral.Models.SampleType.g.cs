@@ -4,28 +4,28 @@
 namespace Mistral
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum SampleType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         BatchError,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         BatchRequest,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         BatchResult,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Instruct,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Pretrain,
     }

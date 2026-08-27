@@ -20,7 +20,7 @@ namespace Mistral.Realtime.JsonConverters
                     {
                         return global::Mistral.Realtime.AudioEncodingExtensions.ToEnum(stringValue) ?? default;
                     }
-                    
+
                     break;
                 }
                 case global::System.Text.Json.JsonTokenType.Number:

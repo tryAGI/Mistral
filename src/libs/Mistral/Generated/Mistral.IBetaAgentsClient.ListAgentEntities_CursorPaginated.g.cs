@@ -91,7 +91,7 @@ namespace Mistral
         /// Search agents by name or ID
         /// </param>
         /// <param name="id"></param>
-        /// <param name="metadata"></param> 
+        /// <param name="metadata"></param>
         /// <param name="pageToken">Initial cursor to start enumerating from. Defaults to null (first page).</param>
         /// <param name="cancellationToken"></param>
         global::System.Collections.Generic.IAsyncEnumerable<global::Mistral.Agent> ListAgentEntities_CursorPaginatedAutoPagingAsync(

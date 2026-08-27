@@ -4,40 +4,40 @@
 namespace Mistral
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ProcessStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Done,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Error,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InProgress,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MissingContent,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Noop,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SelfManaged,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Todo,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WaitingForCapacity,
     }

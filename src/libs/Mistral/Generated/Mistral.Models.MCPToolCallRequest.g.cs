@@ -9,7 +9,7 @@ namespace Mistral
     public sealed partial class MCPToolCallRequest
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("arguments")]
         public object? Arguments { get; set; }

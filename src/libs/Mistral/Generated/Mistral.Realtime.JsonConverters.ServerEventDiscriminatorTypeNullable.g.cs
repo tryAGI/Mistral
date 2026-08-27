@@ -20,7 +20,7 @@ namespace Mistral.Realtime.JsonConverters
                     {
                         return global::Mistral.Realtime.ServerEventDiscriminatorTypeExtensions.ToEnum(stringValue);
                     }
-                    
+
                     break;
                 }
                 case global::System.Text.Json.JsonTokenType.Number:

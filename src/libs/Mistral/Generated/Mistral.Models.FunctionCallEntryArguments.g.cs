@@ -5,12 +5,12 @@
 namespace Mistral
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct FunctionCallEntryArguments : global::System.IEquatable<FunctionCallEntryArguments>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public object? FunctionCallEntryArgumentsVariant1 { get; init; }
@@ -19,7 +19,7 @@ namespace Mistral
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FunctionCallEntryArgumentsVariant1))]
@@ -27,7 +27,7 @@ namespace Mistral
         public bool IsFunctionCallEntryArgumentsVariant1 => FunctionCallEntryArgumentsVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickFunctionCallEntryArgumentsVariant1(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object PickFunctionCallEntryArgumentsVariant1() => IsFunctionCallEntryArgumentsVariant1
             ? FunctionCallEntryArgumentsVariant1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'FunctionCallEntryArgumentsVariant1' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? FunctionCallEntryArgumentsVariant2 { get; init; }
@@ -56,7 +56,7 @@ namespace Mistral
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FunctionCallEntryArgumentsVariant2))]
@@ -64,7 +64,7 @@ namespace Mistral
         public bool IsFunctionCallEntryArgumentsVariant2 => FunctionCallEntryArgumentsVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickFunctionCallEntryArgumentsVariant2(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string PickFunctionCallEntryArgumentsVariant2() => IsFunctionCallEntryArgumentsVariant2
             ? FunctionCallEntryArgumentsVariant2!
             : throw new global::System.InvalidOperationException($"Expected union variant 'FunctionCallEntryArgumentsVariant2' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator FunctionCallEntryArguments(string value) => new FunctionCallEntryArguments((string?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator string?(FunctionCallEntryArguments @this) => @this.FunctionCallEntryArgumentsVariant2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public FunctionCallEntryArguments(string? value)
         {
@@ -101,12 +101,12 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static FunctionCallEntryArguments FromFunctionCallEntryArgumentsVariant2(string? value) => new FunctionCallEntryArguments(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public FunctionCallEntryArguments(
             object? functionCallEntryArgumentsVariant1,
@@ -118,23 +118,23 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             FunctionCallEntryArgumentsVariant2 as object ??
-            FunctionCallEntryArgumentsVariant1 as object 
+            FunctionCallEntryArgumentsVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             FunctionCallEntryArgumentsVariant1?.ToString() ??
-            FunctionCallEntryArgumentsVariant2?.ToString() 
+            FunctionCallEntryArgumentsVariant2?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -142,7 +142,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<object, TResult>? functionCallEntryArgumentsVariant1 = null,
@@ -167,7 +167,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<object>? functionCallEntryArgumentsVariant1 = null,
@@ -191,7 +191,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<object>? functionCallEntryArgumentsVariant1 = null,
@@ -214,7 +214,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -235,18 +235,18 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(FunctionCallEntryArguments other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(FunctionCallEntryArgumentsVariant1, other.FunctionCallEntryArgumentsVariant1) &&
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(FunctionCallEntryArgumentsVariant2, other.FunctionCallEntryArgumentsVariant2) 
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(FunctionCallEntryArgumentsVariant2, other.FunctionCallEntryArgumentsVariant2)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(FunctionCallEntryArguments obj1, FunctionCallEntryArguments obj2)
         {
@@ -254,7 +254,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(FunctionCallEntryArguments obj1, FunctionCallEntryArguments obj2)
         {
@@ -262,7 +262,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

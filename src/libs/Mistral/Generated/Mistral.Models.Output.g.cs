@@ -5,17 +5,17 @@
 namespace Mistral
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct Output : global::System.IEquatable<Output>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.JudgePreviewOutputDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.JudgeClassificationOutput? Classification { get; init; }
@@ -24,7 +24,7 @@ namespace Mistral
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Classification))]
@@ -32,7 +32,7 @@ namespace Mistral
         public bool IsClassification => Classification != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickClassification(
 #if NET6_0_OR_GREATER
@@ -45,14 +45,14 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.JudgeClassificationOutput PickClassification() => IsClassification
             ? Classification!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Classification' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Mistral.JudgeRegressionOutput? Regression { get; init; }
@@ -61,7 +61,7 @@ namespace Mistral
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Regression))]
@@ -69,7 +69,7 @@ namespace Mistral
         public bool IsRegression => Regression != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickRegression(
 #if NET6_0_OR_GREATER
@@ -82,23 +82,23 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Mistral.JudgeRegressionOutput PickRegression() => IsRegression
             ? Regression!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Regression' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Output(global::Mistral.JudgeClassificationOutput value) => new Output((global::Mistral.JudgeClassificationOutput?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Mistral.JudgeClassificationOutput?(Output @this) => @this.Classification;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Output(global::Mistral.JudgeClassificationOutput? value)
         {
@@ -106,22 +106,22 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Output FromClassification(global::Mistral.JudgeClassificationOutput? value) => new Output(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Output(global::Mistral.JudgeRegressionOutput value) => new Output((global::Mistral.JudgeRegressionOutput?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Mistral.JudgeRegressionOutput?(Output @this) => @this.Regression;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Output(global::Mistral.JudgeRegressionOutput? value)
         {
@@ -129,12 +129,12 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Output FromRegression(global::Mistral.JudgeRegressionOutput? value) => new Output(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Output(
             global::Mistral.JudgePreviewOutputDiscriminatorType? type,
@@ -149,23 +149,23 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Regression as object ??
-            Classification as object 
+            Classification as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Classification?.ToString() ??
-            Regression?.ToString() 
+            Regression?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -173,7 +173,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Mistral.JudgeClassificationOutput, TResult>? classification = null,
@@ -198,7 +198,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Mistral.JudgeClassificationOutput>? classification = null,
@@ -222,7 +222,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Mistral.JudgeClassificationOutput>? classification = null,
@@ -245,7 +245,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -266,18 +266,18 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(Output other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Mistral.JudgeClassificationOutput?>.Default.Equals(Classification, other.Classification) &&
-                global::System.Collections.Generic.EqualityComparer<global::Mistral.JudgeRegressionOutput?>.Default.Equals(Regression, other.Regression) 
+                global::System.Collections.Generic.EqualityComparer<global::Mistral.JudgeRegressionOutput?>.Default.Equals(Regression, other.Regression)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(Output obj1, Output obj2)
         {
@@ -285,7 +285,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(Output obj1, Output obj2)
         {
@@ -293,7 +293,7 @@ namespace Mistral
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

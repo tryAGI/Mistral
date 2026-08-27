@@ -4,7 +4,7 @@
 namespace Mistral
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ScheduleCalendar
     {
@@ -51,7 +51,7 @@ namespace Mistral
         public global::System.Collections.Generic.IList<global::Mistral.ScheduleRange>? DayOfWeek { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("comment")]
         public string? Comment { get; set; }
