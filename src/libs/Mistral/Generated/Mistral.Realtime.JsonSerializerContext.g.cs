@@ -24,6 +24,7 @@ namespace Mistral.Realtime
             typeof(global::Mistral.Realtime.JsonConverters.ServerEventJsonConverter),
         })]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.Realtime.JsonSerializerContextTypes))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<object>), TypeInfoPropertyName = "SystemCollectionsGeneric_ObjectList")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.Realtime.AudioEncoding), TypeInfoPropertyName = "AudioEncoding2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.Realtime.AudioFormat))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(int))]
