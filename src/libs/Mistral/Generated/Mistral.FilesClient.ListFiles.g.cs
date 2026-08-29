@@ -33,7 +33,7 @@ namespace Mistral
             global::System.Collections.Generic.IList<global::Mistral.SampleType>? sampleType,
             global::System.Collections.Generic.IList<global::Mistral.Source>? source,
             ref string? search,
-            global::Mistral.FilePurpose? purpose,
+            ref global::Mistral.FilePurpose? purpose,
             global::System.Collections.Generic.IList<string>? mimetypes);
         partial void PrepareListFilesRequest(
             global::System.Net.Http.HttpClient httpClient,
@@ -146,7 +146,7 @@ namespace Mistral
                 sampleType: sampleType,
                 source: source,
                 search: ref search,
-                purpose: purpose,
+                purpose: ref purpose,
                 mimetypes: mimetypes);
 
 

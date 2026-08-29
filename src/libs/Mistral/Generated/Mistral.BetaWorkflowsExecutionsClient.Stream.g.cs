@@ -28,7 +28,7 @@ namespace Mistral
         partial void PrepareStreamArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string executionId,
-            global::Mistral.EventSource? eventSource,
+            ref global::Mistral.EventSource? eventSource,
             ref string? lastEventId);
         partial void PrepareStreamRequest(
             global::System.Net.Http.HttpClient httpClient,
@@ -61,7 +61,7 @@ namespace Mistral
             PrepareStreamArguments(
                 httpClient: HttpClient,
                 executionId: ref executionId,
-                eventSource: eventSource,
+                eventSource: ref eventSource,
                 lastEventId: ref lastEventId);
 
 

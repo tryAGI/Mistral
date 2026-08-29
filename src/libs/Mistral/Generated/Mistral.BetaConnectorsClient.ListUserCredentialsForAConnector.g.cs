@@ -27,7 +27,7 @@ namespace Mistral
             };
         partial void PrepareListUserCredentialsForAConnectorArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::Mistral.OutboundAuthenticationType? authType,
+            ref global::Mistral.OutboundAuthenticationType? authType,
             ref bool? fetchDefault,
             ref string connectorIdOrName);
         partial void PrepareListUserCredentialsForAConnectorRequest(
@@ -97,7 +97,7 @@ namespace Mistral
                 client: HttpClient);
             PrepareListUserCredentialsForAConnectorArguments(
                 httpClient: HttpClient,
-                authType: authType,
+                authType: ref authType,
                 fetchDefault: ref fetchDefault,
                 connectorIdOrName: ref connectorIdOrName);
 

@@ -33,7 +33,7 @@ namespace Mistral
             global::System.DateTime? createdAfter,
             global::System.DateTime? createdBefore,
             ref bool? createdByMe,
-            global::Mistral.JobsApiRoutesFineTuningGetFineTuningJobsStatus2? status,
+            ref global::Mistral.JobsApiRoutesFineTuningGetFineTuningJobsStatus2? status,
             ref string? wandbProject,
             ref string? wandbName,
             ref string? suffix);
@@ -160,7 +160,7 @@ namespace Mistral
                 createdAfter: createdAfter,
                 createdBefore: createdBefore,
                 createdByMe: ref createdByMe,
-                status: status,
+                status: ref status,
                 wandbProject: ref wandbProject,
                 wandbName: ref wandbName,
                 suffix: ref suffix);
