@@ -162,7 +162,11 @@ namespace Mistral
                             __pathBuilder
                                 .AddOptionalParameter("workflow_identifier", workflowIdentifier)
                                 .AddOptionalParameter("search", search)
-                                .AddOptionalParameter("status", status?.ToString())
+                                .AddOptionalParameter("status", status?.Match(
+                static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x?.ToValueString() },
+                static x => (global::System.Collections.Generic.IEnumerable<string?>)global::System.Linq.Enumerable.Select(x, static item => item.ToValueString()),
+                static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x?.ToString()! },
+                validate: false), delimiter: ",", explode: true)
                                 .AddOptionalParameter("page_size", pageSize?.ToString())
                                 .AddOptionalParameter("next_page_token", nextPageToken)
                                 ;
