@@ -1257,6 +1257,7 @@ namespace Mistral
     {
         private static readonly global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver Resolver = new LazyChunkResolver();
 
+
         private static readonly global::System.Text.Json.JsonSerializerOptions DefaultOptions = CreateDefaultOptions();
 
         /// <summary>
@@ -1278,13 +1279,8 @@ namespace Mistral
             return Resolver.GetTypeInfo(type, Options);
         }
 
-        private static global::System.Text.Json.JsonSerializerOptions CreateDefaultOptions()
+         static void AddConverters(global::System.Text.Json.JsonSerializerOptions options)
         {
-            var options = new global::System.Text.Json.JsonSerializerOptions
-            {
-                DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
-                TypeInfoResolver = Resolver,
-            };
             options.Converters.Add(new global::Mistral.JsonConverters.DataItemJsonConverter());
             options.Converters.Add(new global::Mistral.JsonConverters.ToolsItemJsonConverter());
             options.Converters.Add(new global::Mistral.JsonConverters.ToolsItem2JsonConverter());
@@ -1406,8 +1402,17 @@ namespace Mistral
             options.Converters.Add(new global::Mistral.JsonConverters.AnyOfJsonConverter<global::Mistral.WorkflowExecutionResponse, global::Mistral.WorkflowExecutionSyncResponse>());
             options.Converters.Add(new global::Mistral.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::Mistral.IntegrationsSchemasApiToolTool>, global::System.Collections.Generic.IList<global::Mistral.MCPTool>, global::System.Collections.Generic.IList<object>>());
             options.Converters.Add(new global::Mistral.JsonConverters.UnixTimestampJsonConverter());
-
             options.Converters.Add(new LazyEnumJsonConverterFactory());
+        }
+
+        private static global::System.Text.Json.JsonSerializerOptions CreateDefaultOptions()
+        {
+            var options = new global::System.Text.Json.JsonSerializerOptions
+            {
+                DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
+                TypeInfoResolver = Resolver,
+            };
+            AddConverters(options);
 
             return options;
         }
