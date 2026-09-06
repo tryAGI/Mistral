@@ -4,7 +4,7 @@
 namespace Mistral
 {
     /// <summary>
-    /// New headers for your mcp connector.
+    ///
     /// </summary>
     public sealed partial class ConnectorMCPUpdateHeaders
     {

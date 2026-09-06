@@ -4,7 +4,7 @@
 namespace Mistral
 {
     /// <summary>
-    /// Output schema of the workflow's run method
+    ///
     /// </summary>
     public sealed partial class WorkflowCodeDefinitionOutputSchema
     {

@@ -75,7 +75,7 @@ namespace Mistral
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("table_format")]
-        public global::Mistral.OCRRequestTableFormat2? TableFormat { get; set; }
+        public global::Mistral.OCRRequestTableFormat? TableFormat { get; set; }
 
         /// <summary>
         /// Default Value: false
@@ -100,7 +100,7 @@ namespace Mistral
         /// Granularity for confidence scores: 'word' (per-word scores) or 'page' (aggregate only). Defaults to None (no confidence scores) to keep response payload small.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("confidence_scores_granularity")]
-        public global::Mistral.OCRRequestConfidenceScoresGranularity2? ConfidenceScoresGranularity { get; set; }
+        public global::Mistral.OCRRequestConfidenceScoresGranularity? ConfidenceScoresGranularity { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -165,11 +165,11 @@ namespace Mistral
             global::Mistral.ResponseFormat? bboxAnnotationFormat,
             global::Mistral.ResponseFormat? documentAnnotationFormat,
             string? documentAnnotationPrompt,
-            global::Mistral.OCRRequestTableFormat2? tableFormat,
+            global::Mistral.OCRRequestTableFormat? tableFormat,
             bool? extractHeader,
             bool? extractFooter,
             bool? includeBlocks,
-            global::Mistral.OCRRequestConfidenceScoresGranularity2? confidenceScoresGranularity)
+            global::Mistral.OCRRequestConfidenceScoresGranularity? confidenceScoresGranularity)
         {
             this.Model = model;
             this.Id = id;

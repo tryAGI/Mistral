@@ -56,7 +56,7 @@ namespace Mistral
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("_meta")]
-        public global::Mistral.MCPToolMeta2? Meta { get; set; }
+        public global::Mistral.MCPToolMeta? Meta { get; set; }
 
         /// <summary>
         ///
@@ -93,7 +93,7 @@ namespace Mistral
             object? outputSchema,
             global::System.Collections.Generic.IList<global::Mistral.MCPServerIcon>? icons,
             global::Mistral.ToolAnnotations? annotations,
-            global::Mistral.MCPToolMeta2? meta,
+            global::Mistral.MCPToolMeta? meta,
             global::Mistral.ToolExecution? execution)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));

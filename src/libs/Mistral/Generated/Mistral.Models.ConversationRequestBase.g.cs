@@ -32,7 +32,7 @@ namespace Mistral
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("handoff_execution")]
-        public global::Mistral.ConversationRequestBaseHandoffExecution2? HandoffExecution { get; set; }
+        public global::Mistral.ConversationRequestBaseHandoffExecution? HandoffExecution { get; set; }
 
         /// <summary>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
@@ -151,7 +151,7 @@ namespace Mistral
             global::Mistral.ConversationInputs inputs,
             bool? stream,
             bool? store,
-            global::Mistral.ConversationRequestBaseHandoffExecution2? handoffExecution,
+            global::Mistral.ConversationRequestBaseHandoffExecution? handoffExecution,
             string? instructions,
             global::System.Collections.Generic.IList<global::Mistral.ToolsVariant1Item>? tools,
             global::Mistral.CompletionArgs? completionArgs,

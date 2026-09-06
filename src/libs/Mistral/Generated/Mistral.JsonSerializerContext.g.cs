@@ -91,7 +91,7 @@ namespace Mistral
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.Prediction))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ResponseFormat))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ToolChoiceEnum), TypeInfoPropertyName = "ToolChoiceEnum2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.CompletionArgsReasoningEffort2), TypeInfoPropertyName = "CompletionArgsReasoningEffort22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.CompletionArgsReasoningEffort), TypeInfoPropertyName = "CompletionArgsReasoningEffort2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ConversationAppendRequest), TypeInfoPropertyName = "ConversationAppendRequest2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ConversationAppendRequestBase))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ConversationAppendRequestVariant2))]
@@ -117,7 +117,7 @@ namespace Mistral
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.DocumentURLChunk))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.Function))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.FunctionCallEntryArguments), TypeInfoPropertyName = "FunctionCallEntryArguments2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.FunctionCallEntryConfirmationStatus2), TypeInfoPropertyName = "FunctionCallEntryConfirmationStatus22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.FunctionCallEntryConfirmationStatus), TypeInfoPropertyName = "FunctionCallEntryConfirmationStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.FunctionToolType), TypeInfoPropertyName = "FunctionToolType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ModerationLLMV1Config))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ModerationLLMV2Config))]
@@ -168,7 +168,7 @@ namespace Mistral
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AgentHandoffDoneEvent))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AgentHandoffStartedEvent))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.FunctionCallEvent))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.FunctionCallEventConfirmationStatus2), TypeInfoPropertyName = "FunctionCallEventConfirmationStatus22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.FunctionCallEventConfirmationStatus), TypeInfoPropertyName = "FunctionCallEventConfirmationStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.MessageOutputEvent))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AnyOf<string, global::Mistral.OutputContentChunks?>), TypeInfoPropertyName = "AnyOfStringOutputContentChunks2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.OutputContentChunks), TypeInfoPropertyName = "OutputContentChunks2")]
@@ -187,7 +187,7 @@ namespace Mistral
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AnyOf<global::Mistral.TextChunk, global::Mistral.ImageURLChunk, global::Mistral.ToolFileChunk, global::Mistral.DocumentURLChunk, global::Mistral.ThinkChunk, global::Mistral.ToolReferenceChunk>), TypeInfoPropertyName = "AnyOfTextChunkImageURLChunkToolFileChunkDocumentURLChunkThinkChunkToolReferenceChunk2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AnyOf<global::Mistral.MessageInputEntry, global::Mistral.MessageOutputEntry>), TypeInfoPropertyName = "AnyOfMessageInputEntryMessageOutputEntry2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ConversationInputs), TypeInfoPropertyName = "ConversationInputs2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ConversationRequestBaseHandoffExecution2), TypeInfoPropertyName = "ConversationRequestBaseHandoffExecution22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ConversationRequestBaseHandoffExecution), TypeInfoPropertyName = "ConversationRequestBaseHandoffExecution2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Mistral.ToolsVariant1Item>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ToolsVariant1Item), TypeInfoPropertyName = "ToolsVariant1Item2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ConversationRequestBaseToolsVariant1ItemDiscriminator))]
@@ -380,8 +380,8 @@ namespace Mistral
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.OCRRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AnyOf<global::Mistral.FileChunk, global::Mistral.DocumentURLChunk, global::Mistral.ImageURLChunk>), TypeInfoPropertyName = "AnyOfFileChunkDocumentURLChunkImageURLChunk2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AnyOf<string, global::System.Collections.Generic.IList<int>, object>), TypeInfoPropertyName = "AnyOfStringIListInt32Object2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.OCRRequestTableFormat2), TypeInfoPropertyName = "OCRRequestTableFormat22")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.OCRRequestConfidenceScoresGranularity2), TypeInfoPropertyName = "OCRRequestConfidenceScoresGranularity22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.OCRRequestTableFormat), TypeInfoPropertyName = "OCRRequestTableFormat2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.OCRRequestConfidenceScoresGranularity), TypeInfoPropertyName = "OCRRequestConfidenceScoresGranularity2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.OCRResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Mistral.OCRPageObject>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.OCRUsageInfo))]
@@ -816,7 +816,7 @@ namespace Mistral
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.MCPSupportedLanguage), TypeInfoPropertyName = "MCPSupportedLanguage2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.MCPTool))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ToolAnnotations))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.MCPToolMeta2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.MCPToolMeta))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ToolExecution))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.MCPUIToolMeta))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.TurbineToolMeta))]
@@ -824,7 +824,7 @@ namespace Mistral
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.MCPUIToolMetaVisibilityVariant1Item), TypeInfoPropertyName = "MCPUIToolMetaVisibilityVariant1Item2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.PublicAuthenticationMethod))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Mistral.ConnectorAuthenticationHeader>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ToolExecutionTaskSupport2), TypeInfoPropertyName = "ToolExecutionTaskSupport22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ToolExecutionTaskSupport), TypeInfoPropertyName = "ToolExecutionTaskSupport2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ToolType), TypeInfoPropertyName = "ToolType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.TurbineToolLocale))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.FilesApiRoutesUploadFileRequest))]
@@ -834,7 +834,7 @@ namespace Mistral
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AnyOf<int?, string, object>), TypeInfoPropertyName = "AnyOfInt32StringObject2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Mistral.SampleType>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Mistral.Source>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.JobsApiRoutesFineTuningGetFineTuningJobsStatus2), TypeInfoPropertyName = "JobsApiRoutesFineTuningGetFineTuningJobsStatus22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.JobsApiRoutesFineTuningGetFineTuningJobsStatus), TypeInfoPropertyName = "JobsApiRoutesFineTuningGetFineTuningJobsStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Mistral.BatchJobStatus>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.JobsApiRoutesBatchGetBatchJobsOrderBy), TypeInfoPropertyName = "JobsApiRoutesBatchGetBatchJobsOrderBy2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.GetChatCompletionFieldOptionsV1ObservabilityChatCompletionFieldsFieldNameOptionsGetOperator), TypeInfoPropertyName = "GetChatCompletionFieldOptionsV1ObservabilityChatCompletionFieldsFieldNameOptionsGetOperator2")]
@@ -888,7 +888,7 @@ namespace Mistral
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.CodeInterpreterToolType?), TypeInfoPropertyName = "NullableCodeInterpreterToolType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.CompletionArgsStop?), TypeInfoPropertyName = "NullableCompletionArgsStop2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ToolChoiceEnum?), TypeInfoPropertyName = "NullableToolChoiceEnum2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.CompletionArgsReasoningEffort2?), TypeInfoPropertyName = "NullableCompletionArgsReasoningEffort22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.CompletionArgsReasoningEffort?), TypeInfoPropertyName = "NullableCompletionArgsReasoningEffort2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ConversationAppendRequest?), TypeInfoPropertyName = "NullableConversationAppendRequest2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AnyOf<global::Mistral.MessageInputEntry, global::Mistral.MessageOutputEntry, global::Mistral.FunctionResultEntry, global::Mistral.FunctionCallEntry, global::Mistral.ToolExecutionEntry, global::Mistral.AgentHandoffEntry>?), TypeInfoPropertyName = "NullableAnyOfMessageInputEntryMessageOutputEntryFunctionResultEntryFunctionCallEntryToolExecutionEntryAgentHandoffEntry2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ConversationRestartRequest?), TypeInfoPropertyName = "NullableConversationRestartRequest2")]
@@ -896,7 +896,7 @@ namespace Mistral
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.CustomConnectorAuthorizationVariant1DiscriminatorType?), TypeInfoPropertyName = "NullableCustomConnectorAuthorizationVariant1DiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.DocumentLibraryToolType?), TypeInfoPropertyName = "NullableDocumentLibraryToolType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.FunctionCallEntryArguments?), TypeInfoPropertyName = "NullableFunctionCallEntryArguments2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.FunctionCallEntryConfirmationStatus2?), TypeInfoPropertyName = "NullableFunctionCallEntryConfirmationStatus22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.FunctionCallEntryConfirmationStatus?), TypeInfoPropertyName = "NullableFunctionCallEntryConfirmationStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.FunctionToolType?), TypeInfoPropertyName = "NullableFunctionToolType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ImageDetail?), TypeInfoPropertyName = "NullableImageDetail2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ImageGenerationToolType?), TypeInfoPropertyName = "NullableImageGenerationToolType2")]
@@ -917,7 +917,7 @@ namespace Mistral
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.WebSearchToolType?), TypeInfoPropertyName = "NullableWebSearchToolType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AnyOf<global::Mistral.MessageOutputEntry, global::Mistral.ToolExecutionEntry, global::Mistral.FunctionCallEntry, global::Mistral.AgentHandoffEntry>?), TypeInfoPropertyName = "NullableAnyOfMessageOutputEntryToolExecutionEntryFunctionCallEntryAgentHandoffEntry2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ConversationRequest?), TypeInfoPropertyName = "NullableConversationRequest2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.FunctionCallEventConfirmationStatus2?), TypeInfoPropertyName = "NullableFunctionCallEventConfirmationStatus22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.FunctionCallEventConfirmationStatus?), TypeInfoPropertyName = "NullableFunctionCallEventConfirmationStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AnyOf<string, global::Mistral.OutputContentChunks?>?), TypeInfoPropertyName = "NullableAnyOfStringOutputContentChunks2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.OutputContentChunks?), TypeInfoPropertyName = "NullableOutputContentChunks2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.SSETypes?), TypeInfoPropertyName = "NullableSSETypes2")]
@@ -927,7 +927,7 @@ namespace Mistral
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AnyOf<global::Mistral.TextChunk, global::Mistral.ImageURLChunk, global::Mistral.ToolFileChunk, global::Mistral.DocumentURLChunk, global::Mistral.ThinkChunk, global::Mistral.ToolReferenceChunk>?), TypeInfoPropertyName = "NullableAnyOfTextChunkImageURLChunkToolFileChunkDocumentURLChunkThinkChunkToolReferenceChunk2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AnyOf<global::Mistral.MessageInputEntry, global::Mistral.MessageOutputEntry>?), TypeInfoPropertyName = "NullableAnyOfMessageInputEntryMessageOutputEntry2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ConversationInputs?), TypeInfoPropertyName = "NullableConversationInputs2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ConversationRequestBaseHandoffExecution2?), TypeInfoPropertyName = "NullableConversationRequestBaseHandoffExecution22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ConversationRequestBaseHandoffExecution?), TypeInfoPropertyName = "NullableConversationRequestBaseHandoffExecution2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ToolsVariant1Item?), TypeInfoPropertyName = "NullableToolsVariant1Item2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ConversationRequestBaseToolsVariant1ItemDiscriminatorType?), TypeInfoPropertyName = "NullableConversationRequestBaseToolsVariant1ItemDiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ConversationStreamRequest?), TypeInfoPropertyName = "NullableConversationStreamRequest2")]
@@ -992,8 +992,8 @@ namespace Mistral
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.OCRPageObjectBlocksVariant1ItemDiscriminatorType?), TypeInfoPropertyName = "NullableOCRPageObjectBlocksVariant1ItemDiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AnyOf<global::Mistral.FileChunk, global::Mistral.DocumentURLChunk, global::Mistral.ImageURLChunk>?), TypeInfoPropertyName = "NullableAnyOfFileChunkDocumentURLChunkImageURLChunk2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AnyOf<string, global::System.Collections.Generic.IList<int>, object>?), TypeInfoPropertyName = "NullableAnyOfStringIListInt32Object2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.OCRRequestTableFormat2?), TypeInfoPropertyName = "NullableOCRRequestTableFormat22")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.OCRRequestConfidenceScoresGranularity2?), TypeInfoPropertyName = "NullableOCRRequestConfidenceScoresGranularity22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.OCRRequestTableFormat?), TypeInfoPropertyName = "NullableOCRRequestTableFormat2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.OCRRequestConfidenceScoresGranularity?), TypeInfoPropertyName = "NullableOCRRequestConfidenceScoresGranularity2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.OCRTableObjectFormat?), TypeInfoPropertyName = "NullableOCRTableObjectFormat2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AnyOf<string, global::System.Collections.Generic.IList<global::Mistral.SystemMessageContentChunks>>?), TypeInfoPropertyName = "NullableAnyOfStringIListSystemMessageContentChunks2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.SystemMessageContentChunks?), TypeInfoPropertyName = "NullableSystemMessageContentChunks2")]
@@ -1090,11 +1090,11 @@ namespace Mistral
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.OutboundAuthenticationType?), TypeInfoPropertyName = "NullableOutboundAuthenticationType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.MCPSupportedLanguage?), TypeInfoPropertyName = "NullableMCPSupportedLanguage2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.MCPUIToolMetaVisibilityVariant1Item?), TypeInfoPropertyName = "NullableMCPUIToolMetaVisibilityVariant1Item2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ToolExecutionTaskSupport2?), TypeInfoPropertyName = "NullableToolExecutionTaskSupport22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ToolExecutionTaskSupport?), TypeInfoPropertyName = "NullableToolExecutionTaskSupport2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ToolType?), TypeInfoPropertyName = "NullableToolType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.FilesApiRoutesUploadFileRequestVisibility?), TypeInfoPropertyName = "NullableFilesApiRoutesUploadFileRequestVisibility2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AnyOf<int?, string, object>?), TypeInfoPropertyName = "NullableAnyOfInt32StringObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.JobsApiRoutesFineTuningGetFineTuningJobsStatus2?), TypeInfoPropertyName = "NullableJobsApiRoutesFineTuningGetFineTuningJobsStatus22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.JobsApiRoutesFineTuningGetFineTuningJobsStatus?), TypeInfoPropertyName = "NullableJobsApiRoutesFineTuningGetFineTuningJobsStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.JobsApiRoutesBatchGetBatchJobsOrderBy?), TypeInfoPropertyName = "NullableJobsApiRoutesBatchGetBatchJobsOrderBy2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.GetChatCompletionFieldOptionsV1ObservabilityChatCompletionFieldsFieldNameOptionsGetOperator?), TypeInfoPropertyName = "NullableGetChatCompletionFieldOptionsV1ObservabilityChatCompletionFieldsFieldNameOptionsGetOperator2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.AnyOf<global::Mistral.WorkflowExecutionStatus?, global::System.Collections.Generic.IList<global::Mistral.WorkflowExecutionStatus>, object>?), TypeInfoPropertyName = "NullableAnyOfWorkflowExecutionStatusIListWorkflowExecutionStatusObject2")]
@@ -1451,9 +1451,9 @@ namespace Mistral
 
                     || typeToConvert == typeof(global::Mistral.CodeInterpreterToolType?)
 
-                    || typeToConvert == typeof(global::Mistral.CompletionArgsReasoningEffort2)
+                    || typeToConvert == typeof(global::Mistral.CompletionArgsReasoningEffort)
 
-                    || typeToConvert == typeof(global::Mistral.CompletionArgsReasoningEffort2?)
+                    || typeToConvert == typeof(global::Mistral.CompletionArgsReasoningEffort?)
 
                     || typeToConvert == typeof(global::Mistral.CustomConnectorType)
 
@@ -1467,9 +1467,9 @@ namespace Mistral
 
                     || typeToConvert == typeof(global::Mistral.DocumentLibraryToolType?)
 
-                    || typeToConvert == typeof(global::Mistral.FunctionCallEntryConfirmationStatus2)
+                    || typeToConvert == typeof(global::Mistral.FunctionCallEntryConfirmationStatus)
 
-                    || typeToConvert == typeof(global::Mistral.FunctionCallEntryConfirmationStatus2?)
+                    || typeToConvert == typeof(global::Mistral.FunctionCallEntryConfirmationStatus?)
 
                     || typeToConvert == typeof(global::Mistral.FunctionToolType)
 
@@ -1523,9 +1523,9 @@ namespace Mistral
 
                     || typeToConvert == typeof(global::Mistral.WebSearchToolType?)
 
-                    || typeToConvert == typeof(global::Mistral.FunctionCallEventConfirmationStatus2)
+                    || typeToConvert == typeof(global::Mistral.FunctionCallEventConfirmationStatus)
 
-                    || typeToConvert == typeof(global::Mistral.FunctionCallEventConfirmationStatus2?)
+                    || typeToConvert == typeof(global::Mistral.FunctionCallEventConfirmationStatus?)
 
                     || typeToConvert == typeof(global::Mistral.SSETypes)
 
@@ -1535,9 +1535,9 @@ namespace Mistral
 
                     || typeToConvert == typeof(global::Mistral.ConversationEventsDataDiscriminatorType?)
 
-                    || typeToConvert == typeof(global::Mistral.ConversationRequestBaseHandoffExecution2)
+                    || typeToConvert == typeof(global::Mistral.ConversationRequestBaseHandoffExecution)
 
-                    || typeToConvert == typeof(global::Mistral.ConversationRequestBaseHandoffExecution2?)
+                    || typeToConvert == typeof(global::Mistral.ConversationRequestBaseHandoffExecution?)
 
                     || typeToConvert == typeof(global::Mistral.ConversationRequestBaseToolsVariant1ItemDiscriminatorType)
 
@@ -1671,13 +1671,13 @@ namespace Mistral
 
                     || typeToConvert == typeof(global::Mistral.OCRPageObjectBlocksVariant1ItemDiscriminatorType?)
 
-                    || typeToConvert == typeof(global::Mistral.OCRRequestTableFormat2)
+                    || typeToConvert == typeof(global::Mistral.OCRRequestTableFormat)
 
-                    || typeToConvert == typeof(global::Mistral.OCRRequestTableFormat2?)
+                    || typeToConvert == typeof(global::Mistral.OCRRequestTableFormat?)
 
-                    || typeToConvert == typeof(global::Mistral.OCRRequestConfidenceScoresGranularity2)
+                    || typeToConvert == typeof(global::Mistral.OCRRequestConfidenceScoresGranularity)
 
-                    || typeToConvert == typeof(global::Mistral.OCRRequestConfidenceScoresGranularity2?)
+                    || typeToConvert == typeof(global::Mistral.OCRRequestConfidenceScoresGranularity?)
 
                     || typeToConvert == typeof(global::Mistral.OCRTableObjectFormat)
 
@@ -1859,9 +1859,9 @@ namespace Mistral
 
                     || typeToConvert == typeof(global::Mistral.OutboundAuthenticationType?)
 
-                    || typeToConvert == typeof(global::Mistral.ToolExecutionTaskSupport2)
+                    || typeToConvert == typeof(global::Mistral.ToolExecutionTaskSupport)
 
-                    || typeToConvert == typeof(global::Mistral.ToolExecutionTaskSupport2?)
+                    || typeToConvert == typeof(global::Mistral.ToolExecutionTaskSupport?)
 
                     || typeToConvert == typeof(global::Mistral.ToolType)
 
@@ -1871,9 +1871,9 @@ namespace Mistral
 
                     || typeToConvert == typeof(global::Mistral.FilesApiRoutesUploadFileRequestVisibility?)
 
-                    || typeToConvert == typeof(global::Mistral.JobsApiRoutesFineTuningGetFineTuningJobsStatus2)
+                    || typeToConvert == typeof(global::Mistral.JobsApiRoutesFineTuningGetFineTuningJobsStatus)
 
-                    || typeToConvert == typeof(global::Mistral.JobsApiRoutesFineTuningGetFineTuningJobsStatus2?)
+                    || typeToConvert == typeof(global::Mistral.JobsApiRoutesFineTuningGetFineTuningJobsStatus?)
 
                     || typeToConvert == typeof(global::Mistral.JobsApiRoutesBatchGetBatchJobsOrderBy)
 
@@ -1986,14 +1986,14 @@ namespace Mistral
                     return new global::Mistral.JsonConverters.CodeInterpreterToolTypeNullableJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::Mistral.CompletionArgsReasoningEffort2))
+                if (typeToConvert == typeof(global::Mistral.CompletionArgsReasoningEffort))
                 {
-                    return new global::Mistral.JsonConverters.CompletionArgsReasoningEffort2JsonConverter();
+                    return new global::Mistral.JsonConverters.CompletionArgsReasoningEffortJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::Mistral.CompletionArgsReasoningEffort2?))
+                if (typeToConvert == typeof(global::Mistral.CompletionArgsReasoningEffort?))
                 {
-                    return new global::Mistral.JsonConverters.CompletionArgsReasoningEffort2NullableJsonConverter();
+                    return new global::Mistral.JsonConverters.CompletionArgsReasoningEffortNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::Mistral.CustomConnectorType))
@@ -2026,14 +2026,14 @@ namespace Mistral
                     return new global::Mistral.JsonConverters.DocumentLibraryToolTypeNullableJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::Mistral.FunctionCallEntryConfirmationStatus2))
+                if (typeToConvert == typeof(global::Mistral.FunctionCallEntryConfirmationStatus))
                 {
-                    return new global::Mistral.JsonConverters.FunctionCallEntryConfirmationStatus2JsonConverter();
+                    return new global::Mistral.JsonConverters.FunctionCallEntryConfirmationStatusJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::Mistral.FunctionCallEntryConfirmationStatus2?))
+                if (typeToConvert == typeof(global::Mistral.FunctionCallEntryConfirmationStatus?))
                 {
-                    return new global::Mistral.JsonConverters.FunctionCallEntryConfirmationStatus2NullableJsonConverter();
+                    return new global::Mistral.JsonConverters.FunctionCallEntryConfirmationStatusNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::Mistral.FunctionToolType))
@@ -2166,14 +2166,14 @@ namespace Mistral
                     return new global::Mistral.JsonConverters.WebSearchToolTypeNullableJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::Mistral.FunctionCallEventConfirmationStatus2))
+                if (typeToConvert == typeof(global::Mistral.FunctionCallEventConfirmationStatus))
                 {
-                    return new global::Mistral.JsonConverters.FunctionCallEventConfirmationStatus2JsonConverter();
+                    return new global::Mistral.JsonConverters.FunctionCallEventConfirmationStatusJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::Mistral.FunctionCallEventConfirmationStatus2?))
+                if (typeToConvert == typeof(global::Mistral.FunctionCallEventConfirmationStatus?))
                 {
-                    return new global::Mistral.JsonConverters.FunctionCallEventConfirmationStatus2NullableJsonConverter();
+                    return new global::Mistral.JsonConverters.FunctionCallEventConfirmationStatusNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::Mistral.SSETypes))
@@ -2196,14 +2196,14 @@ namespace Mistral
                     return new global::Mistral.JsonConverters.ConversationEventsDataDiscriminatorTypeNullableJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::Mistral.ConversationRequestBaseHandoffExecution2))
+                if (typeToConvert == typeof(global::Mistral.ConversationRequestBaseHandoffExecution))
                 {
-                    return new global::Mistral.JsonConverters.ConversationRequestBaseHandoffExecution2JsonConverter();
+                    return new global::Mistral.JsonConverters.ConversationRequestBaseHandoffExecutionJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::Mistral.ConversationRequestBaseHandoffExecution2?))
+                if (typeToConvert == typeof(global::Mistral.ConversationRequestBaseHandoffExecution?))
                 {
-                    return new global::Mistral.JsonConverters.ConversationRequestBaseHandoffExecution2NullableJsonConverter();
+                    return new global::Mistral.JsonConverters.ConversationRequestBaseHandoffExecutionNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::Mistral.ConversationRequestBaseToolsVariant1ItemDiscriminatorType))
@@ -2536,24 +2536,24 @@ namespace Mistral
                     return new global::Mistral.JsonConverters.OCRPageObjectBlocksVariant1ItemDiscriminatorTypeNullableJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::Mistral.OCRRequestTableFormat2))
+                if (typeToConvert == typeof(global::Mistral.OCRRequestTableFormat))
                 {
-                    return new global::Mistral.JsonConverters.OCRRequestTableFormat2JsonConverter();
+                    return new global::Mistral.JsonConverters.OCRRequestTableFormatJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::Mistral.OCRRequestTableFormat2?))
+                if (typeToConvert == typeof(global::Mistral.OCRRequestTableFormat?))
                 {
-                    return new global::Mistral.JsonConverters.OCRRequestTableFormat2NullableJsonConverter();
+                    return new global::Mistral.JsonConverters.OCRRequestTableFormatNullableJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::Mistral.OCRRequestConfidenceScoresGranularity2))
+                if (typeToConvert == typeof(global::Mistral.OCRRequestConfidenceScoresGranularity))
                 {
-                    return new global::Mistral.JsonConverters.OCRRequestConfidenceScoresGranularity2JsonConverter();
+                    return new global::Mistral.JsonConverters.OCRRequestConfidenceScoresGranularityJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::Mistral.OCRRequestConfidenceScoresGranularity2?))
+                if (typeToConvert == typeof(global::Mistral.OCRRequestConfidenceScoresGranularity?))
                 {
-                    return new global::Mistral.JsonConverters.OCRRequestConfidenceScoresGranularity2NullableJsonConverter();
+                    return new global::Mistral.JsonConverters.OCRRequestConfidenceScoresGranularityNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::Mistral.OCRTableObjectFormat))
@@ -3006,14 +3006,14 @@ namespace Mistral
                     return new global::Mistral.JsonConverters.OutboundAuthenticationTypeNullableJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::Mistral.ToolExecutionTaskSupport2))
+                if (typeToConvert == typeof(global::Mistral.ToolExecutionTaskSupport))
                 {
-                    return new global::Mistral.JsonConverters.ToolExecutionTaskSupport2JsonConverter();
+                    return new global::Mistral.JsonConverters.ToolExecutionTaskSupportJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::Mistral.ToolExecutionTaskSupport2?))
+                if (typeToConvert == typeof(global::Mistral.ToolExecutionTaskSupport?))
                 {
-                    return new global::Mistral.JsonConverters.ToolExecutionTaskSupport2NullableJsonConverter();
+                    return new global::Mistral.JsonConverters.ToolExecutionTaskSupportNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::Mistral.ToolType))
@@ -3036,14 +3036,14 @@ namespace Mistral
                     return new global::Mistral.JsonConverters.FilesApiRoutesUploadFileRequestVisibilityNullableJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::Mistral.JobsApiRoutesFineTuningGetFineTuningJobsStatus2))
+                if (typeToConvert == typeof(global::Mistral.JobsApiRoutesFineTuningGetFineTuningJobsStatus))
                 {
-                    return new global::Mistral.JsonConverters.JobsApiRoutesFineTuningGetFineTuningJobsStatus2JsonConverter();
+                    return new global::Mistral.JsonConverters.JobsApiRoutesFineTuningGetFineTuningJobsStatusJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::Mistral.JobsApiRoutesFineTuningGetFineTuningJobsStatus2?))
+                if (typeToConvert == typeof(global::Mistral.JobsApiRoutesFineTuningGetFineTuningJobsStatus?))
                 {
-                    return new global::Mistral.JsonConverters.JobsApiRoutesFineTuningGetFineTuningJobsStatus2NullableJsonConverter();
+                    return new global::Mistral.JsonConverters.JobsApiRoutesFineTuningGetFineTuningJobsStatusNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::Mistral.JobsApiRoutesBatchGetBatchJobsOrderBy))

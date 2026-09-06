@@ -4,7 +4,7 @@
 namespace Mistral
 {
     /// <summary>
-    /// Output JSON schema of the update's model
+    ///
     /// </summary>
     public sealed partial class UpdateDefinitionOutputSchema
     {

@@ -76,7 +76,7 @@ namespace Mistral
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("confirmation_status")]
-        public global::Mistral.FunctionCallEntryConfirmationStatus2? ConfirmationStatus { get; set; }
+        public global::Mistral.FunctionCallEntryConfirmationStatus? ConfirmationStatus { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -116,7 +116,7 @@ namespace Mistral
             string? agentId,
             string? model,
             string? id,
-            global::Mistral.FunctionCallEntryConfirmationStatus2? confirmationStatus)
+            global::Mistral.FunctionCallEntryConfirmationStatus? confirmationStatus)
         {
             this.Object = @object;
             this.Type = type;

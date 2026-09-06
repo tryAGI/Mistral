@@ -4,7 +4,7 @@
 namespace Mistral
 {
     /// <summary>
-    /// The metadata of your choice to be associated with the batch inference job.
+    ///
     /// </summary>
     public sealed partial class BatchJobInMetadata
     {

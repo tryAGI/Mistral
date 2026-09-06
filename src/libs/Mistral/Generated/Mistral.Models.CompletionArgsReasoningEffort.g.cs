@@ -4,16 +4,48 @@
 namespace Mistral
 {
     /// <summary>
-    /// Controls the reasoning effort level for reasoning models. "high" enables comprehensive reasoning traces, "none" disables reasoning effort.
+    ///
     /// </summary>
-    public sealed partial class CompletionArgsReasoningEffort
+    public enum CompletionArgsReasoningEffort
     {
-
         /// <summary>
-        /// Additional properties that are not explicitly defined in the schema
+        ///
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonExtensionData]
-        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+        High,
+        /// <summary>
+        ///
+        /// </summary>
+        None,
+    }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class CompletionArgsReasoningEffortExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this CompletionArgsReasoningEffort value)
+        {
+            return value switch
+            {
+                CompletionArgsReasoningEffort.High => "high",
+                CompletionArgsReasoningEffort.None => "none",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static CompletionArgsReasoningEffort? ToEnum(string value)
+        {
+            return value switch
+            {
+                "high" => CompletionArgsReasoningEffort.High,
+                "none" => CompletionArgsReasoningEffort.None,
+                _ => null,
+            };
+        }
     }
 }

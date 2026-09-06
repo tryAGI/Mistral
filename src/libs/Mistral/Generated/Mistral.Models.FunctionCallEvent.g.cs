@@ -70,7 +70,7 @@ namespace Mistral
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("confirmation_status")]
-        public global::Mistral.FunctionCallEventConfirmationStatus2? ConfirmationStatus { get; set; }
+        public global::Mistral.FunctionCallEventConfirmationStatus? ConfirmationStatus { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -114,7 +114,7 @@ namespace Mistral
             int? outputIndex,
             string? model,
             string? agentId,
-            global::Mistral.FunctionCallEventConfirmationStatus2? confirmationStatus)
+            global::Mistral.FunctionCallEventConfirmationStatus? confirmationStatus)
         {
             this.Type = type;
             this.CreatedAt = createdAt;

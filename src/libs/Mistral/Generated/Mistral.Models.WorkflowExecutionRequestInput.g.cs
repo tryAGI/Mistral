@@ -4,7 +4,7 @@
 namespace Mistral
 {
     /// <summary>
-    /// The input to the workflow. This should be a dictionary that matches the workflow's input schema.
+    ///
     /// </summary>
     public sealed partial class WorkflowExecutionRequestInput
     {
