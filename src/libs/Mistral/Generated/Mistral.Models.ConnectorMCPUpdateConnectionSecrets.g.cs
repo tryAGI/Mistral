@@ -4,7 +4,7 @@
 namespace Mistral
 {
     /// <summary>
-    /// Optional new connection secrets
+    ///
     /// </summary>
     public sealed partial class ConnectorMCPUpdateConnectionSecrets
     {

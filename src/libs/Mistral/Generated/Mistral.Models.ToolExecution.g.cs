@@ -12,7 +12,7 @@ namespace Mistral
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("taskSupport")]
-        public global::Mistral.ToolExecutionTaskSupport2? TaskSupport { get; set; }
+        public global::Mistral.ToolExecutionTaskSupport? TaskSupport { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -28,7 +28,7 @@ namespace Mistral
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ToolExecution(
-            global::Mistral.ToolExecutionTaskSupport2? taskSupport)
+            global::Mistral.ToolExecutionTaskSupport? taskSupport)
         {
             this.TaskSupport = taskSupport;
         }

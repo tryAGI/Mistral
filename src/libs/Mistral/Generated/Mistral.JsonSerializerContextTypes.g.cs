@@ -285,7 +285,7 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.CompletionArgsReasoningEffort2? Type63 { get; set; }
+        public global::Mistral.CompletionArgsReasoningEffort? Type63 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -385,7 +385,7 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.FunctionCallEntryConfirmationStatus2? Type88 { get; set; }
+        public global::Mistral.FunctionCallEntryConfirmationStatus? Type88 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -589,7 +589,7 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.FunctionCallEventConfirmationStatus2? Type139 { get; set; }
+        public global::Mistral.FunctionCallEventConfirmationStatus? Type139 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -665,7 +665,7 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.ConversationRequestBaseHandoffExecution2? Type158 { get; set; }
+        public global::Mistral.ConversationRequestBaseHandoffExecution? Type158 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -1441,11 +1441,11 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.OCRRequestTableFormat2? Type352 { get; set; }
+        public global::Mistral.OCRRequestTableFormat? Type352 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.OCRRequestConfidenceScoresGranularity2? Type353 { get; set; }
+        public global::Mistral.OCRRequestConfidenceScoresGranularity? Type353 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -3097,7 +3097,7 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.MCPToolMeta2? Type766 { get; set; }
+        public global::Mistral.MCPToolMeta? Type766 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -3129,7 +3129,7 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.ToolExecutionTaskSupport2? Type774 { get; set; }
+        public global::Mistral.ToolExecutionTaskSupport? Type774 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -3169,7 +3169,7 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.JobsApiRoutesFineTuningGetFineTuningJobsStatus2? Type784 { get; set; }
+        public global::Mistral.JobsApiRoutesFineTuningGetFineTuningJobsStatus? Type784 { get; set; }
         /// <summary>
         ///
         /// </summary>

@@ -4,16 +4,48 @@
 namespace Mistral
 {
     /// <summary>
-    /// Granularity for confidence scores: 'word' (per-word scores) or 'page' (aggregate only). Defaults to None (no confidence scores) to keep response payload small.
+    ///
     /// </summary>
-    public sealed partial class OCRRequestConfidenceScoresGranularity
+    public enum OCRRequestConfidenceScoresGranularity
     {
-
         /// <summary>
-        /// Additional properties that are not explicitly defined in the schema
+        ///
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonExtensionData]
-        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+        Page,
+        /// <summary>
+        ///
+        /// </summary>
+        Word,
+    }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class OCRRequestConfidenceScoresGranularityExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this OCRRequestConfidenceScoresGranularity value)
+        {
+            return value switch
+            {
+                OCRRequestConfidenceScoresGranularity.Page => "page",
+                OCRRequestConfidenceScoresGranularity.Word => "word",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static OCRRequestConfidenceScoresGranularity? ToEnum(string value)
+        {
+            return value switch
+            {
+                "page" => OCRRequestConfidenceScoresGranularity.Page,
+                "word" => OCRRequestConfidenceScoresGranularity.Word,
+                _ => null,
+            };
+        }
     }
 }

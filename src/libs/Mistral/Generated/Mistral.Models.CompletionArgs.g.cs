@@ -74,7 +74,7 @@ namespace Mistral
         /// Controls the reasoning effort level for reasoning models. "high" enables comprehensive reasoning traces, "none" disables reasoning effort.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reasoning_effort")]
-        public global::Mistral.CompletionArgsReasoningEffort2? ReasoningEffort { get; set; }
+        public global::Mistral.CompletionArgsReasoningEffort? ReasoningEffort { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -114,7 +114,7 @@ namespace Mistral
             global::Mistral.Prediction? prediction,
             global::Mistral.ResponseFormat? responseFormat,
             global::Mistral.ToolChoiceEnum? toolChoice,
-            global::Mistral.CompletionArgsReasoningEffort2? reasoningEffort)
+            global::Mistral.CompletionArgsReasoningEffort? reasoningEffort)
         {
             this.Stop = stop;
             this.PresencePenalty = presencePenalty;

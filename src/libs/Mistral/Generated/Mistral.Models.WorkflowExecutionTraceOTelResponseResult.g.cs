@@ -4,7 +4,7 @@
 namespace Mistral
 {
     /// <summary>
-    /// The result of the workflow execution, if available
+    ///
     /// </summary>
     public sealed partial class WorkflowExecutionTraceOTelResponseResult
     {

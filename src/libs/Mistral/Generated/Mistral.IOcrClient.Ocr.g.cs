@@ -85,11 +85,11 @@ namespace Mistral
             global::Mistral.ResponseFormat? bboxAnnotationFormat = default,
             global::Mistral.ResponseFormat? documentAnnotationFormat = default,
             string? documentAnnotationPrompt = default,
-            global::Mistral.OCRRequestTableFormat2? tableFormat = default,
+            global::Mistral.OCRRequestTableFormat? tableFormat = default,
             bool? extractHeader = default,
             bool? extractFooter = default,
             bool? includeBlocks = default,
-            global::Mistral.OCRRequestConfidenceScoresGranularity2? confidenceScoresGranularity = default,
+            global::Mistral.OCRRequestConfidenceScoresGranularity? confidenceScoresGranularity = default,
             global::Mistral.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

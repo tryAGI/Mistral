@@ -4,7 +4,7 @@
 namespace Mistral
 {
     /// <summary>
-    /// Output JSON schema of the query's model
+    ///
     /// </summary>
     public sealed partial class QueryDefinitionOutputSchema
     {

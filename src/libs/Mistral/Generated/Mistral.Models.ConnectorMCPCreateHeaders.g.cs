@@ -4,7 +4,7 @@
 namespace Mistral
 {
     /// <summary>
-    /// Optional organization-level headers to be sent with the request to the mcp server.
+    ///
     /// </summary>
     public sealed partial class ConnectorMCPCreateHeaders
     {
