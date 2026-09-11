@@ -179,11 +179,11 @@ namespace Mistral
                                 .AddOptionalParameter("page", page?.ToString())
                                 .AddOptionalParameter("page_size", pageSize?.ToString())
                                 .AddOptionalParameter("include_total", includeTotal?.ToString().ToLowerInvariant())
-                                .AddOptionalParameter("sample_type", sampleType?.ToString())
-                                .AddOptionalParameter("source", source?.ToString())
+                                .AddOptionalParameter("sample_type", sampleType, selector: static x => x.ToValueString(), delimiter: ",", explode: true)
+                                .AddOptionalParameter("source", source, selector: static x => x.ToValueString(), delimiter: ",", explode: true)
                                 .AddOptionalParameter("search", search)
-                                .AddOptionalParameter("purpose", purpose?.ToString())
-                                .AddOptionalParameter("mimetypes", mimetypes?.ToString())
+                                .AddOptionalParameter("purpose", purpose?.ToValueString())
+                                .AddOptionalParameter("mimetypes", mimetypes, delimiter: ",", explode: true)
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::Mistral.AutoSDKRequestOptionsSupport.AppendQueryParameters(

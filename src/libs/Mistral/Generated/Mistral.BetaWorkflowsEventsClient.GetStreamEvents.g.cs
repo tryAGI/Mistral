@@ -164,7 +164,7 @@ namespace Mistral
                                 .AddOptionalParameter("stream", stream)
                                 .AddOptionalParameter("start_seq", startSeq?.ToString())
                                 .AddOptionalParameter("metadata_filters", metadataFilters?.ToString())
-                                .AddOptionalParameter("workflow_event_types", workflowEventTypes?.ToString())
+                                .AddOptionalParameter("workflow_event_types", workflowEventTypes, selector: static x => x.ToValueString(), delimiter: ",", explode: true)
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::Mistral.AutoSDKRequestOptionsSupport.AppendQueryParameters(

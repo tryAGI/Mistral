@@ -128,7 +128,7 @@ namespace Mistral
                                 path: $"/v1/connectors/{connectorIdOrName}/organization/credentials",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
-                                .AddOptionalParameter("auth_type", authType?.ToString())
+                                .AddOptionalParameter("auth_type", authType?.ToValueString())
                                 .AddOptionalParameter("fetch_default", fetchDefault?.ToString().ToLowerInvariant())
                                 ;
                             var __path = __pathBuilder.ToString();
