@@ -154,8 +154,8 @@ namespace Mistral
                                 path: "/v1/observability/judges",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
-                                .AddOptionalParameter("type_filter", typeFilter?.ToString())
-                                .AddOptionalParameter("model_filter", modelFilter?.ToString())
+                                .AddOptionalParameter("type_filter", typeFilter, selector: static x => x.ToValueString(), delimiter: ",", explode: true)
+                                .AddOptionalParameter("model_filter", modelFilter, delimiter: ",", explode: true)
                                 .AddOptionalParameter("page_size", pageSize?.ToString())
                                 .AddOptionalParameter("page", page?.ToString())
                                 .AddOptionalParameter("q", q)

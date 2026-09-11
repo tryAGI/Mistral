@@ -195,7 +195,7 @@ namespace Mistral
                                 .AddOptionalParameter("metadata", metadata?.ToString())
                                 .AddOptionalParameter("created_after", createdAfter?.ToString())
                                 .AddOptionalParameter("created_by_me", createdByMe?.ToString().ToLowerInvariant())
-                                .AddOptionalParameter("status", status?.ToString())
+                                .AddOptionalParameter("status", status, selector: static x => x.ToValueString(), delimiter: ",", explode: true)
                                 .AddOptionalParameter("order_by", orderBy?.ToValueString())
                                 ;
                             var __path = __pathBuilder.ToString();

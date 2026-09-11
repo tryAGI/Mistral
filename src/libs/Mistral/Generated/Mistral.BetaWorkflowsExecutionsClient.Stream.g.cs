@@ -91,7 +91,7 @@ namespace Mistral
                                 path: $"/v1/workflows/executions/{executionId}/stream",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
-                                .AddOptionalParameter("event_source", eventSource?.ToString())
+                                .AddOptionalParameter("event_source", eventSource?.ToValueString())
                                 .AddOptionalParameter("last_event_id", lastEventId)
                                 ;
                             var __path = __pathBuilder.ToString();
