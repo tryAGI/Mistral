@@ -35,7 +35,7 @@ namespace Mistral
         /// <inheritdoc/>
         public global::Mistral.AutoSDKClientOptions Options { get; }
 
-        internal global::System.Lazy<global::System.Text.Json.Serialization.JsonSerializerContext> JsonSerializerContextProvider { get; set; } = new(() => global::Mistral.SourceGenerationContext.Default);
+        internal global::System.Lazy<global::System.Text.Json.Serialization.JsonSerializerContext> JsonSerializerContextProvider { get; set; } = new(() => global::Mistral.BetaObservabilityDatasetsSourceGenerationContext.Default);
 
         /// <summary>
         ///
