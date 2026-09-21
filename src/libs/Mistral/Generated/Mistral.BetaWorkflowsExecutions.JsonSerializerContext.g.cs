@@ -118,6 +118,7 @@ namespace Mistral
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.WorkflowExecutionContinuedAsNewAttributesResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.WorkflowExecutionFailedAttributes))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.WorkflowExecutionProgressTraceEvent))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::Mistral.WorkflowExecutionTraceSummaryAttributesValues>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.WorkflowExecutionTraceSummaryAttributesValues), TypeInfoPropertyName = "WorkflowExecutionTraceSummaryAttributesValues2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.WorkflowExecutionResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.WorkflowExecutionStatus), TypeInfoPropertyName = "WorkflowExecutionStatus2")]
