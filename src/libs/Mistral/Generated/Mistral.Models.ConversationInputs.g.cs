@@ -42,8 +42,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public string PickConversationInputsVariant1() => IsConversationInputsVariant1
-            ? ConversationInputsVariant1!
+        public string PickConversationInputsVariant1() => ConversationInputsVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationInputsVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Mistral.AnyOf<global::Mistral.MessageInputEntry, global::Mistral.MessageOutputEntry, global::Mistral.FunctionResultEntry, global::Mistral.FunctionCallEntry, global::Mistral.ToolExecutionEntry, global::Mistral.AgentHandoffEntry>> PickInputEntries() => IsInputEntries
-            ? InputEntries!
+        public global::System.Collections.Generic.IList<global::Mistral.AnyOf<global::Mistral.MessageInputEntry, global::Mistral.MessageOutputEntry, global::Mistral.FunctionResultEntry, global::Mistral.FunctionCallEntry, global::Mistral.ToolExecutionEntry, global::Mistral.AgentHandoffEntry>> PickInputEntries() => InputEntries is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputEntries' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -154,13 +154,13 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsConversationInputsVariant1 && conversationInputsVariant1 != null)
+            if (ConversationInputsVariant1 is { } __value0 && conversationInputsVariant1 != null)
             {
-                return conversationInputsVariant1(ConversationInputsVariant1!);
+                return conversationInputsVariant1(__value0);
             }
-            else if (IsInputEntries && inputEntries != null)
+            else if (InputEntries is { } __value1 && inputEntries != null)
             {
-                return inputEntries(InputEntries!);
+                return inputEntries(__value1);
             }
 
             return default(TResult);
@@ -180,13 +180,13 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsConversationInputsVariant1)
+            if (ConversationInputsVariant1 is { } __value0)
             {
-                conversationInputsVariant1?.Invoke(ConversationInputsVariant1!);
+                conversationInputsVariant1?.Invoke(__value0);
             }
-            else if (IsInputEntries)
+            else if (InputEntries is { } __value1)
             {
-                inputEntries?.Invoke(InputEntries!);
+                inputEntries?.Invoke(__value1);
             }
         }
 
@@ -203,13 +203,13 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsConversationInputsVariant1)
+            if (ConversationInputsVariant1 is { } __value0)
             {
-                conversationInputsVariant1?.Invoke(ConversationInputsVariant1!);
+                conversationInputsVariant1?.Invoke(__value0);
             }
-            else if (IsInputEntries)
+            else if (InputEntries is { } __value1)
             {
-                inputEntries?.Invoke(InputEntries!);
+                inputEntries?.Invoke(__value1);
             }
         }
 

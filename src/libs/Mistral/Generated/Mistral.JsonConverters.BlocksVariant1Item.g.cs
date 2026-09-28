@@ -158,79 +158,79 @@ namespace Mistral.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.OCRTextBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.OCRTextBlock?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.OCRTextBlock).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Text!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickText(), typeInfo);
             }
             else if (value.IsList)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.OCRListBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.OCRListBlock?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.OCRListBlock).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.List!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickList(), typeInfo);
             }
             else if (value.IsImage)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.OCRImageBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.OCRImageBlock?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.OCRImageBlock).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Image!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickImage(), typeInfo);
             }
             else if (value.IsTable)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.OCRTableBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.OCRTableBlock?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.OCRTableBlock).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Table!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickTable(), typeInfo);
             }
             else if (value.IsTitle)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.OCRTitleBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.OCRTitleBlock?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.OCRTitleBlock).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Title!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickTitle(), typeInfo);
             }
             else if (value.IsEquation)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.OCREquationBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.OCREquationBlock?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.OCREquationBlock).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Equation!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickEquation(), typeInfo);
             }
             else if (value.IsCaption)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.OCRCaptionBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.OCRCaptionBlock?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.OCRCaptionBlock).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Caption!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickCaption(), typeInfo);
             }
             else if (value.IsCode)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.OCRCodeBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.OCRCodeBlock?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.OCRCodeBlock).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Code!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickCode(), typeInfo);
             }
             else if (value.IsReferences)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.OCRReferencesBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.OCRReferencesBlock?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.OCRReferencesBlock).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.References!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickReferences(), typeInfo);
             }
             else if (value.IsAsideText)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.OCRAsideTextBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.OCRAsideTextBlock?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.OCRAsideTextBlock).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AsideText!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAsideText(), typeInfo);
             }
             else if (value.IsHeader)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.OCRHeaderBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.OCRHeaderBlock?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.OCRHeaderBlock).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Header!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickHeader(), typeInfo);
             }
             else if (value.IsFooter)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.OCRFooterBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.OCRFooterBlock?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.OCRFooterBlock).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Footer!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickFooter(), typeInfo);
             }
             else if (value.IsSignature)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.OCRSignatureBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.OCRSignatureBlock?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.OCRSignatureBlock).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Signature!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSignature(), typeInfo);
             }
         }
     }

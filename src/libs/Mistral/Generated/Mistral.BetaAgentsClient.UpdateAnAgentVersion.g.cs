@@ -116,7 +116,7 @@ namespace Mistral
                                 path: $"/v1/agents/{agentId}/version",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
-                                .AddRequiredParameter("version", version.ToString()!)
+                                .AddRequiredParameter("version", version.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."))
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::Mistral.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -158,8 +158,8 @@ namespace Mistral
                 PrepareUpdateAnAgentVersionRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    agentId: agentId!,
-                    version: version!);
+                    agentId: agentId,
+                    version: version);
 
                 return __httpRequest;
             }
@@ -181,7 +181,7 @@ namespace Mistral
                                 pathTemplate: "$\"/v1/agents/{agentId}/version\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -215,7 +215,7 @@ namespace Mistral
                                 pathTemplate: "$\"/v1/agents/{agentId}/version\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -256,7 +256,7 @@ namespace Mistral
                                 pathTemplate: "$\"/v1/agents/{agentId}/version\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -304,7 +304,7 @@ namespace Mistral
                                 pathTemplate: "$\"/v1/agents/{agentId}/version\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -326,7 +326,7 @@ namespace Mistral
                                 pathTemplate: "$\"/v1/agents/{agentId}/version\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

@@ -47,8 +47,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.CompletionJobOut PickCompletion() => IsCompletion
-            ? Completion!
+        public global::Mistral.CompletionJobOut PickCompletion() => Completion is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Completion' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.ClassifierJobOut PickClassifier() => IsClassifier
-            ? Classifier!
+        public global::Mistral.ClassifierJobOut PickClassifier() => Classifier is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Classifier' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -185,13 +185,13 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsCompletion && completion != null)
+            if (Completion is { } __value0 && completion != null)
             {
-                return completion(Completion!);
+                return completion(__value0);
             }
-            else if (IsClassifier && classifier != null)
+            else if (Classifier is { } __value1 && classifier != null)
             {
-                return classifier(Classifier!);
+                return classifier(__value1);
             }
 
             return default(TResult);
@@ -211,13 +211,13 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsCompletion)
+            if (Completion is { } __value0)
             {
-                completion?.Invoke(Completion!);
+                completion?.Invoke(__value0);
             }
-            else if (IsClassifier)
+            else if (Classifier is { } __value1)
             {
-                classifier?.Invoke(Classifier!);
+                classifier?.Invoke(__value1);
             }
         }
 
@@ -234,13 +234,13 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsCompletion)
+            if (Completion is { } __value0)
             {
-                completion?.Invoke(Completion!);
+                completion?.Invoke(__value0);
             }
-            else if (IsClassifier)
+            else if (Classifier is { } __value1)
             {
-                classifier?.Invoke(Classifier!);
+                classifier?.Invoke(__value1);
             }
         }
 

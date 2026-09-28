@@ -47,8 +47,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.BaseModelCard PickBase() => IsBase
-            ? Base!
+        public global::Mistral.BaseModelCard PickBase() => Base is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.FTModelCard PickFineTuned() => IsFineTuned
-            ? FineTuned!
+        public global::Mistral.FTModelCard PickFineTuned() => FineTuned is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FineTuned' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -185,13 +185,13 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsBase && @base != null)
+            if (Base is { } __value0 && @base != null)
             {
-                return @base(Base!);
+                return @base(__value0);
             }
-            else if (IsFineTuned && fineTuned != null)
+            else if (FineTuned is { } __value1 && fineTuned != null)
             {
-                return fineTuned(FineTuned!);
+                return fineTuned(__value1);
             }
 
             return default(TResult);
@@ -211,13 +211,13 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsBase)
+            if (Base is { } __value0)
             {
-                @base?.Invoke(Base!);
+                @base?.Invoke(__value0);
             }
-            else if (IsFineTuned)
+            else if (FineTuned is { } __value1)
             {
-                fineTuned?.Invoke(FineTuned!);
+                fineTuned?.Invoke(__value1);
             }
         }
 
@@ -234,13 +234,13 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsBase)
+            if (Base is { } __value0)
             {
-                @base?.Invoke(Base!);
+                @base?.Invoke(__value0);
             }
-            else if (IsFineTuned)
+            else if (FineTuned is { } __value1)
             {
-                fineTuned?.Invoke(FineTuned!);
+                fineTuned?.Invoke(__value1);
             }
         }
 

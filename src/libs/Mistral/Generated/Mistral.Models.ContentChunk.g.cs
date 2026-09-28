@@ -47,8 +47,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.TextChunk PickText() => IsText
-            ? Text!
+        public global::Mistral.TextChunk PickText() => Text is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.ImageURLChunk PickImageUrl() => IsImageUrl
-            ? ImageUrl!
+        public global::Mistral.ImageURLChunk PickImageUrl() => ImageUrl is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ImageUrl' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.DocumentURLChunk PickDocumentUrl() => IsDocumentUrl
-            ? DocumentUrl!
+        public global::Mistral.DocumentURLChunk PickDocumentUrl() => DocumentUrl is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'DocumentUrl' but the value was {ToString()}.");
 
         /// <summary>
@@ -158,8 +158,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.ReferenceChunk PickReference() => IsReference
-            ? Reference!
+        public global::Mistral.ReferenceChunk PickReference() => Reference is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Reference' but the value was {ToString()}.");
 
         /// <summary>
@@ -195,8 +195,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.FileChunk PickFile() => IsFile
-            ? File!
+        public global::Mistral.FileChunk PickFile() => File is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'File' but the value was {ToString()}.");
 
         /// <summary>
@@ -232,8 +232,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.ThinkChunk PickThinking() => IsThinking
-            ? Thinking!
+        public global::Mistral.ThinkChunk PickThinking() => Thinking is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Thinking' but the value was {ToString()}.");
 
         /// <summary>
@@ -269,8 +269,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.AudioChunk PickInputAudio() => IsInputAudio
-            ? InputAudio!
+        public global::Mistral.AudioChunk PickInputAudio() => InputAudio is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputAudio' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -510,33 +510,33 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsText && text != null)
+            if (Text is { } __value0 && text != null)
             {
-                return text(Text!);
+                return text(__value0);
             }
-            else if (IsImageUrl && imageUrl != null)
+            else if (ImageUrl is { } __value1 && imageUrl != null)
             {
-                return imageUrl(ImageUrl!);
+                return imageUrl(__value1);
             }
-            else if (IsDocumentUrl && documentUrl != null)
+            else if (DocumentUrl is { } __value2 && documentUrl != null)
             {
-                return documentUrl(DocumentUrl!);
+                return documentUrl(__value2);
             }
-            else if (IsReference && reference != null)
+            else if (Reference is { } __value3 && reference != null)
             {
-                return reference(Reference!);
+                return reference(__value3);
             }
-            else if (IsFile && file != null)
+            else if (File is { } __value4 && file != null)
             {
-                return file(File!);
+                return file(__value4);
             }
-            else if (IsThinking && thinking != null)
+            else if (Thinking is { } __value5 && thinking != null)
             {
-                return thinking(Thinking!);
+                return thinking(__value5);
             }
-            else if (IsInputAudio && inputAudio != null)
+            else if (InputAudio is { } __value6 && inputAudio != null)
             {
-                return inputAudio(InputAudio!);
+                return inputAudio(__value6);
             }
 
             return default(TResult);
@@ -566,33 +566,33 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsText)
+            if (Text is { } __value0)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value0);
             }
-            else if (IsImageUrl)
+            else if (ImageUrl is { } __value1)
             {
-                imageUrl?.Invoke(ImageUrl!);
+                imageUrl?.Invoke(__value1);
             }
-            else if (IsDocumentUrl)
+            else if (DocumentUrl is { } __value2)
             {
-                documentUrl?.Invoke(DocumentUrl!);
+                documentUrl?.Invoke(__value2);
             }
-            else if (IsReference)
+            else if (Reference is { } __value3)
             {
-                reference?.Invoke(Reference!);
+                reference?.Invoke(__value3);
             }
-            else if (IsFile)
+            else if (File is { } __value4)
             {
-                file?.Invoke(File!);
+                file?.Invoke(__value4);
             }
-            else if (IsThinking)
+            else if (Thinking is { } __value5)
             {
-                thinking?.Invoke(Thinking!);
+                thinking?.Invoke(__value5);
             }
-            else if (IsInputAudio)
+            else if (InputAudio is { } __value6)
             {
-                inputAudio?.Invoke(InputAudio!);
+                inputAudio?.Invoke(__value6);
             }
         }
 
@@ -614,33 +614,33 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsText)
+            if (Text is { } __value0)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value0);
             }
-            else if (IsImageUrl)
+            else if (ImageUrl is { } __value1)
             {
-                imageUrl?.Invoke(ImageUrl!);
+                imageUrl?.Invoke(__value1);
             }
-            else if (IsDocumentUrl)
+            else if (DocumentUrl is { } __value2)
             {
-                documentUrl?.Invoke(DocumentUrl!);
+                documentUrl?.Invoke(__value2);
             }
-            else if (IsReference)
+            else if (Reference is { } __value3)
             {
-                reference?.Invoke(Reference!);
+                reference?.Invoke(__value3);
             }
-            else if (IsFile)
+            else if (File is { } __value4)
             {
-                file?.Invoke(File!);
+                file?.Invoke(__value4);
             }
-            else if (IsThinking)
+            else if (Thinking is { } __value5)
             {
-                thinking?.Invoke(Thinking!);
+                thinking?.Invoke(__value5);
             }
-            else if (IsInputAudio)
+            else if (InputAudio is { } __value6)
             {
-                inputAudio?.Invoke(InputAudio!);
+                inputAudio?.Invoke(__value6);
             }
         }
 

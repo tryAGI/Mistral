@@ -47,8 +47,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.OAuth2TokenAuth PickOauth2Token() => IsOauth2Token
-            ? Oauth2Token!
+        public global::Mistral.OAuth2TokenAuth PickOauth2Token() => Oauth2Token is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Oauth2Token' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.APIKeyAuth PickApiKey() => IsApiKey
-            ? ApiKey!
+        public global::Mistral.APIKeyAuth PickApiKey() => ApiKey is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ApiKey' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -185,13 +185,13 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsOauth2Token && oauth2Token != null)
+            if (Oauth2Token is { } __value0 && oauth2Token != null)
             {
-                return oauth2Token(Oauth2Token!);
+                return oauth2Token(__value0);
             }
-            else if (IsApiKey && apiKey != null)
+            else if (ApiKey is { } __value1 && apiKey != null)
             {
-                return apiKey(ApiKey!);
+                return apiKey(__value1);
             }
 
             return default(TResult);
@@ -211,13 +211,13 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsOauth2Token)
+            if (Oauth2Token is { } __value0)
             {
-                oauth2Token?.Invoke(Oauth2Token!);
+                oauth2Token?.Invoke(__value0);
             }
-            else if (IsApiKey)
+            else if (ApiKey is { } __value1)
             {
-                apiKey?.Invoke(ApiKey!);
+                apiKey?.Invoke(__value1);
             }
         }
 
@@ -234,13 +234,13 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsOauth2Token)
+            if (Oauth2Token is { } __value0)
             {
-                oauth2Token?.Invoke(Oauth2Token!);
+                oauth2Token?.Invoke(__value0);
             }
-            else if (IsApiKey)
+            else if (ApiKey is { } __value1)
             {
-                apiKey?.Invoke(ApiKey!);
+                apiKey?.Invoke(__value1);
             }
         }
 

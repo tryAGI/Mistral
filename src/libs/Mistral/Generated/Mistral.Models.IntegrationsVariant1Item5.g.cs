@@ -47,8 +47,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.WandbIntegrationOut PickWandb() => IsWandb
-            ? Wandb!
+        public global::Mistral.WandbIntegrationOut PickWandb() => Wandb is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Wandb' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -120,9 +120,9 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsWandb && wandb != null)
+            if (Wandb is { } __value0 && wandb != null)
             {
-                return wandb(Wandb!);
+                return wandb(__value0);
             }
 
             return default(TResult);
@@ -140,9 +140,9 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsWandb)
+            if (Wandb is { } __value0)
             {
-                wandb?.Invoke(Wandb!);
+                wandb?.Invoke(__value0);
             }
         }
 
@@ -158,9 +158,9 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsWandb)
+            if (Wandb is { } __value0)
             {
-                wandb?.Invoke(Wandb!);
+                wandb?.Invoke(__value0);
             }
         }
 

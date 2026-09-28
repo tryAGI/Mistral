@@ -42,8 +42,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.ResponseBase PickResponseBase() => IsResponseBase
-            ? ResponseBase!
+        public global::Mistral.ResponseBase PickResponseBase() => ResponseBase is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseBase' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.EmbeddingResponseVariant2 PickEmbeddingResponseVariant2() => IsEmbeddingResponseVariant2
-            ? EmbeddingResponseVariant2!
+        public global::Mistral.EmbeddingResponseVariant2 PickEmbeddingResponseVariant2() => EmbeddingResponseVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingResponseVariant2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsResponseBase && responseBase != null)
+            if (ResponseBase is { } __value0 && responseBase != null)
             {
-                return responseBase(ResponseBase!);
+                return responseBase(__value0);
             }
-            else if (IsEmbeddingResponseVariant2 && embeddingResponseVariant2 != null)
+            else if (EmbeddingResponseVariant2 is { } __value1 && embeddingResponseVariant2 != null)
             {
-                return embeddingResponseVariant2(EmbeddingResponseVariant2!);
+                return embeddingResponseVariant2(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsResponseBase)
+            if (ResponseBase is { } __value0)
             {
-                responseBase?.Invoke(ResponseBase!);
+                responseBase?.Invoke(__value0);
             }
-            else if (IsEmbeddingResponseVariant2)
+            else if (EmbeddingResponseVariant2 is { } __value1)
             {
-                embeddingResponseVariant2?.Invoke(EmbeddingResponseVariant2!);
+                embeddingResponseVariant2?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsResponseBase)
+            if (ResponseBase is { } __value0)
             {
-                responseBase?.Invoke(ResponseBase!);
+                responseBase?.Invoke(__value0);
             }
-            else if (IsEmbeddingResponseVariant2)
+            else if (EmbeddingResponseVariant2 is { } __value1)
             {
-                embeddingResponseVariant2?.Invoke(EmbeddingResponseVariant2!);
+                embeddingResponseVariant2?.Invoke(__value1);
             }
         }
 

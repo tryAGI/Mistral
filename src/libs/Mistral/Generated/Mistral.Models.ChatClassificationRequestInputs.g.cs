@@ -42,8 +42,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.InstructRequest PickInstructRequest() => IsInstructRequest
-            ? InstructRequest!
+        public global::Mistral.InstructRequest PickInstructRequest() => InstructRequest is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InstructRequest' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Mistral.InstructRequest> PickChatClassificationRequestInputsVariant2() => IsChatClassificationRequestInputsVariant2
-            ? ChatClassificationRequestInputsVariant2!
+        public global::System.Collections.Generic.IList<global::Mistral.InstructRequest> PickChatClassificationRequestInputsVariant2() => ChatClassificationRequestInputsVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatClassificationRequestInputsVariant2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -154,13 +154,13 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsInstructRequest && instructRequest != null)
+            if (InstructRequest is { } __value0 && instructRequest != null)
             {
-                return instructRequest(InstructRequest!);
+                return instructRequest(__value0);
             }
-            else if (IsChatClassificationRequestInputsVariant2 && chatClassificationRequestInputsVariant2 != null)
+            else if (ChatClassificationRequestInputsVariant2 is { } __value1 && chatClassificationRequestInputsVariant2 != null)
             {
-                return chatClassificationRequestInputsVariant2(ChatClassificationRequestInputsVariant2!);
+                return chatClassificationRequestInputsVariant2(__value1);
             }
 
             return default(TResult);
@@ -180,13 +180,13 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsInstructRequest)
+            if (InstructRequest is { } __value0)
             {
-                instructRequest?.Invoke(InstructRequest!);
+                instructRequest?.Invoke(__value0);
             }
-            else if (IsChatClassificationRequestInputsVariant2)
+            else if (ChatClassificationRequestInputsVariant2 is { } __value1)
             {
-                chatClassificationRequestInputsVariant2?.Invoke(ChatClassificationRequestInputsVariant2!);
+                chatClassificationRequestInputsVariant2?.Invoke(__value1);
             }
         }
 
@@ -203,13 +203,13 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsInstructRequest)
+            if (InstructRequest is { } __value0)
             {
-                instructRequest?.Invoke(InstructRequest!);
+                instructRequest?.Invoke(__value0);
             }
-            else if (IsChatClassificationRequestInputsVariant2)
+            else if (ChatClassificationRequestInputsVariant2 is { } __value1)
             {
-                chatClassificationRequestInputsVariant2?.Invoke(ChatClassificationRequestInputsVariant2!);
+                chatClassificationRequestInputsVariant2?.Invoke(__value1);
             }
         }
 

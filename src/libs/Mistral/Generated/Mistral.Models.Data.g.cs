@@ -47,8 +47,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.ResponseStartedEvent PickConversationResponseStarted() => IsConversationResponseStarted
-            ? ConversationResponseStarted!
+        public global::Mistral.ResponseStartedEvent PickConversationResponseStarted() => ConversationResponseStarted is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationResponseStarted' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.ResponseDoneEvent PickConversationResponseDone() => IsConversationResponseDone
-            ? ConversationResponseDone!
+        public global::Mistral.ResponseDoneEvent PickConversationResponseDone() => ConversationResponseDone is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationResponseDone' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.ResponseErrorEvent PickConversationResponseError() => IsConversationResponseError
-            ? ConversationResponseError!
+        public global::Mistral.ResponseErrorEvent PickConversationResponseError() => ConversationResponseError is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationResponseError' but the value was {ToString()}.");
 
         /// <summary>
@@ -158,8 +158,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.ToolExecutionStartedEvent PickToolExecutionStarted() => IsToolExecutionStarted
-            ? ToolExecutionStarted!
+        public global::Mistral.ToolExecutionStartedEvent PickToolExecutionStarted() => ToolExecutionStarted is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolExecutionStarted' but the value was {ToString()}.");
 
         /// <summary>
@@ -195,8 +195,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.ToolExecutionDeltaEvent PickToolExecutionDelta() => IsToolExecutionDelta
-            ? ToolExecutionDelta!
+        public global::Mistral.ToolExecutionDeltaEvent PickToolExecutionDelta() => ToolExecutionDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolExecutionDelta' but the value was {ToString()}.");
 
         /// <summary>
@@ -232,8 +232,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.ToolExecutionDoneEvent PickToolExecutionDone() => IsToolExecutionDone
-            ? ToolExecutionDone!
+        public global::Mistral.ToolExecutionDoneEvent PickToolExecutionDone() => ToolExecutionDone is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolExecutionDone' but the value was {ToString()}.");
 
         /// <summary>
@@ -269,8 +269,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.MessageOutputEvent PickMessageOutputDelta() => IsMessageOutputDelta
-            ? MessageOutputDelta!
+        public global::Mistral.MessageOutputEvent PickMessageOutputDelta() => MessageOutputDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessageOutputDelta' but the value was {ToString()}.");
 
         /// <summary>
@@ -306,8 +306,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.FunctionCallEvent PickFunctionCallDelta() => IsFunctionCallDelta
-            ? FunctionCallDelta!
+        public global::Mistral.FunctionCallEvent PickFunctionCallDelta() => FunctionCallDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FunctionCallDelta' but the value was {ToString()}.");
 
         /// <summary>
@@ -343,8 +343,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.AgentHandoffStartedEvent PickAgentHandoffStarted() => IsAgentHandoffStarted
-            ? AgentHandoffStarted!
+        public global::Mistral.AgentHandoffStartedEvent PickAgentHandoffStarted() => AgentHandoffStarted is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AgentHandoffStarted' but the value was {ToString()}.");
 
         /// <summary>
@@ -380,8 +380,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.AgentHandoffDoneEvent PickAgentHandoffDone() => IsAgentHandoffDone
-            ? AgentHandoffDone!
+        public global::Mistral.AgentHandoffDoneEvent PickAgentHandoffDone() => AgentHandoffDone is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AgentHandoffDone' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -705,45 +705,45 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsConversationResponseStarted && conversationResponseStarted != null)
+            if (ConversationResponseStarted is { } __value0 && conversationResponseStarted != null)
             {
-                return conversationResponseStarted(ConversationResponseStarted!);
+                return conversationResponseStarted(__value0);
             }
-            else if (IsConversationResponseDone && conversationResponseDone != null)
+            else if (ConversationResponseDone is { } __value1 && conversationResponseDone != null)
             {
-                return conversationResponseDone(ConversationResponseDone!);
+                return conversationResponseDone(__value1);
             }
-            else if (IsConversationResponseError && conversationResponseError != null)
+            else if (ConversationResponseError is { } __value2 && conversationResponseError != null)
             {
-                return conversationResponseError(ConversationResponseError!);
+                return conversationResponseError(__value2);
             }
-            else if (IsToolExecutionStarted && toolExecutionStarted != null)
+            else if (ToolExecutionStarted is { } __value3 && toolExecutionStarted != null)
             {
-                return toolExecutionStarted(ToolExecutionStarted!);
+                return toolExecutionStarted(__value3);
             }
-            else if (IsToolExecutionDelta && toolExecutionDelta != null)
+            else if (ToolExecutionDelta is { } __value4 && toolExecutionDelta != null)
             {
-                return toolExecutionDelta(ToolExecutionDelta!);
+                return toolExecutionDelta(__value4);
             }
-            else if (IsToolExecutionDone && toolExecutionDone != null)
+            else if (ToolExecutionDone is { } __value5 && toolExecutionDone != null)
             {
-                return toolExecutionDone(ToolExecutionDone!);
+                return toolExecutionDone(__value5);
             }
-            else if (IsMessageOutputDelta && messageOutputDelta != null)
+            else if (MessageOutputDelta is { } __value6 && messageOutputDelta != null)
             {
-                return messageOutputDelta(MessageOutputDelta!);
+                return messageOutputDelta(__value6);
             }
-            else if (IsFunctionCallDelta && functionCallDelta != null)
+            else if (FunctionCallDelta is { } __value7 && functionCallDelta != null)
             {
-                return functionCallDelta(FunctionCallDelta!);
+                return functionCallDelta(__value7);
             }
-            else if (IsAgentHandoffStarted && agentHandoffStarted != null)
+            else if (AgentHandoffStarted is { } __value8 && agentHandoffStarted != null)
             {
-                return agentHandoffStarted(AgentHandoffStarted!);
+                return agentHandoffStarted(__value8);
             }
-            else if (IsAgentHandoffDone && agentHandoffDone != null)
+            else if (AgentHandoffDone is { } __value9 && agentHandoffDone != null)
             {
-                return agentHandoffDone(AgentHandoffDone!);
+                return agentHandoffDone(__value9);
             }
 
             return default(TResult);
@@ -779,45 +779,45 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsConversationResponseStarted)
+            if (ConversationResponseStarted is { } __value0)
             {
-                conversationResponseStarted?.Invoke(ConversationResponseStarted!);
+                conversationResponseStarted?.Invoke(__value0);
             }
-            else if (IsConversationResponseDone)
+            else if (ConversationResponseDone is { } __value1)
             {
-                conversationResponseDone?.Invoke(ConversationResponseDone!);
+                conversationResponseDone?.Invoke(__value1);
             }
-            else if (IsConversationResponseError)
+            else if (ConversationResponseError is { } __value2)
             {
-                conversationResponseError?.Invoke(ConversationResponseError!);
+                conversationResponseError?.Invoke(__value2);
             }
-            else if (IsToolExecutionStarted)
+            else if (ToolExecutionStarted is { } __value3)
             {
-                toolExecutionStarted?.Invoke(ToolExecutionStarted!);
+                toolExecutionStarted?.Invoke(__value3);
             }
-            else if (IsToolExecutionDelta)
+            else if (ToolExecutionDelta is { } __value4)
             {
-                toolExecutionDelta?.Invoke(ToolExecutionDelta!);
+                toolExecutionDelta?.Invoke(__value4);
             }
-            else if (IsToolExecutionDone)
+            else if (ToolExecutionDone is { } __value5)
             {
-                toolExecutionDone?.Invoke(ToolExecutionDone!);
+                toolExecutionDone?.Invoke(__value5);
             }
-            else if (IsMessageOutputDelta)
+            else if (MessageOutputDelta is { } __value6)
             {
-                messageOutputDelta?.Invoke(MessageOutputDelta!);
+                messageOutputDelta?.Invoke(__value6);
             }
-            else if (IsFunctionCallDelta)
+            else if (FunctionCallDelta is { } __value7)
             {
-                functionCallDelta?.Invoke(FunctionCallDelta!);
+                functionCallDelta?.Invoke(__value7);
             }
-            else if (IsAgentHandoffStarted)
+            else if (AgentHandoffStarted is { } __value8)
             {
-                agentHandoffStarted?.Invoke(AgentHandoffStarted!);
+                agentHandoffStarted?.Invoke(__value8);
             }
-            else if (IsAgentHandoffDone)
+            else if (AgentHandoffDone is { } __value9)
             {
-                agentHandoffDone?.Invoke(AgentHandoffDone!);
+                agentHandoffDone?.Invoke(__value9);
             }
         }
 
@@ -842,45 +842,45 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsConversationResponseStarted)
+            if (ConversationResponseStarted is { } __value0)
             {
-                conversationResponseStarted?.Invoke(ConversationResponseStarted!);
+                conversationResponseStarted?.Invoke(__value0);
             }
-            else if (IsConversationResponseDone)
+            else if (ConversationResponseDone is { } __value1)
             {
-                conversationResponseDone?.Invoke(ConversationResponseDone!);
+                conversationResponseDone?.Invoke(__value1);
             }
-            else if (IsConversationResponseError)
+            else if (ConversationResponseError is { } __value2)
             {
-                conversationResponseError?.Invoke(ConversationResponseError!);
+                conversationResponseError?.Invoke(__value2);
             }
-            else if (IsToolExecutionStarted)
+            else if (ToolExecutionStarted is { } __value3)
             {
-                toolExecutionStarted?.Invoke(ToolExecutionStarted!);
+                toolExecutionStarted?.Invoke(__value3);
             }
-            else if (IsToolExecutionDelta)
+            else if (ToolExecutionDelta is { } __value4)
             {
-                toolExecutionDelta?.Invoke(ToolExecutionDelta!);
+                toolExecutionDelta?.Invoke(__value4);
             }
-            else if (IsToolExecutionDone)
+            else if (ToolExecutionDone is { } __value5)
             {
-                toolExecutionDone?.Invoke(ToolExecutionDone!);
+                toolExecutionDone?.Invoke(__value5);
             }
-            else if (IsMessageOutputDelta)
+            else if (MessageOutputDelta is { } __value6)
             {
-                messageOutputDelta?.Invoke(MessageOutputDelta!);
+                messageOutputDelta?.Invoke(__value6);
             }
-            else if (IsFunctionCallDelta)
+            else if (FunctionCallDelta is { } __value7)
             {
-                functionCallDelta?.Invoke(FunctionCallDelta!);
+                functionCallDelta?.Invoke(__value7);
             }
-            else if (IsAgentHandoffStarted)
+            else if (AgentHandoffStarted is { } __value8)
             {
-                agentHandoffStarted?.Invoke(AgentHandoffStarted!);
+                agentHandoffStarted?.Invoke(__value8);
             }
-            else if (IsAgentHandoffDone)
+            else if (AgentHandoffDone is { } __value9)
             {
-                agentHandoffDone?.Invoke(AgentHandoffDone!);
+                agentHandoffDone?.Invoke(__value9);
             }
         }
 

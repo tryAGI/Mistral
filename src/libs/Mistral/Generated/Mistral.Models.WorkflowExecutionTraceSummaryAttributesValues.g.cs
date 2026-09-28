@@ -42,8 +42,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public string PickWorkflowExecutionTraceSummaryAttributesValuesVariant1() => IsWorkflowExecutionTraceSummaryAttributesValuesVariant1
-            ? WorkflowExecutionTraceSummaryAttributesValuesVariant1!
+        public string PickWorkflowExecutionTraceSummaryAttributesValuesVariant1() => WorkflowExecutionTraceSummaryAttributesValuesVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'WorkflowExecutionTraceSummaryAttributesValuesVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public int PickWorkflowExecutionTraceSummaryAttributesValuesVariant2() => IsWorkflowExecutionTraceSummaryAttributesValuesVariant2
-            ? WorkflowExecutionTraceSummaryAttributesValuesVariant2!.Value
+        public int PickWorkflowExecutionTraceSummaryAttributesValuesVariant2() => WorkflowExecutionTraceSummaryAttributesValuesVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'WorkflowExecutionTraceSummaryAttributesValuesVariant2' but the value was {ToString()}.");
 
         /// <summary>
@@ -116,8 +116,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public double PickWorkflowExecutionTraceSummaryAttributesValuesVariant3() => IsWorkflowExecutionTraceSummaryAttributesValuesVariant3
-            ? WorkflowExecutionTraceSummaryAttributesValuesVariant3!.Value
+        public double PickWorkflowExecutionTraceSummaryAttributesValuesVariant3() => WorkflowExecutionTraceSummaryAttributesValuesVariant3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'WorkflowExecutionTraceSummaryAttributesValuesVariant3' but the value was {ToString()}.");
 
         /// <summary>
@@ -153,8 +153,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public bool PickWorkflowExecutionTraceSummaryAttributesValuesVariant4() => IsWorkflowExecutionTraceSummaryAttributesValuesVariant4
-            ? WorkflowExecutionTraceSummaryAttributesValuesVariant4!.Value
+        public bool PickWorkflowExecutionTraceSummaryAttributesValuesVariant4() => WorkflowExecutionTraceSummaryAttributesValuesVariant4 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'WorkflowExecutionTraceSummaryAttributesValuesVariant4' but the value was {ToString()}.");
 
         /// <summary>
@@ -190,8 +190,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public object PickWorkflowExecutionTraceSummaryAttributesValuesVariant5() => IsWorkflowExecutionTraceSummaryAttributesValuesVariant5
-            ? WorkflowExecutionTraceSummaryAttributesValuesVariant5!
+        public object PickWorkflowExecutionTraceSummaryAttributesValuesVariant5() => WorkflowExecutionTraceSummaryAttributesValuesVariant5 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'WorkflowExecutionTraceSummaryAttributesValuesVariant5' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -349,25 +349,25 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsWorkflowExecutionTraceSummaryAttributesValuesVariant1 && workflowExecutionTraceSummaryAttributesValuesVariant1 != null)
+            if (WorkflowExecutionTraceSummaryAttributesValuesVariant1 is { } __value0 && workflowExecutionTraceSummaryAttributesValuesVariant1 != null)
             {
-                return workflowExecutionTraceSummaryAttributesValuesVariant1(WorkflowExecutionTraceSummaryAttributesValuesVariant1!);
+                return workflowExecutionTraceSummaryAttributesValuesVariant1(__value0);
             }
-            else if (IsWorkflowExecutionTraceSummaryAttributesValuesVariant2 && workflowExecutionTraceSummaryAttributesValuesVariant2 != null)
+            else if (WorkflowExecutionTraceSummaryAttributesValuesVariant2 is { } __value1 && workflowExecutionTraceSummaryAttributesValuesVariant2 != null)
             {
-                return workflowExecutionTraceSummaryAttributesValuesVariant2(WorkflowExecutionTraceSummaryAttributesValuesVariant2!);
+                return workflowExecutionTraceSummaryAttributesValuesVariant2(__value1);
             }
-            else if (IsWorkflowExecutionTraceSummaryAttributesValuesVariant3 && workflowExecutionTraceSummaryAttributesValuesVariant3 != null)
+            else if (WorkflowExecutionTraceSummaryAttributesValuesVariant3 is { } __value2 && workflowExecutionTraceSummaryAttributesValuesVariant3 != null)
             {
-                return workflowExecutionTraceSummaryAttributesValuesVariant3(WorkflowExecutionTraceSummaryAttributesValuesVariant3!);
+                return workflowExecutionTraceSummaryAttributesValuesVariant3(__value2);
             }
-            else if (IsWorkflowExecutionTraceSummaryAttributesValuesVariant4 && workflowExecutionTraceSummaryAttributesValuesVariant4 != null)
+            else if (WorkflowExecutionTraceSummaryAttributesValuesVariant4 is { } __value3 && workflowExecutionTraceSummaryAttributesValuesVariant4 != null)
             {
-                return workflowExecutionTraceSummaryAttributesValuesVariant4(WorkflowExecutionTraceSummaryAttributesValuesVariant4!);
+                return workflowExecutionTraceSummaryAttributesValuesVariant4(__value3);
             }
-            else if (IsWorkflowExecutionTraceSummaryAttributesValuesVariant5 && workflowExecutionTraceSummaryAttributesValuesVariant5 != null)
+            else if (WorkflowExecutionTraceSummaryAttributesValuesVariant5 is { } __value4 && workflowExecutionTraceSummaryAttributesValuesVariant5 != null)
             {
-                return workflowExecutionTraceSummaryAttributesValuesVariant5(WorkflowExecutionTraceSummaryAttributesValuesVariant5!);
+                return workflowExecutionTraceSummaryAttributesValuesVariant5(__value4);
             }
 
             return default(TResult);
@@ -393,25 +393,25 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsWorkflowExecutionTraceSummaryAttributesValuesVariant1)
+            if (WorkflowExecutionTraceSummaryAttributesValuesVariant1 is { } __value0)
             {
-                workflowExecutionTraceSummaryAttributesValuesVariant1?.Invoke(WorkflowExecutionTraceSummaryAttributesValuesVariant1!);
+                workflowExecutionTraceSummaryAttributesValuesVariant1?.Invoke(__value0);
             }
-            else if (IsWorkflowExecutionTraceSummaryAttributesValuesVariant2)
+            else if (WorkflowExecutionTraceSummaryAttributesValuesVariant2 is { } __value1)
             {
-                workflowExecutionTraceSummaryAttributesValuesVariant2?.Invoke(WorkflowExecutionTraceSummaryAttributesValuesVariant2!);
+                workflowExecutionTraceSummaryAttributesValuesVariant2?.Invoke(__value1);
             }
-            else if (IsWorkflowExecutionTraceSummaryAttributesValuesVariant3)
+            else if (WorkflowExecutionTraceSummaryAttributesValuesVariant3 is { } __value2)
             {
-                workflowExecutionTraceSummaryAttributesValuesVariant3?.Invoke(WorkflowExecutionTraceSummaryAttributesValuesVariant3!);
+                workflowExecutionTraceSummaryAttributesValuesVariant3?.Invoke(__value2);
             }
-            else if (IsWorkflowExecutionTraceSummaryAttributesValuesVariant4)
+            else if (WorkflowExecutionTraceSummaryAttributesValuesVariant4 is { } __value3)
             {
-                workflowExecutionTraceSummaryAttributesValuesVariant4?.Invoke(WorkflowExecutionTraceSummaryAttributesValuesVariant4!);
+                workflowExecutionTraceSummaryAttributesValuesVariant4?.Invoke(__value3);
             }
-            else if (IsWorkflowExecutionTraceSummaryAttributesValuesVariant5)
+            else if (WorkflowExecutionTraceSummaryAttributesValuesVariant5 is { } __value4)
             {
-                workflowExecutionTraceSummaryAttributesValuesVariant5?.Invoke(WorkflowExecutionTraceSummaryAttributesValuesVariant5!);
+                workflowExecutionTraceSummaryAttributesValuesVariant5?.Invoke(__value4);
             }
         }
 
@@ -431,25 +431,25 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsWorkflowExecutionTraceSummaryAttributesValuesVariant1)
+            if (WorkflowExecutionTraceSummaryAttributesValuesVariant1 is { } __value0)
             {
-                workflowExecutionTraceSummaryAttributesValuesVariant1?.Invoke(WorkflowExecutionTraceSummaryAttributesValuesVariant1!);
+                workflowExecutionTraceSummaryAttributesValuesVariant1?.Invoke(__value0);
             }
-            else if (IsWorkflowExecutionTraceSummaryAttributesValuesVariant2)
+            else if (WorkflowExecutionTraceSummaryAttributesValuesVariant2 is { } __value1)
             {
-                workflowExecutionTraceSummaryAttributesValuesVariant2?.Invoke(WorkflowExecutionTraceSummaryAttributesValuesVariant2!);
+                workflowExecutionTraceSummaryAttributesValuesVariant2?.Invoke(__value1);
             }
-            else if (IsWorkflowExecutionTraceSummaryAttributesValuesVariant3)
+            else if (WorkflowExecutionTraceSummaryAttributesValuesVariant3 is { } __value2)
             {
-                workflowExecutionTraceSummaryAttributesValuesVariant3?.Invoke(WorkflowExecutionTraceSummaryAttributesValuesVariant3!);
+                workflowExecutionTraceSummaryAttributesValuesVariant3?.Invoke(__value2);
             }
-            else if (IsWorkflowExecutionTraceSummaryAttributesValuesVariant4)
+            else if (WorkflowExecutionTraceSummaryAttributesValuesVariant4 is { } __value3)
             {
-                workflowExecutionTraceSummaryAttributesValuesVariant4?.Invoke(WorkflowExecutionTraceSummaryAttributesValuesVariant4!);
+                workflowExecutionTraceSummaryAttributesValuesVariant4?.Invoke(__value3);
             }
-            else if (IsWorkflowExecutionTraceSummaryAttributesValuesVariant5)
+            else if (WorkflowExecutionTraceSummaryAttributesValuesVariant5 is { } __value4)
             {
-                workflowExecutionTraceSummaryAttributesValuesVariant5?.Invoke(WorkflowExecutionTraceSummaryAttributesValuesVariant5!);
+                workflowExecutionTraceSummaryAttributesValuesVariant5?.Invoke(__value4);
             }
         }
 

@@ -47,8 +47,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.SpeechStreamAudioDelta PickSpeechAudioDelta() => IsSpeechAudioDelta
-            ? SpeechAudioDelta!
+        public global::Mistral.SpeechStreamAudioDelta PickSpeechAudioDelta() => SpeechAudioDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SpeechAudioDelta' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.SpeechStreamDone PickSpeechAudioDone() => IsSpeechAudioDone
-            ? SpeechAudioDone!
+        public global::Mistral.SpeechStreamDone PickSpeechAudioDone() => SpeechAudioDone is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SpeechAudioDone' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -185,13 +185,13 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsSpeechAudioDelta && speechAudioDelta != null)
+            if (SpeechAudioDelta is { } __value0 && speechAudioDelta != null)
             {
-                return speechAudioDelta(SpeechAudioDelta!);
+                return speechAudioDelta(__value0);
             }
-            else if (IsSpeechAudioDone && speechAudioDone != null)
+            else if (SpeechAudioDone is { } __value1 && speechAudioDone != null)
             {
-                return speechAudioDone(SpeechAudioDone!);
+                return speechAudioDone(__value1);
             }
 
             return default(TResult);
@@ -211,13 +211,13 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsSpeechAudioDelta)
+            if (SpeechAudioDelta is { } __value0)
             {
-                speechAudioDelta?.Invoke(SpeechAudioDelta!);
+                speechAudioDelta?.Invoke(__value0);
             }
-            else if (IsSpeechAudioDone)
+            else if (SpeechAudioDone is { } __value1)
             {
-                speechAudioDone?.Invoke(SpeechAudioDone!);
+                speechAudioDone?.Invoke(__value1);
             }
         }
 
@@ -234,13 +234,13 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsSpeechAudioDelta)
+            if (SpeechAudioDelta is { } __value0)
             {
-                speechAudioDelta?.Invoke(SpeechAudioDelta!);
+                speechAudioDelta?.Invoke(__value0);
             }
-            else if (IsSpeechAudioDone)
+            else if (SpeechAudioDone is { } __value1)
             {
-                speechAudioDone?.Invoke(SpeechAudioDone!);
+                speechAudioDone?.Invoke(__value1);
             }
         }
 
