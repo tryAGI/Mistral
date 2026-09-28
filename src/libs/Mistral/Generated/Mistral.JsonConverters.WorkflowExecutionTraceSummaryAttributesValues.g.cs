@@ -296,31 +296,31 @@ namespace Mistral.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.WorkflowExecutionTraceSummaryAttributesValuesVariant1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickWorkflowExecutionTraceSummaryAttributesValuesVariant1(), typeInfo);
             }
             else if (value.IsWorkflowExecutionTraceSummaryAttributesValuesVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(int), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<int> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(int).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.WorkflowExecutionTraceSummaryAttributesValuesVariant2!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickWorkflowExecutionTraceSummaryAttributesValuesVariant2(), typeInfo);
             }
             else if (value.IsWorkflowExecutionTraceSummaryAttributesValuesVariant3)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(double), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<double> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(double).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.WorkflowExecutionTraceSummaryAttributesValuesVariant3!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickWorkflowExecutionTraceSummaryAttributesValuesVariant3(), typeInfo);
             }
             else if (value.IsWorkflowExecutionTraceSummaryAttributesValuesVariant4)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(bool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<bool> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(bool).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.WorkflowExecutionTraceSummaryAttributesValuesVariant4!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickWorkflowExecutionTraceSummaryAttributesValuesVariant4(), typeInfo);
             }
             else if (value.IsWorkflowExecutionTraceSummaryAttributesValuesVariant5)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.WorkflowExecutionTraceSummaryAttributesValuesVariant5!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickWorkflowExecutionTraceSummaryAttributesValuesVariant5(), typeInfo);
             }
         }
     }

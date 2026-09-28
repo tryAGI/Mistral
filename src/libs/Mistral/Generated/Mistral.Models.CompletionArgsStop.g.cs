@@ -42,8 +42,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public string PickCompletionArgsStopVariant1() => IsCompletionArgsStopVariant1
-            ? CompletionArgsStopVariant1!
+        public string PickCompletionArgsStopVariant1() => CompletionArgsStopVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CompletionArgsStopVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<string> PickCompletionArgsStopVariant2() => IsCompletionArgsStopVariant2
-            ? CompletionArgsStopVariant2!
+        public global::System.Collections.Generic.IList<string> PickCompletionArgsStopVariant2() => CompletionArgsStopVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CompletionArgsStopVariant2' but the value was {ToString()}.");
 
         /// <summary>
@@ -116,8 +116,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public object PickCompletionArgsStopVariant3() => IsCompletionArgsStopVariant3
-            ? CompletionArgsStopVariant3!
+        public object PickCompletionArgsStopVariant3() => CompletionArgsStopVariant3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CompletionArgsStopVariant3' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -196,17 +196,17 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsCompletionArgsStopVariant1 && completionArgsStopVariant1 != null)
+            if (CompletionArgsStopVariant1 is { } __value0 && completionArgsStopVariant1 != null)
             {
-                return completionArgsStopVariant1(CompletionArgsStopVariant1!);
+                return completionArgsStopVariant1(__value0);
             }
-            else if (IsCompletionArgsStopVariant2 && completionArgsStopVariant2 != null)
+            else if (CompletionArgsStopVariant2 is { } __value1 && completionArgsStopVariant2 != null)
             {
-                return completionArgsStopVariant2(CompletionArgsStopVariant2!);
+                return completionArgsStopVariant2(__value1);
             }
-            else if (IsCompletionArgsStopVariant3 && completionArgsStopVariant3 != null)
+            else if (CompletionArgsStopVariant3 is { } __value2 && completionArgsStopVariant3 != null)
             {
-                return completionArgsStopVariant3(CompletionArgsStopVariant3!);
+                return completionArgsStopVariant3(__value2);
             }
 
             return default(TResult);
@@ -228,17 +228,17 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsCompletionArgsStopVariant1)
+            if (CompletionArgsStopVariant1 is { } __value0)
             {
-                completionArgsStopVariant1?.Invoke(CompletionArgsStopVariant1!);
+                completionArgsStopVariant1?.Invoke(__value0);
             }
-            else if (IsCompletionArgsStopVariant2)
+            else if (CompletionArgsStopVariant2 is { } __value1)
             {
-                completionArgsStopVariant2?.Invoke(CompletionArgsStopVariant2!);
+                completionArgsStopVariant2?.Invoke(__value1);
             }
-            else if (IsCompletionArgsStopVariant3)
+            else if (CompletionArgsStopVariant3 is { } __value2)
             {
-                completionArgsStopVariant3?.Invoke(CompletionArgsStopVariant3!);
+                completionArgsStopVariant3?.Invoke(__value2);
             }
         }
 
@@ -256,17 +256,17 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsCompletionArgsStopVariant1)
+            if (CompletionArgsStopVariant1 is { } __value0)
             {
-                completionArgsStopVariant1?.Invoke(CompletionArgsStopVariant1!);
+                completionArgsStopVariant1?.Invoke(__value0);
             }
-            else if (IsCompletionArgsStopVariant2)
+            else if (CompletionArgsStopVariant2 is { } __value1)
             {
-                completionArgsStopVariant2?.Invoke(CompletionArgsStopVariant2!);
+                completionArgsStopVariant2?.Invoke(__value1);
             }
-            else if (IsCompletionArgsStopVariant3)
+            else if (CompletionArgsStopVariant3 is { } __value2)
             {
-                completionArgsStopVariant3?.Invoke(CompletionArgsStopVariant3!);
+                completionArgsStopVariant3?.Invoke(__value2);
             }
         }
 

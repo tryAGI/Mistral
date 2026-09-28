@@ -47,8 +47,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.TranscriptionStreamTextDelta PickTranscriptionTextDelta() => IsTranscriptionTextDelta
-            ? TranscriptionTextDelta!
+        public global::Mistral.TranscriptionStreamTextDelta PickTranscriptionTextDelta() => TranscriptionTextDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TranscriptionTextDelta' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.TranscriptionStreamLanguage PickTranscriptionLanguage() => IsTranscriptionLanguage
-            ? TranscriptionLanguage!
+        public global::Mistral.TranscriptionStreamLanguage PickTranscriptionLanguage() => TranscriptionLanguage is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TranscriptionLanguage' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.TranscriptionStreamSegmentDelta PickTranscriptionSegment() => IsTranscriptionSegment
-            ? TranscriptionSegment!
+        public global::Mistral.TranscriptionStreamSegmentDelta PickTranscriptionSegment() => TranscriptionSegment is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TranscriptionSegment' but the value was {ToString()}.");
 
         /// <summary>
@@ -158,8 +158,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.TranscriptionStreamDone PickTranscriptionDone() => IsTranscriptionDone
-            ? TranscriptionDone!
+        public global::Mistral.TranscriptionStreamDone PickTranscriptionDone() => TranscriptionDone is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TranscriptionDone' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -315,21 +315,21 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsTranscriptionTextDelta && transcriptionTextDelta != null)
+            if (TranscriptionTextDelta is { } __value0 && transcriptionTextDelta != null)
             {
-                return transcriptionTextDelta(TranscriptionTextDelta!);
+                return transcriptionTextDelta(__value0);
             }
-            else if (IsTranscriptionLanguage && transcriptionLanguage != null)
+            else if (TranscriptionLanguage is { } __value1 && transcriptionLanguage != null)
             {
-                return transcriptionLanguage(TranscriptionLanguage!);
+                return transcriptionLanguage(__value1);
             }
-            else if (IsTranscriptionSegment && transcriptionSegment != null)
+            else if (TranscriptionSegment is { } __value2 && transcriptionSegment != null)
             {
-                return transcriptionSegment(TranscriptionSegment!);
+                return transcriptionSegment(__value2);
             }
-            else if (IsTranscriptionDone && transcriptionDone != null)
+            else if (TranscriptionDone is { } __value3 && transcriptionDone != null)
             {
-                return transcriptionDone(TranscriptionDone!);
+                return transcriptionDone(__value3);
             }
 
             return default(TResult);
@@ -353,21 +353,21 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsTranscriptionTextDelta)
+            if (TranscriptionTextDelta is { } __value0)
             {
-                transcriptionTextDelta?.Invoke(TranscriptionTextDelta!);
+                transcriptionTextDelta?.Invoke(__value0);
             }
-            else if (IsTranscriptionLanguage)
+            else if (TranscriptionLanguage is { } __value1)
             {
-                transcriptionLanguage?.Invoke(TranscriptionLanguage!);
+                transcriptionLanguage?.Invoke(__value1);
             }
-            else if (IsTranscriptionSegment)
+            else if (TranscriptionSegment is { } __value2)
             {
-                transcriptionSegment?.Invoke(TranscriptionSegment!);
+                transcriptionSegment?.Invoke(__value2);
             }
-            else if (IsTranscriptionDone)
+            else if (TranscriptionDone is { } __value3)
             {
-                transcriptionDone?.Invoke(TranscriptionDone!);
+                transcriptionDone?.Invoke(__value3);
             }
         }
 
@@ -386,21 +386,21 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsTranscriptionTextDelta)
+            if (TranscriptionTextDelta is { } __value0)
             {
-                transcriptionTextDelta?.Invoke(TranscriptionTextDelta!);
+                transcriptionTextDelta?.Invoke(__value0);
             }
-            else if (IsTranscriptionLanguage)
+            else if (TranscriptionLanguage is { } __value1)
             {
-                transcriptionLanguage?.Invoke(TranscriptionLanguage!);
+                transcriptionLanguage?.Invoke(__value1);
             }
-            else if (IsTranscriptionSegment)
+            else if (TranscriptionSegment is { } __value2)
             {
-                transcriptionSegment?.Invoke(TranscriptionSegment!);
+                transcriptionSegment?.Invoke(__value2);
             }
-            else if (IsTranscriptionDone)
+            else if (TranscriptionDone is { } __value3)
             {
-                transcriptionDone?.Invoke(TranscriptionDone!);
+                transcriptionDone?.Invoke(__value3);
             }
         }
 

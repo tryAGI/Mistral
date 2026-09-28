@@ -47,8 +47,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.OCRTextBlock PickText() => IsText
-            ? Text!
+        public global::Mistral.OCRTextBlock PickText() => Text is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.OCRListBlock PickList() => IsList
-            ? List!
+        public global::Mistral.OCRListBlock PickList() => List is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'List' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.OCRImageBlock PickImage() => IsImage
-            ? Image!
+        public global::Mistral.OCRImageBlock PickImage() => Image is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Image' but the value was {ToString()}.");
 
         /// <summary>
@@ -158,8 +158,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.OCRTableBlock PickTable() => IsTable
-            ? Table!
+        public global::Mistral.OCRTableBlock PickTable() => Table is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Table' but the value was {ToString()}.");
 
         /// <summary>
@@ -195,8 +195,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.OCRTitleBlock PickTitle() => IsTitle
-            ? Title!
+        public global::Mistral.OCRTitleBlock PickTitle() => Title is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Title' but the value was {ToString()}.");
 
         /// <summary>
@@ -232,8 +232,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.OCREquationBlock PickEquation() => IsEquation
-            ? Equation!
+        public global::Mistral.OCREquationBlock PickEquation() => Equation is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Equation' but the value was {ToString()}.");
 
         /// <summary>
@@ -269,8 +269,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.OCRCaptionBlock PickCaption() => IsCaption
-            ? Caption!
+        public global::Mistral.OCRCaptionBlock PickCaption() => Caption is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Caption' but the value was {ToString()}.");
 
         /// <summary>
@@ -306,8 +306,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.OCRCodeBlock PickCode() => IsCode
-            ? Code!
+        public global::Mistral.OCRCodeBlock PickCode() => Code is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Code' but the value was {ToString()}.");
 
         /// <summary>
@@ -343,8 +343,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.OCRReferencesBlock PickReferences() => IsReferences
-            ? References!
+        public global::Mistral.OCRReferencesBlock PickReferences() => References is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'References' but the value was {ToString()}.");
 
         /// <summary>
@@ -380,8 +380,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.OCRAsideTextBlock PickAsideText() => IsAsideText
-            ? AsideText!
+        public global::Mistral.OCRAsideTextBlock PickAsideText() => AsideText is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AsideText' but the value was {ToString()}.");
 
         /// <summary>
@@ -417,8 +417,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.OCRHeaderBlock PickHeader() => IsHeader
-            ? Header!
+        public global::Mistral.OCRHeaderBlock PickHeader() => Header is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Header' but the value was {ToString()}.");
 
         /// <summary>
@@ -454,8 +454,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.OCRFooterBlock PickFooter() => IsFooter
-            ? Footer!
+        public global::Mistral.OCRFooterBlock PickFooter() => Footer is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Footer' but the value was {ToString()}.");
 
         /// <summary>
@@ -491,8 +491,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.OCRSignatureBlock PickSignature() => IsSignature
-            ? Signature!
+        public global::Mistral.OCRSignatureBlock PickSignature() => Signature is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Signature' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -900,57 +900,57 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsText && text != null)
+            if (Text is { } __value0 && text != null)
             {
-                return text(Text!);
+                return text(__value0);
             }
-            else if (IsList && list != null)
+            else if (List is { } __value1 && list != null)
             {
-                return list(List!);
+                return list(__value1);
             }
-            else if (IsImage && image != null)
+            else if (Image is { } __value2 && image != null)
             {
-                return image(Image!);
+                return image(__value2);
             }
-            else if (IsTable && table != null)
+            else if (Table is { } __value3 && table != null)
             {
-                return table(Table!);
+                return table(__value3);
             }
-            else if (IsTitle && title != null)
+            else if (Title is { } __value4 && title != null)
             {
-                return title(Title!);
+                return title(__value4);
             }
-            else if (IsEquation && equation != null)
+            else if (Equation is { } __value5 && equation != null)
             {
-                return equation(Equation!);
+                return equation(__value5);
             }
-            else if (IsCaption && caption != null)
+            else if (Caption is { } __value6 && caption != null)
             {
-                return caption(Caption!);
+                return caption(__value6);
             }
-            else if (IsCode && code != null)
+            else if (Code is { } __value7 && code != null)
             {
-                return code(Code!);
+                return code(__value7);
             }
-            else if (IsReferences && references != null)
+            else if (References is { } __value8 && references != null)
             {
-                return references(References!);
+                return references(__value8);
             }
-            else if (IsAsideText && asideText != null)
+            else if (AsideText is { } __value9 && asideText != null)
             {
-                return asideText(AsideText!);
+                return asideText(__value9);
             }
-            else if (IsHeader && header != null)
+            else if (Header is { } __value10 && header != null)
             {
-                return header(Header!);
+                return header(__value10);
             }
-            else if (IsFooter && footer != null)
+            else if (Footer is { } __value11 && footer != null)
             {
-                return footer(Footer!);
+                return footer(__value11);
             }
-            else if (IsSignature && signature != null)
+            else if (Signature is { } __value12 && signature != null)
             {
-                return signature(Signature!);
+                return signature(__value12);
             }
 
             return default(TResult);
@@ -992,57 +992,57 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsText)
+            if (Text is { } __value0)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value0);
             }
-            else if (IsList)
+            else if (List is { } __value1)
             {
-                list?.Invoke(List!);
+                list?.Invoke(__value1);
             }
-            else if (IsImage)
+            else if (Image is { } __value2)
             {
-                image?.Invoke(Image!);
+                image?.Invoke(__value2);
             }
-            else if (IsTable)
+            else if (Table is { } __value3)
             {
-                table?.Invoke(Table!);
+                table?.Invoke(__value3);
             }
-            else if (IsTitle)
+            else if (Title is { } __value4)
             {
-                title?.Invoke(Title!);
+                title?.Invoke(__value4);
             }
-            else if (IsEquation)
+            else if (Equation is { } __value5)
             {
-                equation?.Invoke(Equation!);
+                equation?.Invoke(__value5);
             }
-            else if (IsCaption)
+            else if (Caption is { } __value6)
             {
-                caption?.Invoke(Caption!);
+                caption?.Invoke(__value6);
             }
-            else if (IsCode)
+            else if (Code is { } __value7)
             {
-                code?.Invoke(Code!);
+                code?.Invoke(__value7);
             }
-            else if (IsReferences)
+            else if (References is { } __value8)
             {
-                references?.Invoke(References!);
+                references?.Invoke(__value8);
             }
-            else if (IsAsideText)
+            else if (AsideText is { } __value9)
             {
-                asideText?.Invoke(AsideText!);
+                asideText?.Invoke(__value9);
             }
-            else if (IsHeader)
+            else if (Header is { } __value10)
             {
-                header?.Invoke(Header!);
+                header?.Invoke(__value10);
             }
-            else if (IsFooter)
+            else if (Footer is { } __value11)
             {
-                footer?.Invoke(Footer!);
+                footer?.Invoke(__value11);
             }
-            else if (IsSignature)
+            else if (Signature is { } __value12)
             {
-                signature?.Invoke(Signature!);
+                signature?.Invoke(__value12);
             }
         }
 
@@ -1070,57 +1070,57 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsText)
+            if (Text is { } __value0)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value0);
             }
-            else if (IsList)
+            else if (List is { } __value1)
             {
-                list?.Invoke(List!);
+                list?.Invoke(__value1);
             }
-            else if (IsImage)
+            else if (Image is { } __value2)
             {
-                image?.Invoke(Image!);
+                image?.Invoke(__value2);
             }
-            else if (IsTable)
+            else if (Table is { } __value3)
             {
-                table?.Invoke(Table!);
+                table?.Invoke(__value3);
             }
-            else if (IsTitle)
+            else if (Title is { } __value4)
             {
-                title?.Invoke(Title!);
+                title?.Invoke(__value4);
             }
-            else if (IsEquation)
+            else if (Equation is { } __value5)
             {
-                equation?.Invoke(Equation!);
+                equation?.Invoke(__value5);
             }
-            else if (IsCaption)
+            else if (Caption is { } __value6)
             {
-                caption?.Invoke(Caption!);
+                caption?.Invoke(__value6);
             }
-            else if (IsCode)
+            else if (Code is { } __value7)
             {
-                code?.Invoke(Code!);
+                code?.Invoke(__value7);
             }
-            else if (IsReferences)
+            else if (References is { } __value8)
             {
-                references?.Invoke(References!);
+                references?.Invoke(__value8);
             }
-            else if (IsAsideText)
+            else if (AsideText is { } __value9)
             {
-                asideText?.Invoke(AsideText!);
+                asideText?.Invoke(__value9);
             }
-            else if (IsHeader)
+            else if (Header is { } __value10)
             {
-                header?.Invoke(Header!);
+                header?.Invoke(__value10);
             }
-            else if (IsFooter)
+            else if (Footer is { } __value11)
             {
-                footer?.Invoke(Footer!);
+                footer?.Invoke(__value11);
             }
-            else if (IsSignature)
+            else if (Signature is { } __value12)
             {
-                signature?.Invoke(Signature!);
+                signature?.Invoke(__value12);
             }
         }
 

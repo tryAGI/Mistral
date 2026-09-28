@@ -42,8 +42,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public object PickFunctionCallEntryArgumentsVariant1() => IsFunctionCallEntryArgumentsVariant1
-            ? FunctionCallEntryArgumentsVariant1!
+        public object PickFunctionCallEntryArgumentsVariant1() => FunctionCallEntryArgumentsVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FunctionCallEntryArgumentsVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public string PickFunctionCallEntryArgumentsVariant2() => IsFunctionCallEntryArgumentsVariant2
-            ? FunctionCallEntryArgumentsVariant2!
+        public string PickFunctionCallEntryArgumentsVariant2() => FunctionCallEntryArgumentsVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FunctionCallEntryArgumentsVariant2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -154,13 +154,13 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsFunctionCallEntryArgumentsVariant1 && functionCallEntryArgumentsVariant1 != null)
+            if (FunctionCallEntryArgumentsVariant1 is { } __value0 && functionCallEntryArgumentsVariant1 != null)
             {
-                return functionCallEntryArgumentsVariant1(FunctionCallEntryArgumentsVariant1!);
+                return functionCallEntryArgumentsVariant1(__value0);
             }
-            else if (IsFunctionCallEntryArgumentsVariant2 && functionCallEntryArgumentsVariant2 != null)
+            else if (FunctionCallEntryArgumentsVariant2 is { } __value1 && functionCallEntryArgumentsVariant2 != null)
             {
-                return functionCallEntryArgumentsVariant2(FunctionCallEntryArgumentsVariant2!);
+                return functionCallEntryArgumentsVariant2(__value1);
             }
 
             return default(TResult);
@@ -180,13 +180,13 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsFunctionCallEntryArgumentsVariant1)
+            if (FunctionCallEntryArgumentsVariant1 is { } __value0)
             {
-                functionCallEntryArgumentsVariant1?.Invoke(FunctionCallEntryArgumentsVariant1!);
+                functionCallEntryArgumentsVariant1?.Invoke(__value0);
             }
-            else if (IsFunctionCallEntryArgumentsVariant2)
+            else if (FunctionCallEntryArgumentsVariant2 is { } __value1)
             {
-                functionCallEntryArgumentsVariant2?.Invoke(FunctionCallEntryArgumentsVariant2!);
+                functionCallEntryArgumentsVariant2?.Invoke(__value1);
             }
         }
 
@@ -203,13 +203,13 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsFunctionCallEntryArgumentsVariant1)
+            if (FunctionCallEntryArgumentsVariant1 is { } __value0)
             {
-                functionCallEntryArgumentsVariant1?.Invoke(FunctionCallEntryArgumentsVariant1!);
+                functionCallEntryArgumentsVariant1?.Invoke(__value0);
             }
-            else if (IsFunctionCallEntryArgumentsVariant2)
+            else if (FunctionCallEntryArgumentsVariant2 is { } __value1)
             {
-                functionCallEntryArgumentsVariant2?.Invoke(FunctionCallEntryArgumentsVariant2!);
+                functionCallEntryArgumentsVariant2?.Invoke(__value1);
             }
         }
 

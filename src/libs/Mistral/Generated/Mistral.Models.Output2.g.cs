@@ -47,8 +47,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.JudgeClassificationOutput PickClassification() => IsClassification
-            ? Classification!
+        public global::Mistral.JudgeClassificationOutput PickClassification() => Classification is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Classification' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.JudgeRegressionOutput PickRegression() => IsRegression
-            ? Regression!
+        public global::Mistral.JudgeRegressionOutput PickRegression() => Regression is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Regression' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -185,13 +185,13 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsClassification && classification != null)
+            if (Classification is { } __value0 && classification != null)
             {
-                return classification(Classification!);
+                return classification(__value0);
             }
-            else if (IsRegression && regression != null)
+            else if (Regression is { } __value1 && regression != null)
             {
-                return regression(Regression!);
+                return regression(__value1);
             }
 
             return default(TResult);
@@ -211,13 +211,13 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsClassification)
+            if (Classification is { } __value0)
             {
-                classification?.Invoke(Classification!);
+                classification?.Invoke(__value0);
             }
-            else if (IsRegression)
+            else if (Regression is { } __value1)
             {
-                regression?.Invoke(Regression!);
+                regression?.Invoke(__value1);
             }
         }
 
@@ -234,13 +234,13 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsClassification)
+            if (Classification is { } __value0)
             {
-                classification?.Invoke(Classification!);
+                classification?.Invoke(__value0);
             }
-            else if (IsRegression)
+            else if (Regression is { } __value1)
             {
-                regression?.Invoke(Regression!);
+                regression?.Invoke(__value1);
             }
         }
 

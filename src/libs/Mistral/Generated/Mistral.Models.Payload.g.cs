@@ -48,8 +48,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.JSONPayloadResponse PickJson() => IsJson
-            ? Json!
+        public global::Mistral.JSONPayloadResponse PickJson() => Json is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Json' but the value was {ToString()}.");
 
         /// <summary>
@@ -86,8 +86,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.JSONPatchPayloadResponse PickJsonPatch() => IsJsonPatch
-            ? JsonPatch!
+        public global::Mistral.JSONPatchPayloadResponse PickJsonPatch() => JsonPatch is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'JsonPatch' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -187,13 +187,13 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsJson && json != null)
+            if (Json is { } __value0 && json != null)
             {
-                return json(Json!);
+                return json(__value0);
             }
-            else if (IsJsonPatch && jsonPatch != null)
+            else if (JsonPatch is { } __value1 && jsonPatch != null)
             {
-                return jsonPatch(JsonPatch!);
+                return jsonPatch(__value1);
             }
 
             return default(TResult);
@@ -213,13 +213,13 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsJson)
+            if (Json is { } __value0)
             {
-                json?.Invoke(Json!);
+                json?.Invoke(__value0);
             }
-            else if (IsJsonPatch)
+            else if (JsonPatch is { } __value1)
             {
-                jsonPatch?.Invoke(JsonPatch!);
+                jsonPatch?.Invoke(__value1);
             }
         }
 
@@ -236,13 +236,13 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsJson)
+            if (Json is { } __value0)
             {
-                json?.Invoke(Json!);
+                json?.Invoke(__value0);
             }
-            else if (IsJsonPatch)
+            else if (JsonPatch is { } __value1)
             {
-                jsonPatch?.Invoke(JsonPatch!);
+                jsonPatch?.Invoke(__value1);
             }
         }
 

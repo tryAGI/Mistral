@@ -42,8 +42,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.TextChunk PickTextChunk() => IsTextChunk
-            ? TextChunk!
+        public global::Mistral.TextChunk PickTextChunk() => TextChunk is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TextChunk' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.ImageURLChunk PickImageURLChunk() => IsImageURLChunk
-            ? ImageURLChunk!
+        public global::Mistral.ImageURLChunk PickImageURLChunk() => ImageURLChunk is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ImageURLChunk' but the value was {ToString()}.");
 
         /// <summary>
@@ -116,8 +116,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.ToolFileChunk PickToolFileChunk() => IsToolFileChunk
-            ? ToolFileChunk!
+        public global::Mistral.ToolFileChunk PickToolFileChunk() => ToolFileChunk is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolFileChunk' but the value was {ToString()}.");
 
         /// <summary>
@@ -153,8 +153,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.DocumentURLChunk PickDocumentURLChunk() => IsDocumentURLChunk
-            ? DocumentURLChunk!
+        public global::Mistral.DocumentURLChunk PickDocumentURLChunk() => DocumentURLChunk is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'DocumentURLChunk' but the value was {ToString()}.");
 
         /// <summary>
@@ -190,8 +190,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.ThinkChunk PickThinkChunk() => IsThinkChunk
-            ? ThinkChunk!
+        public global::Mistral.ThinkChunk PickThinkChunk() => ThinkChunk is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ThinkChunk' but the value was {ToString()}.");
 
         /// <summary>
@@ -227,8 +227,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.ToolReferenceChunk PickToolReferenceChunk() => IsToolReferenceChunk
-            ? ToolReferenceChunk!
+        public global::Mistral.ToolReferenceChunk PickToolReferenceChunk() => ToolReferenceChunk is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolReferenceChunk' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -437,29 +437,29 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsTextChunk && textChunk != null)
+            if (TextChunk is { } __value0 && textChunk != null)
             {
-                return textChunk(TextChunk!);
+                return textChunk(__value0);
             }
-            else if (IsImageURLChunk && imageURLChunk != null)
+            else if (ImageURLChunk is { } __value1 && imageURLChunk != null)
             {
-                return imageURLChunk(ImageURLChunk!);
+                return imageURLChunk(__value1);
             }
-            else if (IsToolFileChunk && toolFileChunk != null)
+            else if (ToolFileChunk is { } __value2 && toolFileChunk != null)
             {
-                return toolFileChunk(ToolFileChunk!);
+                return toolFileChunk(__value2);
             }
-            else if (IsDocumentURLChunk && documentURLChunk != null)
+            else if (DocumentURLChunk is { } __value3 && documentURLChunk != null)
             {
-                return documentURLChunk(DocumentURLChunk!);
+                return documentURLChunk(__value3);
             }
-            else if (IsThinkChunk && thinkChunk != null)
+            else if (ThinkChunk is { } __value4 && thinkChunk != null)
             {
-                return thinkChunk(ThinkChunk!);
+                return thinkChunk(__value4);
             }
-            else if (IsToolReferenceChunk && toolReferenceChunk != null)
+            else if (ToolReferenceChunk is { } __value5 && toolReferenceChunk != null)
             {
-                return toolReferenceChunk(ToolReferenceChunk!);
+                return toolReferenceChunk(__value5);
             }
 
             return default(TResult);
@@ -487,29 +487,29 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsTextChunk)
+            if (TextChunk is { } __value0)
             {
-                textChunk?.Invoke(TextChunk!);
+                textChunk?.Invoke(__value0);
             }
-            else if (IsImageURLChunk)
+            else if (ImageURLChunk is { } __value1)
             {
-                imageURLChunk?.Invoke(ImageURLChunk!);
+                imageURLChunk?.Invoke(__value1);
             }
-            else if (IsToolFileChunk)
+            else if (ToolFileChunk is { } __value2)
             {
-                toolFileChunk?.Invoke(ToolFileChunk!);
+                toolFileChunk?.Invoke(__value2);
             }
-            else if (IsDocumentURLChunk)
+            else if (DocumentURLChunk is { } __value3)
             {
-                documentURLChunk?.Invoke(DocumentURLChunk!);
+                documentURLChunk?.Invoke(__value3);
             }
-            else if (IsThinkChunk)
+            else if (ThinkChunk is { } __value4)
             {
-                thinkChunk?.Invoke(ThinkChunk!);
+                thinkChunk?.Invoke(__value4);
             }
-            else if (IsToolReferenceChunk)
+            else if (ToolReferenceChunk is { } __value5)
             {
-                toolReferenceChunk?.Invoke(ToolReferenceChunk!);
+                toolReferenceChunk?.Invoke(__value5);
             }
         }
 
@@ -530,29 +530,29 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsTextChunk)
+            if (TextChunk is { } __value0)
             {
-                textChunk?.Invoke(TextChunk!);
+                textChunk?.Invoke(__value0);
             }
-            else if (IsImageURLChunk)
+            else if (ImageURLChunk is { } __value1)
             {
-                imageURLChunk?.Invoke(ImageURLChunk!);
+                imageURLChunk?.Invoke(__value1);
             }
-            else if (IsToolFileChunk)
+            else if (ToolFileChunk is { } __value2)
             {
-                toolFileChunk?.Invoke(ToolFileChunk!);
+                toolFileChunk?.Invoke(__value2);
             }
-            else if (IsDocumentURLChunk)
+            else if (DocumentURLChunk is { } __value3)
             {
-                documentURLChunk?.Invoke(DocumentURLChunk!);
+                documentURLChunk?.Invoke(__value3);
             }
-            else if (IsThinkChunk)
+            else if (ThinkChunk is { } __value4)
             {
-                thinkChunk?.Invoke(ThinkChunk!);
+                thinkChunk?.Invoke(__value4);
             }
-            else if (IsToolReferenceChunk)
+            else if (ToolReferenceChunk is { } __value5)
             {
-                toolReferenceChunk?.Invoke(ToolReferenceChunk!);
+                toolReferenceChunk?.Invoke(__value5);
             }
         }
 

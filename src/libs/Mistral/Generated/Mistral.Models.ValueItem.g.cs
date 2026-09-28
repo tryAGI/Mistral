@@ -47,8 +47,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.JSONPatchAppend PickAppend() => IsAppend
-            ? Append!
+        public global::Mistral.JSONPatchAppend PickAppend() => Append is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Append' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.JSONPatchAdd PickAdd() => IsAdd
-            ? Add!
+        public global::Mistral.JSONPatchAdd PickAdd() => Add is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Add' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.JSONPatchReplace PickReplace() => IsReplace
-            ? Replace!
+        public global::Mistral.JSONPatchReplace PickReplace() => Replace is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Replace' but the value was {ToString()}.");
 
         /// <summary>
@@ -158,8 +158,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.JSONPatchRemove PickRemove() => IsRemove
-            ? Remove!
+        public global::Mistral.JSONPatchRemove PickRemove() => Remove is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Remove' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -315,21 +315,21 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsAppend && append != null)
+            if (Append is { } __value0 && append != null)
             {
-                return append(Append!);
+                return append(__value0);
             }
-            else if (IsAdd && add != null)
+            else if (Add is { } __value1 && add != null)
             {
-                return add(Add!);
+                return add(__value1);
             }
-            else if (IsReplace && replace != null)
+            else if (Replace is { } __value2 && replace != null)
             {
-                return replace(Replace!);
+                return replace(__value2);
             }
-            else if (IsRemove && remove != null)
+            else if (Remove is { } __value3 && remove != null)
             {
-                return remove(Remove!);
+                return remove(__value3);
             }
 
             return default(TResult);
@@ -353,21 +353,21 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsAppend)
+            if (Append is { } __value0)
             {
-                append?.Invoke(Append!);
+                append?.Invoke(__value0);
             }
-            else if (IsAdd)
+            else if (Add is { } __value1)
             {
-                add?.Invoke(Add!);
+                add?.Invoke(__value1);
             }
-            else if (IsReplace)
+            else if (Replace is { } __value2)
             {
-                replace?.Invoke(Replace!);
+                replace?.Invoke(__value2);
             }
-            else if (IsRemove)
+            else if (Remove is { } __value3)
             {
-                remove?.Invoke(Remove!);
+                remove?.Invoke(__value3);
             }
         }
 
@@ -386,21 +386,21 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsAppend)
+            if (Append is { } __value0)
             {
-                append?.Invoke(Append!);
+                append?.Invoke(__value0);
             }
-            else if (IsAdd)
+            else if (Add is { } __value1)
             {
-                add?.Invoke(Add!);
+                add?.Invoke(__value1);
             }
-            else if (IsReplace)
+            else if (Replace is { } __value2)
             {
-                replace?.Invoke(Replace!);
+                replace?.Invoke(__value2);
             }
-            else if (IsRemove)
+            else if (Remove is { } __value3)
             {
-                remove?.Invoke(Remove!);
+                remove?.Invoke(__value3);
             }
         }
 

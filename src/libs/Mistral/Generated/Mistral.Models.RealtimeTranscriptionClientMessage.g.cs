@@ -47,8 +47,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.RealtimeTranscriptionSessionUpdateMessage PickSessionUpdate() => IsSessionUpdate
-            ? SessionUpdate!
+        public global::Mistral.RealtimeTranscriptionSessionUpdateMessage PickSessionUpdate() => SessionUpdate is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionUpdate' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.RealtimeTranscriptionInputAudioAppend PickInputAudioAppend() => IsInputAudioAppend
-            ? InputAudioAppend!
+        public global::Mistral.RealtimeTranscriptionInputAudioAppend PickInputAudioAppend() => InputAudioAppend is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputAudioAppend' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.RealtimeTranscriptionInputAudioFlush PickInputAudioFlush() => IsInputAudioFlush
-            ? InputAudioFlush!
+        public global::Mistral.RealtimeTranscriptionInputAudioFlush PickInputAudioFlush() => InputAudioFlush is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputAudioFlush' but the value was {ToString()}.");
 
         /// <summary>
@@ -158,8 +158,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.RealtimeTranscriptionInputAudioEnd PickInputAudioEnd() => IsInputAudioEnd
-            ? InputAudioEnd!
+        public global::Mistral.RealtimeTranscriptionInputAudioEnd PickInputAudioEnd() => InputAudioEnd is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputAudioEnd' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -315,21 +315,21 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsSessionUpdate && sessionUpdate != null)
+            if (SessionUpdate is { } __value0 && sessionUpdate != null)
             {
-                return sessionUpdate(SessionUpdate!);
+                return sessionUpdate(__value0);
             }
-            else if (IsInputAudioAppend && inputAudioAppend != null)
+            else if (InputAudioAppend is { } __value1 && inputAudioAppend != null)
             {
-                return inputAudioAppend(InputAudioAppend!);
+                return inputAudioAppend(__value1);
             }
-            else if (IsInputAudioFlush && inputAudioFlush != null)
+            else if (InputAudioFlush is { } __value2 && inputAudioFlush != null)
             {
-                return inputAudioFlush(InputAudioFlush!);
+                return inputAudioFlush(__value2);
             }
-            else if (IsInputAudioEnd && inputAudioEnd != null)
+            else if (InputAudioEnd is { } __value3 && inputAudioEnd != null)
             {
-                return inputAudioEnd(InputAudioEnd!);
+                return inputAudioEnd(__value3);
             }
 
             return default(TResult);
@@ -353,21 +353,21 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsSessionUpdate)
+            if (SessionUpdate is { } __value0)
             {
-                sessionUpdate?.Invoke(SessionUpdate!);
+                sessionUpdate?.Invoke(__value0);
             }
-            else if (IsInputAudioAppend)
+            else if (InputAudioAppend is { } __value1)
             {
-                inputAudioAppend?.Invoke(InputAudioAppend!);
+                inputAudioAppend?.Invoke(__value1);
             }
-            else if (IsInputAudioFlush)
+            else if (InputAudioFlush is { } __value2)
             {
-                inputAudioFlush?.Invoke(InputAudioFlush!);
+                inputAudioFlush?.Invoke(__value2);
             }
-            else if (IsInputAudioEnd)
+            else if (InputAudioEnd is { } __value3)
             {
-                inputAudioEnd?.Invoke(InputAudioEnd!);
+                inputAudioEnd?.Invoke(__value3);
             }
         }
 
@@ -386,21 +386,21 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsSessionUpdate)
+            if (SessionUpdate is { } __value0)
             {
-                sessionUpdate?.Invoke(SessionUpdate!);
+                sessionUpdate?.Invoke(__value0);
             }
-            else if (IsInputAudioAppend)
+            else if (InputAudioAppend is { } __value1)
             {
-                inputAudioAppend?.Invoke(InputAudioAppend!);
+                inputAudioAppend?.Invoke(__value1);
             }
-            else if (IsInputAudioFlush)
+            else if (InputAudioFlush is { } __value2)
             {
-                inputAudioFlush?.Invoke(InputAudioFlush!);
+                inputAudioFlush?.Invoke(__value2);
             }
-            else if (IsInputAudioEnd)
+            else if (InputAudioEnd is { } __value3)
             {
-                inputAudioEnd?.Invoke(InputAudioEnd!);
+                inputAudioEnd?.Invoke(__value3);
             }
         }
 

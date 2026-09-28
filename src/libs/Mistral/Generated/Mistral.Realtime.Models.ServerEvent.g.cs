@@ -47,8 +47,8 @@ namespace Mistral.Realtime
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.Realtime.TranscriptionStreamLanguage PickTranscriptionLanguage() => IsTranscriptionLanguage
-            ? TranscriptionLanguage!
+        public global::Mistral.Realtime.TranscriptionStreamLanguage PickTranscriptionLanguage() => TranscriptionLanguage is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TranscriptionLanguage' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace Mistral.Realtime
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.Realtime.TranscriptionStreamSegmentDelta PickTranscriptionSegment() => IsTranscriptionSegment
-            ? TranscriptionSegment!
+        public global::Mistral.Realtime.TranscriptionStreamSegmentDelta PickTranscriptionSegment() => TranscriptionSegment is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TranscriptionSegment' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace Mistral.Realtime
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.Realtime.TranscriptionStreamTextDelta PickTranscriptionTextDelta() => IsTranscriptionTextDelta
-            ? TranscriptionTextDelta!
+        public global::Mistral.Realtime.TranscriptionStreamTextDelta PickTranscriptionTextDelta() => TranscriptionTextDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TranscriptionTextDelta' but the value was {ToString()}.");
 
         /// <summary>
@@ -158,8 +158,8 @@ namespace Mistral.Realtime
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.Realtime.TranscriptionStreamDone PickTranscriptionDone() => IsTranscriptionDone
-            ? TranscriptionDone!
+        public global::Mistral.Realtime.TranscriptionStreamDone PickTranscriptionDone() => TranscriptionDone is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TranscriptionDone' but the value was {ToString()}.");
 
         /// <summary>
@@ -195,8 +195,8 @@ namespace Mistral.Realtime
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.Realtime.RealtimeTranscriptionSessionCreated PickSessionCreated() => IsSessionCreated
-            ? SessionCreated!
+        public global::Mistral.Realtime.RealtimeTranscriptionSessionCreated PickSessionCreated() => SessionCreated is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionCreated' but the value was {ToString()}.");
 
         /// <summary>
@@ -232,8 +232,8 @@ namespace Mistral.Realtime
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.Realtime.RealtimeTranscriptionSessionUpdated PickSessionUpdated() => IsSessionUpdated
-            ? SessionUpdated!
+        public global::Mistral.Realtime.RealtimeTranscriptionSessionUpdated PickSessionUpdated() => SessionUpdated is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionUpdated' but the value was {ToString()}.");
 
         /// <summary>
@@ -269,8 +269,8 @@ namespace Mistral.Realtime
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.Realtime.RealtimeTranscriptionError PickError() => IsError
-            ? Error!
+        public global::Mistral.Realtime.RealtimeTranscriptionError PickError() => Error is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Error' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -510,33 +510,33 @@ namespace Mistral.Realtime
                 Validate();
             }
 
-            if (IsTranscriptionLanguage && transcriptionLanguage != null)
+            if (TranscriptionLanguage is { } __value0 && transcriptionLanguage != null)
             {
-                return transcriptionLanguage(TranscriptionLanguage!);
+                return transcriptionLanguage(__value0);
             }
-            else if (IsTranscriptionSegment && transcriptionSegment != null)
+            else if (TranscriptionSegment is { } __value1 && transcriptionSegment != null)
             {
-                return transcriptionSegment(TranscriptionSegment!);
+                return transcriptionSegment(__value1);
             }
-            else if (IsTranscriptionTextDelta && transcriptionTextDelta != null)
+            else if (TranscriptionTextDelta is { } __value2 && transcriptionTextDelta != null)
             {
-                return transcriptionTextDelta(TranscriptionTextDelta!);
+                return transcriptionTextDelta(__value2);
             }
-            else if (IsTranscriptionDone && transcriptionDone != null)
+            else if (TranscriptionDone is { } __value3 && transcriptionDone != null)
             {
-                return transcriptionDone(TranscriptionDone!);
+                return transcriptionDone(__value3);
             }
-            else if (IsSessionCreated && sessionCreated != null)
+            else if (SessionCreated is { } __value4 && sessionCreated != null)
             {
-                return sessionCreated(SessionCreated!);
+                return sessionCreated(__value4);
             }
-            else if (IsSessionUpdated && sessionUpdated != null)
+            else if (SessionUpdated is { } __value5 && sessionUpdated != null)
             {
-                return sessionUpdated(SessionUpdated!);
+                return sessionUpdated(__value5);
             }
-            else if (IsError && error != null)
+            else if (Error is { } __value6 && error != null)
             {
-                return error(Error!);
+                return error(__value6);
             }
 
             return default(TResult);
@@ -566,33 +566,33 @@ namespace Mistral.Realtime
                 Validate();
             }
 
-            if (IsTranscriptionLanguage)
+            if (TranscriptionLanguage is { } __value0)
             {
-                transcriptionLanguage?.Invoke(TranscriptionLanguage!);
+                transcriptionLanguage?.Invoke(__value0);
             }
-            else if (IsTranscriptionSegment)
+            else if (TranscriptionSegment is { } __value1)
             {
-                transcriptionSegment?.Invoke(TranscriptionSegment!);
+                transcriptionSegment?.Invoke(__value1);
             }
-            else if (IsTranscriptionTextDelta)
+            else if (TranscriptionTextDelta is { } __value2)
             {
-                transcriptionTextDelta?.Invoke(TranscriptionTextDelta!);
+                transcriptionTextDelta?.Invoke(__value2);
             }
-            else if (IsTranscriptionDone)
+            else if (TranscriptionDone is { } __value3)
             {
-                transcriptionDone?.Invoke(TranscriptionDone!);
+                transcriptionDone?.Invoke(__value3);
             }
-            else if (IsSessionCreated)
+            else if (SessionCreated is { } __value4)
             {
-                sessionCreated?.Invoke(SessionCreated!);
+                sessionCreated?.Invoke(__value4);
             }
-            else if (IsSessionUpdated)
+            else if (SessionUpdated is { } __value5)
             {
-                sessionUpdated?.Invoke(SessionUpdated!);
+                sessionUpdated?.Invoke(__value5);
             }
-            else if (IsError)
+            else if (Error is { } __value6)
             {
-                error?.Invoke(Error!);
+                error?.Invoke(__value6);
             }
         }
 
@@ -614,33 +614,33 @@ namespace Mistral.Realtime
                 Validate();
             }
 
-            if (IsTranscriptionLanguage)
+            if (TranscriptionLanguage is { } __value0)
             {
-                transcriptionLanguage?.Invoke(TranscriptionLanguage!);
+                transcriptionLanguage?.Invoke(__value0);
             }
-            else if (IsTranscriptionSegment)
+            else if (TranscriptionSegment is { } __value1)
             {
-                transcriptionSegment?.Invoke(TranscriptionSegment!);
+                transcriptionSegment?.Invoke(__value1);
             }
-            else if (IsTranscriptionTextDelta)
+            else if (TranscriptionTextDelta is { } __value2)
             {
-                transcriptionTextDelta?.Invoke(TranscriptionTextDelta!);
+                transcriptionTextDelta?.Invoke(__value2);
             }
-            else if (IsTranscriptionDone)
+            else if (TranscriptionDone is { } __value3)
             {
-                transcriptionDone?.Invoke(TranscriptionDone!);
+                transcriptionDone?.Invoke(__value3);
             }
-            else if (IsSessionCreated)
+            else if (SessionCreated is { } __value4)
             {
-                sessionCreated?.Invoke(SessionCreated!);
+                sessionCreated?.Invoke(__value4);
             }
-            else if (IsSessionUpdated)
+            else if (SessionUpdated is { } __value5)
             {
-                sessionUpdated?.Invoke(SessionUpdated!);
+                sessionUpdated?.Invoke(__value5);
             }
-            else if (IsError)
+            else if (Error is { } __value6)
             {
-                error?.Invoke(Error!);
+                error?.Invoke(__value6);
             }
         }
 

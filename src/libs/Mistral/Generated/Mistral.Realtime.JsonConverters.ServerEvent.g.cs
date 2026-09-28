@@ -104,43 +104,43 @@ namespace Mistral.Realtime.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.Realtime.TranscriptionStreamLanguage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.Realtime.TranscriptionStreamLanguage?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.Realtime.TranscriptionStreamLanguage).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TranscriptionLanguage!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickTranscriptionLanguage(), typeInfo);
             }
             else if (value.IsTranscriptionSegment)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.Realtime.TranscriptionStreamSegmentDelta), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.Realtime.TranscriptionStreamSegmentDelta?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.Realtime.TranscriptionStreamSegmentDelta).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TranscriptionSegment!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickTranscriptionSegment(), typeInfo);
             }
             else if (value.IsTranscriptionTextDelta)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.Realtime.TranscriptionStreamTextDelta), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.Realtime.TranscriptionStreamTextDelta?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.Realtime.TranscriptionStreamTextDelta).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TranscriptionTextDelta!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickTranscriptionTextDelta(), typeInfo);
             }
             else if (value.IsTranscriptionDone)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.Realtime.TranscriptionStreamDone), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.Realtime.TranscriptionStreamDone?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.Realtime.TranscriptionStreamDone).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TranscriptionDone!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickTranscriptionDone(), typeInfo);
             }
             else if (value.IsSessionCreated)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.Realtime.RealtimeTranscriptionSessionCreated), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.Realtime.RealtimeTranscriptionSessionCreated?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.Realtime.RealtimeTranscriptionSessionCreated).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SessionCreated!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSessionCreated(), typeInfo);
             }
             else if (value.IsSessionUpdated)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.Realtime.RealtimeTranscriptionSessionUpdated), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.Realtime.RealtimeTranscriptionSessionUpdated?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.Realtime.RealtimeTranscriptionSessionUpdated).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SessionUpdated!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSessionUpdated(), typeInfo);
             }
             else if (value.IsError)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.Realtime.RealtimeTranscriptionError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.Realtime.RealtimeTranscriptionError?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.Realtime.RealtimeTranscriptionError).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Error!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickError(), typeInfo);
             }
         }
     }

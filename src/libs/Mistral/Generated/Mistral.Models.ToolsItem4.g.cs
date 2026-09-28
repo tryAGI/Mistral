@@ -47,8 +47,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.FunctionTool PickFunction() => IsFunction
-            ? Function!
+        public global::Mistral.FunctionTool PickFunction() => Function is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Function' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.WebSearchTool PickWebSearch() => IsWebSearch
-            ? WebSearch!
+        public global::Mistral.WebSearchTool PickWebSearch() => WebSearch is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'WebSearch' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.WebSearchPremiumTool PickWebSearchPremium() => IsWebSearchPremium
-            ? WebSearchPremium!
+        public global::Mistral.WebSearchPremiumTool PickWebSearchPremium() => WebSearchPremium is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'WebSearchPremium' but the value was {ToString()}.");
 
         /// <summary>
@@ -158,8 +158,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.CodeInterpreterTool PickCodeInterpreter() => IsCodeInterpreter
-            ? CodeInterpreter!
+        public global::Mistral.CodeInterpreterTool PickCodeInterpreter() => CodeInterpreter is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CodeInterpreter' but the value was {ToString()}.");
 
         /// <summary>
@@ -195,8 +195,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.ImageGenerationTool PickImageGeneration() => IsImageGeneration
-            ? ImageGeneration!
+        public global::Mistral.ImageGenerationTool PickImageGeneration() => ImageGeneration is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ImageGeneration' but the value was {ToString()}.");
 
         /// <summary>
@@ -232,8 +232,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.DocumentLibraryTool PickDocumentLibrary() => IsDocumentLibrary
-            ? DocumentLibrary!
+        public global::Mistral.DocumentLibraryTool PickDocumentLibrary() => DocumentLibrary is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'DocumentLibrary' but the value was {ToString()}.");
 
         /// <summary>
@@ -269,8 +269,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.CustomConnector PickConnector() => IsConnector
-            ? Connector!
+        public global::Mistral.CustomConnector PickConnector() => Connector is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Connector' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -510,33 +510,33 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsFunction && function != null)
+            if (Function is { } __value0 && function != null)
             {
-                return function(Function!);
+                return function(__value0);
             }
-            else if (IsWebSearch && webSearch != null)
+            else if (WebSearch is { } __value1 && webSearch != null)
             {
-                return webSearch(WebSearch!);
+                return webSearch(__value1);
             }
-            else if (IsWebSearchPremium && webSearchPremium != null)
+            else if (WebSearchPremium is { } __value2 && webSearchPremium != null)
             {
-                return webSearchPremium(WebSearchPremium!);
+                return webSearchPremium(__value2);
             }
-            else if (IsCodeInterpreter && codeInterpreter != null)
+            else if (CodeInterpreter is { } __value3 && codeInterpreter != null)
             {
-                return codeInterpreter(CodeInterpreter!);
+                return codeInterpreter(__value3);
             }
-            else if (IsImageGeneration && imageGeneration != null)
+            else if (ImageGeneration is { } __value4 && imageGeneration != null)
             {
-                return imageGeneration(ImageGeneration!);
+                return imageGeneration(__value4);
             }
-            else if (IsDocumentLibrary && documentLibrary != null)
+            else if (DocumentLibrary is { } __value5 && documentLibrary != null)
             {
-                return documentLibrary(DocumentLibrary!);
+                return documentLibrary(__value5);
             }
-            else if (IsConnector && connector != null)
+            else if (Connector is { } __value6 && connector != null)
             {
-                return connector(Connector!);
+                return connector(__value6);
             }
 
             return default(TResult);
@@ -566,33 +566,33 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsFunction)
+            if (Function is { } __value0)
             {
-                function?.Invoke(Function!);
+                function?.Invoke(__value0);
             }
-            else if (IsWebSearch)
+            else if (WebSearch is { } __value1)
             {
-                webSearch?.Invoke(WebSearch!);
+                webSearch?.Invoke(__value1);
             }
-            else if (IsWebSearchPremium)
+            else if (WebSearchPremium is { } __value2)
             {
-                webSearchPremium?.Invoke(WebSearchPremium!);
+                webSearchPremium?.Invoke(__value2);
             }
-            else if (IsCodeInterpreter)
+            else if (CodeInterpreter is { } __value3)
             {
-                codeInterpreter?.Invoke(CodeInterpreter!);
+                codeInterpreter?.Invoke(__value3);
             }
-            else if (IsImageGeneration)
+            else if (ImageGeneration is { } __value4)
             {
-                imageGeneration?.Invoke(ImageGeneration!);
+                imageGeneration?.Invoke(__value4);
             }
-            else if (IsDocumentLibrary)
+            else if (DocumentLibrary is { } __value5)
             {
-                documentLibrary?.Invoke(DocumentLibrary!);
+                documentLibrary?.Invoke(__value5);
             }
-            else if (IsConnector)
+            else if (Connector is { } __value6)
             {
-                connector?.Invoke(Connector!);
+                connector?.Invoke(__value6);
             }
         }
 
@@ -614,33 +614,33 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsFunction)
+            if (Function is { } __value0)
             {
-                function?.Invoke(Function!);
+                function?.Invoke(__value0);
             }
-            else if (IsWebSearch)
+            else if (WebSearch is { } __value1)
             {
-                webSearch?.Invoke(WebSearch!);
+                webSearch?.Invoke(__value1);
             }
-            else if (IsWebSearchPremium)
+            else if (WebSearchPremium is { } __value2)
             {
-                webSearchPremium?.Invoke(WebSearchPremium!);
+                webSearchPremium?.Invoke(__value2);
             }
-            else if (IsCodeInterpreter)
+            else if (CodeInterpreter is { } __value3)
             {
-                codeInterpreter?.Invoke(CodeInterpreter!);
+                codeInterpreter?.Invoke(__value3);
             }
-            else if (IsImageGeneration)
+            else if (ImageGeneration is { } __value4)
             {
-                imageGeneration?.Invoke(ImageGeneration!);
+                imageGeneration?.Invoke(__value4);
             }
-            else if (IsDocumentLibrary)
+            else if (DocumentLibrary is { } __value5)
             {
-                documentLibrary?.Invoke(DocumentLibrary!);
+                documentLibrary?.Invoke(__value5);
             }
-            else if (IsConnector)
+            else if (Connector is { } __value6)
             {
-                connector?.Invoke(Connector!);
+                connector?.Invoke(__value6);
             }
         }
 

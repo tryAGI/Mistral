@@ -42,8 +42,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.ConversationRestartRequestBase PickBase() => IsBase
-            ? Base!
+        public global::Mistral.ConversationRestartRequestBase PickBase() => Base is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.ConversationRestartRequestVariant2 PickConversationRestartRequestVariant2() => IsConversationRestartRequestVariant2
-            ? ConversationRestartRequestVariant2!
+        public global::Mistral.ConversationRestartRequestVariant2 PickConversationRestartRequestVariant2() => ConversationRestartRequestVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationRestartRequestVariant2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsBase && @base != null)
+            if (Base is { } __value0 && @base != null)
             {
-                return @base(Base!);
+                return @base(__value0);
             }
-            else if (IsConversationRestartRequestVariant2 && conversationRestartRequestVariant2 != null)
+            else if (ConversationRestartRequestVariant2 is { } __value1 && conversationRestartRequestVariant2 != null)
             {
-                return conversationRestartRequestVariant2(ConversationRestartRequestVariant2!);
+                return conversationRestartRequestVariant2(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsBase)
+            if (Base is { } __value0)
             {
-                @base?.Invoke(Base!);
+                @base?.Invoke(__value0);
             }
-            else if (IsConversationRestartRequestVariant2)
+            else if (ConversationRestartRequestVariant2 is { } __value1)
             {
-                conversationRestartRequestVariant2?.Invoke(ConversationRestartRequestVariant2!);
+                conversationRestartRequestVariant2?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsBase)
+            if (Base is { } __value0)
             {
-                @base?.Invoke(Base!);
+                @base?.Invoke(__value0);
             }
-            else if (IsConversationRestartRequestVariant2)
+            else if (ConversationRestartRequestVariant2 is { } __value1)
             {
-                conversationRestartRequestVariant2?.Invoke(ConversationRestartRequestVariant2!);
+                conversationRestartRequestVariant2?.Invoke(__value1);
             }
         }
 

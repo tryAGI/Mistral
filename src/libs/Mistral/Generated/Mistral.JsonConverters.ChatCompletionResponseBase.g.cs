@@ -70,7 +70,7 @@ namespace Mistral.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.ResponseBase), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.ResponseBase?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.ResponseBase).Name}");
-                var __element0 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.ResponseBase!, typeInfo);
+                var __element0 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.PickResponseBase(), typeInfo);
                 if (__element0.ValueKind != global::System.Text.Json.JsonValueKind.Object)
                 {
                     throw new global::System.Text.Json.JsonException("AllOf values must serialize as JSON objects.");
@@ -88,7 +88,7 @@ namespace Mistral.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.ChatCompletionResponseBaseChatCompletionResponseBase1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.ChatCompletionResponseBaseChatCompletionResponseBase1?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.ChatCompletionResponseBaseChatCompletionResponseBase1).Name}");
-                var __element1 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.Base1!, typeInfo);
+                var __element1 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.PickBase1(), typeInfo);
                 if (__element1.ValueKind != global::System.Text.Json.JsonValueKind.Object)
                 {
                     throw new global::System.Text.Json.JsonException("AllOf values must serialize as JSON objects.");

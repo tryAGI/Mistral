@@ -127,13 +127,13 @@ namespace Mistral.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Mistral.InstructRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Mistral.InstructRequest?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Mistral.InstructRequest).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InstructRequest!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickInstructRequest(), typeInfo);
             }
             else if (value.IsChatClassificationRequestInputsVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<global::Mistral.InstructRequest>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<global::Mistral.InstructRequest>?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<global::Mistral.InstructRequest>).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatClassificationRequestInputsVariant2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickChatClassificationRequestInputsVariant2(), typeInfo);
             }
         }
     }

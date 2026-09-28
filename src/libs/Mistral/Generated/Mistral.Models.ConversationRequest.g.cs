@@ -42,8 +42,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.ConversationRequestBase PickBase() => IsBase
-            ? Base!
+        public global::Mistral.ConversationRequestBase PickBase() => Base is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Mistral
         /// <summary>
         ///
         /// </summary>
-        public global::Mistral.ConversationRequestVariant2 PickConversationRequestVariant2() => IsConversationRequestVariant2
-            ? ConversationRequestVariant2!
+        public global::Mistral.ConversationRequestVariant2 PickConversationRequestVariant2() => ConversationRequestVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationRequestVariant2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsBase && @base != null)
+            if (Base is { } __value0 && @base != null)
             {
-                return @base(Base!);
+                return @base(__value0);
             }
-            else if (IsConversationRequestVariant2 && conversationRequestVariant2 != null)
+            else if (ConversationRequestVariant2 is { } __value1 && conversationRequestVariant2 != null)
             {
-                return conversationRequestVariant2(ConversationRequestVariant2!);
+                return conversationRequestVariant2(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsBase)
+            if (Base is { } __value0)
             {
-                @base?.Invoke(Base!);
+                @base?.Invoke(__value0);
             }
-            else if (IsConversationRequestVariant2)
+            else if (ConversationRequestVariant2 is { } __value1)
             {
-                conversationRequestVariant2?.Invoke(ConversationRequestVariant2!);
+                conversationRequestVariant2?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace Mistral
                 Validate();
             }
 
-            if (IsBase)
+            if (Base is { } __value0)
             {
-                @base?.Invoke(Base!);
+                @base?.Invoke(__value0);
             }
-            else if (IsConversationRequestVariant2)
+            else if (ConversationRequestVariant2 is { } __value1)
             {
-                conversationRequestVariant2?.Invoke(ConversationRequestVariant2!);
+                conversationRequestVariant2?.Invoke(__value1);
             }
         }
 
