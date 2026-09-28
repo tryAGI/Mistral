@@ -1,19 +1,14 @@
 
 #nullable enable
 
-#pragma warning disable CS0618 // Type or member is obsolete
-#pragma warning disable CS3016 // Arrays as attribute arguments is not CLS-compliant
-
 namespace Mistral
 {
     /// <summary>
     ///
     /// </summary>
     [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
-        DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
-        Converters = new global::System.Type[]
-        {
-        })]
+        DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull
+    )]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ListDocumentOut), TypeInfoPropertyName = "ListDocumentOut_Mistral_ListDocumentOut")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ListLibraryOut), TypeInfoPropertyName = "ListLibraryOut_Mistral_ListLibraryOut")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ListSharingOut), TypeInfoPropertyName = "ListSharingOut_Mistral_ListSharingOut")]
@@ -522,10 +517,8 @@ namespace Mistral
     ///
     /// </summary>
     [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
-        DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
-        Converters = new global::System.Type[]
-        {
-        })]
+        DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull
+    )]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ListDocumentOut), TypeInfoPropertyName = "ListDocumentOut_Mistral_ListDocumentOut")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ListLibraryOut), TypeInfoPropertyName = "ListLibraryOut_Mistral_ListLibraryOut")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ListSharingOut), TypeInfoPropertyName = "ListSharingOut_Mistral_ListSharingOut")]
@@ -1034,10 +1027,8 @@ namespace Mistral
     ///
     /// </summary>
     [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
-        DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
-        Converters = new global::System.Type[]
-        {
-        })]
+        DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull
+    )]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ListDocumentOut), TypeInfoPropertyName = "ListDocumentOut_Mistral_ListDocumentOut")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ListLibraryOut), TypeInfoPropertyName = "ListLibraryOut_Mistral_ListLibraryOut")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Mistral.ListSharingOut), TypeInfoPropertyName = "ListSharingOut_Mistral_ListSharingOut")]
