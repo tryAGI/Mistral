@@ -8,7 +8,7 @@ namespace Mistral.Realtime
     /// <summary>
     ///
     /// </summary>
-    public sealed partial class JsonSerializerContextTypes
+    public sealed partial class RealtimeSourceGenerationContextTypes
     {
         /// <summary>
         ///
