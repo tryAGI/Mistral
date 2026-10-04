@@ -209,8 +209,11 @@ public partial class MistralClient : Meai.IChatClient
             var assistantMessage = new AssistantMessage
             {
                 Role = "assistant",
-                Content = string.IsNullOrEmpty(text) ? null : (AnyOf<string, object, IList<ContentChunk>>?)new AnyOf<string, object, IList<ContentChunk>>(text),
             };
+            if (!string.IsNullOrEmpty(text))
+            {
+                assistantMessage.Content = text;
+            }
 
             if (toolCalls.Count > 0)
             {
@@ -299,7 +302,7 @@ public partial class MistralClient : Meai.IChatClient
         return new UserMessage
         {
             Role = "user",
-            Content = new AnyOf<string, object, IList<ContentChunk>>(contents),
+            Content = contents,
         };
     }
 
@@ -465,6 +468,28 @@ public partial class MistralClient : Meai.IChatClient
         if (content.Value.IsValue3)
         {
             return string.Concat(content.Value.Value3!
+                .Where(c => c.IsText)
+                .Select(c => c.Text!.Text));
+        }
+
+        return null;
+    }
+
+    private static string? ExtractText(AnyOf<string, IList<ContentChunk>>? content)
+    {
+        if (content is null)
+        {
+            return null;
+        }
+
+        if (content.Value.IsValue1)
+        {
+            return content.Value.Value1;
+        }
+
+        if (content.Value.IsValue2)
+        {
+            return string.Concat(content.Value.Value2!
                 .Where(c => c.IsText)
                 .Select(c => c.Text!.Text));
         }
