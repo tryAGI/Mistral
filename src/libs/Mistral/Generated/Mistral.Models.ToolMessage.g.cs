@@ -18,9 +18,8 @@ namespace Mistral
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<string, object, global::System.Collections.Generic.IList<global::Mistral.ContentChunk>>))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Mistral.AnyOf<string, object, global::System.Collections.Generic.IList<global::Mistral.ContentChunk>> Content { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Mistral.ContentChunk>>))]
+        public global::Mistral.AnyOf<string, global::System.Collections.Generic.IList<global::Mistral.ContentChunk>>? Content { get; set; }
 
         /// <summary>
         ///
@@ -43,18 +42,18 @@ namespace Mistral
         /// <summary>
         /// Initializes a new instance of the <see cref="ToolMessage" /> class.
         /// </summary>
-        /// <param name="content"></param>
         /// <param name="role">
         /// Default Value: tool
         /// </param>
+        /// <param name="content"></param>
         /// <param name="toolCallId"></param>
         /// <param name="name"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ToolMessage(
-            global::Mistral.AnyOf<string, object, global::System.Collections.Generic.IList<global::Mistral.ContentChunk>> content,
             string? role,
+            global::Mistral.AnyOf<string, global::System.Collections.Generic.IList<global::Mistral.ContentChunk>>? content,
             string? toolCallId,
             string? name)
         {

@@ -32,8 +32,8 @@ namespace Mistral
         /// Specific pages to process. Accepts a list of integers or a string of comma-separated numbers and ranges (e.g. '0,1,2' or '0-5' or '0,2-4'). Page numbers start from 0.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pages")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<int>, object>))]
-        public global::Mistral.AnyOf<string, global::System.Collections.Generic.IList<int>, object>? Pages { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<int>>))]
+        public global::Mistral.AnyOf<string, global::System.Collections.Generic.IList<int>>? Pages { get; set; }
 
         /// <summary>
         /// Include image URLs in response
@@ -158,7 +158,7 @@ namespace Mistral
             global::Mistral.AnyOf<global::Mistral.FileChunk, global::Mistral.DocumentURLChunk, global::Mistral.ImageURLChunk> document,
             string? model,
             string? id,
-            global::Mistral.AnyOf<string, global::System.Collections.Generic.IList<int>, object>? pages,
+            global::Mistral.AnyOf<string, global::System.Collections.Generic.IList<int>>? pages,
             bool? includeImageBase64,
             int? imageLimit,
             int? imageMinSize,

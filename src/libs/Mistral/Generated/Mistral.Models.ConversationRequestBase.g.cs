@@ -86,8 +86,8 @@ namespace Mistral
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("agent_version")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<string, int?, object>))]
-        public global::Mistral.AnyOf<string, int?, object>? AgentVersion { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<string, int?>))]
+        public global::Mistral.AnyOf<string, int?>? AgentVersion { get; set; }
 
         /// <summary>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
@@ -160,7 +160,7 @@ namespace Mistral
             string? description,
             global::Mistral.MetadataDict? metadata,
             string? agentId,
-            global::Mistral.AnyOf<string, int?, object>? agentVersion,
+            global::Mistral.AnyOf<string, int?>? agentVersion,
             string? model)
         {
             this.Inputs = inputs;

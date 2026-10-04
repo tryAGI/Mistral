@@ -40,7 +40,7 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("attributes")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.Dictionary<string, global::Mistral.WorkflowExecutionTraceSummaryAttributesValues> Attributes { get; set; }
+        public required global::System.Collections.Generic.Dictionary<string, global::Mistral.WorkflowExecutionTraceSummaryAttributesValues?> Attributes { get; set; }
 
         /// <summary>
         /// The events of the span
@@ -92,7 +92,7 @@ namespace Mistral
             string spanId,
             string name,
             long startTimeUnixNano,
-            global::System.Collections.Generic.Dictionary<string, global::Mistral.WorkflowExecutionTraceSummaryAttributesValues> attributes,
+            global::System.Collections.Generic.Dictionary<string, global::Mistral.WorkflowExecutionTraceSummaryAttributesValues?> attributes,
             global::System.Collections.Generic.IList<global::Mistral.WorkflowExecutionTraceEvent> events,
             long? endTimeUnixNano,
             global::System.Collections.Generic.IList<global::Mistral.WorkflowExecutionTraceSummarySpan>? children)

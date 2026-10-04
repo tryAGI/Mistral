@@ -29,7 +29,7 @@ namespace Mistral
             global::System.Net.Http.HttpClient httpClient,
             ref string? workflowIdentifier,
             ref string? search,
-            ref global::Mistral.AnyOf<global::Mistral.WorkflowExecutionStatus?, global::System.Collections.Generic.IList<global::Mistral.WorkflowExecutionStatus>, object>? status,
+            ref global::Mistral.AnyOf<global::Mistral.WorkflowExecutionStatus?, global::System.Collections.Generic.IList<global::Mistral.WorkflowExecutionStatus>>? status,
             ref int? pageSize,
             ref string? nextPageToken);
         partial void PrepareListRunsRequest(
@@ -37,7 +37,7 @@ namespace Mistral
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? workflowIdentifier,
             string? search,
-            global::Mistral.AnyOf<global::Mistral.WorkflowExecutionStatus?, global::System.Collections.Generic.IList<global::Mistral.WorkflowExecutionStatus>, object>? status,
+            global::Mistral.AnyOf<global::Mistral.WorkflowExecutionStatus?, global::System.Collections.Generic.IList<global::Mistral.WorkflowExecutionStatus>>? status,
             int? pageSize,
             string? nextPageToken);
         partial void ProcessListRunsResponse(
@@ -74,7 +74,7 @@ namespace Mistral
         public async global::System.Threading.Tasks.Task<global::Mistral.WorkflowExecutionListResponse> ListRunsAsync(
             string? workflowIdentifier = default,
             string? search = default,
-            global::Mistral.AnyOf<global::Mistral.WorkflowExecutionStatus?, global::System.Collections.Generic.IList<global::Mistral.WorkflowExecutionStatus>, object>? status = default,
+            global::Mistral.AnyOf<global::Mistral.WorkflowExecutionStatus?, global::System.Collections.Generic.IList<global::Mistral.WorkflowExecutionStatus>>? status = default,
             int? pageSize = default,
             string? nextPageToken = default,
             global::Mistral.AutoSDKRequestOptions? requestOptions = default,
@@ -117,7 +117,7 @@ namespace Mistral
         public async global::System.Threading.Tasks.Task<global::Mistral.AutoSDKHttpResponse<global::Mistral.WorkflowExecutionListResponse>> ListRunsAsResponseAsync(
             string? workflowIdentifier = default,
             string? search = default,
-            global::Mistral.AnyOf<global::Mistral.WorkflowExecutionStatus?, global::System.Collections.Generic.IList<global::Mistral.WorkflowExecutionStatus>, object>? status = default,
+            global::Mistral.AnyOf<global::Mistral.WorkflowExecutionStatus?, global::System.Collections.Generic.IList<global::Mistral.WorkflowExecutionStatus>>? status = default,
             int? pageSize = default,
             string? nextPageToken = default,
             global::Mistral.AutoSDKRequestOptions? requestOptions = default,
@@ -165,7 +165,6 @@ namespace Mistral
                                 .AddOptionalParameter("status", status?.Match(
                 static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x?.ToValueString() },
                 static x => (global::System.Collections.Generic.IEnumerable<string?>)global::System.Linq.Enumerable.Select(x, static item => item.ToValueString()),
-                static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x?.ToString() },
                 validate: false), delimiter: ",", explode: true)
                                 .AddOptionalParameter("page_size", pageSize?.ToString())
                                 .AddOptionalParameter("next_page_token", nextPageToken)
@@ -548,7 +547,7 @@ namespace Mistral
         public global::System.Collections.Generic.IAsyncEnumerable<global::Mistral.WorkflowExecutionWithoutResultResponse> ListRunsAutoPagingAsync(
               string? workflowIdentifier = default,
             string? search = default,
-            global::Mistral.AnyOf<global::Mistral.WorkflowExecutionStatus?, global::System.Collections.Generic.IList<global::Mistral.WorkflowExecutionStatus>, object>? status = default,
+            global::Mistral.AnyOf<global::Mistral.WorkflowExecutionStatus?, global::System.Collections.Generic.IList<global::Mistral.WorkflowExecutionStatus>>? status = default,
             int? pageSize = default,
             string? nextPageToken = null,
             global::System.Threading.CancellationToken cancellationToken = default)

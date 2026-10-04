@@ -65,8 +65,8 @@ namespace Mistral
         /// Specific version of the agent to use when restarting. If not provided, uses the current version.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("agent_version")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<string, int?, object>))]
-        public global::Mistral.AnyOf<string, int?, object>? AgentVersion { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<string, int?>))]
+        public global::Mistral.AnyOf<string, int?>? AgentVersion { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -112,7 +112,7 @@ namespace Mistral
             global::Mistral.CompletionArgs? completionArgs,
             global::System.Collections.Generic.IList<global::Mistral.GuardrailConfig>? guardrails,
             global::Mistral.MetadataDict? metadata,
-            global::Mistral.AnyOf<string, int?, object>? agentVersion)
+            global::Mistral.AnyOf<string, int?>? agentVersion)
         {
             this.Inputs = inputs;
             this.Stream = stream;
