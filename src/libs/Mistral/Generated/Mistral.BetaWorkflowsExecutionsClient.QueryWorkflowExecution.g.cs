@@ -493,7 +493,7 @@ namespace Mistral
         public async global::System.Threading.Tasks.Task<global::Mistral.QueryWorkflowResponse> QueryWorkflowExecutionAsync(
             string executionId,
             string name,
-            global::Mistral.AnyOf<global::Mistral.NetworkEncodedInput, object, object>? input = default,
+            global::Mistral.AnyOf<global::Mistral.NetworkEncodedInput, object>? input = default,
             global::Mistral.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

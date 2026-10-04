@@ -49,26 +49,13 @@ namespace Mistral.JsonConverters
                     }
                 }
             }
-            var __score2 = 0;
-            {
-                var __ti = typeInfoResolver.GetTypeInfo(typeof(object), options);
-                if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
-                {
-                    foreach (var __prop in __ti.Properties)
-                    {
-                        if (__jsonProps.Contains(__prop.Name)) __score2++;
-                    }
-                }
-            }
             var __bestScore = 0;
             var __bestIndex = -1;
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
-            if (__score2 > __bestScore) { __bestScore = __score2; __bestIndex = 2; }
 
             string? completionArgsStopVariant1 = default;
             global::System.Collections.Generic.IList<string>? completionArgsStopVariant2 = default;
-            object? completionArgsStopVariant3 = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -104,26 +91,9 @@ namespace Mistral.JsonConverters
                     {
                     }
                 }
-
-                else if (__bestIndex == 2)
-                {
-                    try
-                    {
-
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                        completionArgsStopVariant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                    }
-                    catch (global::System.Text.Json.JsonException)
-                    {
-                    }
-                    catch (global::System.InvalidOperationException)
-                    {
-                    }
-                }
             }
 
-            if (completionArgsStopVariant1 == null && completionArgsStopVariant2 == null && completionArgsStopVariant3 == null)
+            if (completionArgsStopVariant1 == null && completionArgsStopVariant2 == null)
             {
                 try
                 {
@@ -140,7 +110,7 @@ namespace Mistral.JsonConverters
                 }
             }
 
-            if (completionArgsStopVariant1 == null && completionArgsStopVariant2 == null && completionArgsStopVariant3 == null)
+            if (completionArgsStopVariant1 == null && completionArgsStopVariant2 == null)
             {
                 try
                 {
@@ -157,29 +127,10 @@ namespace Mistral.JsonConverters
                 }
             }
 
-            if (completionArgsStopVariant1 == null && completionArgsStopVariant2 == null && completionArgsStopVariant3 == null)
-            {
-                try
-                {
-
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                    completionArgsStopVariant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                }
-                catch (global::System.Text.Json.JsonException)
-                {
-                }
-                catch (global::System.InvalidOperationException)
-                {
-                }
-            }
-
             var __value = new global::Mistral.CompletionArgsStop(
                 completionArgsStopVariant1,
 
-                completionArgsStopVariant2,
-
-                completionArgsStopVariant3
+                completionArgsStopVariant2
                 );
 
             return __value;
@@ -205,12 +156,6 @@ namespace Mistral.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<string>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<string>?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<string>).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickCompletionArgsStopVariant2(), typeInfo);
-            }
-            else if (value.IsCompletionArgsStopVariant3)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickCompletionArgsStopVariant3(), typeInfo);
             }
         }
     }

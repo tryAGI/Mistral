@@ -28,12 +28,12 @@ namespace Mistral
         partial void PrepareRetrieveAnAgentEntityArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string agentId,
-            ref global::Mistral.AnyOf<int?, string, object>? agentVersion);
+            ref global::Mistral.AnyOf<int?, string>? agentVersion);
         partial void PrepareRetrieveAnAgentEntityRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string agentId,
-            global::Mistral.AnyOf<int?, string, object>? agentVersion);
+            global::Mistral.AnyOf<int?, string>? agentVersion);
         partial void ProcessRetrieveAnAgentEntityResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -54,7 +54,7 @@ namespace Mistral
         /// <exception cref="global::Mistral.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Mistral.Agent> RetrieveAnAgentEntityAsync(
             string agentId,
-            global::Mistral.AnyOf<int?, string, object>? agentVersion = default,
+            global::Mistral.AnyOf<int?, string>? agentVersion = default,
             global::Mistral.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -78,7 +78,7 @@ namespace Mistral
         /// <exception cref="global::Mistral.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Mistral.AutoSDKHttpResponse<global::Mistral.Agent>> RetrieveAnAgentEntityAsResponseAsync(
             string agentId,
-            global::Mistral.AnyOf<int?, string, object>? agentVersion = default,
+            global::Mistral.AnyOf<int?, string>? agentVersion = default,
             global::Mistral.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

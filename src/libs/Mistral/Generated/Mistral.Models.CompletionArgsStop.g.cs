@@ -82,43 +82,6 @@ namespace Mistral
         public global::System.Collections.Generic.IList<string> PickCompletionArgsStopVariant2() => CompletionArgsStopVariant2 is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CompletionArgsStopVariant2' but the value was {ToString()}.");
-
-        /// <summary>
-        ///
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public object? CompletionArgsStopVariant3 { get; init; }
-#else
-        public object? CompletionArgsStopVariant3 { get; }
-#endif
-
-        /// <summary>
-        ///
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CompletionArgsStopVariant3))]
-#endif
-        public bool IsCompletionArgsStopVariant3 => CompletionArgsStopVariant3 != null;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public bool TryPickCompletionArgsStopVariant3(
-#if NET6_0_OR_GREATER
-            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
-#endif
-            out object? value)
-        {
-            value = CompletionArgsStopVariant3;
-            return IsCompletionArgsStopVariant3;
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public object PickCompletionArgsStopVariant3() => CompletionArgsStopVariant3 is { } value
-            ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'CompletionArgsStopVariant3' but the value was {ToString()}.");
         /// <summary>
         ///
         /// </summary>
@@ -147,20 +110,17 @@ namespace Mistral
         /// </summary>
         public CompletionArgsStop(
             string? completionArgsStopVariant1,
-            global::System.Collections.Generic.IList<string>? completionArgsStopVariant2,
-            object? completionArgsStopVariant3
+            global::System.Collections.Generic.IList<string>? completionArgsStopVariant2
             )
         {
             CompletionArgsStopVariant1 = completionArgsStopVariant1;
             CompletionArgsStopVariant2 = completionArgsStopVariant2;
-            CompletionArgsStopVariant3 = completionArgsStopVariant3;
         }
 
         /// <summary>
         ///
         /// </summary>
         public object? Object =>
-            CompletionArgsStopVariant3 as object ??
             CompletionArgsStopVariant2 as object ??
             CompletionArgsStopVariant1 as object
             ;
@@ -170,8 +130,7 @@ namespace Mistral
         /// </summary>
         public override string? ToString() =>
             CompletionArgsStopVariant1?.ToString() ??
-            CompletionArgsStopVariant2?.ToString() ??
-            CompletionArgsStopVariant3?.ToString()
+            CompletionArgsStopVariant2?.ToString()
             ;
 
         /// <summary>
@@ -179,7 +138,7 @@ namespace Mistral
         /// </summary>
         public bool Validate()
         {
-            return IsCompletionArgsStopVariant1 || IsCompletionArgsStopVariant2 || IsCompletionArgsStopVariant3;
+            return IsCompletionArgsStopVariant1 || IsCompletionArgsStopVariant2;
         }
 
         /// <summary>
@@ -188,7 +147,6 @@ namespace Mistral
         public TResult? Match<TResult>(
             global::System.Func<string, TResult>? completionArgsStopVariant1 = null,
             global::System.Func<global::System.Collections.Generic.IList<string>, TResult>? completionArgsStopVariant2 = null,
-            global::System.Func<object, TResult>? completionArgsStopVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -204,10 +162,6 @@ namespace Mistral
             {
                 return completionArgsStopVariant2(__value1);
             }
-            else if (CompletionArgsStopVariant3 is { } __value2 && completionArgsStopVariant3 != null)
-            {
-                return completionArgsStopVariant3(__value2);
-            }
 
             return default(TResult);
         }
@@ -219,8 +173,6 @@ namespace Mistral
             global::System.Action<string>? completionArgsStopVariant1 = null,
 
             global::System.Action<global::System.Collections.Generic.IList<string>>? completionArgsStopVariant2 = null,
-
-            global::System.Action<object>? completionArgsStopVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -235,10 +187,6 @@ namespace Mistral
             else if (CompletionArgsStopVariant2 is { } __value1)
             {
                 completionArgsStopVariant2?.Invoke(__value1);
-            }
-            else if (CompletionArgsStopVariant3 is { } __value2)
-            {
-                completionArgsStopVariant3?.Invoke(__value2);
             }
         }
 
@@ -248,7 +196,6 @@ namespace Mistral
         public void Switch(
             global::System.Action<string>? completionArgsStopVariant1 = null,
             global::System.Action<global::System.Collections.Generic.IList<string>>? completionArgsStopVariant2 = null,
-            global::System.Action<object>? completionArgsStopVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -263,10 +210,6 @@ namespace Mistral
             else if (CompletionArgsStopVariant2 is { } __value1)
             {
                 completionArgsStopVariant2?.Invoke(__value1);
-            }
-            else if (CompletionArgsStopVariant3 is { } __value2)
-            {
-                completionArgsStopVariant3?.Invoke(__value2);
             }
         }
 
@@ -281,8 +224,6 @@ namespace Mistral
                 typeof(string),
                 CompletionArgsStopVariant2,
                 typeof(global::System.Collections.Generic.IList<string>),
-                CompletionArgsStopVariant3,
-                typeof(object),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -300,8 +241,7 @@ namespace Mistral
         {
             return
                 global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(CompletionArgsStopVariant1, other.CompletionArgsStopVariant1) &&
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<string>?>.Default.Equals(CompletionArgsStopVariant2, other.CompletionArgsStopVariant2) &&
-                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(CompletionArgsStopVariant3, other.CompletionArgsStopVariant3)
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<string>?>.Default.Equals(CompletionArgsStopVariant2, other.CompletionArgsStopVariant2)
                 ;
         }
 

@@ -71,30 +71,17 @@ namespace Mistral.JsonConverters
                     }
                 }
             }
-            var __score4 = 0;
-            {
-                var __ti = typeInfoResolver.GetTypeInfo(typeof(object), options);
-                if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
-                {
-                    foreach (var __prop in __ti.Properties)
-                    {
-                        if (__jsonProps.Contains(__prop.Name)) __score4++;
-                    }
-                }
-            }
             var __bestScore = 0;
             var __bestIndex = -1;
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
             if (__score2 > __bestScore) { __bestScore = __score2; __bestIndex = 2; }
             if (__score3 > __bestScore) { __bestScore = __score3; __bestIndex = 3; }
-            if (__score4 > __bestScore) { __bestScore = __score4; __bestIndex = 4; }
 
             string? workflowExecutionTraceSummaryAttributesValuesVariant1 = default;
             int? workflowExecutionTraceSummaryAttributesValuesVariant2 = default;
             double? workflowExecutionTraceSummaryAttributesValuesVariant3 = default;
             bool? workflowExecutionTraceSummaryAttributesValuesVariant4 = default;
-            object? workflowExecutionTraceSummaryAttributesValuesVariant5 = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -164,26 +151,9 @@ namespace Mistral.JsonConverters
                     {
                     }
                 }
-
-                else if (__bestIndex == 4)
-                {
-                    try
-                    {
-
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                        workflowExecutionTraceSummaryAttributesValuesVariant5 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                    }
-                    catch (global::System.Text.Json.JsonException)
-                    {
-                    }
-                    catch (global::System.InvalidOperationException)
-                    {
-                    }
-                }
             }
 
-            if (workflowExecutionTraceSummaryAttributesValuesVariant1 == null && workflowExecutionTraceSummaryAttributesValuesVariant2 == null && workflowExecutionTraceSummaryAttributesValuesVariant3 == null && workflowExecutionTraceSummaryAttributesValuesVariant4 == null && workflowExecutionTraceSummaryAttributesValuesVariant5 == null)
+            if (workflowExecutionTraceSummaryAttributesValuesVariant1 == null && workflowExecutionTraceSummaryAttributesValuesVariant2 == null && workflowExecutionTraceSummaryAttributesValuesVariant3 == null && workflowExecutionTraceSummaryAttributesValuesVariant4 == null)
             {
                 try
                 {
@@ -200,7 +170,7 @@ namespace Mistral.JsonConverters
                 }
             }
 
-            if (workflowExecutionTraceSummaryAttributesValuesVariant1 == null && workflowExecutionTraceSummaryAttributesValuesVariant2 == null && workflowExecutionTraceSummaryAttributesValuesVariant3 == null && workflowExecutionTraceSummaryAttributesValuesVariant4 == null && workflowExecutionTraceSummaryAttributesValuesVariant5 == null)
+            if (workflowExecutionTraceSummaryAttributesValuesVariant1 == null && workflowExecutionTraceSummaryAttributesValuesVariant2 == null && workflowExecutionTraceSummaryAttributesValuesVariant3 == null && workflowExecutionTraceSummaryAttributesValuesVariant4 == null)
             {
                 try
                 {
@@ -217,7 +187,7 @@ namespace Mistral.JsonConverters
                 }
             }
 
-            if (workflowExecutionTraceSummaryAttributesValuesVariant1 == null && workflowExecutionTraceSummaryAttributesValuesVariant2 == null && workflowExecutionTraceSummaryAttributesValuesVariant3 == null && workflowExecutionTraceSummaryAttributesValuesVariant4 == null && workflowExecutionTraceSummaryAttributesValuesVariant5 == null)
+            if (workflowExecutionTraceSummaryAttributesValuesVariant1 == null && workflowExecutionTraceSummaryAttributesValuesVariant2 == null && workflowExecutionTraceSummaryAttributesValuesVariant3 == null && workflowExecutionTraceSummaryAttributesValuesVariant4 == null)
             {
                 try
                 {
@@ -234,7 +204,7 @@ namespace Mistral.JsonConverters
                 }
             }
 
-            if (workflowExecutionTraceSummaryAttributesValuesVariant1 == null && workflowExecutionTraceSummaryAttributesValuesVariant2 == null && workflowExecutionTraceSummaryAttributesValuesVariant3 == null && workflowExecutionTraceSummaryAttributesValuesVariant4 == null && workflowExecutionTraceSummaryAttributesValuesVariant5 == null)
+            if (workflowExecutionTraceSummaryAttributesValuesVariant1 == null && workflowExecutionTraceSummaryAttributesValuesVariant2 == null && workflowExecutionTraceSummaryAttributesValuesVariant3 == null && workflowExecutionTraceSummaryAttributesValuesVariant4 == null)
             {
                 try
                 {
@@ -251,23 +221,6 @@ namespace Mistral.JsonConverters
                 }
             }
 
-            if (workflowExecutionTraceSummaryAttributesValuesVariant1 == null && workflowExecutionTraceSummaryAttributesValuesVariant2 == null && workflowExecutionTraceSummaryAttributesValuesVariant3 == null && workflowExecutionTraceSummaryAttributesValuesVariant4 == null && workflowExecutionTraceSummaryAttributesValuesVariant5 == null)
-            {
-                try
-                {
-
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                    workflowExecutionTraceSummaryAttributesValuesVariant5 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                }
-                catch (global::System.Text.Json.JsonException)
-                {
-                }
-                catch (global::System.InvalidOperationException)
-                {
-                }
-            }
-
             var __value = new global::Mistral.WorkflowExecutionTraceSummaryAttributesValues(
                 workflowExecutionTraceSummaryAttributesValuesVariant1,
 
@@ -275,9 +228,7 @@ namespace Mistral.JsonConverters
 
                 workflowExecutionTraceSummaryAttributesValuesVariant3,
 
-                workflowExecutionTraceSummaryAttributesValuesVariant4,
-
-                workflowExecutionTraceSummaryAttributesValuesVariant5
+                workflowExecutionTraceSummaryAttributesValuesVariant4
                 );
 
             return __value;
@@ -315,12 +266,6 @@ namespace Mistral.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(bool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<bool> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(bool).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickWorkflowExecutionTraceSummaryAttributesValuesVariant4(), typeInfo);
-            }
-            else if (value.IsWorkflowExecutionTraceSummaryAttributesValuesVariant5)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickWorkflowExecutionTraceSummaryAttributesValuesVariant5(), typeInfo);
             }
         }
     }

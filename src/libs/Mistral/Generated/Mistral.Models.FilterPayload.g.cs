@@ -12,9 +12,8 @@ namespace Mistral
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("filters")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<global::Mistral.FilterGroup, global::Mistral.FilterCondition, object>))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Mistral.AnyOf<global::Mistral.FilterGroup, global::Mistral.FilterCondition, object> Filters { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<global::Mistral.FilterGroup, global::Mistral.FilterCondition>))]
+        public global::Mistral.AnyOf<global::Mistral.FilterGroup, global::Mistral.FilterCondition>? Filters { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,7 +29,7 @@ namespace Mistral
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public FilterPayload(
-            global::Mistral.AnyOf<global::Mistral.FilterGroup, global::Mistral.FilterCondition, object> filters)
+            global::Mistral.AnyOf<global::Mistral.FilterGroup, global::Mistral.FilterCondition>? filters)
         {
             this.Filters = filters;
         }

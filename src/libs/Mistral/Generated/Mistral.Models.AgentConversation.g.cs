@@ -64,8 +64,8 @@ namespace Mistral
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("agent_version")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<string, int?, object>))]
-        public global::Mistral.AnyOf<string, int?, object>? AgentVersion { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<string, int?>))]
+        public global::Mistral.AnyOf<string, int?>? AgentVersion { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -105,7 +105,7 @@ namespace Mistral
             string? description,
             global::Mistral.MetadataDict? metadata,
             string? @object,
-            global::Mistral.AnyOf<string, int?, object>? agentVersion)
+            global::Mistral.AnyOf<string, int?>? agentVersion)
         {
             this.Name = name;
             this.Description = description;

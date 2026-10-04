@@ -78,7 +78,7 @@ namespace Mistral
             global::Mistral.AnyOf<global::Mistral.FileChunk, global::Mistral.DocumentURLChunk, global::Mistral.ImageURLChunk> document,
             string? model = default,
             string? id = default,
-            global::Mistral.AnyOf<string, global::System.Collections.Generic.IList<int>, object>? pages = default,
+            global::Mistral.AnyOf<string, global::System.Collections.Generic.IList<int>>? pages = default,
             bool? includeImageBase64 = default,
             int? imageLimit = default,
             int? imageMinSize = default,

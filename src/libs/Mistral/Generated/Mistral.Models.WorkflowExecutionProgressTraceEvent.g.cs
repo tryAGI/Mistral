@@ -41,7 +41,7 @@ namespace Mistral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("attributes")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.Dictionary<string, global::Mistral.WorkflowExecutionTraceSummaryAttributesValues> Attributes { get; set; }
+        public required global::System.Collections.Generic.Dictionary<string, global::Mistral.WorkflowExecutionTraceSummaryAttributesValues?> Attributes { get; set; }
 
         /// <summary>
         /// Whether the event is internal<br/>
@@ -125,7 +125,7 @@ namespace Mistral
             string name,
             string id,
             long timestampUnixNano,
-            global::System.Collections.Generic.Dictionary<string, global::Mistral.WorkflowExecutionTraceSummaryAttributesValues> attributes,
+            global::System.Collections.Generic.Dictionary<string, global::Mistral.WorkflowExecutionTraceSummaryAttributesValues?> attributes,
             long startTimeUnixMs,
             global::Mistral.EventType? type,
             bool? @internal,

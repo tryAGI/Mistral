@@ -12,7 +12,7 @@ namespace Mistral
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("options")]
-        public global::System.Collections.Generic.IList<global::Mistral.AnyOf<string, bool?, object>>? Options { get; set; }
+        public global::System.Collections.Generic.IList<global::Mistral.AnyOf<string, bool?>?>? Options { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -28,7 +28,7 @@ namespace Mistral
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ChatCompletionFieldOptions(
-            global::System.Collections.Generic.IList<global::Mistral.AnyOf<string, bool?, object>>? options)
+            global::System.Collections.Generic.IList<global::Mistral.AnyOf<string, bool?>?>? options)
         {
             this.Options = options;
         }

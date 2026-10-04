@@ -19,8 +19,8 @@ namespace Mistral
         /// Input data for the update, matching its schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<global::Mistral.NetworkEncodedInput, object, object>))]
-        public global::Mistral.AnyOf<global::Mistral.NetworkEncodedInput, object, object>? Input { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Mistral.JsonConverters.AnyOfJsonConverter<global::Mistral.NetworkEncodedInput, object>))]
+        public global::Mistral.AnyOf<global::Mistral.NetworkEncodedInput, object>? Input { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -42,7 +42,7 @@ namespace Mistral
 #endif
         public UpdateInvocationBody(
             string name,
-            global::Mistral.AnyOf<global::Mistral.NetworkEncodedInput, object, object>? input)
+            global::Mistral.AnyOf<global::Mistral.NetworkEncodedInput, object>? input)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Input = input;

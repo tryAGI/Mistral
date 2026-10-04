@@ -15,7 +15,7 @@ namespace Mistral
         /// <exception cref="global::Mistral.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Mistral.Agent> RetrieveAnAgentEntityAsync(
             string agentId,
-            global::Mistral.AnyOf<int?, string, object>? agentVersion = default,
+            global::Mistral.AnyOf<int?, string>? agentVersion = default,
             global::Mistral.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -29,7 +29,7 @@ namespace Mistral
         /// <exception cref="global::Mistral.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Mistral.AutoSDKHttpResponse<global::Mistral.Agent>> RetrieveAnAgentEntityAsResponseAsync(
             string agentId,
-            global::Mistral.AnyOf<int?, string, object>? agentVersion = default,
+            global::Mistral.AnyOf<int?, string>? agentVersion = default,
             global::Mistral.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
